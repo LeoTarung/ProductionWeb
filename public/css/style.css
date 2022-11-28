@@ -34,6 +34,7 @@
   height: 100px;
   width: 100%;
   background-color: #F7FAFF;
+  /* position: fixed; */
 }
 
 #main .nav .toggle-menu{
@@ -247,6 +248,8 @@ margin-top: 0.2em;
   footer {
     left: 0;
     /* bottom: 4; */
+    padding-top: 1em;
+    padding-bottom: 1em;
     margin-bottom: 0px;
     width: 100%; 
     position: relative;

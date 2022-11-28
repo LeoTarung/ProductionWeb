@@ -10,10 +10,7 @@ class ProductionController extends Controller
 {
     public function index()
     {
-        $shift = $this->Shift();
-        $date = date('Y-m-d H:i:s');
-        $cek = "Sekarang adalah jam = " . "$date" . " dan sekarang adalah shift = " . "$shift";
-        dd($cek);
+
         return  view('pages.production', [
             "title" => 'Production Overview',
         ]);
