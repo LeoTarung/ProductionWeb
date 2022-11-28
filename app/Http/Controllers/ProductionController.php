@@ -69,15 +69,14 @@ class ProductionController extends Controller
     {
         $shift = $this->Shift();
         $date = $this->date();
+        $title = "LHP Melting";
         $lhp = prepMeltingModel::orderBy('id', 'DESC')->first();
         $id_striko1 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-1'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_striko2 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-2'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_striko3 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_Swift_Asia = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Swift_Asia'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
 
-        return view('pages_lhp.prepare', compact('lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia',), [
-            'title' => "LHP Melting"
-        ]);
+        return view('pages_lhp.prepare', compact('title', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'));
     }
 
     public function prep_melting_simpan(Request $request)
@@ -106,9 +105,10 @@ class ProductionController extends Controller
     {
         $shift = $this->Shift();
         $date = $this->date();
+        $title = "LHP Melting";
         $ntah = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         if ($ntah != null) {
-            return view('pages_lhp.lhpMelting', compact('mesin', 'id',), ['title' => "LHP Melting"]);
+            return view('pages_lhp.lhpMelting', compact('title', 'mesin', 'id'));
         } else {
             return redirect('/melting')->with('preulang', 'preulang');
         }
