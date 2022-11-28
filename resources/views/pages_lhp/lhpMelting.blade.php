@@ -22,7 +22,7 @@
                 </div>
                 <div class="row color-bg">
                     <div class="col-12  ">
-                        <div class="card shadow border border-0">
+                        <div class="card shadow-lg border border-0">
                             <div class="d-flex justify-content-start mt-3 color-bg ">
                                 <h5 class="fw-bold">MATERIAL :</h5>
                             </div>
