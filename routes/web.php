@@ -28,3 +28,7 @@ Route::get('/lhp', function () {
         "title" => 'LHP Melting'
     ]);
 });
+Route::get('/melting', [ProductionController::class, 'prep_melting']);
+Route::post('/melting/simpan', [ProductionController::class, 'prep_melting_simpan']);
+Route::get('/melting/{mesin}/{id}', [ProductionController::class, 'lhp_jam']);
+Route::post('/melting/{mesin}/{id}/simpan', [ProductionController::class, 'lhp_jam_simpan']);
