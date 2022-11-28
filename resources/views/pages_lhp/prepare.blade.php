@@ -10,42 +10,44 @@
                 Silahkan Preparation Ulang.
             </div>
         @endif
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko1 == null)
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold " data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop" onclick="testing(1)">STRIKO-1</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold " data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop" onclick="testing(1)">
+                    <div class="big-font">STRIKO-1</div>
+                </a> <br>
             @else
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold"
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
                     href="/melting/Striko-1/{{ $id_striko1->id }}">STRIKO-1</a> <br>
             @endif
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko2 == null)
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop" onclick="testing(2)">STRIKO-2</a> <br>
             @else
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold"
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
                     href="/melting/Striko-2/{{ $id_striko2->id }}">STRIKO-2</a> <br>
             @endif
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko3 == null)
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop" onclick="testing(3)">STRIKO-3</a> <br>
             @else
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold"
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
                     href="/melting/Striko-3/{{ $id_striko3->id }}">STRIKO-3</a> <br>
             @endif
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_Swift_Asia == null)
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop" onclick="testing(4)">Swift_Asia</a> <br>
             @else
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold"
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
                     href="/melting/Swift_Asia/{{ $id_Swift_Asia->id }}">Swift_Asia</a> <br>
             @endif
         </div>
