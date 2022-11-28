@@ -144,7 +144,7 @@
   position: absolute;
   height: 43px;
   width: 274px;
-  left: 612px;
+  left: 619px;
   top: 6px;
   border-radius: 0px;
   font-family: Kameron;
@@ -159,9 +159,9 @@
   position: absolute;
   width: 260.09px;
   height: 43px;
-  left: 620.64px;
+  left: 600.64px;
   top: 54px;
-
+  letter-spacing: 0.2em;
   font-family: 'Kameron';
   font-style: normal;
   font-weight: 700;
@@ -246,35 +246,23 @@ margin-top: 0.2em;
 
   footer {
     left: 0;
-    bottom: 4;
+    /* bottom: 4; */
     margin-bottom: 0px;
     width: 100%; 
     position: relative;
     background-color: #000080;
   }
-  
-  .button-machine{
-    /* height: 250px; */
-    /* box-shadow: #222f3e ; */
-      /* box-shadow: 0 0 10px #777676; */
-  }
 
   .buttonssssss
 {
-  height: 225px;
-   font-family: 'Kameron';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 24px;
+  height: 250px;
+
 
 }
 
-a .buttonssssss{
-  font-size: 100px;
-}
+
 a .big-font{
-  font-size: 75px;
+  font-size: 70px;
   letter-spacing: 0.15em;
   margin-top: 50px;
 }
