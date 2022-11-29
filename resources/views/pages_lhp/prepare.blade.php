@@ -94,7 +94,7 @@
                             <div class="col-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control border-dark fw-bold" id="nama"
-                                        name="nama" value="ValueWajibADA" readonly>
+                                        name="nama" value="Value Wajib ADA" readonly>
                                     <label for="nama" class="">N A M A</label>
                                 </div>
                             </div>
