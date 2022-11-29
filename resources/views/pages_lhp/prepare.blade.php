@@ -70,7 +70,7 @@
     {{-- MODAL --}}
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-xl  ">
             <form action="{{ url('/melting/simpan') }}" method="POST"
                 onSubmit="document.getElementById('submit').disabled=true;">
                 @csrf
@@ -94,7 +94,7 @@
                             <div class="col-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control border-dark fw-bold" id="nama"
-                                        name="nama" value="ValueWajibADA" readonly>
+                                        name="nama" value="Value Wajib ADA" readonly>
                                     <label for="nama" class="">N A M A</label>
                                 </div>
                             </div>

@@ -249,8 +249,8 @@ margin-top: 0.2em;
     left: 0;
     /* bottom: 4; */
     padding-top: 1em;
-    padding-bottom: 1em;
-    margin-bottom: 0px;
+    padding-bottom: 1.5em;
+    /* margin-bottom: 0px; */
     width: 100%; 
     position: relative;
     background-color: #000080;
@@ -292,8 +292,87 @@ a .big-font{
 }
 
 
+/* Imin Table */
+@media   only screen and (max-width: 1280px){
+
+  .logo{
+    height: 52.22222137451172px;
+    width: 199.04696655273438px;
+    left: 26.15673828125px;
+    top: 13px;
+    border-radius: 0px;
+    }
+
+  .rectangle-logo{
+    height: 58px;
+    width: 205.12985229492188px;
+    left: 22.781982421875px;
+    top: 11px;
+    border-radius: 18px;
+    
+  }
+  .shift{
+    height: 43px;
+    width: 137.53460693359375px;
+    left: 324px;
+    top: 21px;
+    }
+    #MyClockDisplay{
+      height: 43px;
+      width: 231.19313049316406px;
+      left: 568.513427734375px;
+      top: 6px;
+    
+    }
+
+    #date-1{
+      height: 43px;
+      width: 231.19313049316406px;
+      left: 550.232666015625px;
+      top: 58px;
+      
+    }
+    .kotak{
+      height: 1px;
+      width: 208.4113311767578px;
+      left: 533.262939453125px;
+      top: 49px;
+    }
+    .nrp{
+      height: 119px;
+      width: 137.53460693359375px;
+      left: 802px;
+      top: 5px;
+
+    }
+
+    .nrp-child{
+      height: 119px;
+      width: 137.53460693359375px;
+      left: 820px;
+      top: 35px;
+    }
+    .mesin{
+      height: 46px;
+      width: 233px;
+      left: 1026.868896484375px;
+      top: 19px;
+    }
+    
+    .modal-xl{
+      width: 90%;
+      max-width:1200px;
+      height: 100%;
+      max-height: 750px;
+    }
+}
+
+
+
+
+
 /* Catatan CSS 
-1. TAMBAHKAN NAV KHUSUS TABLET DAN LAPTOP LARGE
+1. TAMBAHKAN NAV KHUSUS TABLET DAN LAPTOP LARGE (complete)
 2. TAMBAHKAN FOOTER KHUSUS TABLET 
 */
 
