@@ -32,7 +32,7 @@
                     </div>
                     <ul class="sub-menu">
                         <li><a class="link_name" href="#">Production Monitoring</a></li>
-                        <li><a href="#">Melting</a></li>
+                        <li><a href="/production/melting">Melting</a></li>
                         <li><a href="#">Casting</a></li>
                         <li><a href="#">Machining</a></li>
                         <li><a href="#">Painting</a></li>
