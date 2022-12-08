@@ -51,11 +51,11 @@
                                     <div class="row">
                                         <div class="col"><button type="submit" name="item" value="ingot"
                                                 class="btn btn-primary" style="width: 130px;">INGOT</button></div>
+                                        <div class="col"><button type="submit" name="item" value="exgate"
+                                                    class="btn btn-primary" style="width: 130px;">EX GATE</button></div>
                                         <div class="col"><button type="submit" name="item" value="basemetal"
                                                 class="btn btn-primary" style="width: 130px;">BASEMETAL</button></div>
-                                        <div class="col"><button type="submit" name="item" value="exgate"
-                                                class="btn btn-primary" style="width: 130px;">EX GATE</button></div>
-                                        <div class="col"><button type="submit" name="item" value="overflow"
+                                        <div class="col"><button type="submit" name="item" value="oil_scrap"
                                                 class="btn btn-primary" style="width: 130px;">OIL SCRAP</button></div>
                                         <div class="col"><button type="submit" name="item" value="reject_parts"
                                                 class="btn btn-primary" style="width: 130px;">REJECT PARTS</button></div>
@@ -68,12 +68,8 @@
                                     <div class="row">
                                         <div class="col"><button type="submit" name="item" value="fluxing"
                                                 class="btn btn-primary" style="width: 130px;">FLUXING</button></div>
-                                        <div class="col"><button type="submit" name="item" value="k_value"
-                                                class="btn btn-primary" style="width: 130px;">K - VALUE</button></div>
                                         <div class="col"><button type="submit" name="item" value="dross"
                                                 class="btn btn-primary" style="width: 130px;">DROSS</button></div>
-                                        <div class="col"><button type="submit" name="item" value="dross_treat"
-                                                class="btn btn-primary" style="width: 130px;">DROSS TREAT</button></div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade ms-4 mb-5 mt-3 text-center" id="pills-gas" role="tabpanel"

@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\lhpMeltingModel;
 use App\Models\prepMeltingModel;
 
 class ProductionLHPController extends Controller
 {
-
     function Shift()
     {
         $time = date('H:i:s');
@@ -66,7 +64,7 @@ class ProductionLHPController extends Controller
         $id_striko3 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_Swift_Asia = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Swift_Asia'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
 
-        return view('lhp.prepare', compact('lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia',), [
+        return view('pages_lhp.prepare', compact('lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia',), [
             'title' => "LHP Melting"
         ]);
     }
@@ -99,7 +97,7 @@ class ProductionLHPController extends Controller
         $date = $this->date();
         $ntah = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         if ($ntah != null) {
-            return view(' lhp.lhpMelting', compact('mesin', 'id',), ['title' => "LHP Melting"]);
+            return view('pages_lhp.lhpMelting', compact('mesin', 'id',), ['title' => "LHP Melting"]);
         } else {
             return redirect('/melting')->with('preulang', 'preulang');
         }
@@ -124,7 +122,7 @@ class ProductionLHPController extends Controller
         } else {
             return redirect('/melting')->with('preulang', 'preulang');
         }
-
-        // ============================= // END FUNCTION MELTING // ================================= //
     }
+
+    // ============================= // END FUNCTION MELTING // ================================= //
 }
