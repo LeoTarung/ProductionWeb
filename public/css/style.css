@@ -34,6 +34,7 @@
   height: 100px;
   width: 100%;
   background-color: #F7FAFF;
+  /* position: fixed; */
 }
 
 #main .nav .toggle-menu{
@@ -97,18 +98,12 @@
   color: #2178d1;
 }
 
-
-#main .nav{
-  /* position: fixed;
-  display: block; */
-  top: 0;
-  height: 87px;
-  /* padding: 1.5rem; */
-  /* width: calc( 100% - 290px); */
-  width: 100%;
-  /* min-width: 100vw; */
-  background-color: #F7FAFF;
+.bg-white {
+  color: #ffffff;
 }
+
+
+/* Navbar */
 
 .navbarimg{
   /* position: fixed; */
@@ -144,7 +139,7 @@
   position: absolute;
   height: 43px;
   width: 274px;
-  left: 612px;
+  left: 619px;
   top: 6px;
   border-radius: 0px;
   font-family: Kameron;
@@ -159,9 +154,9 @@
   position: absolute;
   width: 260.09px;
   height: 43px;
-  left: 620.64px;
+  left: 600.64px;
   top: 54px;
-
+  letter-spacing: 0.2em;
   font-family: 'Kameron';
   font-style: normal;
   font-weight: 700;
@@ -180,7 +175,7 @@
   top: 20px;
   border-radius: 0px;
   font-family: verdana;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 550;
   line-height: 43px;
   letter-spacing: 0.1em;
@@ -191,6 +186,10 @@
 .font-white{
   color: white;
 }
+.font-coolblack{
+  color: rgb(54, 54, 54);
+}
+
 
 .nrp{
   position: absolute;
@@ -198,7 +197,7 @@
   height: 119px;
   left: 850px;
   top: 6px;
-
+margin-top: 0.2em;
   font-family: 'Kameron';
   font-style: normal;
   font-weight: 400;
@@ -230,7 +229,7 @@
   font-family: 'verdana';
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 46px;
 }
 
@@ -244,13 +243,136 @@
   border-radius: 18px;
   }
 
+  /* Footer */
+
   footer {
     left: 0;
-    bottom: 4;
-    margin-bottom: 4px;
+    /* bottom: 4; */
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    /* margin-bottom: 0px; */
     width: 100%; 
     position: relative;
     background-color: #000080;
   }
 
+  /* Preparation Melting */
+  .buttonssssss
+{
+  height: 250px;
+
+
+}
+
+
+a .big-font{
+  font-size: 70px;
+  letter-spacing: 0.15em;
+  margin-top: 50px;
+}
+
+/* LHP Melting */
+
+.bg-material{
+  background-color: #DBFFF8;
+  margin: 5px 30px 0px 15px;
+}
+.color-bg{
+  background-color: #F7FAFF;
+  padding: 5px 30px 0px 15px;
+}
+.upper-nav {
+ /* box-shadow: 0px 0px 30px 0px #ececec; */
+ /* box-shadow: 0px 0px 8px 2px #000000; */
+ box-shadow: 0 5px 4px -4px rgb(71, 71, 71);
+
+}
+.chart-area{
+  background-color: #eafffb;
+}
+
+
+/* Imin Table */
+@media   only screen and (max-width: 1280px){
+
+  .logo{
+    height: 52.22222137451172px;
+    width: 199.04696655273438px;
+    left: 26.15673828125px;
+    top: 13px;
+    border-radius: 0px;
+    }
+
+  .rectangle-logo{
+    height: 58px;
+    width: 205.12985229492188px;
+    left: 22.781982421875px;
+    top: 11px;
+    border-radius: 18px;
+    
+  }
+  .shift{
+    height: 43px;
+    width: 137.53460693359375px;
+    left: 324px;
+    top: 21px;
+    }
+    #MyClockDisplay{
+      height: 43px;
+      width: 231.19313049316406px;
+      left: 568.513427734375px;
+      top: 6px;
+    
+    }
+
+    #date-1{
+      height: 43px;
+      width: 231.19313049316406px;
+      left: 550.232666015625px;
+      top: 58px;
+      
+    }
+    .kotak{
+      height: 1px;
+      width: 208.4113311767578px;
+      left: 533.262939453125px;
+      top: 49px;
+    }
+    .nrp{
+      height: 119px;
+      width: 137.53460693359375px;
+      left: 802px;
+      top: 5px;
+
+    }
+
+    .nrp-child{
+      height: 119px;
+      width: 137.53460693359375px;
+      left: 820px;
+      top: 35px;
+    }
+    .mesin{
+      height: 46px;
+      width: 233px;
+      left: 1026.868896484375px;
+      top: 19px;
+    }
+    
+    .modal-xl{
+      width: 90%;
+      max-width:1200px;
+      height: 100%;
+      max-height: 750px;
+    }
+}
+
+
+
+
+
+/* Catatan CSS 
+1. TAMBAHKAN NAV KHUSUS TABLET DAN LAPTOP LARGE (complete)
+2. TAMBAHKAN FOOTER KHUSUS TABLET 
+*/
 

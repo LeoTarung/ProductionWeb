@@ -24,14 +24,16 @@
 #main .main-content {
   padding: 0rem 1.5rem;
   min-height: 100vh;
+  top: 70px;
   /* margin-bottom: 0px; */
   /* margin-top: 70px; */
   /* width:calc(100%-290px); */
+  position: relative;
 }
 
 #main .nav{
-  /* position: fixed;
-  display: block; */
+   position: fixed;
+  display: block; 
   top: 0;
   height: 70px;
   /* padding: 1.5rem; */

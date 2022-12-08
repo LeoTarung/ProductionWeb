@@ -10,43 +10,59 @@
                 Silahkan Preparation Ulang.
             </div>
         @endif
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko1 == null)
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold " data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop" onclick="testing(1)">STRIKO-1</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold " data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop" onclick="testing(1)">
+                    <div class="big-font">STRIKO-1</div>
+                </a> <br>
             @else
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    href="/melting/Striko-1/{{ $id_striko1->id }}">STRIKO-1</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
+                    href="/melting/Striko-1/{{ $id_striko1->id }}">
+                    <div class="big-font">STRIKO-1</div>
+                </a> <br>
             @endif
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko2 == null)
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop" onclick="testing(2)">STRIKO-2</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop" onclick="testing(2)">
+                    <div class="big-font">STRIKO-2</div>
+                </a> <br>
             @else
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    href="/melting/Striko-2/{{ $id_striko2->id }}">STRIKO-2</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
+                    href="/melting/Striko-2/{{ $id_striko2->id }}">
+                    <div class="big-font">STRIKO-2</div>
+                </a> <br>
             @endif
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko3 == null)
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop" onclick="testing(3)">STRIKO-3</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop" onclick="testing(3)">
+                    <div class="big-font">STRIKO-3</div>
+                </a> <br>
             @else
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    href="/melting/Striko-3/{{ $id_striko3->id }}">STRIKO-3</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
+                    href="/melting/Striko-3/{{ $id_striko3->id }}">
+                    <div class="big-font">STRIKO-3</div>
+                </a> <br>
             @endif
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_Swift_Asia == null)
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop" onclick="testing(4)">Swift_Asia</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop" onclick="testing(4)">
+                    <div class="big-font">Swift_Asia</div>
+                </a> <br>
             @else
-                <a class="btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    href="/melting/Swift_Asia/{{ $id_Swift_Asia->id }}">Swift_Asia</a> <br>
+                <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
+                    href="/melting/Swift_Asia/{{ $id_Swift_Asia->id }}">
+                    <div class="big-font">Swift_Asia</div>
+                </a> <br>
             @endif
         </div>
 
@@ -54,7 +70,7 @@
     {{-- MODAL --}}
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-xl  ">
             <form action="{{ url('/melting/simpan') }}" method="POST"
                 onSubmit="document.getElementById('submit').disabled=true;">
                 @csrf
@@ -78,7 +94,7 @@
                             <div class="col-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control border-dark fw-bold" id="nama"
-                                        name="nama" value="ValueWajibADA" readonly>
+                                        name="nama" value="Value Wajib ADA" readonly>
                                     <label for="nama" class="">N A M A</label>
                                 </div>
                             </div>

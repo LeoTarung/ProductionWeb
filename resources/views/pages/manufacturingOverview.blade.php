@@ -27,7 +27,7 @@
 
         <div class="row content">
             <div class="col-4 mt-4">
-                <a href="#">
+                <a href="{{ url('/melting') }}">
                     <div class="card card-gambar-utama rounded mb-3">
                         <div class="d-flex justify-content-center">
                             <img class="imgProduction mt-2 d-flex" src="{{ url('/img/melting.jpg') }}" alt=""

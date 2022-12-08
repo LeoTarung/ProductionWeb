@@ -1,11 +1,11 @@
 <nav class="nav navbar-header nav-expand shadow-sm rounded">
     <img class="navbarimg" src="{{ url('/img/ppp.png') }}" alt="Image" />
     <div class="rectangle-logo"></div>
-    <img class="logo" src="{{ url('/img/nusametal.png') }}" alt="Image" />
+    <a href="{{url('/melting')}}"><img class="logo" src="{{ url('/img/nusametal.png') }}" alt="Image" /></a>
     <label id="MyClockDisplay" class="clock " onload="showTime()">
     </label>
     <div class="shift">
-        <div class="font-white"> SHIFT 2</div>
+        <div class="font-white"> {{$shift}}</div>
     </div>
     <div class="kotak"></div>
     <div id="date-1">

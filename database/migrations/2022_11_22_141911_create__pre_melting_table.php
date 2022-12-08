@@ -24,7 +24,6 @@ class CreatePreMeltingTable extends Migration
             $table->integer('ingot')->default('0');
             $table->integer('basemetal')->default('0');
             $table->integer('exgate')->default('0');
-            $table->integer('overflow')->default('0');
             $table->integer('reject_parts')->default('0');
             $table->integer('alm_treat')->default('0');
             $table->integer('total_return')->default('0');
@@ -43,7 +42,8 @@ class CreatePreMeltingTable extends Migration
             $table->integer('total_losses')->default('0');
             $table->integer('gas_awal')->default('0');
             $table->integer('gas_akhir')->default('0');
-            $table->integer('gas_rata')->default('0');
+            $table->integer('gas_used')->default('0');
+            $table->integer('gas_konsum')->default('0');
             $table->integer('total_charging')->default('0');
             $table->timestamps();
         });

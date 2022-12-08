@@ -21,10 +21,10 @@
     <div id="app">
         @include('partial.sidebar')
         <div id="main">
-            @include('partial.navbar')
+
 
             @yield('content')
-
+            @include('partial.navbar')
         </div>
     </div>
     {{-- <script>
