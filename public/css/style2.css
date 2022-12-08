@@ -593,6 +593,10 @@ button{
   height: 20px;
   background-color: #5CE346;
 }
+
+
+
+/* Tablet */
 @media only screen and (max-width: 1280px){
 
  .today-report-chg .card{
@@ -602,12 +606,18 @@ button{
 
 }
 
-@media (max-height: 1915px){
+
+
+
+
+/* Monitor Besar */
+@media (max-height: 2000px){
   .today-report-chg .card{
     width: 320px;
   }
 }
 
+/* Monitor lebar */
 @media (max-height:1450px) {
   .nav .title 
   {
@@ -624,7 +634,7 @@ button{
 }
 
 
-
+/* SMartphone */
 @media (max-width: 400px) {
   .sidebar.close .nav-links li .sub-menu{
     display: none;
@@ -644,4 +654,26 @@ button{
     width: 100%;
     left: 0;
   }
+}
+
+
+/* Layar TV Lebar */
+
+/* NAV */
+@media screen and (min-width: 2000px){
+  #main .nav{
+    min-height: 100px;
+    
+  }
+  #main .nav{
+    min-height: 100px;
+    
+  }
+  
+.nav .logo {
+  width: 420px ;
+  height:75px;
+  margin-top: 20px;
+}
+
 }
