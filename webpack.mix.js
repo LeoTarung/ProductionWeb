@@ -15,3 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+
+    mix.browserSync('192.168.137.194',{ 
+        proxy: 'local'
+    });

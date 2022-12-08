@@ -8,7 +8,7 @@ class ManufactureController extends Controller
 {
     public function index()
     {
-        return  view('pages.manufacturingOverview', [
+        return  view('menu.manufacturingOverview', [
             "title" => 'Manufacturing Overview',
         ]);
     }
