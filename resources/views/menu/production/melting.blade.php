@@ -7,17 +7,18 @@
                     <div class="card-header shadow-sm">
                         <div class="row">
                             <div class="col-6">
-                                <h4>Monitoring Striko-1</h4>
+                                <div class="title-chart font-blue"> Monitoring Striko-1</div>
                             </div>
                             <div class="col-6 d-flex justify-content-end">
-                                <button> <i class='bx bxs-chevron-left bx-sm'></i> </button>
-                                <button> <i class='bx bxs-chevron-right bx-sm ms-1'></i> </button>
-                                <button> <i class='bx bxs-x-square bx-sm bx-spin-hover ms-1'></i> </button>
+                                <button class="prev-melt-button"> <i class='bx bxs-chevron-left bx-sm'></i> </button>
+                                <button class="next-melt-button"> <i class='bx bxs-chevron-right bx-sm ms-1'></i> </button>
+                                <button class="close-melt-button"> <i class='bx bxs-x-square bx-sm bx-spin-hover ms-1'></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="fs-5 ms-3 text-center mt-1">Daily Report</div>
+                        <div class="daily-report font-blue ms-3 text-center mt-2">Daily Report</div>
                         <div id="chartdiv" class="mt-1">
                         </div>
                     </div>
@@ -28,7 +29,7 @@
             <div class="col-4 ">
                 <div class="card shadow today-report-chg border-0">
                     <div class="card-header border-0 text-center fw-bold fs-5">
-                        <div class="font-blue">Today Report Charge</div>
+                        <div class="font-blue title-report-melt">Today Report Charge</div>
                     </div>
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center ">
@@ -73,11 +74,11 @@
             <div class="col-4 ">
                 <div class="card shadow today-report-chg border-0">
                     <div class="card-header border-0 text-center fw-bold fs-5 ">
-                        <div class="font-blue">Today Report Losses</div>
+                        <div class="font-blue title-report-melt">Today Report Losses</div>
                     </div>
                     <div class="card-content">
                         <div id="chartdiv2"></div>
-                        <table class="table table-hover ms-1">
+                        <table class="table table-hover ms-1 fs-5">
                             <thead class="fw-bold">
                                 <td>Warna</td>
                                 <td>Kategori</td>
@@ -107,7 +108,7 @@
             <div class="col-4 ">
                 <div class="card shadow today-report-chg border-0">
                     <div class="card-header border-0 text-center fw-bold fs-5">
-                        <div class="font-blue">Today Report Losses</div>
+                        <div class="font-blue title-report-melt">Today Report Losses</div>
                     </div>
                 </div>
             </div>

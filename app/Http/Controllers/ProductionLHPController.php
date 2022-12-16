@@ -58,15 +58,14 @@ class ProductionLHPController extends Controller
     {
         $shift = $this->Shift();
         $date = $this->date();
+        $title = "LHP Melting";
         $lhp = prepMeltingModel::orderBy('id', 'DESC')->first();
         $id_striko1 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-1'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_striko2 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-2'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_striko3 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_Swift_Asia = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Swift_Asia'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
 
-        return view('pages_lhp.prepare', compact('lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia',), [
-            'title' => "LHP Melting"
-        ]);
+        return view('lhp.prepare', compact('title', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'));
     }
 
     public function prep_melting_simpan(Request $request)
@@ -95,9 +94,10 @@ class ProductionLHPController extends Controller
     {
         $shift = $this->Shift();
         $date = $this->date();
+        $title = "LHP Melting";
         $ntah = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         if ($ntah != null) {
-            return view('pages_lhp.lhpMelting', compact('mesin', 'id',), ['title' => "LHP Melting"]);
+            return view('lhp.lhpMelting', compact('title', 'mesin', 'id', 'shift'));
         } else {
             return redirect('/melting')->with('preulang', 'preulang');
         }
@@ -108,8 +108,10 @@ class ProductionLHPController extends Controller
         $shift = $this->Shift();
         $date = $this->date();
         $hour = $this->hour();
-        $ntah = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        if ($ntah != null) {
+        $jenis = $request->item;
+        $value = $request->berat;
+        $ntaha = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        if ($ntaha != null) {
             // dd($request->item,  $mesin, $id);
             lhpMeltingModel::create([
                 'id_lhp' => $id,
@@ -118,6 +120,36 @@ class ProductionLHPController extends Controller
                 'shift' => $shift,
                 $request->item => $request->berat
             ]);
+            $beratA = $ntaha->$jenis;
+            $total = $beratA + $value;
+            // update data
+            prepMeltingModel::where([['id', '=', $id]])->update([$jenis => $total]);
+
+            $ntah = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+            $Totalreturn = $ntah->basemetal + $ntah->exgate + $ntah->reject_parts + $ntah->alm_treat;
+            $TotalCharging = $Totalreturn + $ntah->ingot;
+            $Totalloses = $ntah->dross - $ntah->alm_treat;
+            $gas_use = $ntah->gas_akhir - $ntah->gas_awal;
+            if ($TotalCharging == 0) {
+                $persen_ingot = 100;
+            } else {
+                $persen_ingot = $ntah->ingot / $TotalCharging * 100;
+            }
+            if ($TotalCharging == 0) {
+                $gas_komsum = $gas_use;
+            } else {
+                $gas_komsum = $gas_use / $TotalCharging * 100;
+            }
+            //$gas_komsum adalah brpa pemakaian gas per kilo dan brpa % penggunaannya.
+            prepMeltingModel::where([['id', '=', $id]])->update([
+                'total_return' =>  $Totalreturn,
+                'total_charging' => $TotalCharging,
+                'persen_ingot' => $persen_ingot,
+                'total_losses' => $Totalloses,
+                'gas_used' => $gas_use,
+                'gas_konsum' => $gas_komsum
+            ]);
+
             return redirect("/melting/$mesin/$id");
         } else {
             return redirect('/melting')->with('preulang', 'preulang');
