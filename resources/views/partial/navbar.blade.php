@@ -14,11 +14,12 @@
             {{-- </div> --}}
         </div>
         <div class="col-4 d-flex justify-content-center">
-            <div class="title mt-3">{{ $title }}</div>
+            <div class="title mt-3"></div>
         </div>
         <div class="col-4 d-flex justify-content-end">
             <div class="d-flex justify-content-end ms-3 mt-3">
-                <label id="MyClockDisplay" class="clock shadow-sm rounded mt-3 px-5 mb-3 " onload="showTime()">
+                <label id="MyClockDisplay" class="clock border border-bottom rounded mt-3 px-5 mb-3 "
+                    onload="showTime()">
                 </label>
 
             </div>
