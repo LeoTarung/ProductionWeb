@@ -10,15 +10,21 @@
     <div class="kotak"></div>
     <div id="date-1">
     </div>
+
+            @if ($nrp != 0)
     <div class="nrp">
         <div class="font-white"> NRP : </div>
     </div>
     <div class="nrp-child">
-        <div class="font-white">3551, 1365,
-            2569, 7250</div>
+        <div class="font-white fs-3 fw-bold">{{$nrp}}</div>
+    </div> 
+            @else
+    <div class="nrp">
+        <div class="font-white"> BELUM PREPARATION </div>
     </div>
+            @endif
     <div class="mesin">
-        <div class="font-white"> SWIFT - ASIA</div>
+        <div class="font-white fs-2"> {{$mesin}} </div>
     </div>
     <script>
         var date = new Date();
@@ -115,7 +121,7 @@
             s = (s < 10) ? "0" + s : s;
 
             var time = h + ":" + m + ":" + s + " ";
-            console.log(time)
+            // console.log(time)
             document.getElementById("MyClockDisplay").innerText = time;
             document.getElementById("MyClockDisplay").textContent = time;
 
