@@ -72,8 +72,9 @@ class ProductionController extends Controller
         $id_striko2 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-2'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_striko3 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_Swift_Asia = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Swift_Asia'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-
-        return view('pages_lhp.prepare', compact('title', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'));
+        $nrp = 0;
+        $mesin = "M E L T I N G";
+        return view('lhp..prepare-melting', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'));
     }
 
     public function prep_melting_simpan(Request $request)
@@ -105,7 +106,8 @@ class ProductionController extends Controller
         $title = "LHP Melting";
         $ntah = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         if ($ntah != null) {
-            return view('pages_lhp.lhpMelting', compact('title', 'mesin', 'id'));
+            $nrp = $ntah->nrp;
+            return view('lhp.lhp-Melting', compact('title', 'shift', 'nrp', 'mesin', 'id'));
         } else {
             return redirect('/melting')->with('preulang', 'preulang');
         }
@@ -163,6 +165,29 @@ class ProductionController extends Controller
             return redirect('/melting')->with('preulang', 'preulang');
         }
     }
+
+    public function prep_forklift()
+    {
+        # code... 
+        $shift = $this->Shift();
+        $date = $this->date();
+        $title = "LHP Forklift";
+        $nrp = 0;
+        $mesin = "F O R K L I F T";
+        return view('lhp.prepare-forklift', compact('title', 'nrp', 'mesin', 'shift'));
+    }
+
+    public function lhp_forklift()
+    {
+        # code... 
+        $shift = $this->Shift();
+        $date = $this->date();
+        $title = "LHP Forklift";
+        $nrp = 0;
+        $mesin = "F O R K L I F T";
+        return view('lhp.lhp-forklift', compact('title', 'nrp', 'mesin', 'shift'));
+    }
+
 
     // ============================= // END FUNCTION MELTING // ================================= //
 }
