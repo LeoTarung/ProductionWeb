@@ -1,6 +1,6 @@
 <nav class="nav navbar-header nav-expand shadow-sm rounded">
     <div class="row">
-        <div class="col-6">
+        <div class="col-4">
             <svg id="toggle-menu" class="toggle-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                 <path
@@ -13,9 +13,13 @@
             {{-- </div> --}}
             {{-- </div> --}}
         </div>
-        <div class="col-6 d-flex justify-content-end">
-            <div class="d-flex justify-content-end ms-3 mt-1 ">
-                <label id="MyClockDisplay" class="clock shadow-sm rounded mt-3 px-5 mb-3 " onload="showTime()">
+        <div class="col-4 d-flex justify-content-center">
+            <div class="title mt-3"></div>
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+            <div class="d-flex justify-content-end ms-3 mt-3">
+                <label id="MyClockDisplay" class="clock border border-bottom rounded mt-3 px-5 mb-3 "
+                    onload="showTime()">
                 </label>
 
             </div>

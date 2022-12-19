@@ -5,19 +5,17 @@
     <div class="main-content d-flex flex-column">
         <header>
             <div class="">
-                <div class="row">
-                    <div class="col-6">
-                        <h1>
-                            {{ $title }}
-                        </h1>
-                    </div>
-                    <div class="col-6 d-flex justify-content-end mt-3">
+                <div class="row ">
+                    <div class="col-4 mt-4">
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 {{-- <li class="breadcrumb-item"><a href="#">{{ $title }}</a></li> --}}
                                 <li class="breadcrumb-item active" aria-current="page">{{ $title }}</li>
                             </ol>
                         </nav>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center mt-3">
+                        <h2>Production Menu</h2>
                     </div>
                 </div>
             </div>
@@ -59,7 +57,7 @@
                 </div>
             </div>
             {{-- </div> --}}
-            <div class="col-3 mt-4">
+            <div class="col-3 mt-4 mb-4">
                 {{-- <div class="card  card-gambar-utama"rounded-5> --}}
                 <div class="d-flex justify-content-center">
                     <img class="imgProduction mt-2" src="{{ url('/img/assembling.jpg') }}" alt="" srcset="">
@@ -69,6 +67,6 @@
         </div>
     </div>
     {{-- <div class="p-2"> --}}
-    @include('partial.footer')
+
     {{-- </div> --}}
 @endsection

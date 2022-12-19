@@ -1,11 +1,20 @@
 /* Google Fonts Import Link */
-@import url('font.css');
+/* @import url('font.css'); */
+ @import url('fonts/font.css');
 *{
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: "Raleway";
+  font-family: 'Nunito';
+}
+
+@font-face {  
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:url('/fonts/Comfortaa-Regular.ttf') format('ttf');
 }
 
 /* APP */
@@ -24,7 +33,7 @@
 #main .main-content {
   padding: 0rem 1.5rem;
   min-height: 100vh;
-  top: 70px;
+  top: 50px;
   /* margin-bottom: 0px; */
   /* margin-top: 70px; */
   /* width:calc(100%-290px); */
@@ -33,14 +42,14 @@
 
 #main .nav{
    position: fixed;
-  display: block; 
+  /* display: block;  */
   top: 0;
   height: 70px;
   /* padding: 1.5rem; */
-  /* width: calc( 100% - 290px); */
-  width: 100%;
+  width: calc(100% - 290px);
+  /* width: 100%; */
   /* min-width: 100vw; */
-  background-color: #F7FAFF;
+  background-color: #eaeff8;
 }
 
 #main .nav .toggle-menu{
@@ -60,11 +69,12 @@
   /* width: 100%; */
 }
 .sidebar.close ~ #main .nav{
-  /* width: calc(100% - 290px); */
-  /* min-width: 100vw; */
+  width: calc(100% - 0px);
+  /* min-width: 100%; */
   margin-left: 0;
   /* position: fixed;
   display: block; */
+  /* width: 100%; */
 }
 #main .main-content{
   /* margin-top: 70px; */
@@ -75,11 +85,11 @@
 }
 #main .main-content .text{
   color: #11101d;
-  font-size: 35px;
+  /* font-size: 35px; */
 }
 
 #main .main-content .text{
-  font-size: 26px;
+  font-size: 10px;
   font-weight: 600;
 }
 
@@ -182,7 +192,11 @@ transition: all 0.5s ease;
   margin-left:0 ;
 }
 
-
+.sidemenu-font{
+  font-size: 16px;
+  color: #55769c;
+  font-family: 'Comfortaa', cursive;
+}
 .scrollbox{
   overflow: auto;
   padding-right: 5px;
@@ -196,13 +210,17 @@ transition: all 0.5s ease;
 
 
 .sidebar .sidebar-header{
-  background-color: #1d1b31;  
+  /* background-color: #1d1b31;   */
+  background-color: #50749c;
+  height: 70px;
+  border-radius: 0px 0px 5px 5px;
   transition: all 0.5s ease-in-out;
 }
 
 .sidebar .sidebar-header .logo{
-  width: 260px ;
-  height: 50px;
+  width: 280px ;
+  height: 55px;
+  margin-top: 5px;
   margin-left: 2px;
   transition: all 0.4s ease-in-out;
 }
@@ -220,6 +238,10 @@ transition: all 0.5s ease;
   overflow: auto;
   margin-top: auto;
 }
+.sidebar .nav-links li  .production{
+  /* margin-top: -px; */
+}
+
 /* .sidebar.close .nav-links{
   overflow: visible;
 } */
@@ -229,7 +251,7 @@ transition: all 0.5s ease;
 .sidebar .nav-links li{
   position: relative;
   list-style: none;
-  border: #11101d;
+  border: #6f6d8a;
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
@@ -244,6 +266,10 @@ transition: all 0.5s ease;
 
 .sidebar .nav-links li .sub-menu li:hover{
   background: #fff;
+}
+.sidebar .nav-links li .sub-menu li a{
+  font-size: 15px;
+  font-family: 'Comfortaa', cursive;
 }
 
 
@@ -306,6 +332,7 @@ opacity: 1;
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
+  font-size: 20px;
   background:  #f7f6fa;
   display: none;
 }
@@ -414,10 +441,9 @@ opacity: 1;
 
 /* Navbar */
 
-
 .nav .logo {
-  width: 270px ;
-  height:60px;
+  width: 290px ;
+  height:70px;
   margin-top: 5px;
 }
 
@@ -426,6 +452,15 @@ opacity: 1;
   width: 95%;
  
 }
+
+.nav .title{
+  font-family: 'verdana';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 46px;
+}
+
 
 .clock {
   /* position: absolute;
@@ -437,6 +472,8 @@ opacity: 1;
   font-family: "Arial";
   letter-spacing: 3px;
   display: block;
+  position: fixed;
+  box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.25), 0px 4px 4px rgba(179, 177, 177, 0.25);
   /* width: 100%; */
 }
 
@@ -500,21 +537,139 @@ opacity: 1;
 }
 
 header {
-  margin-top: 0px;
+  /* margin-top: 120px; */
   position: relative;
   /* margin-bottom: 250px; */
   width: 100%;
 }
 
-footer {
+.header{
+  /* box-shadow: -8px 8px 18px 0 rgba(25, 42, 70, 0.13); */
+  width: 100%;
+  /* height: 20px; */
+  margin: 0 0 0 0;
+  box-shadow: 0 5px 4px -4px rgb(131, 130, 130);
+}
 
+footer {
+    padding-top: 1em;
   left: 0;
   bottom: 4;
   margin-bottom: 4px;
-  width: 100%; 
+  background-color: #e9ecef;
+  width: 100%;   
+  padding-bottom: 0.5em;
+
+
   position: relative;
 }
 
+.font-blue{
+  color: #01225a;
+}
+button{
+  background-color: #F7FAFF;
+}
+
+.title-chart{
+  font-size :22px;
+  font-weight: 600;
+}
+
+.daily-report{
+font-size: 21px;
+font-weight: 600;
+}
+#chartdiv {
+  width: 100%;
+  height: 350px;
+}
+#chartdiv2 {
+  width: 100%;
+  height: 150px;
+}
+.chart-daily .card-header {
+  /* box-shadow: 0px 4px 4px rgba(104, 104, 104, 0.25); */
+  border-radius: 5px;
+  background-color: #F7FAFF;
+}
+
+.sidebar.close ~ .today-report-chg .card{
+  width: 320px;
+  height: 54px;
+  border: 0px;
+  font-size: large;
+  /* left: 73px;
+  top: 669px; */
+
+  background: #f0f0f0;
+  box-shadow: 0px 4px 4px rgba(219, 218, 218, 0.25), 0px 4px 4px rgba(179, 177, 177, 0.25);
+}
+
+.today-report-chg .card{
+  width: 290px;
+  height: 54px;
+  border: 0px;
+  font-size: larger;
+  /* left: 73px;
+  top: 669px; */
+
+  background: #f0f0f0;
+  box-shadow: 0px 4px 4px rgba(219, 218, 218, 0.25), 0px 4px 4px rgba(179, 177, 177, 0.25);
+}
+
+.red-losses {
+  width: 24px;
+  height: 20px;
+  background-color: #E34646;
+}
+.good-green{
+  width: 24px;
+  height: 20px;
+  background-color: #5CE346;
+}
+
+
+
+/* Tablet */
+@media only screen and (max-width: 1280px){
+
+ .today-report-chg .card{
+  width: 250px;
+  font-size: large;
+  }
+
+}
+
+
+
+
+
+/* Monitor Besar */
+@media (max-height: 2000px){
+  .today-report-chg .card{
+    width: 320px;
+  }
+}
+
+/* Monitor lebar */
+@media (max-height:1450px) {
+  .nav .title 
+  {
+    font-size: 25px;
+  }
+  .nav .logo {
+    width: 220px ;
+    height:50px;
+    
+  }
+  .clock {
+    font-size: 15px;
+  }
+}
+
+
+/* SMartphone */
 @media (max-width: 400px) {
   .sidebar.close .nav-links li .sub-menu{
     display: none;
@@ -534,4 +689,109 @@ footer {
     width: 100%;
     left: 0;
   }
+}
+
+
+/* Layar TV Lebar */
+
+/* NAV */
+@media only screen and (min-width: 1500px){
+ 
+/* NavBar */
+#main .nav{
+    height: 90px;
+   /* margin-left: 350px; */
+  }
+  
+.nav .logo {
+  width: 380px ;
+  height:80px;
+  margin-top: 5px;
+}
+
+.clock {
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: none;
+  border-color: #98cccf;
+  border-bottom: 5px;
+}
+
+/* Sidebar */
+.sidebar{
+  width: 350px;
+}
+
+.sidebar.close ~ #main{
+  margin-left: 0px;
+}
+
+.sidebar .sidebar-header{
+  height: 90px;
+}
+.sidebar .sidebar-header .logo{
+  margin-top: 20px;
+  height: 68px;
+  width: 345px;
+}
+.sidebar .nav-links li .sub-menu li a{
+  font-size: 23px;
+  margin-bottom: -13px;
+}
+
+.sidemenu-font{
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.sidebar .nav-links li i{
+  height: 50px;
+  min-width: 78px;
+}
+
+.sidebar .nav-links li{
+  margin-bottom: 26px;
+}
+
+/* Footer */
+
+footer{
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+}
+
+/* Format Main */
+#main .main-content {
+  top : 90px;
+  
+}
+#main{
+  margin-left: 350px;
+}
+
+/* Melting Main Overview */
+
+.title-chart{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.daily-report{
+  font-size: 25px;
+  font-weight: 900;
+}
+
+#chartdiv{
+  height: 400px;
+}
+
+.title-report-melt{
+  font-size: 25px;
+}
+
+.today-report-chg .card{
+  width: 450px;
+  font-size: 23px;
+}
+
 }
