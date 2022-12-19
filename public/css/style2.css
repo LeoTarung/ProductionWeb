@@ -194,8 +194,10 @@ transition: all 0.5s ease;
 
 .sidemenu-font{
   font-size: 16px;
+  font-weight: 600;
   color: #55769c;
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Montserrat';
 }
 .scrollbox{
   overflow: auto;
@@ -269,7 +271,8 @@ transition: all 0.5s ease;
 }
 .sidebar .nav-links li .sub-menu li a{
   font-size: 15px;
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Montserrat';
 }
 
 
@@ -586,7 +589,7 @@ font-weight: 600;
 }
 #chartdiv2 {
   width: 100%;
-  height: 150px;
+  height: 253px;
 }
 .chart-daily .card-header {
   /* box-shadow: 0px 4px 4px rgba(104, 104, 104, 0.25); */
@@ -595,7 +598,7 @@ font-weight: 600;
 }
 
 .sidebar.close ~ .today-report-chg .card{
-  width: 320px;
+  width: 1000px;
   height: 54px;
   border: 0px;
   font-size: large;
@@ -607,7 +610,7 @@ font-weight: 600;
 }
 
 .today-report-chg .card{
-  width: 290px;
+  width: 950px;
   height: 54px;
   border: 0px;
   font-size: larger;
@@ -619,7 +622,7 @@ font-weight: 600;
 }
 
 .red-losses {
-  width: 24px;
+  width: 50px;
   height: 20px;
   background-color: #E34646;
 }
@@ -635,7 +638,7 @@ font-weight: 600;
 @media only screen and (max-width: 1280px){
 
  .today-report-chg .card{
-  width: 250px;
+  width: 500px;
   font-size: large;
   }
 
@@ -706,7 +709,7 @@ font-weight: 600;
 .nav .logo {
   width: 380px ;
   height:80px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 
 .clock {
@@ -727,10 +730,11 @@ font-weight: 600;
 }
 
 .sidebar .sidebar-header{
-  height: 90px;
+  height: 110px;
+  padding-top: 10px;
 }
 .sidebar .sidebar-header .logo{
-  margin-top: 20px;
+  margin-top: 30px;
   height: 68px;
   width: 345px;
 }
