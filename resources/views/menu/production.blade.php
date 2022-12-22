@@ -24,7 +24,7 @@
         {{-- </div> --}}
         {{-- <div class="p-2"> --}}
 
-        <div class="row content">
+        <div class="row content mt-4">
             <div class="col-4 mt-4 prod-menu ">
                 {{-- <div class="col-12 d-flex justify-content-center"> --}}
                 {{-- <div class="wrapper"> --}}
