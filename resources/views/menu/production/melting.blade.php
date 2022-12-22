@@ -32,50 +32,62 @@
                         <div class="font-blue title-report-melt">Today Report Charge</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 d-flex justify-content-center ">
-                            <div class="card mt-3">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="card w-75 mt-3">
                                 <div class="row">
-                                    <div class="col-6 ms-3 mt-2 ">
-                                        <div class="font-blue fw-bold fw-bold">Ingot</div>
+                                    <div class="col-4 ms-5 mt-2 ">
+                                        <div class="font-blue fw-bold">Ingot </div>
                                     </div>
-                                    <div class="col-4 mt-2  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">356 Kg</div>
+                                    <div class="col-4 mt-2  d-flex justify-content-center">
+                                        <div class="font-blue  fw-bold ">356 Kg </div>
+                                    </div>
+                                    <div class="col-auto mt-2  d-flex justify-content-end">
+                                        <div class="font-blue  fw-bold text-end">80 % </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <div class="card">
+                            <div class="card w-75">
                                 <div class="row">
-                                    <div class="col-6 ms-3 ">
-                                        <div class="font-blue  fw-bold">Reject Parts</div>
+                                    <div class="col-4 ms-5 mt-2 ">
+                                        <div class="font-blue fw-bold">Reject Parts </div>
                                     </div>
-                                    <div class="col-4  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">1453 Kg</div>
+                                    <div class="col-4 mt-2  d-flex justify-content-center">
+                                        <div class="font-blue  fw-bold ">356 Kg </div>
+                                    </div>
+                                    <div class="col-auto mt-2  d-flex justify-content-end">
+                                        <div class="font-blue  fw-bold text-end">80 % </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <div class="card">
+                            <div class="card w-75">
                                 <div class="row">
-                                    <div class="col-6 ms-3 ">
-                                        <div class="font-blue  fw-bold">Return</div>
+                                    <div class="col-4 ms-5 mt-2 ">
+                                        <div class="font-blue fw-bold">Return </div>
                                     </div>
-                                    <div class="col-4  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">32 Kg</div>
+                                    <div class="col-4 mt-2  d-flex justify-content-center">
+                                        <div class="font-blue  fw-bold ">356 Kg </div>
+                                    </div>
+                                    <div class="col-auto mt-2  d-flex justify-content-end">
+                                        <div class="font-blue  fw-bold text-end">80 % </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <div class="card">
+                            <div class="card w-75">
                                 <div class="row">
-                                    <div class="col-6 ms-3 ">
-                                        <div class="font-blue  fw-bold">Tapping</div>
+                                    <div class="col-4 ms-5 mt-2 ">
+                                        <div class="font-blue fw-bold">Tapping </div>
                                     </div>
-                                    <div class="col-4  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">32 Kg</div>
+                                    <div class="col-4 mt-2  d-flex justify-content-center">
+                                        <div class="font-blue  fw-bold ">356 Kg </div>
+                                    </div>
+                                    <div class="col-auto mt-2  d-flex justify-content-end">
+                                        <div class="font-blue  fw-bold text-end">80 % </div>
                                     </div>
                                 </div>
                             </div>
