@@ -1,8 +1,9 @@
 @extends('mainLHP')
 @section('content')
-    <div class="row justify-content-center mx-auto mt-5">
+    <div class="row justify-content-center mx-auto mt-4">
         @if (session()->has('calladmin'))
-            <div class="alert alert-danger" role="alert">
+            <div class="alert
+        alert-danger" role="alert">
                 Silahkan Hubungi Admin Digitalization Untuk Melanjutkan.
             </div>
         @elseif(session()->has('preulang'))

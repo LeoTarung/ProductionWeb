@@ -24,40 +24,47 @@
         {{-- <div class="p-2"> --}}
 
         <div class="row content">
-            <div class="col-3 mt-4">
-                <a href="#">
-                    {{-- <div class="card card-gambar-utama rounded mb-3"> --}}
-                    <div class="d-flex justify-content-center">
-                        <img class="imgProduction mt-2 d-flex" src="{{ url('/img/melting.jpg') }}" alt=""
-                            srcset="">
-                        {{-- </div> --}}
+            <div class="col-6 mt-4 prod-menu">
+                {{-- <div class="wrapper"> --}}
+                <div class="card">
+                    <img src="{{ url('/img/melting.jpg') }}" alt="">
+                    <div class="descriptions">
+                        <h1>Melting</h1>
+                        <p>
+
+                        </p>
+                        <button>
+                            <i class="fab fa-youtube"></i>
+                            Play trailer on YouTube
+                        </button>
                     </div>
-                </a>
-            </div>
-            <div class="col-3 mt-4">
-                {{-- <div class="card card-gambar-utama rounded"> --}}
-                <div class="d-flex justify-content-center">
-                    <img class="imgProduction mt-2 rounded" src="{{ url('/img/machining.jpg') }}" alt=""
-                        srcset="">
                 </div>
                 {{-- </div> --}}
             </div>
-            <div class="col-3 mt-4">
-                {{-- <div class="card  card-gambar-utama rounded"> --}}
+            <div class="col-6 mt-4">
+                {{-- <div class="card card-gambar-utama rounded"> --}}
                 <div class="d-flex justify-content-center">
                     <img class="imgProduction mt-2 rounded" src="{{ url('/img/casting.jpg') }}" alt=""
                         srcset="">
                 </div>
+                {{-- </div> --}}
+            </div>
+            <div class="col-6 mt-4">
+                {{-- <div class="card  card-gambar-utama rounded"> --}}
+                <div class="d-flex justify-content-center">
+                    <img class="imgProduction mt-2 rounded" src="{{ url('/img/machining.jpg') }}" alt=""
+                        srcset="">
+                </div>
             </div>
             {{-- </div> --}}
-            <div class="col-3 mt-4">
+            <div class="col-6 mt-4">
                 {{-- <div class="card  card-gambar-utama rounded"> --}}
                 <div class="d-flex justify-content-center">
                     <img class="imgProduction mt-2" src="{{ url('/img/painting.jpg') }}" alt="" srcset="">
                 </div>
             </div>
             {{-- </div> --}}
-            <div class="col-3 mt-4 mb-4">
+            <div class="col-6 mt-4 mb-4">
                 {{-- <div class="card  card-gambar-utama"rounded-5> --}}
                 <div class="d-flex justify-content-center">
                     <img class="imgProduction mt-2" src="{{ url('/img/assembling.jpg') }}" alt="" srcset="">

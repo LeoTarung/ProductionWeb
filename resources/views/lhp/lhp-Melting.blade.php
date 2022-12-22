@@ -7,97 +7,182 @@
         }
     </style>
 
-<form action="{{ url('/melting/' . $mesin . '/' . $id . '/simpan') }}" method="POST">
-    @csrf
-    {{-- BAGIAN ATAS --}}
-    <div class="row">
-        <div class="col-8">
-            <div class="card">
-                <div class="card-body">
-                    <input type="number" class="fw-bold text-end" name="berat" id="berat" style="height:8rem; width: 100%; margin:0auto; font-size: 5rem;" placeholder="Masukan angka..." autofocus required>
+    <form action="{{ url('/melting/' . $mesin . '/' . $id . '/simpan') }}" method="POST">
+        @csrf
+        {{-- BAGIAN ATAS --}}
+        <div class="row mt-3">
+            <div class="col-8">
+                <div class="card card_form_input">
+                    <div class="card-body">
+                        <input type="number" class="fw-bold text-end input_berat" name="berat" id="berat"
+                            placeholder="Masukan angka..." autofocus required>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-4">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card text-center">
-                        <h5 class="card-header fs-1 fw-bold bg-info">STOK MOLTEN</h5>
-                        <div class="card-body" style="margin-top : -2rem; margin-bottom: -3rem;">
-                          <p class="fw-bold" style="font-size: 5rem;">@FormatRibu(99000) KG</p>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card text-center card_stok-molten">
+                            <div class="card-header bg-info ">STOK MOLTEN</div>
+                            <div class="card-body">
+                                <p class="fw-bold stok_molten">@FormatRibu(99000) KG</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    {{-- BAGIAN BAWAH --}}
-    <div class="row">
-        <div class="col-8 mt-3">
-            <div class="card">
-                <div class="card-body">
-                    <p class="fs-1 fw-bold">Material :</p>
-                    <div class="row ">
-                        <div class="col-6 ">
-                            <div class="row ">
-                                <div class="col-6 mb-4"><button type="submit" name="item" value="ingot" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">INGOT</button></div>
-                                <div class="col-6 mb-4"><button type="submit" name="item" value="exgate" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">EX GATE</button></div>    
+        {{-- BAGIAN BAWAH --}}
+        <div class="row">
+            <div class="col-8 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="fs-1 fw-bold">Material :</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item" value="ingot"
+                                            class="btn btn-primary shadow fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">INGOT</button>
+                                    </div>
+                                    <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item" value="exgate"
+                                            class="btn btn-primary shadow fs-5 ms-3" style="width: 160px; height: 60px;">EX
+                                            GATE</button></div>
+                                    <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
+                                            value="reject_parts" class="btn btn-primary shadow fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">PARTS
+                                            NG</button></div>
+                                    <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item" value="oil_scrap"
+                                            class="btn btn-primary shadow fs-5 ms-3" style="width: 160px; height: 60px;">OIL
+                                            SCRAP</button></div>
+                                    <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item" value="basemetal"
+                                            class="btn btn-primary shadow fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">BASEMETAL</button>
+                                    </div>
+                                    <div class="col-xl-3 col-4 mb-3"> <button type="submit" name="item"
+                                            value="alm_treat" class="btn btn-primary shadow fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">ALM
+                                            TREAT</button>
+                                    </div>
+                                    <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item" value="fluxing"
+                                            class="btn btn-primary shadow fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">FLUXING</button>
+                                    </div>
+                                    <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item" value="dross"
+                                            class="btn btn-primary shadow fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">DROSS</button>
+                                    </div>
+                                    <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item" value="gas_akhir"
+                                            class="btn btn-primary shadow fs-5 ms-3" style="width: 160px; height: 60px;">GAS
+                                            AKHIR</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <div class="col-12">
+                                <div class="row">
+                                    <div class="col-xl-3 col-4">8</div>
+                                    <div class="col-xl-3 col-4">9</div>
+                                </div>
+                            </div> --}}
+                            {{-- <div class="row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-4 ">1</div>
+                                        <div class="col-xl-3 col-lg-4 ">2</div>
+                                        <div class="col-xl-3 col-lg-4 ">3</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
-                                <div class="col-6 mb-4"><button type="submit" name="item" value="reject_parts" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">PARTS NG</button></div>
-                                <div class="col-6 mb-4"><button type="submit" name="item" value="oil_scrap" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">OIL SCRAP</button></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 mb-4"><button type="submit" name="item" value="basemetal" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">BASEMETAL</button></div>
-                                <div class="col-6 mb-4"><button type="submit" name="item" value="alm_treat" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">ALM TREAT</button></div>
-                            </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-4 ">1</div>
+                                        <div class="col-xl-3 col-lg-4 ">2</div>
+                                    </div>
+                                </div>
+                            </div> --}}
+
                         </div>
-                        <div class="col-3 ">
-                            <div class="row">
-                                <div class="col-12 mb-4"><button type="submit" name="item" value="fluxing" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">FLUXING</button></div>
-                                <div class="col-12 mb-4"><button type="submit" name="item" value="dross" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">DROSS</button></div>
+
+
+                        {{-- <div class="row ">
+                            <div class="col-6 ">
+                                <div class="row ">
+                                    <div class="col-6 mb-4"><button type="submit" name="item" value="ingot"
+                                            class="btn btn-primary fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">INGOT</button></div>
+                                    <div class="col-6 mb-4"><button type="submit" name="item" value="exgate"
+                                            class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">EX
+                                            GATE</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 mb-4"><button type="submit" name="item" value="reject_parts"
+                                            class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">PARTS
+                                            NG</button></div>
+                                    <div class="col-6 mb-4"><button type="submit" name="item" value="oil_scrap"
+                                            class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">OIL
+                                            SCRAP</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 mb-4"><button type="submit" name="item" value="basemetal"
+                                            class="btn btn-primary fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">BASEMETAL</button></div>
+                                    <div class="col-6 mb-4"><button type="submit" name="item" value="alm_treat"
+                                            class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">ALM
+                                            TREAT</button></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-3 ">
-                            <button type="submit" name="item" value="gas_akhir" class="btn btn-primary fs-5 ms-3" style="width: 160px; height: 60px;">GAS AKHIR</button>
-                        </div>
-                    </div> 
+                            <div class="col-3 ">
+                                <div class="row">
+                                    <div class="col-12 mb-4"><button type="submit" name="item" value="fluxing"
+                                            class="btn btn-primary fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">FLUXING</button></div>
+                                    <div class="col-12 mb-4"><button type="submit" name="item" value="dross"
+                                            class="btn btn-primary fs-5 ms-3"
+                                            style="width: 160px; height: 60px;">DROSS</button></div>
+                                </div>
+                            </div>
+                            <div class="col-3 ">
+                                <button type="submit" name="item" value="gas_akhir" class="btn btn-primary fs-5 ms-3"
+                                    style="width: 160px; height: 60px;">GAS AKHIR</button>
+                            </div>
+                        </div> --}}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-4 mt-3">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card text-center">
-                        <h5 class="card-header fs-1 fw-bold bg-info">TOTAL CHARGING</h5>
-                        <div class="card-body" style="margin-top : -2rem; margin-bottom: -3rem;">
-                          <p class="fw-bold" style="font-size: 5rem;">@FormatRibu(99000) KG</p>
+            <div class="col-4 mt-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card text-center card_total-chg">
+                            <div class="card-header bg-info ">TOTAL CHARGING</div>
+                            <div class="card-body">
+                                <p class="fw-bold total_charging">@FormatRibu(99000) KG</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card-group">
+                            <div class="card text-center card-ingot">
+                                <h5 class="card-header fs-1 fw-bold bg-info">INGOT</h5>
+                                <div class="card-body">
+                                    <p class="fw-bold">80%</p>
+                                </div>
+                            </div>
+                            <div class="card text-center card-scrap">
+                                <h5 class="card-header fs-1 fw-bold bg-info">SCRAP</h5>
+                                <div class="card-body">
+                                    <p class="fw-bold">20%</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="card-group">
-                        <div class="card text-center">
-                            <h5 class="card-header fs-1 fw-bold bg-info">INGOT</h5>
-                            <div class="card-body" style="margin-top : -1rem; margin-bottom: -2rem;">
-                            <p class="fw-bold" style="font-size: 4rem;">80%</p>
-                            </div>
-                        </div>
-                        <div class="card text-center">
-                            <h5 class="card-header fs-1 fw-bold bg-info">SCRAP</h5>
-                            <div class="card-body" style="margin-top : -1rem; margin-bottom: -2rem;">
-                            <p class="fw-bold" style="font-size: 4rem;">20%</p>
-                            </div>
-                        </div>
-                  </div>
-                </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
 
-        {{-- <div class="col-4 shadow-lg text-center bg-dark">
+    {{-- <div class="col-4 shadow-lg text-center bg-dark">
             <h5 class="mt-2">CHART IN HERE</h5>
             <div id="chartdiv"></div>
         </div> --}}

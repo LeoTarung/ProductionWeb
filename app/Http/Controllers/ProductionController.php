@@ -11,8 +11,15 @@ class ProductionController extends Controller
     public function index()
     {
 
-        return  view('pages.production', [
+        return  view('menu.production', [
             "title" => 'Production Overview',
+        ]);
+    }
+    public function main_Melting()
+    {
+
+        return  view('menu.production.melting', [
+            "title" => 'Melting Overview',
         ]);
     }
 
@@ -73,7 +80,7 @@ class ProductionController extends Controller
         $id_striko3 = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_Swift_Asia = prepMeltingModel::where([['tanggal', '=', $date], ['mesin', '=', 'Swift_Asia'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $nrp = 0;
-        $mesin = "M E L T I N G";
+        $mesin = "MELTING";
         return view('lhp..prepare-melting', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'));
     }
 
@@ -173,7 +180,7 @@ class ProductionController extends Controller
         $date = $this->date();
         $title = "LHP Forklift";
         $nrp = 0;
-        $mesin = "F O R K L I F T";
+        $mesin = "FORKLIFT";
         return view('lhp.prepare-forklift', compact('title', 'nrp', 'mesin', 'shift'));
     }
 
@@ -184,7 +191,7 @@ class ProductionController extends Controller
         $date = $this->date();
         $title = "LHP Forklift";
         $nrp = 0;
-        $mesin = "F O R K L I F T";
+        $mesin = "FORKLIFT";
         return view('lhp.lhp-forklift', compact('title', 'nrp', 'mesin', 'shift'));
     }
 

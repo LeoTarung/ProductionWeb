@@ -36,7 +36,7 @@
                             <div class="card mt-3">
                                 <div class="row">
                                     <div class="col-6 ms-3 mt-2 ">
-                                        <div class="font-blue  fw-bold fw-bold">Ingot</div>
+                                        <div class="font-blue fw-bold fw-bold">Ingot</div>
                                     </div>
                                     <div class="col-4 mt-2  d-flex justify-content-end">
                                         <div class="font-blue  fw-bold text-end">356 Kg</div>

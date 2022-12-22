@@ -21,6 +21,7 @@ use App\Http\Controllers\ProductionController;
 Route::get('/manufacturing', [ManufactureController::class, 'index']);
 Route::get('/', [ManufactureController::class, 'index']);
 Route::get('/production', [ProductionController::class, 'index']);
+Route::get('/production/melting', [ProductionController::class, 'main_Melting']);
 
 
 Route::get('/lhp', function () {
