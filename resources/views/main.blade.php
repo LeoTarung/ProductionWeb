@@ -26,9 +26,10 @@
             @yield('content')
 
             @include('partial.navbar')
+            @include('partial.footer')
 
         </div>
-        @include('partial.footer')
+
     </div>
     {{-- <script>
         const toggle = document.getElementById('toggle');

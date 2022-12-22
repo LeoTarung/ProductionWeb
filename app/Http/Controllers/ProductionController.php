@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class ProductionController extends Controller
 {
+    // ============================= // CONTROLLER WEB UMUM // ================================= //
+
     public function index()
     {
 
@@ -23,6 +25,8 @@ class ProductionController extends Controller
         ]);
     }
 
+
+    // ============================= // CONTROLLER LHP // ================================= //
     function Shift()
     {
         $time = date('H:i:s');

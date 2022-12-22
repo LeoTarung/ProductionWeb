@@ -568,6 +568,7 @@ footer {
 }
 
 /* Production  Overview*/
+
 /* .wrapper{
   position: absolute;
   top:50%;
@@ -581,14 +582,15 @@ footer {
   justify-content: space-between;
 } */
 .prod-menu .card{
+  display: flex;
   flex: 1;
   flex-basis: 300px;
   flex-grow: 0;
-  height: 100px;
-  width: 100px;
-  background: #fff;
-  border: 2px solid #fff;
-  box-shadow: 0px 4px 7px rgba(0,0,0,.5);
+  height: 220px;
+  width: 355px;
+  background: #F7FAFF;
+  /* border: 2px solid #fff; */
+  box-shadow: 0px 4px 7px #00000069;
   cursor: pointer;
   transition: all .5s cubic-bezier(.8,.5,.2,1.4);
   overflow: hidden;
@@ -601,9 +603,9 @@ footer {
 }
 .descriptions{
   position: absolute;
-  top:0px;
-  left:0px;
-  background-color: rgba(15, 15, 15, 0.7);
+  /* top:0px;
+  left:0px; */
+  background-color: rgba(7, 11, 12, 0.555);
   width:100%;
   height:100%;
   transition: all .7s ease-in-out;
@@ -624,14 +626,28 @@ footer {
 .prod-menu .card:hover img{
   transition: all .5s cubic-bezier(.8,.5,.2,1.4);
   transform: scale(1.6) rotate(20deg);
-  filter: blur(3px);
+  filter: blur(1px);
 }
+
+.descriptions .font-desc {
+  letter-spacing: 8px;
+  margin-top: 60px;
+  font-weight: 600;
+}
+/* .painting-menu{
+  padding :0px 0px 0px 50px;
+  margin-left: 50px;
+} */
 
 /*  */
 
 
 .font-blue{
   color: #01225a;
+}
+
+.font-white{
+  color: #ffffff;
 }
 button{
   background-color: #F7FAFF;
