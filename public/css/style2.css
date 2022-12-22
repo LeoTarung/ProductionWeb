@@ -194,8 +194,10 @@ transition: all 0.5s ease;
 
 .sidemenu-font{
   font-size: 16px;
+  font-weight: 600;
   color: #55769c;
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Montserrat';
 }
 .scrollbox{
   overflow: auto;
@@ -269,7 +271,8 @@ transition: all 0.5s ease;
 }
 .sidebar .nav-links li .sub-menu li a{
   font-size: 15px;
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Montserrat';
 }
 
 
@@ -564,8 +567,87 @@ footer {
   position: relative;
 }
 
+/* Production  Overview*/
+
+/* .wrapper{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width:100%;
+  max-width: 650px;
+  height:auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
+.prod-menu .card{
+  display: flex;
+  flex: 1;
+  flex-basis: 300px;
+  flex-grow: 0;
+  height: 220px;
+  width: 355px;
+  background: #F7FAFF;
+  /* border: 2px solid #fff; */
+  box-shadow: 0px 4px 7px #00000069;
+  cursor: pointer;
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  overflow: hidden;
+  position: relative;
+}
+.prod-menu .card img{
+  width: 100%;
+  height:100%;
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+}
+.descriptions{
+  position: absolute;
+  /* top:0px;
+  left:0px; */
+  background-color: rgba(7, 11, 12, 0.555);
+  width:100%;
+  height:100%;
+  transition: all .7s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
+  clip-path: circle(0% at 100% 100%);
+}
+.prod-menu .card:hover .descriptions{
+  left:0px;
+  transition: all .7s ease-in-out;
+  clip-path: circle(75%);
+}
+.prod-menu .card:hover{
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+  transform: scale(.97);
+}
+.prod-menu .card:hover img{
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  transform: scale(1.6) rotate(20deg);
+  filter: blur(1px);
+}
+
+.descriptions .font-desc {
+  letter-spacing: 8px;
+  margin-top: 60px;
+  font-weight: 600;
+}
+/* .painting-menu{
+  padding :0px 0px 0px 50px;
+  margin-left: 50px;
+} */
+
+/*  */
+
+
 .font-blue{
   color: #01225a;
+}
+
+.font-white{
+  color: #ffffff;
 }
 button{
   background-color: #F7FAFF;
@@ -586,7 +668,7 @@ font-weight: 600;
 }
 #chartdiv2 {
   width: 100%;
-  height: 150px;
+  height: 253px;
 }
 .chart-daily .card-header {
   /* box-shadow: 0px 4px 4px rgba(104, 104, 104, 0.25); */
@@ -595,7 +677,7 @@ font-weight: 600;
 }
 
 .sidebar.close ~ .today-report-chg .card{
-  width: 320px;
+  width: 1000px;
   height: 54px;
   border: 0px;
   font-size: large;
@@ -607,7 +689,7 @@ font-weight: 600;
 }
 
 .today-report-chg .card{
-  width: 290px;
+  width: 950px;
   height: 54px;
   border: 0px;
   font-size: larger;
@@ -619,15 +701,11 @@ font-weight: 600;
 }
 
 .red-losses {
-  width: 24px;
+  width: 50px;
   height: 20px;
   background-color: #E34646;
 }
-.good-green{
-  width: 24px;
-  height: 20px;
-  background-color: #5CE346;
-}
+
 
 
 
@@ -635,7 +713,7 @@ font-weight: 600;
 @media only screen and (max-width: 1280px){
 
  .today-report-chg .card{
-  width: 250px;
+  width: 500px;
   font-size: large;
   }
 
@@ -706,7 +784,7 @@ font-weight: 600;
 .nav .logo {
   width: 380px ;
   height:80px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 
 .clock {
@@ -727,10 +805,11 @@ font-weight: 600;
 }
 
 .sidebar .sidebar-header{
-  height: 90px;
+  height: 110px;
+  padding-top: 10px;
 }
 .sidebar .sidebar-header .logo{
-  margin-top: 20px;
+  margin-top: 30px;
   height: 68px;
   width: 345px;
 }

@@ -40,6 +40,8 @@
                         <li><a href="#">Machining</a></li>
                         <li><a href="#">Painting</a></li>
                         <li><a href="#">Assembling</a></li>
+                        <li><a href="#">Final Inspection</a></li>
+                        <li><a href="#">Shipping</a></li>
                     </ul>
                 </li>
                 <li>

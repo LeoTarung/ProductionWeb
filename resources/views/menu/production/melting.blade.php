@@ -26,44 +26,68 @@
             </div>
         </div>
         <div class="row w-100">
-            <div class="col-4 ">
+            <div class="col-6 ">
                 <div class="card shadow today-report-chg border-0">
                     <div class="card-header border-0 text-center fw-bold fs-5">
                         <div class="font-blue title-report-melt">Today Report Charge</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 d-flex justify-content-center ">
-                            <div class="card mt-3">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="card w-75 mt-3">
                                 <div class="row">
-                                    <div class="col-6 ms-3 mt-2 ">
-                                        <div class="font-blue  fw-bold fw-bold">Ingot</div>
+                                    <div class="col-4 ms-5 mt-2 ">
+                                        <div class="font-blue fw-bold">Ingot </div>
                                     </div>
-                                    <div class="col-4 mt-2  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">356 Kg</div>
+                                    <div class="col-4 mt-2  d-flex justify-content-center">
+                                        <div class="font-blue  fw-bold ">356 Kg </div>
+                                    </div>
+                                    <div class="col-auto mt-2  d-flex justify-content-end">
+                                        <div class="font-blue  fw-bold text-end">80 % </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <div class="card">
+                            <div class="card w-75">
                                 <div class="row">
-                                    <div class="col-6 ms-3 mt-2 ">
-                                        <div class="font-blue  fw-bold">Ex-Gate</div>
+                                    <div class="col-4 ms-5 mt-2 ">
+                                        <div class="font-blue fw-bold">Reject Parts </div>
                                     </div>
-                                    <div class="col-4 mt-2  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">1453 Kg</div>
+                                    <div class="col-4 mt-2  d-flex justify-content-center">
+                                        <div class="font-blue  fw-bold ">356 Kg </div>
+                                    </div>
+                                    <div class="col-auto mt-2  d-flex justify-content-end">
+                                        <div class="font-blue  fw-bold text-end">80 % </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <div class="card">
+                            <div class="card w-75">
                                 <div class="row">
-                                    <div class="col-6 ms-3 mt-2 ">
-                                        <div class="font-blue  fw-bold">Others</div>
+                                    <div class="col-4 ms-5 mt-2 ">
+                                        <div class="font-blue fw-bold">Return </div>
                                     </div>
-                                    <div class="col-4 mt-2  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">32 Kg</div>
+                                    <div class="col-4 mt-2  d-flex justify-content-center">
+                                        <div class="font-blue  fw-bold ">356 Kg </div>
+                                    </div>
+                                    <div class="col-auto mt-2  d-flex justify-content-end">
+                                        <div class="font-blue  fw-bold text-end">80 % </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="card w-75">
+                                <div class="row">
+                                    <div class="col-4 ms-5 mt-2 ">
+                                        <div class="font-blue fw-bold">Tapping </div>
+                                    </div>
+                                    <div class="col-4 mt-2  d-flex justify-content-center">
+                                        <div class="font-blue  fw-bold ">356 Kg </div>
+                                    </div>
+                                    <div class="col-auto mt-2  d-flex justify-content-end">
+                                        <div class="font-blue  fw-bold text-end">80 % </div>
                                     </div>
                                 </div>
                             </div>
@@ -71,49 +95,34 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 ">
+            {{-- <div class="col-4 ">
                 <div class="card shadow today-report-chg border-0">
                     <div class="card-header border-0 text-center fw-bold fs-5 ">
                         <div class="font-blue title-report-melt">Today Report Losses</div>
                     </div>
-                    <div class="card-content">
-                        <div id="chartdiv2"></div>
-                        <table class="table table-hover ms-1 fs-5">
-                            <thead class="fw-bold">
-                                <td>Warna</td>
-                                <td>Kategori</td>
-                                <td>Total</td>
-                                <td>Satuan</td>
-                            </thead>
-                            <tr>
-                                <td>
-                                    <div class="good-green text-center"></div>
-                                </td>
-                                <td>Good</td>
-                                <td>100</td>
-                                <td>Kg</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="red-losses text-center"></div>
-                                </td>
-                                <td>Losses</td>
-                                <td>50</td>
-                                <td>Kg</td>
-                            </tr>
-                        </table>
-                    </div>
+
                 </div>
-            </div>
-            <div class="col-4 ">
+            </div> --}}
+            <div class="col-6 ">
                 <div class="card shadow today-report-chg border-0">
                     <div class="card-header border-0 text-center fw-bold fs-5">
                         <div class="font-blue title-report-melt">Today Report Losses</div>
+                    </div>
+                    <div class="card-content">
+                        <div id="chartdiv2"></div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center fw-bold mb-2 ">
+                                <div class="red-losses"></div>
+                                <div class="ms-3">Losses : 50 Kg</div>
+                            </div>
+                            {{-- <div class="col-6 d-flex justify-acontent-start fw-bold mb-2"></div> --}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Resources chart 1 -->
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
@@ -132,11 +141,116 @@
     <script>
         am5.ready(function() {
 
+            var data = [{
+                "date": "2012-01-01",
+                "distance": 227,
+                "townName": "New York",
+                "townSize": 12,
+                "latitude": 40.71,
+                "duration": 408
+            }, {
+                "date": "2012-01-02",
+                "distance": 371,
+                "townName": "Washington",
+                "townSize": 7,
+                "latitude": 38.89,
+                "duration": 482
+            }, {
+                "date": "2012-01-03",
+                "distance": 433,
+                "townName": "Wilmington",
+                "townSize": 3,
+                "latitude": 34.22,
+                "duration": 562
+            }, {
+                "date": "2012-01-04",
+                "distance": 345,
+                "townName": "Jacksonville",
+                "townSize": 3.5,
+                "latitude": 30.35,
+                "duration": 379
+            }, {
+                "date": "2012-01-05",
+                "distance": 480,
+                "townName": "Miami",
+                "townSize": 5,
+                "latitude": 25.83,
+                "duration": 501
+            }, {
+                "date": "2012-01-06",
+                "distance": 386,
+                "townName": "Tallahassee",
+                "townSize": 3.5,
+                "latitude": 30.46,
+                "duration": 443
+            }, {
+                "date": "2012-01-07",
+                "distance": 348,
+                "townName": "New Orleans",
+                "townSize": 5,
+                "latitude": 29.94,
+                "duration": 405
+            }, {
+                "date": "2012-01-08",
+                "distance": 238,
+                "townName": "Houston",
+                "townSize": 8,
+                "latitude": 29.76,
+                "duration": 309
+            }, {
+                "date": "2012-01-09",
+                "distance": 218,
+                "townName": "Dalas",
+                "townSize": 8,
+                "latitude": 32.8,
+                "duration": 287
+            }, {
+                "date": "2012-01-10",
+                "distance": 349,
+                "townName": "Oklahoma City",
+                "townSize": 5,
+                "latitude": 35.49,
+                "duration": 485
+            }, {
+                "date": "2012-01-11",
+                "distance": 603,
+                "townName": "Kansas City",
+                "townSize": 5,
+                "latitude": 39.1,
+                "duration": 890
+            }, {
+                "date": "2012-01-12",
+                "distance": 534,
+                "townName": "Denver",
+                "townSize": 9,
+                "latitude": 39.74,
+                "duration": 810
+            }, {
+                "date": "2012-01-13",
+                "townName": "Salt Lake City",
+                "townSize": 6,
+                "distance": 425,
+                "duration": 670,
+                "latitude": 40.75,
+                "dashLength": 8,
+                "alpha": 0.4
+            }, {
+                "date": "2012-01-14",
+                "latitude": 36.1,
+                "duration": 470,
+                "townName": "Las Vegas"
+            }, {
+                "date": "2012-01-15"
+            }, {
+                "date": "2012-01-16"
+            }, {
+                "date": "2012-01-17"
+            }];
+
             // Create root element
             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
             var root = am5.Root.new("chartdiv");
 
-            root._logo.dispose();
             // Set themes
             // https://www.amcharts.com/docs/v5/concepts/themes/
             root.setThemes([
@@ -147,114 +261,149 @@
             // Create chart
             // https://www.amcharts.com/docs/v5/charts/xy-chart/
             var chart = root.container.children.push(am5xy.XYChart.new(root, {
-                panX: true,
-                panY: true,
-                wheelX: "panX",
-                wheelY: "zoomX",
-                pinchZoomX: true
+                panX: false,
+                panY: false,
+                wheelY: "none"
             }));
 
-            // Add cursor
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-            var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-            cursor.lineY.set("visible", false);
+            chart.zoomOutButton.set("forceHidden", true);
 
+            chart.get("colors").set("step", 2);
 
             // Create axes
             // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-            var xRenderer = am5xy.AxisRendererX.new(root, {
-                minGridDistance: 30
-            });
-            xRenderer.labels.template.setAll({
-                rotation: -90,
-                centerY: am5.p50,
-                centerX: am5.p100,
-                paddingRight: 15
-            });
-
-            var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-                maxDeviation: 0.3,
-                categoryField: "country",
-                renderer: xRenderer,
+            var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                baseInterval: {
+                    timeUnit: "day",
+                    count: 1
+                },
+                renderer: am5xy.AxisRendererX.new(root, {
+                    minGridDistance: 50
+                }),
                 tooltip: am5.Tooltip.new(root, {})
             }));
 
-            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                maxDeviation: 0.3,
-                renderer: am5xy.AxisRendererY.new(root, {})
+
+            var distanceAxisRenderer = am5xy.AxisRendererY.new(root, {});
+            distanceAxisRenderer.grid.template.set("forceHidden", true);
+            var distanceAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                renderer: distanceAxisRenderer,
+                tooltip: am5.Tooltip.new(root, {})
             }));
 
+            var latitudeAxisRenderer = am5xy.AxisRendererY.new(root, {});
+            latitudeAxisRenderer.grid.template.set("forceHidden", true);
+            var latitudeAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                renderer: latitudeAxisRenderer,
+                forceHidden: true
+            }));
+
+            var durationAxisRenderer = am5xy.AxisRendererY.new(root, {
+                opposite: true
+            });
+            durationAxisRenderer.grid.template.set("forceHidden", true);
+            var durationAxis = chart.yAxes.push(am5xy.DurationAxis.new(root, {
+                baseUnit: "minute",
+                renderer: durationAxisRenderer,
+                extraMax: 0.3
+            }));
 
             // Create series
             // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-            var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-                name: "Series 1",
+            var distanceSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
                 xAxis: xAxis,
-                yAxis: yAxis,
-                valueYField: "value",
-                sequencedInterpolation: true,
-                categoryXField: "country",
+                yAxis: distanceAxis,
+                valueYField: "distance",
+                valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "{valueY}"
+                    labelText: "{valueY} miles"
                 })
             }));
 
-            series.columns.template.setAll({
-                cornerRadiusTL: 5,
-                cornerRadiusTR: 5
-            });
-            series.columns.template.adapters.add("fill", function(fill, target) {
-                return chart.get("colors").getIndex(series.columns.indexOf(target));
+            distanceSeries.data.processor = am5.DataProcessor.new(root, {
+                dateFields: ["date"],
+                dateFormat: "yyyy-MM-dd"
             });
 
-            series.columns.template.adapters.add("stroke", function(stroke, target) {
-                return chart.get("colors").getIndex(series.columns.indexOf(target));
+            var latitudeSeries = chart.series.push(am5xy.LineSeries.new(root, {
+                xAxis: xAxis,
+                yAxis: latitudeAxis,
+                valueYField: "latitude",
+                valueXField: "date",
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "latitude: {valueY} ({townName})"
+                })
+            }));
+
+            latitudeSeries.strokes.template.setAll({
+                strokeWidth: 2
             });
 
+            // Add circle bullet
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
+            latitudeSeries.bullets.push(function() {
+                var graphics = am5.Circle.new(root, {
+                    strokeWidth: 2,
+                    radius: 5,
+                    stroke: latitudeSeries.get("stroke"),
+                    fill: root.interfaceColors.get("background"),
+                });
 
-            // Set data
-            var data = [{
-                country: "USA",
-                value: 2025
-            }, {
-                country: "China",
-                value: 1882
-            }, {
-                country: "Japan",
-                value: 1809
-            }, {
-                country: "Germany",
-                value: 1322
-            }, {
-                country: "UK",
-                value: 1122
-            }, {
-                country: "France",
-                value: 1114
-            }, {
-                country: "India",
-                value: 984
-            }, {
-                country: "Spain",
-                value: 711
-            }, {
-                country: "Netherlands",
-                value: 665
-            }, {
-                country: "South Korea",
-                value: 443
-            }, {
-                country: "Canada",
-                value: 441
-            }];
+                graphics.adapters.add("radius", function(radius, target) {
+                    return target.dataItem.dataContext.townSize;
+                })
 
+                return am5.Bullet.new(root, {
+                    sprite: graphics
+                });
+            });
+
+            var durationSeries = chart.series.push(am5xy.LineSeries.new(root, {
+                xAxis: xAxis,
+                yAxis: durationAxis,
+                valueYField: "duration",
+                valueXField: "date",
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "duration: {valueY.formatDuration()}"
+                })
+            }));
+
+            durationSeries.strokes.template.setAll({
+                strokeWidth: 2
+            });
+
+            // Add circle bullet
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
+            durationSeries.bullets.push(function() {
+                var graphics = am5.Rectangle.new(root, {
+                    width: 10,
+                    height: 10,
+                    centerX: am5.p50,
+                    centerY: am5.p50,
+                    fill: durationSeries.get("stroke")
+                });
+
+                return am5.Bullet.new(root, {
+                    sprite: graphics
+                });
+            });
+
+            // Add cursor
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+            chart.set("cursor", am5xy.XYCursor.new(root, {
+                xAxis: xAxis,
+                yAxis: distanceAxis
+            }));
+
+
+            distanceSeries.data.setAll(data);
+            latitudeSeries.data.setAll(data);
+            durationSeries.data.setAll(data);
             xAxis.data.setAll(data);
-            series.data.setAll(data);
-
 
             // Make stuff animate on load
             // https://www.amcharts.com/docs/v5/concepts/animations/
-            series.appear(1000);
+            distanceSeries.appear(1000);
             chart.appear(1000, 100);
 
         }); // end am5.ready()
@@ -315,13 +464,14 @@
             range0.endValue = 70;
             range0.axisFill.fillOpacity = 1;
             // range0.axisFill.fill = colorSet.getIndex(0);
-            range0.axisFill.fill = am4core.color("#5CE346");
+            range0.axisFill.fill = am4core.color("#E34646");
+
 
             var range1 = axis2.axisRanges.create();
             range1.value = 50;
             range1.endValue = 100;
             range1.axisFill.fillOpacity = 1;
-            range1.axisFill.fill = am4core.color("#E34646");
+            range1.axisFill.fill = am4core.color("#5CE346");
             // range1.axisFill.fill = colorSet.getIndex(2);
 
 
