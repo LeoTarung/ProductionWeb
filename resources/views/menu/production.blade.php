@@ -31,7 +31,7 @@
                 <a href="production/melting/">
                     <div class="card ms-5 ">
                         <img src="{{ url('/img/melting.jpg') }}" alt="">
-                        <div class="descriptions text-center">
+                        <div class="descriptions text-center ">
                             <div class="font-white font-desc  fs-2 "> MELTING </div>
                         </div>
                         {{-- </div> --}}
