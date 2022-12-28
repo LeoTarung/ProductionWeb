@@ -361,7 +361,7 @@ a .big-font{
   /* margin: 2px 0px 2px 0px; */
 }
 .card_stok-molten .card-header, .card_total-chg .card-header{
-  font-size: 2rem
+  font-size: 1.75rem
 }
 .card_stok-molten .card-body, .card_total-chg .card-body{
   margin-top : -1rem;
