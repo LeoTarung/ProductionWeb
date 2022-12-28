@@ -18,15 +18,19 @@
 
 
 <body>
+    {{-- <div class="container-fluid"> --}}
     <div id="app">
+
         {{-- @include('partial.sidebar2') --}}
         <div id="main">
+
             @include('partial.navbarLHP')
 
             @yield('content')
             @include('partial.footerLHP')
         </div>
     </div>
+    {{-- </div> --}}
 
 </body>
 

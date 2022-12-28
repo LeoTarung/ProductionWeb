@@ -183,85 +183,85 @@
             var data = [{
                 "date": "2022-01-01",
                 "charging": 227,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 70,
                 "ingot": 30
             }, {
                 "date": "2022-01-02",
                 "charging": 400,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 66,
                 "ingot": 34
             }, {
                 "date": "2022-01-03",
                 "charging": 340,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 75,
                 "ingot": 25
             }, {
                 "date": "2022-01-04",
                 "charging": 227,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 70,
                 "ingot": 30
             }, {
                 "date": "2022-01-05",
                 "charging": 390,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 85,
                 "ingot": 15
             }, {
                 "date": "2022-01-06",
                 "charging": 227,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 70,
                 "ingot": 30
             }, {
                 "date": "2022-01-07",
                 "charging": 227,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 70,
                 "ingot": 30
             }, {
                 "date": "2022-01-08",
                 "charging": 427,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 70,
                 "ingot": 30
             }, {
                 "date": "2022-01-09",
                 "charging": 450,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 76,
                 "ingot": 24
             }, {
                 "date": "2022-01-10",
                 "charging": 337,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 70,
                 "ingot": 30
             }, {
                 "date": "2022-01-11",
                 "charging": 227,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 70,
                 "ingot": 30
             }, {
                 "date": "2022-01-12",
                 "charging": 350,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 85,
                 "ingot": 15
             }, {
                 "date": "2022-01-13",
                 "charging": 314,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 74,
                 "ingot": 26
             }, {
                 "date": "2022-01-14",
                 "charging": 400,
-                "townSize": 12,
+                "townSize": 6,
                 "loss": 75,
                 "ingot": 25
             }, {
@@ -324,11 +324,11 @@
 
             // chart.get("colors").set("step", 2);
             chart.get("colors").set("colors", [
-
-                // am5.color(0xFB9649), orange
+                // orange
+                am5.color(0xFB9649),
                 // am5.color(0x605CB8), Biru
                 // Kuning
-                am5.color(0xFFE680),
+                // am5.color(0xFFE680),
                 am5.color(0xE64640),
                 am5.color(0x53C292)
             ]);
@@ -372,7 +372,7 @@
             var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
                 renderer: ingotAxisRenderer,
                 // forceHidden: true
-                numberFormat: "#' %'"
+                numberFormat: "#'%'"
 
             }));
 
@@ -394,7 +394,7 @@
                 valueYField: "charging",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "Total Charging: {valueY}"
+                    labelText: "Total Charging: {valueY} kg"
                 })
             }));
 
@@ -409,7 +409,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY} %"
+                    labelText: "loss: {valueY}%"
                 })
             }));
 
@@ -454,15 +454,17 @@
             // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
             ingotSeries.bullets.push(function() {
                 var graphics = am5.Circle.new(root, {
-                    width: 10,
-                    height: 10,
+                    width: 5,
+                    height: 5,
                     centerX: am5.p50,
                     centerY: am5.p50,
                     stroketWidth: 5,
                     stroke: ingotSeries.get("stroke"),
                     fill: root.interfaceColors.get("background"),
                 });
-
+                graphics.adapters.add("radius", function(radius, target) {
+                    return target.dataItem.dataContext.townSize;
+                })
                 return am5.Bullet.new(root, {
                     sprite: graphics
                 });
