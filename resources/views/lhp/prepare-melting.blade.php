@@ -9,7 +9,6 @@
         @elseif(session()->has('preulang'))
         <?php toast('Silahkan Preparation Ulang.','error'); ?>
         @endif
-
         
         <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko1 == null)

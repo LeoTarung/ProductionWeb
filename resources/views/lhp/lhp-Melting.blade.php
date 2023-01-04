@@ -44,41 +44,46 @@
                                     <div class="row">
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="ingot" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">INGOT</button>
+                                                style="width: 160px; height: 60px;" onclick="return Confirm('INGOT')">INGOT</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="exgate" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">EX
+                                                style="width: 160px; height: 60px;" onclick="return Confirm('EXGATE')">EX
                                                 GATE</button></div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="reject_parts" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">PARTS
+                                                style="width: 160px; height: 60px;" onclick="return Confirm('PARTS NG')">PARTS
                                                 NG</button></div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                                value="oil_scrap" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">OIL
-                                                SCRAP</button></div>
+                                                    value="tapping" class="btn btn-warning shadow fs-5 ms-3"
+                                                    style="width: 160px; height: 60px;" onclick="return Confirm('TAPPING')">TAPPING</button>
+                                        </div>        
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="basemetal" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">BASEMETAL</button>
+                                                style="width: 160px; height: 60px;" onclick="return Confirm('BASEMETAL')">BASEMETAL</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"> <button type="submit" name="item"
                                                 value="alm_treat" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">ALM
+                                                style="width: 160px; height: 60px;" onclick="return Confirm('ALM TREAT')">ALM
                                                 TREAT</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="fluxing" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">FLUXING</button>
+                                                style="width: 160px; height: 60px;" onclick="return Confirm('FLUXING')">FLUXING</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                                value="dross" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">DROSS</button>
-                                        </div>
-                                        <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                                value="gas_akhir" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;">GAS
+                                                value="gas_akhir" class="btn btn-warning shadow fs-5 ms-3"
+                                                style="width: 160px; height: 60px;" onclick="return Confirm('GAS AKHIR')">GAS
                                                 AKHIR</button>
+                                        </div>
+                                        <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
+                                            value="oil_scrap" class="btn btn-primary shadow fs-5 ms-3"
+                                            style="width: 160px; height: 60px;" onclick="return Confirm('OIL SCRAP')">OIL
+                                            SCRAP</button>
+                                        </div>
+                                        <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
+                                            value="dross" class="btn btn-primary shadow fs-5 ms-3"
+                                            style="width: 160px; height: 60px;" onclick="return Confirm('DROSS')">DROSS</button>
                                         </div>
                                     </div>
                                 </div>
@@ -117,4 +122,19 @@
             </div>
         </form>
     </div>
+    <script>
+       function Confirm(jenis) {
+            var berat = document.getElementById("berat").value;
+            if(jenis !== 'GAS AKHIR'){
+                var text = 'Apakah Anda Yakin Menambahkan ' + berat + ' KG. Untuk Jenis ' + jenis;
+            }else{
+                var text = 'Apakah Anda yakin Menambahkan ' + berat + ' Untuk ' + jenis;
+            }
+            if (confirm(text) == true) {
+                return true;
+            } else {
+                return false;
+            }
+        } 
+    </script>
 @endsection
