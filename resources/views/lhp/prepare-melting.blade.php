@@ -7,10 +7,10 @@
                 Silahkan Hubungi Admin Digitalization Untuk Melanjutkan.
             </div>
         @elseif(session()->has('preulang'))
-            <div class="alert alert-info" role="alert">
-                Silahkan Preparation Ulang.
-            </div>
+        <?php toast('Silahkan Preparation Ulang.','error'); ?>
         @endif
+
+        
         <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko1 == null)
                 <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold " data-bs-toggle="modal"
@@ -19,7 +19,7 @@
                 </a> <br>
             @else
                 <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    href="/melting/Striko-1/{{ $id_striko1->id }}">
+                    href="/lhp-melting/Striko-1/{{ $id_striko1->id }}">
                     <div class="big-font">STRIKO-1</div>
                 </a> <br>
             @endif
@@ -33,7 +33,7 @@
                 </a> <br>
             @else
                 <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    href="/melting/Striko-2/{{ $id_striko2->id }}">
+                    href="/lhp-melting/Striko-2/{{ $id_striko2->id }}">
                     <div class="big-font">STRIKO-2</div>
                 </a> <br>
             @endif
@@ -47,7 +47,7 @@
                 </a> <br>
             @else
                 <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    href="/melting/Striko-3/{{ $id_striko3->id }}">
+                    href="/lhp-melting/Striko-3/{{ $id_striko3->id }}">
                     <div class="big-font">STRIKO-3</div>
                 </a> <br>
             @endif
@@ -61,7 +61,7 @@
                 </a> <br>
             @else
                 <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    href="/melting/Swift_Asia/{{ $id_Swift_Asia->id }}">
+                    href="/lhp-melting/Swift_Asia/{{ $id_Swift_Asia->id }}">
                     <div class="big-font">Swift_Asia</div>
                 </a> <br>
             @endif
@@ -72,7 +72,7 @@
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl  ">
-            <form action="{{ url('/melting/simpan') }}" method="POST"
+            <form action="{{ url('/lhp-melting/simpan') }}" method="POST"
                 onSubmit="document.getElementById('submit').disabled=true;">
                 @csrf
                 <div class="modal-content">
@@ -95,7 +95,7 @@
                             <div class="col-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control border-dark fw-bold" id="nama"
-                                        name="nama" value="Value Wajib ADA" readonly>
+                                        name="nama" readonly>
                                     <label for="nama" class="">N A M A</label>
                                 </div>
                             </div>
@@ -139,9 +139,6 @@
         </div>
     </div>
     {{-- END MODAL --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
     <script>
         function testing(id) {
             if (id == 1) {
@@ -154,5 +151,23 @@
                 document.getElementById("mesin").value = 'Swift_Asia'
             }
         }
+
+        $(document).ready(function(){
+            $('#nrp').keyup(function(){
+                $('#result').html('');
+                 var searchnrp = $('#nrp').val();
+                 console.log(searchnrp);
+                 $.ajax({
+                    method: "GET",
+                    dataType: "json",
+                    url: "http://localhost:8000/dtkyrw/"+ searchnrp ,
+                    success: function(data) {
+                        // console.log(data[0].name);
+                        // $("#nama").html(data[0].name);
+                        document.getElementById("nama").value = data[0].name;
+                    }
+                    });
+            });
+        });
     </script>
 @endsection

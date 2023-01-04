@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManufactureController;
+use App\Http\Controllers\MeltingController;
 use App\Http\Controllers\ProductionController;
+use App\Http\Controllers\ApiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,20 +23,20 @@ use App\Http\Controllers\ProductionController;
 Route::get('/manufacturing', [ManufactureController::class, 'index']);
 Route::get('/', [ManufactureController::class, 'index']);
 Route::get('/production', [ProductionController::class, 'index']);
-Route::get('/production/melting', [ProductionController::class, 'main_Melting']);
-
-
 Route::get('/lhp', function () {
     return view('pages_lhp.lhpMelting', [
         "title" => 'LHP Melting'
     ]);
 });
 
-//====================== LHP MELTING ======================//
-Route::get('/melting', [ProductionController::class, 'prep_melting']);
-Route::post('/melting/simpan', [ProductionController::class, 'prep_melting_simpan']);
-Route::get('/melting/{mesin}/{id}', [ProductionController::class, 'lhp_jam']);
-Route::post('/melting/{mesin}/{id}/simpan', [ProductionController::class, 'lhp_jam_simpan']);
-//====================== LHP FORKLIFT MELTING ======================//
-// Route::get('/melting/forklift', [ProductionController::class, 'prep_forklift']);
-Route::get('/melting/forklift/', [ProductionController::class, 'lhp_forklift']);
+//====================== API FOR SHARE ======================//
+Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
+
+//====================== AREA MELTING ======================//
+Route::get('/production/melting', [MeltingController::class, 'Dashboard']);
+Route::get('/lhp-melting', [MeltingController::class, 'prep_melting']);
+Route::post('/lhp-melting/simpan', [MeltingController::class, 'prep_melting_simpan']);
+Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_raw']);
+Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
+// Route::get('/lhp-melting/forklift', [MeltingController::class, 'prep_forklift']);
+Route::get('/lhp-melting/forklift/', [MeltingController::class, 'lhp_forklift']);

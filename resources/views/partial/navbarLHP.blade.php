@@ -1,13 +1,13 @@
 <nav class="nav shadow-lg ">
     <ul>
-        <li> <a href="">
+        <li> <a href="{{url('/lhp-melting')}}">
                 <div class="rectangle-logo shadow">
                     <img class="navbarimg" src="{{ url('/img/nusametal.png') }}" alt="Image" />
                 </div>
             </a></li>
 
         <li>
-            <a href="">
+            <a href="{{url('/lhp-melting')}}">
                 <div class="shift border-bottom">
                     {{ $shift }}
                 </div>
@@ -26,7 +26,7 @@
             <!-- </a> -->
         </li>
         <li>
-            <a href="">
+            <a href="{{url('/lhp-melting')}}">
                 @if ($nrp != 0)
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -36,13 +36,13 @@
                     </div>
                 @else
                     <div class="nrp border-bottom">
-                        <div class="font-white"> BELUM PREPARATION </div>
+                        <div class="font-white"> PILIH MESIN </div>
                     </div>
                 @endif
             </a>
         </li>
         <li>
-            <a href="" class="machine shadow-lg">
+            <a href="{{url('/lhp-melting')}}" class="machine shadow-lg">
                 <div class="mesin">
                     @if ($mesin == 'FORKLIFT')
                         <div class="font-white fs-2 "> {{ $mesin }} </div>
