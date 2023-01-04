@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class prepMeltingModel extends Model
+class LhpMeltingRAW extends Model
 {
-
     use HasFactory;
-    protected $table = "pre_lhp_melting";
+    protected $table = "lhp_melting_raw";
     protected $guarded = [];
 }
