@@ -105,7 +105,6 @@ class MeltingController extends Controller
                 'shift' => $shift,
                 $request->item => $request->berat
             ]);
-
             $beratA = $ntaha->$jenis;
             $total = $beratA + $value;
 
@@ -136,11 +135,15 @@ class MeltingController extends Controller
 
 
 
-            if ($jenis != 'gas_akhir' && $jenis != 'dross' && $jenis != 'fluxing') {
-                $stok_molten = $ntah->stok_molten + $value - ($ntah->tapping + $ntah->dross); // H - ( N + Q ) 
-            } else {
+            if ($jenis == 'gas_akhir' || $jenis == 'dross' || $jenis == 'fluxing') {
                 $stok_molten = $ntah->stok_molten;
+            } else if ($jenis == 'tapping') {
+                $stok_molten = $ntah->stok_molten - $value;
+            } else {
+                $stok_molten = $ntah->stok_molten + $value; // H - ( N + Q ) 
             }
+
+
 
             $total_loss = $ntah->dross - $ntah->alm_treat; // ( Q - E )
             if ($total_charging == 0) {
