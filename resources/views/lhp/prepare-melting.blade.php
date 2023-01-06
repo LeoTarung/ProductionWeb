@@ -7,9 +7,9 @@
                 Silahkan Hubungi Admin Digitalization Untuk Melanjutkan.
             </div>
         @elseif(session()->has('preulang'))
-        <?php toast('Silahkan Preparation Ulang.','error'); ?>
+            <?php toast('Silahkan Preparation Ulang.', 'error'); ?>
         @endif
-        
+
         <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko1 == null)
                 <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold " data-bs-toggle="modal"
@@ -151,21 +151,21 @@
             }
         }
 
-        $(document).ready(function(){
-            $('#nrp').keyup(function(){
+        $(document).ready(function() {
+            $('#nrp').keyup(function() {
                 $('#result').html('');
-                 var searchnrp = $('#nrp').val();
-                 console.log(searchnrp);
-                 $.ajax({
+                var searchnrp = $('#nrp').val();
+                console.log(searchnrp);
+                $.ajax({
                     method: "GET",
                     dataType: "json",
-                    url: "http://localhost:8000/dtkyrw/"+ searchnrp ,
+                    url: "http://192.168.137.194:8000/dtkyrw/" + searchnrp,
                     success: function(data) {
                         // console.log(data[0].name);
                         // $("#nama").html(data[0].name);
                         document.getElementById("nama").value = data[0].name;
                     }
-                    });
+                });
             });
         });
     </script>

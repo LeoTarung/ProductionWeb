@@ -124,7 +124,7 @@ nav{
 ul {
   list-style-type: none;
   /* margin-left: 330px; */
-  padding: 0px 0px 0px 0px;
+  padding: 0px -2px 0px 0px;
   overflow: hidden;
   margin: 0px 0px 0px 0px;
   min-width: 100%;
@@ -140,10 +140,11 @@ li a {
   text-align: center;
   padding: 4px 15px;
   text-decoration: none;
+  pointer-events: none; 
 }
-li a:hover {
+/* li a:hover {
   background-color: rgb(81, 219, 178);
-}
+} */
 .navbarimg{
    margin-top: 1.5px;
   /* margin-left: 5px; */
@@ -220,16 +221,21 @@ li a:hover {
   width: 200px;
 }
 
-.nrp-child{
+/* .nrp-child{
 
-}
+} */
 
 .mesin{
   text-align: center;
   width: auto;
   /* height: px; */
   margin-right: 0;
+  font-size: 30px;
   
+}
+
+.information{
+  margin-top: 7px;
 }
 
 .choose_machine{
@@ -242,6 +248,7 @@ li a:hover {
   background: linear-gradient(to bottom, #44B1B8, #2c8d94); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 0px 0px 5px 5px;
   outline: 5px;
+  /* height: 50px; */
 }
 
 
@@ -291,12 +298,12 @@ a .big-font{
 }
 
 .card-ingot .card-body, .card-scrap .card-body{
-  margin-top : -1rem;
-  margin-bottom: -2rem;
+  /* margin-top : -1rem; */
+  margin-bottom: 0.50rem;
 }
 
 .card-ingot .card-body p, .card-scrap .card-body p{
-  font-size: 4rem;
+  font-size: 2.75rem;
 }
 .input_berat{
   height:8rem; 
@@ -311,11 +318,21 @@ a .big-font{
   #MyClockDisplay{
     width: 225px;
   }
+  .card-material{
+    margin-bottom: 49px;
+  }
   .stok_molten{
     font-size: 4rem;
   }
   .total_charging{
     font-size: 4rem;
+  }
+  .card_stok-molten .card-header, .card_total-chg .card-header{
+    font-size: 35px;
+    font-weight: 600;
+  }
+  .card-ingot, .card-scrap {
+    margin-top : 2rem;
   }
 }
 
@@ -347,6 +364,15 @@ a .big-font{
     font-size: 20px;
   }
 
+  .machine{
+    height: 50px;
+  }
+
+  .mesin{
+    font-size: 20px;
+    margin-top: 3px;
+  }
+
   /* Prep Melting */
   a .big-font{
     font-size: 50px;
@@ -373,7 +399,7 @@ a .big-font{
 }
 
 .card-ingot .card-body p, .card-scrap .card-body p{
-  font-size: 3rem;
+  font-size: 2.50rem;
 }
 }
 
