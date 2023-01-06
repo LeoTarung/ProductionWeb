@@ -1,21 +1,21 @@
 <nav class="nav shadow-lg ">
-    <ul style="padding-left: 0rem">
-        <li> <a href="{{ url('/lhp-melting') }}">
+    <ul>
+        <li> <a href="{{ url('/lhp-melting') }}" class="navitems">
                 <div class="rectangle-logo shadow">
                     <img class="navbarimg" src="{{ url('/img/nusametal.png') }}" alt="Image" />
                 </div>
             </a></li>
 
         <li>
-            <a href="{{ url('/lhp-melting') }}">
+            <a href="" data-bs-toggle="modal" data-bs-target="#shift">
                 <div class="shift border-bottom">
                     {{ $shift }}
                 </div>
             </a>
         </li>
-        <li class="ms-2">
+        <li class="ms-2 ">
             <!-- <a href="" class="time1"> -->
-            <a href="" class="time shadow-lg">
+            <a href="" class="time shadow-lg navitems">
                 <div id="MyClockDisplay" class="clock " onload="showTime()"></div>
                 <!-- <div class="kotak">
                         </  div> -->
@@ -26,7 +26,7 @@
             <!-- </a> -->
         </li>
         <li>
-            <a href="{{ url('/lhp-melting') }}">
+            <a href="{{ url('/lhp-melting') }}" class="navitems">
                 @if ($nrp != 0)
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -53,14 +53,52 @@
             </a>
         </li>
         <li>
-            <a href="">
-                <div class="information">
+            <a href="#">
+                <div class="information" data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
                     <i class='bx bx-info-circle bx-md '></i>
                 </div>
             </a>
         </li>
     </ul>
 </nav>
+<div class="modal fade" id="shift" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-content">
+                <table class="table">
+                    <caption>List of ....</caption>
+
+                    <tbody>
+                        <td>
+                            <tr>Durasi</tr>
+                            <tr>Ingot </tr>
+                            <tr>Scraf </tr>
+                            <tr>Tapping </tr>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="instruksi-kerja" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Intruksi Kerja</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     var date = new Date();
     var tahun = date.getFullYear();

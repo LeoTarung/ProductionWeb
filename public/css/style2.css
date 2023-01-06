@@ -1,6 +1,9 @@
 /* Google Fonts Import Link */
 /* @import url('font.css'); */
  @import url('fonts/font.css');
+ :root {
+  --bs-baseColor:#55769c;
+ }
 *{
   margin: 0;
   padding: 0;
@@ -130,7 +133,20 @@
   color: #2178d1;
 }
 
-
+.btn-bd-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-baseColor);
+  --bs-btn-bg: var(--bd-violet);
+  --bs-btn-border-color: var(--bd-violet);
+  --bs-btn-border-radius: .5rem;
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+  --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+  --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
 
 
 /* .toggle-menu{
@@ -929,6 +945,10 @@ footer{
 .radio{
   display:none;
 }
+
+.lihat-data{
+  background-color: #55769c;
+}
 #one:checked ~ .panels #one-panel,
 #two:checked ~ .panels #two-panel,
 #three:checked ~ .panels #three-panel,
@@ -937,6 +957,7 @@ footer{
   font-size: 15px;
   transition: all 0.1s ease;
 }
+
 #one:checked ~ .tabs #one-tab,
 #two:checked ~ .tabs #two-tab,
 #three:checked ~ .tabs #three-tab,
