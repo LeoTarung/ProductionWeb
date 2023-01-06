@@ -23,20 +23,53 @@
                         </div>
                         <div class="panels">
                             <div class="panel" id="one-panel">
-                                <div class="panel-title font-blue text-center">Daily Report Striko-1</div>
-                                <div class="chartdiv" id="chartdiv"></div>
+                                <div class="row">
+                                    <div class="col-4"></div>
+                                    <div class="col-4">
+                                        <div class="panel-title font-blue text-center">Daily Report Striko-1</div>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
+                                            class="btn btn-primary">Lihat Data</button>
+                                    </div>
+                                    <div class="chartdiv" id="chartdiv"></div>
+                                </div>
                             </div>
                             <div class="panel" id="two-panel">
-                                <div class="panel-title font-blue text-center">Daily Report Striko-2</div>
-                                <div class="chartdiv" id="chartdiv1"></div>
+                                <div class="row">
+                                    <div class="col-4"></div>
+                                    <div class="col-4">
+                                        <div class="panel-title font-blue text-center">Daily Report Striko-2</div>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
+                                            class="btn btn-primary">Lihat Data</button>
+                                    </div>
+                                    <div class="chartdiv" id="chartdiv1"></div>
+                                </div>
                             </div>
                             <div class="panel" id="three-panel">
-                                <div class="panel-title font-blue text-center">Daily Report Striko-3</div>
-                                <div class="chartdiv" id="chartdiv2"></div>
+                                <div class="row">
+                                    <div class="col-4"></div>
+                                    <div class="col-4">
+                                        <div class="panel-title font-blue text-center">Daily Report Striko-3</div>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
+                                            class="btn btn-primary">Lihat Data</button>
+                                    </div>
+                                    <div class="chartdiv" id="chartdiv2"></div>
+                                </div>
+
                             </div>
                             <div class="panel" id="four-panel">
-                                <div class="panel-title font-blue text-center">Daily Report Swift Asia</div>
-                                <div class="chartdiv" id="chartdiv3"></div>
+                                <div class="row">
+                                    <div class="col-4"></div>
+                                    <div class="col-4">
+                                        <div class="panel-title font-blue text-center">Daily Report Swif Asia</div>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
+                                            class="btn btn-bd-primary">Lihat Data</button>
+                                    </div>
+                                    <div class="chartdiv" id="chartdiv3"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -162,18 +195,17 @@
 
 
     <!-- Resources chart 1 -->
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="/js/amchart/Dailychart-Melting/index.js"></script>
+    <script src="/js/amchart/Dailychart-Melting/xy.js"></script>
+    <script src="/js/amchart/Dailychart-Melting/Animated.js"></script>
 
     <!-- Resources -->
-    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="/js/amchart/LossesChart-Melting/core.js"></script>
+    <script src="/js/amchart/LossesChart-Melting/charts.js"></script>
+    <script src="/js/amchart/LossesChart-Melting/Animated.js"></script>
+
     <!-- Chart code -->
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
 
     <!-- Chart code -->
     {{-- ///////////////////////////////// CHART STRIKO - 1///////////////////////////////////// --}}

@@ -140,6 +140,10 @@ li a {
   text-align: center;
   padding: 4px 15px;
   text-decoration: none;
+ 
+}
+
+li .navitems{
   pointer-events: none; 
 }
 /* li a:hover {
@@ -362,6 +366,10 @@ a .big-font{
   #MyClockDisplay{
     width: 140px;
     font-size: 20px;
+  }
+
+  .nrp{
+    width: 175px;
   }
 
   .machine{

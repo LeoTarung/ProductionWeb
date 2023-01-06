@@ -61,11 +61,11 @@
                                                 style="width: 160px; height: 60px;"
                                                 onclick="return Confirm('TAPPING')">TAPPING</button>
                                         </div>
-                                        <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
+                                        {{-- <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="basemetal" class="btn btn-primary shadow fs-5 ms-3"
                                                 style="width: 160px; height: 60px;"
                                                 onclick="return Confirm('BASEMETAL')">BASEMETAL</button>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-xl-3 col-4 mb-3"> <button type="submit" name="item"
                                                 value="alm_treat" class="btn btn-primary shadow fs-5 ms-3"
                                                 style="width: 160px; height: 60px;"
@@ -77,22 +77,23 @@
                                                 style="width: 160px; height: 60px;"
                                                 onclick="return Confirm('FLUXING')">FLUXING</button>
                                         </div>
+
+                                        {{-- <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
+                                                value="oil_scrap" class="btn btn-primary shadow fs-5 ms-3"
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('OIL SCRAP')">OIL
+                                                SCRAP</button>
+                                        </div> --}}
+                                        <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
+                                                value="dross" class="btn btn-primary shadow fs-5 ms-3"
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('DROSS')">DROSS</button>
+                                        </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="gas_akhir" class="btn btn-warning shadow fs-5 ms-3"
                                                 style="width: 160px; height: 60px;"
                                                 onclick="return Confirm('GAS AKHIR')">GAS
                                                 AKHIR</button>
-                                        </div>
-                                        <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                                value="oil_scrap" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;"
-                                                onclick="return Confirm('OIL SCRAP')">OIL
-                                                SCRAP</button>
-                                        </div>
-                                        <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                                value="dross" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;"
-                                                onclick="return Confirm('DROSS')">DROSS</button>
                                         </div>
                                     </div>
                                 </div>

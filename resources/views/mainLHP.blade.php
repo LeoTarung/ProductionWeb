@@ -10,13 +10,14 @@
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/css/fontawesome-all.min.css') }}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/font.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/boxicons/css/boxicons.css') }}">
-<
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/363jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
-  
+
 </head>
 
 
