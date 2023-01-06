@@ -36,7 +36,7 @@
             {{-- BAGIAN BAWAH --}}
             <div class="row">
                 <div class="col-8 mt-3">
-                    <div class="card">
+                    <div class="card card-material">
                         <div class="card-body">
                             <p class="fs-1 fw-bold">Material :</p>
                             <div class="row">
@@ -44,7 +44,8 @@
                                     <div class="row">
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="ingot" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;" onclick="return Confirm('INGOT')">INGOT</button>
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('INGOT')">INGOT</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="exgate" class="btn btn-primary shadow fs-5 ms-3"
@@ -52,38 +53,46 @@
                                                 GATE</button></div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="reject_parts" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;" onclick="return Confirm('PARTS NG')">PARTS
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('PARTS NG')">PARTS
                                                 NG</button></div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                                    value="tapping" class="btn btn-warning shadow fs-5 ms-3"
-                                                    style="width: 160px; height: 60px;" onclick="return Confirm('TAPPING')">TAPPING</button>
-                                        </div>        
+                                                value="tapping" class="btn btn-warning shadow fs-5 ms-3"
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('TAPPING')">TAPPING</button>
+                                        </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="basemetal" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;" onclick="return Confirm('BASEMETAL')">BASEMETAL</button>
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('BASEMETAL')">BASEMETAL</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"> <button type="submit" name="item"
                                                 value="alm_treat" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;" onclick="return Confirm('ALM TREAT')">ALM
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('ALM TREAT')">ALM
                                                 TREAT</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="fluxing" class="btn btn-primary shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;" onclick="return Confirm('FLUXING')">FLUXING</button>
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('FLUXING')">FLUXING</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
                                                 value="gas_akhir" class="btn btn-warning shadow fs-5 ms-3"
-                                                style="width: 160px; height: 60px;" onclick="return Confirm('GAS AKHIR')">GAS
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('GAS AKHIR')">GAS
                                                 AKHIR</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                            value="oil_scrap" class="btn btn-primary shadow fs-5 ms-3"
-                                            style="width: 160px; height: 60px;" onclick="return Confirm('OIL SCRAP')">OIL
-                                            SCRAP</button>
+                                                value="oil_scrap" class="btn btn-primary shadow fs-5 ms-3"
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('OIL SCRAP')">OIL
+                                                SCRAP</button>
                                         </div>
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                            value="dross" class="btn btn-primary shadow fs-5 ms-3"
-                                            style="width: 160px; height: 60px;" onclick="return Confirm('DROSS')">DROSS</button>
+                                                value="dross" class="btn btn-primary shadow fs-5 ms-3"
+                                                style="width: 160px; height: 60px;"
+                                                onclick="return Confirm('DROSS')">DROSS</button>
                                         </div>
                                     </div>
                                 </div>
@@ -106,13 +115,13 @@
                                 <div class="card text-center card-ingot">
                                     <h5 class="card-header fs-2 fw-bold bg-info">INGOT</h5>
                                     <div class="card-body card-ingot">
-                                        <p class="fw-bold">{{$ntah->persen_ingot}}%</p>
+                                        <p class="fw-bold">{{ $ntah->persen_ingot }}%</p>
                                     </div>
                                 </div>
                                 <div class="card text-center card-scrap">
                                     <h5 class="card-header fs-2 fw-bold bg-info">SCRAP</h5>
                                     <div class="card-body card-ingot">
-                                        <p class="fw-bold">{{$ntah->persen_rs}}%</p>
+                                        <p class="fw-bold">{{ $ntah->persen_rs }}%</p>
                                     </div>
                                 </div>
                             </div>
@@ -123,11 +132,11 @@
         </form>
     </div>
     <script>
-       function Confirm(jenis) {
+        function Confirm(jenis) {
             var berat = document.getElementById("berat").value;
-            if(jenis !== 'GAS AKHIR'){
+            if (jenis !== 'GAS AKHIR') {
                 var text = 'Apakah Anda Yakin Menambahkan ' + berat + ' KG. Untuk Jenis ' + jenis;
-            }else{
+            } else {
                 var text = 'Apakah Anda yakin Menambahkan ' + berat + ' Untuk ' + jenis;
             }
             if (confirm(text) == true) {
@@ -135,6 +144,6 @@
             } else {
                 return false;
             }
-        } 
+        }
     </script>
 @endsection

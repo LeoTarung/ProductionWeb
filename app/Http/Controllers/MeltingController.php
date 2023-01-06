@@ -191,22 +191,22 @@ class MeltingController extends Controller
         }
     }
 
-    public function prep_forklift()
+    public function prep_forklift(UsableController $useable)
     {
         # code... 
-        $shift = $this->Shift();
-        $date = $this->date();
+        $shift = $useable->Shift();
+        $date = $useable->date();
         $title = "LHP Forklift";
         $nrp = 0;
         $mesin = "FORKLIFT";
         return view('lhp.prepare-forklift', compact('title', 'nrp', 'mesin', 'shift'));
     }
 
-    public function lhp_forklift()
+    public function lhp_forklift(UsableController $useable)
     {
         # code... 
-        $shift = $this->Shift();
-        $date = $this->date();
+        $shift = $useable->Shift();
+        $date = $useable->date();
         $title = "LHP Forklift";
         $nrp = 0;
         $mesin = "FORKLIFT";
