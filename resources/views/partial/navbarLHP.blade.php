@@ -7,11 +7,19 @@
             </a></li>
 
         <li>
-            <a href="" data-bs-toggle="modal" data-bs-target="#shift">
+            @if (Request::url() == url('/lhp-melting'))
+            <a>
                 <div class="shift border-bottom">
                     {{ $shift }}
                 </div>
             </a>
+            @else
+                <a onClick="ModalResume('{{ $mesin }}')">
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
+            @endif
         </li>
         <li class="ms-2 ">
             <!-- <a href="" class="time1"> -->
@@ -53,7 +61,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="#" onClick="ModalInstruksi('{{ $mesin }}')">
                 <div class="information" data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
                     <i class='bx bx-info-circle bx-md '></i>
                 </div>
@@ -61,41 +69,73 @@
         </li>
     </ul>
 </nav>
-<div class="modal fade" id="shift" tabindex="-1">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-content">
-                <table class="table">
-                    <caption>List of ....</caption>
 
+{{-- MODAL --}}
+<!-- Modal -->
+<div class="modal fade" id="ModalNavbar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="ModalNavbarLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div id="page" class="p-2"></div>
+            {{-- <table class="table">
+                <tbody>
+                    <thead>
+                        <tr>
+                            <th>JAM</th>
+                            <th>INGOT</th>
+                            <th>SCRAP</th>
+                            <th>TAPPING</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <td>
-                            <tr>Durasi</tr>
-                            <tr>Ingot </tr>
-                            <tr>Scraf </tr>
-                            <tr>Tapping </tr>
-                        </td>
+                        <tr>
+                            <td>00:00 - 01:00</td>
+                            <td>INGOT</td>
+                            <td>SCRAP</td>
+                            <td>TAPPING</td>
+                        </tr>
+                        <tr>
+                            <td>01:00 - 02:00</td>
+                            <td>INGOT</td>
+                            <td>SCRAP</td>
+                            <td>TAPPING</td>
+                        </tr>
+                        <tr>
+                            <td>02:00 - 03:00</td>
+                            <td>INGOT</td>
+                            <td>SCRAP</td>
+                            <td>TAPPING</td>
+                        </tr>
+                        <tr>
+                            <td>03:00 - 04:00</td>
+                            <td>INGOT</td>
+                            <td>SCRAP</td>
+                            <td>TAPPING</td>
+                        </tr>
+                        <tr>
+                            <td>04:00 - 05:00</td>
+                            <td>INGOT</td>
+                            <td>SCRAP</td>
+                            <td>TAPPING</td>
+                        </tr>
+                        <tr>
+                            <td>04:00 - 05:00</td>
+                            <td>INGOT</td>
+                            <td>SCRAP</td>
+                            <td>TAPPING</td>
+                        </tr>
                     </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table> --}}
         </div>
-    </div>
-</div>
-<div class="modal" id="instruksi-kerja" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Intruksi Kerja</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
+      </div>
     </div>
 </div>
 
@@ -173,6 +213,22 @@
     document.getElementById('date-1').innerHTML = tampilTanggal;
 </script>
 <script>
+    function ModalInstruksi(mesin){
+         $.get("{{url('/partial/instruksi')}}", {}, function(data, status){
+                $("#ModalNavbarLabel").html('Instruksi '+mesin); //Untuk kasih judul di modal
+                $("#page").html(data); //menampilkan view create di dalam id page
+                $("#ModalNavbar").modal('show'); //kalo ID pake "#" kalo class pake "."
+             });
+        }
+
+    function ModalResume(mesin){
+         $.get("{{url('/partial/instruksi')}}", {}, function(data, status){
+                $("#ModalNavbarLabel").html('Resume Input '+mesin); //Untuk kasih judul di modal
+                // $("#page").html(data); //menampilkan view create di dalam id page
+                $("#ModalNavbar").modal('show'); //kalo ID pake "#" kalo class pake "."
+             });
+        }
+
     function showTime() {
         var date = new Date();
         var h = date.getHours(); // 0 - 23

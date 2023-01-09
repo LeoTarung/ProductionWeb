@@ -8,6 +8,8 @@
             </div>
         @elseif(session()->has('preulang'))
             <?php toast('Silahkan Preparation Ulang.', 'error'); ?>
+            @elseif(session()->has('behasilditambahkan'))
+            <?php toast('Data Berhasil Ditambahkan','success'); ?>
         @endif
 
         <div class="button-machine d-grid gap-2 col-6 mx-auto">
@@ -159,8 +161,7 @@
                 $.ajax({
                     method: "GET",
                     dataType: "json",
-                    // url: "http://192.168.137.194:8000/dtkyrw/" + searchnrp,
-                    url: "http://127.0.0.1:8000/dtkyrw/" + searchnrp,
+                    url: "http://192.168.137.194:8000/dtkyrw/" + searchnrp,
                     success: function(data) {
                         // console.log(data[0].name);
                         // $("#nama").html(data[0].name);

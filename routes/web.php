@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\MeltingController;
 use App\Http\Controllers\ProductionController;
-use App\Http\Controllers\ManufactureController;
-use App\Http\Controllers\MeltingTestController;
+use App\Http\Controllers\ApiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +28,8 @@ Route::get('/lhp', function () {
         "title" => 'LHP Melting'
     ]);
 });
-
+//====================== PARTIAL ======================//
+Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 //====================== API FOR SHARE ======================//
 Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
 
