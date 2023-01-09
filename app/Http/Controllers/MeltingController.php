@@ -79,6 +79,8 @@ class MeltingController extends Controller
         $date = $useable->date();
         $title = "LHP Melting";
         $ntah = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $test = LhpMeltingRAW::groupBy(LhpMeltingRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['shift', '=', $shift], ['id_lhp', '=', $id],])->selectRaw("tanggal, jam, shift, SUM(ingot) as ingots ,SUM(tapping) as tappings, SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap) as Return_scraps")->get();
+        // dd($test);
         if ($ntah != null) {
             $nrp = $ntah->nrp;
             return view('lhp.lhp-Melting', compact('title', 'shift', 'nrp', 'mesin', 'id', 'ntah'));
@@ -135,9 +137,11 @@ class MeltingController extends Controller
 
 
 
-            if ($jenis == 'gas_akhir' || $jenis == 'dross' || $jenis == 'fluxing') {
+            if ($jenis == 'gas_akhir' ||  $jenis == 'fluxing') {
                 $stok_molten = $ntah->stok_molten;
             } else if ($jenis == 'tapping') {
+                $stok_molten = $ntah->stok_molten - $value;
+            } else if ($jenis == 'dross') {
                 $stok_molten = $ntah->stok_molten - $value;
             } else {
                 $stok_molten = $ntah->stok_molten + $value; // H - ( N + Q ) 
@@ -145,7 +149,8 @@ class MeltingController extends Controller
 
 
 
-            $total_loss = $ntah->dross - $ntah->alm_treat; // ( Q - E )
+            // $total_loss = $ntah->dross - $ntah->alm_treat; // ( Q - E )
+            $total_loss = $ntah->dross; // UPDATED PER 2023
             if ($total_charging == 0) {
                 $persen_losdros_material = 100;
             } else {
@@ -185,7 +190,7 @@ class MeltingController extends Controller
                 'melting_rate' =>  $melting_rate,
             ]);
 
-            return redirect("/lhp-melting/$mesin/$id");
+            return redirect("/lhp-melting")->with('behasilditambahkan', 'behasilditambahkan');
         } else {
             return redirect('/lhp-melting')->with('preulang', 'preulang');
         }
