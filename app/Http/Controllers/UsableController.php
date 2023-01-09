@@ -53,4 +53,10 @@ class UsableController extends Controller
         $hour = date('H:i');
         return $hour;
     }
+
+    // ============================= // PARTIAL INSTRUKSI KERJA // ================================= //
+    public function Intruksi()
+    {
+        return  view('partial.instruksi', []);
+    }
 }

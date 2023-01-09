@@ -85,7 +85,7 @@
                                                 SCRAP</button>
                                         </div> --}}
                                         <div class="col-xl-3 col-4 mb-3"><button type="submit" name="item"
-                                                value="dross" class="btn btn-primary shadow fs-5 ms-3"
+                                                value="dross" class="btn btn-warning shadow fs-5 ms-3"
                                                 style="width: 160px; height: 60px;"
                                                 onclick="return Confirm('DROSS')">DROSS</button>
                                         </div>
