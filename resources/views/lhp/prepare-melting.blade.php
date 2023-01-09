@@ -159,7 +159,8 @@
                 $.ajax({
                     method: "GET",
                     dataType: "json",
-                    url: "http://192.168.137.194:8000/dtkyrw/" + searchnrp,
+                    // url: "http://192.168.137.194:8000/dtkyrw/" + searchnrp,
+                    url: "http://127.0.0.1:8000/dtkyrw/" + searchnrp,
                     success: function(data) {
                         // console.log(data[0].name);
                         // $("#nama").html(data[0].name);

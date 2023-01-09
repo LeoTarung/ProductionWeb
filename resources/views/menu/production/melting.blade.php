@@ -66,7 +66,7 @@
                                         <div class="panel-title font-blue text-center">Daily Report Swif Asia</div>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
-                                            class="btn btn-bd-primary">Lihat Data</button>
+                                            class="btn btn-primary">Lihat Data</button>
                                     </div>
                                     <div class="chartdiv" id="chartdiv3"></div>
                                 </div>
@@ -1600,7 +1600,8 @@
             });
 
             setInterval(function() {
-                var value = Math.round(Math.random() * 100);
+                // var value = Math.round(Math.random() * 100);
+                var value = 67;
                 var animation = new am4core.Animation(hand, {
                     property: "value",
                     to: value

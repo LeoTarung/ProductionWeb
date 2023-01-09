@@ -15,7 +15,8 @@ class CreateLhpMeltingTable extends Migration
     {
         Schema::create('lhp_melting_raw', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_lhp');
+            $table->unsignedBigInteger('id_lhp');
+            $table->foreign('id_lhp')->references('id')->on('lhp_melting')->onDelete('cascade');
             $table->date('tanggal');
             $table->time('jam');
             $table->string('shift');

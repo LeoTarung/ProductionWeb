@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ManufactureController;
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\MeltingController;
 use App\Http\Controllers\ProductionController;
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\ManufactureController;
+use App\Http\Controllers\MeltingTestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +41,4 @@ Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_
 Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
 // Route::get('/lhp-melting/forklift', [MeltingController::class, 'prep_forklift']);
 Route::get('/lhp-melting/forklift/', [MeltingController::class, 'lhp_forklift']);
+Route::get('/test', [MeltingTestController::class, 'index']);
