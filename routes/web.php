@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\MeltingController;
 use App\Http\Controllers\ProductionController;
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\UsableController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
