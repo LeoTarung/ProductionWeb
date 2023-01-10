@@ -9,10 +9,13 @@ use Illuminate\Http\Request;
 
 class MeltingController extends Controller
 {
-    public function Dashboard()
+    public function Dashboard(UsableController $useable)
     {
+        $date = $useable->date();
+        $data_lhp = LhpMelting::where([['tanggal', '=', $date]])->first();;
         return  view('menu.production.melting', [
             "title" => 'Melting Overview',
+            "lhp" => $data_lhp
         ]);
     }
 

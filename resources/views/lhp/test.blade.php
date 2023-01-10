@@ -1,53 +1,59 @@
 @extends('mainLHP')
 @section('content')
+    <div class="container m-3"></div>
     <table class="table table-success table-striped">
         <thead class="table-dark text-center fw-bold">
             <tr>
-                <td>
-                    ID
+                <td class="fs-4">
+                    Jam
                 </td>
-                <td>
-                    SHIFT
+                <td class="fs-4">
+                    Total Charging
                 </td>
-                <td>
-                    MESIN
+                <td class="fs-4">
+                    Ingot
                 </td>
-                <td>
-                    NRP
+                <td class="fs-4">
+                    Return Scrap
                 </td>
-                <td>
-                    INGOT
+                <td class="fs-4">
+                    Tapping
+                </td>
+                <td class="fs-4">
+                    Dross
                 </td>
         </thead>
-        <tbody>
+        <tbody class="fs-4">
             @foreach ($molt as $a)
                 <tr>
-                    <td class="text-center">
+                    <td class="text-center fs-4">
                         <div class="col-sm">
-                            <input type="text" class="form-control text-center" aria-label="City" value="{{ $a['id_lhp'] }}"
-                                name="id_lhp" readonly>
+                            <input type="text" class="form-control text-center fs-4 fw-bold" aria-label="City"
+                                value="{{ $a['jam'] }}" name="jam" readonly>
 
                         </div>
                     </td>
-                    <td class="text-center">
-                        <input type="text" class="form-control text-center" aria-label="City" value="{{ $a['shift'] }}"
-                            name="shift" readonly>
+                    <td class="text-center fs-4">
+                        <input type="text" class="form-control text-center fs-4 fw-bold" aria-label="City"
+                            value="{{ $a->lhpMelting->total_charging_rs }}" name="total_charging_rs" readonly>
+                    </td>
+                    <td class="text-center fs-4">
+                        <input type="text" class="form-control text-center fs-4 fw-bold" aria-label="City"
+                            value="{{ $a['ingot'] }}" name="ingot">
+                    </td>
+                    <td class="text-center fs-4">
+                        <input type="text" class="form-control text-center fs-4 fw-bold" aria-label="City"
+                            value="{{ $a->lhpMelting->total_return_rs }}" name="total_return_rs">
 
                     </td>
-                    <td class="text-center">
-                        <input type="text" class="form-control text-center" aria-label="City" value="{{ $a['mesin'] }}"
-                            name="mesin">
-
                     </td>
-                    <td>
-                    <td class="text-center">
-                        <input type="text" class="form-control text-center" aria-label="City"
-                            value="{{ $a->lhpMelting->nrp }}" name="nrp">
+                    <td class="text-center fs-4">
+                        <input type="text" class="form-control text-center fs-4 fw-bold" aria-label="City"
+                            value="{{ $a['tapping'] }}" name="total_return_rs">
                     </td>
-                    </td>
-                    <td class="text-center">
-                        <input type="text" class="form-control text-center" aria-label="City" value="{{ $a['ingot'] }}"
-                            name="ingot">
+                    <td class="text-center fs-4">
+                        <input type="text" class="form-control text-center fs-4 fw-bold" aria-label="City"
+                            value="{{ $a['dross'] }}" name="dross">
                     </td>
 
                 </tr>

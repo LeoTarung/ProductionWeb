@@ -14,4 +14,9 @@ class LHPMelting extends Model
     // {
     //     return $this->hasMany(LhpMeltingRAW::class);
     // }
+
+    public function User()
+    {
+        return $this->belongsTo(User::class, 'id_nrp'); //One to one
+    }
 }
