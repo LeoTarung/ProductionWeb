@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\UsableController;
 use App\Http\Controllers\MeltingController;
 use App\Http\Controllers\ProductionController;
-use App\Http\Controllers\UsableController;
+use App\Http\Controllers\ManufactureController;
+use App\Http\Controllers\MeltingTestController;
 
 /*
 |--------------------------------------------------------------------------
