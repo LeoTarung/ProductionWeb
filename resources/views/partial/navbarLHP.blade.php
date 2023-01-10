@@ -14,7 +14,7 @@
                 </div>
             </a>
             @else
-                <a onClick="ModalResume('{{ $mesin }}')">
+                <a onClick="ModalResume('{{$mesin}}', '{{$id}}')">
                     <div class="shift border-bottom">
                         {{ $shift }}
                     </div>
@@ -76,61 +76,11 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="ModalNavbarLabel"></h1>
+          <h1 class="modal-title fs-3" id="ModalNavbarLabel"></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div id="page" class="p-2"></div>
-            {{-- <table class="table">
-                <tbody>
-                    <thead>
-                        <tr>
-                            <th>JAM</th>
-                            <th>INGOT</th>
-                            <th>SCRAP</th>
-                            <th>TAPPING</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>00:00 - 01:00</td>
-                            <td>INGOT</td>
-                            <td>SCRAP</td>
-                            <td>TAPPING</td>
-                        </tr>
-                        <tr>
-                            <td>01:00 - 02:00</td>
-                            <td>INGOT</td>
-                            <td>SCRAP</td>
-                            <td>TAPPING</td>
-                        </tr>
-                        <tr>
-                            <td>02:00 - 03:00</td>
-                            <td>INGOT</td>
-                            <td>SCRAP</td>
-                            <td>TAPPING</td>
-                        </tr>
-                        <tr>
-                            <td>03:00 - 04:00</td>
-                            <td>INGOT</td>
-                            <td>SCRAP</td>
-                            <td>TAPPING</td>
-                        </tr>
-                        <tr>
-                            <td>04:00 - 05:00</td>
-                            <td>INGOT</td>
-                            <td>SCRAP</td>
-                            <td>TAPPING</td>
-                        </tr>
-                        <tr>
-                            <td>04:00 - 05:00</td>
-                            <td>INGOT</td>
-                            <td>SCRAP</td>
-                            <td>TAPPING</td>
-                        </tr>
-                    </tbody>
-                </tbody>
-            </table> --}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -221,10 +171,10 @@
              });
         }
 
-    function ModalResume(mesin){
-         $.get("{{url('/partial/instruksi')}}", {}, function(data, status){
+    function ModalResume(mesin, id){
+         $.get("{{url('/partial/resume-melting')}}/"+ mesin + '/' + id, {}, function(data, status){
                 $("#ModalNavbarLabel").html('Resume Input '+mesin); //Untuk kasih judul di modal
-                // $("#page").html(data); //menampilkan view create di dalam id page
+                $("#page").html(data); //menampilkan view create di dalam id page
                 $("#ModalNavbar").modal('show'); //kalo ID pake "#" kalo class pake "."
              });
         }

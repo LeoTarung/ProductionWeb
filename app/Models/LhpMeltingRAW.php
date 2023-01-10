@@ -14,6 +14,7 @@ class LHPMeltingRaw extends Model
 
     public function LhpMelting()
     {
-        return $this->belongsTo(LHPMelting::class, 'id_lhp'); //One to one 
+        return $this->belongsTo(LHPMelting::class, 'id_lhp', 'id'); //One To Many (Inverse) / Belongs To
+        // return $this->belongsTo(LHPMelting::class, 'id'); //One To Many (Inverse) / Belongs To
     }
 }

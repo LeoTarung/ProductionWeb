@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LhpMeltingRAW;
+use App\Models\LhpMelting;
 use Illuminate\Http\Request;
 
 class UsableController extends Controller
@@ -54,9 +56,17 @@ class UsableController extends Controller
         return $hour;
     }
 
-    // ============================= // PARTIAL INSTRUKSI KERJA // ================================= //
+    // ============================= // PARTIAL MELTING // ================================= //
     public function Intruksi()
     {
         return  view('partial.instruksi', []);
+    }
+
+    public function resume_melting(UsableController $useable, $mesin, $id)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+        $sql1 = LhpMeltingRAW::groupBy(LhpMeltingRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['mesin', '=', $mesin]])->selectRaw("tanggal, jam, shift, SUM(ingot) as ingots, SUM(dross) as drosss, SUM(tapping) as tappings, SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap) as total_return_rs, SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) as total_charging_rs")->get();
+        return view('partial.resume-melting', compact('sql1'));
     }
 }
