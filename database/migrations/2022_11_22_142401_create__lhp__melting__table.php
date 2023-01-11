@@ -20,6 +20,7 @@ class CreateLhpMeltingTable extends Migration
             $table->date('tanggal');
             $table->time('jam');
             $table->string('shift');
+            $table->string('mesin');
             $table->integer('k_value')->default('0');  // yang ini gak tau cara inputnya
             $table->integer('ingot')->default('0');
             $table->integer('exgate')->default('0');

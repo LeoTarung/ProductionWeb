@@ -132,19 +132,19 @@
             </div>
         </form>
     </div>
-    <script>
-        function Confirm(jenis) {
-            var berat = document.getElementById("berat").value;
-            if (jenis !== 'GAS AKHIR') {
-                var text = 'Apakah Anda Yakin Menambahkan ' + berat + ' KG. Untuk Jenis ' + jenis;
-            } else {
-                var text = 'Apakah Anda yakin Menambahkan ' + berat + ' Untuk ' + jenis;
-            }
-            if (confirm(text) == true) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    </script>
+    {{-- <script>
+        // function Confirm(jenis) {
+        //     var berat = document.getElementById("berat").value;
+        //     if (jenis !== 'GAS AKHIR') {
+        //         var text = 'Apakah Anda Yakin Menambahkan ' + berat + ' KG. Untuk Jenis ' + jenis;
+        //     } else {
+        //         var text = 'Apakah Anda yakin Menambahkan ' + berat + ' Untuk ' + jenis;
+        //     }
+        //     if (confirm(text) == true) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
+    </script> --}}
 @endsection

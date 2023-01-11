@@ -33,6 +33,7 @@ Route::get('/lhp', function () {
 });
 //====================== PARTIAL ======================//
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
+Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);
 //====================== API FOR SHARE ======================//
 Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
 

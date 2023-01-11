@@ -108,6 +108,7 @@ class MeltingController extends Controller
                 'tanggal' => $date,
                 'jam' => $hour,
                 'shift' => $shift,
+                'mesin' => $mesin,
                 $request->item => $request->berat
             ]);
             $beratA = $ntaha->$jenis;
