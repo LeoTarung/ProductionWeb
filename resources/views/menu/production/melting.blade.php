@@ -1603,8 +1603,8 @@
             });
 
             setInterval(function() {
-                var value = Math.round(Math.random() * 100);
-                // var value = 20;
+             //  var value = Math.round(Math.random() * 100);
+                 var value = 70;
                 var animation = new am4core.Animation(hand, {
                     property: "value",
                     to: value
