@@ -567,6 +567,10 @@ opacity: 1;
   background-color: #b4b4b4;
 }
 
+.inpt-date{
+  border-color: #11101d;
+}
+
 header {
   /* margin-top: 120px; */
   position: relative;

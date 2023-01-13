@@ -7,8 +7,8 @@
             </div>
             <div class="row justify-content-end text-end mt-1">
                 <div class="col-5">
-                    <input type="date"> &ensp; s/d &ensp;
-                    <input type="date">
+                    <input type="date" class="inpt-date border border-3 rounded"> &ensp; s/d &ensp;
+                    <input type="date" class="inpt-date border border-3 rounded">
                     <button class=" ms-1 btn btn-primary">filter</button>
                 </div>
             </div>
