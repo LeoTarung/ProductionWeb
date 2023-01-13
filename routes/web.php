@@ -39,6 +39,7 @@ Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
 
 //====================== AREA MELTING ======================//
 Route::get('/production/melting', [MeltingController::class, 'Dashboard']);
+Route::get('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
 Route::get('/lhp-melting', [MeltingController::class, 'prep_melting']);
 Route::post('/lhp-melting/simpan', [MeltingController::class, 'prep_melting_simpan']);
 Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_raw']);

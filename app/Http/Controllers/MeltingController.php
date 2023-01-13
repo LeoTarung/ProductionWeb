@@ -9,16 +9,26 @@ use Illuminate\Http\Request;
 
 class MeltingController extends Controller
 {
+    //==============================[' DASHBOARD PRODUCTION ']==============================//
     public function Dashboard(UsableController $useable)
     {
         $date = $useable->date();
         $data_lhp = LhpMelting::where([['tanggal', '=', $date]])->first();;
-        return  view('menu.production.melting', [
+        return  view('menu.production.melting.melting', [
             "title" => 'Melting Overview',
             "lhp" => $data_lhp
         ]);
     }
 
+    public function Details_dashboard(Request $request, $mesin)
+    {
+        $title = "Report " . $mesin;
+        return  view('menu.production.melting.details-melting', compact(
+            'title',
+        ));
+    }
+
+    //==============================[' LAPORAN HARIAN PRODUKSI ']==============================//
     public function prep_melting(UsableController $useable)
     {
         $shift = $useable->Shift();
@@ -43,6 +53,20 @@ class MeltingController extends Controller
         if ($request->nrp != "" && $request->nama != "" && $request->material != "" && $request->mesin != "") {
             $gas = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
             if ($gas != null) {
+                LhpMelting::create([
+                    // 'nama kolom' => 'name di html'
+                    'tanggal' => $date,
+                    'nrp' => $request->nrp,
+                    'nama' => $request->nama,
+                    'shift' => $shift,
+                    'jam_kerja' => $jam_kerja,
+                    'mesin' => $request->mesin,
+                    'material' => $request->material,
+                    'gas_awal' => $gas->gas_akhir,
+                    'stok_molten' => $gas->stok_molten
+                ]);
+            } else if (LhpMelting::where([['mesin', '=', $request->mesin]])->orderBy('id', 'DESC')->first() != null) {
+                $gas = LhpMelting::where([['mesin', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
                 LhpMelting::create([
                     // 'nama kolom' => 'name di html'
                     'tanggal' => $date,
