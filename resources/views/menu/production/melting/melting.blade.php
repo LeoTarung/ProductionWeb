@@ -28,8 +28,8 @@
                                     <div class="col-4">
                                         <div class="panel-title font-blue text-center">Daily Report Striko-1</div>
                                     </div>
-                                    <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
-                                            class="btn btn-primary">Lihat Data</button>
+                                    <div class="col-4 d-flex justify-content-end mb-3"> <a 
+                                            class="btn btn-primary" href="{{url('/production/melting/striko-1')}}">Lihat Data</a>
                                     </div>
                                     <div class="chartdiv" id="chartdiv"></div>
                                 </div>
@@ -40,8 +40,8 @@
                                     <div class="col-4">
                                         <div class="panel-title font-blue text-center">Daily Report Striko-2</div>
                                     </div>
-                                    <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
-                                            class="btn btn-primary">Lihat Data</button>
+                                    <div class="col-4 d-flex justify-content-end mb-3"> <a 
+                                            class="btn btn-primary" href="{{url('/production/melting/striko-2')}}">Lihat Data</a>
                                     </div>
                                     <div class="chartdiv" id="chartdiv1"></div>
                                 </div>
@@ -52,8 +52,8 @@
                                     <div class="col-4">
                                         <div class="panel-title font-blue text-center">Daily Report Striko-3</div>
                                     </div>
-                                    <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
-                                            class="btn btn-primary">Lihat Data</button>
+                                    <div class="col-4 d-flex justify-content-end mb-3"> <a 
+                                            class="btn btn-primary" href="{{url('/production/melting/striko-3')}}">Lihat Data</a>
                                     </div>
                                     <div class="chartdiv" id="chartdiv2"></div>
                                 </div>
@@ -65,8 +65,8 @@
                                     <div class="col-4">
                                         <div class="panel-title font-blue text-center">Daily Report Swif Asia</div>
                                     </div>
-                                    <div class="col-4 d-flex justify-content-end mb-3"> <button type="button"
-                                            class="btn btn-primary">Lihat Data</button>
+                                    <div class="col-4 d-flex justify-content-end mb-3"> <a 
+                                            class="btn btn-primary" href="{{url('/production/melting/SwifAsia')}}">Lihat Data</a>
                                     </div>
                                     <div class="chartdiv" id="chartdiv3"></div>
                                 </div>
@@ -1496,10 +1496,6 @@
     {{-- ///////////////////////// CHART GAUGE ////////////////////////////////////////////////// --}}
     <script>
         am4core.ready(function() {
-            /**
-
-             */
-
             // Themes begin
             am4core.useTheme(am4themes_animated);
             // Themes end
@@ -1603,8 +1599,8 @@
             });
 
             setInterval(function() {
-             //  var value = Math.round(Math.random() * 100);
-                 var value = 70;
+                // var value = Math.round(Math.random() * 100);
+                var value = 70;
                 var animation = new am4core.Animation(hand, {
                     property: "value",
                     to: value
