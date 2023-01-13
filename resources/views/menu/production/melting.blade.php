@@ -1496,9 +1496,10 @@
     {{-- ///////////////////////// CHART GAUGE ////////////////////////////////////////////////// --}}
     <script>
         am4core.ready(function() {
+            /**
 
-            var total_loss = {{ $lhp['persen_losdros_material'] }}
-            var isi = total_loss * 1
+             */
+
             // Themes begin
             am4core.useTheme(am4themes_animated);
             // Themes end
@@ -1602,8 +1603,8 @@
             });
 
             setInterval(function() {
-                // var value = Math.round(Math.random() * 100);
-                var value = isi;
+                var value = Math.round(Math.random() * 100);
+                // var value = 20;
                 var animation = new am4core.Animation(hand, {
                     property: "value",
                     to: value

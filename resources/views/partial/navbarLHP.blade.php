@@ -8,13 +8,13 @@
 
         <li>
             @if (Request::url() == url('/lhp-melting'))
-            <a>
-                <div class="shift border-bottom">
-                    {{ $shift }}
-                </div>
-            </a>
+                <a>
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
             @else
-                <a onClick="ModalResume('{{$mesin}}', '{{$id}}')">
+                <a onClick="ModalResume('{{ $mesin }}', '{{ $id }}')">
                     <div class="shift border-bottom">
                         {{ $shift }}
                     </div>
@@ -50,15 +50,27 @@
             </a>
         </li>
         <li>
-            <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
-                <div class="mesin">
-                    @if ($mesin == 'FORKLIFT')
-                        <div class="font-white "> {{ $mesin }} </div>
-                    @else
-                        <div class="font-white choose_machine"> {{ $mesin }} </div>
-                    @endif
-                </div>
-            </a>
+            @if ($mesin == 'FORKLIFT')
+                <a href="{{ url('/lhp-melting/pre-forklift') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FORKLIFT')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+            @else
+                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FORKLIFT')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+            @endif
         </li>
         <li>
             <a href="#" onClick="ModalInstruksi('{{ $mesin }}')">
@@ -72,20 +84,21 @@
 
 {{-- MODAL --}}
 <!-- Modal -->
-<div class="modal fade" id="ModalNavbar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="ModalNavbar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-3" id="ModalNavbarLabel"></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-3" id="ModalNavbarLabel"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="page" class="p-2"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="modal-body">
-            <div id="page" class="p-2"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
 </div>
 
@@ -163,21 +176,21 @@
     document.getElementById('date-1').innerHTML = tampilTanggal;
 </script>
 <script>
-    function ModalInstruksi(mesin){
-         $.get("{{url('/partial/instruksi')}}", {}, function(data, status){
-                $("#ModalNavbarLabel").html('Instruksi '+mesin); //Untuk kasih judul di modal
-                $("#page").html(data); //menampilkan view create di dalam id page
-                $("#ModalNavbar").modal('show'); //kalo ID pake "#" kalo class pake "."
-             });
-        }
+    function ModalInstruksi(mesin) {
+        $.get("{{ url('/partial/instruksi') }}", {}, function(data, status) {
+            $("#ModalNavbarLabel").html('Instruksi ' + mesin); //Untuk kasih judul di modal
+            $("#page").html(data); //menampilkan view create di dalam id page
+            $("#ModalNavbar").modal('show'); //kalo ID pake "#" kalo class pake "."
+        });
+    }
 
-    function ModalResume(mesin, id){
-         $.get("{{url('/partial/resume-melting')}}/"+ mesin + '/' + id, {}, function(data, status){
-                $("#ModalNavbarLabel").html('Resume Input '+mesin); //Untuk kasih judul di modal
-                $("#page").html(data); //menampilkan view create di dalam id page
-                $("#ModalNavbar").modal('show'); //kalo ID pake "#" kalo class pake "."
-             });
-        }
+    function ModalResume(mesin, id) {
+        $.get("{{ url('/partial/resume-melting') }}/" + mesin + '/' + id, {}, function(data, status) {
+            $("#ModalNavbarLabel").html('Resume Input ' + mesin); //Untuk kasih judul di modal
+            $("#page").html(data); //menampilkan view create di dalam id page
+            $("#ModalNavbar").modal('show'); //kalo ID pake "#" kalo class pake "."
+        });
+    }
 
     function showTime() {
         var date = new Date();

@@ -1,42 +1,114 @@
 @extends('mainLHP')
 @section('content')
-    <style>
-        #chartdiv {
-            width: 100%;
-            height: 150px;
-        }
+    {{-- CSS --}}
 
-        .nopadding {
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-    </style>
-    <div class="row bg-dark mt-4">
-        <div class="col-2 nopadding border">MC - 48</div>
-        <div class="col-2 nopadding border">MC - 48</div>
+    <link rel="stylesheet" type="text/css" href="/css/forklift.css">
 
+    {{-- Content --}}
 
-        <div class="col-2 nopadding nopadding border">
-            <a class="card text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="dika('MC-52')">
-                <h5 class="card-header fs-1 fw-bold">MC-52</h5>
-                <div class="card-body m-0 p-0 ">
-                    <div id="chartdiv"></div>
-                </div>
-            </a>
+    <div class="container-fluid">
+        <div class="row  mt-3 mb-4 d-flex justify-content-center">
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-1</div>
+                <section id="battery" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-2</div>
+                <section id="battery2" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid2" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-3</div>
+                <section id="battery3" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid3" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-4</div>
+                <section id="battery4" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid4" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-5</div>
+                <section id="battery5" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid5" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-6</div>
+                <section id="battery6" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid6" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-7</div>
+                <section id="battery7" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid7" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-8</div>
+                <section id="battery8" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid8" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-9</div>
+                <section id="battery9" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid9" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="card-header text-center fw-bold">MC-10</div>
+                <section id="battery10" class="battery mb-3 d-flex justify-content-start">
+                    <div id="battery__pill" class="battery__pill">
+                        <div id="battery__level" class="battery__level">
+                            <div id="battery__liquid10" class="battery__liquid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-
-        <div class="col-2 nopadding nopadding border">
-            <a class="card text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="dika('MC-48')">
-                <h5 class="card-header fs-1 fw-bold">MC-48</h5>
-                <div class="card-body m-0 p-0 ">
-                    <div id="chartdiv"></div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-2 nopadding border">MC - 48</div>
-        <div class="col-2 nopadding border">MC - 48</div>
-        <div class="col-2 nopadding border">MC - 48</div>
     </div>
 
     {{-- MODAL --}}
@@ -46,100 +118,326 @@
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="text" id="mcbrpa" class="form-control">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div>
+                <form action="{{ url('/lhp-forklift') }}" method="POST">
+                    <div class="modal-header bg-secondary text-center">
+                        <h1 class="modal-title fs-5 font-white" id="staticBackdropLabel">MC 1</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <table class="table">
+                            <tr>
+                                <td class="fs-5">FORKLIFT</td>
+                                <td>
+                                    <input type="text" class="form-control fw-bold" id="nama" name="nama"
+                                        value="09"readonly>
+                                </td>
+                                <td class="fs-5">NRP</td>
+                                <td><input type="text" class="form-control fw-bold" id="nama" name="nama"
+                                        value="3551"readonly></td>
+                            </tr>
+                            <tr>
+                                <td class="fs-5">MATERIAL</td>
+                                <td><input type="text" class="form-control  fw-bold" id="material" name="material"
+                                        value="HD-2"readonly></td>
+                            </tr>
+                            <tr>
+                                <td class="fs-5">FURNACE</td>
+                                <td><input type="text" class="form-control border-dark fw-bold" id="furnace"
+                                        name="furnace"></td>
+                            </tr>
+                            <tr>
+                                <td class="fs-5">MC NO</td>
+                                <td><input type="number" class="form-control border-dark fw-bold" id="mc"
+                                        name="mc"></td>
+                            </tr>
+                            <tr>
+                                <td class="fs-5">BERAT(kg)</td>
+                                <td><input type="number" class="form-control border-dark fw-bold" id="berat"
+                                        name="berat"></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
 
     <script>
-        function dika(nomc) {
-            // let nomc = document.getElementById("nomc").getAttribute('data-value');
-            document.getElementById("staticBackdropLabel").innerHTML = "Tapping Pada " + nomc;
-            document.getElementById('mcbrpa').value = nomc;
+        //////////////////////////////////// Molten 1 ////////////////////////////////////////////
+
+        let battery = document.getElementById('battery');
+        let batteryLiquid = document.getElementById('battery__liquid');
+        // let batteryLiquid2 = document.getElementById('battery__liquid::after');
+        level = 10;
+        batteryLiquid.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color2
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid.style.backgroundColor = '#f16716'
+            // batteryLiquid2.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid.style.backgroundColor = '#f5dd06'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid.style.backgroundColor = '#98ce06'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
         }
-        // $("#formtapping").text(nomc);
-        // alert(nomc);
-    </script>
 
+        //////////////////////////////////// Molten 2 ////////////////////////////////////////////
 
+        let battery2 = document.getElementById('battery2');
+        let batteryLiquid2 = document.getElementById('battery__liquid2');
+        // let batteryLiquid2 = document.getElementById('battery__liquid::after');
+        level = 50;
+        batteryLiquid2.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid2.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color2
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid2.style.backgroundColor = '#f16716'
+            // batteryLiquid2.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid2.style.backgroundColor = '#f5dd06'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid2.style.backgroundColor = '#98ce06'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid2.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
 
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script> --}}
-    {{-- < !-- Resources --> --}}
-    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-    {{-- < !-- Chart code --> --}}
-    <script>
-        am4core.ready(function() {
+        //////////////////////////////////// Molten 3 ////////////////////////////////////////////
 
-            // Themes begin
-            am4core.useTheme(am4themes_animated);
-            // Themes end
+        let battery3 = document.getElementById('battery3');
+        let batteryLiquid3 = document.getElementById('battery__liquid3');
+        // let batteryLiquid3 = document.getElementById('battery__liquid::after');
+        level = 60;
+        batteryLiquid3.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid3.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color3
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid3.style.backgroundColor = '#f16716'
+            // batteryLiquid3.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid3.style.backgroundColor = '#f5dd06'
+            // batteryLiquid3.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid3.style.backgroundColor = '#98ce06'
+            // batteryLiquid3.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid3.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
 
-            // Create chart instance
-            var chart = am4core.create("chartdiv", am4charts.XYChart3D);
+        //////////////////////////////////// Molten 4 ////////////////////////////////////////////
 
-            // chart.titles.create().text = "Crude oil reserves";
+        let battery4 = document.getElementById('battery4');
+        let batteryLiquid4 = document.getElementById('battery__liquid4');
+        // let batteryLiquid4 = document.getElementById('battery__liquid::after');
+        level = 25;
+        batteryLiquid4.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid4.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color4batteryLiquid4
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid4.style.backgroundColor = '#f16716'
+            // batteryLiquid4.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid4.style.backgroundColor = '#f5dd06'
+            // batteryLiquid4.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid4.style.backgroundColor = '#98ce06'
+            // batteryLiquid4.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid4.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
 
-            // Add data
-            chart.data = [{
-                "category": "Melting",
-                "value1": 30,
-                "value2": 70
-            }];
+        //////////////////////////////////// Molten 5 ////////////////////////////////////////////
 
-            // Create axes
-            var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-            categoryAxis.dataFields.category = "category";
-            categoryAxis.renderer.grid.template.location = 0;
-            categoryAxis.renderer.grid.template.strokeOpacity = 0;
+        let battery5 = document.getElementById('battery5');
+        let batteryLiquid5 = document.getElementById('battery__liquid5');
+        // let batteryLiquid5 = document.getElementById('battery__liquid::after');
+        level = 90;
+        batteryLiquid5.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid5.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color5batteryLiquid5
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid5.style.backgroundColor = '#f16716'
+            // batteryLiquid5.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid5.style.backgroundColor = '#f5dd06'
+            // batteryLiquid5.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid5.style.backgroundColor = '#98ce06'
+            // batteryLiquid5.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid5.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
 
-            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.renderer.grid.template.strokeOpacity = 0;
-            valueAxis.min = -10;
-            valueAxis.max = 110;
-            valueAxis.strictMinMax = true;
-            valueAxis.renderer.baseGrid.disabled = true;
-            valueAxis.renderer.labels.template.adapter.add("text", function(text) {
-                if ((text > 100) || (text < 0)) {
-                    return "";
-                } else {
-                    return text + "%";
-                }
-            })
+        //////////////////////////////////// Molten 6 ////////////////////////////////////////////
 
-            // Create series
-            var series1 = chart.series.push(new am4charts.ConeSeries());
-            series1.dataFields.valueY = "value1";
-            series1.dataFields.categoryX = "category";
-            series1.columns.template.width = am4core.percent(80);
-            series1.columns.template.fillOpacity = 0.9;
-            series1.columns.template.strokeOpacity = 1;
-            series1.columns.template.strokeWidth = 2;
+        let battery6 = document.getElementById('battery6');
+        let batteryLiquid6 = document.getElementById('battery__liquid6');
+        // let batteryLiquid6 = document.getElementById('battery__liquid::after');
+        level = 10;
+        batteryLiquid6.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid6.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color5batteryLiquid5
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid6.style.backgroundColor = '#f16716'
+            // batteryLiquid6.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid6.style.backgroundColor = '#f5dd06'
+            // batteryLiquid5.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid6.style.backgroundColor = '#98ce06'
+            // batteryLiquid6.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid6.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
 
-            var series2 = chart.series.push(new am4charts.ConeSeries());
-            series2.dataFields.valueY = "value2";
-            series2.dataFields.categoryX = "category";
-            series2.stacked = true;
-            series2.columns.template.width = am4core.percent(80);
-            series2.columns.template.fill = am4core.color("#000");
-            series2.columns.template.fillOpacity = 0.1;
-            series2.columns.template.stroke = am4core.color("#000");
-            series2.columns.template.strokeOpacity = 0.2;
-            series2.columns.template.strokeWidth = 2;
+        //////////////////////////////////// Molten 7 ////////////////////////////////////////////
 
-        }); // end am4core.ready()
+        let battery7 = document.getElementById('battery7');
+        let batteryLiquid7 = document.getElementById('battery__liquid7');
+        // let batteryLiquid7 = document.getElementById('battery__liquid::after');
+        level = 100;
+        batteryLiquid7.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid7.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color5batteryLiquid5
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid7.style.backgroundColor = '#f16716'
+            // batteryLiquid7.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid7.style.backgroundColor = '#f5dd06'
+            // batteryLiquid5.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid7.style.backgroundColor = '#98ce06'
+            // batteryLiquid7.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid7.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
+
+        //////////////////////////////////// Molten 8 ////////////////////////////////////////////
+
+        let battery8 = document.getElementById('battery8');
+        let batteryLiquid8 = document.getElementById('battery__liquid8');
+        // let batteryLiquid7 = document.getElementById('battery__liquid::after');
+        level = 80;
+        batteryLiquid8.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid8.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color5batteryLiquid5
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid8.style.backgroundColor = '#f16716'
+            // batteryLiquid7.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid8.style.backgroundColor = '#f5dd06'
+            // batteryLiquid5.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid8.style.backgroundColor = '#98ce06'
+            // batteryLiquid7.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid8.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
+
+        //////////////////////////////////// Molten 9 ////////////////////////////////////////////
+
+        let battery9 = document.getElementById('battery9');
+        let batteryLiquid9 = document.getElementById('battery__liquid9');
+        // let batteryLiquid7 = document.getElementById('battery__liquid::after');
+        level = 75;
+        batteryLiquid9.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid9.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color5batteryLiquid5
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid9.style.backgroundColor = '#f16716'
+            // batteryLiquid7.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid9.style.backgroundColor = '#f5dd06'
+            // batteryLiquid5.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid9.style.backgroundColor = '#98ce06'
+            // batteryLiquid7.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid9.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
+
+        //////////////////////////////////// Molten 10 ////////////////////////////////////////////
+
+        let battery10 = document.getElementById('battery10');
+        let batteryLiquid10 = document.getElementById('battery__liquid10');
+        // let batteryLiquid7 = document.getElementById('battery__liquid::after');
+        level = 37;
+        batteryLiquid10.setAttribute('style', `height:${level}%`);
+        if (level <= 20) {
+            // batteryLiquid.style.backgroundColor = '#ffffff'
+            batteryLiquid10.style.backgroundColor = '#f71515'
+            // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color5batteryLiquid5
+            //     .value +
+            //     ")";
+        } else if (level <= 40) {
+            batteryLiquid10.style.backgroundColor = '#f16716'
+            // batteryLiquid7.style.backgroundColor = 'orange'
+        } else if (level <= 60) {
+            batteryLiquid10.style.backgroundColor = '#f5dd06'
+            // batteryLiquid5.style.backgroundColor = 'green'
+        } else if (level <= 80) {
+            batteryLiquid10.style.backgroundColor = '#98ce06'
+            // batteryLiquid7.style.backgroundColor = 'green'
+        } else {
+            batteryLiquid10.style.backgroundColor = '#06ce17'
+            // batteryLiquid2.style.backgroundColor = 'green'
+        }
     </script>
 @endsection

@@ -8,8 +8,8 @@
             </div>
         @elseif(session()->has('preulang'))
             <?php toast('Silahkan Preparation Ulang.', 'error'); ?>
-            @elseif(session()->has('behasilditambahkan'))
-            <?php toast('Data Berhasil Ditambahkan','success'); ?>
+        @elseif(session()->has('behasilditambahkan'))
+            <?php toast('Data Berhasil Ditambahkan', 'success'); ?>
         @endif
 
         <div class="button-machine d-grid gap-2 col-6 mx-auto">
