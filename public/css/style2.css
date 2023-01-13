@@ -4,6 +4,15 @@
  :root {
   --bs-baseColor:#55769c;
  }
+
+ /* tool */
+.bg-softgrey{
+  background-color: #c3ffff;
+}
+
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -554,6 +563,9 @@ opacity: 1;
   position: relative;
 
 }
+.head-dtl{
+  background-color: #b4b4b4;
+}
 
 header {
   /* margin-top: 120px; */
@@ -782,6 +794,7 @@ font-weight: 600;
   .sidebar.close ~ #main{
     width: 100%;
     left: 0;
+    color: #f16716;
   }
 }
 

@@ -232,7 +232,8 @@ class MeltingController extends Controller
         $title = "LHP Forklift";
         $nrp = 0;
         $mesin = "FORKLIFT";
-        return view('lhp.prepare-forklift', compact('title', 'nrp', 'mesin', 'shift'));
+        // return view('lhp.prepare-forklift', compact('title', 'nrp', 'mesin', 'shift', 'id'));
+        return view('lhp.prepare-forklift', compact('title', 'nrp', 'mesin', 'shift'), ["id" => 1]);
     }
 
     public function lhp_forklift(UsableController $useable)
@@ -243,6 +244,6 @@ class MeltingController extends Controller
         $title = "LHP Forklift";
         $nrp = 0;
         $mesin = "FORKLIFT";
-        return view('lhp.lhp-forklift', compact('title', 'nrp', 'mesin', 'shift'));
+        return view('lhp.lhp-forklift', compact('title', 'nrp', 'mesin', 'shift'), ["id" => 1]);
     }
 }
