@@ -150,7 +150,9 @@
                 $.ajax({
                     method: "GET",
                     dataType: "json",
+
                     url: "{{ url('/dtkyrw') }}" +"/"+ searchnrp,
+
                     success: function(data) {
                         document.getElementById("nama").value = data[0].name;
                     }
