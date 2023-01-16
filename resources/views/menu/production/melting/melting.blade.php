@@ -29,7 +29,7 @@
                                         <div class="panel-title font-blue text-center">Daily Report Striko-1</div>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end mb-3"> <a 
-                                            class="btn btn-primary" href="{{url('/production/melting/striko-1')}}">Lihat Data</a>
+                                            class="btn btn-primary" href="{{url('/production/melting/Striko-1')}}">Lihat Data</a>
                                     </div>
                                     <div class="chartdiv" id="chartdiv"></div>
                                 </div>
@@ -41,7 +41,7 @@
                                         <div class="panel-title font-blue text-center">Daily Report Striko-2</div>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end mb-3"> <a 
-                                            class="btn btn-primary" href="{{url('/production/melting/striko-2')}}">Lihat Data</a>
+                                            class="btn btn-primary" href="{{url('/production/melting/Striko-2')}}">Lihat Data</a>
                                     </div>
                                     <div class="chartdiv" id="chartdiv1"></div>
                                 </div>
@@ -53,7 +53,7 @@
                                         <div class="panel-title font-blue text-center">Daily Report Striko-3</div>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end mb-3"> <a 
-                                            class="btn btn-primary" href="{{url('/production/melting/striko-3')}}">Lihat Data</a>
+                                            class="btn btn-primary" href="{{url('/production/melting/Striko-3')}}">Lihat Data</a>
                                     </div>
                                     <div class="chartdiv" id="chartdiv2"></div>
                                 </div>
@@ -66,7 +66,7 @@
                                         <div class="panel-title font-blue text-center">Daily Report Swif Asia</div>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end mb-3"> <a 
-                                            class="btn btn-primary" href="{{url('/production/melting/SwifAsia')}}">Lihat Data</a>
+                                            class="btn btn-primary" href="{{url('/production/melting/Swift_Asia')}}">Lihat Data</a>
                                     </div>
                                     <div class="chartdiv" id="chartdiv3"></div>
                                 </div>

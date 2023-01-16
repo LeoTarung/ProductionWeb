@@ -1,17 +1,6 @@
 @extends('mainLHP')
 @section('content')
     <div class="row justify-content-center mx-auto mt-4">
-        @if (session()->has('calladmin'))
-            <div class="alert
-        alert-danger" role="alert">
-                Silahkan Hubungi Admin Digitalization Untuk Melanjutkan.
-            </div>
-        @elseif(session()->has('preulang'))
-            <?php toast('Silahkan Preparation Ulang.', 'error'); ?>
-        @elseif(session()->has('behasilditambahkan'))
-            <?php toast('Data Berhasil Ditambahkan', 'success'); ?>
-        @endif
-
         <div class="button-machine d-grid gap-2 col-6 mx-auto">
             @if ($id_striko1 == null)
                 <a class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold " data-bs-toggle="modal"
@@ -161,10 +150,8 @@
                 $.ajax({
                     method: "GET",
                     dataType: "json",
-                    url: "http://localhost:8000/dtkyrw/" + searchnrp,
+                    url: "{{ url('/dtkyrw') }}" +"/"+ searchnrp,
                     success: function(data) {
-                        // console.log(data[0].name);
-                        // $("#nama").html(data[0].name);
                         document.getElementById("nama").value = data[0].name;
                     }
                 });

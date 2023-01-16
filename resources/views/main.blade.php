@@ -1,95 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="notranslate">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NM | {{ $title }}</title>
+    {{-- //============[ CSS IN HERE ]============// --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style2.css') }}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/css/fontawesome-all.min.css') }}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/font.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/boxicons/css/boxicons.css') }}">
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+    {{-- //============[ JS IN HERE ]============// --}}
 
-
+    <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/363jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
 </head>
-
-
 <body>
+    @if (session()->has('calladmin'))
+    <div class="alert alert-danger" role="alert">Silahkan Hubungi Admin Digitalization Untuk Melanjutkan.</div>
+    @elseif(session()->has('preulang'))
+    <?php toast('Silahkan Preparation Ulang.', 'error'); ?>
+    @elseif(session()->has('behasilditambahkan'))
+    <?php toast('Data Berhasil Ditambahkan', 'success'); ?>
+    @elseif(session()->has('behasiledit'))
+    <?php toast('Data Berhasil Dirubah', 'success'); ?>
+    @elseif(session()->has('gagal'))
+    <?php toast('Permintaan Anda Gagal', 'error'); ?>
+    @endif
     <div id="app">
         @include('partial.sidebar')
         <div id="main">
-
-
             @yield('content')
-
             @include('partial.navbar')
             @include('partial.footer')
-
         </div>
-
     </div>
-    {{-- <script>
-        const toggle = document.getElementById('toggle');
-        const sidebar = document.getElementById('sidebar');
 
-        // document.onclick = function(e) {
-        //     if (e.target.id !== 'sidebar' && e.target.id !== 'toggle') {
-        //         toggle.classList.remove('active');
-        //         sidebar.classList.remove('active');
-        //     }
-        }
-        toggle.onclick = function() {
-            toggle.classList.toggle('active');
-            sidebar.classList.toggle('active');
-        }
-        // var sidebarItems = document.querySelectorAll('.sidebar-item.has-sub');
-
-        // var _loop = function _loop() {
-        //     var sidebarItem = sidebarItems[i];
-        //     sidebarItems[i].querySelector('.sidebar-link').addEventListener('click', function(e) {
-        //         e.preventDefault();
-        //         var submenu = sidebarItem.querySelector('.submenu');
-        //         if (submenu.classList.contains('active')) submenu.classList.remove('active');
-        //         else submenu.classList.add('active');
-        //     });
-        // };
-
-        // for (var i = 0; i < sidebarItems.length; i++) {
-        //     _loop();
-    </script> --}}
-    <script>
-        let arrow = document.querySelectorAll(".arrow");
-        for (var i = 0; i < arrow.length; i++) {
-            arrow[i].addEventListener("click", (e) => {
-                let arrowParent = e.target.parentElement.parentElement; //selecting main parent of arrow
-
-                arrowParent.classList.toggle("showMenu");
-            });
-        }
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".toggle-menu");
-        console.log(sidebarBtn);
-
-        // document.onclick = function(e) {
-
-
-        sidebarBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        });
-
-        // document.onclick = function(e) {
-        //     if (e.target.id !== 'sidebar' && e.target.id !== 'toggle-menu') {
-
-        //         sidebar.classList.toggle("close");
-
-        //     }
-        // }
-    </script>
-
-
+    {{-- //============[ JS IN HERE ]============// --}}
+    <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script>
+    @include('sweetalert::alert')
+    <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

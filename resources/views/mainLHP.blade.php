@@ -1,33 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="notranslate">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NM | {{ $title }} </title>
+    {{-- //============[ CSS IN HERE ]============// --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style_lhp.css') }}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/css/fontawesome-all.min.css') }}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/font.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/boxicons/css/boxicons.css') }}">
-
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
+    {{-- //============[ JS IN HERE ]============// --}}
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/363jquery.min.js"></script>
-
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
-
 </head>
-
-
 <body>
-
-    {{-- <div class="container-fluid"> --}}
     <div id="app">
-
-        {{-- @include('partial.sidebar2') --}}
         <div id="main">
+
+            @if (session()->has('calladmin'))
+                <div class="alert alert-danger" role="alert">Silahkan Hubungi Admin Digitalization Untuk Melanjutkan.</div>
+            @elseif(session()->has('preulang'))
+                <?php toast('Silahkan Preparation Ulang.', 'error'); ?>
+            @elseif(session()->has('behasilditambahkan'))
+                <?php toast('Data Berhasil Ditambahkan', 'success'); ?>
+            @endif
 
             @include('partial.navbarLHP')
 
@@ -35,12 +31,10 @@
             @include('partial.footerLHP')
         </div>
     </div>
-
-    {{-- </div> --}}
+    {{-- //============[ JS IN HERE ]============// --}}
+    <script src="{{ asset('/js/JSforLHP.js') }}"></script>
     @include('sweetalert::alert')
-
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
