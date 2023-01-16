@@ -135,26 +135,39 @@
                                 <td class="fs-5">NRP</td>
                                 <td><input type="text" class="form-control fw-bold" id="nama" name="nama"
                                         value="3551"readonly></td>
+
                             </tr>
                             <tr>
+
+                                <td class="fs-5">MC NO</td>
+                                <td><input type="number" class="form-control  fw-bold" id="mc" name="mc"
+                                        readonly></td>
                                 <td class="fs-5">MATERIAL</td>
                                 <td><input type="text" class="form-control  fw-bold" id="material" name="material"
                                         value="HD-2"readonly></td>
                             </tr>
                             <tr>
                                 <td class="fs-5">FURNACE</td>
-                                <td><input type="text" class="form-control border-dark fw-bold" id="furnace"
-                                        name="furnace"></td>
-                            </tr>
-                            <tr>
-                                <td class="fs-5">MC NO</td>
-                                <td><input type="number" class="form-control border-dark fw-bold" id="mc"
-                                        name="mc"></td>
+                                <td colspan="3" class="mt-1">
+                                    <input type="radio" class="btn-check" name="options-outlined"
+                                        id="success-outlined" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="success-outlined">STRIKO-1</label>
+                                    <input type="radio" class="btn-check" name="options-outlined"
+                                        id="success-outlined2" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="success-outlined2">STRIKO-2</label>
+                                    <input type="radio" class="btn-check" name="options-outlined"
+                                        id="success-outlined3" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="success-outlined3">STRIKO-3</label>
+                                    <input type="radio" class="btn-check" name="options-outlined"
+                                        id="success-outlined4" autocomplete="off">
+                                    <label class="btn btn-outline-success " for="success-outlined4">SWIF ASIA</label>
+
+
                             </tr>
                             <tr>
                                 <td class="fs-5">BERAT(kg)</td>
-                                <td><input type="number" class="form-control border-dark fw-bold" id="berat"
-                                        name="berat"></td>
+                                <td colspan="2" rowspan="3"><input type="number"
+                                        class="form-control border-dark fw-bold" id="berat" name="berat"></td>
                             </tr>
                         </table>
 
