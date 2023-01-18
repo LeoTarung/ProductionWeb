@@ -76,7 +76,7 @@ class MeltingTestController extends Controller
         $id_striko3 = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_Swift_Asia = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', 'Swift_Asia'], ['shift', '=', $shift]])->first();
         $nrp = 0;
-        $mesin = "MELTING";
+        $mesin = "FINAL INS.";
         // $shift = 'test';
         // return view('lhp.test', [
         //     "title" => 'Test',
