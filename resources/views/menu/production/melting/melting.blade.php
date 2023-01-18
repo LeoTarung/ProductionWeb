@@ -22,6 +22,7 @@
                             <label class="tab" id="four-tab" for="four">Swift Asia</label>
                         </div>
                         <div class="panels">
+
                             <div class="panel" id="one-panel">
                                 <div class="row">
                                     <div class="col-4"></div>
@@ -33,7 +34,99 @@
                                     </div>
                                     <div class="chartdiv" id="chartdiv"></div>
                                 </div>
+                                
+                                <div class="row w-100 mt-3">
+                                    <div class="col-6 ">
+                                        <div class="card shadow today-report-chg border-0">
+                                            <div class="card-header border-0 text-center fw-bold fs-5">
+                                                <div class="font-blue title-report-melt">Today Report Charge</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75 mt-3">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Ingot </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue fw-bold " id="ingot_str1" >350 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end" id="persen_ingot_str1">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Reject Parts </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold " id="reject_parts_str1">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end" id="persen_reject_parts_str1">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Return </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold " id="total_return_str1">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end" id="persen_total_return_str1">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Tapping </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold " id="tapping_str1">356 Kg </div>
+                                                            </div>
+                                                            {{-- <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end" id="persen_tapping_str1">80 % </div>
+                                                            </div> --}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-6 ">
+                                        <div class="card shadow today-report-chg border-0">
+                                            <div class="card-header border-0 text-center fw-bold fs-5">
+                                                <div class="font-blue title-report-melt">Today Report Losses</div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div id="chartdiv4"></div>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center fw-bold mb-2 ">
+                                                        <div class="red-losses"></div>
+                                                        <div class="ms-3">Losses : 50 Kg</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+                            
                             <div class="panel" id="two-panel">
                                 <div class="row">
                                     <div class="col-4"></div>
@@ -45,7 +138,99 @@
                                     </div>
                                     <div class="chartdiv" id="chartdiv1"></div>
                                 </div>
+
+                                <div class="row w-100 mt-3">
+                                    <div class="col-6 ">
+                                        <div class="card shadow today-report-chg border-0">
+                                            <div class="card-header border-0 text-center fw-bold fs-5">
+                                                <div class="font-blue title-report-melt">Today Report Charge</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75 mt-3">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Ingot </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Reject Parts </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Return </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Tapping </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-6 ">
+                                        <div class="card shadow today-report-chg border-0">
+                                            <div class="card-header border-0 text-center fw-bold fs-5">
+                                                <div class="font-blue title-report-melt">Today Report Losses</div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div id="chartdiv4"></div>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center fw-bold mb-2 ">
+                                                        <div class="red-losses"></div>
+                                                        <div class="ms-3">Losses : 50 Kg</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
+
                             <div class="panel" id="three-panel">
                                 <div class="row">
                                     <div class="col-4"></div>
@@ -58,7 +243,98 @@
                                     <div class="chartdiv" id="chartdiv2"></div>
                                 </div>
 
+                                <div class="row w-100 mt-3">
+                                    <div class="col-6 ">
+                                        <div class="card shadow today-report-chg border-0">
+                                            <div class="card-header border-0 text-center fw-bold fs-5">
+                                                <div class="font-blue title-report-melt">Today Report Charge</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75 mt-3">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Ingot </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Reject Parts </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Return </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Tapping </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-6 ">
+                                        <div class="card shadow today-report-chg border-0">
+                                            <div class="card-header border-0 text-center fw-bold fs-5">
+                                                <div class="font-blue title-report-melt">Today Report Losses</div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div id="chartdiv4"></div>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center fw-bold mb-2 ">
+                                                        <div class="red-losses"></div>
+                                                        <div class="ms-3">Losses : 50 Kg</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
+
                             <div class="panel" id="four-panel">
                                 <div class="row">
                                     <div class="col-4"></div>
@@ -70,31 +346,105 @@
                                     </div>
                                     <div class="chartdiv" id="chartdiv3"></div>
                                 </div>
+
+                                <div class="row w-100 mt-3">
+                                    <div class="col-6 ">
+                                        <div class="card shadow today-report-chg border-0">
+                                            <div class="card-header border-0 text-center fw-bold fs-5">
+                                                <div class="font-blue title-report-melt">Today Report Charge</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75 mt-3">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Ingot </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Reject Parts </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Return </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <div class="card w-75">
+                                                        <div class="row">
+                                                            <div class="col-4 ms-5 mt-2 ">
+                                                                <div class="font-blue fw-bold">Tapping </div>
+                                                            </div>
+                                                            <div class="col-4 mt-2  d-flex justify-content-center">
+                                                                <div class="font-blue  fw-bold ">356 Kg </div>
+                                                            </div>
+                                                            <div class="col-auto mt-2  d-flex justify-content-end">
+                                                                <div class="font-blue  fw-bold text-end">80 % </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-6 ">
+                                        <div class="card shadow today-report-chg border-0">
+                                            <div class="card-header border-0 text-center fw-bold fs-5">
+                                                <div class="font-blue title-report-melt">Today Report Losses</div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div id="chartdiv4"></div>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center fw-bold mb-2 ">
+                                                        <div class="red-losses"></div>
+                                                        <div class="ms-3">Losses : 50 Kg</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
+
                         </div>
                     </div>
-                    {{-- <div class="card-header shadow-sm">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="title-chart font-blue"> Monitoring Striko-1</div>
-                            </div>
-                            <div class="col-6 d-flex justify-content-end">
-                                <button class="prev-melt-button"> <i class='bx bxs-chevron-left bx-sm'></i> </button>
-                                <button class="next-melt-button"> <i class='bx bxs-chevron-right bx-sm ms-1'></i> </button>
-                                <button class="close-melt-button"> <i class='bx bxs-x-square bx-sm bx-spin-hover ms-1'></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="daily-report font-blue ms-3 text-center mt-2">Daily Report</div>
-                        <div id="chartdiv" class="mt-1">
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
-        <div class="row w-100">
+        {{-- <div class="row w-100">
             <div class="col-6 ">
                 <div class="card shadow today-report-chg border-0">
                     <div class="card-header border-0 text-center fw-bold fs-5">
@@ -164,14 +514,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-4 ">
-                <div class="card shadow today-report-chg border-0">
-                    <div class="card-header border-0 text-center fw-bold fs-5 ">
-                        <div class="font-blue title-report-melt">Today Report Losses</div>
-                    </div>
 
-                </div>
-            </div> --}}
             <div class="col-6 ">
                 <div class="card shadow today-report-chg border-0">
                     <div class="card-header border-0 text-center fw-bold fs-5">
@@ -184,12 +527,12 @@
                                 <div class="red-losses"></div>
                                 <div class="ms-3">Losses : 50 Kg</div>
                             </div>
-                            {{-- <div class="col-6 d-flex justify-acontent-start fw-bold mb-2"></div> --}}
+                            
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 
@@ -210,8 +553,350 @@
     <!-- Chart code -->
     {{-- ///////////////////////////////// CHART STRIKO - 1///////////////////////////////////// --}}
     <script>
-        am5.ready(function() {
+                      $(function(){
+           let ip_node = '127.0.0.1';
+           let socket_port = '3000';
+           let socket = io(ip_node + ':' + socket_port);
+           socket.on('connection');
+        //    socket.on("mysql", (datasql) => {
+        //        console.log(datasql[0].nama_timbangan);
+        //        console.log(datasql[0].berat);
+        //        $("#sql1").text(datasql[0].nama_timbangan);
+        //        $(".sql1").text(datasql[0].berat);
+        //    })
 
+            socket.on("bulananStriko1", (datasql) => {
+            // console.log(datasql);
+
+            am5.ready(function() {
+            
+            var ingot = datasql[0].ingot
+            console.log('nah ' + ingot);
+            var data = [{
+                "date": "2022-01-01",
+                "charging": datasql[0].ingot,
+                "townSize": 6,
+                "loss": 70,
+                "ingot": 30
+            }, {
+                "date": "2022-01-02",
+                "charging": 400,
+                "townSize": 6,
+                "loss": 66,
+                "ingot": 34
+            }, {
+                "date": "2022-01-03",
+                "charging": 340,
+                "townSize": 6,
+                "loss": 75,
+                "ingot": 25
+            }, {
+                "date": "2022-01-04",
+                "charging": 227,
+                "townSize": 6,
+                "loss": 70,
+                "ingot": 30
+            }, {
+                "date": "2022-01-05",
+                "charging": 390,
+                "townSize": 6,
+                "loss": 85,
+                "ingot": 15
+            }, {
+                "date": "2022-01-06",
+                "charging": 227,
+                "townSize": 6,
+                "loss": 70,
+                "ingot": 30
+            }, {
+                "date": "2022-01-07",
+                "charging": 227,
+                "townSize": 6,
+                "loss": 70,
+                "ingot": 30
+            }, {
+                "date": "2022-01-08",
+                "charging": 427,
+                "townSize": 6,
+                "loss": 70,
+                "ingot": 30
+            }, {
+                "date": "2022-01-09",
+                "charging": 450,
+                "townSize": 6,
+                "loss": 76,
+                "ingot": 24
+            }, {
+                "date": "2022-01-10",
+                "charging": 337,
+                "townSize": 6,
+                "loss": 70,
+                "ingot": 30
+            }, {
+                "date": "2022-01-11",
+                "charging": 227,
+                "townSize": 6,
+                "loss": 70,
+                "ingot": 30
+            }, {
+                "date": "2022-01-12",
+                "charging": 350,
+                "townSize": 6,
+                "loss": 85,
+                "ingot": 15
+            }, {
+                "date": "2022-01-13",
+                "charging": 314,
+                "townSize": 6,
+                "loss": 74,
+                "ingot": 26
+            }, {
+                "date": "2022-01-14",
+                "charging": 400,
+                "townSize": 6,
+                "loss": 75,
+                "ingot": 25
+            }, {
+                "date": "2022-01-15"
+            }, {
+                "date": "2022-01-16"
+            }, {
+                "date": "2022-01-17"
+            }, {
+                "date": "2022-01-18"
+            }, {
+                "date": "2022-01-19"
+            }, {
+                "date": "2022-01-20"
+            }, {
+                "date": "2022-01-21"
+            }, {
+                "date": "2022-01-22"
+            }, {
+                "date": "2022-01-23"
+            }, {
+                "date": "2022-01-24"
+            }, {
+                "date": "2022-01-25"
+            }, {
+                "date": "2022-01-26"
+            }, {
+                "date": "2022-01-27"
+            }, {
+                "date": "2022-01-28"
+            }, {
+                "date": "2022-01-29"
+            }, {
+                "date": "2022-01-30"
+            }, {
+                "date": "2022-01-31"
+            }];
+
+            // Create root element
+            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+            var root = am5.Root.new("chartdiv");
+            root._logo.dispose();
+            // Set themes
+            // https://www.amcharts.com/docs/v5/concepts/themes/
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
+
+
+
+            // Create chart
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/
+            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                panX: false,
+                panY: false,
+                wheelY: "none"
+            }));
+
+            chart.zoomOutButton.set("forceHidden", true);
+
+            // chart.get("colors").set("step", 2);
+            chart.get("colors").set("colors", [
+                // orange
+                am5.color(0xFB9649),
+                // am5.color(0x605CB8), Biru
+                // Kuning
+                // am5.color(0xFFE680),
+                am5.color(0xE64640),
+                am5.color(0x53C292)
+            ]);
+
+            // Create axes
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+            var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                baseInterval: {
+                    timeUnit: "day",
+                    count: 1
+                },
+                renderer: am5xy.AxisRendererX.new(root, {
+                    minGridDistance: 50
+                }),
+                tooltip: am5.Tooltip.new(root, {})
+            }));
+
+
+            var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
+            chargingAxisRenderer.grid.template.set("forceHidden", true);
+            var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                renderer: chargingAxisRenderer,
+                tooltip: am5.Tooltip.new(root, {})
+            }));
+
+            // var lossAxisRenderer = am5xy.AxisRendererY.new(root, {
+            //     opposite: true
+            // });
+            // lossAxisRenderer.grid.template.set("forceHidden", true);
+            // var lossAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+            //     renderer: lossAxisRenderer,
+            //     // forceHidden: true
+
+            // }));
+
+
+            var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
+                opposite: true
+            });
+            ingotAxisRenderer.grid.template.set("forceHidden", true);
+            var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                renderer: ingotAxisRenderer,
+                // forceHidden: true
+                numberFormat: "#'%'"
+
+            }));
+
+            // var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
+            //     opposite: true
+            // });
+            // ingotAxisRenderer.grid.template.set("forceHidden", true);
+            // var ingotAxis = chart.yAxes.push(am5xy.ingotAxis.new(root, {
+            //     baseUnit: "minute",
+            //     renderer: ingotAxisRenderer,
+            //     extraMax: 0.3
+            // }));
+
+            // Create series
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+            var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
+                xAxis: xAxis,
+                yAxis: chargingAxis,
+                valueYField: "charging",
+                valueXField: "date",
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "Total Charging: {valueY} kg"
+                })
+            }));
+
+            chargingSeries.data.processor = am5.DataProcessor.new(root, {
+                dateFields: ["date"],
+                dateFormat: "yyyy-MM-dd"
+            });
+
+            var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
+                xAxis: xAxis,
+                yAxis: ingotAxis,
+                valueYField: "loss",
+                valueXField: "date",
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "loss: {valueY}%"
+                })
+            }));
+
+            lossSeries.strokes.template.setAll({
+                strokeWidth: 2
+            });
+
+            // Add circle bullet
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
+            lossSeries.bullets.push(function() {
+                var graphics = am5.Circle.new(root, {
+                    strokeWidth: 2,
+                    radius: 5,
+                    stroke: lossSeries.get("stroke"),
+                    fill: root.interfaceColors.get("background"),
+                });
+
+                graphics.adapters.add("radius", function(radius, target) {
+                    return target.dataItem.dataContext.townSize;
+                })
+
+                return am5.Bullet.new(root, {
+                    sprite: graphics
+                });
+            });
+
+            var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
+                xAxis: xAxis,
+                yAxis: ingotAxis,
+                valueYField: "ingot",
+                valueXField: "date",
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "ingot: {valueY} %"
+                })
+            }));
+
+            ingotSeries.strokes.template.setAll({
+                strokeWidth: 3
+            });
+
+            // Add circle bullet
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
+            ingotSeries.bullets.push(function() {
+                var graphics = am5.Circle.new(root, {
+                    width: 5,
+                    height: 5,
+                    centerX: am5.p50,
+                    centerY: am5.p50,
+                    stroketWidth: 5,
+                    stroke: ingotSeries.get("stroke"),
+                    fill: root.interfaceColors.get("background"),
+                });
+                graphics.adapters.add("radius", function(radius, target) {
+                    return target.dataItem.dataContext.townSize;
+                })
+                return am5.Bullet.new(root, {
+                    sprite: graphics
+                });
+            });
+
+            // Add cursor
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+            chart.set("cursor", am5xy.XYCursor.new(root, {
+                xAxis: xAxis,
+                yAxis: chargingAxis
+            }));
+
+
+            chargingSeries.data.setAll(data);
+            lossSeries.data.setAll(data);
+            ingotSeries.data.setAll(data);
+            xAxis.data.setAll(data);
+
+            // Make stuff animate on load
+            // https://www.amcharts.com/docs/v5/concepts/animations/
+            chargingSeries.appear(1000);
+            chart.appear(1000, 100);
+
+            let TotalCharging = 0;
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].charging) {
+                    TotalCharging++
+                }
+            }
+            console.log(TotalCharging)
+        }); // end am5.ready()
+           })
+
+       });
+       
+        am5.ready(function() {
+            
+            var ingot = datasql[0].ingot
+            console.log('nah ' + ingot);
             var data = [{
                 "date": "2022-01-01",
                 "charging": 227,
@@ -1609,4 +2294,6 @@
 
         }); // end am4core.ready()
     </script>
+
+
 @endsection

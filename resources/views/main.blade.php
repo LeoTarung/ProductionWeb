@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     {{-- //============[ JS IN HERE ]============// --}}
-
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/363jquery.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+
 </head>
 <body>
     @if (session()->has('calladmin'))
@@ -36,8 +37,31 @@
             @include('partial.footer')
         </div>
     </div>
-
     {{-- //============[ JS IN HERE ]============// --}}
+    <script src="{{ asset('/js/Socketio454.js') }}"></script>
+    <script>
+    //     $(function(){
+    //        let ip_node = '127.0.0.1';
+    //        let socket_port = '3000';
+    //        let socket = io(ip_node + ':' + socket_port);
+    //        socket.on('connection');
+    //     //    socket.on("mysql", (datasql) => {
+    //     //        console.log(datasql[0].nama_timbangan);
+    //     //        console.log(datasql[0].berat);
+    //     //        $("#sql1").text(datasql[0].nama_timbangan);
+    //     //        $(".sql1").text(datasql[0].berat);
+    //     //    })
+
+    //         socket.on("bulananStriko1", (datasql) => {
+    //         console.log(datasql);
+    //         //    console.log(datasql[0].nama_timbangan);
+    //         //    console.log(datasql[0].berat);
+    //         //    $("#sql1").text(datasql[0].nama_timbangan);
+    //         //    $(".sql1").text(datasql[0].berat);
+    //        })
+
+    //    });
+   </script>
     <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script>
     @include('sweetalert::alert')
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
