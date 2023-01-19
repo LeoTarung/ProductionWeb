@@ -8,47 +8,42 @@
 
     <div class="container-fluid">
         <div class="row  mt-3 mb-4 d-flex justify-content-center">
-            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <div class="card-header text-center fw-bold">MC-1</div>
-                <section id="battery" class="battery mb-3 d-flex justify-content-start">
-                    <div id="battery__pill" class="battery__pill">
-                        <div id="battery__level" class="battery__level">
-                            <div id="battery__liquid" class="battery__liquid"></div>
+
+            @if ($WOW == 'hd-2')
+                <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="card-header text-center fw-bold">MC-3 hd-2</div>
+                    <section id="battery" class="battery mb-3 d-flex justify-content-start">
+                        <div id="battery__pill" class="battery__pill">
+                            <div id="battery__level" class="battery__level">
+                                <div id="battery__liquid" class="battery__liquid"></div>
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <div class="card-header text-center fw-bold">MC-2</div>
-                <section id="battery2" class="battery mb-3 d-flex justify-content-start">
-                    <div id="battery__pill" class="battery__pill">
-                        <div id="battery__level" class="battery__level">
-                            <div id="battery__liquid2" class="battery__liquid"></div>
+                    </section>
+                </div>
+            @else
+                <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="card-header text-center fw-bold">MC-4 hd-4</div>
+                    <section id="batteryHD4_1" class="battery mb-3 d-flex justify-content-start">
+                        <div id="battery__pill" class="battery__pill">
+                            <div id="battery__level" class="battery__level">
+                                <div id="battery__liquidHD4_1" class="battery__liquid"></div>
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <div class="card-header text-center fw-bold">MC-3</div>
-                <section id="battery3" class="battery mb-3 d-flex justify-content-start">
-                    <div id="battery__pill" class="battery__pill">
-                        <div id="battery__level" class="battery__level">
-                            <div id="battery__liquid3" class="battery__liquid"></div>
+                    </section>
+                </div>
+                <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="card-header text-center fw-bold">MC-4 hd-4</div>
+                    <section id="batteryHD4_2" class="battery mb-3 d-flex justify-content-start">
+                        <div id="battery__pill" class="battery__pill">
+                            <div id="battery__level" class="battery__level">
+                                <div id="battery__liquidHD4_2" class="battery__liquid"></div>
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <div class="card-header text-center fw-bold">MC-4</div>
-                <section id="battery4" class="battery mb-3 d-flex justify-content-start">
-                    <div id="battery__pill" class="battery__pill">
-                        <div id="battery__level" class="battery__level">
-                            <div id="battery__liquid4" class="battery__liquid"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    </section>
+                </div>
+            @endif
+
+            {{-- <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 <div class="card-header text-center fw-bold">MC-5</div>
                 <section id="battery5" class="battery mb-3 d-flex justify-content-start">
                     <div id="battery__pill" class="battery__pill">
@@ -107,7 +102,7 @@
                         </div>
                     </div>
                 </section>
-            </div>
+            </div> --}}
         </div>
 
     </div>
@@ -131,9 +126,9 @@
                                 <td class="fs-5">FORKLIFT</td>
                                 <td>
                                     <input type="text" class="form-control fw-bold" id="nama" name="nama"
-                                        value="09"readonly>
                                 </td>
                                 <td class="fs-5">NRP</td>
+                                value="09"readonly>
                                 <td><input type="text" class="form-control fw-bold" id="nama" name="nama"
                                         value="3551"readonly></td>
 
@@ -145,22 +140,22 @@
                                         readonly></td>
                                 <td class="fs-5">MATERIAL</td>
                                 <td><input type="text" class="form-control  fw-bold" id="material" name="material"
-                                        value="HD-2"readonly></td>
+                                        value="HD-2" readonly></td>
                             </tr>
                             <tr>
                                 <td class="fs-5">FURNACE</td>
                                 <td colspan="3" class="mt-1">
-                                    <input type="radio" class="btn-check" name="options-outlined"
-                                        id="success-outlined" autocomplete="off">
+                                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined"
+                                        autocomplete="off" value="STRIKO-1">
                                     <label class="btn btn-outline-success" for="success-outlined">STRIKO-1</label>
-                                    <input type="radio" class="btn-check" name="options-outlined"
-                                        id="success-outlined2" autocomplete="off">
+                                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined2"
+                                        autocomplete="off" value="STRIKO-2">
                                     <label class="btn btn-outline-success" for="success-outlined2">STRIKO-2</label>
                                     <input type="radio" class="btn-check" name="options-outlined"
-                                        id="success-outlined3" autocomplete="off">
+                                        id="success-outlined3" autocomplete="off" value="STRIKO-3">
                                     <label class="btn btn-outline-success" for="success-outlined3">STRIKO-3</label>
                                     <input type="radio" class="btn-check" name="options-outlined"
-                                        id="success-outlined4" autocomplete="off">
+                                        id="success-outlined4" autocomplete="off" value="SWIF-ASIA">
                                     <label class="btn btn-outline-success " for="success-outlined4">SWIF ASIA</label>
 
 
@@ -210,11 +205,11 @@
             batteryLiquid.style.backgroundColor = '#06ce17'
             // batteryLiquid2.style.backgroundColor = 'green'
         }
-
+        console.log(level);
         //////////////////////////////////// Molten 2 ////////////////////////////////////////////
 
-        let battery2 = document.getElementById('battery2');
-        let batteryLiquid2 = document.getElementById('battery__liquid2');
+        let battery2 = document.getElementById('batteryHD2_2');
+        let batteryLiquid2 = document.getElementById('battery__liquid2HD2_2');
         // let batteryLiquid2 = document.getElementById('battery__liquid::after');
         level = 50;
         batteryLiquid2.setAttribute('style', `height:${level}%`);
@@ -239,9 +234,10 @@
         }
 
         //////////////////////////////////// Molten 3 ////////////////////////////////////////////
+        
 
-        let battery3 = document.getElementById('battery3');
-        let batteryLiquid3 = document.getElementById('battery__liquid3');
+        let battery3 = document.getElementById('batteryHD4_1');
+        let batteryLiquid3 = document.getElementById('battery__liquidHD4_1');
         // let batteryLiquid3 = document.getElementById('battery__liquid::after');
         level = 60;
         batteryLiquid3.setAttribute('style', `height:${level}%`);
@@ -267,8 +263,8 @@
 
         //////////////////////////////////// Molten 4 ////////////////////////////////////////////
 
-        let battery4 = document.getElementById('battery4');
-        let batteryLiquid4 = document.getElementById('battery__liquid4');
+        let battery4 = document.getElementById('batteryHD4_2');
+        let batteryLiquid4 = document.getElementById('battery__liquidHD4_2');
         // let batteryLiquid4 = document.getElementById('battery__liquid::after');
         level = 25;
         batteryLiquid4.setAttribute('style', `height:${level}%`);

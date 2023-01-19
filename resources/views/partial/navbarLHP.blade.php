@@ -13,6 +13,12 @@
                         {{ $shift }}
                     </div>
                 </a>
+            @elseif(Request::url() == url('/pre-forklift'))
+                <a>
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
             @else
                 <a onClick="ModalResume('{{ $mesin }}', '{{ $id }}')">
                     <div class="shift border-bottom">
