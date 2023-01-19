@@ -1,60 +1,88 @@
 @extends('main')
 @section('content')
-    <div class="main-content d-flex flex-column container-fluid">
+    <div class="main-content d-flex flex-column">
         <div class="container-fluid">
-            <div class="row text-center">
-                <h2>Details Report STRIKO-1</h2>
-            </div>
-            <div class="row justify-content-end text-end mt-1">
-                <div class="col-5">
-                    <input type="date" class="inpt-date border border-3 rounded"> &ensp; s/d &ensp;
-                    <input type="date" class="inpt-date border border-3 rounded">
-                    <button class=" ms-1 btn btn-primary">filter</button>
+            <div class="card">
+                <div>
+                    <canvas id="myChart"></canvas>
                 </div>
             </div>
-            <table class="table table-bordered mt-2 nowrap">
-                <thead class="head-dtl">
-                    <tr>
-                        <td class="text-center nowrap">NO</td>
-                        <td class="text-center nowrap">TANGGAL</td>
-                        <td class="text-center nowrap">SHIFT</td>
-                        <td class="text-center nowrap">MESIN</td>
-                        <td class="text-center nowrap">MATERIAL</td>
-                        <td class="text-center nowrap">K-VALUE</td>
-                        <td class="text-center nowrap">INGOT</td>
-                        <td class="text-center nowrap">EXGATE</td>
-                        <td class="text-center nowrap">REJECT PARTS</td>
-                        <td class="text-center nowrap">ALM. TREAT</td>
-                        <td class="text-center nowrap">OIL SCRAP</td>
-                        <td class="text-center nowrap">FLUXING</td>
-                        <td class="text-center nowrap">TAPPING</td>
-                        <td class="text-center nowrap">STOK MOLTEN</td>
-                        <td class="text-center nowrap">DROSS</td>
-                        <td>GAS AKHIR</td>
-                        <td colspan="2" class="text-center">AKSI</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td>1.</td>
-                    <td>13/02/2023</td>
-                    <td>Shift-3</td>
-                    <td>SWIF ASIA</td>
-                    <td>ADC-12</td>
-                    <td>-</td>
-                    <td>100</td>
-                    <td>200</td>
-                    <td>300</td>
-                    <td>400</td>
-                    <td>500</td>
-                    <td>3</td>
-                    <td>600</td>
-                    <td>3500</td>
-                    <td>200</td>
-                    <td>12345</td>
-                    <td>Detail</td>
-                    <td>Edit</td>
-                </tbody>
-            </table>
+
         </div>
     </div>
+    <script></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var ingot = @json($ingot);
+        var loss = @json($loss);
+        var total_charging = @json($total_charging);
+        var sampleChart;
+
+        (function($) {
+            $(document).ready(function() {
+                console.log(ingot);
+                const ctx = document.getElementById('myChart').getContext('2d');
+                sampleChart.ChartData(ctx)
+            })
+        });
+
+        // const ctx = document.getElementById('myChart');
+        sampleChart = {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: 'sales',
+                        data: [12000, 19000, 3000, 5000, 2000, 3000],
+                        borderWidth: 1,
+                        backgroundColor: [
+                            'rgba(255, 26, 104, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(0, 0, 0, 1)'
+                        ],
+                        yAxisID: 'y'
+                    }, {
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(128, 0, 0, 1)'
+                        ],
+                        borderColor: [
+                            'rgba(128, 0, 0, 1)'
+                        ],
+                        type: 'line',
+                        yAxisID: 'quantity'
+                    }, {
+                        label: 'hh',
+                        data: [12, 20, 7, 1, 2, 6],
+                        backgroundColor: [
+                            'rgba(0, 0, 0, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(0, 0, 0, 1)'
+                        ],
+                        type: 'line',
+                        yAxisID: 'quantity'
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            type: 'linear',
+                            position: 'left'
+                        },
+                        quantity: {
+                            beginAtZero: true,
+                            type: 'linear',
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+        }
+    </script>
 @endsection
