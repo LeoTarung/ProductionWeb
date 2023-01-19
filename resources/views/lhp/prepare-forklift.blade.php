@@ -10,21 +10,21 @@
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
                 {{-- @if ($id_striko1 == null) --}}
                 <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold " data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
+                    data-bs-target="#staticBackdrop" onclick="forklift(1)" onclick="forklift(1)">
                     <div class="font-forklift">FORKLIFT-1</div>
                 </a>
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
                 {{-- @if ($id_striko1 == null) --}}
                 <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
-                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(2)">
                     <div class="font-forklift">FORKLIFT-2</div>
                 </a>
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
                 {{-- @if ($id_striko1 == null) --}}
                 <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
-                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(3)">
                     <div class="font-forklift">FORKLIFT-3</div>
                 </a>
             </div>
@@ -34,21 +34,21 @@
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
                 {{-- @if ($id_striko1 == null) --}}
                 <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
-                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(4)">
                     <div class="font-forklift">FORKLIFT-4</div>
                 </a>
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
                 {{-- @if ($id_striko1 == null) --}}
                 <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
-                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(5)">
                     <div class="font-forklift">FORKLIFT-5</div>
                 </a>
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
                 {{-- @if ($id_striko1 == null) --}}
                 <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
-                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(6)">
                     <div class="font-forklift">FORKLIFT-6</div>
                 </a>
             </div>
@@ -59,7 +59,8 @@
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl  ">
-            <form action="" method="POST" onSubmit="document.getElementById('submit').disabled=true;">
+            <form action="{{ url('/pre-forklift/simpan') }}" method="POST"
+                onSubmit="document.getElementById('submit').disabled=true;">
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
@@ -90,36 +91,42 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <select class="form-select border-dark fw-bold" id="material" name="material" required>
-                                        <option value="" selected disabled>Open this select menu</option>
-                                        <option value="HD-2">HD-2</option>
-                                        <option value="HD-4">HD-4</option>
-                                        <option value="ADC-12">ADC-12</option>
-                                        <option value="YH3R">YH3R</option>
-                                    </select>
-                                    <label for="material" class="">M A T E R I A L</label>
+                                <div class="form-check" id="material" name="material" required>
+                                    <label for="material " class="">M A T E R I A L :</label>
+                                    <p class="mt-2">
+                                        <input type="radio" class="btn-check" name="material" id="success-outlined"
+                                            autocomplete="off" value="HD-2">
+                                        <label class="btn btn-outline-success" for="success-outlined">HD-2</label>
+                                        <input type="radio" class="btn-check" name="material" id="success-outlined2"
+                                            autocomplete="off" value="HD-4">
+                                        <label class="btn btn-outline-success" for="success-outlined2">HD-4</label>
+                                        <input type="radio" class="btn-check" name="material" id="success-outlined3"
+                                            autocomplete="off" value="ADC-12">
+                                        <label class="btn btn-outline-success" for="success-outlined3">ADC-12</label>
+                                        <input type="radio" class="btn-check" name="material" id="success-outlined4"
+                                            autocomplete="off" value="YH3R">
+                                        <label class="btn btn-outline-success " for="success-outlined4">YH3R</label>
+                                    </p>
                                 </div>
                             </div>
-                            {{-- <div class="col-6">
+                            <div class="col-6">
                                 <div class="form-floating ">
                                     <input type="text" class="form-control border-dark text-uppercase fw-bold"
                                         id="mesin" name="mesin" readonly required>
                                     <label for="mesin">M E S I N</label>
                                 </div>
                             </div>
-                            <input class="form-control" type="hidden" id="shift" name="shift"
+                            {{-- <input class="form-control" type="hidden" id="shift" name="shift"
                                 value="{{ $shift }}">
                             <input class="form-control" type="hidden" id="id" name="id"
-                                value="{{ $lhp->id + 1 }}">
-                        </div> --}}
-                            {{-- END PREPARATION FORM --}}
+                                value="{{ $lhp->id + 1 }}"> --}}
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
-                            {{-- <button type="submit" class="btn btn-primary" onclick="redirect()">Lanjutkan</button> --}}
-                            <button type="submit" class="btn btn-primary">Lanjutkan</button>
-                        </div>
+                        {{-- END PREPARATION FORM --}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
+                        {{-- <button type="submit" class="btn btn-primary" onclick="redirect()">Lanjutkan</button> --}}
+                        <button type="submit" id="submit" class="btn btn-primary">Lanjutkan</button>
                     </div>
                 </div>
             </form>
@@ -128,6 +135,23 @@
     {{-- END MODAL --}}
 
     <script>
+        function forklift(id) {
+            if (id == 1) {
+                document.getElementById("mesin").value = 'Forklift-1'
+            } else if (id == 2) {
+                document.getElementById("mesin").value = 'Forklift-2'
+            } else if (id == 3) {
+                document.getElementById("mesin").value = 'Forklift-3'
+            } else if (id == 4) {
+                document.getElementById("mesin").value = 'Forklift-4'
+            } else if (id == 5) {
+                document.getElementById("mesin").value = 'Forklift-5'
+            } else if (id == 6) {
+                document.getElementById("mesin").value = 'Forklift-6'
+            }
+
+        }
+
         $(document).ready(function() {
             $('#nrp').keyup(function() {
                 $('#result').html('');
@@ -136,7 +160,7 @@
                 $.ajax({
                     method: "GET",
                     dataType: "json",
-                    url: "http://192.168.137.194:8000/dtkyrw/" + searchnrp,
+                    url: "{{ url('/dtkyrw') }}" +"/"+ searchnrp,
                     success: function(data) {
                         // console.log(data[0].name);
                         // $("#nama").html(data[0].name);
