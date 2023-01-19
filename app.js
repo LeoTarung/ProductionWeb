@@ -25,16 +25,9 @@ io.on("connection", (socket) => {
         // connection.query(
         //     "SELECT * FROM datatimbangan WHERE nama_timbangan ='Tibangan_Melting'",
         //     (err, res) => {
-        //         socket.emit("mysql", res);
+        //         socket.emit("mysqla", res);
         //     }
         // );
-
-        connection.query(
-            "SELECT * FROM datatimbangan WHERE nama_timbangan ='Tibangan_Melting'",
-            (err, res) => {
-                socket.emit("mysqla", res);
-            }
-        );
 
         connection.query(
             "SELECT * FROM lhp_melting where mesin = 'Striko-1' AND MONTH(tanggal) = MONTH(now()) AND YEAR(tanggal) = YEAR(now())",
@@ -42,9 +35,30 @@ io.on("connection", (socket) => {
                 socket.emit("bulananStriko1", res);
             }
         );
+
+        connection.query(
+            "SELECT * FROM lhp_melting where mesin = 'Striko-2' AND MONTH(tanggal) = MONTH(now()) AND YEAR(tanggal) = YEAR(now())",
+            (err, res) => {
+                socket.emit("bulananStriko2", res);
+            }
+        );
+
+        connection.query(
+            "SELECT * FROM lhp_melting where mesin = 'Striko-3' AND MONTH(tanggal) = MONTH(now()) AND YEAR(tanggal) = YEAR(now())",
+            (err, res) => {
+                socket.emit("bulananStriko3", res);
+            }
+        );
+
+        connection.query(
+            "SELECT * FROM lhp_melting where mesin = 'Swift_Asia' AND MONTH(tanggal) = MONTH(now()) AND YEAR(tanggal) = YEAR(now())",
+            (err, res) => {
+                socket.emit("bulananSwift_Asia", res);
+            }
+        );
     }, 3000);
 });
 
-server.listen(3000, () => {
+server.listen(3000, "10.14.51.13", () => {
     console.log("listening on *:3000");
 });

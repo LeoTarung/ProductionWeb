@@ -545,16 +545,11 @@
     <script src="/js/amchart/LossesChart-Melting/core.js"></script>
     <script src="/js/amchart/LossesChart-Melting/charts.js"></script>
     <script src="/js/amchart/LossesChart-Melting/Animated.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
-
-    <!-- Chart code -->
 
 
-    <!-- Chart code -->
-    {{-- ///////////////////////////////// CHART STRIKO - 1///////////////////////////////////// --}}
-    <script>
-         var test ;
- 
+    {{--=============================['CHART STRIKO - 1']==============================--}}
+<script> 
+    am5.ready(function() {
             var data = [];
             // Create root element
             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
@@ -601,14 +596,7 @@
                 renderer: chargingAxisRenderer,
                 tooltip: am5.Tooltip.new(root, {})
             }));
-            // var lossAxisRenderer = am5xy.AxisRendererY.new(root, {
-            //     opposite: true
-            // });
-            // lossAxisRenderer.grid.template.set("forceHidden", true);
-            // var lossAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-            //     renderer: lossAxisRenderer,
-            //     // forceHidden: true
-            // }));
+
             var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
                 opposite: true
             });
@@ -618,15 +606,7 @@
                 // forceHidden: true
                 numberFormat: "#'%'"
             }));
-            // var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
-            //     opposite: true
-            // });
-            // ingotAxisRenderer.grid.template.set("forceHidden", true);
-            // var ingotAxis = chart.yAxes.push(am5xy.ingotAxis.new(root, {
-            //     baseUnit: "minute",
-            //     renderer: ingotAxisRenderer,
-            //     extraMax: 0.3
-            // }));
+
             // Create series
             // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
             var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -715,14 +695,8 @@
             // https://www.amcharts.com/docs/v5/concepts/animations/
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
-            let TotalCharging = 0;
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].charging) {
-                    TotalCharging++
-                }
-            }
         $(function(){
-            let ip_node = '127.0.0.1';
+            let ip_node = '10.14.51.13';
             let socket_port = '3000';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
@@ -745,418 +719,188 @@
             xAxis.data.setAll(data);
         })
         });
-    </script>
+    }); // end am5.ready()
+</script>
 
-    {{-- //////////////////////////// CHART STRIKO - 2 ///////////////////////////////////// --}}
-    <script>
-        am5.ready(function() {
-            for (var i = 0; i < 30; i++) {}
-            var data = [{
-                "date": "2022-01-01",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-02",
-                "charging": 400,
-                "townSize": 12,
-                "loss": 66,
-                "ingot": 34
-            }, {
-                "date": "2022-01-03",
-                "charging": 340,
-                "townSize": 12,
-                "loss": 75,
-                "ingot": 25
-            }, {
-                "date": "2022-01-04",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-05",
-                "charging": 390,
-                "townSize": 12,
-                "loss": 85,
-                "ingot": 15
-            }, {
-                "date": "2022-01-06",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-07",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-08",
-                "charging": 427,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-09",
-                "charging": 450,
-                "townSize": 12,
-                "loss": 76,
-                "ingot": 24
-            }, {
-                "date": "2022-01-10",
-                "charging": 337,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-11",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-12",
-                "charging": 350,
-                "townSize": 12,
-                "loss": 85,
-                "ingot": 15
-            }, {
-                "date": "2022-01-13",
-                "charging": 314,
-                "townSize": 12,
-                "loss": 74,
-                "ingot": 26
-            }, {
-                "date": "2022-01-14",
-                "charging": 400,
-                "townSize": 12,
-                "loss": 75,
-                "ingot": 25
-            }, {
-                "date": "2022-01-15"
-            }, {
-                "date": "2022-01-16"
-            }, {
-                "date": "2022-01-17"
-            }, {
-                "date": "2022-01-18"
-            }, {
-                "date": "2022-01-19"
-            }, {
-                "date": "2022-01-20"
-            }, {
-                "date": "2022-01-21"
-            }, {
-                "date": "2022-01-22"
-            }, {
-                "date": "2022-01-23"
-            }, {
-                "date": "2022-01-24"
-            }, {
-                "date": "2022-01-25"
-            }, {
-                "date": "2022-01-26"
-            }, {
-                "date": "2022-01-27"
-            }, {
-                "date": "2022-01-28"
-            }, {
-                "date": "2022-01-29"
-            }, {
-                "date": "2022-01-30"
-            }, {
-                "date": "2022-01-31"
-            }];
-            // Create root element
-            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-            var root = am5.Root.new("chartdiv1");
-            root._logo.dispose();
-            // Set themes
-            // https://www.amcharts.com/docs/v5/concepts/themes/
-            root.setThemes([
-                am5themes_Animated.new(root)
-            ]);
-            // Create chart
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/
-            var chart = root.container.children.push(am5xy.XYChart.new(root, {
-                panX: false,
-                panY: false,
-                wheelY: "none"
-            }));
-            chart.zoomOutButton.set("forceHidden", true);
-            // chart.get("colors").set("step", 2);
-            chart.get("colors").set("colors", [
-                // am5.color(0xFB9649), orange
-                // am5.color(0x605CB8), Biru
-                // Kuning
-                am5.color(0xFFE680),
-                am5.color(0xE64640),
-                am5.color(0x53C292)
-            ]);
-            // Create axes
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-            var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-                baseInterval: {
-                    timeUnit: "day",
-                    count: 1
-                },
-                renderer: am5xy.AxisRendererX.new(root, {
-                    minGridDistance: 50
-                }),
-                tooltip: am5.Tooltip.new(root, {})
-            }));
-            var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
-            chargingAxisRenderer.grid.template.set("forceHidden", true);
-            var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                renderer: chargingAxisRenderer,
-                tooltip: am5.Tooltip.new(root, {})
-            }));
-            // var lossAxisRenderer = am5xy.AxisRendererY.new(root, {
-            //     opposite: true
-            // });
-            // lossAxisRenderer.grid.template.set("forceHidden", true);
-            // var lossAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-            //     renderer: lossAxisRenderer,
-            //     // forceHidden: true
-            // }));
-            var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
-                opposite: true
+    {{--=============================['CHART STRIKO - 2']==============================--}}
+<script> 
+    am5.ready(function() {
+        var data = [];
+        // Create root element
+        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+        var root = am5.Root.new("chartdiv1");
+        root._logo.dispose();
+        // Set themes
+        // https://www.amcharts.com/docs/v5/concepts/themes/
+        root.setThemes([
+            am5themes_Animated.new(root)
+        ]);
+        // Create chart
+        // https://www.amcharts.com/docs/v5/charts/xy-chart/
+        var chart = root.container.children.push(am5xy.XYChart.new(root, {
+            panX: false,
+            panY: false,
+            wheelY: "none"
+        }));
+        chart.zoomOutButton.set("forceHidden", true);
+        // chart.get("colors").set("step", 2);
+        chart.get("colors").set("colors", [
+            // orange
+            am5.color(0xFB9649),
+            // am5.color(0x605CB8), Biru
+            // Kuning
+            // am5.color(0xFFE680),
+            am5.color(0xE64640),
+            am5.color(0x53C292)
+        ]);
+        // Create axes
+        // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+        var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+            baseInterval: {
+                timeUnit: "day",
+                count: 1
+            },
+            renderer: am5xy.AxisRendererX.new(root, {
+                minGridDistance: 50
+            }),
+            tooltip: am5.Tooltip.new(root, {})
+        }));
+        var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
+        chargingAxisRenderer.grid.template.set("forceHidden", true);
+        var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+            renderer: chargingAxisRenderer,
+            tooltip: am5.Tooltip.new(root, {})
+        }));
+
+        var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
+            opposite: true
+        });
+        ingotAxisRenderer.grid.template.set("forceHidden", true);
+        var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+            renderer: ingotAxisRenderer,
+            // forceHidden: true
+            numberFormat: "#'%'"
+        }));
+
+        // Create series
+        // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+        var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
+            xAxis: xAxis,
+            yAxis: chargingAxis,
+            valueYField: "charging",
+            valueXField: "date",
+            tooltip: am5.Tooltip.new(root, {
+                labelText: "Total Charging: {valueY} kg"
+            })
+        }));
+        chargingSeries.data.processor = am5.DataProcessor.new(root, {
+            dateFields: ["date"],
+            dateFormat: "yyyy-MM-dd"
+        });
+        var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
+            xAxis: xAxis,
+            yAxis: ingotAxis,
+            valueYField: "loss",
+            valueXField: "date",
+            tooltip: am5.Tooltip.new(root, {
+                labelText: "loss: {valueY}%"
+            })
+        }));
+        lossSeries.strokes.template.setAll({
+            strokeWidth: 2
+        });
+        // Add circle bullet
+        // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
+        lossSeries.bullets.push(function() {
+            var graphics = am5.Circle.new(root, {
+                strokeWidth: 2,
+                radius: 5,
+                stroke: lossSeries.get("stroke"),
+                fill: root.interfaceColors.get("background"),
             });
-            ingotAxisRenderer.grid.template.set("forceHidden", true);
-            var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                renderer: ingotAxisRenderer,
-                // forceHidden: true
-                numberFormat: "#' %'"
-            }));
-            // var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
-            //     opposite: true
-            // });
-            // ingotAxisRenderer.grid.template.set("forceHidden", true);
-            // var ingotAxis = chart.yAxes.push(am5xy.ingotAxis.new(root, {
-            //     baseUnit: "minute",
-            //     renderer: ingotAxisRenderer,
-            //     extraMax: 0.3
-            // }));
-            // Create series
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-            var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
-                xAxis: xAxis,
-                yAxis: chargingAxis,
-                valueYField: "charging",
-                valueXField: "date",
-                tooltip: am5.Tooltip.new(root, {
-                    labelText: "Total Charging: {valueY}"
-                })
-            }));
-            chargingSeries.data.processor = am5.DataProcessor.new(root, {
-                dateFields: ["date"],
-                dateFormat: "yyyy-MM-dd"
+            graphics.adapters.add("radius", function(radius, target) {
+                return target.dataItem.dataContext.townSize;
+            })
+            return am5.Bullet.new(root, {
+                sprite: graphics
             });
-            var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
-                xAxis: xAxis,
-                yAxis: ingotAxis,
-                valueYField: "loss",
-                valueXField: "date",
-                tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY} %"
-                })
-            }));
-            lossSeries.strokes.template.setAll({
-                strokeWidth: 2
+        });
+        var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
+            xAxis: xAxis,
+            yAxis: ingotAxis,
+            valueYField: "ingot",
+            valueXField: "date",
+            tooltip: am5.Tooltip.new(root, {
+                labelText: "ingot: {valueY} %"
+            })
+        }));
+        ingotSeries.strokes.template.setAll({
+            strokeWidth: 3
+        });
+        // Add circle bullet
+        // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
+        ingotSeries.bullets.push(function() {
+            var graphics = am5.Circle.new(root, {
+                width: 5,
+                height: 5,
+                centerX: am5.p50,
+                centerY: am5.p50,
+                stroketWidth: 5,
+                stroke: ingotSeries.get("stroke"),
+                fill: root.interfaceColors.get("background"),
             });
-            // Add circle bullet
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
-            lossSeries.bullets.push(function() {
-                var graphics = am5.Circle.new(root, {
-                    strokeWidth: 2,
-                    radius: 5,
-                    stroke: lossSeries.get("stroke"),
-                    fill: root.interfaceColors.get("background"),
-                });
-                graphics.adapters.add("radius", function(radius, target) {
-                    return target.dataItem.dataContext.townSize;
-                })
-                return am5.Bullet.new(root, {
-                    sprite: graphics
-                });
+            graphics.adapters.add("radius", function(radius, target) {
+                return target.dataItem.dataContext.townSize;
+            })
+            return am5.Bullet.new(root, {
+                sprite: graphics
             });
-            var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
-                xAxis: xAxis,
-                yAxis: ingotAxis,
-                valueYField: "ingot",
-                valueXField: "date",
-                tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
-                })
-            }));
-            ingotSeries.strokes.template.setAll({
-                strokeWidth: 3
-            });
-            // Add circle bullet
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
-            ingotSeries.bullets.push(function() {
-                var graphics = am5.Circle.new(root, {
-                    width: 10,
-                    height: 10,
-                    centerX: am5.p50,
-                    centerY: am5.p50,
-                    stroketWidth: 5,
-                    stroke: ingotSeries.get("stroke"),
-                    fill: root.interfaceColors.get("background"),
-                });
-                return am5.Bullet.new(root, {
-                    sprite: graphics
-                });
-            });
-            // Add cursor
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-            chart.set("cursor", am5xy.XYCursor.new(root, {
-                xAxis: xAxis,
-                yAxis: chargingAxis
-            }));
+        });
+        // Add cursor
+        // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+        chart.set("cursor", am5xy.XYCursor.new(root, {
+            xAxis: xAxis,
+            yAxis: chargingAxis
+        }));
+        chargingSeries.data.setAll(data);
+        lossSeries.data.setAll(data);
+        ingotSeries.data.setAll(data);
+        xAxis.data.setAll(data);
+        // Make stuff animate on load
+        // https://www.amcharts.com/docs/v5/concepts/animations/
+        chargingSeries.appear(1000);
+        chart.appear(1000, 100);
+        $(function(){
+            let ip_node = '10.14.51.13';
+            let socket_port = '3000';
+            let socket = io(ip_node + ':' + socket_port);
+            socket.on('connection');
+
+            socket.on("bulananStriko2", (datasql) => {
+            var data = [];
+            var ChartData = document.getElementById("chartdiv1").innerHTML;
+            for(i = 0; i < datasql.length; i++){
+                var obj = {};
+                obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
+                obj['charging'] = datasql[i].total_charging;
+                obj['townSize'] = "12";
+                obj["loss"] = datasql[i].total_loss;
+                obj["ingot"] = datasql[i].ingot;
+                data.push(obj);
+            }
             chargingSeries.data.setAll(data);
             lossSeries.data.setAll(data);
             ingotSeries.data.setAll(data);
             xAxis.data.setAll(data);
-            // Make stuff animate on load
-            // https://www.amcharts.com/docs/v5/concepts/animations/
-            chargingSeries.appear(1000);
-            chart.appear(1000, 100);
-            let TotalCharging = 0;
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].charging) {
-                    TotalCharging++
-                }
-            }
-            // console.log(TotalCharging)
-        }); // end am5.ready()
-    </script>
+        })
+        });
+    }); // end am5.ready()
+</script>
 
-    {{-- //////////////////////////// CHART STRIKO - 3 ///////////////////////////////////// --}}
-    <script>
-        am5.ready(function() {
-            var data = [{
-                "date": "2022-01-01",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-02",
-                "charging": 400,
-                "townSize": 12,
-                "loss": 66,
-                "ingot": 34
-            }, {
-                "date": "2022-01-03",
-                "charging": 340,
-                "townSize": 12,
-                "loss": 75,
-                "ingot": 25
-            }, {
-                "date": "2022-01-04",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-05",
-                "charging": 390,
-                "townSize": 12,
-                "loss": 85,
-                "ingot": 15
-            }, {
-                "date": "2022-01-06",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-07",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-08",
-                "charging": 427,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-09",
-                "charging": 450,
-                "townSize": 12,
-                "loss": 76,
-                "ingot": 24
-            }, {
-                "date": "2022-01-10",
-                "charging": 337,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-11",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-12",
-                "charging": 350,
-                "townSize": 12,
-                "loss": 85,
-                "ingot": 15
-            }, {
-                "date": "2022-01-13",
-                "charging": 314,
-                "townSize": 12,
-                "loss": 74,
-                "ingot": 26
-            }, {
-                "date": "2022-01-14",
-                "charging": 400,
-                "townSize": 12,
-                "loss": 75,
-                "ingot": 25
-            }, {
-                "date": "2022-01-15"
-            }, {
-                "date": "2022-01-16"
-            }, {
-                "date": "2022-01-17"
-            }, {
-                "date": "2022-01-18"
-            }, {
-                "date": "2022-01-19"
-            }, {
-                "date": "2022-01-20"
-            }, {
-                "date": "2022-01-21"
-            }, {
-                "date": "2022-01-22"
-            }, {
-                "date": "2022-01-23"
-            }, {
-                "date": "2022-01-24"
-            }, {
-                "date": "2022-01-25"
-            }, {
-                "date": "2022-01-26"
-            }, {
-                "date": "2022-01-27"
-            }, {
-                "date": "2022-01-28"
-            }, {
-                "date": "2022-01-29"
-            }, {
-                "date": "2022-01-30"
-            }, {
-                "date": "2022-01-31"
-            }];
+    {{--=============================['CHART STRIKO - 3']==============================--}}
+<script> 
+    am5.ready(function() {
+            var data = [];
             // Create root element
             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
             var root = am5.Root.new("chartdiv2");
@@ -1176,10 +920,11 @@
             chart.zoomOutButton.set("forceHidden", true);
             // chart.get("colors").set("step", 2);
             chart.get("colors").set("colors", [
-                // am5.color(0xFB9649), orange
+                // orange
+                am5.color(0xFB9649),
                 // am5.color(0x605CB8), Biru
                 // Kuning
-                am5.color(0xFFE680),
+                // am5.color(0xFFE680),
                 am5.color(0xE64640),
                 am5.color(0x53C292)
             ]);
@@ -1201,14 +946,7 @@
                 renderer: chargingAxisRenderer,
                 tooltip: am5.Tooltip.new(root, {})
             }));
-            // var lossAxisRenderer = am5xy.AxisRendererY.new(root, {
-            //     opposite: true
-            // });
-            // lossAxisRenderer.grid.template.set("forceHidden", true);
-            // var lossAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-            //     renderer: lossAxisRenderer,
-            //     // forceHidden: true
-            // }));
+    
             var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
                 opposite: true
             });
@@ -1216,17 +954,9 @@
             var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
                 renderer: ingotAxisRenderer,
                 // forceHidden: true
-                numberFormat: "#' %'"
+                numberFormat: "#'%'"
             }));
-            // var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
-            //     opposite: true
-            // });
-            // ingotAxisRenderer.grid.template.set("forceHidden", true);
-            // var ingotAxis = chart.yAxes.push(am5xy.ingotAxis.new(root, {
-            //     baseUnit: "minute",
-            //     renderer: ingotAxisRenderer,
-            //     extraMax: 0.3
-            // }));
+    
             // Create series
             // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
             var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -1235,7 +965,7 @@
                 valueYField: "charging",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "Total Charging: {valueY}"
+                    labelText: "Total Charging: {valueY} kg"
                 })
             }));
             chargingSeries.data.processor = am5.DataProcessor.new(root, {
@@ -1248,7 +978,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY} %"
+                    labelText: "loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -1286,14 +1016,17 @@
             // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
             ingotSeries.bullets.push(function() {
                 var graphics = am5.Circle.new(root, {
-                    width: 10,
-                    height: 10,
+                    width: 5,
+                    height: 5,
                     centerX: am5.p50,
                     centerY: am5.p50,
                     stroketWidth: 5,
                     stroke: ingotSeries.get("stroke"),
                     fill: root.interfaceColors.get("background"),
                 });
+                graphics.adapters.add("radius", function(radius, target) {
+                    return target.dataItem.dataContext.townSize;
+                })
                 return am5.Bullet.new(root, {
                     sprite: graphics
                 });
@@ -1312,304 +1045,210 @@
             // https://www.amcharts.com/docs/v5/concepts/animations/
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
-            let TotalCharging = 0;
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].charging) {
-                    TotalCharging++
+            $(function(){
+                let ip_node = '10.14.51.13';
+                let socket_port = '3000';
+                let socket = io(ip_node + ':' + socket_port);
+                socket.on('connection');
+    
+                socket.on("bulananStriko3", (datasql) => {
+                var data = [];
+                var ChartData = document.getElementById("chartdiv2").innerHTML;
+                for(i = 0; i < datasql.length; i++){
+                    var obj = {};
+                    obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
+                    obj['charging'] = datasql[i].total_charging;
+                    obj['townSize'] = "12";
+                    obj["loss"] = datasql[i].total_loss;
+                    obj["ingot"] = datasql[i].ingot;
+                    data.push(obj);
                 }
-            }
-            // console.log(TotalCharging)
-        }); // end am5.ready()
-    </script>
+                chargingSeries.data.setAll(data);
+                lossSeries.data.setAll(data);
+                ingotSeries.data.setAll(data);
+                xAxis.data.setAll(data);
+            })
+            });
+    }); // end am5.ready()
+</script>  
+    
+    {{--=============================['CHART SWIFT ASIA']==============================--}}
+<script> 
+    am5.ready(function() {
+                var data = [];
+                // Create root element
+                // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                var root = am5.Root.new("chartdiv3");
+                root._logo.dispose();
+                // Set themes
+                // https://www.amcharts.com/docs/v5/concepts/themes/
+                root.setThemes([
+                    am5themes_Animated.new(root)
+                ]);
+                // Create chart
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                    panX: false,
+                    panY: false,
+                    wheelY: "none"
+                }));
+                chart.zoomOutButton.set("forceHidden", true);
+                // chart.get("colors").set("step", 2);
+                chart.get("colors").set("colors", [
+                    // orange
+                    am5.color(0xFB9649),
+                    // am5.color(0x605CB8), Biru
+                    // Kuning
+                    // am5.color(0xFFE680),
+                    am5.color(0xE64640),
+                    am5.color(0x53C292)
+                ]);
+                // Create axes
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                    baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                    },
+                    renderer: am5xy.AxisRendererX.new(root, {
+                        minGridDistance: 50
+                    }),
+                    tooltip: am5.Tooltip.new(root, {})
+                }));
+                var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
+                chargingAxisRenderer.grid.template.set("forceHidden", true);
+                var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                    renderer: chargingAxisRenderer,
+                    tooltip: am5.Tooltip.new(root, {})
+                }));
+        
+                var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
+                    opposite: true
+                });
+                ingotAxisRenderer.grid.template.set("forceHidden", true);
+                var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                    renderer: ingotAxisRenderer,
+                    // forceHidden: true
+                    numberFormat: "#'%'"
+                }));
+        
+                // Create series
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
+                    xAxis: xAxis,
+                    yAxis: chargingAxis,
+                    valueYField: "charging",
+                    valueXField: "date",
+                    tooltip: am5.Tooltip.new(root, {
+                        labelText: "Total Charging: {valueY} kg"
+                    })
+                }));
+                chargingSeries.data.processor = am5.DataProcessor.new(root, {
+                    dateFields: ["date"],
+                    dateFormat: "yyyy-MM-dd"
+                });
+                var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
+                    xAxis: xAxis,
+                    yAxis: ingotAxis,
+                    valueYField: "loss",
+                    valueXField: "date",
+                    tooltip: am5.Tooltip.new(root, {
+                        labelText: "loss: {valueY}%"
+                    })
+                }));
+                lossSeries.strokes.template.setAll({
+                    strokeWidth: 2
+                });
+                // Add circle bullet
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
+                lossSeries.bullets.push(function() {
+                    var graphics = am5.Circle.new(root, {
+                        strokeWidth: 2,
+                        radius: 5,
+                        stroke: lossSeries.get("stroke"),
+                        fill: root.interfaceColors.get("background"),
+                    });
+                    graphics.adapters.add("radius", function(radius, target) {
+                        return target.dataItem.dataContext.townSize;
+                    })
+                    return am5.Bullet.new(root, {
+                        sprite: graphics
+                    });
+                });
+                var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
+                    xAxis: xAxis,
+                    yAxis: ingotAxis,
+                    valueYField: "ingot",
+                    valueXField: "date",
+                    tooltip: am5.Tooltip.new(root, {
+                        labelText: "ingot: {valueY} %"
+                    })
+                }));
+                ingotSeries.strokes.template.setAll({
+                    strokeWidth: 3
+                });
+                // Add circle bullet
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
+                ingotSeries.bullets.push(function() {
+                    var graphics = am5.Circle.new(root, {
+                        width: 5,
+                        height: 5,
+                        centerX: am5.p50,
+                        centerY: am5.p50,
+                        stroketWidth: 5,
+                        stroke: ingotSeries.get("stroke"),
+                        fill: root.interfaceColors.get("background"),
+                    });
+                    graphics.adapters.add("radius", function(radius, target) {
+                        return target.dataItem.dataContext.townSize;
+                    })
+                    return am5.Bullet.new(root, {
+                        sprite: graphics
+                    });
+                });
+                // Add cursor
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                chart.set("cursor", am5xy.XYCursor.new(root, {
+                    xAxis: xAxis,
+                    yAxis: chargingAxis
+                }));
+                chargingSeries.data.setAll(data);
+                lossSeries.data.setAll(data);
+                ingotSeries.data.setAll(data);
+                xAxis.data.setAll(data);
+                // Make stuff animate on load
+                // https://www.amcharts.com/docs/v5/concepts/animations/
+                chargingSeries.appear(1000);
+                chart.appear(1000, 100);
+                $(function(){
+                    let ip_node = '10.14.51.13';
+                    let socket_port = '3000';
+                    let socket = io(ip_node + ':' + socket_port);
+                    socket.on('connection');
+        
+                    socket.on("bulananSwift_Asia", (datasql) => {
+                    var data = [];
+                    var ChartData = document.getElementById("chartdiv3").innerHTML;
+                    for(i = 0; i < datasql.length; i++){
+                        var obj = {};
+                        obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
+                        obj['charging'] = datasql[i].total_charging;
+                        obj['townSize'] = "12";
+                        obj["loss"] = datasql[i].total_loss;
+                        obj["ingot"] = datasql[i].ingot;
+                        data.push(obj);
+                    }
+                    chargingSeries.data.setAll(data);
+                    lossSeries.data.setAll(data);
+                    ingotSeries.data.setAll(data);
+                    xAxis.data.setAll(data);
+                })
+                });
+    }); // end am5.ready()
+</script>  
 
-    {{-- //////////////////////////// CHART Swift Asia ///////////////////////////////////// --}}
-    <script>
-        am5.ready(function() {
-            var data = [{
-                "date": "2022-01-01",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-02",
-                "charging": 400,
-                "townSize": 12,
-                "loss": 66,
-                "ingot": 34
-            }, {
-                "date": "2022-01-03",
-                "charging": 340,
-                "townSize": 12,
-                "loss": 75,
-                "ingot": 25
-            }, {
-                "date": "2022-01-04",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-05",
-                "charging": 390,
-                "townSize": 12,
-                "loss": 85,
-                "ingot": 15
-            }, {
-                "date": "2022-01-06",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-07",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-08",
-                "charging": 427,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-09",
-                "charging": 450,
-                "townSize": 12,
-                "loss": 76,
-                "ingot": 24
-            }, {
-                "date": "2022-01-10",
-                "charging": 337,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-11",
-                "charging": 227,
-                "townSize": 12,
-                "loss": 70,
-                "ingot": 30
-            }, {
-                "date": "2022-01-12",
-                "charging": 350,
-                "townSize": 12,
-                "loss": 85,
-                "ingot": 15
-            }, {
-                "date": "2022-01-13",
-                "charging": 314,
-                "townSize": 12,
-                "loss": 74,
-                "ingot": 26
-            }, {
-                "date": "2022-01-14",
-                "charging": 400,
-                "townSize": 12,
-                "loss": 75,
-                "ingot": 25
-            }, {
-                "date": "2022-01-15"
-            }, {
-                "date": "2022-01-16"
-            }, {
-                "date": "2022-01-17"
-            }, {
-                "date": "2022-01-18"
-            }, {
-                "date": "2022-01-19"
-            }, {
-                "date": "2022-01-20"
-            }, {
-                "date": "2022-01-21"
-            }, {
-                "date": "2022-01-22"
-            }, {
-                "date": "2022-01-23"
-            }, {
-                "date": "2022-01-24"
-            }, {
-                "date": "2022-01-25"
-            }, {
-                "date": "2022-01-26"
-            }, {
-                "date": "2022-01-27"
-            }, {
-                "date": "2022-01-28"
-            }, {
-                "date": "2022-01-29"
-            }, {
-                "date": "2022-01-30"
-            }, {
-                "date": "2022-01-31"
-            }];
-            // Create root element
-            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-            var root = am5.Root.new("chartdiv3");
-            root._logo.dispose();
-            // Set themes
-            // https://www.amcharts.com/docs/v5/concepts/themes/
-            root.setThemes([
-                am5themes_Animated.new(root)
-            ]);
-            // Create chart
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/
-            var chart = root.container.children.push(am5xy.XYChart.new(root, {
-                panX: false,
-                panY: false,
-                wheelY: "none"
-            }));
-            chart.zoomOutButton.set("forceHidden", true);
-            // chart.get("colors").set("step", 2);
-            chart.get("colors").set("colors", [
-                // am5.color(0xFB9649), orange
-                // am5.color(0x605CB8), Biru
-                // Kuning
-                am5.color(0xFFE680),
-                am5.color(0xE64640),
-                am5.color(0x53C292)
-            ]);
-            // Create axes
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-            var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-                baseInterval: {
-                    timeUnit: "day",
-                    count: 1
-                },
-                renderer: am5xy.AxisRendererX.new(root, {
-                    minGridDistance: 50
-                }),
-                tooltip: am5.Tooltip.new(root, {})
-            }));
-            var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
-            chargingAxisRenderer.grid.template.set("forceHidden", true);
-            var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                renderer: chargingAxisRenderer,
-                tooltip: am5.Tooltip.new(root, {})
-            }));
-            // var lossAxisRenderer = am5xy.AxisRendererY.new(root, {
-            //     opposite: true
-            // });
-            // lossAxisRenderer.grid.template.set("forceHidden", true);
-            // var lossAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-            //     renderer: lossAxisRenderer,
-            //     // forceHidden: true
-            // }));
-            var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
-                opposite: true
-            });
-            ingotAxisRenderer.grid.template.set("forceHidden", true);
-            var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                renderer: ingotAxisRenderer,
-                // forceHidden: true
-                numberFormat: "#' %'"
-            }));
-            // var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
-            //     opposite: true
-            // });
-            // ingotAxisRenderer.grid.template.set("forceHidden", true);
-            // var ingotAxis = chart.yAxes.push(am5xy.ingotAxis.new(root, {
-            //     baseUnit: "minute",
-            //     renderer: ingotAxisRenderer,
-            //     extraMax: 0.3
-            // }));
-            // Create series
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-            var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
-                xAxis: xAxis,
-                yAxis: chargingAxis,
-                valueYField: "charging",
-                valueXField: "date",
-                tooltip: am5.Tooltip.new(root, {
-                    labelText: "Total Charging: {valueY}"
-                })
-            }));
-            chargingSeries.data.processor = am5.DataProcessor.new(root, {
-                dateFields: ["date"],
-                dateFormat: "yyyy-MM-dd"
-            });
-            var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
-                xAxis: xAxis,
-                yAxis: ingotAxis,
-                valueYField: "loss",
-                valueXField: "date",
-                tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY} %"
-                })
-            }));
-            lossSeries.strokes.template.setAll({
-                strokeWidth: 2
-            });
-            // Add circle bullet
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
-            lossSeries.bullets.push(function() {
-                var graphics = am5.Circle.new(root, {
-                    strokeWidth: 2,
-                    radius: 5,
-                    stroke: lossSeries.get("stroke"),
-                    fill: root.interfaceColors.get("background"),
-                });
-                graphics.adapters.add("radius", function(radius, target) {
-                    return target.dataItem.dataContext.townSize;
-                })
-                return am5.Bullet.new(root, {
-                    sprite: graphics
-                });
-            });
-            var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
-                xAxis: xAxis,
-                yAxis: ingotAxis,
-                valueYField: "ingot",
-                valueXField: "date",
-                tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
-                })
-            }));
-            ingotSeries.strokes.template.setAll({
-                strokeWidth: 3
-            });
-            // Add circle bullet
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
-            ingotSeries.bullets.push(function() {
-                var graphics = am5.Circle.new(root, {
-                    width: 10,
-                    height: 10,
-                    centerX: am5.p50,
-                    centerY: am5.p50,
-                    stroketWidth: 5,
-                    stroke: ingotSeries.get("stroke"),
-                    fill: root.interfaceColors.get("background"),
-                });
-                return am5.Bullet.new(root, {
-                    sprite: graphics
-                });
-            });
-            // Add cursor
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-            chart.set("cursor", am5xy.XYCursor.new(root, {
-                xAxis: xAxis,
-                yAxis: chargingAxis
-            }));
-            chargingSeries.data.setAll(data);
-            lossSeries.data.setAll(data);
-            ingotSeries.data.setAll(data);
-            xAxis.data.setAll(data);
-            // Make stuff animate on load
-            // https://www.amcharts.com/docs/v5/concepts/animations/
-            chargingSeries.appear(1000);
-            chart.appear(1000, 100);
-            let TotalCharging = 0;
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].charging) {
-                    TotalCharging++
-                }
-            }
-            // console.log(TotalCharging)
-        }); // end am5.ready()
-    </script>
     {{-- ///////////////////////// CHART GAUGE ////////////////////////////////////////////////// --}}
-    <script>
+    {{-- <script>
         am4core.ready(function() {
             // Themes begin
             am4core.useTheme(am4themes_animated);
@@ -1703,7 +1342,7 @@
                 }, 1000, am4core.ease.cubicOut).start();
             }, 2000);
         }); // end am4core.ready()
-    </script>
+    </script> --}}
 
 
 @endsection

@@ -63,6 +63,7 @@
     //    });
    </script>
     <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script>
+    <script src="{{ asset('/js/moment.js') }}"></script>
     @include('sweetalert::alert')
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>
