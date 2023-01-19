@@ -109,6 +109,7 @@
                 </section>
             </div>
         </div>
+
     </div>
 
     {{-- MODAL --}}
@@ -452,5 +453,32 @@
             batteryLiquid10.style.backgroundColor = '#06ce17'
             // batteryLiquid2.style.backgroundColor = 'green'
         }
+
+        // //////////////////////////////////// Molten 11 ////////////////////////////////////////////
+
+        // let battery10 = document.getElementById('battery11');
+        // let batteryLiquid11 = document.getElementById('battery__liquid11');
+        // // let batteryLiquid7 = document.getElementById('battery__liquid::after');
+        // level = 37;
+        // batteryLiquid11.setAttribute('style', `height:${level}%`);
+        // if (level <= 20) {
+        //     // batteryLiquid.style.backgroundColor = '#ffffff'
+        //     batteryLiquid11.style.backgroundColor = '#f71515'
+        //     // batteryLiquid.style.backgroundColor = "linear-gradient(to right," + color1.value + "," + color5batteryLiquid5
+        //     //     .value +
+        //     //     ")";
+        // } else if (level <= 40) {
+        //     batteryLiquid11.style.backgroundColor = '#f16716'
+        //     // batteryLiquid7.style.backgroundColor = 'orange'
+        // } else if (level <= 60) {
+        //     batteryLiquid11.style.backgroundColor = '#f5dd06'
+        //     // batteryLiquid5.style.backgroundColor = 'green'
+        // } else if (level <= 80) {
+        //     batteryLiquid11.style.backgroundColor = '#98ce06'
+        //     // batteryLiquid7.style.backgroundColor = 'green'
+        // } else {
+        //     batteryLiquid11.style.backgroundColor = '#06ce17'
+        //     // batteryLiquid2.style.backgroundColor = 'green'
+        // }
     </script>
 @endsection

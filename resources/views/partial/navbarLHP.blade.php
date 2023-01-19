@@ -1,4 +1,4 @@
-<nav class="nav shadow-lg ">
+<nav class="nav shadow-lg">
     <ul>
         <li> <a href="{{ url('/lhp-melting') }}" class="navitems">
                 <div class="rectangle-logo shadow">
@@ -39,7 +39,7 @@
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
                     </div>
-                    <div class="nrp-child border-bottom ">
+                    <div class="nrp nrp-child border-bottom ">
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 @else
@@ -60,10 +60,20 @@
                         @endif
                     </div>
                 </a>
+            @elseif($mesin == 'MELTING')
+                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'MELTING')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
             @else
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
-                        @if ($mesin == 'FORKLIFT')
+                        @if ($mesin == 'FINAL .INS')
                             <div class="font-white "> {{ $mesin }} </div>
                         @else
                             <div class="font-white choose_machine"> {{ $mesin }} </div>
@@ -74,8 +84,8 @@
         </li>
         <li>
             <a onClick="ModalInstruksi('{{ $mesin }}')">
-                <div class="information" data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
-                    <i class='bx bx-info-circle bx-md '></i>
+                <div class="information " data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
+                    <i class='bx bx-info-circle bx-md'></i>
                 </div>
             </a>
         </li>
@@ -102,11 +112,6 @@
     </div>
 </div>
 
-<script>
-
-</script>
-<script>
-
-
-</script>
+<script></script>
+<script></script>
 </nav>

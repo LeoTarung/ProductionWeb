@@ -76,8 +76,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    'gas_awal' => $gas->gas_akhir,
-                    'stok_molten' => $gas->stok_molten
+                    // 'gas_awal' => $gas->gas_akhir,
+                    // 'stok_molten' => $gas->stok_molten
                 ]);
             } else if ($request->mesin != "") {
                 $gas = LhpMelting::where([['mesin', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
@@ -90,8 +90,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    'gas_awal' => $gas->gas_akhir,
-                    'stok_molten' => $gas->stok_molten
+                    // 'gas_awal' => $gas->gas_akhir,
+                    // 'stok_molten' => $gas->stok_molten
                 ]);
             } else {
                 LhpMelting::create([
