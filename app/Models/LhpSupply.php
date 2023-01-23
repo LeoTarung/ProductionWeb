@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LevelMolten extends Model
+class LhpSupply extends Model
 {
     use HasFactory;
-
-    protected $table = "level_molten";
-    protected $primaryKey = 'mc';
-    
+    protected $table = "lhp_supply";
+    protected $guarded = [];
 }
