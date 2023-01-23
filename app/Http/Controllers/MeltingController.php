@@ -463,7 +463,7 @@ class MeltingController extends Controller
             $tapping = $lhpMelting->tapping;
             // dd($stok_molten);
             LhpMelting::where([['tanggal', '=', $date], ['shift', '=', $shift], ['mesin', '=', $furnace], ['material', '=', $material]])->update([
-                'stok_molten' => $stok_molten + $request->berat,
+                'stok_molten' => $stok_molten - $request->berat,
                 'tapping' => $tapping + $request->berat
             ]);
 
