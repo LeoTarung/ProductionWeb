@@ -43,6 +43,7 @@ Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/production/melting', [MeltingController::class, 'Dashboard']);
 Route::get('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
 Route::post('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
+Route::get('/production/melting/{mesin}/{mulai}/{selesai}', [MeltingController::class, 'export_LHPMelting']);
 Route::post('/production/melting/{mesin}/edit', [MeltingController::class, 'lhp_melting_raw_edit']);
 Route::get('/lhp-melting', [MeltingController::class, 'prep_melting']);
 Route::post('/lhp-melting/simpan', [MeltingController::class, 'prep_melting_simpan']);

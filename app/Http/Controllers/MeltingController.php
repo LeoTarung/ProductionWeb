@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\LhpMelting;
+use App\Models\LevelMolten;
+use App\Models\PreForklift;
 use Illuminate\Http\Request;
 use App\Models\LhpMeltingRAW;
-use App\Models\PreForklift;
 use App\Models\LhpForkliftRaw;
-use App\Models\LevelMolten;
+use App\Exports\LHPMelting_Export;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\UsableController;
 
 
@@ -286,8 +288,7 @@ class MeltingController extends Controller
                     IFNULL(SUM(alm_treat) / SUM(dross) * 100, 100) as persen_alm_treat, 
                     IFNULL(SUM(tapping) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as machine_performance, 
                     SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) / 18250 * 100 as machine_utilization, 
-                    IFNULL(gas_akhir / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot + fluxing) * 100, 100) as gas_consum, 
-                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot + fluxing) - SUM(tapping) as stok_molten"
+                    IFNULL(gas_akhir / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot + fluxing) * 100, 100) as gas_consum"
                 )
                 ->get();
 
@@ -308,7 +309,6 @@ class MeltingController extends Controller
                 'persen_fluxing' => $update[0]->persen_fluxing,
                 'persen_ingot' => $update[0]->persen_ingot,
                 'persen_rs' => $update[0]->persen_rs,
-                'stok_molten' => $update[0]->stok_molten,
                 'total_loss' => $update[0]->drosss,
                 'persen_losdros_material' => $update[0]->persen_losdros_material,
                 'persen_alm_treat' => $update[0]->persen_alm_treat,
@@ -329,8 +329,6 @@ class MeltingController extends Controller
             return redirect("/production/melting/" . $mesin)->with('gagal', 'gagal');
         }
     }
-
-
     //==============================[' LAPORAN HARIAN PRODUKSI FORKLIFT']==============================//
 
     public function prep_forklift(UsableController $useable)
