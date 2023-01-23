@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="chartdiv" id="chartdiv2"></div>
                                 </div>
-
+ 
                             </div>
 
                             <div class="panel" id="four-panel">
