@@ -25,7 +25,8 @@
                             <div class="card text-center card_stok-molten">
                                 <div class="card-header bg-info ">STOK MOLTEN</div>
                                 <div class="card-body">
-                                    <p class="fw-bold stok_molten">@FormatRibu($ntah->stok_molten) KG</p>
+                                    {{-- <p class="fw-bold stok_molten" id="stok_molten">@FormatRibu($ntah->stok_molten) KG</p> --}}
+                                    <p class="fw-bold stok_molten" id="stok_molten"></p>
                                 </div>
                             </div>
                         </div>
@@ -132,19 +133,19 @@
             </div>
         </form>
     </div>
-    {{-- <script>
-        // function Confirm(jenis) {
-        //     var berat = document.getElementById("berat").value;
-        //     if (jenis !== 'GAS AKHIR') {
-        //         var text = 'Apakah Anda Yakin Menambahkan ' + berat + ' KG. Untuk Jenis ' + jenis;
-        //     } else {
-        //         var text = 'Apakah Anda yakin Menambahkan ' + berat + ' Untuk ' + jenis;
-        //     }
-        //     if (confirm(text) == true) {
-        //         return true;
-        //     } else {
-        //         return false;
-        //     }
-        // }
-    </script> --}}
+<script>
+     $(function() {
+                let ip_node = '127.0.0.1';
+                let socket_port = '3000';
+                let socket = io(ip_node + ':' + socket_port);
+                socket.on('connection');
+
+                socket.on("stok_molten_Striko1", (datasql) => {
+
+                    document.getElementById("stok_molten").innerHTML = datasql[0].stok_molten;
+                    console.log(datasql[0].stok_molten);
+                   
+                })
+            });
+</script>
 @endsection
