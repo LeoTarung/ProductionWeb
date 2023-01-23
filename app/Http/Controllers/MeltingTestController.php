@@ -89,4 +89,13 @@ class MeltingTestController extends Controller
             "id" => 1
         ],);
     }
+
+    public function input() 
+    {
+        $sql = LHPMelting::all();
+
+        return view('menu.production.melting.performaMelting', compact('sql'), [
+            "title" => 'Performa'
+        ]);
+    }
 }

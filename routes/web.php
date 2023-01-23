@@ -51,11 +51,14 @@ Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_
 Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
 
 
+Route::get('/performa', [MeltingTestController::class, 'input']);
+
 //====================== FORKLIFT AREA MELTING ======================//
 Route::get('/pre-forklift', [MeltingController::class, 'prep_forklift']);
 Route::post('/pre-forklift/simpan', [MeltingController::class, 'prep_forklift_simpan']);
 Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift']);
 Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_forklift_raw_simpan']);
+
 
 //====================== Only Testing ======================//
 Route::get('/test', [MeltingTestController::class, 'index']);
