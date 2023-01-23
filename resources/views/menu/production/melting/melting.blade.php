@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="chartdiv" id="chartdiv2"></div>
                                 </div>
- 
+
                             </div>
 
                             <div class="panel" id="four-panel">
@@ -83,6 +83,18 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Resources chart 1 -->
+    <script src="/js/amchart/Dailychart-Melting/index.js"></script>
+    <script src="/js/amchart/Dailychart-Melting/xy.js"></script>
+    <script src="/js/amchart/Dailychart-Melting/Animated.js"></script>
+
+    <!-- Resources -->
+    <script src="/js/amchart/LossesChart-Melting/core.js"></script>
+    <script src="/js/amchart/LossesChart-Melting/charts.js"></script>
+    <script src="/js/amchart/LossesChart-Melting/Animated.js"></script>
+
 
     {{-- =============================['CHART STRIKO - 1']============================== --}}
     <script>
@@ -246,8 +258,10 @@
                         obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
                         obj['charging'] = parseInt(datasql[i].total_chargings);
                         obj['townSize'] = "12";
-                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
+                            0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
+                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -422,8 +436,10 @@
                         obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
                         obj['charging'] = parseInt(datasql[i].total_chargings);
                         obj['townSize'] = "12";
-                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
+                            0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
+                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -598,8 +614,10 @@
                         obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
                         obj['charging'] = parseInt(datasql[i].total_chargings);
                         obj['townSize'] = "12";
-                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
+                            0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
+                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -774,8 +792,10 @@
                         obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
                         obj['charging'] = parseInt(datasql[i].total_chargings);
                         obj['townSize'] = "12";
-                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
+                            0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
+                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);

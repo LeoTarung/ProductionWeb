@@ -235,7 +235,7 @@ li .navitems{
 
 .nrp{
   /* width: calc(100%-50px); */
-  width: 180px;
+  width: 150px;
   margin: 0px 10px 0px 10px;
 }
 
@@ -248,7 +248,7 @@ li .navitems{
   width: auto;
   /* height: px; */
   margin-right: 0;
-  font-size: 30px;
+  font-size: 28px;
   
 }
 

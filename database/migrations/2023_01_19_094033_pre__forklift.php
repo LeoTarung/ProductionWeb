@@ -15,7 +15,7 @@ class PreForklift extends Migration
     {
         Schema::create('pre_forklift', function (Blueprint $table) {
             $table->id();
-            $table->integer('forklift');
+            $table->string('forklift');
             $table->integer('nrp');
             $table->string('nama');
             $table->date('tanggal');

@@ -17,8 +17,9 @@ class LhpForkliftRaw extends Migration
             $table->id();
             $table->unsignedBigInteger('id_lhp');
             $table->foreign('id_lhp')->references('id')->on('pre_forklift')->onDelete('cascade');
-            $table->time('jam');
-            $table->integer('mc');
+            $table->string('jam_kerja');
+            $table->integer('no_mc');
+            $table->foreign('no_mc')->references('mc')->on('level_molten')->onDelete('cascade');
             $table->string('furnace');
             $table->string('berat');
             $table->timestamps();
