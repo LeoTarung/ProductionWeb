@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PreForklift extends Model
+class MesinCasting extends Model
 {
     use HasFactory;
-    protected $table = "pre_forklift";
-    protected $guarded = [];
+
+    protected $table = "mesin_casting";
+    protected $primaryKey = 'mc';
 }

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\LhpMelting;
-use App\Models\LevelMolten;
-use App\Models\PreForklift;
+use App\Models\MesinCasting;
+use App\Models\LhpSupply;
 use Illuminate\Http\Request;
 use App\Models\LhpMeltingRAW;
-use App\Models\LhpForkliftRaw;
+use App\Models\LhpSupplyRaw;
 use App\Exports\LHPMelting_Export;
 use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
@@ -337,13 +337,13 @@ class MeltingController extends Controller
         $shift = $useable->Shift();
         $date = $useable->date();
         $title = "PRE FORKLIFT";
-        $lhp = PreForklift::orderBy('id', 'DESC')->first();
-        $id_forklift1 = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-1'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $id_forklift2 = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-2'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $id_forklift3 = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $id_forklift4 = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-4'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $id_forklift5 = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-5'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $id_forklift6 = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-6'], ['shift', '=', $shift]])->first();
+        $lhp = LhpSupply::orderBy('id', 'DESC')->first();
+        $id_forklift1 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-1'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $id_forklift2 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-2'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $id_forklift3 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $id_forklift4 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-4'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $id_forklift5 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-5'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $id_forklift6 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-6'], ['shift', '=', $shift]])->first();
         $nrp = 0;
         $mesin = "FORKLIFT";
         $forklift = "FORKLIFT";
@@ -359,9 +359,9 @@ class MeltingController extends Controller
         $jam_kerja = $useable->Jam_kerja();
         // dd($request);
         if ($request->nrp != "" && $request->nama != "" && $request->material != "" && $request->mesin != "") {
-            $gas = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
+            $gas = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
             if ($gas != null) {
-                PreForklift::create([
+                LhpSupply::create([
                     // 'nama kolom' => 'name di html'
                     'tanggal' => $date,
                     'nrp' => $request->nrp,
@@ -374,8 +374,8 @@ class MeltingController extends Controller
                     // 'stok_molten' => $gas->stok_molten
                 ]);
             } else if ($request->mesin != "") {
-                $gas = PreForklift::where([['forklift', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
-                PreForklift::create([
+                $gas = LhpSupply::where([['forklift', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
+                LhpSupply::create([
                     // 'nama kolom' => 'name di html'
                     'tanggal' => $date,
                     'nrp' => $request->nrp,
@@ -388,7 +388,7 @@ class MeltingController extends Controller
                     // 'stok_molten' => $gas->stok_molten
                 ]);
             } else {
-                PreForklift::create([
+                LhpSupply::create([
                     // 'nama kolom' => 'name di html'
                     'tanggal' => $date,
                     'nrp' => $request->nrp,
@@ -401,7 +401,7 @@ class MeltingController extends Controller
                     'stok_molten' => 0
                 ]);
             }
-            $id = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', $request->mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+            $id = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', $request->mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
             return redirect("/forklift/$request->mesin/$id->id");
         } else {
             return redirect('/forklift')->with('calladmin', 'calladmin');
@@ -415,11 +415,11 @@ class MeltingController extends Controller
         $date = $useable->date();
         $title = "LHP Forklift";
         $forklift = $mesin;
-        $ntah = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $ntah = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $material = $ntah->material;
-        $test = LhpForkliftRaw::groupBy(LhpForkliftRaw::raw('hour(jam)'))->where([['id_lhp', '=', $id]])->get();
+        $test = LhpSupplyRaw::groupBy(LhpSupplyRaw::raw('hour(jam)'))->where([['id_lhp', '=', $id]])->get();
 
-        $molt =  LevelMolten::get();
+        $molt =  MesinCasting::get();
 
         if ($material == "HD-2") {
             $mc =  $molt->where('material', "HD-2")->all();
@@ -447,13 +447,14 @@ class MeltingController extends Controller
         $jam_kerja = $useable->Jam_kerja();
         $furnace = $request->furnace;
 
-        $ntah = PreForklift::where([['tanggal', '=', $date], ['forklift', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+
+        $ntah = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $material = $ntah->material;
         if ($ntah != null) {
-            LhpForkliftRaw::create([
+            LhpSupplyRaw::create([
                 'id_lhp' => $id,
-                'jam' => $jam_kerja,
-                'no_mc' => $request->mc,
+                'jam' => $hour,
+                'id_mc' => $request->mc,
                 'furnace' => $request->furnace,
                 'berat' => $request->berat
             ]);
@@ -461,7 +462,7 @@ class MeltingController extends Controller
             $stok_molten = $lhpMelting->stok_molten;
             $tapping = $lhpMelting->tapping;
             // dd($stok_molten);
-            LhpMelting::where([['tanggal', '=', $date], ['shift', '=', $shift], ['jam_kerja', '=', $jam_kerja], ['mesin', '=', $furnace], ['material', '=', $material]])->update([
+            LhpMelting::where([['tanggal', '=', $date], ['shift', '=', $shift], ['mesin', '=', $furnace], ['material', '=', $material]])->update([
                 'stok_molten' => $stok_molten + $request->berat,
                 'tapping' => $tapping + $request->berat
             ]);
