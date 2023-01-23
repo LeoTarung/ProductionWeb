@@ -671,35 +671,11 @@ font-weight: 600;
   background-color: #F7FAFF;
 }
 
-.sidebar.close ~ .today-report-chg .card{
-  width: 1000px;
-  height: 54px;
-  border: 0px;
-  font-size: large;
-  /* left: 73px;
-  top: 669px; */
-
-  background: #f0f0f0;
-  box-shadow: 0px 4px 4px rgba(219, 218, 218, 0.25), 0px 4px 4px rgba(179, 177, 177, 0.25);
+.chart-daily {
+margin-bottom: -50px;
 }
 
-.today-report-chg .card{
-  width: 950px;
-  height: 54px;
-  border: 0px;
-  font-size: larger;
-  /* left: 73px;
-  top: 669px; */
 
-  background: #f0f0f0;
-  box-shadow: 0px 4px 4px rgba(219, 218, 218, 0.25), 0px 4px 4px rgba(179, 177, 177, 0.25);
-}
-
-.red-losses {
-  width: 50px;
-  height: 20px;
-  background-color: #E34646;
-}
 
 /* Melting/ Detail tabel */
 
@@ -738,10 +714,6 @@ margin-right: 10px;
 /* Tablet */
 @media only screen and (max-width: 1280px){
 
- .today-report-chg .card{
-  width: 500px;
-  font-size: large;
-  }
 
 }
 
@@ -751,9 +723,7 @@ margin-right: 10px;
 
 /* Monitor Besar */
 @media (max-height: 2000px){
-  .today-report-chg .card{
-    width: 320px;
-  }
+
 }
 
 /* Monitor lebar */
@@ -895,14 +865,7 @@ footer{
   height: 350px;
 } */
 
-.title-report-melt{
-  font-size: 25px;
-}
 
-.today-report-chg .card{
-  width: 450px;
-  font-size: 23px;
-}
 
 }
 
@@ -929,7 +892,8 @@ footer{
 .panels{
   background:#F7FAFF;;
   box-shadow: 0px 4px 7px  #00000044;
-  min-height:200px;
+  /* min-height:200px; */
+    min-height:100%;
   width:100%;
   max-width:100%;
   border-radius:0px 0px 5px 5px;

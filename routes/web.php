@@ -43,16 +43,22 @@ Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/production/melting', [MeltingController::class, 'Dashboard']);
 Route::get('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
 Route::post('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
+Route::get('/production/melting/{mesin}/{mulai}/{selesai}', [MeltingController::class, 'export_LHPMelting']);
 Route::post('/production/melting/{mesin}/edit', [MeltingController::class, 'lhp_melting_raw_edit']);
 Route::get('/lhp-melting', [MeltingController::class, 'prep_melting']);
 Route::post('/lhp-melting/simpan', [MeltingController::class, 'prep_melting_simpan']);
 Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_raw']);
 Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
 
+
 Route::get('/performa', [MeltingTestController::class, 'input']);
 
-Route::get('/lhp-melting/pre-forklift', [MeltingController::class, 'prep_forklift']);
-Route::get('/lhp-melting/forklift/', [MeltingController::class, 'lhp_forklift']);
+//====================== FORKLIFT AREA MELTING ======================//
+Route::get('/pre-forklift', [MeltingController::class, 'prep_forklift']);
+Route::post('/pre-forklift/simpan', [MeltingController::class, 'prep_forklift_simpan']);
+Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift']);
+Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_forklift_raw_simpan']);
+
 
 //====================== Only Testing ======================//
 Route::get('/test', [MeltingTestController::class, 'index']);

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Test extends Migration
+class LhpSupply extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,19 @@ class Test extends Migration
      */
     public function up()
     {
-        Schema::create('test', function (Blueprint $table) {
+        Schema::create('lhp_supply', function (Blueprint $table) {
             $table->id();
-            $table->integer('total_charging');
-            $table->integer('loss');
-            $table->integer('ingot');
+            $table->string('forklift');
+            $table->integer('nrp');
+            $table->string('nama');
             $table->date('tanggal');
+            $table->string('shift');
+            $table->string('jam_kerja');
+            $table->string('material');
+            $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *

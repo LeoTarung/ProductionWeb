@@ -13,9 +13,9 @@ class CreateMesincastingTable extends Migration
      */
     public function up()
     {
-        Schema::create('mesincasting', function (Blueprint $table) {
+        Schema::create('mesin_casting', function (Blueprint $table) {
             $table->id();
-            $table->string('mc')->unique();
+            $table->integer('mc')->unique();
             $table->string('material');
             $table->integer('capacity');
             $table->integer('min');
