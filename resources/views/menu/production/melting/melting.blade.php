@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="chartdiv" id="chartdiv2"></div>
                                 </div>
- 
+
                             </div>
 
                             <div class="panel" id="four-panel">
@@ -82,94 +82,7 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="row w-100">
-            <div class="col-6 ">
-                <div class="card shadow today-report-chg border-0">
-                    <div class="card-header border-0 text-center fw-bold fs-5">
-                        <div class="font-blue title-report-melt">Today Report Charge</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 d-flex justify-content-center">
-                            <div class="card w-75 mt-3">
-                                <div class="row">
-                                    <div class="col-4 ms-5 mt-2 ">
-                                        <div class="font-blue fw-bold">Ingot </div>
-                                    </div>
-                                    <div class="col-4 mt-2  d-flex justify-content-center">
-                                        <div class="font-blue  fw-bold ">356 Kg </div>
-                                    </div>
-                                    <div class="col-auto mt-2  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">80 % </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 d-flex justify-content-center">
-                            <div class="card w-75">
-                                <div class="row">
-                                    <div class="col-4 ms-5 mt-2 ">
-                                        <div class="font-blue fw-bold">Reject Parts </div>
-                                    </div>
-                                    <div class="col-4 mt-2  d-flex justify-content-center">
-                                        <div class="font-blue  fw-bold ">356 Kg </div>
-                                    </div>
-                                    <div class="col-auto mt-2  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">80 % </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 d-flex justify-content-center">
-                            <div class="card w-75">
-                                <div class="row">
-                                    <div class="col-4 ms-5 mt-2 ">
-                                        <div class="font-blue fw-bold">Return </div>
-                                    </div>
-                                    <div class="col-4 mt-2  d-flex justify-content-center">
-                                        <div class="font-blue  fw-bold ">356 Kg </div>
-                                    </div>
-                                    <div class="col-auto mt-2  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">80 % </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 d-flex justify-content-center">
-                            <div class="card w-75">
-                                <div class="row">
-                                    <div class="col-4 ms-5 mt-2 ">
-                                        <div class="font-blue fw-bold">Tapping </div>
-                                    </div>
-                                    <div class="col-4 mt-2  d-flex justify-content-center">
-                                        <div class="font-blue  fw-bold ">356 Kg </div>
-                                    </div>
-                                    <div class="col-auto mt-2  d-flex justify-content-end">
-                                        <div class="font-blue  fw-bold text-end">80 % </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 ">
-                <div class="card shadow today-report-chg border-0">
-                    <div class="card-header border-0 text-center fw-bold fs-5">
-                        <div class="font-blue title-report-melt">Today Report Losses</div>
-                    </div>
-                    <div class="card-content">
-                        <div id="chartdiv4"></div>
-                        <div class="row">
-                            <div class="col-12 d-flex justify-content-center fw-bold mb-2 ">
-                                <div class="red-losses"></div>
-                                <div class="ms-3">Losses : 50 Kg</div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+
     </div>
 
 
@@ -884,101 +797,4 @@
             });
         }); // end am5.ready()
     </script>
-
-    {{-- ///////////////////////// CHART GAUGE ////////////////////////////////////////////////// --}}
-    {{-- <script>
-        am4core.ready(function() {
-            // Themes begin
-            am4core.useTheme(am4themes_animated);
-            // Themes end
-            am4core.addLicense("ch-custom-attribution");
-            //value
-            var value = 70;
-            // create chart
-            var chart = am4core.create("chartdiv4", am4charts.GaugeChart);
-            chart.innerRadius = am4core.percent(82);
-            /**
-             * Normal axis
-             */
-            var axis = chart.xAxes.push(new am4charts.ValueAxis());
-            axis.min = 0;
-            axis.max = 100;
-            axis.strictMinMax = true;
-            axis.renderer.radius = am4core.percent(80);
-            axis.renderer.inside = true;
-            axis.renderer.line.strokeOpacity = 1;
-            axis.renderer.ticks.template.disabled = false
-            axis.renderer.ticks.template.strokeOpacity = 1;
-            axis.renderer.ticks.template.length = 10;
-            axis.renderer.grid.template.disabled = true;
-            axis.renderer.labels.template.disabled = true;
-            // axis.renderer.labels.template.radius = 10;
-            // axis.renderer.labels.template.adapter.add("text", function(text) {
-            //     return text + "%";
-            // })
-            /**
-             * Axis for ranges
-             */
-            var colorSet = new am4core.ColorSet();
-            var axis2 = chart.xAxes.push(new am4charts.ValueAxis());
-            axis2.min = 0;
-            axis2.max = 100;
-            axis2.strictMinMax = true;
-            axis2.renderer.labels.template.disabled = true;
-            axis2.renderer.ticks.template.disabled = true;
-            axis2.renderer.grid.template.disabled = true;
-            var range0 = axis2.axisRanges.create();
-            range0.value = 0;
-            range0.endValue = 70;
-            range0.axisFill.fillOpacity = 1;
-            // range0.axisFill.fill = colorSet.getIndex(0);
-            range0.axisFill.fill = am4core.color("#E34646");
-            var range1 = axis2.axisRanges.create();
-            range1.value = 50;
-            range1.endValue = 100;
-            range1.axisFill.fillOpacity = 1;
-            range1.axisFill.fill = am4core.color("#5CE346");
-            // range1.axisFill.fill = colorSet.getIndex(2);
-            /**
-             * Label
-             */
-            var label = chart.radarContainer.createChild(am4core.Label);
-            label.isMeasured = false;
-            label.fontSize = 30;
-            label.x = am4core.percent(50);
-            label.y = am4core.percent(100);
-            label.horizontalCenter = "middle";
-            label.verticalCenter = "bottom";
-            label.text = value;
-            // label.renderer.labels.template.adapter.add("text", function(text) {
-            //     return text + "%";
-            // })
-            /**
-             * Hand
-             */
-            var hand = chart.hands.push(new am4charts.ClockHand());
-            hand.axis = axis2;
-            hand.innerRadius = am4core.percent(40);
-            hand.startWidth = 5;
-            hand.pin.disabled = true;
-            hand.value = value;
-            // hand.renderer.labels.template.adapter.add("text", function(text) {
-            //     return text + "%";
-            // })
-            hand.events.on("propertychanged", function(ev) {
-                range0.endValue = ev.target.value;
-                range1.value = ev.target.value;
-                label.text = axis2.positionToValue(hand.currentPosition).toFixed(1);
-                axis2.invalidate();
-            });
-            setInterval(function() {
-                // var value = Math.round(Math.random() * 100);
-                var value = 70;
-                var animation = new am4core.Animation(hand, {
-                    property: "value",
-                    to: value
-                }, 1000, am4core.ease.cubicOut).start();
-            }, 2000);
-        }); // end am4core.ready()
-    </script> --}}
 @endsection

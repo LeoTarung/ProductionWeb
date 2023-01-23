@@ -57,7 +57,7 @@
         </li>
         <li>
             @if ($mesin == 'FORKLIFT')
-                <a href="{{ url('/lhp-melting/pre-forklift') }}" class="machine shadow-lg">
+                <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FORKLIFT')
                             <div class="font-white "> {{ $mesin }} </div>
@@ -70,6 +70,16 @@
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'MELTING')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+            @elseif($mesin == $forklift)
+                <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FINAL .INS')
                             <div class="font-white "> {{ $mesin }} </div>
                         @else
                             <div class="font-white choose_machine"> {{ $mesin }} </div>

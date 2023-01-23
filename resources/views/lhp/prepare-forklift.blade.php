@@ -90,7 +90,17 @@
                             <div class="col-12"></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-6">
+
+                            <div class="col-12">
+                                <div class="form-floating ">
+                                    <input type="text" class="form-control border-dark text-uppercase fw-bold"
+                                        id="mesin" name="mesin" readonly required>
+                                    <label for="mesin">M E S I N</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12 d-flex justifyconten">
                                 <div class="form-check" id="material" name="material" required>
                                     <label for="material " class="">M A T E R I A L :</label>
                                     <p class="mt-2">
@@ -109,17 +119,6 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="form-floating ">
-                                    <input type="text" class="form-control border-dark text-uppercase fw-bold"
-                                        id="mesin" name="mesin" readonly required>
-                                    <label for="mesin">M E S I N</label>
-                                </div>
-                            </div>
-                            {{-- <input class="form-control" type="hidden" id="shift" name="shift"
-                                value="{{ $shift }}">
-                            <input class="form-control" type="hidden" id="id" name="id"
-                                value="{{ $lhp->id + 1 }}"> --}}
                         </div>
                         {{-- END PREPARATION FORM --}}
                     </div>
@@ -137,17 +136,21 @@
     <script>
         function forklift(id) {
             if (id == 1) {
-                document.getElementById("mesin").value = 'Forklift-1'
+                document.getElementById("mesin").value = 'FORKLIFT-1'
             } else if (id == 2) {
-                document.getElementById("mesin").value = 'Forklift-2'
+                document.getElementById("mesin").value = 'FORKLIFT-2'
             } else if (id == 3) {
-                document.getElementById("mesin").value = 'Forklift-3'
+                document.getElementById("mesin").value = 'FORKLIFT-3'
             } else if (id == 4) {
-                document.getElementById("mesin").value = 'Forklift-4'
+                document.getElementById("mesin").value = 'FORKLIFT-4'
             } else if (id == 5) {
-                document.getElementById("mesin").value = 'Forklift-5'
+                document.getElementById("mesin").value = 'FORKLIFT-5'
             } else if (id == 6) {
-                document.getElementById("mesin").value = 'Forklift-6'
+                document.getElementById("mesin").value = 'FORKLIFT-6'
+            } else if (id == 7) {
+                document.getElementById("mesin").value = 'FORKLIFT-7'
+            } else if (id == 8) {
+                document.getElementById("mesin").value = 'FORKLIFT-8'
             }
 
         }
@@ -160,7 +163,7 @@
                 $.ajax({
                     method: "GET",
                     dataType: "json",
-                    url: "{{ url('/dtkyrw') }}" +"/"+ searchnrp,
+                    url: "{{ url('/dtkyrw') }}" + "/" + searchnrp,
                     success: function(data) {
                         // console.log(data[0].name);
                         // $("#nama").html(data[0].name);
