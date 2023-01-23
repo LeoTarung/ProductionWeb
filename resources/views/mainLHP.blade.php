@@ -32,6 +32,7 @@
         </div>
     </div>
     {{-- //============[ JS IN HERE ]============// --}}
+     <script src="{{ asset('/js/Socketio454.js') }}"></script>
     <script src="{{ asset('/js/JSforLHP.js') }}"></script>
     @include('sweetalert::alert')
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>

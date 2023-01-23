@@ -418,7 +418,6 @@ class MeltingController extends Controller
         $ntah = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $material = $ntah->material;
         $test = LhpSupplyRaw::groupBy(LhpSupplyRaw::raw('hour(jam)'))->where([['id_lhp', '=', $id]])->get();
-
         $molt =  MesinCasting::get();
 
         if ($material == "HD-2") {
@@ -446,8 +445,6 @@ class MeltingController extends Controller
         $hour = $useable->hour();
         $jam_kerja = $useable->Jam_kerja();
         $furnace = $request->furnace;
-
-
         $ntah = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $material = $ntah->material;
         if ($ntah != null) {
@@ -466,8 +463,6 @@ class MeltingController extends Controller
                 'stok_molten' => $stok_molten - $request->berat,
                 'tapping' => $tapping + $request->berat
             ]);
-
-
             return redirect("/forklift/$mesin/$id")->with('behasilditambahkan', 'behasilditambahkan');
         } else {
             return redirect('lhp.lhp-forklift')->with('preulang', 'preulang');

@@ -12,8 +12,8 @@
             @foreach ($mc as $m)
                 {{-- <div class="button" > --}}
                 <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="nama({{ $m['mc'] }})">
-                    <div class="card-header text-center fw-bold">
-                        MC-{{ $m['mc'] }}</div>
+                    {{-- <div class="card-header text-center fw-bold"> MC-{{ $m['mc'] }}</div> --}}
+                    <div class="card-header text-center fw-bold"> MC-{{ $m->mc }}</div>
                     <section id="battery{{ $m['mc'] }}" class="battery mb-3 d-flex justify-content-start"
                         onclick="mc({{ $m['mc'] }})">
                         <div id="battery__pill" class="battery__pill">
@@ -116,7 +116,6 @@
 
     <script>
         ////////////////////////////////////['   Molten   ']////////////////////////////////////////////
-
         @foreach ($mc as $a)
             let max{{ $a['mc'] }} = {{ $a['max'] }}
             let min{{ $a['mc'] }} = {{ $a['min'] }}
@@ -149,9 +148,6 @@
 
             }
 
-            console.log(level{{ $a['mc'] }});
-            console.log(value{{ $a['mc'] }});
-            console.log('{{ $a['material'] }}');
         @endforeach
 
 
