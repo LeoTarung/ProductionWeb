@@ -67,6 +67,13 @@ io.on("connection", (socket) => {
                 socket.emit("stok_molten_Striko1", res);
             }
         );
+
+        connection.query(
+            "SELECT * FROM mesin_casting ",
+            (err, res) => {
+                socket.emit("mesincasting", res);
+            }
+        );
     }, 3000);
 });
 
