@@ -68,7 +68,7 @@ class CreateLhpCastingTable extends Migration
             $table->integer('dies_erosi')->default('0');
             $table->integer('dies_movement')->default('0');
             $table->integer('dies_tidak_bisa_dibuka')->default('0');
-            $table->integer('dies_tidak_bisa_dibuka')->default('0');
+            // $table->integer('dies_tidak_bisa_dibuka')->default('0');
             $table->integer('dies_tidak_center')->default('0');
             $table->integer('dimensi')->default('0');
             $table->integer('distributor')->default('0');
@@ -134,7 +134,7 @@ class CreateLhpCastingTable extends Migration
             $table->integer('safety_door')->default('0');
             $table->integer('safety_hook')->default('0');
             $table->integer('sander_belt')->default('0');
-            $table->integer('setting_sensor_product')->default('0');
+            // $table->integer('setting_sensor_product')->default('0');
             $table->integer('solenoid')->default('0');
             $table->integer('termocouple')->default('0');
             $table->integer('tiebar')->default('0');

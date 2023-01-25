@@ -21,7 +21,7 @@ class LhpSupplyRaw extends Migration
             $table->unsignedBiginteger('id_mc');
             $table->foreign('id_mc')->references('id')->on('mesin_casting')->onDelete('cascade');
             $table->string('furnace');
-            $table->string('berat');
+            $table->integer('jumlah_tapping');
             $table->timestamps();
         });
     }

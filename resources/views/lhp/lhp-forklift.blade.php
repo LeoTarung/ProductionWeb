@@ -9,6 +9,12 @@
     <div class="container-fluid">
         <div class="row  mt-3 mb-4 d-flex justify-content-center text-center">
 
+            @if ($errors->any())
+                <?php toast($errors->first(), 'error'); ?>
+            @endif
+
+
+
             @foreach ($mc as $m)
                 {{-- <div class="button" > --}}
                 <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="nama({{ $m['mc'] }})">
@@ -70,9 +76,9 @@
                         <div class="row mt-3">
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold fs-3" id="berat"
-                                        name="berat">
-                                    <label for="berat" class="">B E R A T</label>
+                                    <input type="number" class="form-control border-dark fw-bold fs-3" id="jumlah_tapping"
+                                        name="jumlah_tapping" required>
+                                    <label for="jumlah_tapping" class="">B E R A T</label>
                                 </div>
                             </div>
                         </div>

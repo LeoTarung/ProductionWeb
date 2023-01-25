@@ -93,6 +93,7 @@ showTime();
 //==============================['FUNCTION RESUME DI LHP']==============================//
 
 function ModalResume(mesin, id) {
+    console.log('asa')
     $.get(
         "/partial/resume-melting" + "/" + mesin + "/" + id,
         {},
@@ -111,4 +112,19 @@ function ModalInstruksi(mesin) {
         $("#page").html(data); //menampilkan view create di dalam id page
         $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
     });
+}
+
+//==============================['FUNCTION RESUME DI LHP']==============================//
+
+function ModalSupply(mesin, id) {
+    // console.log('asad')
+    $.get(
+        "/partial/resume-forklift" + "/" + mesin + "/" + id,
+        {},
+        function (data, status) {
+            $("#ModalNavbarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
+            $("#page").html(data); //menampilkan view create di dalam id page
+            $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
+        }
+    );
 }
