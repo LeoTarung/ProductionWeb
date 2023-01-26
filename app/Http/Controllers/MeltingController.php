@@ -424,25 +424,25 @@ class MeltingController extends Controller
         $title = "LHP Forklift";
         $forklift = $mesin;
         $ntah = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', $mesin], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $material = $ntah->material;
-        $test = LhpSupplyRaw::groupBy(LhpSupplyRaw::raw('hour(jam)'))->where([['id_lhp', '=', $id]])->get();
-        $molt =  MesinCasting::get();
-
-        if ($material == "HD-2") {
-            $mc =  $molt->where('material', "HD-2")->all();
-        } elseif ($material == "HD-4") {
-            $mc =  $molt->where('material', "HD-4")->all();
-        } elseif ($material == "ADC-12") {
-            $mc =  $molt->where('material', "ADC-12")->all();
-        } elseif ($material == "YH3R") {
-            $mc =  $molt->where('material', "YH3R")->all();
-        }
 
         if ($ntah != null) {
+            $material = $ntah->material;
+            $test = LhpSupplyRaw::groupBy(LhpSupplyRaw::raw('hour(jam)'))->where([['id_lhp', '=', $id]])->get();
+            $molt =  MesinCasting::get();
+
+            if ($material == "HD-2") {
+                $mc =  $molt->where('material', "HD-2")->all();
+            } elseif ($material == "HD-4") {
+                $mc =  $molt->where('material', "HD-4")->all();
+            } elseif ($material == "ADC-12") {
+                $mc =  $molt->where('material', "ADC-12")->all();
+            } elseif ($material == "YH3R") {
+                $mc =  $molt->where('material', "YH3R")->all();
+            }
             $nrp = $ntah->nrp;
             return view('lhp.lhp-forklift', compact('title', 'shift', 'nrp', 'mesin', 'id', 'ntah', 'material', 'mc', 'forklift', 'test'));
         } else {
-            return redirect('/lhp-forklift')->with('preulang', 'preulang');
+            return redirect('/pre-forklift')->with('preulang', 'preulang');
         }
     }
 
