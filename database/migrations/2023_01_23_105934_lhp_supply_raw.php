@@ -18,8 +18,8 @@ class LhpSupplyRaw extends Migration
             $table->unsignedBigInteger('id_lhp');
             $table->foreign('id_lhp')->references('id')->on('lhp_supply')->onDelete('cascade');
             $table->time('jam');
-            $table->unsignedBiginteger('id_mc');
-            $table->foreign('id_mc')->references('id')->on('mesin_casting')->onDelete('cascade');
+            $table->integer('no_mc');
+            $table->foreign('no_mc')->references('mc')->on('mesin_casting')->onDelete('cascade');
             $table->string('furnace');
             $table->integer('jumlah_tapping');
             $table->timestamps();

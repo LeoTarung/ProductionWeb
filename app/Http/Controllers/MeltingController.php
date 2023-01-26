@@ -437,7 +437,7 @@ class MeltingController extends Controller
         } elseif ($material == "YH3R") {
             $mc =  $molt->where('material', "YH3R")->all();
         }
- 
+
         if ($ntah != null) {
             $nrp = $ntah->nrp;
             return view('lhp.lhp-forklift', compact('title', 'shift', 'nrp', 'mesin', 'id', 'ntah', 'material', 'mc', 'forklift', 'test'));
