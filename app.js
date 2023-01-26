@@ -88,9 +88,16 @@ io.on("connection", (socket) => {
         );
 
         connection.query(
-            "SELECT * FROM lhp_melting WHERE id = '2' ",
+            "SELECT * FROM lhp_melting WHERE id = '3' ",
             (err, res) => {
                 socket.emit("stok_molten_Striko1", res);
+            }
+        );
+
+        connection.query(
+            "SELECT * FROM mesin_casting ",
+            (err, res) => {
+                socket.emit("mesincasting", res);
             }
         );
     }, 3000);

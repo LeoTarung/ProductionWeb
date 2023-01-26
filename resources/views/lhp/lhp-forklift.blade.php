@@ -9,6 +9,12 @@
     <div class="container-fluid">
         <div class="row  mt-3 mb-4 d-flex justify-content-center text-center">
 
+            @if ($errors->any())
+                <?php toast($errors->first(), 'error'); ?>
+            @endif
+
+
+
             @foreach ($mc as $m)
                 {{-- <div class="button" > --}}
                 <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="nama({{ $m['mc'] }})">
@@ -70,9 +76,9 @@
                         <div class="row mt-3">
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold fs-3" id="berat"
-                                        name="berat">
-                                    <label for="berat" class="">B E R A T</label>
+                                    <input type="number" class="form-control border-dark fw-bold fs-3" id="jumlah_tapping"
+                                        name="jumlah_tapping" required>
+                                    <label for="jumlah_tapping" class="">B E R A T</label>
                                 </div>
                             </div>
                         </div>
@@ -128,27 +134,42 @@
             let batteryLiquid{{ $a['mc'] }} = document.getElementById('battery__liquid{{ $a['mc'] }}');
 
 
-            level{{ $a['mc'] }} = (value{{ $a['mc'] }} / pembagi{{ $a['mc'] }});;
-            batteryLiquid{{ $a['mc'] }}.setAttribute('style', `height:${level{{ $a['mc'] }}}%`);
-            if (level{{ $a['mc'] }} <= 20) {
 
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f71515'
+            $(function() {
+                let ip_node = '192.168.137.194';
+                let socket_port = '3000';
+                let socket = io(ip_node + ':' + socket_port);
+                socket.on('connection');
 
-            } else if (level{{ $a['mc'] }} <= 40) {
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f16716'
+                socket.on("mesincasting", (datasql) => {
 
-            } else if (level{{ $a['mc'] }} <= 60) {
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f5dd06'
 
-            } else if (level{{ $a['mc'] }} <= 80) {
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#98ce06'
+                    level{{ $a['mc'] }} = (value{{ $a['mc'] }} / pembagi{{ $a['mc'] }});;
+                    batteryLiquid{{ $a['mc'] }}.setAttribute('style',
+                        `height:${level{{ $a['mc'] }}}%`);
+                    if (level{{ $a['mc'] }} <= 20) {
 
-            } else {
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#06ce17'
+                        batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f71515'
 
-            }
+                    } else if (level{{ $a['mc'] }} <= 40) {
+                        batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f16716'
 
+                    } else if (level{{ $a['mc'] }} <= 60) {
+                        batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f5dd06'
+
+                    } else if (level{{ $a['mc'] }} <= 80) {
+                        batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#98ce06'
+
+                    } else {
+                        batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#06ce17'
+
+                    }
+
+                })
+            });
         @endforeach
+
+
 
 
         function nama(id) {

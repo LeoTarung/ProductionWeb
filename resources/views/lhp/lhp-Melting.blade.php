@@ -133,14 +133,15 @@
             </div>
         </form>
     </div>
-<script>
-     $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
-                let socket = io(ip_node + ':' + socket_port);
-                socket.on('connection');
+    <script>
+        $(function() {
+            let ip_node = '127.0.0.1';
+            let socket_port = '3000';
+            let socket = io(ip_node + ':' + socket_port);
+            socket.on('connection');
 
-                socket.on("stok_molten_Striko1", (datasql) => {
+            socket.on("stok_molten_Striko1", (datasql) => {
+
 
                     document.getElementById("stok_molten").innerHTML = datasql[0].stok_molten;
                     // console.log(datasql[0].stok_molten);

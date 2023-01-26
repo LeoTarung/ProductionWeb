@@ -35,9 +35,12 @@ Route::get('/lhp', function () {
 //====================== PARTIAL ======================//
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);
+Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'resume_supply']);
+
 //====================== API FOR SHARE ======================//
 Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
 Route::get('/dthourlymltng/{id}', [ApiController::class, 'hourly_lhpmelting']);
+Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 
 //====================== AREA MELTING ======================//
@@ -63,6 +66,7 @@ Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_for
 
 //====================== FORKLIFT AREA CASTING ======================//
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
+
 
 //====================== Only Testing ======================//
 Route::get('/test', [MeltingTestController::class, 'index']);
