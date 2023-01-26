@@ -142,10 +142,11 @@
 
             socket.on("stok_molten_Striko1", (datasql) => {
 
-                document.getElementById("stok_molten").innerHTML = datasql[0].stok_molten;
-                console.log(datasql);
 
-            })
-        });
-    </script>
+                    document.getElementById("stok_molten").innerHTML = datasql[0].stok_molten;
+                    // console.log(datasql[0].stok_molten);
+                   
+                })
+            });
+</script>
 @endsection
