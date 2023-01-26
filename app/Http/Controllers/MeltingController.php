@@ -152,7 +152,7 @@ class MeltingController extends Controller
         // dd($test);
         if ($ntah != null) {
             $nrp = $ntah->nrp;
-            return view('lhp.lhp-Melting', compact('title', 'shift', 'nrp', 'mesin', 'id', 'ntah', 'forklift'));
+            return view('lhp.lhp-Melting', compact('title', 'shift', 'date', 'nrp', 'mesin', 'id', 'ntah', 'forklift'));
         } else {
             return redirect('/lhp-melting')->with('preulang', 'preulang');
         }
