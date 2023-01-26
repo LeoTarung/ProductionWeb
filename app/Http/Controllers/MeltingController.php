@@ -49,6 +49,23 @@ class MeltingController extends Controller
         ));
     }
 
+    public function Dashboard_tv(UsableController $useable, $mesin)
+    {
+        // $sql = LHPMelting::where('mesin', '=', $mesin);
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+        return view('menu.production.melting.performaMelting', compact('shift', 'date', 'mesin'));
+    }
+
+    public function testing(UsableController $useable)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+        return view('lhp.test', compact('shift', 'date'));
+    }
+
     //==============================[' LAPORAN HARIAN PRODUKSI MELTING']==============================//
     public function prep_melting(UsableController $useable)
     {
@@ -217,10 +234,10 @@ class MeltingController extends Controller
                 $machine_performance = ($ntah->tapping / $total_charging_rs) * 100; // N / H x 100%
             }
             $machine_utilization = ($total_charging_rs / $ntah->supply_capacity) * 100; // ( H / A ) x 100%
-            if ($total_charging == 0) {
+            if ($ntah->gas_akhir == 0) {
                 $gas_consum = 0.00;
             } else {
-                $gas_consum = ($ntah->gas_akhir / $total_charging) * 100; //( W / J ) x 100% 
+                $gas_consum = $ntah->awal - $ntah->gas_akhir;
             }
             $melting_rate = $total_charging_rs / $ntah->jam_kerja; // H / X1 
             LhpMelting::where([['id', '=', $id]])->update([
@@ -328,6 +345,13 @@ class MeltingController extends Controller
         } else {
             return redirect("/production/melting/" . $mesin)->with('gagal', 'gagal');
         }
+    }
+
+    public function export_LHPMelting($mesin, $mulai, $selesai)
+    {
+        $filename = "LHPMelting_" . "$mesin" . " $mulai " . "S-d" . " $selesai" . ".csv";
+        return Excel::download(new LHPMelting_Export($mesin, $mulai, $selesai), $filename);
+        return redirect("/production/melting/" . $mesin)->with('behasilDownload', 'behasilDownload');
     }
     //==============================[' LAPORAN HARIAN PRODUKSI FORKLIFT']==============================//
 
