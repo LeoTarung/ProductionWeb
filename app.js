@@ -24,6 +24,8 @@ io.on("connection", (socket) => {
     var mesin1;
     var shift1;
     var date1;
+    var forklift1;
+    var material1;
 
     socket.on("Hello", (mesin, shift, date) => {
         // console.log("ini adalah shift" + shift); // world
@@ -31,6 +33,12 @@ io.on("connection", (socket) => {
         mesin1 = mesin;
         shift1 = shift;
         date1 = date;
+    });
+
+    socket.on("levelMolten", (forklift, material) => {
+        // console.log(forklift, material);
+        forklift1 = forklift;
+        material1 = material;
     });
 
     setInterval(function () {
@@ -44,6 +52,12 @@ io.on("connection", (socket) => {
                 "' ORDER BY id DESC",
             (err, res) => {
                 socket.emit("tv_melting_kiri", res, mesin1);
+            }
+        );
+        connection.query(
+            "SELECT * FROM mesin_casting WHERE material='" + material1 + "'",
+            (err, res) => {
+                socket.emit("levelMolten_client", res);
             }
         );
 
@@ -111,16 +125,12 @@ io.on("connection", (socket) => {
             }
         );
 
-        connection.query(
-            "SELECT * FROM lhp_melting WHERE id = '3' ",
-            (err, res) => {
-                socket.emit("stok_molten_Striko1", res);
-            }
-        );
-
-        connection.query("SELECT * FROM mesin_casting ", (err, res) => {
-            socket.emit("mesincasting", res);
-        });
+        // connection.query(
+        //     "SELECT * FROM lhp_melting WHERE id = '3' ",
+        //     (err, res) => {
+        //         socket.emit("stok_molten_Striko1", res);
+        //     }
+        // );
     }, 3000);
 });
 
