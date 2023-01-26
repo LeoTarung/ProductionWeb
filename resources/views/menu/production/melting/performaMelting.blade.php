@@ -147,31 +147,6 @@
   
 // }, 10000);
 
-////////////////////////////////////////////////////////////////////////////////////////////
-// var makanan;
-
-// setInterval(function(){
-//     if(makanan == undefined){
-//       data = "Striko-1";
-//     }else if( makanan == 'Striko-1'){
-//       data = "Striko-2";
-//     }else if( makanan == 'Striko-2'){
-//       data = "Striko-3";
-//     }else if( makanan == 'Striko-3'){
-//       data = "Swift_asia";
-//     }else if( makanan == 'Swift_asia'){
-//       data = "Striko-1";
-//     }
-//     makanan = data;
-//   }, 1000);
-  
-//   setInterval(function(){    
-//   console.log("INI ADALAH MESIN " + makanan);
-//   }, 1000);
-
-
-
-
   function kejs(mesin, shift, date){
       //============[' SIDE BAR KIRI ']===========//
       $(function(){

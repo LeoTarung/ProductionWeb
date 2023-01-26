@@ -134,19 +134,24 @@
         </form>
     </div>
     <script>
-        $(function() {
-            let ip_node = '127.0.0.1';
-            let socket_port = '3000';
+
+
+            $(function(){
+            let ip_node = location.hostname;
+            let socket_port = '1553';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
 
-            socket.on("stok_molten_Striko1", (datasql) => {
-
-
-                    document.getElementById("stok_molten").innerHTML = datasql[0].stok_molten;
-                    // console.log(datasql[0].stok_molten);
-                   
-                })
+            socket.on("tv_melting_kiri", (data, mesin1) => {
+                console.log(data[0].stok_molten);
+                if(data.length == 0){
+                document.getElementById("stok_molten").innerHTML = "BELUM stok_molten";
+                } else {
+                document.getElementById("stok_molten").innerHTML = data[0].stok_molten;
+                }
+            })
+            socket.emit("Hello", '{{ $mesin }}', '{{ $shift }}', '{{ $date }}'); 
             });
-</script>
+
+    </script>
 @endsection

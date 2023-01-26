@@ -783,7 +783,7 @@
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
-                socket.on("bulananSwift_asia", (datasql) => {
+                socket.on("bulananSwift_Asia", (datasql) => {
                     var data = [];
                     var ChartData = document.getElementById("chartdiv3").innerHTML;
                     for (i = 0; i < datasql.length; i++) {
