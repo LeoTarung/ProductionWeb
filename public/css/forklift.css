@@ -44,6 +44,12 @@ a .font-forklift {
   margin-top: 70px;
 }
 
+a .font-forklift10 {
+  font-size: 45px;
+letter-spacing: 0.15em;
+margin-top: 70px;
+}
+
 .button-prep-fork{
     height: 250px;
     /* width: 27%; */
@@ -56,6 +62,12 @@ a .font-forklift {
     a .font-forklift {
         font-size: 35px;
      
+    }
+
+    a .font-forklift10 {
+      font-size: 30px;
+    letter-spacing: 0.15em;
+    margin-top: 70px;
     }
     .button-prep-fork{
         height: 200px;
@@ -117,7 +129,7 @@ a .font-forklift {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 2px;
     /* background: var(--gradient-color-red); */
     background-color:  red;
     box-shadow: inset -10px 0 12px hsl(0, 0%, 0%, .1),

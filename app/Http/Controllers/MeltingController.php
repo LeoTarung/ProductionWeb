@@ -367,19 +367,19 @@ class MeltingController extends Controller
         $id = null;
         $nama = null;
         $lhp = LhpSupply::orderBy('id', 'DESC')->first();
-        $id_forklift1 = null;
-        $id_forklift1 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-1'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $id_forklift2 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-2'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        // $id_forklift1 = null;
         $id_forklift3 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $id_forklift4 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-4'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_forklift5 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-5'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
-        $id_forklift6 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-6'], ['shift', '=', $shift]])->first();
+        $id_forklift8 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-8'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $id_forklift9 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-9'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $id_forklift10 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-10'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+        $id_forkliftblank = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-6'], ['shift', '=', $shift]])->first();
         $nrp = 0;
         // dd($id_forklift1->nrp);
         $mesin = "FORKLIFT";
         $forklift = "FORKLIFT";
 
-        return view('lhp.prepare-forklift', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_forklift1', 'id_forklift2', 'id_forklift3', 'id_forklift4', 'id_forklift5', 'id_forklift6', 'id', 'forklift', 'nama'));
+        return view('lhp.prepare-forklift', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_forklift3', 'id_forklift5', 'id_forklift8', 'id_forklift9', 'id_forklift10', 'id_forkliftblank', 'id', 'forklift', 'nama'));
     }
 
     public function prep_forklift_simpan(UsableController $useable, PreForkliftRequest $request)
@@ -479,35 +479,37 @@ class MeltingController extends Controller
             LhpSupplyRaw::create([
                 'id_lhp' => $id,
                 'jam' => $hour,
-                'id_mc' => $request->mc,
+                'no_mc' => $request->mc,
                 'furnace' => $request->furnace,
                 'jumlah_tapping' => $request->jumlah_tapping
             ]);
 
             // {{ UPDATE STOK MOLTEN DAN TAPPING DI LHP MELTING }} //
             $lhpMelting =  LhpMelting::where([['tanggal', '=', $date], ['shift', '=', $shift], ['jam_kerja', '=', $jam_kerja], ['mesin', '=', $furnace], ['material', '=', $material]])->first();
-            $stok_molten = $lhpMelting->stok_molten;
-            $tapping = $lhpMelting->tapping;
-            LhpMelting::where([['tanggal', '=', $date], ['shift', '=', $shift], ['mesin', '=', $furnace], ['material', '=', $material]])->update([
-                'stok_molten' => $stok_molten - $request->jumlah_tapping,
-                'tapping' => $tapping + $request->jumlah_tapping
-            ]);
+            if ($lhpMelting != null) {
+                $stok_molten = $lhpMelting->stok_molten;
+                $tapping = $lhpMelting->tapping;
+                LhpMelting::where([['tanggal', '=', $date], ['shift', '=', $shift], ['mesin', '=', $furnace], ['material', '=', $material]])->update([
+                    'stok_molten' => $stok_molten - $request->jumlah_tapping,
+                    'tapping' => $tapping + $request->jumlah_tapping
+                ]);
 
-            // {{ UPDATE JUMLAH TAPPING  DI LHP SUPPLY }} //
-            $total_tappings =  LhpSupplyRaw::where('id_lhp', $id)->selectRaw('SUM(jumlah_tapping) as tappings')->get();
-            LhpSupply::where('id', $id)->update([
-                'jumlah_tapping' =>   $total_tappings[0]->tappings,
-            ]);
+                // {{ UPDATE JUMLAH TAPPING  DI LHP SUPPLY }} //
+                $total_tappings =  LhpSupplyRaw::where('id_lhp', $id)->selectRaw('SUM(jumlah_tapping) as tappings')->get();
+                LhpSupply::where('id', $id)->update([
+                    'jumlah_tapping' =>   $total_tappings[0]->tappings,
+                ]);
 
-            // {{ UPDATE JUMLAH CAPACITY MOLTEN MESIN CASTING }} //
-            $id_mc = $request->mc;
-            $old_capacity =  $total_tappings =  MesinCasting::where('mc', $id_mc)->selectRaw('capacity as aktual_molten')->get();
-            MesinCasting::where('mc', $id_mc)->update([
-                'capacity' =>   $old_capacity[0]->aktual_molten + $request->jumlah_tapping
-            ]);
-
-
-            return redirect("/forklift/$mesin/$id")->with('behasilditambahkan', 'behasilditambahkan');
+                // // {{ UPDATE JUMLAH CAPACITY MOLTEN MESIN CASTING }} //
+                // $id_mc = $request->mc;
+                // $old_capacity =  $total_tappings =  MesinCasting::where('mc', $id_mc)->selectRaw('aktual_molten as aktual_moltens')->get();
+                // MesinCasting::where('mc', $id_mc)->update([
+                //     'aktual_molten' =>   $old_capacity[0]->aktual_moltens + $request->jumlah_tapping
+                // ]);
+                return redirect("/forklift/$mesin/$id")->with('behasilditambahkan', 'behasilditambahkan');
+            } else {
+                return redirect()->back()->with('erorr', 'your message,here');
+            }
         } else {
             return redirect('lhp.lhp-forklift')->with('preulang', 'preulang');
         }
