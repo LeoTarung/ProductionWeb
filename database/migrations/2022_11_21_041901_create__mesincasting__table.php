@@ -17,9 +17,9 @@ class CreateMesincastingTable extends Migration
             // $table->id();
             $table->integer('mc')->primary();
             $table->string('material');
-            $table->integer('capacity')->default('0');
-            $table->integer('min')->default('0');
-            $table->integer('max')->default('0');
+            $table->integer('aktual_molten')->default('0');
+            $table->integer('min_level_molten')->default('0');
+            $table->integer('max_level_molten')->default('0');
             $table->integer('nama_part')->default('0');
             $table->integer('kode_kanban')->default('0');
             $table->integer('kode_henkaten')->default('0');

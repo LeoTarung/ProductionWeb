@@ -12,16 +12,19 @@
             @if ($errors->any())
                 <?php toast($errors->first(), 'error'); ?>
             @endif
+            @if (\Session::has('erorr'))
+                <?php toast('Lhp Melting belum Preparation', 'error'); ?>
+            @endif
 
 
 
             @foreach ($mc as $m)
                 {{-- <div class="button" > --}}
-                <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="nama({{ $m['mc'] }})">
+                <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="mc({{ $m['mc'] }})">
                     {{-- <div class="card-header text-center fw-bold"> MC-{{ $m['mc'] }}</div> --}}
                     <div class="card-header text-center fw-bold"> MC-{{ $m->mc }}</div>
                     <section id="battery{{ $m['mc'] }}" class="battery mb-3 d-flex justify-content-start"
-                        onclick="mc({{ $m['mc'] }})">
+                        onclick="nama({{ $m['mc'] }})">
                         <div id="battery__pill" class="battery__pill">
                             <div id="battery__level" class="battery__level">
                                 <div id="battery__liquid{{ $m['mc'] }}" class="battery__liquid"></div>
@@ -121,48 +124,68 @@
     </div>
 
     <script>
-        $(function(){
-        let ip_node = location.hostname;
-        let socket_port = '1553';
-        let socket = io(ip_node + ':' + socket_port);
-        socket.on('connection');
 
-          socket.on("levelMolten_client", (data) => {
-             for (var i = 0; i < data.length; i++) {
-                let max1 = data[i].max;
-                let min1 = data[i].min;
-                let jarak1 = max1 - min1 //hasilnya 2000
-                let pembagi1 = (jarak1 * 0.01); //hasilnya 20
-                let value1 = (data[i].capacity - min1); //hasilnya 500
-                let level1 = (value1 / pembagi1);
-                
-                console.log(min1);
-                
-                let battery1 = document.getElementById('battery'+data[i].mc);
+        $(function() {
+            let ip_node = location.hostname;
+            let socket_port = '1553';
+            let socket = io(ip_node + ':' + socket_port);
+            socket.on('connection');
+
+            socket.on("levelMolten_client", (data) => {
+                for (var i = 0; i < data.length; i++) {
+                    let max1 = data[i].max_level_molten;
+                    let min1 = data[i].min_level_molten;
+                    let jarak1 = max1 - min1 //hasilnya 2000
+                    let pembagi1 = (jarak1 * 0.01); //hasilnya 20
+                    let value1 = (data[i].aktual_molten - min1); //hasilnya 500
+                    let level1 = (value1 / pembagi1);
+
+                    console.log(level1);
+
+                    let battery1 = document.getElementById('battery' + data[i].mc);
 
 
-                let batteryLiquid1 = document.getElementById('battery__liquid'+data[i].mc);
-                batteryLiquid1.setAttribute('style',`height: ${level1}%;`);
-                
-                if (level1 <= 20) {
-                    batteryLiquid1.style.backgroundColor = '#f71515'
 
-                } else if (level1 <= 40) {
-                    batteryLiquid1.style.backgroundColor = '#f16716'
+                    let batteryLiquid1 = document.getElementById('battery__liquid' + data[i].mc);
+                    batteryLiquid1.setAttribute('style', `height: ${level1}%;`);
 
-                } else if (level1 <= 60) {
-                    batteryLiquid1.style.backgroundColor = '#f5dd06'
+                    if (level1 <= 20) {
+                        batteryLiquid1.style.backgroundColor = '#f71515'
 
-                } else if (level1 = 80) {
-                    batteryLiquid1.style.backgroundColor = '#98ce06'
+                    } else if (level1 <= 40) {
+                        batteryLiquid1.style.backgroundColor = '#f16716'
 
-                } else {
-                    batteryLiquid1.style.backgroundColor = '#06ce17'
+                    } else if (level1 <= 60) {
+                        batteryLiquid1.style.backgroundColor = '#f5dd06'
 
+                    } else if (level1 = 80) {
+                        batteryLiquid1.style.backgroundColor = '#98ce06'
+
+                    } else {
+                        batteryLiquid1.style.backgroundColor = '#06ce17'
+
+                    }
                 }
-             }
-        })
-          socket.emit("levelMolten", '{{ $forklift }}', '{{ $material }}'); 
-      });
+            })
+            socket.emit("levelMolten", '{{ $forklift }}', '{{ $material }}');
+        });
     </script>
+    <script>
+        function nama(id) {
+            @foreach ($mc as $b)
+                if (id == {{ $b['mc'] }}) {
+                    document.getElementById('nama').innerHTML = 'MC - {{ $b['mc'] }}'
+                }
+            @endforeach
+        }
+
+        function mc(id) {
+            @foreach ($mc as $c)
+                if (id == {{ $c['mc'] }}) {
+                    document.getElementById('mc').value = '{{ $c['mc'] }}'
+                }
+            @endforeach
+        }
+    </script>
+
 @endsection

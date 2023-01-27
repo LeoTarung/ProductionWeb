@@ -11,43 +11,43 @@
         @endif
         <div class="row justify-content-center mx-auto mt-3">
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
-                @if ($id_forklift1 == null)
+                @if ($id_forklift3 == null)
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(1)">
-                        <div class="font-forklift">FORKLIFT-1</div>
+                        <div class="font-forklift">FORKLIFT-3</div>
                     </a>
                 @else
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="forklift(1)">
-                        <div class="font-forklift">FORKLIFT-1</div>
+                        <div class="font-forklift">FORKLIFT-3</div>
                     </a>
                 @endif
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
-                @if ($id_forklift2 == null)
+                @if ($id_forklift5 == null)
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(2)">
-                        <div class="font-forklift">FORKLIFT-2</div>
+                        <div class="font-forklift">FORKLIFT-5</div>
 
                     </a>
                 @else
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="forklift(2)">
-                        <div class="font-forklift">FORKLIFT-2</div>
+                        <div class="font-forklift">FORKLIFT-5</div>
 
                     </a>
                 @endif
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
-                @if ($id_forklift3 == null)
+                @if ($id_forklift8 == null)
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(3)">
-                        <div class="font-forklift">FORKLIFT-3</div>
+                        <div class="font-forklift">FORKLIFT-8</div>
                     </a>
                 @else
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="forklift(3)">
-                        <div class="font-forklift">FORKLIFT-3</div>
+                        <div class="font-forklift">FORKLIFT-8</div>
 
                     </a>
                 @endif
@@ -56,48 +56,45 @@
 
         <div class="row justify-content-center mx-auto mt-4 mb-2">
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
-                @if ($id_forklift4 == null)
+                @if ($id_forklift9 == null)
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(4)">
-                        <div class="font-forklift">FORKLIFT-4</div>
+                        <div class="font-forklift">FORKLIFT-9</div>
                     </a>
                 @else
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="forklift(4)">
-                        <div class="font-forklift">FORKLIFT-4</div>
+                        <div class="font-forklift">FORKLIFT-9</div>
                     </a>
                 @endif
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
-                @if ($id_forklift5 == null)
+                @if ($id_forklift10 == null)
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(5)">
-                        <div class="font-forklift">FORKLIFT-5</div>
+                        <div class="font-forklift10">FORKLIFT-10</div>
                     </a>
                 @else
                     <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="forklift(5)">
-                        <div class="font-forklift">FORKLIFT-5</div>
+                        <div class="font-forklift10">FORKLIFT-10</div>
                     </a>
                 @endif
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
-                @if ($id_forklift6 == null)
-                    <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
+                @if ($id_forkliftblank == null)
+                    <a class="button-prep-fork btn btn-lg btn-secondary border-secondary text-uppercase fw-bold disabled"
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(6)">
-                        <div class="font-forklift">FORKLIFT-6</div>
+                        <div class="font-forklift"></div>
                     </a>
                 @else
-                    <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
+                    <a class="button-prep-fork btn btn-lg btn-secondary border-secondary text-uppercase fw-bold disabled"
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="forklift(6)">
-                        <div class="font-forklift">FORKLIFT-6</div>
+                        <div class="font-forklift"></div>
 
                     </a>
                 @endif
             </div>
-            <button data-swal-template="#my-template">
-                Trigger modal
-            </button>
         </div>
     </div>
 
@@ -119,7 +116,7 @@
 
                             <div class="col-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold" id="nrp"
+                                    <input type="number" class="form-control border-dark fw-bold" id="nrp"
                                         name="nrp" required>
                                     <label for="nrp" class="">N R P</label>
                                 </div>
@@ -218,40 +215,40 @@
     <script>
         function forklift(id) {
             if (id == 1) {
-                document.getElementById("mesin").value = 'FORKLIFT-1'
-                @if ($id_forklift1 != null)
-                    document.getElementById("call_nama").innerHTML = '{{ $id_forklift1->nama }}'
-                    document.getElementById("supply").href = "/forklift/FORKLIFT-1/{{ $id_forklift1->id }}"
-                @endif
-            } else if (id == 2) {
-                document.getElementById("mesin").value = 'FORKLIFT-2'
-                @if ($id_forklift2 != null)
-                    document.getElementById("call_nama").innerHTML = "{{ $id_forklift2->nama }}"
-                    document.getElementById("supply").href = "/forklift/FORKLIFT-2/{{ $id_forklift2->id }}"
-                @endif
-            } else if (id == 3) {
                 document.getElementById("mesin").value = 'FORKLIFT-3'
                 @if ($id_forklift3 != null)
-                    document.getElementById("call_nama").innerHTML = "{{ $id_forklift3->nama }}"
+                    document.getElementById("call_nama").innerHTML = '{{ $id_forklift3->nama }}'
                     document.getElementById("supply").href = "/forklift/FORKLIFT-3/{{ $id_forklift3->id }}"
                 @endif
-            } else if (id == 4) {
-                document.getElementById("mesin").value = 'FORKLIFT-4'
-                @if ($id_forklift4 != null)
-                    document.getElementById("call_nama").innerHTML = "{{ $id_forklift4->nama }}"
-                    document.getElementById("supply").href = "/forklift/FORKLIFT-4/{{ $id_forklift4->id }}"
-                @endif
-            } else if (id == 5) {
+            } else if (id == 2) {
                 document.getElementById("mesin").value = 'FORKLIFT-5'
                 @if ($id_forklift5 != null)
                     document.getElementById("call_nama").innerHTML = "{{ $id_forklift5->nama }}"
                     document.getElementById("supply").href = "/forklift/FORKLIFT-5/{{ $id_forklift5->id }}"
                 @endif
+            } else if (id == 3) {
+                document.getElementById("mesin").value = 'FORKLIFT-8'
+                @if ($id_forklift8 != null)
+                    document.getElementById("call_nama").innerHTML = "{{ $id_forklift8->nama }}"
+                    document.getElementById("supply").href = "/forklift/FORKLIFT-8/{{ $id_forklift8->id }}"
+                @endif
+            } else if (id == 4) {
+                document.getElementById("mesin").value = 'FORKLIFT-9'
+                @if ($id_forklift9 != null)
+                    document.getElementById("call_nama").innerHTML = "{{ $id_forklift9->nama }}"
+                    document.getElementById("supply").href = "/forklift/FORKLIFT-9/{{ $id_forklift9->id }}"
+                @endif
+            } else if (id == 5) {
+                document.getElementById("mesin").value = 'FORKLIFT-10'
+                @if ($id_forklift10 != null)
+                    document.getElementById("call_nama").innerHTML = "{{ $id_forklift10->nama }}"
+                    document.getElementById("supply").href = "/forklift/FORKLIFT-10/{{ $id_forklift10->id }}"
+                @endif
             } else if (id == 6) {
                 document.getElementById("mesin").value = 'FORKLIFT-6'
-                @if ($id_forklift6 != null)
-                    document.getElementById("call_nama").innerHTML = "{{ $id_forklift6->nama }}"
-                    document.getElementById("supply").href = "/forklift/FORKLIFT-6/{{ $id_forklift6->id }}"
+                @if ($id_forkliftblank != null)
+                    document.getElementById("call_nama").innerHTML = "{{ $id_forkliftblank->nama }}"
+                    document.getElementById("supply").href = "/forklift/FORKLIFT-6/{{ $id_forkliftblank->id }}"
                 @endif
             }
 
