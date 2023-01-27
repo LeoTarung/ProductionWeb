@@ -13,9 +13,10 @@ class CastingController extends Controller
     public function Dashboard(UsableController $useable)
     {
         $date = $useable->date();
-        // $data_lhp = LhpMelting::where([['tanggal', '=', $date]])->first();;
-        return  view('menu.production.casting.casting', [
-            "title" => 'Melting Overview',
-        ]);
+        $shift = $useable->Shift();
+        $mesin = MesinCasting::get()->all();
+        $title = "Casting Overview";
+
+        return view('menu.production.casting.casting', compact('title', 'shift', 'date', 'mesin'));
     }
 }

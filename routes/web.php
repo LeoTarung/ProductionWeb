@@ -42,6 +42,7 @@ Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
 Route::get('/dthourlymltng/{id}', [ApiController::class, 'hourly_lhpmelting']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
+Route::get('/dtmccasting/{id}', [ApiController::class, 'showmc']);
 
 //====================== AREA MELTING ======================//
 Route::get('/production/melting', [MeltingController::class, 'Dashboard']);

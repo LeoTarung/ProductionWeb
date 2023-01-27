@@ -124,6 +124,7 @@
     </div>
 
     <script>
+
         $(function() {
             let ip_node = location.hostname;
             let socket_port = '1553';
@@ -142,6 +143,7 @@
                     console.log(level1);
 
                     let battery1 = document.getElementById('battery' + data[i].mc);
+
 
 
                     let batteryLiquid1 = document.getElementById('battery__liquid' + data[i].mc);
@@ -168,8 +170,6 @@
             socket.emit("levelMolten", '{{ $forklift }}', '{{ $material }}');
         });
     </script>
-
-
     <script>
         function nama(id) {
             @foreach ($mc as $b)
@@ -187,4 +187,5 @@
             @endforeach
         }
     </script>
+
 @endsection

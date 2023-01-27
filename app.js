@@ -124,13 +124,6 @@ io.on("connection", (socket) => {
                 socket.emit("bulananSwift_Asia", res);
             }
         );
-
-        // connection.query(
-        //     "SELECT * FROM lhp_melting WHERE id = '3' ",
-        //     (err, res) => {
-        //         socket.emit("stok_molten_Striko1", res);
-        //     }
-        // );
     }, 3000);
 });
 
