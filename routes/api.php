@@ -2,8 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\LevelController;
-use App\Http\Controllers\MeltingTestController;
+use App\Http\Controllers\Api\MesinCastingController;
 
 
 /*
@@ -21,6 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'v1'], function () {
-    Route::apiResource('melt', MeltingTestController::class);
+// Route::group(['prefix' => 'v1'], function () {
+//     Route::apiResource('melt', MeltingTestController::class);
+// });
+
+Route::group(['prefix' => 'MesinCasting'], function () {
+    Route::apiResource('molten', MesinCastingController::class);
 });

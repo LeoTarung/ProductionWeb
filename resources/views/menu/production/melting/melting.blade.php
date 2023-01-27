@@ -245,12 +245,12 @@
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
             $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
+                let ip_node = location.hostname;
+                let socket_port = '1553';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
-                socket.on("bulananStriko1", (datasql) => {
+                socket.on("bulananStriko-1", (datasql) => {
                     var data = [];
                     var ChartData = document.getElementById("chartdiv").innerHTML;
                     for (i = 0; i < datasql.length; i++) {
@@ -422,12 +422,12 @@
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
             $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
+                let ip_node = location.hostname;
+                let socket_port = '1553';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
-                socket.on("bulananStriko2", (datasql) => {
+                socket.on("bulananStriko-2", (datasql) => {
                     var data = [];
                     var ChartData = document.getElementById("chartdiv1").innerHTML;
                     for (i = 0; i < datasql.length; i++) {
@@ -600,12 +600,12 @@
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
             $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
+                let ip_node = location.hostname;
+                let socket_port = '1553';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
-                socket.on("bulananStriko3", (datasql) => {
+                socket.on("bulananStriko-3", (datasql) => {
                     var data = [];
                     var ChartData = document.getElementById("chartdiv2").innerHTML;
                     for (i = 0; i < datasql.length; i++) {
@@ -778,8 +778,8 @@
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
             $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
+                let ip_node = location.hostname;
+                let socket_port = '1553';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 

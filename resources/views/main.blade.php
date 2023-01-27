@@ -51,6 +51,9 @@
     {{-- //============[ JS IN HERE ]============// --}}
     <script src="{{ asset('/js/Socketio454.js') }}"></script>
    
+
+
+    {{-- //============[ TEMPLATE SOCKET IO ]============// --}}
     {{-- <script>
         //     $(function(){
         //        let ip_node = '127.0.0.1';

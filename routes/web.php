@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UsableController;
+use App\Http\Controllers\CastingController;
 use App\Http\Controllers\MeltingController;
 use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
@@ -34,10 +35,14 @@ Route::get('/lhp', function () {
 //====================== PARTIAL ======================//
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);
+Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'resume_supply']);
+
 //====================== API FOR SHARE ======================//
 Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
 Route::get('/dthourlymltng/{id}', [ApiController::class, 'hourly_lhpmelting']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
+Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
+Route::get('/dtmccasting/{id}', [ApiController::class, 'showmc']);
 
 //====================== AREA MELTING ======================//
 Route::get('/production/melting', [MeltingController::class, 'Dashboard']);
@@ -51,13 +56,17 @@ Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_
 Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
 
 
-Route::get('/performa', [MeltingTestController::class, 'input']);
+Route::get('/tv/melting/{mesin}', [MeltingController::class, 'Dashboard_tv']);
+Route::get('/tv', [MeltingController::class, 'testing']);
 
 //====================== FORKLIFT AREA MELTING ======================//
 Route::get('/pre-forklift', [MeltingController::class, 'prep_forklift']);
 Route::post('/pre-forklift/simpan', [MeltingController::class, 'prep_forklift_simpan']);
 Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift']);
 Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_forklift_raw_simpan']);
+
+//====================== FORKLIFT AREA CASTING ======================//
+Route::get('/production/casting', [CastingController::class, 'Dashboard']);
 
 
 //====================== Only Testing ======================//

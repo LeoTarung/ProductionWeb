@@ -22,6 +22,10 @@ class LhpSupply extends Migration
             $table->string('shift');
             $table->string('jam_kerja');
             $table->string('material');
+            // $table->integer('berat_awal');
+            $table->integer('temperature')->nullable();
+            $table->integer('tujuan_tapping')->nullable();
+            $table->integer('jumlah_tapping')->nullable();
             $table->timestamps();
         });
     }

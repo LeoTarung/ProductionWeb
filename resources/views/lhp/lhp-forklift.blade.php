@@ -9,13 +9,22 @@
     <div class="container-fluid">
         <div class="row  mt-3 mb-4 d-flex justify-content-center text-center">
 
+            @if ($errors->any())
+                <?php toast($errors->first(), 'error'); ?>
+            @endif
+            @if (\Session::has('erorr'))
+                <?php toast('Lhp Melting belum Preparation', 'error'); ?>
+            @endif
+
+
+
             @foreach ($mc as $m)
                 {{-- <div class="button" > --}}
-                <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="nama({{ $m['mc'] }})">
-                    <div class="card-header text-center fw-bold">
-                        MC-{{ $m['mc'] }}</div>
+                <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="mc({{ $m['mc'] }})">
+                    {{-- <div class="card-header text-center fw-bold"> MC-{{ $m['mc'] }}</div> --}}
+                    <div class="card-header text-center fw-bold"> MC-{{ $m->mc }}</div>
                     <section id="battery{{ $m['mc'] }}" class="battery mb-3 d-flex justify-content-start"
-                        onclick="mc({{ $m['mc'] }})">
+                        onclick="nama({{ $m['mc'] }})">
                         <div id="battery__pill" class="battery__pill">
                             <div id="battery__level" class="battery__level">
                                 <div id="battery__liquid{{ $m['mc'] }}" class="battery__liquid"></div>
@@ -70,9 +79,9 @@
                         <div class="row mt-3">
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold fs-3" id="berat"
-                                        name="berat">
-                                    <label for="berat" class="">B E R A T</label>
+                                    <input type="number" class="form-control border-dark fw-bold fs-3" id="jumlah_tapping"
+                                        name="jumlah_tapping" required>
+                                    <label for="jumlah_tapping" class="">B E R A T</label>
                                 </div>
                             </div>
                         </div>
@@ -115,46 +124,53 @@
     </div>
 
     <script>
-        ////////////////////////////////////['   Molten   ']////////////////////////////////////////////
 
-        @foreach ($mc as $a)
-            let max{{ $a['mc'] }} = {{ $a['max'] }}
-            let min{{ $a['mc'] }} = {{ $a['min'] }}
-            // let jarak{{ $a['mc'] }} = ({{ $a['max'] }} - {{ $a['min'] }});
-            let jarak{{ $a['mc'] }} = ({{ $a['max'] }} - {{ $a['min'] }});
-            let pembagi{{ $a['mc'] }} = (jarak{{ $a['mc'] }} * 0.01);
-            let value{{ $a['mc'] }} = ({{ $a['capacity'] }} - min{{ $a['mc'] }});
+        $(function() {
+            let ip_node = location.hostname;
+            let socket_port = '1553';
+            let socket = io(ip_node + ':' + socket_port);
+            socket.on('connection');
 
-            let battery{{ $a['mc'] }} = document.getElementById('battery{{ $a['mc'] }}');
-            let batteryLiquid{{ $a['mc'] }} = document.getElementById('battery__liquid{{ $a['mc'] }}');
+            socket.on("levelMolten_client", (data) => {
+                for (var i = 0; i < data.length; i++) {
+                    let max1 = data[i].max_level_molten;
+                    let min1 = data[i].min_level_molten;
+                    let jarak1 = max1 - min1 //hasilnya 2000
+                    let pembagi1 = (jarak1 * 0.01); //hasilnya 20
+                    let value1 = (data[i].aktual_molten - min1); //hasilnya 500
+                    let level1 = (value1 / pembagi1);
 
+                    console.log(level1);
 
-            level{{ $a['mc'] }} = (value{{ $a['mc'] }} / pembagi{{ $a['mc'] }});;
-            batteryLiquid{{ $a['mc'] }}.setAttribute('style', `height:${level{{ $a['mc'] }}}%`);
-            if (level{{ $a['mc'] }} <= 20) {
-
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f71515'
-
-            } else if (level{{ $a['mc'] }} <= 40) {
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f16716'
-
-            } else if (level{{ $a['mc'] }} <= 60) {
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#f5dd06'
-
-            } else if (level{{ $a['mc'] }} <= 80) {
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#98ce06'
-
-            } else {
-                batteryLiquid{{ $a['mc'] }}.style.backgroundColor = '#06ce17'
-
-            }
-
-            console.log(level{{ $a['mc'] }});
-            console.log(value{{ $a['mc'] }});
-            console.log('{{ $a['material'] }}');
-        @endforeach
+                    let battery1 = document.getElementById('battery' + data[i].mc);
 
 
+
+                    let batteryLiquid1 = document.getElementById('battery__liquid' + data[i].mc);
+                    batteryLiquid1.setAttribute('style', `height: ${level1}%;`);
+
+                    if (level1 <= 20) {
+                        batteryLiquid1.style.backgroundColor = '#f71515'
+
+                    } else if (level1 <= 40) {
+                        batteryLiquid1.style.backgroundColor = '#f16716'
+
+                    } else if (level1 <= 60) {
+                        batteryLiquid1.style.backgroundColor = '#f5dd06'
+
+                    } else if (level1 = 80) {
+                        batteryLiquid1.style.backgroundColor = '#98ce06'
+
+                    } else {
+                        batteryLiquid1.style.backgroundColor = '#06ce17'
+
+                    }
+                }
+            })
+            socket.emit("levelMolten", '{{ $forklift }}', '{{ $material }}');
+        });
+    </script>
+    <script>
         function nama(id) {
             @foreach ($mc as $b)
                 if (id == {{ $b['mc'] }}) {
@@ -171,4 +187,5 @@
             @endforeach
         }
     </script>
+
 @endsection
