@@ -121,8 +121,6 @@
     </div>
 
     <script>
-
-
         $(function(){
         let ip_node = location.hostname;
         let socket_port = '1553';
@@ -166,26 +164,5 @@
         })
           socket.emit("levelMolten", '{{ $forklift }}', '{{ $material }}'); 
       });
-    </script>
-
-
-    <script>
-           
-
-        // function nama(id) {
-        //     @foreach ($mc as $b)
-        //         if (id == {{ $b['mc'] }}) {
-        //             document.getElementById('nama').innerHTML = 'MC - {{ $b['mc'] }}'
-        //         }
-        //     @endforeach
-        // }
-
-        // function mc(id) {
-        //     @foreach ($mc as $c)
-        //         if (id == {{ $c['mc'] }}) {
-        //             document.getElementById('mc').value = '{{ $c['mc'] }}'
-        //         }
-        //     @endforeach
-        // }
     </script>
 @endsection
