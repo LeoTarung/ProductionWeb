@@ -16,8 +16,6 @@
                 <?php toast('Lhp Melting belum Preparation', 'error'); ?>
             @endif
 
-
-
             @foreach ($mc as $m)
                 {{-- <div class="button" > --}}
                 <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="mc({{ $m['mc'] }})">
@@ -90,7 +88,7 @@
                             <div class="row"> <label for="furnace " class="ms-2">FURNACE :</label></div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="form-check mt-2" id="furnace" name="furnace" required>
+                                    <div class="form-check mt-2" id="furnace" name="furnace" required focus>
 
                                         <input type="radio" class="btn-check " name="furnace" id="success-outlined"
                                             autocomplete="off" value="STRIKO-1">
@@ -124,7 +122,6 @@
     </div>
 
     <script>
-
         $(function() {
             let ip_node = location.hostname;
             let socket_port = '1553';
@@ -186,6 +183,11 @@
                 }
             @endforeach
         }
-    </script>
 
+        let jumlahTapping = document.getElementById('jumlah_tapping');
+        if (jumlahTapping ) {
+            // Tab to the next input after #my-text-input
+            $("#staticBackdrop").emulateTab();
+        }
+    </script>
 @endsection
