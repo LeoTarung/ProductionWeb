@@ -26,6 +26,13 @@
                         {{ $shift }}
                     </div>
                 </a>
+            @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
+                {{-- <a onClick="ModalSupply('{{ $mesin }}', '{{ $id }}')"> --}}
+                <a>
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
             @else
                 <a onClick="ModalResume('{{ $mesin }}', '{{ $id }}')">
                     <div class="shift border-bottom">
@@ -54,6 +61,10 @@
                     </div>
                     <div class="nrp nrp-child border-bottom ">
                         <div class="font-white fw-bold">{{ $nrp }}</div>
+                    </div>
+                @elseif(Request::url() == url('/settings'))
+                    <div class="nrp border-bottom">
+                        <div class="font-white"> Admin </div>
                     </div>
                 @else
                     <div class="nrp border-bottom">

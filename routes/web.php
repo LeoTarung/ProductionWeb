@@ -5,6 +5,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UsableController;
 use App\Http\Controllers\CastingController;
 use App\Http\Controllers\MeltingController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
@@ -43,6 +44,11 @@ Route::get('/dthourlymltng/{id}', [ApiController::class, 'hourly_lhpmelting']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dtmccasting/{id}', [ApiController::class, 'showmc']);
+
+//====================== SETTINGS ======================//
+Route::get('/settings', [SettingController::class, 'index']);
+Route::get('/settings/mesincasting', [SettingController::class, 'showMolten']); // Mesin Casting
+
 
 //====================== AREA MELTING ======================//
 Route::get('/production/melting', [MeltingController::class, 'Dashboard']);
