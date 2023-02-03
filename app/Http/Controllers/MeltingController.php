@@ -19,6 +19,7 @@ use App\Http\Controllers\UsableController;
 
 class MeltingController extends Controller
 {
+
     //==============================[' DASHBOARD PRODUCTION ']==============================//
     public function Dashboard(UsableController $useable)
     {
@@ -354,6 +355,8 @@ class MeltingController extends Controller
         return Excel::download(new LHPMelting_Export($mesin, $mulai, $selesai), $filename);
         return redirect("/production/melting/" . $mesin)->with('behasilDownload', 'behasilDownload');
     }
+
+
     //==============================[' LAPORAN HARIAN PRODUKSI FORKLIFT']==============================//
 
     public function prep_forklift(UsableController $useable)

@@ -449,7 +449,7 @@
 .nav .logo {
     width: 290px;
     height: 70px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .nav .row {

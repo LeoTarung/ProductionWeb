@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="/css/performa_melting.css" media="all"> 
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/363jquery.min.js"></script>
+
     <title>NM | TV MELTING</title>
+
   </head>
 
  <body onload="kejs('{{ $mesin }}', '{{ $shift }}', '{{ $date }}')">
