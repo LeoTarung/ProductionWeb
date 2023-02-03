@@ -147,7 +147,7 @@
                 if(data.length == 0){
                 document.getElementById("stok_molten").innerHTML = "BELUM stok_molten";
                 } else {
-                document.getElementById("stok_molten").innerHTML = data[0].stok_molten;
+                document.getElementById("stok_molten").innerHTML = data[0].stok_molten +" KG";
                 }
             })
             socket.emit("Hello", '{{ $mesin }}', '{{ $shift }}', '{{ $date }}'); 
