@@ -1,9 +1,5 @@
 @extends('mainLHP')
 @section('content')
-    {{-- CSS --}}
-
-    <link rel="stylesheet" type="text/css" href="/css/forklift.css">
-
     {{-- Content --}}
 
     <div class="container-fluid">
@@ -182,12 +178,6 @@
                     document.getElementById('mc').value = '{{ $c['mc'] }}'
                 }
             @endforeach
-        }
-
-        let jumlahTapping = document.getElementById('jumlah_tapping');
-        if (jumlahTapping ) {
-            // Tab to the next input after #my-text-input
-            $("#staticBackdrop").emulateTab();
         }
     </script>
 @endsection

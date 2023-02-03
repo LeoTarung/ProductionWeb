@@ -117,14 +117,15 @@ function ModalInstruksi(mesin) {
 //==============================['FUNCTION RESUME DI LHP']==============================//
 
 function ModalSupply(mesin, id) {
-    // console.log('asad')
+    // console.log('asad');
     $.get(
         "/partial/resume-forklift" + "/" + mesin + "/" + id,
         {},
         function (data, status) {
             $("#ModalNavbarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
-            $("#page").html(data); //menampilkan view create di dalam id page
-            $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
+             $("#page").html(data); //menampilkan view create di dalam id page
+             $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
+             console.log('test');
         }
     );
 }

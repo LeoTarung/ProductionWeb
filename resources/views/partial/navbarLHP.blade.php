@@ -20,15 +20,7 @@
                     </div>
                 </a>
             @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
-                {{-- <a onClick="ModalSupply('{{ $mesin }}', '{{ $id }}')"> --}}
-                <a>
-                    <div class="shift border-bottom">
-                        {{ $shift }}
-                    </div>
-                </a>
-            @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
-                {{-- <a onClick="ModalSupply('{{ $mesin }}', '{{ $id }}')"> --}}
-                <a>
+                <a onClick="ModalSupply('{{ $mesin }}', '{{ $id }}')">
                     <div class="shift border-bottom">
                         {{ $shift }}
                     </div>
@@ -74,6 +66,8 @@
             </a>
         </li>
         <li>
+
+            {{-- Preparation Forklift --}}
             @if ($mesin == 'FORKLIFT')
                 <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -84,6 +78,8 @@
                         @endif
                     </div>
                 </a>
+
+                {{-- Preparation Melting --}}
             @elseif($mesin == 'MELTING')
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -94,6 +90,8 @@
                         @endif
                     </div>
                 </a>
+
+                {{-- LHP Forklift --}}
             @elseif($mesin == $forklift)
                 <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -104,6 +102,20 @@
                         @endif
                     </div>
                 </a>
+
+                {{-- Setting --}}
+            @elseif(Request::url() == url('/settings'))
+                <a href="{{ url('/settings') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FINAL .INS')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+
+                {{-- LHP MELTING --}}
             @else
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">

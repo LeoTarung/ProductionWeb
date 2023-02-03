@@ -481,7 +481,10 @@ class MeltingController extends Controller
             // {{ Membuat id LHP FORKLIFT RAW }} //
             LhpSupplyRaw::create([
                 'id_lhp' => $id,
+                'tanggal' => $date,
                 'jam' => $hour,
+                'shift' => $shift,
+                'forklift' => $mesin,
                 'no_mc' => $request->mc,
                 'furnace' => $request->furnace,
                 'jumlah_tapping' => $request->jumlah_tapping
