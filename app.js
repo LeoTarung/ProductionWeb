@@ -42,6 +42,12 @@ io.on("connection", (socket) => {
         material1 = material;
     });
 
+    socket.on("ForSettingslevelMolten", () => {
+        // console.log(forklift, material);
+        // forklift1 = forklift;
+        // material1 = material;
+    });
+
     setInterval(function () {
         //==========[' SELECT ALL FROM LHP MELTING ']==========//
         connection.query(

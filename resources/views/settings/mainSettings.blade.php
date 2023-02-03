@@ -1,12 +1,11 @@
 @extends('mainLHP')
 @section('content')
     <div class="container-fluid">
-
         <div class="row justify-content-center mx-auto mt-3">
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
-                <a href="" class="buttonssssss btn btn-lg btn-primary border-info text-uppercase fw-bold"
-                    data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(1)">
-                    <div class="font-forklift">Setting Molten <br>Mesin Casting</div>
+                <a href="" class="fs-1 btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    <div class="font-white font-settings">Setting<br> Molten </div>
                 </a>
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
@@ -50,83 +49,84 @@
     {{-- MODAL --}}
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl  ">
-            <form action="{{ url('/pre-forklift/simpan') }}" method="POST"
-                onSubmit="document.getElementById('submit').disabled=true;">
-                @csrf
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">S E T T I N G S </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold fs-4" id="forklift"
-                                        name="forklift" value="55" readonly required>
-                                    <input type="text" class="form-control border-dark fw-bold " id="mc"
-                                        name="mc" readonly required hidden>
-                                    <label for="mc" class="">Mesin Casting</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold fs-4" id="forklift"
-                                        name="forklift" value="HD-4" readonly required>
-                                    <input type="text" class="form-control border-dark fw-bold " id="mc"
-                                        name="mc" readonly required hidden>
-                                    <label for="mc" class="">Material</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                                    onclick="mc({{ $m['mc'] }})">
-                                    {{-- <div class="card-header text-center fw-bold"> MC-{{ $m['mc'] }}</div> --}}
-                                    <div class="card-header text-center fw-bold"> MC-{{ $m->mc }}</div>
-                                    <section id="battery{{ $m['mc'] }}"
-                                        class="battery mb-3 d-flex justify-content-start"
-                                        onclick="nama({{ $m['mc'] }})">
-                                        <div id="battery__pill" class="battery__pill">
-                                            <div id="battery__level" class="battery__level">
-                                                <div id="battery__liquid{{ $m['mc'] }}" class="battery__liquid">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold fs-4" id="forklift"
-                                        name="forklift" value="1000" readonly required>
-                                    <input type="text" class="form-control border-dark fw-bold " id="mc"
-                                        name="mc" readonly required hidden>
-                                    <label for="mc" class="">Min Level Molten</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold fs-4" id="forklift"
-                                        name="forklift" value="2000" readonly required>
-                                    <input type="text" class="form-control border-dark fw-bold " id="mc"
-                                        name="mc" readonly required hidden>
-                                    <label for="mc" class="">Max Level Molten</label>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- <div class="col-6">Tes test ets</div> --}}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
-                        {{-- <button type="submit" class="btn btn-primary" onclick="redirect()">Lanjutkan</button> --}}
-                        <button type="submit" id="submit" class="btn btn-primary">Lanjutkan</button>
-                    </div>
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+                    <button type="button" class="btn-close" id="setupclose" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
-            </form>
+                <div class="modal-body">
+                    <table id="table_id" class="table table-bordered mt-2 nowrap">
+                        <thead class="head-dtl  text-center">
+                            <tr>
+                                <th class="text-center" nowrap="nowrap" rowspan="2">MACHINE</th>
+                                <th class="text-center" nowrap="nowrap" rowspan="2">MATERIAL</th>
+                                <th class="text-center" nowrap="nowrap" rowspan="2">NAMA PART</th>
+                                <th class="text-center" nowrap="nowrap" colspan="3">STATUS</th>
+                                <th class="text-center" nowrap="nowrap" rowspan="2">ACTION</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center" nowrap="nowrap">KANBAN</th>
+                                <th class="text-center" nowrap="nowrap">HENKATEN</th>
+                                <th class="text-center" nowrap="nowrap">PRODUCTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody" class="text-center">
+                            @foreach ($mc as $a)
+                                <tr>
+                                    <td>MC{{ $a->mc }}</td>
+                                    <td>{{ $a->material }}</td>
+                                    <td>{{ $a->nama_part }}</td>
+                                    <td>{{ $a->kode_kanban }}</td>
+                                    <td>{{ $a->kode_henkaten }}</td>
+                                    <td>{{ $a->kode_status }}</td>
+                                    <td><button class="btn btn-warning" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop1">EDIT</button></td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
     {{-- END MODAL --}}
+
+    {{-- MODAL 2 --}}
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel1"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#table_id').dataTable({
+                responsive: true,
+                // "bPaginate": false,
+                // "bFilter": false,
+                "bInfo": false
+            });
+
+            function openmodal() {
+                $("#staticBackdropLabel").html('SETUP CASTING MACHINE'); //Untuk kasih judul di modal
+                $("#staticBackdrop").modal('show'); //kalo ID pake "#" kalo class pake "." 
+            }
+        });
+    </script>
 @endsection
