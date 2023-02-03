@@ -104,8 +104,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    // 'gas_awal' => $gas->gas_akhir,
-                    // 'stok_molten' => $gas->stok_molten
+                    'gas_awal' => $gas->gas_akhir,
+                    'stok_molten' => $gas->stok_molten
                 ]);
             } else if ($request->mesin != "") {
                 $gas = LhpMelting::where([['mesin', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
@@ -118,8 +118,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    // 'gas_awal' => $gas->gas_akhir,
-                    // 'stok_molten' => $gas->stok_molten
+                    'gas_awal' => $gas->gas_akhir,
+                    'stok_molten' => $gas->stok_molten
                 ]);
             } else {
                 LhpMelting::create([
@@ -238,11 +238,9 @@ class MeltingController extends Controller
                 $machine_performance = ($ntah->tapping / $total_charging_rs) * 100; // N / H x 100%
             }
             $machine_utilization = ($total_charging_rs / $ntah->supply_capacity) * 100; // ( H / A ) x 100%
-            if ($ntah->gas_akhir == 0) {
-                $gas_consum = 0.00;
-            } else {
-                $gas_consum = $ntah->awal - $ntah->gas_akhir;
-            }
+
+            $gas_consum = $ntah->gas_akhir - $ntah->gas_awal;
+
             $melting_rate = $total_charging_rs / $ntah->jam_kerja; // H / X1 
             LhpMelting::where([['id', '=', $id]])->update([
                 'total_return_rs' =>  $total_return_rs,
