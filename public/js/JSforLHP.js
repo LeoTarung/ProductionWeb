@@ -129,3 +129,33 @@ function ModalSupply(mesin, id) {
         }
     );
 }
+
+//==============================['FUNCTION PADA PAGE SETTINGS']==============================//
+// function editmesin(id){
+//     $("#setupclose").click();
+//     $("#staticBackdropLabel1").html('EDIT MACHINE' + id); //Untuk kasih judul di modal
+//     $("#staticBackdrop1").modal('show'); //kalo ID pake "#" kalo class pake "." 
+//     $.ajax({
+//             method: "GET",  
+//             dataType: "json",
+//             url: "settings/mesincasting" + "/" + id,
+//             success: function(data) {
+//               console.log(data);
+             
+              
+//             }
+//         });
+
+    //  console.log('asad');
+    //  $.get(
+    //     "/settings/mesincasting" + "/" + id,
+    //     {},
+    //     function (data, status) {
+    //         // $("#setupclose").click();
+    //         $("#staticBackdropLabel1").html('EDIT MACHINE ' + id); //Untuk kasih judul di modal
+    //         $("#page").html(data); 
+    //         $("#staticBackdrop1").modal("show");
+    //         console.log("test")
+    //     }
+    // );
+// }

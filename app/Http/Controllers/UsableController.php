@@ -72,13 +72,16 @@ class UsableController extends Controller
         return view('lhp.resume-melting', compact('sql1'));
     }
 
+
+    // ============================= // PARTIAL SUPPLY // ================================= //
+
     public function resume_supply(UsableController $useable, $mesin, $id)
     {
         $shift = $useable->Shift();
         $date = $useable->date();
 
 
-        $sql1 = LhpSupplyRAW::groupBy(LhpMeltingRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, SUM(jumlah_tapping) as total_tapping")->get();
+        $sql1 = LhpSupplyRAW::groupBy(LhpMeltingRAW::raw('no_mc', 'hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, COUNT(jumlah_tapping) as frekuensi, SUM(jumlah_tapping) as total_tapping")->get();
         // dd($sql1);
         return view('lhp.resume-forklift', compact('sql1', 'mesin', 'id'));
     }
