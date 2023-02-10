@@ -16,6 +16,10 @@
   font-family: "Raleway";
 }
 
+body{
+  min-height: 100vh;
+}
+
 .font-white{
   color: #ffffff;
 }
@@ -119,30 +123,25 @@
 /* Navbar */
 
 nav{
+  margin: auto;
+  justify-content: center;
   height: 70px;
   width: 100%;
   position: static;
   /* background-color: #000080; */
-
   background: #000080;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #5151c2, #000080);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #5151c2, #000080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  margin-top: 0px;
-  margin-left: 0px;
 }
 ul {
+  
   list-style-type: none;
   /* margin-left: 330px; */
-  padding: 0px -2px 0px 0px;
-  overflow: hidden;
-  margin: 0px 0px 0px 0px;
-  min-width: 100%;
-  
+  max-width: 100%;
+  display: flex;
   /* background-color: #2194e3; */
 }
-li {
-  float: left;
-}
+
 li a {
   display: inline-block;
   color: #ffffff;
@@ -152,9 +151,7 @@ li a {
  
 }
 
-li .navitems{
-  pointer-events: none; 
-}
+
 /* li a:hover {
   background-color: rgb(81, 219, 178);
 } */
@@ -163,19 +160,18 @@ li .navitems{
   /* margin-left: 5px; */
   height: 57px;
   /* width: 250px; */
-  width: fit-content;
 }
 .rectangle-logo{
   /* position: absolute; */
   /* width: 275px; */
-  height: 61.5px;
+ 
   /* left:20.53px;
   top: 13.80px; */
   background: #FFFFFF;
   background: -webkit-linear-gradient(to bottom, #ffffff, #ebebf3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom,#ffffff,  #ebebf3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border-radius: 10px 10px 10px 10px;
-  margin: 0px 0px 0px 0px;
+  border-radius: 10px;
+  margin: 0;
 }
 
 .shift{
@@ -293,12 +289,19 @@ color: white;
   /* Preparation Melting */
   .buttonssssss {
   height: 250px;
+  width: 100%;
 }
 
 a .big-font{
-  font-size: 70px;
+  width: 99.8%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: "-";
   letter-spacing: 0.15em;
-  margin-top: 50px;
+  font-size: 70px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 230px;
 }
 
 /* LHP Melting */

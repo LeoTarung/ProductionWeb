@@ -21,6 +21,7 @@
                                 class="inpt-date border border-3 rounded">
                             <button type="submit" class=" ms-1 btn btn-primary">filter</button>
                         </form>
+                        <a href="/production/melting/{{$mesin}}/{{$mulai}}/{{$selesai}}" class="btn btn-sm btn-warning float-end mt-3">DOWNLOAD</a>
                     </div>
                 </div>
                 <div class="outer-wrapper-dtl-mlt border border-secondary border-top mt-2">
@@ -68,8 +69,8 @@
                                                 <td>{{ $a->stok_molten }}</td>
                                                 <td>{{ $a->dross }}</td>
                                                 <td>{{ $a->gas_akhir }}</td>
-                                                <td><a class="btn btn-warning"
-                                                        onClick="Modaldetails({{ $a->id }})">EDIT</a>
+                                                <td><a class="btn btn-primary"
+                                                        onClick="Modaldetails({{ $a->id }})">LIHAT</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -219,7 +220,7 @@
                                 '<td>' + data[i].fluxing + '</td>' +
                                 '<td>' + data[i].tapping + '</td>' +
                                 '<td>' + data[i].dross + '</td>' +
-                                '<td>' + '<a class="btn btn-danger" onClick="editdetails(' + data[i].id +
+                                '<td>' + '<a class="btn btn-warning" onClick="editdetails(' + data[i].id +
                                 ')">edit</a>' + '</td>' +
                                 '</tr>';
                         }

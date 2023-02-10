@@ -1,6 +1,6 @@
 <nav id="sidebar" class="sidebar close shadow">
 
-    <div class="sidebar-header  shadow-sm">
+    <div class="sidebar-header shadow-sm">
         <img class="logo" src="{{ url('/img/smartSystems.png') }}" alt="Image" /> {{-- <i class='bx bxl-c-plus-plus'></i> --}}
         {{-- <span class="logo_name">CodingLab</span> --}}
     </div>
