@@ -434,7 +434,6 @@ class MeltingController extends Controller
         }
     }
 
-
     public function lhp_forklift(UsableController $useable, $mesin, $id)
     {
         $shift = $useable->Shift();
