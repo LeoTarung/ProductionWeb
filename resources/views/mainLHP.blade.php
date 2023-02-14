@@ -16,7 +16,6 @@
     {{-- //============[ JS IN HERE ]============// --}}
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/363jquery.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-
 </head>
 
 <body>

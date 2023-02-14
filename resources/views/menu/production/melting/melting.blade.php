@@ -6,6 +6,7 @@
             height: 380px;
         }
     </style>
+
     <div class="main-content d-flex flex-column">
         <div class="row w-100">
             <div class="col-12">
@@ -261,7 +262,7 @@
                         obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
                             0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
                         obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -439,7 +440,7 @@
                         obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
                             0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
                         obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -617,7 +618,7 @@
                         obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
                             0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
                         obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -795,7 +796,7 @@
                         obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
                             0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
                         obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);

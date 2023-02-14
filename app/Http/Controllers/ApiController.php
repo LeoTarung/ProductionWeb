@@ -11,6 +11,17 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
 
+    public function dtkyrwall()
+    {
+        $user = User::get()->all();
+        if ($user != null) {
+            $exuser = $user;
+        } else {
+            $exuser = ["NULLAH"];
+        }
+        return $exuser;
+    }
+
     public function dtkyrw($nrp)
     {
         $user = User::where('nrp', '=', $nrp)->get()->all();
