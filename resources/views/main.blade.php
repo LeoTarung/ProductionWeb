@@ -43,14 +43,17 @@
     <script src="/js/amchart/LossesChart-Melting/Animated.js"></script>
         @include('partial.sidebar')
         <div id="main">
-            @yield('content')
             @include('partial.navbar')
+            <div id="content" class="main-content">
+                @yield('content')
+            </div>
             @include('partial.footer')
         </div>
     </div>
     {{-- //============[ JS IN HERE ]============// --}}
     <script src="{{ asset('/js/Socketio454.js') }}"></script>
    
+
 
 
     {{-- //============[ TEMPLATE SOCKET IO ]============// --}}
@@ -77,8 +80,6 @@
 
         //    });
     </script> --}}
-
-    
 
     <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script>
     <script src="{{ asset('/js/moment.js') }}"></script>

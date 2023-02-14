@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\HcgaController;
 use App\Http\Controllers\UsableController;
 use App\Http\Controllers\CastingController;
 use App\Http\Controllers\MeltingController;
@@ -39,6 +40,7 @@ Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 're
 Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'resume_supply']);
 
 //====================== API FOR SHARE ======================//
+Route::get('/dtkyrw/all', [ApiController::class, 'dtkyrwall']);
 Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
 Route::get('/dthourlymltng/{id}', [ApiController::class, 'hourly_lhpmelting']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
@@ -62,8 +64,6 @@ Route::get('/lhp-melting', [MeltingController::class, 'prep_melting']);
 Route::post('/lhp-melting/simpan', [MeltingController::class, 'prep_melting_simpan']);
 Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_raw']);
 Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
-
-
 Route::get('/tv/melting/{mesin}', [MeltingController::class, 'Dashboard_tv']);
 Route::get('/tv', [MeltingController::class, 'testing']);
 
@@ -73,9 +73,12 @@ Route::post('/pre-forklift/simpan', [MeltingController::class, 'prep_forklift_si
 Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift']);
 Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_forklift_raw_simpan']);
 
-//====================== FORKLIFT AREA CASTING ======================//
+//====================== AREA CASTING ======================//
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
 
+//====================== HC & GA ======================//
+Route::get('/hrd/karyawan', [HcgaController::class, 'karyawan']);
+Route::post('/hrd/karyawan/update', [HcgaController::class, 'update_karyawan']);
 
 //====================== Only Testing ======================//
 Route::get('/test', [MeltingTestController::class, 'index']);
