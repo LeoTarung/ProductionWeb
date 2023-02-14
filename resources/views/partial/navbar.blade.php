@@ -1,4 +1,6 @@
-<nav class="nav nav-expand rounded">
+
+<nav class="nav nav-utama navbar-header nav-expand shadow-sm rounded">
+
     <div class="row">
         <div class="col leftnav">
             <svg id="toggle-menu" class="toggle-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

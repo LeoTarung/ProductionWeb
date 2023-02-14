@@ -53,6 +53,10 @@
     {{-- //============[ JS IN HERE ]============// --}}
     <script src="{{ asset('/js/Socketio454.js') }}"></script>
    
+
+
+
+    {{-- //============[ TEMPLATE SOCKET IO ]============// --}}
     {{-- <script>
         //     $(function(){
         //        let ip_node = '127.0.0.1';
@@ -76,8 +80,6 @@
 
         //    });
     </script> --}}
-
-    
 
     <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script>
     <script src="{{ asset('/js/moment.js') }}"></script>

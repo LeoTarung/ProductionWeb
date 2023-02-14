@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\LhpMeltingRAW;
+use App\Models\LhpSupplyRAW;
+use App\Models\LhpSupply;
 use App\Models\LhpMelting;
 use Illuminate\Http\Request;
 
@@ -68,5 +70,18 @@ class UsableController extends Controller
         $date = $useable->date();
         $sql1 = LhpMeltingRAW::groupBy(LhpMeltingRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['mesin', '=', $mesin]])->selectRaw("tanggal, jam, shift, SUM(ingot) as ingots, SUM(dross) as drosss, SUM(tapping) as tappings, SUM(exgate) as exgates, SUM(reject_parts) as reject_partss, SUM(alm_treat) as alm_treats, SUM(oil_scrap) as oil_scraps, SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap) as total_return_rs, SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) as total_charging_rs")->get();
         return view('lhp.resume-melting', compact('sql1'));
+    }
+
+
+    // ============================= // PARTIAL SUPPLY // ================================= //
+
+    public function resume_supply(UsableController $useable, $mesin, $id)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+        $sql1 = LhpSupplyRAW::groupBy(LhpSupplyRAW::raw('no_mc'))->groupBy(LhpSupplyRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, COUNT(jumlah_tapping) as frekuensi, SUM(jumlah_tapping) as total_tapping")->get  ();
+        // dd($sql1);
+        return view('lhp.resume-forklift', compact('sql1', 'mesin', 'id'));
     }
 }

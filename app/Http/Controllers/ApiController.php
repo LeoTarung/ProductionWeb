@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\LHPMeltingRaw;
+use App\Models\MesinCasting;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
+
+    public function dtkyrwall()
+    {
+        $user = User::get()->all();
+        if ($user != null) {
+            $exuser = $user;
+        } else {
+            $exuser = ["NULLAH"];
+        }
+        return $exuser;
+    }
 
     public function dtkyrw($nrp)
     {
@@ -40,5 +53,16 @@ class ApiController extends Controller
             $exhourly = ["NULLAH"];
         }
         return $exhourly;
+    }
+
+    public function showmc($id)
+    {
+        $mc = MesinCasting::where('mc', '=', $id)->get();
+        if ($mc != null) {
+            $editmc = $mc;
+        } else {
+            $editmc = ["NULLAH"];
+        }
+        return $editmc;
     }
 }

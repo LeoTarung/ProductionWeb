@@ -6,6 +6,7 @@
             height: 380px;
         }
     </style>
+
     <div class="main-content d-flex flex-column">
         <div class="row w-100">
             <div class="col-12">
@@ -83,6 +84,18 @@
             </div>
         </div>
     </div>
+
+    <!-- Resources chart 1 -->
+    <script src="/js/amchart/Dailychart-Melting/index.js"></script>
+    <script src="/js/amchart/Dailychart-Melting/xy.js"></script>
+    <script src="/js/amchart/Dailychart-Melting/Animated.js"></script>
+
+    <!-- Resources -->
+    <script src="/js/amchart/LossesChart-Melting/core.js"></script>
+    <script src="/js/amchart/LossesChart-Melting/charts.js"></script>
+    <script src="/js/amchart/LossesChart-Melting/Animated.js"></script>
+
+
 
     {{-- =============================['CHART STRIKO - 1']============================== --}}
     <script>
@@ -232,13 +245,14 @@
             // https://www.amcharts.com/docs/v5/concepts/animations/
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
+            
             $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
+                let ip_node = location.hostname;
+                let socket_port = '1553';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
-                socket.on("bulananStriko1", (datasql) => {
+                socket.on("bulananStriko-1", (datasql) => {
                     var data = [];
                     var ChartData = document.getElementById("chartdiv").innerHTML;
                     for (i = 0; i < datasql.length; i++) {
@@ -246,8 +260,10 @@
                         obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
                         obj['charging'] = parseInt(datasql[i].total_chargings);
                         obj['townSize'] = "12";
-                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
+                            0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
+                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -408,12 +424,13 @@
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
             $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
+                let ip_node = location.hostname;
+                let socket_port = '1553';
+
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
-                socket.on("bulananStriko2", (datasql) => {
+                socket.on("bulananStriko-2", (datasql) => {
                     var data = [];
                     var ChartData = document.getElementById("chartdiv1").innerHTML;
                     for (i = 0; i < datasql.length; i++) {
@@ -422,8 +439,10 @@
                         obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
                         obj['charging'] = parseInt(datasql[i].total_chargings);
                         obj['townSize'] = "12";
-                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
+                            0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
+                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -584,12 +603,12 @@
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
             $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
+                let ip_node = location.hostname;
+                let socket_port = '1553';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
-                socket.on("bulananStriko3", (datasql) => {
+                socket.on("bulananStriko-3", (datasql) => {
                     var data = [];
                     var ChartData = document.getElementById("chartdiv2").innerHTML;
                     for (i = 0; i < datasql.length; i++) {
@@ -598,8 +617,10 @@
                         obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
                         obj['charging'] = parseInt(datasql[i].total_chargings);
                         obj['townSize'] = "12";
-                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
+                            0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
+                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -760,8 +781,8 @@
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
             $(function() {
-                let ip_node = '127.0.0.1';
-                let socket_port = '3000';
+                let ip_node = location.hostname;
+                let socket_port = '1553';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -774,8 +795,10 @@
                         obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
                         obj['charging'] = parseInt(datasql[i].total_chargings);
                         obj['townSize'] = "12";
-                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                        obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
+                            0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
+                        obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);

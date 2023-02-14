@@ -23,9 +23,21 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card text-center card_stok-molten">
+                                @if ($ntah->material == "HD-4")
                                 <div class="card-header bg-info ">STOK MOLTEN</div>
+                                @elseif($ntah->material == "ADC-12")
+                                <div class="card-header bg-secondary text-light">STOK MOLTEN</div>
+                                @elseif($ntah->material == "HD-2")
+                                <div class="card-header bg-warning ">STOK MOLTEN</div>
+                                @elseif($ntah->material == "YH3R")
+                                <div class="card-header bg-success text-light">STOK MOLTEN</div>
+                                @else
+                                <div class="card-header bg-info ">STOK MOLTEN</div>
+                                @endif
+                                {{-- <div class="card-header bg-info ">STOK MOLTEN</div> --}}
                                 <div class="card-body">
-                                    <p class="fw-bold stok_molten">@FormatRibu($ntah->stok_molten) KG</p>
+                                    {{-- <p class="fw-bold stok_molten" id="stok_molten">@FormatRibu($ntah->stok_molten) KG</p> --}}
+                                    <p class="fw-bold stok_molten" id="stok_molten"></p>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +117,18 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card text-center card_total-chg">
+                                @if ($ntah->material == "HD-4")
                                 <div class="card-header bg-info ">TOTAL CHARGING</div>
+                                @elseif($ntah->material == "ADC-12")
+                                <div class="card-header bg-secondary text-light">TOTAL CHARGING</div>
+                                @elseif($ntah->material == "HD-2")
+                                <div class="card-header bg-warning ">TOTAL CHARGING</div>
+                                @elseif($ntah->material == "YH3R")
+                                <div class="card-header bg-success text-light">TOTAL CHARGING</div>
+                                @else
+                                <div class="card-header bg-info ">TOTAL CHARGING</div>
+                                @endif
+                                {{-- <div class="card-header bg-info ">TOTAL CHARGING</div> --}}
                                 <div class="card-body">
                                     <p class="fw-bold total_charging">@FormatRibu($ntah->total_charging) KG</p>
                                 </div>
@@ -114,15 +137,41 @@
                         <div class="col-12 mt-3">
                             <div class="card-group">
                                 <div class="card text-center card-ingot">
+                                    @if ($ntah->material == "HD-4")
                                     <h5 class="card-header fs-2 fw-bold bg-info">INGOT</h5>
+                                    @elseif($ntah->material == "ADC-12")
+                                    <h5 class="card-header fs-2 fw-bold bg-secondary text-light">INGOT</h5>
+                                    @elseif($ntah->material == "HD-2")
+                                    <h5 class="card-header fs-2 fw-bold bg-warning">INGOT</h5>
+                                    @elseif($ntah->material == "YH3R")
+                                    <h5 class="card-header fs-2 fw-bold bg-success text-light">INGOT</h5>
+                                    @else
+                                    <h5 class="card-header fs-2 fw-bold bg-info">INGOT</h5>
+                                    @endif
+                                    {{-- <h5 class="card-header fs-2 fw-bold bg-info">INGOT</h5> --}}
                                     <div class="card-body card-ingot">
+                                        @if ($ntah->persen_ingot >= 30.0)
+                                        <p class="fw-bold font-blinking">{{ $ntah->persen_ingot }}%</p>
+                                        @else
                                         <p class="fw-bold">{{ $ntah->persen_ingot }}%</p>
+                                        @endif
+
                                     </div>
                                 </div>
                                 <div class="card text-center card-scrap">
+                                    @if ($ntah->material == "HD-4")
                                     <h5 class="card-header fs-2 fw-bold bg-info">SCRAP</h5>
+                                    @elseif($ntah->material == "ADC-12")
+                                    <h5 class="card-header fs-2 fw-bold bg-secondary text-light">SCRAP</h5>
+                                    @elseif($ntah->material == "HD-2")
+                                    <h5 class="card-header fs-2 fw-bold bg-warning">SCRAP</h5>
+                                    @elseif($ntah->material == "YH3R")
+                                    <h5 class="card-header fs-2 fw-bold bg-success text-light">SCRAP</h5>
+                                    @else
+                                    <h5 class="card-header fs-2 fw-bold bg-info">SCRAP</h5>
+                                    @endif
                                     <div class="card-body card-ingot">
-                                        <p class="fw-bold">{{ $ntah->persen_rs }}%</p>
+                                        <p class="fw-bold ">{{ $ntah->persen_rs }}%</p>
                                     </div>
                                 </div>
                             </div>
@@ -132,19 +181,25 @@
             </div>
         </form>
     </div>
-    {{-- <script>
-        // function Confirm(jenis) {
-        //     var berat = document.getElementById("berat").value;
-        //     if (jenis !== 'GAS AKHIR') {
-        //         var text = 'Apakah Anda Yakin Menambahkan ' + berat + ' KG. Untuk Jenis ' + jenis;
-        //     } else {
-        //         var text = 'Apakah Anda yakin Menambahkan ' + berat + ' Untuk ' + jenis;
-        //     }
-        //     if (confirm(text) == true) {
-        //         return true;
-        //     } else {
-        //         return false;
-        //     }
-        // }
-    </script> --}}
+    <script>
+
+
+            $(function(){
+            let ip_node = location.hostname;
+            let socket_port = '1553';
+            let socket = io(ip_node + ':' + socket_port);
+            socket.on('connection');
+
+            socket.on("tv_melting_kiri", (data, mesin1) => {
+                console.log(data[0].stok_molten);
+                if(data.length == 0){
+                document.getElementById("stok_molten").innerHTML = "BELUM stok_molten";
+                } else {
+                document.getElementById("stok_molten").innerHTML = data[0].stok_molten.toLocaleString('de-DE') +" KG";
+                }
+            })
+            socket.emit("Hello", '{{ $mesin }}', '{{ $shift }}', '{{ $date }}');
+            });
+
+    </script>
 @endsection

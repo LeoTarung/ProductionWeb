@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PreForklift extends Migration
+class LhpSupply extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,19 @@ class PreForklift extends Migration
      */
     public function up()
     {
-        Schema::create('pre_forklift', function (Blueprint $table) {
+        Schema::create('lhp_supply', function (Blueprint $table) {
             $table->id();
-            $table->integer('forklift');
+            $table->string('forklift');
             $table->integer('nrp');
             $table->string('nama');
             $table->date('tanggal');
             $table->string('shift');
             $table->string('jam_kerja');
             $table->string('material');
+            // $table->integer('berat_awal');
+            $table->integer('temperature')->nullable();
+            $table->integer('tujuan_tapping')->nullable();
+            $table->integer('jumlah_tapping')->nullable();
             $table->timestamps();
         });
     }

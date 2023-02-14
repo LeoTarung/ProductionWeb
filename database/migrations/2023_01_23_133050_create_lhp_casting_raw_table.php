@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class LhpForkliftRaw extends Migration
+class CreateLhpCastingRawTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class LhpForkliftRaw extends Migration
      */
     public function up()
     {
-        Schema::create('lhp_forklift_raw', function (Blueprint $table) {
+        Schema::create('lhp_casting_raw', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_lhp');
-            $table->foreign('id_lhp')->references('id')->on('pre_forklift')->onDelete('cascade');
-            $table->time('jam');
-            $table->integer('mc');
-            $table->string('furnace');
-            $table->string('berat');
+
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class LhpForkliftRaw extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('lhp_casting_raw');
     }
 }

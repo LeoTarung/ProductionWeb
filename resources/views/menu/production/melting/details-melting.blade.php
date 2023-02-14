@@ -195,8 +195,6 @@
             });
         });
 
-
-
         function Modaldetails(id) {
             $("#ModalNavbarLabel").html('LHP Hourly'); //Untuk kasih judul di modal
             $("#ModalNavbar").modal('show'); //kalo ID pake "#" kalo class pake "."
@@ -235,7 +233,7 @@
         function editdetails(id) {
             $("#hourlyclose").click();
             $("#ModalEditLabel").html('LHP Hourly Edit'); //Untuk kasih judul di modal
-            $("#ModalEdit").modal('show'); //kalo ID pake "#" kalo class pake "." 
+            $("#ModalEdit").modal('show'); //kalo ID pake "#" kalo class pake "."
             $.ajax({
                 method: "GET",
                 dataType: "json",

@@ -70,6 +70,7 @@ class MeltingTestController extends Controller
         $shift = $useable->Shift();
         $date = $useable->date();
         $title = "LHP Melting";
+        $forklift = "BLOK";
         $lhp = LhpMelting::orderBy('id', 'DESC')->first();
         $id_striko1 = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-1'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_striko2 = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-2'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
@@ -84,7 +85,7 @@ class MeltingTestController extends Controller
         //     'shift', 'date', 'nrp'
         // ]);
 
-        return view('lhp.final', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'), [
+        return view('lhp.final', compact('title', 'forklift', 'nrp', 'mesin', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'), [
             "molt" => $sql,
             "id" => 1
         ],);

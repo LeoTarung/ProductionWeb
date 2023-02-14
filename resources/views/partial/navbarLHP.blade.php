@@ -19,6 +19,12 @@
                         {{ $shift }}
                     </div>
                 </a>
+            @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
+                <a onClick="ModalSupply('{{ $mesin }}', '{{ $id }}')">
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
             @else
                 <a onClick="ModalResume('{{ $mesin }}', '{{ $id }}')">
                     <div class="shift border-bottom">
@@ -47,6 +53,10 @@
                     <div class="nrp nrp-child border-bottom ">
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
+                @elseif(Request::url() == url('/settings'))
+                    <div class="nrp border-bottom">
+                        <div class="font-white"> Admin </div>
+                    </div>
                 @else
                     <div class="nrp border-bottom">
                         <div class="font-white"> PILIH MESIN </div>
@@ -55,8 +65,10 @@
             </a>
         </li>
         <li>
+
+            {{-- Preparation Forklift --}}
             @if ($mesin == 'FORKLIFT')
-                <a href="{{ url('/lhp-melting/pre-forklift') }}" class="machine shadow-lg">
+                <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FORKLIFT')
                             <div class="font-white "> {{ $mesin }} </div>
@@ -65,6 +77,8 @@
                         @endif
                     </div>
                 </a>
+
+                {{-- Preparation Melting --}}
             @elseif($mesin == 'MELTING')
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -75,6 +89,32 @@
                         @endif
                     </div>
                 </a>
+
+                {{-- LHP Forklift --}}
+            @elseif($mesin == $forklift)
+                <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FINAL .INS')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+
+                {{-- Setting --}}
+            @elseif(Request::url() == url('/settings'))
+                <a href="{{ url('/settings') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FINAL .INS')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+
+                {{-- LHP MELTING --}}
             @else
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -101,7 +141,7 @@
 <!-- Modal -->
 <div class="modal fade" id="ModalNavbar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-3" id="ModalNavbarLabel"></h1>
