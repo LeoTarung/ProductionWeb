@@ -5,6 +5,7 @@
     --bs-baseColor: #55769c;
 }
 
+
 /* tool */
 .bg-softgrey {
     background-color: #c3ffff;
@@ -21,6 +22,7 @@
     border: 0;
     box-sizing: border-box;
     font-family: "Nunito";
+
 }
 
 @font-face {
@@ -33,7 +35,35 @@
 
 /* APP */
 #app {
-    position: relative;
+  display: flex;
+  position: flex;
+  flex-direction: column;
+  display: flex;
+}
+
+#app #main{
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#app #main #content{
+  flex: 1 0 auto;
+  z-index: 0;
+}
+
+.main-content{
+  overflow-x: hidden;
+  flex-direction: column;
+}
+
+.rightnav{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.leftnav{
+  display: flex;
+  max-width: 80%;
 }
 
 /* MAIN */
@@ -45,38 +75,39 @@
     transition: margin-left 0.4s ease-out;
 }
 #main .main-content {
-    padding: 0rem 1.5rem;
-    min-height: 100vh;
-    top: 50px;
-    /* margin-bottom: 0px; */
-
-    /* margin-top: 70px; */
-    /* width:calc(100%-290px); */
-    position: relative;
+  padding: 0rem 1.5rem;
+  min-height: 100vh;
+  top: 50px;
+  /* margin-bottom: 0px; */
+  /* margin-top: 70px; */
+  /* width:calc(100%-290px); */
+  position: relative;
 }
 
-#main .nav-utama {
-    position: fixed;
-    /* display: block;  */
-    top: 0;
-    height: 70px;
-    /* padding: 1.5rem; */
-    width: calc(100% - 290px);
-    /* width: 100%; */
-    /* min-width: 100vw; */
-    background-color: #eaeff8;
+#main .nav{
+   position: fixed;
+  /* display: block;  */
+  top: 0;
+  height: 70px;
+  /* padding: 1.5rem; */
+  width: calc(100% - 290px);
+  /* width: 100%; */
+  /* min-width: 100vw; */
+  background-color: #eaeff8;
+  z-index: 1;
+  overflow: hidden;
 }
 
-#main .nav-utama .toggle-menu {
-    /* margin-top: 2rem; */
-    margin: 25px 15px;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
+#main .nav .toggle-menu{
+  /* margin-top: 2rem; */
+  margin: 25px 15px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 
-.sidebar.close ~ #main {
-    /* left: 78px;
+.sidebar.close ~ #main{
+  /* left: 78px;
   width: calc(100% - 78px); 
   /* left: 0;
   min-width: 100vw; */
@@ -211,7 +242,9 @@
     /* overflow: auto; */
     /* overflow: scroll;
   -webkit-overflow-scrolling: touch; */
-    transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 1;
+
 }
 .sidebar.close {
     width: 0px;
@@ -266,9 +299,11 @@
     overflow: auto;
     margin-top: auto;
 }
+
 .sidebar .nav-links li .production {
     /* margin-top: -px; */
 }
+
 
 /* .sidebar.close .nav-links{
   overflow: visible;
@@ -452,9 +487,11 @@
     /* margin-top: 5px; */
 }
 
-.nav .row {
-    /* margin-top: 2rem; */
-    width: 95%;
+
+.nav .row{
+  /* margin-top: 2rem; */
+  width: 98%;
+
 }
 
 .nav .title {
@@ -469,16 +506,17 @@
     /* position: absolute;
   top: 50%;
   left: 50%; */
-    /* transform: translateX(-50%) translateY(-50%); */
-    color: #114442;
-    font-size: 18px;
-    font-family: "Arial";
-    letter-spacing: 3px;
-    display: block;
-    position: fixed;
-    box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.25),
-        0px 4px 4px rgba(179, 177, 177, 0.25);
-    /* width: 100%; */
+  /* transform: translateX(-50%) translateY(-50%); */
+  position: relative;
+  color: #114442;
+  font-size: 18px;
+  font-family: "Arial";
+  letter-spacing: 3px;
+  margin: auto;
+  padding: 0.3rem 3rem;
+  box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.25), 0px 4px 4px rgba(179, 177, 177, 0.25);
+  /* width: 100%; */
+
 }
 
 .navbar.navbar-header li {
@@ -561,15 +599,15 @@ header {
 }
 
 footer {
-    padding-top: 1em;
-    left: 0;
-    bottom: 4;
-    margin-bottom: 4px;
-    background-color: #e9ecef;
-    width: 100%;
-    padding-bottom: 0.5em;
 
-    position: relative;
+  padding-top: 0.8em;
+  left: 0;
+  bottom: 4;
+  background-color: #e9ecef;
+  width: 100%;   
+  padding-bottom: 0.5em;
+  position: relative;
+
 }
 
 /* Production  Overview*/
@@ -701,7 +739,10 @@ button {
  */
 
 /* Tablet */
-@media only screen and (max-width: 1280px) {
+
+@media only screen and (max-width: 1280px){
+
+
 }
 
 /* Monitor Besar */
@@ -724,25 +765,67 @@ button {
 
 /* SMartphone */
 @media (max-width: 400px) {
-    .sidebar.close .nav-links li .sub-menu {
-        display: none;
-    }
-    .sidebar {
-        width: 78px;
-    }
-    .sidebar.close {
-        width: 0;
-    }
-    .home-section {
-        left: 78px;
-        width: calc(100% - 78px);
-        z-index: 100;
-    }
-    .sidebar.close ~ #main {
-        width: 100%;
-        left: 0;
-        color: #f16716;
-    }
+
+  .sidebar.close .nav-links li .sub-menu{
+    display: none;
+  }
+  .sidebar.close{
+    width: 0;
+  }
+  #main {
+    margin-left: 70px;
+  }
+  .sidebar{
+    width: 70px;
+  }
+  .sidebar-header{
+    padding-left: 0.5rem;
+    overflow-x: hidden;
+  }
+  .home-section{
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 100;
+  }
+  .sidebar.close ~ #main{
+    width: 100%;
+    left: 0;
+    color: #f16716;
+  }
+  #main .nav .toggle-menu{
+    margin: 25px 1px;
+  }
+  .clock{
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav .row{
+    display: block;
+    margin: 0;
+    width:100%;
+  }
+  .nav .logo {
+   margin: 0.6rem 0.6rem;
+  }
+  .rightnav{
+    padding: 0;
+    justify-content: center;
+  }
+  .leftnav{
+    justify-content: center;
+  }
+  #main .nav{
+    height: 110px;
+  }
+  #main .main-content {
+    top : 100px; 
+  }
+  #main .nav{
+   width: calc(100% - 78px);
+ }
+
 }
 
 /* Layar TV Lebar */

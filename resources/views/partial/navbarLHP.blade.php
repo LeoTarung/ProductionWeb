@@ -1,11 +1,11 @@
 <nav class="nav shadow-lg">
     <ul>
-        <li> <a href="{{ url('/lhp-melting') }}" class="navitems">
-                <div class="rectangle-logo shadow">
-                    <img class="navbarimg" src="{{ url('/img/nusametal.png') }}" alt="Image" />
-                </div>
-            </a></li>
-
+        <li> <a href="{{ url('/lhp-melting') }}" class="navbar-brand">
+             <div class="rectangle-logo shadow">
+             <img class="navbarimg" src="{{ url('/img/nusametal.png') }}" alt="Image" />
+             </div>
+            </a>
+        </li>
         <li>
             @if (Request::url() == url('/lhp-melting'))
                 <a>
@@ -36,12 +36,11 @@
         <li class="ms-2 ">
             <!-- <a href="" class="time1"> -->
             <a href="" class="time shadow-lg navitems">
-                <div id="MyClockDisplay" class="clock " onload="showTime()"></div>
-                <!-- <div class="kotak">
-                        </  div> -->
-                <div id="date-1">
-                </div>
-
+            <div id="MyClockDisplay" class="clock " onload="showTime()"></div>
+            <!-- <div class="kotak">
+            </  div> -->
+            <div id="date-1">
+            </div>
             </a>
             <!-- </a> -->
         </li>
@@ -130,9 +129,9 @@
         </li>
         <li>
             <a onClick="ModalInstruksi('{{ $mesin }}')">
-                <div class="information " data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
-                    <i class='bx bx-info-circle bx-md'></i>
-                </div>
+            <div class="information " data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
+            <i class='bx bx-info-circle bx-md'></i>
+            </div>
             </a>
         </li>
     </ul>
@@ -158,6 +157,4 @@
     </div>
 </div>
 
-<script></script>
-<script></script>
 </nav>

@@ -356,7 +356,6 @@ class MeltingController extends Controller
         return redirect("/production/melting/" . $mesin)->with('behasilDownload', 'behasilDownload');
     }
 
-
     //==============================[' LAPORAN HARIAN PRODUKSI FORKLIFT']==============================//
 
     public function prep_forklift(UsableController $useable)

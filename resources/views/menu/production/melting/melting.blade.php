@@ -85,7 +85,6 @@
         </div>
     </div>
 
-
     <!-- Resources chart 1 -->
     <script src="/js/amchart/Dailychart-Melting/index.js"></script>
     <script src="/js/amchart/Dailychart-Melting/xy.js"></script>
@@ -95,6 +94,7 @@
     <script src="/js/amchart/LossesChart-Melting/core.js"></script>
     <script src="/js/amchart/LossesChart-Melting/charts.js"></script>
     <script src="/js/amchart/LossesChart-Melting/Animated.js"></script>
+
 
 
     {{-- =============================['CHART STRIKO - 1']============================== --}}
@@ -245,6 +245,7 @@
             // https://www.amcharts.com/docs/v5/concepts/animations/
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
+            
             $(function() {
                 let ip_node = location.hostname;
                 let socket_port = '1553';
@@ -425,6 +426,7 @@
             $(function() {
                 let ip_node = location.hostname;
                 let socket_port = '1553';
+
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 

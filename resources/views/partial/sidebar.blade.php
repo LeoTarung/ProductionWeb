@@ -1,5 +1,4 @@
 <nav id="sidebar" class="sidebar close shadow">
-
     <div class="sidebar-header  shadow-sm">
         <img class="logo" src="{{ url('/img/smartSystems.png') }}" alt="Image" />
     </div>
