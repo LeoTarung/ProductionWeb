@@ -27,7 +27,7 @@ use App\Http\Controllers\MeltingTestController;
 // });
 
 Route::get('/manufacturing', [ManufactureController::class, 'index']);
-Route::get('/', [ManufactureController::class, 'index']);
+Route::get('/', [ProductionController::class, 'index']);
 Route::get('/production', [ProductionController::class, 'index']);
 Route::get('/lhp', function () {
     return view('pages_lhp.lhpMelting', [
@@ -49,7 +49,9 @@ Route::get('/dtmccasting/{id}', [ApiController::class, 'showmc']);
 
 //====================== SETTINGS ======================//
 Route::get('/settings', [SettingController::class, 'index']);
-Route::get('/settings/mesincasting', [SettingController::class, 'showMolten']); // Mesin Casting
+Route::get('/settings/mesincasting/{id}', [SettingController::class, 'showMolten']); // Mes in Casting
+Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; // 
+
 
 
 //====================== AREA MELTING ======================//

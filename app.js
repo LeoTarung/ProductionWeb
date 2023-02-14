@@ -45,6 +45,7 @@ io.on("connection", (socket) => {
         // console.log(forklift, material);
         // forklift1 = forklift;
         // material1 = material;
+        // mc1 = mc;
     });
 
     setInterval(function () {
@@ -56,7 +57,7 @@ io.on("connection", (socket) => {
                 shift1 +
                 "' AND tanggal='" +
                 date1 +
-                "' ORDER BY id DESC",
+                "' ORDER BY id DESC",   
             (err, res) => {
                 socket.emit("tv_melting_kiri", res, mesin1);
             }
@@ -67,6 +68,14 @@ io.on("connection", (socket) => {
             "SELECT * FROM mesin_casting WHERE material='" + material1 + "'",
             (err, res) => {
                 socket.emit("levelMolten_client", res);
+            }
+        );
+
+         //==========[' SELECT  FROM MESIN CASTING ']==========//
+         connection.query(
+            "SELECT * FROM mesin_casting",
+            (err, res) => {
+                socket.emit("levelMolten_settings", res);
             }
         );
 

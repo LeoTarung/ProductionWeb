@@ -1,4 +1,3 @@
-<div class="container m-3"></div>
 <table class="table table-success table-striped">
     <thead class="table-dark text-center fw-bold">
         <tr>
@@ -12,7 +11,7 @@
                 MESIN CASTING
             </td>
             <td class="fs-5">
-                TAPPING
+                FREKUENSI SUPPLY
             </td>
             <td class="fs-5">
                 TOTAL TAPPING
@@ -30,19 +29,19 @@
                 </td>
                 <td class="text-center fs-5">
                     <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
-                        value="{{ $a->furnace }}" name="forklift">
+                        value="{{ $a->furnace }}" name="forklift" readonly>
                 </td>
                 <td class="text-center fs-5">
                     <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
-                        value="{{ $a->Mesin_Casting }}" name="mc">
+                        value="{{ $a->Mesin_Casting }}" name="mc" readonly>
                 </td>
                 <td class="text-center fs-5">
                     <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
-                        value="{{ $a->jumlah_tapping }}" name="tapping">
+                        value="{{ $a->frekuensi }} kali" name="tapping" readonly>
                 </td>
                 <td class="text-center fs-5">
                     <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
-                        value="{{ $a->total_tapping }}" name="total_return_rs">
+                        value="{{ $a->total_tapping }}" name="total_return_rs" readonly>
                 </td>
 
             </tr>

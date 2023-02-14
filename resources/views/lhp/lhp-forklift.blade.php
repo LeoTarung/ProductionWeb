@@ -156,7 +156,6 @@
 
                     } else {
                         batteryLiquid1.style.backgroundColor = '#06ce17'
-
                     }
                 }
             })
