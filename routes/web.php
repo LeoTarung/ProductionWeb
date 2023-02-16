@@ -67,6 +67,17 @@ Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_for
 
 //====================== FORKLIFT AREA CASTING ======================//
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
+Route::get('/tvCasting', function () {
+    return view('menu.production.casting.tvCasting',[
+        'urgent' => 1,
+        'persen' => 94,
+        'preparation'=> 1,
+        'keterangan'=> 0,
+        'running' => 1,
+        'downtime' => 'INSTROCKER ERROR'
+
+    ]);
+});
 
 
 //====================== Only Testing ======================//
