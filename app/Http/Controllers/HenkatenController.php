@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Lhp;
-use App\Models\Man;
-use App\Models\metode;
-use App\Models\mesin;
-use App\Models\material;
+use App\Models\henkaten\Man;
+use App\Models\henkaten\metode;
+use App\Models\henkaten\mesin;
+use App\Models\henkaten\material;
 
 
 
