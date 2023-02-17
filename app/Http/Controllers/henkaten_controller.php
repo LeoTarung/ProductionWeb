@@ -13,7 +13,7 @@ use App\Models\material;
 
 
 
-class DashboardController extends Controller
+class HenkatenController extends Controller
 {
 
     // man/
