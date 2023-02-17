@@ -1,4 +1,4 @@
-@extends('navbar')
+@extends('henkaten.navbar')
 @section('content')
 
 <div class="col">
