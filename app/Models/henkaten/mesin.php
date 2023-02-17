@@ -10,7 +10,7 @@ class tb_mesin extends Model
     use HasFactory;
 
     protected $fillable = ['Deskripsi', 'Problem', 'Countermeasure', 'Status', 'Plan', 'Safety', 'Kakotora', 'Trial_NS', 'CP_CPK']; 
-    protected $table = 'mesins';
+    protected $table = 'tb_mesin';
     protected $primaryKey = 'No';
     public $timestamps = false;
 }
