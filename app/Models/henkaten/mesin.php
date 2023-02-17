@@ -5,7 +5,7 @@ namespace App\Models\henkaten;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class mesin extends Model
+class tb_mesin extends Model
 {
     use HasFactory;
 

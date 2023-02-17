@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('Kakotora');
             $table->string('Trial_NS');
             $table->string('CP_CPK');
-            $table->timestamps();
+            $table->timestamp('timestamp');
         });
     }
 

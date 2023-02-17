@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('Kakotora');
             $table->string('Job_Setup');
             $table->string('WI_Proses');
-            $table->string('timestamps');
+            $table->timestamp('timestamp');
         });
     }
 

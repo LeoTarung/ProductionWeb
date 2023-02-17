@@ -5,7 +5,7 @@ namespace App\Models\henkaten;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Man extends Model
+class tb_man extends Model
 {
     use HasFactory;
 

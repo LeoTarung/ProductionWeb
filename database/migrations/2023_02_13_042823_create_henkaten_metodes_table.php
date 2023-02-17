@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('Cycle_time');
             $table->string('Job_setup');
             $table->string('Verifikasi_proses');
-            $table->timestamps();
+            $table->timestamp('timestamp');
         });
     }
 

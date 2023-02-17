@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('Trial_NS');
             $table->string('CP_CPK');
             $table->string('Trial_Proses');
-            $table->timestamp('timestamps');
+            $table->timestamp('timestamp');
         });
     }
 
