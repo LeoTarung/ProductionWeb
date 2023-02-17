@@ -84,3 +84,36 @@ Route::post('/hrd/karyawan/update', [HcgaController::class, 'update_karyawan']);
 Route::get('/test', [MeltingTestController::class, 'index']);
 Route::get('/table', [MeltingTestController::class, 'table']);
 Route::get('/final', [MeltingTestController::class, 'final_inspection']);
+
+
+//====================== henkaten ======================//
+
+// man
+Route::get('/tampilan', [DashboardController::class, 'tampilan']);
+Route::post('/submit_man', [DashboardController::class, 'submit_man']);
+Route::get('/man_edit/{No}', [DashboardController::class, 'man_edit']); 
+Route::post('/man_update/{No}', [DashboardController::class, 'man_update']); 
+Route::get('/delete/{No}', [DashboardController::class, 'delete']); 
+
+// method
+Route::get('/metode', [DashboardController::class, 'metode']);
+Route::post('/method_submit', [DashboardController::class, 'method_submit']);
+Route::get('/method_edit/{No}', [DashboardController::class, 'method_edit']); 
+Route::post('/method_update/{No}', [DashboardController::class, 'method_update']); 
+Route::get('/method_delete/{No}', [DashboardController::class, 'method_delete']);
+
+// machine
+Route::get('/mesin', [DashboardController::class, 'mesin']);
+Route::post('/mesin_submit', [DashboardController::class, 'mesin_submit']);
+Route::get('/mesin_edit/{No}', [DashboardController::class, 'mesin_edit']); 
+Route::post('/mesin_update/{No}', [DashboardController::class, 'mesin_update']); 
+Route::get('/mesin_delete/{No}', [DashboardController::class, 'mesin_delete']);
+
+// material
+Route::get('/material', [DashboardController::class, 'material']);
+Route::post('/submit', [DashboardController::class, 'submit']);
+Route::get('/edit/{No}', [DashboardController::class, 'edit']); 
+Route::post('/update/{No}', [DashboardController::class, 'update']); 
+Route::get('/material_delete/{No}', [DashboardController::class, 'material_delete']);
+
+Route::get('/include', [DashboardController::class, 'include']);
