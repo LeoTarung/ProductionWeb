@@ -23,6 +23,11 @@ body{
 
 }
 
+.font-yellow{
+    color: #ff6d19;
+  
+  }
+
 /* APP */
 #app {
     position: relative;

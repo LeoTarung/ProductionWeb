@@ -13,7 +13,7 @@
                         {{ $shift }}
                     </div>
                 </a>
-            @elseif(Request::url() == url('/pre-forklift'))
+            @elseif(Request::url() == url('/lhpforklift'))
                 <a>
                     <div class="shift border-bottom">
                         {{ $shift }}
@@ -80,7 +80,7 @@
 
             {{-- Preparation Forklift --}}
             @if ($mesin == 'FORKLIFT')
-                <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
+                <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FORKLIFT')
                             <div class="font-white "> {{ $mesin }} </div>
@@ -104,7 +104,7 @@
 
                 {{-- LHP Forklift --}}
             @elseif($mesin == $forklift)
-                <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
+                <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FINAL .INS')
                             <div class="font-white "> {{ $mesin }} </div>

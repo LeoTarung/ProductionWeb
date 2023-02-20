@@ -68,8 +68,8 @@ Route::get('/tv/melting/{mesin}', [MeltingController::class, 'Dashboard_tv']);
 Route::get('/tv', [MeltingController::class, 'testing']);
 
 //====================== FORKLIFT AREA MELTING ======================//
-Route::get('/pre-forklift', [MeltingController::class, 'prep_forklift']);
-Route::post('/pre-forklift/simpan', [MeltingController::class, 'prep_forklift_simpan']);
+Route::get('/lhpforklift', [MeltingController::class, 'prep_forklift']);
+Route::post('/lhpforklift/simpan', [MeltingController::class, 'prep_forklift_simpan']);
 Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift']);
 Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_forklift_raw_simpan']);
 

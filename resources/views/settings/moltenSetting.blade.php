@@ -5,7 +5,7 @@
             <div class="card-header  fw-bold fs-4 bg-primary ">
                 <div class="font-white text-center">Edit Mesin</div>
             </div>
-            <div class="row ms-2 mb-5 mt-4">
+            <div class="row ms-2 mb-5 mt-2">
                 <div class="col-8">
                     <form action="{{ route('mesincasting.update', $molten['mc']) }}" method="POST">
                         @csrf
@@ -15,10 +15,21 @@
                             <div class="col-6"><input type="number" class="form-control" id="nama_mc" name="nama_mc"
                                     value="{{ $molten->mc }}">
                             </div>
-                            <div class="col-2"><button type="button" class="btn btn-primary" id="btnCariMC">Cari</button>
+                            <div class="col-1"><button type="button" class="btn btn-primary" id="btnCariMC">Cari</button>
                             </div>
                         </div>
-                        <div class="row mt-2">
+                        <div class="row mt-1">
+                            <div class="col-2"></div>
+                            <div class="col-auto d-flex align-items-center fw-bold"> <i
+                                    class='bx bxs-error-alt bx-sm font-yellow '></i>
+                                <div class="ms-2">
+                                    Pilih MC yang akan diatur
+                                    terlebih
+                                    dahulu!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
                             <div class="col-2">MATERIAL</div>
                             <div class="col-6"><input type="text" class="form-control" id="material" name="material"
                                     value="{{ $molten->material }}" readonly>
@@ -45,7 +56,7 @@
                                 <label class="btn btn-success " for="success-outlined4">YH3R</label>
                             </div>
                         </div>
-                        <div class="row mt-2">
+                        <div class="row mt-3">
                             <div class="col-2">MIN MOLTEN</div>
                             <div class="col-9"><input type="text" class="form-control" id="min_molten"
                                     name="min_level_molten" value="{{ $molten->max_level_molten }}">
@@ -58,7 +69,7 @@
                             </div>
                         </div>
                         <div class="row border-top mt-5 ">
-                            <div class="col-12 mt-4 d-flex justify-content-end">
+                            <div class="col-12 mt-4 d-flex justify-content-start">
                                 <a href="/settings" class="btn btn-secondary">Kembali</a>
                                 <button class="btn btn-success ms-3" type="submit">Simpan</button>
                             </div>
