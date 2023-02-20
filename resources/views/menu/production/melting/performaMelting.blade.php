@@ -147,7 +147,7 @@ setInterval(function(){
     console.log("nyangkut di else");
   }
   
-}, 10000);
+}, 20000);
 // var mesin;
 // setInterval(function(){
 //      //============[' DATE ']===========//
