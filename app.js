@@ -68,7 +68,7 @@ io.on("connection", (socket) => {
         connection.query(
             "SELECT * FROM mesin_casting WHERE material='" + material1 + "'",
             (err, res) => {
-                socket.emit("levelMolten_client", res);
+                socket.emit("levelMolten_client", res, material1);
             }
         );
 
