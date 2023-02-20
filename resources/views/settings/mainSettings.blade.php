@@ -3,8 +3,8 @@
     <div class="container-fluid">
         <div class="row justify-content-center mx-auto mt-3">
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
-                <a href="" class="fs-1 btn btn-lg btn-primary border-info text-uppercase fw-bold" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
+                {{-- <a href="{{ url('/settings/mesincasting/1') }}" --}}
+                <a href="/settings/mesincasting/1" class="fs-1 btn btn-lg btn-primary border-info text-uppercase fw-bold">
                     <div class="font-white font-settings">Setting<br> Molten </div>
                 </a>
             </div>
@@ -46,7 +46,7 @@
     </div>
 
     {{-- MODAL --}}
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    {{-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- END MODAL --}}
 
     {{-- MODAL 2 --}}
