@@ -75,10 +75,12 @@ Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_for
 
 //====================== AREA CASTING ======================//
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
+Route::get('/tvCasting', [CastingController::class, 'tvCasting']);
 
 //====================== HC & GA ======================//
 Route::get('/hrd/karyawan', [HcgaController::class, 'karyawan']);
 Route::post('/hrd/karyawan/update', [HcgaController::class, 'update_karyawan']);
+
 
 //====================== Only Testing ======================//
 Route::get('/test', [MeltingTestController::class, 'index']);
