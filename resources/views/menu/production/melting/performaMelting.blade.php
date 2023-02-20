@@ -38,8 +38,8 @@
         <div class="col-3 sidebar" >
           <div class="card shadow identitas">
             <div class="col atas py-0">
-               <h1 id="mesin_atas">Striko-1</h1>
-               <h2 class="hd" id="material">HD-2</h2>
+               <h1 id="mesin_atas"></h1>
+               <h2 class="hd" id="material"></h2>
             </div>
 
             <div class="gambar">
@@ -47,8 +47,8 @@
             </div>
 
             <div class="col bawah">
-                <h2 id="nama">Muhammad Yudistira</h2>
-                <h3 id="nrp">19191</h3>
+                <h2 id="nama"></h2>
+                <h3 id="nrp"></h3>
             </div>
             <div class="row">
           
@@ -57,8 +57,8 @@
 
                     <div class="card tc">
                         <div class="row">
-                            <div class="col-7 text-center"> Total Charging </div>
-                            <div class="col-5 text-center" id="total_charging">2000 KG</div>
+                            <div class="col-7 text-center"></div>
+                            <div class="col-5 text-center" id="total_charging"></div>
                         </div>
                     </div>
 
