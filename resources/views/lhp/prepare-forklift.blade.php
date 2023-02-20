@@ -98,7 +98,7 @@
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl  ">
-            <form action="{{ url('/pre-forklift/simpan') }}" method="POST"
+            <form action="{{ url('/lhpforklift/simpan') }}" method="POST"
                 onSubmit="document.getElementById('submit').disabled=true;">
                 @csrf
                 <div class="modal-content">

@@ -22,7 +22,7 @@
       </div>
 
       <div class="col-4">
-        <div class="title mt-3"></div>
+        <div class="title section"> MELTING - SECTION </div>
       </div>
       
       <div class="col-4 d-flex justify-content-end"> 
@@ -57,8 +57,9 @@
 
                     <div class="card tc">
                         <div class="row">
-                            <div class="col-8"> Total Charging </div>
-                            <div class="col-4" id="total_charging"></div>
+                            <div class="col-7 text-center"> Total Charging </div>
+
+                            <div class="col-5 text-center" id="total_charging"></div>
                         </div>
                     </div>
 
