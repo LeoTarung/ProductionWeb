@@ -57,7 +57,8 @@
 
                     <div class="card tc">
                         <div class="row">
-                            <div class="col-7 text-center"></div>
+                            <div class="col-7 text-center"> Total Charging </div>
+
                             <div class="col-5 text-center" id="total_charging"></div>
                         </div>
                     </div>

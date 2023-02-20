@@ -63,12 +63,14 @@ class CastingController extends Controller
 
         return view('menu.production.casting.tvCasting',[
             'urgent' => 1,
-            'persen' => 94,
+            'aktual' => 49,
+            'target' => 5,
+            'persen' => 98,
             'preparation'=> 1,
             'prep' => 1,
             // 'warna' => '1b',
             // 'keterangan'=> 0,
-            'running' => 0,
+            'running' => 1,
             'downtime' => 'INSTROCKER ERROR',
             'henkaten' => $hitung,
             'isi' => "MATERIAL",

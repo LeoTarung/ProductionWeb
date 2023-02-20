@@ -10,7 +10,7 @@
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <script src=/css/bootstrap-5.1.3-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css></script>
 
-        <title>Dashboard</title>
+        <title>NM | TV CASTING</title>
 
     </head>
 
@@ -18,7 +18,7 @@
         <div class="container-fluid conflu">
             <div class="row mt-3">
                 <div class="col-9 mt-3 mb-3 nama"> 
-                    <span class="ket"> NM.FR.AH091 </span>
+                    <span class="line"> NM.FR.AH091 </span>
                     <br>
                     <span class="part"> PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)</span>
                 </div>
@@ -39,20 +39,20 @@
                     <div class="col-4 aktual">
                         <div class="text-center rounded-0">
                             <div class="penjelasan box">AKTUAL</div>
-                            <div class="angka">50</div>
+                            <div class="angka">{{ $aktual }}</div>
                         </div>
                     </div>
                     <div class="col-4 target">
                         <div class="text-center rounded-0">
                             <div class="penjelasan box">TARGET</div>
-                            <div class="angka">2</div>
+                            <div class="angka">{{ $target }}</div>
                         </div>
                     </div>
 
                     <div class="col-4 text-center parent ">
                         <div class="parallelogram boxperform child">
                             <h1 class="pperform"> PERFORMANCE   </h1>
-                            @if ($persen == 100)
+                            @if ($persen >= 95)
                                 <h1 style="font-size: 30px; margin-top: -40px">
                                 <span class="persen1">{{ $persen }}</span>
                                 <span class="symbol">%</span>
