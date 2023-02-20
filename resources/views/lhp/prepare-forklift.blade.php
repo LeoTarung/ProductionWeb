@@ -1,9 +1,5 @@
 @extends('mainLHP')
 @section('content')
-    {{-- /*=============== CSS ===============*/ --}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/forklift.css') }}">
-
-
     {{-- /*=============== CONTENT ===============*/ --}}
     <div class="container-fluid">
         @if ($errors->any())

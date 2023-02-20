@@ -1,4 +1,3 @@
-<div class="container m-3"></div>
 <table class="table table-success table-striped">
     <thead class="table-dark text-center fw-bold">
         <tr>
@@ -6,15 +5,17 @@
                 JAM
             </td>
             <td class="fs-5">
-                TAPPING
+                FURNACE
+            </td>
+            <td class="fs-5">
+                MESIN CASTING
+            </td>
+            <td class="fs-5">
+                FREKUENSI SUPPLY
             </td>
             <td class="fs-5">
                 TOTAL TAPPING
             </td>
-            <!-- <td class="fs-5">
-                SCRAP
-            </td> -->
-            <td class="fs-5">SISA STOK MOLTEN</td>
 
     </thead>
     <tbody class="fs-5">
@@ -23,18 +24,25 @@
                 <td class="text-center fs-5">
                     <div class="col-sm">
                         <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
-                            value="" name="jam" readonly>
+                            value="{{ date('H', strtotime($a->jam)) }}:00" name="jam" readonly>
                     </div>
                 </td>
-
                 <td class="text-center fs-5">
-                    <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City" value=""
-                        name="total_return_rs">
-                </td>
-                {{-- <td class="text-center fs-5">
                     <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
-                        value="{{ $a->stok_molten }}" name="total_return_rs">
-                </td> --}}
+                        value="{{ $a->furnace }}" name="forklift" readonly>
+                </td>
+                <td class="text-center fs-5">
+                    <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
+                        value="{{ $a->Mesin_Casting }}" name="mc" readonly>
+                </td>
+                <td class="text-center fs-5">
+                    <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
+                        value="{{ $a->frekuensi }} kali" name="tapping" readonly>
+                </td>
+                <td class="text-center fs-5">
+                    <input type="text" class="form-control text-center fs-5 fw-bold" aria-label="City"
+                        value="{{ $a->total_tapping }}" name="total_return_rs" readonly>
+                </td>
 
             </tr>
         @endforeach

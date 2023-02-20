@@ -1,11 +1,11 @@
 <nav class="nav shadow-lg">
     <ul>
-        <li> <a href="{{ url('/lhp-melting') }}" class="navitems">
-                <div class="rectangle-logo shadow">
-                    <img class="navbarimg" src="{{ url('/img/nusametal.png') }}" alt="Image" />
-                </div>
-            </a></li>
-
+        <li> <a href="{{ url('/lhp-melting') }}" class="navbar-brand">
+             <div class="rectangle-logo shadow">
+             <img class="navbarimg" src="{{ url('/img/nusametal.png') }}" alt="Image" />
+             </div>
+            </a>
+        </li>
         <li>
             @if (Request::url() == url('/lhp-melting'))
                 <a>
@@ -20,8 +20,7 @@
                     </div>
                 </a>
             @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
-                {{-- <a onClick="ModalSupply('{{ $mesin }}', '{{ $id }}')"> --}}
-                <a>
+                <a onClick="ModalSupply('{{ $mesin }}', '{{ $id }}')">
                     <div class="shift border-bottom">
                         {{ $shift }}
                     </div>
@@ -37,12 +36,11 @@
         <li class="ms-2 ">
             <!-- <a href="" class="time1"> -->
             <a href="" class="time shadow-lg navitems">
-                <div id="MyClockDisplay" class="clock " onload="showTime()"></div>
-                <!-- <div class="kotak">
-                        </  div> -->
-                <div id="date-1">
-                </div>
-
+            <div id="MyClockDisplay" class="clock " onload="showTime()"></div>
+            <!-- <div class="kotak">
+            </  div> -->
+            <div id="date-1">
+            </div>
             </a>
             <!-- </a> -->
         </li>
@@ -55,6 +53,10 @@
                     <div class="nrp nrp-child border-bottom ">
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
+                @elseif(Request::url() == url('/settings'))
+                    <div class="nrp border-bottom">
+                        <div class="font-white"> Admin </div>
+                    </div>
                 @else
                     <div class="nrp border-bottom">
                         <div class="font-white"> PILIH MESIN </div>
@@ -63,6 +65,8 @@
             </a>
         </li>
         <li>
+
+            {{-- Preparation Forklift --}}
             @if ($mesin == 'FORKLIFT')
                 <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -73,6 +77,8 @@
                         @endif
                     </div>
                 </a>
+
+                {{-- Preparation Melting --}}
             @elseif($mesin == 'MELTING')
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -83,6 +89,8 @@
                         @endif
                     </div>
                 </a>
+
+                {{-- LHP Forklift --}}
             @elseif($mesin == $forklift)
                 <a href="{{ url('/pre-forklift') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -93,6 +101,20 @@
                         @endif
                     </div>
                 </a>
+
+                {{-- Setting --}}
+            @elseif(Request::url() == url('/settings'))
+                <a href="{{ url('/settings') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FINAL .INS')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+
+                {{-- LHP MELTING --}}
             @else
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -107,9 +129,9 @@
         </li>
         <li>
             <a onClick="ModalInstruksi('{{ $mesin }}')">
-                <div class="information " data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
-                    <i class='bx bx-info-circle bx-md'></i>
-                </div>
+            <div class="information " data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
+            <i class='bx bx-info-circle bx-md'></i>
+            </div>
             </a>
         </li>
     </ul>
@@ -119,7 +141,7 @@
 <!-- Modal -->
 <div class="modal fade" id="ModalNavbar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-3" id="ModalNavbarLabel"></h1>
@@ -135,6 +157,4 @@
     </div>
 </div>
 
-<script></script>
-<script></script>
 </nav>

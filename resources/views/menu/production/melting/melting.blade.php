@@ -6,6 +6,7 @@
             height: 380px;
         }
     </style>
+
     <div class="main-content d-flex flex-column">
         <div class="row w-100">
             <div class="col-12">
@@ -84,7 +85,6 @@
         </div>
     </div>
 
-
     <!-- Resources chart 1 -->
     <script src="/js/amchart/Dailychart-Melting/index.js"></script>
     <script src="/js/amchart/Dailychart-Melting/xy.js"></script>
@@ -94,6 +94,7 @@
     <script src="/js/amchart/LossesChart-Melting/core.js"></script>
     <script src="/js/amchart/LossesChart-Melting/charts.js"></script>
     <script src="/js/amchart/LossesChart-Melting/Animated.js"></script>
+
 
 
     {{-- =============================['CHART STRIKO - 1']============================== --}}
@@ -244,6 +245,7 @@
             // https://www.amcharts.com/docs/v5/concepts/animations/
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
+            
             $(function() {
                 let ip_node = location.hostname;
                 let socket_port = '1553';
@@ -261,7 +263,7 @@
                         obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
                             0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
                         obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -424,6 +426,7 @@
             $(function() {
                 let ip_node = location.hostname;
                 let socket_port = '1553';
+
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -439,7 +442,7 @@
                         obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
                             0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
                         obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -617,7 +620,7 @@
                         obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
                             0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
                         obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);
@@ -795,7 +798,7 @@
                         obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
                             0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
                         obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2) 
+                            0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
                         data.push(obj);
                     }
                     chargingSeries.data.setAll(data);

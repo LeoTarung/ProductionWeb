@@ -19,6 +19,7 @@ use App\Http\Controllers\UsableController;
 
 class MeltingController extends Controller
 {
+
     //==============================[' DASHBOARD PRODUCTION ']==============================//
     public function Dashboard(UsableController $useable)
     {
@@ -103,8 +104,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    // 'gas_awal' => $gas->gas_akhir,
-                    // 'stok_molten' => $gas->stok_molten
+                    'gas_awal' => $gas->gas_akhir,
+                    'stok_molten' => $gas->stok_molten
                 ]);
             } else if ($request->mesin != "") {
                 $gas = LhpMelting::where([['mesin', '=', $request->mesin]])->orderBy('id', 'DESC')->first();
@@ -117,8 +118,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    // 'gas_awal' => $gas->gas_akhir,
-                    // 'stok_molten' => $gas->stok_molten
+                    'gas_awal' => $gas->gas_akhir,
+                    'stok_molten' => $gas->stok_molten
                 ]);
             } else {
                 LhpMelting::create([
@@ -237,11 +238,9 @@ class MeltingController extends Controller
                 $machine_performance = ($ntah->tapping / $total_charging_rs) * 100; // N / H x 100%
             }
             $machine_utilization = ($total_charging_rs / $ntah->supply_capacity) * 100; // ( H / A ) x 100%
-            if ($ntah->gas_akhir == 0) {
-                $gas_consum = 0.00;
-            } else {
-                $gas_consum = $ntah->awal - $ntah->gas_akhir;
-            }
+
+            $gas_consum = $ntah->gas_akhir - $ntah->gas_awal;
+
             $melting_rate = $total_charging_rs / $ntah->jam_kerja; // H / X1 
             LhpMelting::where([['id', '=', $id]])->update([
                 'total_return_rs' =>  $total_return_rs,
@@ -356,6 +355,7 @@ class MeltingController extends Controller
         return Excel::download(new LHPMelting_Export($mesin, $mulai, $selesai), $filename);
         return redirect("/production/melting/" . $mesin)->with('behasilDownload', 'behasilDownload');
     }
+
     //==============================[' LAPORAN HARIAN PRODUKSI FORKLIFT']==============================//
 
     public function prep_forklift(UsableController $useable)
@@ -433,7 +433,6 @@ class MeltingController extends Controller
         }
     }
 
-
     public function lhp_forklift(UsableController $useable, $mesin, $id)
     {
         $shift = $useable->Shift();
@@ -478,7 +477,10 @@ class MeltingController extends Controller
             // {{ Membuat id LHP FORKLIFT RAW }} //
             LhpSupplyRaw::create([
                 'id_lhp' => $id,
+                'tanggal' => $date,
                 'jam' => $hour,
+                'shift' => $shift,
+                'forklift' => $mesin,
                 'no_mc' => $request->mc,
                 'furnace' => $request->furnace,
                 'jumlah_tapping' => $request->jumlah_tapping

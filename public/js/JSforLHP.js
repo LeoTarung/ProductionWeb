@@ -117,14 +117,45 @@ function ModalInstruksi(mesin) {
 //==============================['FUNCTION RESUME DI LHP']==============================//
 
 function ModalSupply(mesin, id) {
-    // console.log('asad')
+    // console.log('asad');
     $.get(
         "/partial/resume-forklift" + "/" + mesin + "/" + id,
         {},
         function (data, status) {
             $("#ModalNavbarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
-            $("#page").html(data); //menampilkan view create di dalam id page
-            $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
+             $("#page").html(data); //menampilkan view create di dalam id page
+             $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
+             console.log('test');
         }
     );
 }
+
+//==============================['FUNCTION PADA PAGE SETTINGS']==============================//
+// function editmesin(id){
+//     $("#setupclose").click();
+//     $("#staticBackdropLabel1").html('EDIT MACHINE' + id); //Untuk kasih judul di modal
+//     $("#staticBackdrop1").modal('show'); //kalo ID pake "#" kalo class pake "." 
+//     $.ajax({
+//             method: "GET",  
+//             dataType: "json",
+//             url: "settings/mesincasting" + "/" + id,
+//             success: function(data) {
+//               console.log(data);
+             
+              
+//             }
+//         });
+
+    //  console.log('asad');
+    //  $.get(
+    //     "/settings/mesincasting" + "/" + id,
+    //     {},
+    //     function (data, status) {
+    //         // $("#setupclose").click();
+    //         $("#staticBackdropLabel1").html('EDIT MACHINE ' + id); //Untuk kasih judul di modal
+    //         $("#page").html(data); 
+    //         $("#staticBackdrop1").modal("show");
+    //         console.log("test")
+    //     }
+    // );
+// }

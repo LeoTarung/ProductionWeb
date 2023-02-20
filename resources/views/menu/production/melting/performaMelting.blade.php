@@ -134,22 +134,69 @@
 
 <script>
 
-// setInterval(function(){
-//   if (window.location.href == "{{ url('/tv/melting/Striko-1')}}"){
-//     window.location.href = "Striko-2";
-//   } else if (window.location.href == "{{ url('/tv/melting/Striko-2')}}") {
-//     window.location.href = "Striko-3";
-//   } else if (window.location.href == "{{ url('/tv/melting/Striko-3')}}") {
-//     window.location.href = "Swift_Asia";
-//   }else if (window.location.href == "{{ url('/tv/melting/Swift_Asia')}}") {
-//     window.location.href = "Striko-1";
-//   } else {
-//     console.log("nyangkut di else");
-//   }
+setInterval(function(){
+  if (window.location.href == "{{ url('/tv/melting/Striko-1')}}"){
+    window.location.href = "Striko-2";
+  } else if (window.location.href == "{{ url('/tv/melting/Striko-2')}}") {
+    window.location.href = "Striko-3";
+  } else if (window.location.href == "{{ url('/tv/melting/Striko-3')}}") {
+    window.location.href = "Swift_Asia";
+  }else if (window.location.href == "{{ url('/tv/melting/Swift_Asia')}}") {
+    window.location.href = "Striko-1";
+  } else {
+    console.log("nyangkut di else");
+  }
   
-// }, 10000);
+}, 10000);
+// var mesin;
+// setInterval(function(){
+//      //============[' DATE ']===========//
+//         var date = new Date().toJSON().slice(0, 10);
+//     // console.log(date); // "2022-06-17"
+
+//      //============[' SHIFT ']===========//
+//         var h = new Date().getHours(); // 0 - 23
+//         var m = new Date().getMinutes(); // 0 - 59
+//         var s = new Date().getSeconds(); // 0 - 59
+//         h = h < 10 ? "0" + h : h;
+//         m = m < 10 ? "0" + m : m;
+//         s = s < 10 ? "0" + s : s;
+//         var time = h + ":" + m + ":" + s + " ";
+//         var shift;
+//         if (time >= '00:00:00' && time < '07:10:00') {
+//             shifta = "SHIFT-1";
+//             shift = shifta    
+//         } else if (time >= '07:10:00' && time < '16:00:00') {
+//             shifta = "SHIFT-2";
+//             shift = shifta    
+//         } else if (time >= '16:00:00' && time <= '23:59:59') {
+//             shifta = "SHIFT-3";
+//             shift = shifta    
+//         } else {
+//             shifta = "SHIFT TIDAK TERDEFINISI";
+//             shift = shifta    
+//         }
+//      //============[' MESIN ']===========//
+//         if (mesin == "Striko-1"){
+//             mesina = "Striko-2";
+//             mesin = mesina
+//         } else if (mesin == "Striko-2") {
+//             mesina = "Striko-3";
+//             mesin = mesina
+//         } else if (mesin == "Striko-3") {
+//             mesina = "Swift_Asia";
+//             mesin = mesina
+//         }else if (mesin == "Swift_Asia") {
+//             mesina = "Striko-1";
+//             mesin = mesina
+//         } else {
+//             mesina = "Striko-1";
+//             mesin = mesina
+//         }
+// }, 3000);
 
   function kejs(mesin, shift, date){
+    
       //============[' SIDE BAR KIRI ']===========//
       $(function(){
         let ip_node = location.hostname;
@@ -185,7 +232,7 @@
           socket.emit("Hello", mesin, shift, date); 
       });
 
-      //============[' CHART DAILY REPORT ']===========//
+//       //============[' CHART DAILY REPORT ']===========//
       am5.ready(function() {
             var data = [];
             
@@ -365,7 +412,7 @@
                 });
       }); // end am5.ready()
 
-      //============[' CHART MONTHLY REPORT ']===========//
+//       //============[' CHART MONTHLY REPORT ']===========//
       am5.ready(function() {
         var data = [];
 
