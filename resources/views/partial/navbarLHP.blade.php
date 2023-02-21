@@ -55,6 +55,12 @@
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 </a>
+            @elseif(Request::url() == url('/lhp-melting'))
+                <a href="{{ url('/lhp-melting') }}" class="navitems">
+                    <div class="nrp border-bottom">
+                        <div class="font-white"> PILIH MESIN </div>
+                    </div>
+                </a>
             @elseif(Request::url() == url('/settings'))
                 <a href="{{ url('/settings') }}" class="navitems">
                     <div class="nrp border-bottom">
@@ -65,12 +71,6 @@
                 <a href="{{ url('/settings') }}" class="navitems">
                     <div class="nrp border-bottom">
                         <div class="font-white"> Menu Utama </div>
-                    </div>
-                </a>
-            @else
-                <a href="{{ url('/lhp-melting') }}" class="navitems">
-                    <div class="nrp border-bottom">
-                        <div class="font-white"> PILIH MESIN </div>
                     </div>
                 </a>
             @endif
