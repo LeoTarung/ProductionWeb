@@ -63,11 +63,16 @@ class CastingController extends Controller
 
         return view('menu.production.casting.tvCasting',[
             'urgent' => 1,
-            'aktual' => 49,
+            'aktual' => 4009,
+            'aktual2'=> 400,
             'target' => 5,
-            'persen' => 98,
+            'target2' =>50,
+            'persen' => 93,
+            'persen2'=> 100,
             'preparation'=> 1,
-            'prep' => 1,
+            'preparation2'=>1,
+            'prep' => 3,
+            'prep2' => 2,
             // 'warna' => '1b',
             // 'keterangan'=> 0,
             'running' => 1,
@@ -82,7 +87,17 @@ class CastingController extends Controller
             'isi4a' => "MAN POWER",
             'isi4b' => "METHOD",
             'isi4c' => "MACHINE",
-            'isi4d' => "MATERIAL"
+            'isi4d' => "MATERIAL",
+            'isi5' => "MATERIAL",
+            'isi6a' => "MAN POWER",
+            'isi6b' => "METHOD",
+            'isi7a' => "MAN POWER",
+            'isi7b' => "METHOD",
+            'isi7c' => "MATERIAL",
+            'isi8a' => "MAN POWER",
+            'isi8b' => "METHOD",
+            'isi8c' => "MACHINE",
+            'isi8d' => "MATERIAL"
         ]);
     }
 

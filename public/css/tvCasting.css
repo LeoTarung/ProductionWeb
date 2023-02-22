@@ -205,13 +205,13 @@
     
     .line{
       margin-top: 30px;
-      font-size: 55px;
+      font-size: 50px;
       font-weight: 700;
       color: white;
     }
   
     .part{
-      font-size: 65px;
+      font-size: 60px;
       font-weight: 700;
   
       color: white;
@@ -219,24 +219,24 @@
     
     .status{
       margin: auto;
-      margin-top: 5px;
-      margin-left: -10px;
+      /* margin-top: 5px; */
+      margin-left: -40px;
       margin-right: 15px;
       background-color: red;
-      height: 60%;
+      height: 40%;
       color: white;
       text-align: center;
       justify-content: center;
-      font-size: 80px;
+      font-size: 50px;
       font-weight: 500;
-      border-radius: 0em 0em 1em 1em / 1em;
+      border-radius: 0em 0em 1em 1em / 0.8em;
     }
     
     .penjelasan {
-      width: 80%;
-      margin-left: 100px;
+      width: 85%;
+      margin-left: 30px;
       padding-top: 10px;
-      padding-bottom: 20px;
+      padding-bottom: 10px;
       background-color: #0d0148;
       font-size: 40px;
       font-weight: 500;
@@ -248,14 +248,14 @@
     .angka {
       margin-top: 0px;
       /* margin-bottom: -5px; */
-      padding-left: 60px;
-      font-size: 150px;
+      padding-left: 30px;
+      font-size: 100px;
       font-weight: 600;
       text-align: center;
     }
   
     .atas{
-      height: 300px;
+      height: 250px;
       background-color: rgb(255, 255, 255);
     }
     
@@ -277,18 +277,21 @@
     .parent {
       width: 100px;
       height: 150px;
+
     }
   
     .child{
-      width: 520px;
-      height: 370px;
+      width: 260px;
+      height: 310px;
       margin-top: -30px ;
+      margin-left: -20px;
     }
   
     .pperform {
-      font-size: 50px;
+      font-size: 35px;
       font-weight: 500;
-      padding-top: 40px;
+      padding-top: 45px;
+      padding-bottom: 40px
     }
   
     .parallelogram {
@@ -301,11 +304,16 @@
   
     .parallelogram h1 {
       transform: skew(20deg);
+      /* padding-top: 20px; */
     }
   
     .box{
       box-shadow: 0px 5px 10px 0px rgba(5, 0, 0, 5); 
     }
+
+    /* .boxdt {
+      /* box-shadow: px 5px 5px 5px rgba(5, 0, 0, 5);  
+    } */
   
     .boxperform{
       box-shadow: px 5px 0px 5px rgba(5, 0, 0, 5); 
@@ -314,13 +322,14 @@
     .persen1{
       /* margin-top: -20px; */
       margin-left: -20px;
-      font-size: 230px;
+      font-size: 100px;
       font-weight: 700;
       text-align: center;
     }
   
     .persen2 {
-      font-size: 250px;
+      margin-left: -10px;
+      font-size: 150px;
       font-weight: 700;
       text-align: center;
       text-shadow: 0 10px 19px black;
@@ -339,7 +348,7 @@
     }
   
     .symbol{
-      font-size: 80px;
+      font-size: 50px;
       font-weight: 600;
     }
   
@@ -369,16 +378,16 @@
     /* henkaten ada 1 */
     .henkaten1 {
       border-radius: 1em 0em 0em 1em / 1em;
-      /* margin-top: 20px; */
-      margin-left: 20px;
-      height: 100%;
+      margin-top: 20px;
+      margin-left: 10px;
+      height: 90%;
       background-color: white;
     }
   
     .henka1 {
       transform: rotate(270deg);
-      margin-top: 130px;
-      font-size: 40px;
+      margin-top: 125px;
+      font-size: 30px;
       font-weight: 700;
     }
   
@@ -386,10 +395,11 @@
       background-color: rgb(203, 47, 47);
       color: white;
       width: 100%;
-      height: 100%;
+      height: 90%;
       text-align: center;
-      padding-top: 60px;
-      font-size: 70px;
+      margin-top: 20px;
+      padding-top: 20%;
+      font-size: 40px;
       font-weight: 650;
       border-radius: 0em 0.5em 0.5em 0em / 0.5em;
     }
@@ -431,8 +441,10 @@
     /* henkaten ada 2 */
     .henkaten2 {
       border-radius: 1em 0em 0em 1em / 1em;
+      /* margin-top: 10px; */
       margin-left: 20px;
-      height: 100%;
+      margin-right: 10px;
+      height: 90%;
       /* background: linear-gradient(
         to bottom,
         #1C315E 0%,
@@ -447,29 +459,31 @@
   
     .henka2 {
       transform: rotate(270deg);
-      margin-top: 140px;
-      font-size: 40px;
+      margin-top: 150px;
+      font-size: 36px;
       font-weight: 700;
     }
-    .manpower2{
+    
+    .prep2 .manpower2{
       background-color: white;
       color: white;
-      padding-top: 10px;
+      padding-top: 20px;
       width: 100%;
-      height: 50%;
+      height: 45%;
       text-align: center;
-      font-size: 60px;
+      font-size: 40px;
       font-weight: 700;
       border-radius: 0em 0.5em 0.5em 0em / 0.5em;
     }
 
-    .method2{
+    .prep2 .method2{
       background-color: white;
-      padding-top: 10px;
+      /* margin-top: -20px; */
+      padding-top: 20px;
       width: 100%;
-      height: 50%;
+      height: 45%;
       text-align: center;
-      font-size: 60px;
+      font-size: 40px;
       font-weight: 700;
       border-radius: 0em 0.5em 0.5em 0em / 0.5em;
     }
@@ -479,7 +493,8 @@
       border-radius: 1em 0em 0em 1em / 1em;
       /* margin-top: 20px; */
       margin-left: 20px;
-      height: 100%;
+      margin-right: 10px;
+      height: 90%;
       /* background: linear-gradient(
         to bottom,
         #1C315E 0%,
@@ -496,39 +511,44 @@
   
     .henka3 {
       transform: rotate(270deg);
-      margin-top: 135px;
-      font-size: 40px;
+      margin-top: 155px;
+      font-size: 38px;
       font-weight: 700;
     }
 
-    .manpower3{
+    .prep3 .manpower3{
       background-color: white;
       color: white;
       width: 100%;
-      height: 34%;
+      height: 30%;
       text-align: center;
-      font-size: 50px;
+      /* margin-top: 10px; */
+      padding-top: 10px;
+      font-size: 35px;
       font-weight: 700;
       border-radius: 0em 0.5em 0.5em 0em / 0.5em;
     }
 
-    .method3{
+    .prep3 .method3{
       background-color: white;
       width: 100%;
-      height: 33%;
+      height: 30%;
       text-align: center;
-      font-size: 50px;
+      padding-top: 10px;
+      font-size: 35px;
       font-weight: 700;
       border-radius: 0em 0.5em 0.5em 0em / 0.5em;
     }
 
-    .machine3{
+    .prep3 .machine3{
       background-color: white;
       color: white;
       width: 100%;
-      height: 33%;
+      height: 30%;
       text-align: center;
-      font-size: 50px;
+      /* margin-bottom: 25px; */
+      padding-top: 10px;
+      font-size: 35px;
       font-weight: 700;
       border-radius: 0em 0.5em 0.5em 0em / 0.5em;
     }
@@ -603,28 +623,28 @@
     }
   
     .availa {
-      font-size: 30px;
+      font-size: 25px;
       font-weight: 700;
       color: white;
   
     }
     
     .qurate {
-      font-size: 30px;
+      font-size: 25px;
       font-weight: 700;
       color: white;
   
     }
   
     .shift {
-      font-size: 30px;
+      font-size:25px;
       font-weight: 700;
       color: white;
   
     }
   
     .jam{
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 700;
       color: white;
   
