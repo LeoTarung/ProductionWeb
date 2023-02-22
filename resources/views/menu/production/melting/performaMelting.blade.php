@@ -58,6 +58,7 @@
                     <div class="card tc">
                         <div class="row">
                             <div class="col-7 text-center"> Total Charging </div>
+
                             <div class="col-5 text-center" id="total_charging"></div>
                         </div>
                     </div>
@@ -147,7 +148,7 @@ setInterval(function(){
     console.log("nyangkut di else");
   }
   
-}, 10000);
+}, 20000);
 // var mesin;
 // setInterval(function(){
 //      //============[' DATE ']===========//
