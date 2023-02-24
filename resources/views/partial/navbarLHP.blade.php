@@ -62,6 +62,15 @@
                         <div class="font-white"> PILIH MESIN </div>
                     </div>
                 </a>
+            @elseif(Request::url() == url('/lhp-melting/' . $mesin . '/' . $id . ''))
+                <a href="{{ url('/lhp-melting') }}" class="navitems">
+                    <div class="nrp">
+                        <div class="font-white"> NRP : </div>
+                    </div>
+                    <div class="nrp nrp-child border-bottom ">
+                        <div class="font-white fw-bold">{{ $nrp }}</div>
+                    </div>
+                </a>
 
                 {{-- LHP FORKLIFT --}}
             @elseif ($nrp != 0 && Request::url() == url('/lhpforklift'))
@@ -73,7 +82,7 @@
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 </a>
-            @elseif(Request::url() == url('/lhpforklift'))
+            @elseif($nrp == null && Request::url() == url('/lhpforklift'))
                 <a href="{{ url('/lhpforklift') }}" class="navitems">
                     <div class="nrp border-bottom">
                         <div class="font-white"> PILIH FORKLIFT </div>
@@ -81,8 +90,11 @@
                 </a>
             @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
                 <a href="{{ url('/lhpforklift') }}" class="navitems">
-                    <div class="nrp border-bottom">
-                        <div class="font-white"> PILIH FORKLIFT </div>
+                    <div class="nrp">
+                        <div class="font-white"> NRP : </div>
+                    </div>
+                    <div class="nrp nrp-child border-bottom ">
+                        <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 </a>
 
