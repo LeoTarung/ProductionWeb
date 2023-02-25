@@ -36,7 +36,7 @@
             </div>
             <div class="button-machine d-grid gap-2 col-4 mx-auto">
                 @if ($id_forklift8 == null)
-                    <a class="button-prep-fork btn btn-lg btn-primary border-info text-uppercase fw-bold "
+                    <a class="button-prep-fork btn btn-lg btn-primary border-info php text-uppercase fw-bold "
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="forklift(3)">
                         <div class="font-forklift">FORKLIFT-8</div>
                     </a>
