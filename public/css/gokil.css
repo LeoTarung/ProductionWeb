@@ -1,3 +1,16 @@
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --varyDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --weight1: 200;
+    --weight2: 400;
+    --weight3: 600;
+}
+
 .main-card {
     margin: 10px 2px 5px 0px;
     border-radius: 20px;
@@ -39,45 +52,43 @@
 }
 
 .font-ci1{
-    font-size: 50px;
+    font-size: 33px;
     font-weight: 700;
-    margin: -10px 0px 0px 30px ;
+    margin: 4px 0px 0px -7px ;
 }
 
 .font-ci2{
-    font-size: 18px;
-    font-weight: 700;
-    margin: 7px 1px 0px 10px ;
-}
-
-.bercak-hitam{
-    font-size: 18px;
-    font-weight: 700;
-    margin: -5px 1px 0px 10px ;
-}
-
-.bercak-hitam2{
-    font-size: 16px;
-    font-weight: 700;
-    margin: -5px 1px 0px 10px ;
-}
-
-.bercak-hitam3{
     font-size: 15px;
     font-weight: 700;
-    margin: -5px 1px 0px 10px ;
+    margin: 10px 1px 0px 10px ;
 }
 
-
+.font-with-enter{
+    font-size: 15px;
+    font-weight: 700;
+    margin: -1px 1px 0px 10px ;
+}
 
 .card-left1{
-    border-radius: 2px 20px 20px 2px;
+
+    border-radius: 10px 10px 10px 10px;
+    border-left: 10px solid var(--grayishBlue);
 }
-.card-purple{
+
+.card-left2{
+    border-radius: 20px 20px 20px 20px;
+    border-left: solid var(--varyDarkBlue);
+}
+.card-left3{
+    border-radius: 20px 20px 20px 20px;
+    border-left: 10px solid var( --red);
+}
+
+/* .card-purple{
     background-color: blueviolet;
     height: 80px;
     border-radius: 15px 0px 0px 15px;
-}
+} */
 .card-green{
     background-color: rgb(16, 230, 98);
     height: 80px;

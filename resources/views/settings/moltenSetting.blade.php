@@ -92,7 +92,6 @@
         </div>
     </div>
     <script>
-        console.log("test");
         $(function() {
             let ip_node = location.hostname;
             let socket_port = '1553';
@@ -101,6 +100,7 @@
 
             socket.on("levelMolten_settings", (data) => {
 
+
                 let for_mc = {{ $molten->mc }} - 1;
                 let max1 = data[for_mc].max_level_molten;
                 let min1 = data[for_mc].min_level_molten;
@@ -108,12 +108,6 @@
                 let pembagi1 = (jarak1 * 0.01); //hasilnya 20
                 let value1 = (data[for_mc].aktual_molten - max1); //hasilnya 500
                 let level1 = (value1 / pembagi1);
-
-                console.log("jarak = " + jarak1);
-                console.log("pembagi = " + pembagi1);
-                console.log("value = " + value1);
-                console.log("level = " + level1);
-                console.log("aktual = " + data[for_mc].aktual_molten);
 
                 let battery1 = document.getElementById('battery' + {{ $molten->mc }});
                 let batteryLiquid1 = document.getElementById('battery__liquid' +
@@ -138,6 +132,7 @@
                 }
 
             })
+
         });
 
         ///////{ Untuk Memunculkan Edit Material  }//////// 
