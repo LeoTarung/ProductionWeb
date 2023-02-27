@@ -128,11 +128,11 @@
                 for (var i = 0; i < data.length; i++) {
                     let max1 = data[i].max_level_molten;
                     let min1 = data[i].min_level_molten;
-                    let jarak1 = max1 - min1 //hasilnya 2000
+                    let jarak1 = min1 - max1 //hasilnya 2000
                     let pembagi1 = (jarak1 * 0.01); //hasilnya 20
-                    let value1 = (data[i].aktual_molten - min1); //hasilnya 500
+                    let value1 = (data[i].aktual_molten - max1); //hasilnya 500
                     let level1 = (value1 / pembagi1);
-
+                    console.log(level1);
                     let battery1 = document.getElementById('battery' + data[i].mc);
 
 
@@ -156,6 +156,7 @@
                         batteryLiquid1.style.backgroundColor = '#06ce17'
                     }
                 }
+
             })
             socket.emit("levelMolten", '{{ $forklift }}', '{{ $material }}');
         });
