@@ -168,7 +168,7 @@ li a {
   background-color: rgb(81, 219, 178);
 } */
 .navbarimg{
-   margin-top: 1.5px;
+   margin-top: 3.6px;
   /* margin-left: 5px; */
   height: 57px;
   /* width: 250px; */
@@ -183,7 +183,7 @@ li a {
   background: -webkit-linear-gradient(to bottom, #ffffff, #ebebf3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom,#ffffff,  #ebebf3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 10px;
-  margin: 0;
+  margin: 4px 0px 0px 0px;
 }
 
 .shift{
