@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->string('Problem');
             $table->string('Countermeasure')->nullable();
-            $table->string('Status');
-            $table->string('Plan');
-            $table->string('Safety');
-            $table->string('Kakotora');
-            $table->string('Trial_NS');
-            $table->string('CP_CPK');
+            $table->string('Status')->default('no');
+            $table->string('Plan')->default('no');
+            $table->string('Safety')->default('no');
+            $table->string('Kakotora')->default('no');
+            $table->string('Trial_NS')->default('no');
+            $table->string('CP_CPK')->default('no');
             $table->timestamp('timestamp');
         });
     }

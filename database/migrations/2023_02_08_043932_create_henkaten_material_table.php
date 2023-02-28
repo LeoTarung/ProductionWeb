@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->string('Problem');
             $table->string('Countermeasure')->nullable();
-            $table->string('Status');
-            $table->string('Plan');
-            $table->string('Job_Setup');
-            $table->string('Trial_NS');
-            $table->string('CP_CPK');
-            $table->string('Trial_Proses');
+            $table->string('Status')->default('no');
+            $table->string('Plan')->default('no');
+            $table->string('Job_Setup')->default('no');
+            $table->string('Trial_NS')->default('no');
+            $table->string('CP_CPK')->default('no');
+            $table->string('Trial_Proses')->default('no');
             $table->timestamp('timestamp');
         });
     }

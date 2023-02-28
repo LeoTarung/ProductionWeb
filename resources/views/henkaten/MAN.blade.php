@@ -9,131 +9,157 @@
 
               <form action="/submit_man" method="post" class="form-item">
                 @csrf
-              <h6 class="mx-auto">Deskripsi:</h6>
+              <h6 class="text-start">Deskripsi:</h6>
               <div class="Deskripsi">
-                <textarea rows="4" type="text" class="form-control" name="Deskripsi"></textarea>
+                <textarea rows="5" type="text" class="form-control" name="Deskripsi"></textarea>
               </div>
-
-              <h6>Problem :</h6>
+              <h6 class="text-start">Problem :</h6>
               <div class="Problem">
-                <textarea rows="4" type="text" class="form-control" name="Problem"></textarea>
+                <textarea rows="5" type="text" class="form-control" name="Problem"></textarea>
               </div>
-
-              <h6>Countermeasure :</h6>
+              <h6 class="text-start ">Countermeasure :</h6>
               <div class="Countermeasure">
-                <textarea rows="4" type="text" class="form-control" name="Countermeasure"></textarea>
+                <textarea rows="5" type="text" class="form-control" name="Countermeasure"></textarea>
               </div>
 
-              <div class="col d-flex">
-                <div class="card status">Status :</div>
-                <div class="form grup ms-3 mt-2 d-flex">
-                  <input class="form-check mx-4 fs-1 radio" type="radio" id="open" name="Status" value="open">
-                  <lable for="open">open</lable>
-                  <input class="form-check mx-4 fs-1 radio" type="radio" id="close" name="Status" value="close">
-                  <lable for="close">close</lable>
-                </div>
-              </div>
+              
           </div>
         </div>
-        <div class="col-6 pt-3">
-          <div class="container overflow-hidden text-center">
-            <div class="row gx-5">
-              <div class="form-check d-flex" role="group" aria-label="Basic example">
-                <div class="col-6 py-3">
-                  <label class="form-check label mt-2">Plan</label>
-                </div>
-                <div class="form check-form-check-inline col-2 px-3 py-4 d-flex ">
-                  <input class="radio form-check input mx-3 big" type="radio" id="Plan" name="Plan" value="yes">
-                  <label class="from-check-label py-1" for="open">yes</label>
-                </div>
-                <div class="form-check form-check-inline col-3 px-3 py-4 d-flex">
-                  <input class="radio form-check input mx-3 big" type="radio" id="Plan" name="Plan" value="no">
-                  <label class="form-check-label py-1" for="close">no</label>
-                  <!-- <button type="button" class="btn btn-secondary">Right</button> -->
+        <div class="col-6 pt-5">
+          <div class="card">
+            <div class="container overflow">
+              <div class="row gx-2">
+                <div class="form-check d-flex mx-5" role="group" aria-label="Basic example">
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="hidden" id="flexSwitchCheckDefault" name="Plan" value="no">
+                    </div>
+                    <label class="pt-6">UNPLANNED</label>
+                  </div>
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="checkbox" id="flexSwitchCheckDefault" name="Plan" value="yes">
+                    </div>
+                    <label class="pt-6">PLANNED</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
+          <div class="card">
+            <div class="container overflow">
+              <div class="row gx-2">
+                <div class="form-check d-flex mx-5" role="group" aria-label="Basic example">
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="hidden" id="flexSwitchCheckDefault" name="Safety" value="no">
+                    </div>
+                    <label class="pt-6">UNSAFETY</label>
+                  </div>
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="checkbox" id="flexSwitchCheckDefault" name="Safety" value="yes">
+                    </div>
+                    <label class="pt-6">SAFETY</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
 
-          <div class="container overflow-hidden text-center">
-            <div class="row gx-5">
-              <div class="form-check d-flex" role="group" aria-label="Basic example">
-                <div class="col-6 py-3">
-                  <label class="form-check label mt-2">Safety</label>
-                </div>
-                <div class="form check-form-check-inline col-2 px-3 py-4 d-flex ">
-                  <input class="radio form-check input mx-3 big" type="radio" id="Safety" name="Safety" value="yes">
-                  <label class="from-check-label py-1" for="open">yes</label>
-                </div>
-                <div class="form-check form-check-inline col-3 px-3 py-4 d-flex">
-                  <input class="radio form-check input mx-3 big" type="radio" id="Safety" name="Safety" value="no">
-                  <label class="form-check-label py-1" for="close">no</label>
-                  <!-- <button type="button" class="btn btn-secondary">Right</button> -->
+          <div class="card">
+            <div class="container overflow">
+              <div class="row gx-2">
+                <div class="form-check d-flex mx-5" role="group" aria-label="Basic example">
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="hidden" id="flexSwitchCheckDefault" name="Kakotora" value="no">
+                    </div>
+                    <label class="pt-6">TIDAK KAKOTORA</label>
+                  </div>
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="checkbox" id="flexSwitchCheckDefault" name="Kakotora" value="yes">
+                    </div>
+                    <label class="pt-6">KAKOTORA</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
 
-          <div class="container overflow-hidden text-center">
-            <div class="row gx-5">
-              <div class="form-check d-flex" role="group" aria-label="Basic example">
-                <div class="col-6 py-3">
-                  <label class="form-check label mt-2">Kakotora</label>
-                </div>
-                <div class="form check-form-check-inline col-2 px-3 py-4 d-flex ">
-                  <input class="radio form-check input mx-3 big" type="radio" id="Kakotora" name="Kakotora" value="yes">
-                  <label class="from-check-label py-1" for="open">yes</label>
-                </div>
-                <div class="form-check form-check-inline col-3 px-3 py-4 d-flex">
-                  <input class="radio form-check input mx-3 big" type="radio" id="Kakotora" name="Kakotora" value="no">
-                  <label class="form-check-label py-1" for="close">no</label>
-                  <!-- <button type="button" class="btn btn-secondary">Right</button> -->
+          <div class="card">
+            <div class="container overflow">
+              <div class="row gx-2">
+                <div class="form-check d-flex mx-5" role="group" aria-label="Basic example">
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="hidden" id="flexSwitchCheckDefault" name="Job_Setup" value="no">
+                    </div>
+                    <label class="pt-6">BELUM JOB SET UP</label>
+                  </div>
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="checkbox" id="flexSwitchCheckDefault" name="Job_Setup" value="yes">
+                    </div>
+                    <label class="pt-6">SUDAH JOB SET UP</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
 
-          <div class="container overflow-hidden text-center">
-            <div class="row gx-5">
-              <div class="form-check d-flex" role="group" aria-label="Basic example">
-                <div class="col-6 py-3">
-                  <label class="form-check label mt-2">Job Set Up</label>
-                </div>
-                <div class="form check-form-check-inline col-2 px-3 py-4 d-flex ">
-                  <input class="radio form-check input mx-3 big" type="radio" id="JSU" name="Job_Setup" value="yes">
-                  <label class="from-check-label py-1" for="open">yes</label>
-                </div>
-                <div class="form-check form-check-inline col-3 px-3 py-4 d-flex">
-                  <input class="radio form-check input mx-3 big" type="radio" id="JSU" name="Job_Setup" value="no">
-                  <label class="form-check-label py-1" for="close">no</label>
-                  <!-- <button type="button" class="btn btn-secondary">Right</button> -->
+          <div class="card">
+            <div class="container overflow">
+              <div class="row gx-2">
+                <div class="form-check d-flex mx-5" role="group" aria-label="Basic example">
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="hidden" id="flexSwitchCheckDefault" name="WI_Proses" value="no">
+                    </div>
+                    <label class="pt-6"><p>BELUM SOSIALISASI IK </p> PRODUKSI DAN CEK 100%</label>
+                  </div>
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="checkbox" id="flexSwitchCheckDefault" name="WI_Proses" value="yes">
+                    </div>
+                    <label class="pt-6"><p> SUDAH SOSIALISASI IK </p>PRODUKSI DAN CEK 100%</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
 
-          <div class="container overflow-hidden text-center">
-            <div class="row gx-5">
-              <div class="form-check d-flex" role="group" aria-label="Basic example">
-                <div class="col-6 py-3">
-                  <label class="form-check label mt-2"><p>WI Proses dan</p> IK Check 100%</label>
-                </div>
-                <div class="form check-form-check-inline col-2 px-3 py-4 d-flex ">
-                  <input class="radio form-check input mx-3 big" type="radio" id="WI" name="WI_Proses" value="yes">
-                  <label class="from-check-label py-1" for="open">yes</label>
-                </div>
-                <div class="form-check form-check-inline col-3 px-3 py-4 d-flex">
-                  <input class="radio form-check input mx-3 big" type="radio" id="WI" name="WI_Proses" value="no">
-                  <label class="form-check-label py-1" for="close">no</label>
-                  <!-- <button type="button" class="btn btn-secondary">Right</button> -->
+          <div class="card">
+            <div class="container overflow">
+              <div class="row gx-2">
+                <div class="form-check d-flex mx-5" role="group" aria-label="Basic example">
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="hidden" id="flexSwitchCheckDefault" name="Status" value="close">
+                    </div>
+                    <label class="pt-6">STATUS CLOSE</label>
+                  </div>
+                  <div class="col-5 form-group">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input fs-4 mt-4" type="checkbox" id="flexSwitchCheckDefault" name="Status" value="open">
+                    </div>
+                    <label class="pt-6">STATUS OPEN</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
 
           <div class="col ps-5 ms-5">
-            <button type="submit" class="btn btn-primary btn-lg ms-5">SUBMIT</button>
-            <button type="button" class="btn btn-secondary btn-lg ms-3" data-bs-target="#review" data-bs-toggle="modal">LIHAT TABEL</button>
+            <button type="submit" class="btn btn-primary btn-lg ms-5 mt-5">SUBMIT</button>
+            <button type="button" class="btn btn-warning btn-lg ms-3 mt-5" data-bs-target="#review" data-bs-toggle="modal">LIHAT TABEL</button>
           </div>
           </form>
         </div>
@@ -158,12 +184,12 @@
             <th nowrap="nowrap">Deskripsi</th>
             <th nowrap="nowrap">Problem</th>
             <th nowrap="nowrap">Countermeasure</th>
-            <th nowrap="nowrap">Status</th>
             <th nowrap="nowrap">Plan</th>
             <th nowrap="nowrap">Safety</th>
             <th nowrap="nowrap">Kakotora</th>
-            <th nowrap="nowrap">Job-Setup</th>
-            <th nowrap="nowrap" wrap="nowrap">WI-Proses</th>
+            <th nowrap="nowrap">Job Setup</th>
+            <th nowrap="nowrap">WI Proses</th>
+            <th nowrap="nowrap" wrap="nowrap">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -176,12 +202,12 @@
           <td>{{$item->Deskripsi}}</td>
           <td>{{$item->Problem}}</td>
           <td>{{$item->Countermeasure}}</td>
-          <td>{{$item->Status}}</td>
           <td>{{$item->Plan}}</td>
           <td>{{$item->Safety}}</td>
           <td>{{$item->Kakotora}}</td>
           <td>{{$item->Job_Setup}}</td>
           <td>{{$item->WI_Proses}}</td>
+          <td>{{$item->Status}}</td>
           <td>
             <a href='/man_edit/{{$item->No}}'><button type="button" class="btn btn-primary">Edit</button></a>
           </td>
