@@ -56,6 +56,7 @@ Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'Upd
 
 //====================== AREA MELTING ======================//
 Route::get('/production/melting', [MeltingController::class, 'Dashboard']);
+Route::get('/production/melting/level-molten', [MeltingController::class, 'levelMolten']);
 Route::get('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
 Route::post('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
 Route::get('/production/melting/{mesin}/{mulai}/{selesai}', [MeltingController::class, 'export_LHPMelting']);
@@ -66,6 +67,7 @@ Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_
 Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
 Route::get('/tv/melting/{mesin}', [MeltingController::class, 'Dashboard_tv']);
 Route::get('/tv', [MeltingController::class, 'testing']);
+
 
 //====================== FORKLIFT AREA MELTING ======================//
 Route::get('/lhpforklift', [MeltingController::class, 'prep_forklift']);
