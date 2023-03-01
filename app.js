@@ -164,40 +164,40 @@ io.on("connection", (socket) => {
             "SELECT * FROM input_kv8000 WHERE area='CA'",
             (err, HasilQueryA) => {
                 //==========[' UPDATE MOLTEN MC-47 ']==========//
-                connection.query(
-                    "UPDATE mesin_casting SET aktual_molten=" +
-                        HasilQueryA[0][234] +
-                        " WHERE mc= 47"
-                ),
-                    (err, Hasilupdate) => {};
+                // connection.query(
+                //     "UPDATE mesin_casting SET aktual_molten=" +
+                //         HasilQueryA[0][234] +
+                //         " WHERE mc= 47"
+                // ),
+                //     (err, Hasilupdate) => {};
                 //==========[' UPDATE MOLTEN MC-48 ']==========//
-                connection.query(
-                    "UPDATE mesin_casting SET aktual_molten=" +
-                        HasilQueryA[0][239] +
-                        " WHERE mc= 48"
-                ),
-                    (err, Hasilupdate) => {};
+                // connection.query(
+                //     "UPDATE mesin_casting SET aktual_molten=" +
+                //         HasilQueryA[0][239] +
+                //         " WHERE mc= 48"
+                // ),
+                //     (err, Hasilupdate) => {};
                 //==========[' UPDATE MOLTEN MC-51 ']==========//
-                connection.query(
-                    "UPDATE mesin_casting SET aktual_molten=" +
-                        HasilQueryA[0][254] +
-                        " WHERE mc= 51"
-                ),
-                    (err, Hasilupdate) => {};
+                // connection.query(
+                //     "UPDATE mesin_casting SET aktual_molten=" +
+                //         HasilQueryA[0][254] +
+                //         " WHERE mc= 51"
+                // ),
+                //     (err, Hasilupdate) => {};
                 //==========[' UPDATE MOLTEN MC-52 ']==========//
-                connection.query(
-                    "UPDATE mesin_casting SET aktual_molten=" +
-                        HasilQueryA[0][259] +
-                        " WHERE mc= 52"
-                ),
-                    (err, Hasilupdate) => {};
+                // connection.query(
+                //     "UPDATE mesin_casting SET aktual_molten=" +
+                //         HasilQueryA[0][259] +
+                //         " WHERE mc= 52"
+                // ),
+                //     (err, Hasilupdate) => {};
                 //==========[' UPDATE MOLTEN MC-53 ']==========//
-                connection.query(
-                    "UPDATE mesin_casting SET aktual_molten=" +
-                        HasilQueryA[0][264] +
-                        " WHERE mc= 53"
-                ),
-                    (err, Hasilupdate) => {};
+                // connection.query(
+                //     "UPDATE mesin_casting SET aktual_molten=" +
+                //         HasilQueryA[0][264] +
+                //         " WHERE mc= 53"
+                // ),
+                //     (err, Hasilupdate) => {};
             }
         );
     }, 3000);
