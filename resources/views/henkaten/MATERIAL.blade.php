@@ -25,7 +25,6 @@
         </div>
       </div>
 
-
       <div class="col-6 pt-5">
           <div class="card">
             <div class="container overflow">
@@ -69,7 +68,6 @@
             </div>
           </div>
 
-
           <div class="card">
             <div class="container overflow">
               <div class="row gx-2">
@@ -111,7 +109,6 @@
               </div>
             </div>
           </div>
-
 
           <div class="card">
             <div class="container overflow">
