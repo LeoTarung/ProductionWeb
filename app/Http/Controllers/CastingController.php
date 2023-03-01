@@ -24,7 +24,7 @@ class CastingController extends Controller
         return view('menu.production.casting.casting', compact('title', 'shift', 'date', 'mesin'));
     }
 
-     public function tvCasting(UsableController $useable)
+     public function tvCasting(UsableController $useable, $id)
     {
         
         //{{  Untuk Menyyeleksi Henkaten}}  //
@@ -62,11 +62,16 @@ class CastingController extends Controller
       
 // dd($array['dua']);
 
+        $mc = MesinCasting::where('mc', $id)->first();
+        $mcfordata = $mc->count();
+        // dd($mcfordata);
         return view('menu.production.casting.tvCasting',[
             'line' =>"NM.FR.AH091",
             'part' =>"PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
-            'urgent' => 0,
+            'urgent' => 1,
             'aktual' => 4009,
+            'aktual' => $mc->total_part,
+            'mcfordata' =>$mcfordata,
             // 'aktual2'=> 400///
             'target' => 0,
             'persen' => 94,
@@ -85,7 +90,8 @@ class CastingController extends Controller
             'isi4b' => "METHOD",
             'isi4c' => "MACHINE",
             'isi4d' => "MATERIAL",
-            'shift' => 2
+            'shift' => 2,
+ 
         ]);
     }
 

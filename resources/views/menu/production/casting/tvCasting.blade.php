@@ -39,7 +39,7 @@
                 <div class="col-4 aktual">
                     <div class="text-center rounded-0">
                         <div class="penjelasan box">AKTUAL</div>
-                        <div class="angka">{{ $aktual }}</div>
+                        <div id="aktual" class="angka"></div>
                     </div>
                 </div>
                 <div class="col-4 target">
@@ -431,7 +431,6 @@
     </footer>
 
     <script>
-
     // hitung target
 
         var target = 5000;
@@ -538,8 +537,30 @@
                 } 
 
         @endif  
+    </script>
+
+    <script>
+         $(function() {
+            let ip_node = location.hostname;
+            let socket_port = '1553';
+            let socket = io(ip_node + ':' + socket_port);
+            socket.on('connection');
+
+            socket.on("levelMolten_settings", (data) => {
+
+
+                let for_mc = {{ $mcfordata }} - 1;
+             let aktual = data[$mcfordata].mc;
+             
+             
+             document.getElementById("aktual").innerHTML = aktual;
+             
+
+            })
+
+        });
+
     
-   
     </script>
 
 </body>
