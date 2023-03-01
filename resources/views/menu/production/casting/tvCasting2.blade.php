@@ -434,7 +434,7 @@
                             <div class="col-3 mt-2 pt-2 text-center m-auto kkavaila"> AVA</div>
                             <div class="col-9 mt-1">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45</div>
                                 </div>
                             </div>
                         </div>
@@ -443,7 +443,7 @@
                             <div class="col-3 text-center m-auto kkqurate"> QUA </div>
                             <div class="col-9">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60</div>
                                 </div>
                             </div>
                         </div>
@@ -574,7 +574,7 @@
                             <div class="col-3 text-center m-auto availa"> AVAILABILITY </div>
                             <div class="col-9">
                                 <div class="progress rounded-3 border border-3" style="height: 60px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45</div>
                                 </div>
                             </div>
                         </div>
@@ -583,7 +583,7 @@
                             <div class="col-3 text-center m-auto qurate"> QUALITY RATE </div>
                             <div class="col-9">
                                 <div class="progress rounded-3 border border-3" style="height: 60px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60</div>
                                 </div>
                             </div>
                         </div>
