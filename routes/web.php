@@ -57,6 +57,7 @@ Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'Upd
 
 //====================== AREA MELTING ======================//
 Route::get('/production/melting', [MeltingController::class, 'Dashboard']);
+Route::get('/production/melting/level-molten', [MeltingController::class, 'levelMolten']);
 Route::get('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
 Route::post('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
 Route::get('/production/melting/{mesin}/{mulai}/{selesai}', [MeltingController::class, 'export_LHPMelting']);
@@ -68,18 +69,23 @@ Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_
 Route::get('/tv/melting/{mesin}', [MeltingController::class, 'Dashboard_tv']);
 Route::get('/tv', [MeltingController::class, 'testing']);
 
+
 //====================== FORKLIFT AREA MELTING ======================//
-Route::get('/pre-forklift', [MeltingController::class, 'prep_forklift']);
-Route::post('/pre-forklift/simpan', [MeltingController::class, 'prep_forklift_simpan']);
+Route::get('/lhpforklift', [MeltingController::class, 'prep_forklift']);
+Route::post('/lhpforklift/simpan', [MeltingController::class, 'prep_forklift_simpan']);
 Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift']);
 Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_forklift_raw_simpan']);
 
 //====================== AREA CASTING ======================//
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
+Route::get('/tvCasting/{id}', [CastingController::class, 'tvCasting']);
+Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
+
 
 //====================== HC & GA ======================//
 Route::get('/hrd/karyawan', [HcgaController::class, 'karyawan']);
 Route::post('/hrd/karyawan/update', [HcgaController::class, 'update_karyawan']);
+
 
 //====================== Only Testing ======================//
 Route::get('/test', [MeltingTestController::class, 'index']);

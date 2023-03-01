@@ -1,0 +1,1323 @@
+.body {
+  background-color: #00af50;
+}
+
+.conflu {
+  min-height:90vh;
+  margin-top: -25px;
+}
+
+.line{
+  margin-top: 20px;
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+}
+
+.status{
+  margin: auto;
+  margin-top: 5px;
+  margin-right: 10px;
+  background-color: red;
+  height: 50%;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 500;
+  border-radius: 0em 0em 1em 1em / 1em;
+}
+
+.penjelasan {
+  background-color: #0d0148;
+  font-size: 30px;
+  font-weight: 500;
+  border-radius: 0em 0em 1em 1em / 1em;
+  color: white;
+}
+
+.angka {
+  margin-top: -10px;
+  /* margin-bottom: -5px; */
+  font-size: 100px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.atas{
+  background-color: rgb(255, 255, 255);
+}
+.aktual{
+  background-color: white;
+  text-align: center;
+}
+
+.target{
+  background-color: white;
+}
+
+.parent {
+  height: 150px;
+}
+.child{
+  width: 350px;
+  height: 220px;
+  margin-top: -20px;
+}
+
+.parallelogram {
+  /* width: 100%;
+  height: 100%; */
+  transform: skew(-20deg);
+  background: #00af50;
+  color: white;
+}
+
+.parallelogram h1 {
+  transform: skew(20deg);
+}
+
+.box{
+  box-shadow: 0px 5px 10px 0px rgba(5, 0, 0, 5); 
+}
+
+.boxperform{
+  box-shadow: 0px 5px 15px 0px rgba(5, 0, 0, 5); 
+}
+
+.pperform{
+  font-size: 30px;
+  font-weight: 500;
+  transform: skew(0deg);
+  padding-top: 0px;
+
+}
+
+.persen {
+  font-size: 145px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.symbol{
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
+
+}
+
+.downtime{
+  margin-top: 5px;
+  margin-right: 0px;
+  padding-top: 5px;
+  background-color: #d71f1f;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  height: 60px;
+}
+
+.henkaten {
+  border-radius: 1em 0em 0em 1em / 1em;
+  margin-left: 0px;
+  height: 90%;
+}
+
+.henka {
+  transform: rotate(270deg);
+  margin-top: 110px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.manpower{
+  background-color: white;
+  padding-top: 0px;
+  width: 100%;
+  height: 90%;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+  border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+}
+
+.progress {
+  width: 98%;
+}
+
+.progress-bar {
+  font-size: 30px;
+  font-weight: 500;
+  color: #0d0148;
+}
+
+.availa {
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+}
+
+.qurate {
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+
+}
+
+.shift {
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+
+}
+
+.jam{
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+
+}
+
+footer {
+  background-color: #ffffff;
+  margin-top: 7px;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1400px) { 
+  .body {
+    background-color: #00af50;
+    overflow: hidden;
+  }
+  
+  .conflu {
+    min-height:92.5vh;
+    margin-top: -25px;
+
+  }
+  
+  .nama .line{
+    margin-top: 30px;
+    font-size: 55px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .part{
+    font-size: 65px;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .status{
+    margin: auto;
+    margin-top: 5px;
+    margin-left: -10px;
+    margin-right: 15px;
+    background-color: red;
+    height: 60%;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 75px;
+    font-weight: 500;
+    border-radius: 0em 0em 1em 1em / 1em;
+  }
+  
+  .penjelasan {
+    width: 80%;
+    margin-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #0d0148;
+    font-size: 45px;
+    font-weight: 500;
+    border-radius: 0em 0em 1em 1em / 1em;
+    color: white;
+    text-align: center;
+  }
+
+  .angka {
+    margin-top: 0px;
+    /* margin-bottom: -5px; */
+    padding-left: 70px;
+    font-size: 150px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .atas{
+    height: 320px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .aktual{
+    background-color: white;
+    text-align: center;
+  }
+  
+  .target{
+    background-color: white;
+  }
+
+  .parent {
+    width: 100px;
+    height: 150px;
+  }
+
+  .child{
+    width: 520px;
+    height: 380px;
+    margin-top: -30px ;
+  }
+
+  .parent .pperform {
+    font-size: 50px;
+    font-weight: 500;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .parallelogram {
+    /* width: 90%;
+    height: 100%; */
+    transform: skew(-20deg);
+    background: #00af50;
+    color: white;
+  }
+
+  .parallelogram h1 {
+    transform: skew(20deg);
+  }
+
+  .box{
+    box-shadow: 0px 5px 10px 0px rgba(5, 0, 0, 5); 
+  }
+
+  .boxperform{
+    box-shadow: px 5px 0px 5px rgba(5, 0, 0, 5); 
+  }
+  
+  .persen1{
+    /* margin-top: -20px; */
+    margin-left: -20px;
+    font-size: 220px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .persen2 {
+    font-size: 250px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 10px 19px black;
+    animation: animate 2.0s linear infinite;
+    color: #ff0000;
+  }
+
+  @keyframes animate{
+   
+    50%{
+      opacity: 0.5;
+    }
+    100%{
+      opacity: 1.0;
+    }
+  }
+
+  .symbol{
+    font-size: 80px;
+    font-weight: 600;
+  }
+
+  .running {
+     /* margin-left: 60px; */
+    /* margin-top: 50px; */
+    background-color: #0f5d31;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+    font-size: 50px;
+    font-weight: 600;
+    height: 90px;
+  }
+  
+  .downtime{
+    /* margin-left: 60px; */
+    /* margin-top: 50px; */
+    background-color: #c91414;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    height: 90px;
+  }
+    
+  /* henkaten ada 1 */
+  .henkaten1 {
+    border-radius: 1em 0em 0em 1em / 1em;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    height: 100%;
+    background-color: white;
+  }
+
+  .henka1 {
+    transform: rotate(270deg);
+    margin-top: 130px;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .manpower1{
+    background-color: rgb(203, 47, 47);
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 70px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .method1{
+    background-color: #fec746;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 70px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .machine1{
+    background-color: #A555EC;
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 70px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .material1{
+    background-color: #03C988;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 70px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  /* henkaten ada 2 */
+  .henkaten2 {
+    border-radius: 1em 0em 0em 1em / 1em;
+    margin-left: 20px;
+    height: 100%;
+    /* background: linear-gradient(
+      to bottom,
+      #1C315E 0%,
+      #1C315E 25%,
+      #1C315E 50%,
+      #E6E2C3  50%,
+      #E6E2C3  75%,
+      #E6E2C3 100%
+    ); */
+    background-color: white;
+  }
+
+  .henka2 {
+    transform: rotate(270deg);
+    margin-top: 140px;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .manpower2{
+    background-color: white;
+    color: white;
+    padding-top: 10px;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .method2{
+    background-color: white;
+    padding-top: 10px;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  /* henkaten ada 3 */
+  .henkaten3 {
+    border-radius: 1em 0em 0em 1em / 1em;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    height: 100%;
+    /* background: linear-gradient(
+      to bottom,
+      #1C315E 0%,
+      #1C315E 34%,
+      #227C70 34%,
+      #227c70 67%,
+      #227c70 67%,
+      #E6E2C3  67%,
+      #E6E2C3  75%,
+      #E6E2C3 100%
+    ); */
+    background-color: white;
+  }
+
+  .henka3 {
+    transform: rotate(270deg);
+    margin-top: 135px;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .manpower3{
+    background-color: white;
+    color: white;
+    width: 100%;
+    height: 34%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .method3{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .machine3{
+    background-color: white;
+    color: white;
+    width: 100%;
+    height: 33%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  /* henkaten ada 4 */
+  .henkaten4 {
+    border-radius: 1em 0em 0em 1em / 1em;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    height: 100%;
+    background-color: white;
+  }
+
+  .henka4 {
+    transform: rotate(270deg);
+    margin-top: 135px;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .manpower4{
+    background-color: rgb(203, 47, 47);
+    color: white;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+
+  }
+
+  .method4{
+    background-color: #fec746;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .machine4{
+    background-color: #A555EC;
+    color: white;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .material4{
+    background-color: #03C988;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+  
+  .progress {
+    width: 95%;
+    background: #0d0148;
+  }
+
+  .progress-bar {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .availa {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+
+  }
+  
+  .qurate {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+
+  }
+
+  .shift {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+
+  }
+
+  .jam{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+
+  }
+
+  footer {
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    font-weight: 500;
+  }
+}
+
+
+/* untuk 2tv */
+.kkbody {
+  background-color: #00af50;
+}
+
+.kkconflu {
+  min-height:90vh;
+  margin-top: -25px;
+}
+
+.kkline{
+  margin-top: 20px;
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+}
+
+.kkstatus{
+  margin: auto;
+  margin-top: 5px;
+  margin-right: 10px;
+  background-color: red;
+  height: 50%;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 500;
+  border-radius: 0em 0em 1em 1em / 1em;
+}
+
+.kkpenjelasan {
+  background-color: #0d0148;
+  font-size: 30px;
+  font-weight: 500;
+  border-radius: 0em 0em 1em 1em / 1em;
+  color: white;
+}
+
+.kkangka {
+  margin-top: -10px;
+  /* margin-bottom: -5px; */
+  font-size: 100px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.kkatas{
+  background-color: rgb(255, 255, 255);
+}
+
+.kkaktual{
+  background-color: white;
+  text-align: center;
+}
+
+.kktarget{
+  background-color: white;
+}
+
+.kkparent {
+  height: 150px;
+}
+.kkchild{
+  width: 350px;
+  height: 220px;
+  margin-top: -20px;
+}
+
+.kkparallelogram {
+  /* width: 100%;
+  height: 100%; */
+  transform: skew(-20deg);
+  background: #00af50;
+  color: white;
+}
+
+.kkparallelogram h1 {
+  transform: skew(20deg);
+}
+
+.kkbox{
+  box-shadow: 0px 5px 10px 0px rgba(5, 0, 0, 5); 
+}
+
+.kkboxperform{
+  box-shadow: 0px 5px 15px 0px rgba(5, 0, 0, 5); 
+}
+
+.kkpperform{
+  font-size: 30px;
+  font-weight: 500;
+  transform: skew(0deg);
+  padding-top: 0px;
+
+}
+
+.kkpersen {
+  font-size: 145px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.kksymbol{
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
+
+}
+
+.kkdowntime{
+  margin-top: 5px;
+  margin-right: 0px;
+  padding-top: 5px;
+  background-color: #d71f1f;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  height: 60px;
+}
+
+.kkhenkaten {
+  border-radius: 1em 0em 0em 1em / 1em;
+  margin-left: 0px;
+  height: 90%;
+}
+
+.kkhenka {
+  transform: rotate(270deg);
+  margin-top: 110px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.kkmanpower{
+  background-color: white;
+  padding-top: 0px;
+  width: 100%;
+  height: 90%;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+  border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+}
+
+.kkprogress {
+  width: 98%;
+}
+
+.kkprogress-bar {
+  font-size: 30px;
+  font-weight: 500;
+  color: #0d0148;
+}
+
+.kkavaila {
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+}
+
+.kkqurate {
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+
+}
+
+.kkshift {
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+
+}
+
+.kkjam{
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+
+}
+
+.kkfooter {
+  background-color: #ffffff;
+  margin-top: 7px;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1400px) { 
+  .kkbody {
+    background-color: #00af50;
+    overflow: hidden;
+  }
+  
+  .kkconflu {
+    min-height:92.5vh;
+    margin-top: -25px;
+  }
+
+  .kkka {
+    border-style: hidden solid hidden hidden;
+    border-width: 2px;
+    border-color: white;
+    height: 100%;
+  }
+/* 
+  .kkki {
+    border-style: hidden hidden hidden hidden;
+    border-width: 2px;
+    border-color: white;
+  } */
+
+  .kknama{
+    height: 250px;
+ }
+  
+  .kkline{
+    margin-top: 30px;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .kkpart{
+    font-size: 60px;
+    font-weight: 700;
+
+    color: white;
+  }
+  
+  .kkstatus{
+    margin: auto;
+    /* margin-top: 5px; */
+    margin-left: -40px;
+    margin-right: 15px;
+    background-color: red;
+    height: 40%;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 500;
+    border-radius: 0em 0em 1em 1em / 0.8em;
+  }
+  
+  .kkpenjelasan {
+    width: 85%;
+    margin-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #0d0148;
+    font-size: 40px;
+    font-weight: 500;
+    border-radius: 0em 0em 1em 1em / 1em;
+    color: white;
+    text-align: center;
+  }
+
+  .kkangka {
+    margin-top: 0px;
+    /* margin-bottom: -5px; */
+    padding-left: 30px;
+    font-size: 100px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .kkatas{
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .kkaktual{
+    background-color: white;
+    text-align: center;
+  }
+  
+  .kktarget{
+    background-color: white;
+  }
+
+  /* .performance {
+    background-color:#269056 ;
+    border-color: black;
+    color: white;
+  } */
+
+  .kkparent {
+    width: 100px;
+    height: 150px;
+
+  }
+
+  .kkchild{
+    width: 260px;
+    height: 310px;
+    margin-top: -30px ;
+    margin-left: -20px;
+  }
+
+  .kkpperform {
+    font-size: 35px;
+    font-weight: 500;
+    padding-top: 45px;
+    padding-bottom: 40px
+  }
+
+  .kkparallelogram {
+    /* width: 90%;
+    height: 100%; */
+    transform: skew(-20deg);
+    background: #00af50;
+    color: white;
+  }
+
+  .kkparallelogram h1 {
+    transform: skew(20deg);
+    /* padding-top: 20px; */
+  }
+
+  .kkbox{
+    box-shadow: 0px 5px 10px 0px rgba(5, 0, 0, 5); 
+  }
+
+  /* .boxdt {
+    /* box-shadow: px 5px 5px 5px rgba(5, 0, 0, 5);  
+  } */
+
+  .kkboxperform{
+    box-shadow: px 5px 0px 5px rgba(5, 0, 0, 5); 
+  }
+  
+  .kkpersen1{
+    /* margin-top: -20px; */
+    margin-left: -20px;
+    font-size: 100px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .kkpersen2 {
+    margin-left: -10px;
+    font-size: 100px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 10px 19px black;
+    animation: animate 2.0s linear infinite;
+    color: #ff0000;
+  }
+
+  @keyframes animate{
+   
+    50%{
+      opacity: 0.5;
+    }
+    100%{
+      opacity: 1.0;
+    }
+  }
+
+  .kksymbol{
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  .kkrunning {
+     /* margin-left: 60px; */
+    /* margin-top: 50px; */
+    background-color: #0f5d31;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+    font-size: 50px;
+    font-weight: 600;
+    height: 90px;
+  }
+  
+  .kkdowntime{
+    /* margin-left: 60px; */
+    /* margin-top: 50px; */
+    background-color: #c91414;
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    font-weight: 600;
+    height: 90px;
+  }
+    
+  /* henkaten ada 1 */
+  .kkhenkaten1 {
+    border-radius: 1em 0em 0em 1em / 1em;
+    margin-top: 15px;
+    margin-left: 10px;
+    height: 80%;
+    background-color: white;
+  }
+
+  .kkhenka1 {
+    transform: rotate(270deg);
+    margin-top: 125px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .kkmanpower1{
+    background-color: rgb(203, 47, 47);
+    color: white;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 20%;
+    font-size: 40px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .kkmethod1{
+    background-color: #fec746;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 70px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .kkmachine1{
+    background-color: #A555EC;
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 70px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .kkmaterial1{
+    background-color: #03C988;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 70px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  /* henkaten ada 2 */
+  .kkhenkaten2 {
+    border-radius: 1em 0em 0em 1em / 1em;
+    /* margin-top: 10px; */
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 90%;
+    /* background: linear-gradient(
+      to bottom,
+      #1C315E 0%,
+      #1C315E 25%,
+      #1C315E 50%,
+      #E6E2C3  50%,
+      #E6E2C3  75%,
+      #E6E2C3 100%
+    ); */
+    background-color: white;
+  }
+
+  .kkhenka2 {
+    transform: rotate(270deg);
+    margin-top: 150px;
+    font-size: 36px;
+    font-weight: 700;
+  }
+  
+  .kkprep2 .kkmanpower2{
+    background-color: white;
+    color: white;
+    padding-top: 20px;
+    width: 100%;
+    height: 45%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .kkprep2 .kkmethod2{
+    background-color: white;
+    /* margin-top: -20px; */
+    padding-top: 20px;
+    width: 100%;
+    height: 45%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  /* henkaten ada 3 */
+  .kkhenkaten3 {
+    border-radius: 1em 0em 0em 1em / 1em;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 90%;
+    /* background: linear-gradient(
+      to bottom,
+      #1C315E 0%,
+      #1C315E 34%,
+      #227C70 34%,
+      #227c70 67%,
+      #227c70 67%,
+      #E6E2C3  67%,
+      #E6E2C3  75%,
+      #E6E2C3 100%
+    ); */
+    background-color: white;
+  }
+
+  .kkhenka3 {
+    transform: rotate(270deg);
+    margin-top: 155px;
+    font-size: 38px;
+    font-weight: 700;
+  }
+
+  .kkprep3 .kkmanpower3{
+    background-color: white;
+    color: white;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    /* margin-top: 10px; */
+    padding-top: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .kkprep3 .kkmethod3{
+    background-color: white;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .kkprep3 .kkmachine3{
+    background-color: white;
+    color: white;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    /* margin-bottom: 25px; */
+    padding-top: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  /* henkaten ada 4 */
+  .kkhenkaten4 {
+    border-radius: 1em 0em 0em 1em / 1em;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 100%;
+    background-color: white;
+  }
+
+  .kkhenka4 {
+    transform: rotate(270deg);
+    margin-top: 165px;
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+  .kkmanpower4{
+    background-color: rgb(203, 47, 47);
+    color: white;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+
+  }
+
+  .kkmethod4{
+    background-color: #fec746;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .kkmachine4{
+    background-color: #A555EC;
+    color: white;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+
+  .kkmaterial4{
+    background-color: #03C988;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 650;
+    border-radius: 0em 0.5em 0.5em 0em / 0.5em;
+  }
+  
+  .kkprogress {
+    width: 95%;
+    /* background: #0d0148; */
+  }
+
+  .kkprogress-bar {
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+  }
+
+  .kkavaila {
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .kkqurate {
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .kkshift {
+    font-size:25px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .kkjam{
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+
+  }
+
+  .kkfooter {
+    background-color: #ffffff;
+    margin-top: -5px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    font-weight: 500;
+  }
+
+  .kkcomingsoon {
+    background-color: #3b3838;
+  }
+}
+
+/* udah kanann kiri  */
