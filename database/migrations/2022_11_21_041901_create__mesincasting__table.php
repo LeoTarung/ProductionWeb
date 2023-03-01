@@ -20,6 +20,7 @@ class CreateMesincastingTable extends Migration
             $table->integer('aktual_molten')->default('0');
             $table->integer('min_level_molten')->default('0');
             $table->integer('max_level_molten')->default('0');
+            $table->integer('total_part')->default('0');
             $table->string('nama_part')->nullable()->default("");
             $table->integer('kode_kanban')->default('0');
             $table->integer('kode_henkaten')->default('0');
