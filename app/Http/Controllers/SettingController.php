@@ -42,7 +42,7 @@ class SettingController extends Controller
         // } else {
         //     $editmc = ["NULLAH"];
         // }
-
+            
         $utama = $molten->material;
         $id = $molten->mc;
         $range_hitung = MesinCasting::where('mc', '<=',$id)->get();
