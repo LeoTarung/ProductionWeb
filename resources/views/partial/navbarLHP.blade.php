@@ -46,7 +46,8 @@
         </li>
         <li>
 
-            @if ($nrp != 0)
+            {{-- LHP MELTING --}}
+            @if ($nrp != 0 && Request::url() == url('/lhp-melting'))
                 <a href="{{ url('/lhp-melting') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -55,6 +56,57 @@
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 </a>
+            @elseif(Request::url() == url('/lhp-melting'))
+                <a href="{{ url('/lhp-melting') }}" class="navitems">
+                    <div class="nrp border-bottom">
+                        <div class="font-white"> PILIH MESIN </div>
+                    </div>
+                </a>
+            @elseif(Request::url() == url('/lhp-melting/' . $mesin . '/' . $id . ''))
+                <a href="{{ url('/lhp-melting') }}" class="navitems">
+                    <div class="nrp">
+                        <div class="font-white"> NRP : </div>
+                    </div>
+                    <div class="nrp nrp-child border-bottom ">
+                        <div class="font-white fw-bold">{{ $nrp }}</div>
+                    </div>
+                </a>
+
+                {{-- LHP FORKLIFT --}}
+            @elseif ($nrp != 0 && Request::url() == url('/lhpforklift'))
+                <a href="{{ url('/lhpforklift') }}" class="navitems">
+                    <div class="nrp">
+                        <div class="font-white"> NRP : </div>
+                    </div>
+                    <div class="nrp nrp-child border-bottom ">
+                        <div class="font-white fw-bold">{{ $nrp }}</div>
+                    </div>
+                </a>
+            @elseif($nrp == null && Request::url() == url('/lhpforklift'))
+                <a href="{{ url('/lhpforklift') }}" class="navitems">
+                    <div class="nrp border-bottom">
+                        <div class="font-white"> PILIH FORKLIFT </div>
+                    </div>
+                </a>
+            @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
+                <a href="{{ url('/lhpforklift') }}" class="navitems">
+                    <div class="nrp">
+                        <div class="font-white"> NRP : </div>
+                    </div>
+                    <div class="nrp nrp-child border-bottom ">
+                        <div class="font-white fw-bold">{{ $nrp }}</div>
+                    </div>
+                </a>
+
+                {{-- LHP CASTING --}}
+            @elseif(Request::url() == url('/final'))
+                <a href="{{ url('/lhp-melting') }}" class="navitems">
+                    <div class="nrp border-bottom">
+                        <div class="font-white"> CASTING</div>
+                    </div>
+                </a>
+
+                {{-- SETTINGS --}}
             @elseif(Request::url() == url('/settings'))
                 <a href="{{ url('/settings') }}" class="navitems">
                     <div class="nrp border-bottom">
@@ -65,12 +117,6 @@
                 <a href="{{ url('/settings') }}" class="navitems">
                     <div class="nrp border-bottom">
                         <div class="font-white"> Menu Utama </div>
-                    </div>
-                </a>
-            @else
-                <a href="{{ url('/lhp-melting') }}" class="navitems">
-                    <div class="nrp border-bottom">
-                        <div class="font-white"> PILIH MESIN </div>
                     </div>
                 </a>
             @endif
