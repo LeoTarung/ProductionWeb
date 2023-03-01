@@ -11,7 +11,7 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    database: "production-app",
+    database: "production_app",
 });
 
 io.on("connection", (socket) => {
