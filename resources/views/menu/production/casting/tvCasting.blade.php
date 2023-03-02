@@ -205,7 +205,7 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                
             @elseif($shift == 2)
                 <div class="row mt-4 mb-1">
                     <div class="col-3 text-center m-auto shift"> SHIFT 2</div>
@@ -281,11 +281,11 @@
                     </div>
                 </div>
             </div>
-        @endif
-
+            @endif
+        </div>
     </div>
-    </div>
-@else
+    
+    @else
     {{-- jika henkaten tidak ada --}}
     <div class="row">
         <div class="col-12">
@@ -341,86 +341,85 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    @elseif($shift == 2)
-        <div class="row mt-4 mb-1">
-            <div class="col-3 text-center m-auto shift"> SHIFT 2</div>
-            <div class="col-9">
-                <div class="row ms-1">
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">07</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">08</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">09</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">10</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">11</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">12</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">13</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">14</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">15</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">16</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @elseif($shift == 3)
-        <div class="row mt-4 mb-1">
-            <div class="col-3 text-center m-auto shift"> SHIFT 3</div>
-            <div class="col-9">
-                <div class="row ms-1">
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">16</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">17</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">18</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">19</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">20</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">21</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">22</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">23</p>
-                    </div>
-                    <div class="col-1 text-center border border-light">
-                        <p class="jam" style="margin-top: 10px;">00</p>
+        
+            @elseif($shift == 2)
+                <div class="row mt-4 mb-1">
+                    <div class="col-3 text-center m-auto shift"> SHIFT 2</div>
+                    <div class="col-9">
+                        <div class="row ms-1">
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">07</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">08</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">09</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">10</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">11</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">12</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">13</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">14</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">15</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">16</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @elseif($shift == 3)
+                <div class="row mt-4 mb-1">
+                    <div class="col-3 text-center m-auto shift"> SHIFT 3</div>
+                    <div class="col-9">
+                        <div class="row ms-1">
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">16</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">17</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">18</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">19</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">20</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">21</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">22</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">23</p>
+                            </div>
+                            <div class="col-1 text-center border border-light">
+                                <p class="jam" style="margin-top: 10px;">00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
-    </div>
-    @endif
-
-
+            @endif
     </div>
     </div>
+    
     @endif
     </div>
 
@@ -433,7 +432,7 @@
     <script>
         // hitung target
 
-        var target = 3000;
+        var target =55000;
         // var target = console.log("test")
 
         const element = document.getElementById("target");
@@ -553,21 +552,26 @@
                 //Persentase
 
                 var ValPersen = (aktual / i * 100);
+                
+                pembulatan = ValPersen.toFixed(0);
                 // var persen = 96;
+            
                 let persen = document.getElementById("persen");
-                if (ValPersen >= 95) {
-                    persen.innerHTML = ValPersen;
+                if (pembulatan >= 95) {
+                    persen.innerHTML = pembulatan;
                     persen.style.marginTop = '-20px';
                     persen.style.marginLeft = '-20px';
                     persen.style.fontSize = '220px';
 
                 } else {
-                    persen.innerHTML = ValPersen;
+                    persen.innerHTML = pembulatan;
                     persen.style.fontSize = '250px';
+                    // persen.style.marginTop = '-40px';
                     persen.style.textShadow = '0 10px 19px #000000';
                     persen.style.animation = 'animate 2.0s linear infinite';
                     persen.style.color = '#ff0000';
                 }
+                
 
                 // console.log(data[for_mc].total_part);
 
