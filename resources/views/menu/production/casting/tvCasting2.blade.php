@@ -87,11 +87,11 @@
                 </div>
                 
                 @if($running != null) 
-                    <div class="row mt-5 mb-2"> 
+                    <div class="row mt-5 mb-3"> 
                         <div class="kkdowntime shadow mt-3 "> DOWNTIME - {{$downtime}}</div>
                     </div>
                 @else 
-                    <div class="row mt-5 mb-2"> 
+                    <div class="row mt-5 mb-3"> 
                         <div class="kkrunning  mt-3 "> RUNNING </div>
                     </div>
                 @endif
@@ -138,13 +138,13 @@
                         </div>
     
                     @elseif($prep == 4)
-                        <div class="col-4 mt-3 d-flex ">
+                        <div class="col-4 mt-4 mb-2 d-flex ">
                                     
                             <div class="col-2 kkhenkaten4">
                                 <p class="kkhenka4"> HENKATEN</p>
                             </div>
                         
-                            <div class="row">
+                            <div class="row kkprep4">
                                 <div class="col-10 kkmanpower4 ">{{ $isi4a }}</div>
                                 <div class="col-10 kkmethod4 ">{{ $isi4b }}</div>
                                 <div class="col-10 kkmachine4 ">{{ $isi4c }}</div>
@@ -157,10 +157,10 @@
     
                     <div class="col-8 mb-2">
                         <div class="row mt-4 mb-1"> 
-                            <div class="col-3 mt-2 pt-2 text-center m-auto kkavaila"> AVA</div>
-                            <div class="col-9 mt-1">
+                            <div class="col-3 mt-3 pt-2 text-center m-auto kkavaila"> AVA</div>
+                            <div class="col-9 mt-3">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                             <div class="col-3 text-center m-auto kkqurate"> QUA </div>
                             <div class="col-9">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
                             </div>
                         </div>
@@ -361,11 +361,11 @@
                 </div>
                 
                 @if($running2 != null) 
-                    <div class="row mt-5 mb-2"> 
+                    <div class="row mt-5 mb-3"> 
                         <div class="kkdowntime shadow mt-3 "> DOWNTIME - {{$downtime2}}</div>
                     </div>
                 @else 
-                    <div class="row mt-5 mb-2"> 
+                    <div class="row mt-5 mb-3"> 
                         <div class="kkrunning  mt-3 "> RUNNING </div>
                     </div>
                 @endif
@@ -400,11 +400,11 @@
                     @elseif($prep2 == 3)
                         <div class="col-4 mt-4 d-flex ">
                                 
-                            <div class="col-2 kkhenkaten3" >
+                            <div class="col-2 kkhenkaten3 " >
                                 <p class="kkhenka3">HENKATEN</p>
                             </div>
                         
-                            <div class="row kkprep3">
+                            <div class="row kkprep3 ">
                                 <div id="henkaten7a" class="col-10 kkmanpower3 ">{{ $isi7a }}</div>
                                 <div id="henkaten7b" class="col-10 kkmethod3 ">{{ $isi7b }}</div>
                                 <div id="henkaten7c" class="col-10 mb-4 kkmachine3 ">{{ $isi7c }}</div>
@@ -412,13 +412,13 @@
                         </div>
     
                     @elseif($prep2 == 4)
-                        <div class="col-4 mt-3 d-flex ">
+                        <div class="col-4 mt-4 mb-2 d-flex ">
                                     
                             <div class="col-2 kkhenkaten4">
                                 <p class="kkhenka4"> HENKATEN</p>
                             </div>
                         
-                            <div class="row">
+                            <div class="row kkprep4">
                                 <div class="col-10 kkmanpower4 ">{{ $isi8a }}</div>
                                 <div class="col-10 kkmethod4 ">{{ $isi8b }}</div>
                                 <div class="col-10 kkmachine4 ">{{ $isi8c }}</div>
@@ -431,8 +431,8 @@
     
                     <div class="col-8 mb-2">
                         <div class="row mt-4 mb-1"> 
-                            <div class="col-3 mt-2 pt-2 text-center m-auto kkavaila"> AVA</div>
-                            <div class="col-9 mt-1">
+                            <div class="col-3 mt-3 pt-2 text-center m-auto kkavaila"> AVA</div>
+                            <div class="col-9 mt-3">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
                                     <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
@@ -714,7 +714,7 @@
         
     </div>
 
-    <footer class="container-fluid d-flex align-self-center kkfooter ">
+    <footer class="container-fluid d-flex align-self-center mt-1 mb-1 pt-2 kkfooter ">
     <marquee >
         <p>REALTIME MONITORING</p>
         </marquee> 
