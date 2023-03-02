@@ -24,9 +24,9 @@ class CastingController extends Controller
         return view('menu.production.casting.casting', compact('title', 'shift', 'date', 'mesin'));
     }
 
-     public function tvCasting(UsableController $useable, $id)
+    public function tvCasting(UsableController $useable, $id)
     {
-        
+
         //{{  Untuk Menyyeleksi Henkaten}}  //
         // $mp = null;
         // $met = null;
@@ -59,25 +59,25 @@ class CastingController extends Controller
         // else {
 
         // }
-      
-// dd($array['dua']);
 
-        $mc = MesinCasting::where('mc', $id)->first();
-        $mcfordata = $mc->count();
-        // dd($mcfordata);
-        return view('menu.production.casting.tvCasting',[
-            'line' =>"NM.FR.AH091",
-            'part' =>"PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
-            'urgent' => 1,
+        // dd($array['dua']);
+
+        $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
+        $mcfordata = $range_hitung->count();
+
+        return view('menu.production.casting.tvCasting', [
+            'line' => "NM.FR.AH091",
+            'part' => "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
+            'urgent' => 0,
             'aktual' => 4009,
-            'aktual' => $mc->total_part,
-            'mcfordata' =>$mcfordata,
+            // 'aktual' => $range_hitung->total_part,
+            'mcfordata' => $mcfordata,
             // 'aktual2'=> 400///
             'target' => 0,
             'persen' => 94,
-            'preparation'=> 1,
+            'preparation' => 0,
             'prep' => 4,
-            'running' =>1,
+            'running' => 0,
             'downtime' => 'INSTROCKER ERROR',
             // 'henkaten' => $hitung,
             'isi' => "MATERIAL",
@@ -91,71 +91,43 @@ class CastingController extends Controller
             'isi4c' => "MACHINE",
             'isi4d' => "MATERIAL",
             'shift' => 2,
- 
+
         ]);
     }
-
-    public function tvCasting2(UsableController $useable, $id1 ,$id2)
+ 
+    public function tvCasting2(UsableController $useable, $id1, $id2)
     {
 
-        //{{  Untuk Menyyeleksi Henkaten}}  //
-        $mp = null;
-        $met = 1;
-        $mc = null;
-        $mat = null;
+        $range_hitung1 = MesinCasting::where('mc', '<=', $id1)->get();
+        $mcfordata1 = $range_hitung1->count();
 
-        $array = ['satu' => $mp ,
-                    'dua' => $met ,
-                    'tiga' => $mc ,
-                    'empat' => $mat ,
-        ];
-        $filtered = collect(Arr::where($array, function ( $value, $key) {
-            return ($value != null);
-        }));
+        $range_hitung2 = MesinCasting::where('mc', '<=', $id2)->get();
+        $mcfordata2 = $range_hitung2->count();
 
-        $hitung = $filtered->count();
-
-        if($mp  != null) {
-            $array['satu' ]  = "Man Power";
-        }
-        elseif($met != null){
-            $array['dua']  = "Method";
-        }
-        elseif($mc  != null){
-            $array['tiga']  = "Machine";
-        }
-        elseif($mat  != null){
-            $array['empat']  = "Material";
-        }
-        else {
-
-        }
-      
-// dd($array['dua']);
-
-        $input = DB::table('lhp_casting') -> get();
-        return view('menu.production.casting.tvCasting2', compact('input'), [
+        return view('menu.production.casting.tvCasting2', [
             'id1' => $id1,
             'id2' => $id2,
-            'kaline'=>"NM.FR.AH091",
-            'kapart'=> "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
+            'kaline' => "NM.FR.AH091",
+            'kapart' => "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
             'urgent' => 1,
             'urgent2' => 0,
             'aktual' => 4009,
-            'aktual2'=> 400,
+            'aktual2' => 400,
+            'mcfordata1' => $mcfordata1,
+            'mcfordata2' => $mcfordata2,
             'target1' => 0,
-            'target2' =>0,
+            'target2' => 0,
             'persen' => 90,
-            'persen2'=> 94,
-            'preparation'=> 1,
-            'preparation2'=>1,
+            'persen2' => 94,
+            'preparation' => 1,
+            'preparation2' => 1,
             'prep' => 4,
             'prep2' => 3,
             'running' => 0,
             'downtime' => 'INSTROCKER ERROR',
             'running2' => 1,
             'downtime2' => 'INSTROCKER ERROR',
-            'henkaten' => $hitung,
+            // 'henkaten' => $hitung,
             'isi' => "MATERIAL",
             'isi2a' => "MAN POWER",
             'isi2b' => "METHOD",
@@ -181,5 +153,4 @@ class CastingController extends Controller
             'shift' => 3
         ]);
     }
-
 }
