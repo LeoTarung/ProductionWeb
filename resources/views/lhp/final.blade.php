@@ -15,6 +15,14 @@
                         <div class="col-12 text-center mt-2 pt-2 pb-3 fw-bold fs-2"> COVER L K1ZG</div>
                     </div>
                 </div>
+                <div class="card card-left5 mt-3 ms-2 shadow-sm">
+                    <div class="row">
+                        <div class="col-auto "></div>
+                        <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2">3000
+                                part</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="card card-left2 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
@@ -39,22 +47,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="card card-left5 mt-3 ms-2 shadow-sm">
-                    <div class="row">
-                        <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2">3000
-                                part</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card-left6 mt-3 ms-2 shadow-sm">
+                {{-- <div class="card card-left6 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">COVER L<br><span class="fs-2">3000
                                 part</span>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="col-9 mb-2">
                 <div class="card main-card ">
