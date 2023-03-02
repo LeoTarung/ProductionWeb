@@ -56,7 +56,11 @@
             <div class="col-4 text-center parent ">
                 <div class="parallelogram boxperform child">
                     <h1 class="pperform"> PERFORMANCE </h1>
-                    @if ($persen >= 95)
+                    <h1 style="font-size: 30px; margin-top: -40px">
+                        <span id="persen" class="persen1"></span>
+                        <span class="symbol">%</span>
+                    </h1>
+                    {{-- @if ($persen >= 95)
                         <h1 style="font-size: 30px; margin-top: -40px">
                             <span class="persen1">{{ $persen }}</span>
                             <span class="symbol">%</span>
@@ -66,7 +70,7 @@
                             <span class="persen2">{{ $persen }}</span>
                             <span class="symbol">%</span>
                         </h1>
-                    @endif
+                    @endif --}}
 
                 </div>
             </div>
@@ -429,7 +433,7 @@
     <script>
         // hitung target
 
-        var target = 5000;
+        var target = 3000;
         // var target = console.log("test")
 
         const element = document.getElementById("target");
@@ -531,6 +535,7 @@
             } else if (warna3c == "MATERIAL") {
                 henkaten3c.style.backgroundColor = '#03C988';
             }
+            endif
         @endif
     </script>
     <script>
@@ -541,11 +546,32 @@
             socket.on('connection');
             socket.on("levelMolten_settings", (data) => {
 
+                //Jumlah Aktual Part
                 let for_mc = {{ $mcfordata }} - 1;
                 let aktual = data[for_mc].total_part;
+                document.getElementById("aktual").innerHTML = aktual;
+                //Persentase
+
+                var ValPersen = (aktual / i * 100);
+                // var persen = 96;
+                let persen = document.getElementById("persen");
+                if (ValPersen >= 95) {
+                    persen.innerHTML = ValPersen;
+                    persen.style.marginTop = '-20px';
+                    persen.style.marginLeft = '-20px';
+                    persen.style.fontSize = '220px';
+
+                } else {
+                    persen.innerHTML = ValPersen;
+                    persen.style.fontSize = '250px';
+                    persen.style.textShadow = '0 10px 19px #000000';
+                    persen.style.animation = 'animate 2.0s linear infinite';
+                    persen.style.color = '#ff0000';
+                }
+
                 // console.log(data[for_mc].total_part);
 
-                document.getElementById("aktual").innerHTML = aktual;
+
             })
         });
     </script>
