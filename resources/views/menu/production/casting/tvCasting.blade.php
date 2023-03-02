@@ -74,16 +74,6 @@
 
                 </div>
             </div>
-
-            {{-- <div class="col-1"></div> --}}
-
-            {{-- <div class="row mt-4 mb-3"> 
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="rounded-0 henkaten">
-                            HENKATEN MAN POWER
-                        </div>
-                    </div>
-                </div> --}}
         </div>
 
         @if ($running != null)

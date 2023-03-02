@@ -76,7 +76,7 @@ io.on("connection", (socket) => {
         //     }
         // );
 
-         //==========[' SELECT  FROM MESIN CASTING ']==========//
+         //==========[' SELECT ALL  FROM MESIN CASTING ']==========//
          connection.query(
             "SELECT * FROM mesin_casting",
             (err, res) => {
