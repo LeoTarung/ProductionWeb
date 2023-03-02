@@ -11,7 +11,7 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    database: "production-app",
+    database: "production_app",
 });
 
 io.on("connection", (socket) => {
@@ -76,7 +76,7 @@ io.on("connection", (socket) => {
         //     }
         // );
 
-         //==========[' SELECT  FROM MESIN CASTING ']==========//
+         //==========[' SELECT ALL  FROM MESIN CASTING ']==========//
          connection.query(
             "SELECT * FROM mesin_casting",
             (err, res) => {
@@ -201,6 +201,7 @@ io.on("connection", (socket) => {
             }
         );
     }, 3000);
+
 });
 
 
