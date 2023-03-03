@@ -715,7 +715,7 @@
     <script>
     // kiri
     
-        var target1 = 5000;
+        var target1 = 55000;
         // var target = console.log("test")
 
         const element = document.getElementById("target1");
@@ -823,7 +823,7 @@
 
     // kanan
         
-        var target2 = 5000;
+        var target2 = 55000;
         // var target = console.log("test")
 
         const element2 = document.getElementById("target2");
