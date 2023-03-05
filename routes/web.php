@@ -80,6 +80,7 @@ Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_for
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
 Route::get('/tvCasting/{id}', [CastingController::class, 'tvCasting']);
 Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
+Route::get('lhp-casting', [CastingController::class, 'prep_casting']);
 
 
 //====================== HC & GA ======================//
@@ -98,29 +99,29 @@ Route::get('/final', [MeltingTestController::class, 'final_inspection']);
 // man
 Route::get('/tampilan', [HenkatenController::class, 'tampilan']);
 Route::post('/submit_man', [HenkatenController::class, 'submit_man']);
-Route::get('/man_edit/{No}', [HenkatenController::class, 'man_edit']); 
-Route::post('/man_update/{No}', [HenkatenController::class, 'man_update']); 
-Route::get('/delete/{No}', [HenkatenController::class, 'delete']); 
+Route::get('/man_edit/{No}', [HenkatenController::class, 'man_edit']);
+Route::post('/man_update/{No}', [HenkatenController::class, 'man_update']);
+Route::get('/delete/{No}', [HenkatenController::class, 'delete']);
 
 // method
 Route::get('/metode', [HenkatenController::class, 'metode']);
 Route::post('/method_submit', [HenkatenController::class, 'method_submit']);
-Route::get('/method_edit/{No}', [HenkatenController::class, 'method_edit']); 
-Route::post('/method_update/{No}', [HenkatenController::class, 'method_update']); 
+Route::get('/method_edit/{No}', [HenkatenController::class, 'method_edit']);
+Route::post('/method_update/{No}', [HenkatenController::class, 'method_update']);
 Route::get('/method_delete/{No}', [HenkatenController::class, 'method_delete']);
 
 // machine
 Route::get('/mesin', [HenkatenController::class, 'mesin']);
 Route::post('/mesin_submit', [HenkatenController::class, 'mesin_submit']);
-Route::get('/mesin_edit/{No}', [HenkatenController::class, 'mesin_edit']); 
-Route::post('/mesin_update/{No}', [HenkatenController::class, 'mesin_update']); 
+Route::get('/mesin_edit/{No}', [HenkatenController::class, 'mesin_edit']);
+Route::post('/mesin_update/{No}', [HenkatenController::class, 'mesin_update']);
 Route::get('/mesin_delete/{No}', [HenkatenController::class, 'mesin_delete']);
 
 // material
 Route::get('/material', [HenkatenController::class, 'material']);
 Route::post('/submit', [HenkatenController::class, 'submit']);
-Route::get('/edit/{No}', [HenkatenController::class, 'edit']); 
-Route::post('/update/{No}', [HenkatenController::class, 'update']); 
+Route::get('/edit/{No}', [HenkatenController::class, 'edit']);
+Route::post('/update/{No}', [HenkatenController::class, 'update']);
 Route::get('/material_delete/{No}', [HenkatenController::class, 'material_delete']);
 
 Route::get('/include', [HenkatenController::class, 'include']);
