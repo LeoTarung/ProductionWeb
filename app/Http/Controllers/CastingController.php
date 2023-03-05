@@ -94,7 +94,7 @@ class CastingController extends Controller
 
         ]);
     }
- 
+
     public function tvCasting2(UsableController $useable, $id1, $id2)
     {
 
@@ -152,5 +152,19 @@ class CastingController extends Controller
 
             'shift' => 3
         ]);
+    }
+
+
+    //==============================[' LHP CASTING ']==============================//
+
+    public function prep_casting(UsableController $useable)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $mesin = "CASTING";
+        $title = "LHP Casting";
+        $nrp = 0;
+
+        return view('lhp.prepare-casting', compact('title', 'shift', 'date', 'mesin', 'nrp'));
     }
 }
