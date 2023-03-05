@@ -80,7 +80,8 @@ Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_for
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
 Route::get('/tvCasting/{id}', [CastingController::class, 'tvCasting']);
 Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
-Route::get('lhp-casting', [CastingController::class, 'prep_casting']);
+Route::get('/lhp-casting', [CastingController::class, 'prep_casting']);
+Route::get('/lhp-casting/lhp-casting', [CastingController::class, 'lhp_casting']); //link sementara, nanti diganti ketika preparation sudah selesai
 
 
 //====================== HC & GA ======================//
