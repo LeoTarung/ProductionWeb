@@ -70,6 +70,15 @@ class MeltingController extends Controller
         return view('lhp.test', compact('shift', 'date'));
     }
 
+    public function levelMolten(UsableController $useable)
+    {
+        $title = "Level Molten";
+        // $molt = MesinCasting::get();
+        $mc = MesinCasting::all();
+        // dd($mc);
+        return view('menu.production.melting.levelMolten', compact('title', 'mc'));
+    }
+
     //==============================[' LAPORAN HARIAN PRODUKSI MELTING']==============================//
     public function prep_melting(UsableController $useable)
     {

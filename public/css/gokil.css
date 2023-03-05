@@ -1,10 +1,10 @@
 :root {
-    --red: hsl(0, 78%, 62%);
-    --cyan: hsl(180, 62%, 55%);
-    --orange: hsl(34, 97%, 64%);
-    --blue: hsl(212, 86%, 64%);
+    --red: hsl(0, 100%, 50%);
+    --green: hsl(125, 68%, 41%);
+    --orange: hsl(25, 100%, 50%);
+    --blue: hsl(212, 67%, 41%);
     --varyDarkBlue: hsl(234, 12%, 34%);
-    --grayishBlue: hsl(229, 6%, 66%);
+    --grayishBlue: hsl(228, 20%, 80%);
     --veryLightGray: hsl(0, 0%, 98%);
     --weight1: 200;
     --weight2: 400;
@@ -29,21 +29,21 @@
 
     background-color: rgb(143, 6, 6);
 }
+
 .card-inside1 {
-    height: 91%;
+    height: 90%;
     width: 40%;
-    margin: 3px -10px 4px 4px;
+    margin: 3.5px -10px 4px 3px;
     border-radius:  40px;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     padding: 0 0 0 0;
-
 }
-.card-inside2 {
-  
-    height: 70%;
-    width: 58%;
-    margin: 8.5px 13px 0px -5px;
+
+.card-inside2{
+    height: 74%;
+    width: 62%;
+    margin: 8.5px 9px 0px -10px;
     padding: 0 0 0 -6px;
     border-radius: 0px 40px 40px 0px;
     overflow: hidden;
@@ -54,34 +54,45 @@
 .font-ci1{
     font-size: 33px;
     font-weight: 700;
-    margin: 4px 0px 0px -7px ;
+    margin: 5px 0px 0px -7px ;
 }
 
 .font-ci2{
     font-size: 15px;
     font-weight: 700;
-    margin: 10px 1px 0px 10px ;
+    margin: 13px 1px 0px 10px ;
 }
 
 .font-with-enter{
     font-size: 15px;
     font-weight: 700;
-    margin: -1px 1px 0px 10px ;
+    margin: 3px 1px 0px 10px ;
 }
 
 .card-left1{
-
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 20px 20px 20px 20px;
     border-left: 10px solid var(--grayishBlue);
 }
 
 .card-left2{
     border-radius: 20px 20px 20px 20px;
-    border-left: solid var(--varyDarkBlue);
+    border-left: 10px solid var(--blue);
 }
 .card-left3{
     border-radius: 20px 20px 20px 20px;
     border-left: 10px solid var( --red);
+}
+.card-left4{
+    border-radius: 20px 20px 20px 20px;
+    border-left: 10px solid var( --orange);
+}
+.card-left5{
+    border-radius: 20px 20px 20px 20px;
+    border-left: 10px solid var( --green);
+}
+.card-left6{
+    border-radius: 20px 20px 20px 20px;
+    border-left: 10px solid var( --varyDarkBlue);
 }
 
 /* .card-purple{
