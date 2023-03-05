@@ -131,7 +131,7 @@
                             <p class="henka4"> HENKATEN</p>
                         </div>
 
-                        <div class="row">
+                        <div class="row  ">
                             <div class="col-10 manpower4 ">{{ $isi4a }}</div>
                             <div class="col-10 method4 ">{{ $isi4b }}</div>
                             <div class="col-10 machine4 ">{{ $isi4c }}</div>
@@ -163,7 +163,7 @@
                     </div>
 
                     @if ($shift == 1)
-                        <div class="row mt-4 mb-1">
+                        <div class="row mt-4 mb-2">
                             <div class="col-3 text-center m-auto shift"> SHIFT 1</div>
                             <div class="col-9">
                                 <div class="row ms-1">
@@ -196,82 +196,83 @@
                             </div>
                         </div>
                 
-            @elseif($shift == 2)
-                <div class="row mt-4 mb-1">
-                    <div class="col-3 text-center m-auto shift"> SHIFT 2</div>
-                    <div class="col-9">
-                        <div class="row ms-1">
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">07</p>
-                                {{-- jam 7.10 --}}
+                    @elseif($shift == 2)
+                        <div class="row mt-4 mb-2">
+                            <div class="col-3 text-center m-auto shift"> SHIFT 2</div>
+                            <div class="col-9">
+                                <div class="row ms-1">
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">07</p>
+                                        {{-- jam 7.10 --}}
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">08</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">09</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">10</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">11</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">12</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">13</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">14</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">15</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">16</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">08</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">09</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">10</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">11</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">12</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">13</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">14</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">15</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">16</p>
+                        </div>
+
+                    @elseif($shift == 3)
+                        <div class="row mt-4 mb-2">
+                            <div class="col-3 text-center m-auto shift"> SHIFT 3</div>
+                            <div class="col-9">
+                                <div class="row ms-1">
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">16</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">17</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">18</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">19</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">20</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">21</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">22</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">23</p>
+                                    </div>
+                                    <div class="col-1 text-center border border-light">
+                                        <p class="jam" style="margin-top: 10px;">00</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @elseif($shift == 3)
-                <div class="row mt-4 mb-1">
-                    <div class="col-3 text-center m-auto shift"> SHIFT 3</div>
-                    <div class="col-9">
-                        <div class="row ms-1">
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">16</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">17</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">18</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">19</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">20</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">21</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">22</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">23</p>
-                            </div>
-                            <div class="col-1 text-center border border-light">
-                                <p class="jam" style="margin-top: 10px;">00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endif
+                    @endif
         </div>
     </div>
     
@@ -279,7 +280,7 @@
     {{-- jika henkaten tidak ada --}}
     <div class="row">
         <div class="col-12">
-            <div class="row mt-4 mb-3">
+            <div class="row mt-3 mb-3">
                 <div class="col-3 text-center m-auto availa"> AVAILABILITY </div>
                 <div class="col-9">
                     <div class="progress rounded-3 border border-3" style="height: 60px;">
@@ -300,7 +301,7 @@
             </div>
 
             @if ($shift == 1)
-                <div class="row mt-4 mb-1">
+                <div class="row mt-4 mb-3">
                     <div class="col-3 text-center m-auto shift"> SHIFT 1</div>
                     <div class="col-9">
                         <div class="row ms-1">
@@ -333,7 +334,7 @@
                 </div>
         
             @elseif($shift == 2)
-                <div class="row mt-4 mb-1">
+                <div class="row mt-4 mb-3">
                     <div class="col-3 text-center m-auto shift"> SHIFT 2</div>
                     <div class="col-9">
                         <div class="row ms-1">
@@ -371,7 +372,7 @@
                     </div>
                 </div>
             @elseif($shift == 3)
-                <div class="row mt-4 mb-1">
+                <div class="row mt-4 mb-3">
                     <div class="col-3 text-center m-auto shift"> SHIFT 3</div>
                     <div class="col-9">
                         <div class="row ms-1">
