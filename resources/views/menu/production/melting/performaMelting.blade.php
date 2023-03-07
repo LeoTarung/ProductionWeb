@@ -35,6 +35,7 @@
 
     <div class="container-fluid profile">
       <div class="row">
+        
         <div class="col-3 sidebar" >
           <div class="card shadow identitas">
             <div class="col atas py-0">
@@ -50,18 +51,23 @@
                 <h2 id="nama"></h2>
                 <h3 id="nrp"></h3>
             </div>
+
             <div class="row">
-          
-              
                 <div class="col-10 produk">
 
-                    <div class="card tc">
+                    {{-- <div class="card tc">
                         <div class="row">
                             <div class="col-7 text-center"> Total Charging </div>
 
                             <div class="col-5 text-center" id="total_charging"></div>
                         </div>
-                    </div>
+                    </div> --}}
+                    <div class="card mt-2 tc">
+                        <div class="row">
+                            <div class="col-8 ps-3"> Total Charging </div>
+                            <div class="col-4 ps-3" id="total_charging"></div>
+                        </div> 
+                    </div> 
 
                     <div class="card mt-2 ingot">
                         <div class="row">
@@ -99,7 +105,6 @@
                     </div>
 
                 </div>
-
             </div>
 
           </div>
