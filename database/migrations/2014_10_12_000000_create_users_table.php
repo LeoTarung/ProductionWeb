@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('nrp')->unique();
+            $table->string('role')->default('STAFF');
             $table->string('photo')->default("profile.png");
             $table->string('seksi')->nullable()->default("");
             $table->string('departemen')->nullable()->default("");

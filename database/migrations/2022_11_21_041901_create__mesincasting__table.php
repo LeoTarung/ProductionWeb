@@ -21,11 +21,22 @@ class CreateMesincastingTable extends Migration
             $table->integer('min_level_molten')->default('0');
             $table->integer('max_level_molten')->default('0');
             $table->string('nama_part')->nullable()->default("");
+            $table->integer('cavity')->default('1');
+            $table->string('nomor_dies')->nullable();
+            $table->integer('cycle_time')->default('0');
+            $table->integer('total_produksi')->default('0');
             $table->integer('kode_kanban')->default('0');
-            $table->integer('kode_henkaten')->default('0');
+            $table->integer('henkaten_mp')->default('0');
+            $table->integer('henkaten_mat')->default('0');
+            $table->integer('henkaten_met')->default('0');
+            $table->integer('henkaten_mc')->default('0');
             $table->integer('kode_status')->default('0');
-            $table->integer('aktual_temp_dies_move')->default('0');
-            $table->integer('aktual_temp_dies_fix')->default('0');
+            $table->integer('aktual_temp_dies_move_atas')->default('0');
+            $table->integer('aktual_temp_dies_move_bawah')->default('0');
+            $table->integer('aktual_temp_dies_fix_atas')->default('0');
+            $table->integer('aktual_temp_dies_fix_bawah')->default('0');
+            $table->string('updated_by')->nullable();
+            $table->integer('connection')->default('0');
             $table->timestamps();
         });
     }
