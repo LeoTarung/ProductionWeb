@@ -83,6 +83,11 @@
                 </div>
             </div>
         </div>
+        <div class="row w-100 " style="margin-top: 5rem;">
+            <a href="/production/melting/level-molten" class="d-flex justify-content-center"><button
+                    class="btn btn-primary w-50">Level
+                    Molten</button></a>
+        </div>
     </div>
 
     <!-- Resources chart 1 -->
@@ -245,7 +250,7 @@
             // https://www.amcharts.com/docs/v5/concepts/animations/
             chargingSeries.appear(1000);
             chart.appear(1000, 100);
-            
+
             $(function() {
                 let ip_node = location.hostname;
                 let socket_port = '1553';
