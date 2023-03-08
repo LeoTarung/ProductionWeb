@@ -28,7 +28,19 @@ html > body {
     margin-bottom: 15px;
   }
 
-  
+/* .nav-tabs {
+    background-color: #ffffff;
+}
+
+.nav-item{
+    background-color: #55769c;
+} */
+
+/* .child {
+    display: flex;
+    flex-direction: row;
+} */
+
 /* .profile {
     background-color: #095256;
 }  */
@@ -48,10 +60,10 @@ html > body {
     height: 80%;
 }
 
-.identitas {
+.child .identitas {
     margin-top: 10px;
-    margin-left: 0px;
-    margin-right: -20px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 10px;
     height: 97vh;
 }
@@ -224,6 +236,9 @@ html > body {
         border-radius: 5px;
     }  
 
+    .nav-tabs {
+        background-color: #ffffff;
+    }
     .gambar {
         justify-content: center;
         align-items: center;
@@ -239,10 +254,10 @@ html > body {
         height: 100%;
     }
     
-    .identitas {
+    .child .identitas {
         margin-top: 10px;
-        margin-left: 0px;
-        margin-right: -20px;
+        margin-left: 10px;
+        /* margin-right: -20px; */
         margin-bottom: 0px;
         height: 97vh;
     }
@@ -507,6 +522,12 @@ html > body {
         border-radius: 5px;
     }  
 
+    .nav-tabs {
+        background-color: #ffffff;
+    }
+    .nav-items {
+        background-color: rgb(77, 77, 137);
+    }
     .gambar {
         justify-content: center;
         align-items: center;
@@ -522,10 +543,10 @@ html > body {
         height: 100%;
     }
     
-    .identitas {
+    .child .identitas {
         margin-top: 10px;
-        margin-left: 0px;
-        margin-right: -20px;
+        margin-left: 10px;
+        /* margin-right: -20px; */
         margin-bottom: 0px;
         height: 100vh;
     }
@@ -566,7 +587,7 @@ html > body {
     }
 
     .produk {
-        margin-left: 40px;
+        margin-left: 9%;
     }
     
     .card .tc {
@@ -575,8 +596,7 @@ html > body {
         font-size: 30px;
         height: 60px;
         margin-top: 30px;
-        margin-left: -10px;
-        margin-right: -10px;
+        /* margin: 0px -50px 0px -10px ; */
         padding-top: 5px;
         padding-left: 5px;
     }
@@ -586,8 +606,8 @@ html > body {
         color: white;
         font-size: 30px;
         height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
+        /* margin-left: -10px; */
+        /* margin-right: -50px; */
         padding-top: 5px;
         padding-left: 15px;
     }
@@ -597,8 +617,7 @@ html > body {
         color: white;
         font-size: 30px;
         height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
+        /* margin: 0px -50px 0px -10px ; */
         padding-top: 5px;
         padding-left: 15px;
     }
@@ -608,8 +627,7 @@ html > body {
         color: white;
         font-size: 30px;
         height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
+        /* margin: 0px -50px 0px -10px ; */
         padding-top: 5px;
         padding-left: 15px;
     }
@@ -619,8 +637,7 @@ html > body {
         color: white;
         font-size: 30px;
         height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
+        /* margin: 0px -50px 0px -10px ; */
         padding-top: 5px;
         padding-left: 15px;
     }
@@ -630,8 +647,7 @@ html > body {
         color: white;
         font-size: 30px;
         height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
+        /* margin: 0px -50px 0px -10px ; */
         margin-bottom: 25px;
         padding-top: 5px;
         padding-left: 15px;
