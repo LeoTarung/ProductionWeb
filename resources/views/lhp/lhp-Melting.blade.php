@@ -15,7 +15,7 @@
                     <div class="card card_form_input">
                         <div class="card-body">
                             <input type="number" class="fw-bold text-end input_berat" name="berat" id="berat"
-                                placeholder="Masukan angka..." autofocus required>
+                                placeholder="Masukkan angka..." autofocus required>
                         </div>
                     </div>
                 </div>
