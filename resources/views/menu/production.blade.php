@@ -36,7 +36,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4 prod-menu nopadding mt-2 px-1">
-                <a href="">
+                <a href="http://10.14.20.212:3333/">
                     <div class="card ">
                         <img src="{{ url('/img/machining.jpg') }}" alt="">
                         <div class="descriptions text-center">

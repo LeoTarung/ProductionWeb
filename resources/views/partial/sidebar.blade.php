@@ -20,7 +20,7 @@
                         <li><a class="link_name">Production Monitoring</a></li>
                         <li><a href="/production/melting">Melting</a></li>
                         <li><a href="/production/casting">Casting</a></li>
-                        <li><a href="#">Machining</a></li>
+                        <li><a href="http://10.14.20.212:3333/">Machining</a></li>
                         <li><a href="#">Painting</a></li>
                         <li><a href="#">Assembling</a></li>
                         <li><a href="#">Final Inspection</a></li>
