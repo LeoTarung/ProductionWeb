@@ -59,13 +59,13 @@
                         <div class="row mt-3">
                             <div class="col-2">MIN MOLTEN</div>
                             <div class="col-9"><input type="text" class="form-control" id="min_molten"
-                                    name="min_level_molten" value="{{ $molten->max_level_molten }}">
+                                    name="min_level_molten" value="{{ $molten->min_level_molten }}">
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-2">MAX MOLTEN</div>
                             <div class="col-9"><input type="text" class="form-control" id="max_molten"
-                                    name="max_level_molten" value="{{ $molten->min_level_molten }}">
+                                    name="max_level_molten" value="{{ $molten->max_level_molten }}">
                             </div>
                         </div>
                         <div class="row border-top mt-5 ">

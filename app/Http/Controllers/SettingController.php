@@ -58,8 +58,8 @@ class SettingController extends Controller
         // $id = $mc->mc;
         MesinCasting::where('mc', $id)->update([
             'material' => $request->material,
-            'min_level_molten' => $request->max_level_molten,
-            'max_level_molten' => $request->min_level_molten
+            'min_level_molten' => $request->min_level_molten,
+            'max_level_molten' => $request->max_level_molten
         ]);
         // dd($mc);
         return redirect("/settings/mesincasting/$id")->with('behasilditambahkan', 'behasilditambahkan');

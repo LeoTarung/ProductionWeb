@@ -173,8 +173,33 @@
                         <div class="font-white choose_machine"> {{ $mesin }} </div>
                     </div>
                 </a>
+
+                {{-- Preparation Melting --}}
+            @elseif(Request::url() == url('/lhp-melting'))
+                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'MELTING')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+                {{-- LHP MELTING --}}
+            @elseif(Request::url() == url('/lhp-melting/' . $mesin . '/' . $id . ''))
+                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FINAL .INS')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+
+
                 {{-- Preparation Forklift --}}
-            @elseif ($mesin == 'FORKLIFT')
+            @elseif (Request::url() == url('/lhpforklift'))
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FORKLIFT')
@@ -187,7 +212,7 @@
 
 
                 {{-- LHP Forklift --}}
-            @elseif($mesin == $forklift)
+            @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FINAL .INS')
@@ -221,28 +246,7 @@
                 </a>
 
 
-                {{-- Preparation Melting --}}
-            @elseif($mesin == 'MELTING')
-                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
-                    <div class="mesin">
-                        @if ($mesin == 'MELTING')
-                            <div class="font-white "> {{ $mesin }} </div>
-                        @else
-                            <div class="font-white choose_machine"> {{ $mesin }} </div>
-                        @endif
-                    </div>
-                </a>
-                {{-- LHP MELTING --}}
-            @else
-                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
-                    <div class="mesin">
-                        @if ($mesin == 'FINAL .INS')
-                            <div class="font-white "> {{ $mesin }} </div>
-                        @else
-                            <div class="font-white choose_machine"> {{ $mesin }} </div>
-                        @endif
-                    </div>
-                </a>
+                
             @endif
         </li>
         <li>
