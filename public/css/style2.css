@@ -5,7 +5,6 @@
     --bs-baseColor: #55769c;
 }
 
-
 /* tool */
 .bg-softgrey {
     background-color: #c3ffff;
@@ -22,7 +21,6 @@
     border: 0;
     box-sizing: border-box;
     font-family: "Nunito";
-
 }
 
 @font-face {
@@ -35,35 +33,7 @@
 
 /* APP */
 #app {
-  display: flex;
-  position: flex;
-  flex-direction: column;
-  display: flex;
-}
-
-#app #main{
-  width: 100%;
-  overflow-x: hidden;
-}
-
-#app #main #content{
-  flex: 1 0 auto;
-  z-index: 0;
-}
-
-.main-content{
-  overflow-x: hidden;
-  flex-direction: column;
-}
-
-.rightnav{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.leftnav{
-  display: flex;
-  max-width: 80%;
+    position: relative;
 }
 
 /* MAIN */
@@ -75,39 +45,38 @@
     transition: margin-left 0.4s ease-out;
 }
 #main .main-content {
-  padding: 0rem 1.5rem;
-  min-height: 100vh;
-  top: 50px;
-  /* margin-bottom: 0px; */
-  /* margin-top: 70px; */
-  /* width:calc(100%-290px); */
-  position: relative;
+    padding: 0rem 1.5rem;
+    min-height: 100vh;
+    top: 50px;
+    /* margin-bottom: 0px; */
+
+    /* margin-top: 70px; */
+    /* width:calc(100%-290px); */
+    position: relative;
 }
 
-#main .nav{
-   position: fixed;
-  /* display: block;  */
-  top: 0;
-  height: 70px;
-  /* padding: 1.5rem; */
-  width: calc(100% - 290px);
-  /* width: 100%; */
-  /* min-width: 100vw; */
-  background-color: #eaeff8;
-  z-index: 1;
-  overflow: hidden;
+#main .nav-utama {
+    position: fixed;
+    /* display: block;  */
+    top: 0;
+    height: 70px;
+    /* padding: 1.5rem; */
+    width: calc(100% - 290px);
+    /* width: 100%; */
+    /* min-width: 100vw; */
+    background-color: #eaeff8;
 }
 
-#main .nav .toggle-menu{
-  /* margin-top: 2rem; */
-  margin: 25px 15px;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
+#main .nav-utama .toggle-menu {
+    /* margin-top: 2rem; */
+    margin: 25px 15px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
 }
 
-.sidebar.close ~ #main{
-  /* left: 78px;
+.sidebar.close ~ #main {
+    /* left: 78px;
   width: calc(100% - 78px); 
   /* left: 0;
   min-width: 100vw; */
@@ -242,9 +211,7 @@
     /* overflow: auto; */
     /* overflow: scroll;
   -webkit-overflow-scrolling: touch; */
-  transition: all 0.5s ease;
-  z-index: 1;
-
+    transition: all 0.5s ease;
 }
 .sidebar.close {
     width: 0px;
@@ -299,11 +266,9 @@
     overflow: auto;
     margin-top: auto;
 }
-
 .sidebar .nav-links li .production {
     /* margin-top: -px; */
 }
-
 
 /* .sidebar.close .nav-links{
   overflow: visible;
@@ -487,11 +452,9 @@
     /* margin-top: 5px; */
 }
 
-
-.nav .row{
-  /* margin-top: 2rem; */
-  width: 98%;
-
+.nav .row {
+    /* margin-top: 2rem; */
+    width: 95%;
 }
 
 .nav .title {
@@ -506,17 +469,16 @@
     /* position: absolute;
   top: 50%;
   left: 50%; */
-  /* transform: translateX(-50%) translateY(-50%); */
-  position: relative;
-  color: #114442;
-  font-size: 18px;
-  font-family: "Arial";
-  letter-spacing: 3px;
-  margin: auto;
-  padding: 0.3rem 3rem;
-  box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.25), 0px 4px 4px rgba(179, 177, 177, 0.25);
-  /* width: 100%; */
-
+    /* transform: translateX(-50%) translateY(-50%); */
+    color: #114442;
+    font-size: 18px;
+    font-family: "Arial";
+    letter-spacing: 3px;
+    display: block;
+    position: fixed;
+    box-shadow: 0px 4px 10px rgba(80, 80, 80, 0.25),
+        0px 4px 4px rgba(179, 177, 177, 0.25);
+    /* width: 100%; */
 }
 
 .navbar.navbar-header li {
@@ -599,15 +561,15 @@ header {
 }
 
 footer {
+    padding-top: 1em;
+    left: 0;
+    bottom: 4;
+    margin-bottom: 4px;
+    background-color: #e9ecef;
+    width: 100%;
+    padding-bottom: 0.5em;
 
-  padding-top: 0.8em;
-  left: 0;
-  bottom: 4;
-  background-color: #e9ecef;
-  width: 100%;   
-  padding-bottom: 0.5em;
-  position: relative;
-
+    position: relative;
 }
 
 /* Production  Overview*/
@@ -739,10 +701,7 @@ button {
  */
 
 /* Tablet */
-
-@media only screen and (max-width: 1280px){
-
-
+@media only screen and (max-width: 1280px) {
 }
 
 /* Monitor Besar */
@@ -765,67 +724,25 @@ button {
 
 /* SMartphone */
 @media (max-width: 400px) {
-
-  .sidebar.close .nav-links li .sub-menu{
-    display: none;
-  }
-  .sidebar.close{
-    width: 0;
-  }
-  #main {
-    margin-left: 70px;
-  }
-  .sidebar{
-    width: 70px;
-  }
-  .sidebar-header{
-    padding-left: 0.5rem;
-    overflow-x: hidden;
-  }
-  .home-section{
-    left: 78px;
-    width: calc(100% - 78px);
-    z-index: 100;
-  }
-  .sidebar.close ~ #main{
-    width: 100%;
-    left: 0;
-    color: #f16716;
-  }
-  #main .nav .toggle-menu{
-    margin: 25px 1px;
-  }
-  .clock{
-    box-shadow: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-  .nav .row{
-    display: block;
-    margin: 0;
-    width:100%;
-  }
-  .nav .logo {
-   margin: 0.6rem 0.6rem;
-  }
-  .rightnav{
-    padding: 0;
-    justify-content: center;
-  }
-  .leftnav{
-    justify-content: center;
-  }
-  #main .nav{
-    height: 110px;
-  }
-  #main .main-content {
-    top : 100px; 
-  }
-  #main .nav{
-   width: calc(100% - 78px);
- }
-
+    .sidebar.close .nav-links li .sub-menu {
+        display: none;
+    }
+    .sidebar {
+        width: 78px;
+    }
+    .sidebar.close {
+        width: 0;
+    }
+    .home-section {
+        left: 78px;
+        width: calc(100% - 78px);
+        z-index: 100;
+    }
+    .sidebar.close ~ #main {
+        width: 100%;
+        left: 0;
+        color: #f16716;
+    }
 }
 
 /* Layar TV Lebar */
@@ -1039,4 +956,201 @@ button {
 .flip-card-back {
     background-color: #ffffff;
     transform: rotateY(180deg);
+}
+
+/* LHP FORKLIFT */
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors Battery Molten==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --gradient-color-red: linear-gradient(
+        90deg,
+        hsl(7, 89%, 46%) 15%,
+        hsl(11, 93%, 68%) 100%
+    );
+    --gradient-color-orange: linear-gradient(
+        90deg,
+        hsl(22, 89%, 46%) 15%,
+        hsl(54, 90%, 45%) 100%
+    );
+    --gradient-color-yellow: linear-gradient(
+        90deg,
+        hsl(54, 89%, 46%) 15%,
+        hsl(92, 90%, 45%) 100%
+    );
+    --gradient-color-green: linear-gradient(
+        90deg,
+        hsl(92, 89%, 46%) 15%,
+        hsl(92, 90%, 68%) 100%
+    );
+    --text-color: #fff;
+    /* --body-color: hsl(0, 0%, 11%); */
+    /* --container-color: hsl(0, 0%, 9%); */
+    --container-color: hsl(0, 0%, 100%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Rubik", sans-serif;
+
+    --biggest-font-size: 2.5rem;
+    --normal-font-size: 0.938rem;
+    --smaller-font-size: 0.75rem;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+    :root {
+        --biggest-font-size: 2.75rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: 0.813rem;
+    }
+}
+
+/*=============== PRE FORKLIFT ===============*/
+a .font-forklift {
+    font-size: 50px;
+    letter-spacing: 0.15em;
+    margin-top: 70px;
+}
+
+a .font-forklift10 {
+    font-size: 45px;
+    letter-spacing: 0.15em;
+    margin-top: 70px;
+}
+
+.button-prep-fork {
+    height: 250px;
+    /* width: 27%; */
+}
+
+/* Responsive  */
+@media screen and (max-width: 1280px) {
+    a .font-forklift {
+        font-size: 35px;
+    }
+
+    a .font-forklift10 {
+        font-size: 30px;
+        letter-spacing: 0.15em;
+        margin-top: 70px;
+    }
+    .button-prep-fork {
+        height: 200px;
+        /* width: 27%; */
+    }
+}
+
+/*=============== lEVEL MOLTEN===============*/
+.forklift-card {
+    min-width: 100%;
+    margin: -2px -2px -2px -2px;
+    padding: -2px -2px -2px -2px;
+}
+
+.battery {
+    height: 150px;
+    width: 100%;
+    display: grid;
+    /* place-items: center; */
+    margin: 1.1rem 0rem 0 0;
+}
+
+.battery__percentage {
+    font-size: var(--biggest-font-size);
+}
+
+.battery__pill {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: var(--container-color);
+    box-shadow: inset 0px 0 48px hsla(0, 0%, 33%, 0.658),
+        inset -4px 12px 48px hsl(0, 0%, 100%);
+    /* box-shadow: inset 20px 0 48px hsl(214, 25%, 60%),
+               inset  -4px 12px 48px hsl(198, 100%, 93%); */
+    border-radius: 1rem;
+}
+
+.battery__level {
+    position: absolute;
+    inset: 2px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.battery__liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    /* background: var(--gradient-color-red); */
+    background-color: red;
+    box-shadow: inset -10px 0 12px hsl(0, 0%, 0%, 0.1),
+        inset 12px 0px 12px hsl(0, 0%, 56%, 0.15);
+    border-radius: 0.1rem;
+    animation: charger-on 3s infinite;
+}
+
+/* Full battery icon color */
+.green-color {
+    background: var(--gradient-color-green);
+}
+
+/* Battery charging animation */
+.animated-green {
+    background: var(--gradient-color-green);
+    animation: animated-chargin-batterry 1.2s infinite alternate;
+}
+
+/* Low battery animation */
+.animated-red {
+    background: var(--gradient-color-red);
+    animation: animated-low-batterry 1.2s infinite alternate;
+}
+
+.animated-green,
+.animated-red,
+.green-color {
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes animated-chargin-battery {
+    0% {
+        text-shadow: none;
+    }
+    100% {
+        text-shadow: 0 0 6px hsl(92, 90%, 68%);
+    }
+}
+
+@keyframes animated-low-battery {
+    0% {
+        text-shadow: none;
+    }
+    100% {
+        text-shadow: 0 0 8px hsl(7, 89%, 46%);
+    }
+}
+
+/* Liquid battery with gradient color */
+.gradient-color-red,
+.gradient-color-red::after {
+    background: var(--gradient-color-red);
+}
+
+.gradient-color-orange,
+.gradient-color-orange::after {
+    background: var(--gradient-color-orange);
+}
+
+.gradient-color-yellow,
+.gradient-color-yellow::after {
+    background: var(--gradient-color-yellow);
+}
+.gradient-color-green,
+.gradient-color-green::after {
+    background: var(--gradient-color-green);
 }

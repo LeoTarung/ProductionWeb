@@ -42,11 +42,12 @@ class SettingController extends Controller
         // } else {
         //     $editmc = ["NULLAH"];
         // }
-
+            
         $utama = $molten->material;
         $id = $molten->mc;
-        // dd($molten);
-        return  view('settings.moltenSetting', compact('shift', 'date', 'mesin', 'title', 'id', 'nrp', 'forklift', 'molten'));
+        $range_hitung = MesinCasting::where('mc', '<=',$id)->get();
+        $mcfordata = $range_hitung->count();
+        return  view('settings.moltenSetting', compact('shift', 'date', 'mesin', 'title', 'id', 'nrp', 'forklift', 'molten', 'mcfordata'));
         // return $editmc;
     }
 
