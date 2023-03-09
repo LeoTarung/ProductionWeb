@@ -34,117 +34,404 @@
   </nav>
 
     <div class="container-fluid profile">
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <button class="nav-link active" id="striko1" data-bs-toggle="tab" data-bs-target="#striko1" type="button" role="tab" aria-controls="striko1" aria-selected="true">Striko-1</button>
-              <button class="nav-link" id="striko2" data-bs-toggle="tab" data-bs-target="#striko2" type="button" role="tab" aria-controls="striko2" aria-selected="false">Striko-2</button>
-              <button class="nav-link" id="striko3" data-bs-toggle="tab" data-bs-target="#striko3" type="button" role="tab" aria-controls="striko3" aria-selected="false">Striko-3</button>
-              <button class="nav-link" id="swiftasia" data-bs-toggle="tab" data-bs-target="#swiftasia" type="button" role="tab" aria-controls="swiftasia" aria-selected="false">Swift Asia</button>
-            </div>
-          </nav>
-        <div class="row">
-            {{-- <div class="col-12 parent mt-3"> --}}
-                 
-                  {{-- <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="striko1" role="tabpanel" aria-labelledby="striko1"></div>
-                    <div class="tab-pane fade" id="striko2" role="tabpanel" aria-labelledby="striko2"></div>
-                    <div class="tab-pane fade" id="striko3" role="tabpanel" aria-labelledby="striko3"></div>
-                    <div class="tab-pane fade" id="swiftasia" role="tabpanel" aria-labelledby="swiftasia"></div>
-                </div> --}}
 
-                <div class="card child">
-                    <div class="col-3 bg-warning sidebar" >
-                        <div class="card shadow identitas ">
-                            <div class="col atas py-0">
-                            <h1 id="mesin_atas"></h1>
-                            <h2 class="hd" id="material"></h2>
-                            </div>
+            <div class="card mt-2">
 
-                            <div class="gambar">
-                            <img src="/img/profile.png" class="img-rounded">
-                            </div>
-
-                            <div class="col bawah">
-                                <h2 id="nama"></h2>
-                                <h3 id="nrp"></h3>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-10 produk">
-
-                                    <div class="card mt-2 tc">
-                                        <div class="row">
-                                            <div class="col-8 ps-3"> Total Charging </div>
-                                            <div class="col-4 ps-3" id="total_charging"></div>
-                                        </div> 
-                                    </div> 
-
-                                    <div class="card mt-2 ingot">
-                                        <div class="row">
-                                            <div class="col-8"> Ingot </div>
-                                            <div class="col-4" id="ingot"></div>
-                                        </div> 
-                                    </div> 
-
-                                    <div class="card mt-2 eg">
-                                        <div class="row">
-                                            <div class="col-8"> Ex - Gate </div>
-                                            <div class="col-4" id="exgate"> </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mt-2 reject">
-                                        <div class="row">
-                                            <div class="col-8"> Reject Part </div>
-                                            <div class="col-4" id="reject_parts"> </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mt-2 tapping">
-                                        <div class="row">
-                                            <div class="col-8"> Tapping </div>
-                                            <div class="col-4" id="tapping"> </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mt-2  dross">
-                                        <div class="row">
-                                            <div class="col-8"> Dross </div>
-                                            <div class="col-4" id="dross"></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">pspspspps</div>
-                        
-                    <div class="col-9 grafik">
-                        <div class="row ">
-                            <div class="col daily"> 
-                                <div class="card shadow">
-                                    <div class="card-header day"> Daily Report</div>
-                                    <div id="chartdiv"> </div>
-                                </div>
-                            </div>
-                        </div>
-
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" style="color: aliceblue"id="striko1-tab" data-bs-toggle="tab" data-bs-target="#striko1" type="button" role="tab" aria-controls="striko1" aria-selected="true">Striko-1</button>
+                    </li>
+                    <li class="nav-item ms-1" role="presentation">
+                      <button class="nav-link" style="color: aliceblue" id="striko2-tab" data-bs-toggle="tab" data-bs-target="#striko2" type="button" role="tab" aria-controls="striko2" aria-selected="false">Striko-2</button>
+                    </li>
+                    <li class="nav-item ms-1" role="presentation">
+                      <button class="nav-link" style="color: aliceblue" id="striko3-tab" data-bs-toggle="tab" data-bs-target="#striko3" type="button" role="tab" aria-controls="striko3" aria-selected="false">Striko-3</button>
+                    </li>
+                    <li class="nav-item ms-1" role="presentation">
+                        <button class="nav-link" style="color: aliceblue" id="swiftasia-tab" data-bs-toggle="tab" data-bs-target="#swiftasia" type="button" role="tab" aria-controls="swiftasia" aria-selected="false">Swift Asia</button>
+                      </li>
+                  </ul>
+                
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane active" id="striko1" role="tabpanel" aria-labelledby="striko1-tab" tabindex="0">
                         <div class="row">
-                            <div class="col monthly"> 
-                                <div class="card shadow">
-                                    <div class="card-header month">Monthly Report</div>
-                                    <div id="chartdiv2"> </div>
+                            <div class="row "> 
+                                <div class="col report">Report Striko-1</div>
+                            </div>
+                
+                            <div class="col-3 sidebar " >
+                                <div class="card shadow identitas ">
+                                    <div class="col atas py-0">
+                                    <h1 id="mesin_atas">Striko-1</h1>
+                                    <h2 class="hd" id="material">HD-2</h2>
+                                    </div>
+        
+                                    <div class="gambar">
+                                    <img src="/img/profile.png" class="img-rounded">
+                                    </div>
+        
+                                    <div class="col bawah">
+                                        <h2 id="nama">Euis Rahmawati</h2>
+                                        <h3 id="nrp">20025</h3>
+                                    </div>
+        
+                                    <div class="row">
+                                        <div class="col-10 produk">
+        
+                                            <div class="card mt-2 tc">
+                                                <div class="row">
+                                                    <div class="col-8 ps-3"> Total Charging </div>
+                                                    <div class="col-4 ps-3" id="total_charging"></div>
+                                                </div> 
+                                            </div> 
+        
+                                            <div class="card mt-2 ingot">
+                                                <div class="row">
+                                                    <div class="col-8"> Ingot </div>
+                                                    <div class="col-4" id="ingot"></div>
+                                                </div> 
+                                            </div> 
+        
+                                            <div class="card mt-2 eg">
+                                                <div class="row">
+                                                    <div class="col-8"> Ex - Gate </div>
+                                                    <div class="col-4" id="exgate"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2 reject">
+                                                <div class="row">
+                                                    <div class="col-8"> Reject Part </div>
+                                                    <div class="col-4" id="reject_parts"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2 tapping">
+                                                <div class="row">
+                                                    <div class="col-8"> Tapping </div>
+                                                    <div class="col-4" id="tapping"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2  dross">
+                                                <div class="row">
+                                                    <div class="col-8"> Dross </div>
+                                                    <div class="col-4" id="dross"></div>
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-9 grafik">
+                                <div class="row ">
+                                    <div class="col daily"> 
+                                        <div class="card shadow">
+                                            <div class="card-header day"> Daily Report</div>
+                                            <div id="chartdiv"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col monthly"> 
+                                        <div class="card shadow">
+                                            <div class="card-header month">Monthly Report</div>
+                                            <div id="chartdiv2"> </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+    
+                    <div class="tab-pane fade" id="striko2" role="tabpanel" aria-labelledby="striko2-tab" tabindex="0">
+                        <div class="row">
+                            <div class="row "> 
+                                <div class="col report">Report Striko-2</div>
+                            </div>
+                
+                            <div class="col-3 sidebar " >
+                                <div class="card shadow identitas ">
+                                    <div class="col atas py-0">
+                                    <h1 id="mesin_atas"></h1>
+                                    <h2 class="hd" id="material"></h2>
+                                    </div>
+        
+                                    <div class="gambar">
+                                    <img src="/img/profile.png" class="img-rounded">
+                                    </div>
+        
+                                    <div class="col bawah">
+                                        <h2 id="nama"></h2>
+                                        <h3 id="nrp"></h3>
+                                    </div>
+        
+                                    <div class="row">
+                                        <div class="col-10 produk">
+        
+                                            <div class="card mt-2 tc">
+                                                <div class="row">
+                                                    <div class="col-8 ps-3"> Total Charging </div>
+                                                    <div class="col-4 ps-3" id="total_charging"></div>
+                                                </div> 
+                                            </div> 
+        
+                                            <div class="card mt-2 ingot">
+                                                <div class="row">
+                                                    <div class="col-8"> Ingot </div>
+                                                    <div class="col-4" id="ingot"></div>
+                                                </div> 
+                                            </div> 
+        
+                                            <div class="card mt-2 eg">
+                                                <div class="row">
+                                                    <div class="col-8"> Ex - Gate </div>
+                                                    <div class="col-4" id="exgate"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2 reject">
+                                                <div class="row">
+                                                    <div class="col-8"> Reject Part </div>
+                                                    <div class="col-4" id="reject_parts"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2 tapping">
+                                                <div class="row">
+                                                    <div class="col-8"> Tapping </div>
+                                                    <div class="col-4" id="tapping"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2  dross">
+                                                <div class="row">
+                                                    <div class="col-8"> Dross </div>
+                                                    <div class="col-4" id="dross"></div>
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-9 grafik">
+                                <div class="row ">
+                                    <div class="col daily"> 
+                                        <div class="card shadow">
+                                            <div class="card-header day"> Daily Report</div>
+                                            <div id="chartdiv"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col monthly"> 
+                                        <div class="card shadow">
+                                            <div class="card-header month">Monthly Report</div>
+                                            <div id="chartdiv2"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="tab-pane fade" id="striko3" role="tabpanel" aria-labelledby="striko3-tab" tabindex="0">
+                        <div class="row">
+                            <div class="row "> 
+                                <div class="col report">Report Striko-3</div>
+                            </div>
+                
+                            <div class="col-3 sidebar " >
+                                <div class="card shadow identitas ">
+                                    <div class="col atas py-0">
+                                    <h1 id="mesin_atas"></h1>
+                                    <h2 class="hd" id="material"></h2>
+                                    </div>
+        
+                                    <div class="gambar">
+                                    <img src="/img/profile.png" class="img-rounded">
+                                    </div>
+        
+                                    <div class="col bawah">
+                                        <h2 id="nama"></h2>
+                                        <h3 id="nrp"></h3>
+                                    </div>
+        
+                                    <div class="row">
+                                        <div class="col-10 produk">
+        
+                                            <div class="card mt-2 tc">
+                                                <div class="row">
+                                                    <div class="col-8 ps-3"> Total Charging </div>
+                                                    <div class="col-4 ps-3" id="total_charging"></div>
+                                                </div> 
+                                            </div> 
+        
+                                            <div class="card mt-2 ingot">
+                                                <div class="row">
+                                                    <div class="col-8"> Ingot </div>
+                                                    <div class="col-4" id="ingot"></div>
+                                                </div> 
+                                            </div> 
+        
+                                            <div class="card mt-2 eg">
+                                                <div class="row">
+                                                    <div class="col-8"> Ex - Gate </div>
+                                                    <div class="col-4" id="exgate"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2 reject">
+                                                <div class="row">
+                                                    <div class="col-8"> Reject Part </div>
+                                                    <div class="col-4" id="reject_parts"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2 tapping">
+                                                <div class="row">
+                                                    <div class="col-8"> Tapping </div>
+                                                    <div class="col-4" id="tapping"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2  dross">
+                                                <div class="row">
+                                                    <div class="col-8"> Dross </div>
+                                                    <div class="col-4" id="dross"></div>
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-9 grafik">
+                                <div class="row ">
+                                    <div class="col daily"> 
+                                        <div class="card shadow">
+                                            <div class="card-header day"> Daily Report</div>
+                                            <div id="chartdiv"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col monthly"> 
+                                        <div class="card shadow">
+                                            <div class="card-header month">Monthly Report</div>
+                                            <div id="chartdiv2"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="tab-pane fade" id="swiftasia" role="tabpanel" aria-labelledby="nav-swiftasia-tab" tabindex="0">
+                        <div class="row">
+                            <div class="row "> 
+                                <div class="col report">Report Swift Asia</div>
+                            </div>
+                
+                            <div class="col-3 sidebar " >
+                                <div class="card shadow identitas ">
+                                    <div class="col atas py-0">
+                                    <h1 id="mesin_atas"></h1>
+                                    <h2 class="hd" id="material"></h2>
+                                    </div>
+        
+                                    <div class="gambar">
+                                    <img src="/img/profile.png" class="img-rounded">
+                                    </div>
+        
+                                    <div class="col bawah">
+                                        <h2 id="nama"></h2>
+                                        <h3 id="nrp"></h3>
+                                    </div>
+        
+                                    <div class="row">
+                                        <div class="col-10 produk">
+        
+                                            <div class="card mt-2 tc">
+                                                <div class="row">
+                                                    <div class="col-8 ps-3"> Total Charging </div>
+                                                    <div class="col-4 ps-3" id="total_charging"></div>
+                                                </div> 
+                                            </div> 
+        
+                                            <div class="card mt-2 ingot">
+                                                <div class="row">
+                                                    <div class="col-8"> Ingot </div>
+                                                    <div class="col-4" id="ingot"></div>
+                                                </div> 
+                                            </div> 
+        
+                                            <div class="card mt-2 eg">
+                                                <div class="row">
+                                                    <div class="col-8"> Ex - Gate </div>
+                                                    <div class="col-4" id="exgate"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2 reject">
+                                                <div class="row">
+                                                    <div class="col-8"> Reject Part </div>
+                                                    <div class="col-4" id="reject_parts"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2 tapping">
+                                                <div class="row">
+                                                    <div class="col-8"> Tapping </div>
+                                                    <div class="col-4" id="tapping"> </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="card mt-2  dross">
+                                                <div class="row">
+                                                    <div class="col-8"> Dross </div>
+                                                    <div class="col-4" id="dross"></div>
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-9 grafik">
+                                <div class="row ">
+                                    <div class="col daily"> 
+                                        <div class="card shadow">
+                                            <div class="card-header day"> Daily Report</div>
+                                            <div id="chartdiv"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col monthly"> 
+                                        <div class="card shadow">
+                                            <div class="card-header month">Monthly Report</div>
+                                            <div id="chartdiv2"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
-            {{-- </div> --}}
+            </div>
 
-        </div>
     </div>
 
     <script src="{{ asset('/js/Socketio454.js') }}"></script>

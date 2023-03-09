@@ -14,7 +14,14 @@ html > body {
     height:50px;
     margin-top: 7px;
     margin-left: 10px;
-  }
+}
+
+.section{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Lucida Console';
+}
   
 #MyClockDisplay{
     margin-left: 300px;
@@ -26,24 +33,29 @@ html > body {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 15px;
-  }
+}
 
-/* .nav-tabs {
+.nav-tabs {
     background-color: #ffffff;
 }
 
-.nav-item{
+.nav-item {
     background-color: #55769c;
-} */
+    border-radius: 5px 5px 0px 0px;
+    font-size: large;
+}
 
-/* .child {
-    display: flex;
-    flex-direction: row;
-} */
+.active {
+    color: black !important;
+    font-size: large !important;
+    font-weight: 600 !important;
+}
 
-/* .profile {
-    background-color: #095256;
-}  */
+.report{
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
 
 .gambar {
     justify-content: center;
@@ -60,10 +72,10 @@ html > body {
     height: 80%;
 }
 
-.child .identitas {
+.identitas {
     margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    /* margin-right: 20px; */
     margin-bottom: 10px;
     height: 97vh;
 }
@@ -221,7 +233,14 @@ html > body {
         height:55px;
         margin-top: 7px;
         margin-left: 10px;
-      }
+    }
+
+    .section{
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+        font-family: 'Lucida Console';
+    }
       
     #MyClockDisplay{
         margin-left: 280px;
@@ -238,6 +257,24 @@ html > body {
 
     .nav-tabs {
         background-color: #ffffff;
+    }
+
+    .nav-item {
+        background-color: #55769c;
+        border-radius: 5px 5px 0px 0px;
+        font-size: large;
+    }
+
+    .active {
+        color: black !important;
+        font-size: large !important;
+        font-weight: 600 !important;
+    }
+
+    .report{
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
     }
     .gambar {
         justify-content: center;
@@ -372,7 +409,7 @@ html > body {
         text-align: center;
         margin-top: 10px ;
         margin-left: 10px;
-        margin-right: 3px;
+        margin-right: 5px;
         margin-bottom:10px;
         height: 100%;
     }
@@ -508,6 +545,12 @@ html > body {
         margin-top: 7px;
         margin-left: 10px;
       }
+
+    .section{
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+    }
       
     #MyClockDisplay{
         margin-left: 280px;
@@ -525,13 +568,29 @@ html > body {
     .nav-tabs {
         background-color: #ffffff;
     }
-    .nav-items {
-        background-color: rgb(77, 77, 137);
+
+    .nav-item {
+        background-color: #55769c;
+        border-radius: 5px 5px 0px 0px;
+        font-size: large;
     }
+
+    .active {
+        color: black !important;
+        font-size: large !important;
+        font-weight: 600 !important;
+    }
+
+    .report{
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+    }
+
     .gambar {
         justify-content: center;
         align-items: center;
-        margin-top: 25px;
+        margin-top: 5px;
         margin-left: 25%;
         margin-bottom: 0;
         margin-right: 15%;
@@ -543,22 +602,16 @@ html > body {
         height: 100%;
     }
     
-    .child .identitas {
+    .identitas {
         margin-top: 10px;
-        margin-left: 10px;
+        margin-left: 20px;
         /* margin-right: -20px; */
         margin-bottom: 0px;
         height: 100vh;
     }
     
     .atas {
-        margin-top: 20px;
-        text-align: center;
-    }
-    
-    .section{
-        font-size: 40px;
-        font-weight: 500;
+        margin-top: 10px;
         text-align: center;
     }
 
@@ -570,24 +623,24 @@ html > body {
     .atas h1 {
         font-weight:700;
         margin-top: 0px;
-        font-size: 60px;
+        font-size: 50px;
     }
     
     .atas .hd{
-        font-size: 45px;
+        font-size: 40px;
     }
     
     .bawah h2 {
-        font-size: 45px;
+        font-size: 40px;
     }
     
     .bawah h3{
-        font-size: 40px;
+        font-size: 35px;
         font-weight: 400;
     }
 
     .produk {
-        margin-left: 9%;
+        margin-left: 9.5%;
     }
     
     .card .tc {
@@ -655,27 +708,27 @@ html > body {
 
     #chartdiv {
         width: 100%;
-        height: 38.5vh;
+        height: 34vh;
     }  
     
     #chartdiv2 {
         width: 100%;
-        height: 38.5vh;
+        height: 34vh;
     }
     
     .grafik .daily {
         text-align: center;
         margin-top: 10px ;
-        margin-left: 10px;
-        margin-right: 3px;
+        margin-left: 0px;
+        margin-right: 20px;
         margin-bottom:10px;
         height: 100%;
     }
     .grafik .monthly {
         text-align: center;
         margin-top: 2px ;
-        margin-left: 10px;
-        margin-right: 5px;
+        margin-left: 0px;
+        margin-right: 20px;
         margin-bottom:10px;
         height: 100%;
     }
