@@ -62,8 +62,8 @@
                             <div class="col-3 sidebar " >
                                 <div class="card shadow identitas ">
                                     <div class="col atas py-0">
-                                    <h1 id="mesin_atas">Striko-1</h1>
-                                    <h2 class="hd" id="material">HD-2</h2>
+                                    <h1 id="mesin_atas"></h1>
+                                    <h2 class="hd" id="material"></h2>
                                     </div>
         
                                     <div class="gambar">
@@ -71,8 +71,8 @@
                                     </div>
         
                                     <div class="col bawah">
-                                        <h2 id="nama">Euis Rahmawati</h2>
-                                        <h3 id="nrp">20025</h3>
+                                        <h2 id="nama"></h2>
+                                        <h3 id="nrp"></h3>
                                     </div>
         
                                     <div class="row">
