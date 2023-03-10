@@ -4,7 +4,7 @@
     --orange: hsl(25, 100%, 50%);
     --blue: hsl(212, 67%, 41%);
     --varyDarkBlue: hsl(234, 12%, 34%);
-    --grayishBlue: hsl(228, 20%, 80%);
+    --grayishBlue: #2B3467;
     --veryLightGray: hsl(0, 0%, 98%);
     --weight1: 200;
     --weight2: 400;
@@ -70,8 +70,22 @@
 }
 
 .card-left1{
+    /* height: 30%; */
     border-radius: 20px 20px 20px 20px;
     border-left: 10px solid var(--grayishBlue);
+}
+
+.parent{
+    margin-left: -10px;
+}
+
+.child {
+    height: 50px; 
+    width: 100%;
+    background-color: #EB455F;
+    color: white;
+    /* padding: 8px 0 0 0px; */
+    border-radius: 100px 100px 100px 100px;
 }
 
 .card-left2{

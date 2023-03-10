@@ -12,7 +12,10 @@
                         {{-- <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">COVER L K1ZG <br><span class="fs-2">3000 part</span>
                         </div> --}}
-                        <div class="col-12 text-center mt-2 pt-2 pb-3 fw-bold fs-2"> COVER L K1ZG</div>
+                        <div class="col-9 mt-2 ps-4 fw-bold fs-4 "> PIPE SUB-ASSY  </div>
+                        <div class="col-3 d-flex align-items-center parent">
+                            <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card card-left5 mt-3 ms-2 shadow-sm">
