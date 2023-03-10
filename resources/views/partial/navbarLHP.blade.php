@@ -66,29 +66,29 @@
             {{-- LHP Casting --}}
             {{-- Preparation casting --}}
             @if ($nrp != 0 && Request::url() == url('/lhp-casting'))
-                <a href="{{ url('/lhp-casting') }}" class="navitems">
-                    <div class="nrp">
-                        <div class="font-white"> NRP : </div>
-                    </div>
-                    <div class="nrp nrp-child border-bottom ">
-                        <div class="font-white fw-bold">{{ $nrp }}</div>
-                    </div>
-                </a>
+                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
+                <div class="nrp">
+                    <div class="font-white"> NRP : </div>
+                </div>
+                <div class="nrp nrp-child border-bottom ">
+                    <div class="font-white fw-bold">{{ $nrp }}</div>
+                </div>
+                {{-- </a> --}}
             @elseif (Request::url() == url('/lhp-casting'))
-                <a href="{{ url('/lhp-casting') }}" class="navitems">
-                    <div class="nrp border-bottom">
-                        <div class="font-white"> Preparation </div>
-                    </div>
-                </a>
+                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
+                <div class="nrp border-bottom">
+                    <div class="font-white"> Preparation </div>
+                </div>
+                {{-- </a> --}}
                 {{-- lhp casting  --}}
             @elseif (Request::url() == url('/lhp-casting/' . $mc . '/' . $id . ''))
-                <a href="{{ url('/lhp-casting') }}" class="navitems">
-                    <div class="nrp border-bottom">
-                        <div class="font-white"> {{ $nrp1 }} {{ $nrp2 }} {{ $nrp3 }}
-                            {{ $nrp4 }} {{ $nrp5 }} {{ $nrp6 }} <br>
-                        </div>
+                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
+                <div class="nrp border-bottom">
+                    <div class="font-white"> {{ $nrp1 }} {{ $nrp2 }} {{ $nrp3 }}
+                        {{ $nrp4 }} {{ $nrp5 }} {{ $nrp6 }} <br>
                     </div>
-                </a>
+                </div>
+                {{-- </a> --}}
 
 
                 {{-- LHP MELTING --}}
