@@ -22,7 +22,7 @@ class CreateLhpCastingTable extends Migration
             $table->integer('nrp4')->default('0');
             $table->integer('nrp5')->default('0');
             $table->integer('nrp6')->default('0');
-            $table->date('tanggal')->default('0');
+            $table->date('tanggal')->nullable();
             $table->string('shift')->default('0');
             $table->time('jam_available')->default('0');
             $table->time('jam_running')->default('0');
