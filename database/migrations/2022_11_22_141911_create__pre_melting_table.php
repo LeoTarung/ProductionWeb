@@ -50,6 +50,7 @@ class CreatePreMeltingTable extends Migration
             $table->decimal('gas_consum', $precision = 8, $scale = 1)->default('0');
             $table->integer('gas_awal')->default('0');
             $table->integer('melting_rate')->default('0');
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }
