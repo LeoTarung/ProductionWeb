@@ -11,11 +11,12 @@
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold" id="nrp1"
-                                        name="nrp1" required>
-                                    <label for="nrp" class="">N R P - 1</label>
+                                    {{-- <label for="nrp1" class="form-label">N R P - 1:</label> --}}
+                                    <input type="number" class="form-control border-dark fw-bold border-1" id="nrp1"
+                                        name="nrp1" placeholder="Masukkan NRP-1" required>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control border-dark fw-bold" id="nama1"
@@ -111,27 +112,27 @@
                                 <div class="form-floating ">
                                     <div class="btn-group-horizontal" role="group"
                                         aria-label="horizontal radio toggle  button group">
-                                        <label class="fs-4">Pilih Line:</label>
+                                        <label class="">Pilih Line:</label>
                                         <input type="radio" class="btn-check" name="line" id="line1"
                                             autocomplete="off" onclick="line_cast(1)" value="1">
-                                        <label class="btn btn-outline-success fs-4" for="line1">Line 1</label>
+                                        <label class="btn btn-outline-success " for="line1">Line 1</label>
                                         <input type="radio" class="btn-check" name="line" id="line2"
                                             autocomplete="off" onclick="line_cast(2)" value="2">
-                                        <label class="btn btn-outline-success fs-4" for="line2">Line 2</label>
+                                        <label class="btn btn-outline-success " for="line2">Line 2</label>
                                         <input type="radio" class="btn-check" name="line" id="line3"
                                             autocomplete="off" onclick="line_cast(3)" value="3">
-                                        <label class="btn btn-outline-success fs-4" for="line3">Line 3</label>
+                                        <label class="btn btn-outline-success " for="line3">Line 3</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-4 mb-2 ms-2">
-                                <div class="col-auto fs-4">Pilih MC:</div>
-                                <div class="col-2"><input type="number" class="form-control border-dark fw-bold fs-4"
+                                <div class="col-auto ">Pilih MC:</div>
+                                <div class="col-2"><input type="number" class="form-control border-dark fw-bold "
                                         id="mc" name="mc" readonly></div>
                                 <div class="col-7">
                                     <div class="form-floating ">
-                                        <button class="btn btn-secondary dropdown-toggle fs-4" type="button"
-                                            id="btn_mc" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn btn-secondary dropdown-toggle " type="button" id="btn_mc"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
                                             MC
                                         </button>
                                         <div class="dropdown">
@@ -202,9 +203,9 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-end">
-                    <button type="reset" class="btn btn-secondary">RESET
+                    <button type="reset" class="btn btn-secondary">Reset
                     </button>
-                    <button type="submit" class="btn btn-success mx-3">SIMPAN </button>
+                    <button type="submit" class="btn btn-success mx-3">Simpan </button>
                 </div>
             </form>
         </div>
