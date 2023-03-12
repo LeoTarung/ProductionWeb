@@ -167,4 +167,27 @@ class CastingController extends Controller
 
         return view('lhp.prepare-casting', compact('title', 'shift', 'date', 'mesin', 'nrp'));
     }
+
+    public function prep_casting_simpan(UsableController $useable)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $mesin = "CASTING";
+        $title = "LHP Casting";
+        $nrp = 0;
+
+        return view('lhp.prepare-casting', compact('title', 'shift', 'date', 'mesin', 'nrp'));
+    }
+
+
+    public function lhp_casting(UsableController $useable)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $mesin = "CASTING";
+        $title = "LHP Casting";
+        $nrp = 0;
+
+        return view('lhp.lhp-casting', compact('title', 'shift', 'date', 'mesin', 'nrp'));
+    }
 }

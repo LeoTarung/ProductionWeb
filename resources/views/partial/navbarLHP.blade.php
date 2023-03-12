@@ -14,6 +14,13 @@
                         {{ $shift }}
                     </div>
                 </a>
+            @elseif (Request::url() == url('/lhp-casting/lhp-casting'))
+                <a>
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
+
 
                 {{-- { LHP MELTING} --}}
             @elseif (Request::url() == url('/lhp-melting'))
@@ -57,6 +64,7 @@
         </li>
         <li>
             {{-- LHP Casting --}}
+            {{-- Preparation casting --}}
             @if ($nrp != 0 && Request::url() == url('/lhp-casting'))
                 <a href="{{ url('/lhp-casting') }}" class="navitems">
                     <div class="nrp">
@@ -72,6 +80,14 @@
                         <div class="font-white"> Preparation </div>
                     </div>
                 </a>
+                {{-- lhp casting  --}}
+            @elseif (Request::url() == url('/lhp-casting/lhp-casting'))
+                <a href="{{ url('/lhp-casting') }}" class="navitems">
+                    <div class="nrp border-bottom">
+                        <div class="font-white"> NRP </div>
+                    </div>
+                </a>
+
 
                 {{-- LHP MELTING --}}
             @elseif ($nrp != 0 && Request::url() == url('/lhp-melting'))
@@ -157,7 +173,6 @@
                         <div class="font-white choose_machine"> {{ $mesin }} </div>
                     </div>
                 </a>
-
                 {{-- Preparation Forklift --}}
             @elseif ($mesin == 'FORKLIFT')
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
