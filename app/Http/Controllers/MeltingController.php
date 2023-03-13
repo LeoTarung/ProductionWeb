@@ -91,8 +91,9 @@ class MeltingController extends Controller
         $id_striko3 = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_Swift_Asia = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', 'Swift_Asia'], ['shift', '=', $shift]])->first();
         $nrp = 0;
+        $id = 0;
         $mesin = "MELTING";
-        return view('lhp.prepare-melting', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'));
+        return view('lhp.prepare-melting', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia', 'id'));
     }
 
     public function prep_melting_simpan(UsableController $useable, Request $request)
@@ -113,7 +114,7 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    'gas_awal' => $gas->gas_akhir,
+                    // 'gas_awal' => $gas->gas_akhir,
                     'stok_molten' => $gas->stok_molten
                 ]);
             } else if ($request->mesin != "") {
@@ -127,8 +128,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    'gas_awal' => $gas->gas_akhir,
-                    'stok_molten' => $gas->stok_molten
+                    // 'gas_awal' => $gas->gas_akhir,
+                    // 'stok_molten' => $gas->stok_molten
                 ]);
             } else {
                 LhpMelting::create([
