@@ -23,9 +23,9 @@ use App\Http\Controllers\HenkatenController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages.manufacturingOverview');
-// });
+Route::get('/modal-sementara', function () {
+    return view('lhp.modal-casting-sementara');
+});
 
 Route::get('/manufacturing', [ManufactureController::class, 'index']);
 Route::get('/', [ProductionController::class, 'index']);
@@ -39,7 +39,7 @@ Route::get('/lhp', function () {
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);
 Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'resume_supply']);
-
+Route::get('/partial/modal-sementara', [UsableController::class, 'gambarPart']);
 //====================== API FOR SHARE ======================//
 Route::get('/dtkyrw/all', [ApiController::class, 'dtkyrwall']);
 Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
@@ -47,6 +47,7 @@ Route::get('/dthourlymltng/{id}', [ApiController::class, 'hourly_lhpmelting']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dtmccasting/{mc}', [ApiController::class, 'showmc']);
+
 
 //====================== SETTINGS ======================//
 Route::get('/settings', [SettingController::class, 'index']);
