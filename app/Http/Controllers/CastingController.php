@@ -240,6 +240,7 @@ class CastingController extends Controller
         $title = "LHP Casting";
         $idCasting = LhpCasting::where('id', $id)->first();
 
+
         $nrp1 = $idCasting->nrp1 . ' |';
         $nrp2 = $idCasting->nrp2 . ' |';
         $nrp3 = $idCasting->nrp3 . ' |';
@@ -248,6 +249,6 @@ class CastingController extends Controller
         $nrp6 = $idCasting->nrp6 . ' |';
 
         $nrp = $nrp1;
-        return view('lhp.lhp-casting', compact('title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6'));
+        return view('lhp.lhp-casting', compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6'));
     }
 }
