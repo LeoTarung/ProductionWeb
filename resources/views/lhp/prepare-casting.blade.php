@@ -10,98 +10,98 @@
                     <div class="col-6">
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
-                                <div class="form-floating">
-                                    {{-- <label for="nrp1" class="form-label">N R P - 1:</label> --}}
-                                    <input type="number" class="form-control border-dark fw-bold border-1" id="nrp1"
-                                        name="nrp1" placeholder="Masukkan NRP-1" required>
-                                </div>
+                                {{-- <div class="form-floating"> --}}
+                                <div class="form-group form-group-sm">
+                                    {{-- <label for="nrp1" class="">N R P - 1</label> --}}
+                                    <input type="number" class="form-control border-dark" id="nrp1"
+                                        name="nrp1" placeholder="N R P - 1" required>                                </div>
                             </div>
 
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold" id="nama1"
-                                        name="nama1" required readonly>
-                                    <label for="nama1" class="">N A M A - 1</label>
+                                <div class="form-group form-group-sm">
+                                    <input type="text" class="form-control border-dark" id="nama1"
+                                        name="nama1" placeholder="N A M A - 1" required readonly>
+                                    {{-- <label for="nama1" class="">N A M A - 1</label> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold" id="nrp2"
-                                        name="nrp2">
-                                    <label for="nrp1" class="">N R P - 2</label>
+                                <div class="form-group form-group-sm">
+                                    <input type="number" class="form-control border-dark" id="nrp2"
+                                        name="nrp2" placeholder="N R P - 2">
+                                    {{-- <label for="nrp2" class="">N R P - 2</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold" id="nama2"
-                                        name="nama2" readonly>
-                                    <label for="nama2" class="">N A M A - 2</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-3 ms-3">
-                            <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold" id="nrp3"
-                                        name="nrp3">
-                                    <label for="nrp3" class="">N R P - 3</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold" id="nama3"
-                                        name="nama3" readonly>
-                                    <label for="nama3" class="">N A M A - 3</label>
+                                <div class="form-group form-group-sm">
+                                    <input type="text" class="form-control border-dark" id="nama2"
+                                        name="nama2" placeholder="N A M A - 2" readonly>
+                                    {{-- <label for="nama2" class="">N A M A - 2</label> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold" id="nrp4"
-                                        name="nrp4">
-                                    <label for="nrp4" class="">N R P - 4</label>
+                                <div class="form-group form-group-sm-">
+                                    <input type="number" class="form-control border-dark" id="nrp3"
+                                        name="nrp3" placeholder="N R P - 3">
+                                    {{-- <label for="nrp3" class="">N R P - 3</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold" id="nama4"
-                                        name="nama4" readonly>
-                                    <label for="nama4" class="">N A M A - 4</label>
+                                <div class="form-group form-group-sm">
+                                    <input type="text" class="form-control border-dark" id="nama3"
+                                        name="nama3" placeholder="N A M A - 3" readonly>
+                                    {{-- <label for="nama3" class="">N A M A - 3</label> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold" id="nrp5"
-                                        name="nrp5">
-                                    <label for="nrp5" class="">N R P - 5</label>
+                                <div class="form-group form-group-sm">
+                                    <input type="number" class="form-control border-dark" id="nrp4"
+                                        name="nrp4" placeholder="N R P - 4">
+                                    {{-- <label for="nrp4" class="">N R P - 4</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold" id="nama5"
-                                        name="nama5" readonly>
-                                    <label for="nama5" class="">N A M A - 5</label>
+                                <div class="form-group form-group-sm">
+                                    <input type="text" class="form-control border-dark" id="nama4"
+                                        name="nama4" placeholder="N A M A - 4" readonly>
+                                    {{-- <label for="nama4" class="">N A M A - 4</label> --}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 ms-3">
+                            <div class="col-6">
+                                <div class="form-group form-group-sm">
+                                    <input type="number" class="form-control border-dark" id="nrp5"
+                                        name="nrp5" placeholder="N R P - 5">
+                                    {{-- <label for="nrp5" class="">N R P - 5</label> --}}
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group form-group-sm">
+                                    <input type="text" class="form-control border-dark" id="nama5"
+                                        name="nama5" placeholder="N A M A - 5" readonly>
+                                    {{-- <label for="nama5" class="">N A M A - 5</label> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="row my-3 ms-3">
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control border-dark fw-bold" id="nrp6"
-                                        name="nrp6">
-                                    <label for="nrp6" class="">N R P - 6</label>
+                                <div class="form-group form-group-sm">
+                                    <input type="number" class="form-control border-dark" id="nrp6"
+                                        name="nrp6" placeholder="N R P - 6">
+                                    {{-- <label for="nrp6" class="">N R P - 6</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-dark fw-bold" id="nama6"
-                                        name="nama6" readonly>
-                                    <label for="nama6" class="">N A M A - 6</label>
+                                <div class="form-group form-group-sm">
+                                    <input type="text" class="form-control border-dark" id="nama6"
+                                        name="nama6" placeholder="N A M A - 6" readonly>
+                                    {{-- <label for="nama6" class="">N A M A - 6</label> --}}
                                 </div>
                             </div>
                         </div>
@@ -125,8 +125,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-4 mb-2 ms-2">
-                                <div class="col-auto ">Pilih MC:</div>
+                            <div class="row mt-3 ms-2">
+                                <div class="col-auto">Pilih MC:</div>
                                 <div class="col-2"><input type="number" class="form-control border-dark fw-bold "
                                         id="mc" name="mc" readonly></div>
                                 <div class="col-7">
@@ -179,21 +179,21 @@
                             </div>
                         </div>
 
-                        <div class="row mt-4 ms-2 mb-2">
+                        <div class="row mt-3 ms-2 mb-2" style="margin-right:15px;">
                             <div class="form-floating">
                                 <input type="string" class="form-control border-dark fw-bold" id="nama_part"
                                     name="nama_part" required readonly>
                                 <label for="nama_part" class="ms-2">NAMA PART</label>
                             </div>
                         </div>
-                        <div class="row mt-4 ms-2 mb-2">
+                        <div class="row mt-3 ms-2 mb-2" style="margin-right:15px;">
                             <div class="form-floating">
                                 <input type="number" class="form-control border-dark fw-bold" id="cavity"
                                     name="cavity" required readonly>
                                 <label for="cavity" class="ms-2">C A V I T Y</label>
                             </div>
                         </div>
-                        <div class="row mt-3 ms-2">
+                        <div class="row mt-3 ms-2 mr-2" style="margin-right:15px;">
                             <div class="form-floating">
                                 <input type="number" class="form-control border-dark fw-bold" id="dies"
                                     name="dies" required readonly>
