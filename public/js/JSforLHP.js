@@ -130,32 +130,18 @@ function ModalSupply(mesin, id) {
     );
 }
 
-//==============================['FUNCTION PADA PAGE SETTINGS']==============================//
-// function editmesin(id){
-//     $("#setupclose").click();
-//     $("#staticBackdropLabel1").html('EDIT MACHINE' + id); //Untuk kasih judul di modal
-//     $("#staticBackdrop1").modal('show'); //kalo ID pake "#" kalo class pake "." 
-//     $.ajax({
-//             method: "GET",  
-//             dataType: "json",
-//             url: "settings/mesincasting" + "/" + id,
-//             success: function(data) {
-//               console.log(data);
-             
-              
-//             }
-//         });
-
-    //  console.log('asad');
-    //  $.get(
-    //     "/settings/mesincasting" + "/" + id,
-    //     {},
-    //     function (data, status) {
-    //         // $("#setupclose").click();
-    //         $("#staticBackdropLabel1").html('EDIT MACHINE ' + id); //Untuk kasih judul di modal
-    //         $("#page").html(data); 
-    //         $("#staticBackdrop1").modal("show");
-    //         console.log("test")
-    //     }
-    // );
-// }
+//==============================['FUNCTION MODAL GAMBAR PART DI CASTING']==============================//
+function ModalGambar() {
+    // console.log('asad');
+    $.get(
+        "/partial/modal-sementara",
+        {},
+        function (data) {
+            // $("#ModalGambarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
+            //  $("#page").load('/partial/modal-sementara'); //menampilkan view create di dalam id page
+             $("#ModalGambar").modal("show"); //kalo ID pake "#" kalo class pake "."
+             $('#ModalGambar .modal-body').load( '/partial/modal-sementara');
+             console.log('test');
+        }
+    );
+}
