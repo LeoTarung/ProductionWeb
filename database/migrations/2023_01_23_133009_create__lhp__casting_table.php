@@ -15,7 +15,9 @@ class CreateLhpCastingTable extends Migration
     {
         Schema::create('lhp_casting', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_mesincasting')->nullable();
+            // $table->foreignId('id_mesincasting')->nullable();
+            $table->integer('id_mesincasting');
+            $table->foreign('id_mesincasting')->references('mc')->on('mesin_casting')->onDelete('cascade');
             $table->integer('nrp1')->default('0');
             $table->integer('nrp2')->default('0');
             $table->integer('nrp3')->default('0');

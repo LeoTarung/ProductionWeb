@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLhpCastingRawTable extends Migration
+class DowntimeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateLhpCastingRawTable extends Migration
      */
     public function up()
     {
-        Schema::create('lhp_casting_raw', function (Blueprint $table) {
+        Schema::create('downtime', function (Blueprint $table) {
             $table->id();
-
-            $table->timestamps();
         });
     }
 
@@ -27,6 +25,6 @@ class CreateLhpCastingRawTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lhp_casting_raw');
+        //
     }
 }
