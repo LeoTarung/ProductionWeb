@@ -7,23 +7,8 @@
             </a>
         </li>
         <li>
-            {{-- LHP CASTING --}}
-            @if (Request::url() == url('/lhp-casting'))
-                <a>
-                    <div class="shift border-bottom">
-                        {{ $shift }}
-                    </div>
-                </a>
-            @elseif (Request::url() == url('/lhp-casting/' . $mc . '/' . $id . ''))
-                <a>
-                    <div class="shift border-bottom">
-                        {{ $shift }}
-                    </div>
-                </a>
-
-
-                {{-- { LHP MELTING} --}}
-            @elseif (Request::url() == url('/lhp-melting'))
+            {{-- { LHP MELTING} --}}
+            @if (Request::url() == url('/lhp-melting'))
                 <a>
                     <div class="shift border-bottom">
                         {{ $shift }}
@@ -49,6 +34,34 @@
                         {{ $shift }}
                     </div>
                 </a>
+
+                {{-- Settings --}}
+            @elseif (Request::url() == url('/settings'))
+                <a>
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
+            @elseif (Request::url() == url('/settings/mesincasting/' . $id . ''))
+                <a>
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
+
+                {{-- LHP CASTING --}}
+            @elseif (Request::url() == url('/lhp-casting'))
+                <a>
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
+            @elseif (Request::url() == url('/lhp-casting/' . $mc . '/' . $id . ''))
+                <a>
+                    <div class="shift border-bottom">
+                        {{ $shift }}
+                    </div>
+                </a>
             @endif
         </li>
         <li class="ms-2 ">
@@ -63,36 +76,8 @@
             <!-- </a> -->
         </li>
         <li>
-            {{-- LHP Casting --}}
-            {{-- Preparation casting --}}
-            @if ($nrp != 0 && Request::url() == url('/lhp-casting'))
-                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
-                <div class="nrp">
-                    <div class="font-white"> NRP : </div>
-                </div>
-                <div class="nrp nrp-child border-bottom ">
-                    <div class="font-white fw-bold">{{ $nrp }}</div>
-                </div>
-                {{-- </a> --}}
-            @elseif (Request::url() == url('/lhp-casting'))
-                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
-                <div class="nrp border-bottom">
-                    <div class="font-white"> Preparation </div>
-                </div>
-                {{-- </a> --}}
-                {{-- lhp casting  --}}
-            @elseif (Request::url() == url('/lhp-casting/' . $mc . '/' . $id . ''))
-                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
-                <div class="nrp border-bottom">
-                    <div class="font-white"> {{ $nrp1 }} {{ $nrp2 }} {{ $nrp3 }}
-                        {{ $nrp4 }} {{ $nrp5 }} {{ $nrp6 }} <br>
-                    </div>
-                </div>
-                {{-- </a> --}}
-
-
-                {{-- LHP MELTING --}}
-            @elseif ($nrp != 0 && Request::url() == url('/lhp-melting'))
+            {{-- LHP MELTING --}}
+            @if ($nrp != 0 && Request::url() == url('/lhp-melting'))
                 <a href="{{ url('/lhp-melting') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -117,7 +102,7 @@
                     </div>
                 </a>
 
-                {{-- LHP FORKLIFT --}}
+                {{-- Preparation FORKLIFT --}}
             @elseif ($nrp != 0 && Request::url() == url('/lhpforklift'))
                 <a href="{{ url('/lhpforklift') }}" class="navitems">
                     <div class="nrp">
@@ -133,6 +118,7 @@
                         <div class="font-white"> PILIH FORKLIFT </div>
                     </div>
                 </a>
+                {{-- LHP FORKLIFT --}}
             @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
                 <a href="{{ url('/lhpforklift') }}" class="navitems">
                     <div class="nrp">
@@ -143,13 +129,6 @@
                     </div>
                 </a>
 
-                {{-- LHP CASTING --}}
-            @elseif(Request::url() == url('/lhp-casting'))
-                <a href="{{ url('/lhp-casting') }}" class="navitems">
-                    <div class="nrp border-bottom">
-                        <div class="font-white"> CASTING</div>
-                    </div>
-                </a>
 
                 {{-- SETTINGS --}}
             @elseif(Request::url() == url('/settings'))
@@ -164,27 +143,70 @@
                         <div class="font-white"> Menu Utama </div>
                     </div>
                 </a>
+
+                {{-- LHP Casting --}}
+                {{-- Preparation casting --}}
+            @elseif ($nrp != 0 && Request::url() == url('/lhp-casting'))
+                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
+                <div class="nrp">
+                    <div class="font-white"> NRP : </div>
+                </div>
+                <div class="nrp nrp-child border-bottom ">
+                    <div class="font-white fw-bold">{{ $nrp }}</div>
+                </div>
+            @elseif (Request::url() == url('/lhp-casting'))
+                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
+                <div class="nrp border-bottom">
+                    <div class="font-white"> Preparation </div>
+                </div>
+
+                {{-- lhp casting  --}}
+            @elseif (Request::url() == url('/lhp-casting/' . $mc . '/' . $id . ''))
+                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
+                <div class="nrp border-bottom">
+                    <div class="font-white"> {{ $nrp1 }} {{ $nrp2 }} {{ $nrp3 }}
+                        {{ $nrp4 }} {{ $nrp5 }} {{ $nrp6 }} <br>
+                    </div>
+                </div>
             @endif
 
         </li>
         <li>
-            {{-- Preparation Casting --}}
-            @if (Request::url() == url('/lhp-casting'))
-                <a href="{{ url('/lhp-casting') }}" class="machine shadow-lg">
+
+            {{-- Preparation Melting --}}
+            @if (Request::url() == url('/lhp-melting'))
+                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
-                        <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @if ($mesin == 'MELTING')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
                     </div>
                 </a>
+                {{-- LHP MELTING --}}
+            @elseif(Request::url() == url('/lhp-melting/' . $mesin . '/' . $id . ''))
+                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FINAL .INS')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+
                 {{-- Preparation Forklift --}}
-            @elseif (Request::url() == url('/lhp-casting/' . $mc . '/' . $id . ''))
-                <a href="{{ url('/lhp-casting') }}" class="machine shadow-lg">
+            @elseif(Request::url() == url('/lhpforklift/'))
+                <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
-                        <div class="font-white choose_machine"> MESIN - {{ $mc }} </div>
-
+                        @if ($mesin == 'FINAL .INS')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
                     </div>
                 </a>
-
-
                 {{-- LHP Forklift --}}
             @elseif(Request::url() == url('/forklift/' . $mesin . '/' . $id . ''))
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
@@ -196,6 +218,7 @@
                         @endif
                     </div>
                 </a>
+
 
                 {{-- Setting --}}
             @elseif(Request::url() == url('/settings'))
@@ -219,29 +242,22 @@
                     </div>
                 </a>
 
+                {{-- Preparation Casting --}}
+            @elseif (Request::url() == url('/lhp-casting'))
+                <a href="{{ url('/lhp-casting') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        <div class="font-white choose_machine"> {{ $mesin }} </div>
+                    </div>
+                </a>
+                {{-- LHP Casting --}}
+            @elseif (Request::url() == url('/lhp-casting/' . $mc . '/' . $id . ''))
+                <a href="{{ url('/lhp-casting') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        <div class="font-white choose_machine"> MESIN - {{ $mc }} </div>
 
-                {{-- Preparation Melting --}}
-            @elseif(Request::url() == url('/lhp-melting'))
-                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
-                    <div class="mesin">
-                        @if ($mesin == 'MELTING')
-                            <div class="font-white "> {{ $mesin }} </div>
-                        @else
-                            <div class="font-white choose_machine"> {{ $mesin }} </div>
-                        @endif
                     </div>
                 </a>
-                {{-- LHP MELTING --}}
-            @else
-                <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
-                    <div class="mesin">
-                        @if ($mesin == 'FINAL .INS')
-                            <div class="font-white "> {{ $mesin }} </div>
-                        @else
-                            <div class="font-white choose_machine"> {{ $mesin }} </div>
-                        @endif
-                    </div>
-                </a>
+
             @endif
         </li>
         <li>
