@@ -730,9 +730,40 @@ a .font-forklift10 {
     margin: 0 !important;
 }
 
+
+
+
+/* Backgorund Part Casting */
+.bg-part{
+    /* background-image: url("/img/parts/Pipe Air Inlet ML288384.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+    /* background-size: cover; */
+    width: 100%;
+    height: auto;
+}
+
+img {
+	display: block;
+	margin: auto;
+}
+
+area {
+	display: block;
+	outline: none;
+}
+
+area:hover {
+	cursor: pointer;
+    color: #11101d;
+}
+
+area:active {
+	background-color: #ccc;
+}
+
+
+
 /* SETTINGS */
 
-/* Catatan CSS
-1. TAMBAHKAN NAV KHUSUS TABLET DAN LAPTOP LARGE (complete)
-2. TAMBAHKAN FOOTER KHUSUS TABLET
-*/
