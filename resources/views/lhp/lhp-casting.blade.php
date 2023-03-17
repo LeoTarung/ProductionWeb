@@ -12,16 +12,17 @@
                         {{-- <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">COVER L K1ZG <br><span class="fs-2">3000 part</span>
                         </div> --}}
-                        <div class="col-9 mt-2 ps-4 fw-bold fs-4 "> PIPE SUB-ASSY </div>
+                        <div class="col-9 mt-2 ps-4 fw-bold fs-4 "> {{ $idCasting->nama_part }} </div>
                         <div class="col-3 d-flex align-items-center parent">
-                            <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                            <div class="child fw-bold fs-4 pt-2 text-center align-items-center">
+                                {{ $idCasting->mesincasting->cycle_time }}</div>
                         </div>
                     </div>
                 </div>
                 <div class="card card-left5 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2">3000
+                        <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2">{{ $idCasting->target }}
                                 part</span>
                         </div>
                     </div>
@@ -29,7 +30,8 @@
                 <div class="card card-left2 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">TOTAL PRODUKSI <br><span class="fs-2">3000
+                        <div class="col-11 text-center mt-2 fw-bold">TOTAL PRODUKSI <br><span
+                                class="fs-2">{{ $idCasting->total_produksi }}
                                 part</span>
                         </div>
                     </div>
@@ -37,7 +39,8 @@
                 <div class="card card-left3 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">REJECTION <br><span class="fs-2">3000
+                        <div class="col-11 text-center mt-2 fw-bold">REJECTION <br><span
+                                class="fs-2">{{ $idCasting->total_ng }}
                                 part</span>
                         </div>
                     </div>
@@ -45,8 +48,9 @@
                 <div class="card card-left4 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">DOWNTIME<br><span class="fs-2">3000
-                                part</span>
+                        <div class="col-11 text-center mt-2 fw-bold">DOWNTIME<br><span
+                                class="fs-2">{{ $idCasting->total_downtime }}
+                            </span>
                         </div>
                     </div>
                 </div>
