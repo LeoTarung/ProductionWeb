@@ -1,0 +1,865 @@
+@extends('mainLHP')
+@section('content')
+    {{-- -------------------------------- CSS  ------------------------------ --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/final-inspection.css') }}">
+    {{-- --------------------------------      ------------------------------ --}}
+
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-6"> 
+            {{-- card part --}}
+            <div class="card card-template mt-3 ms-2 bg-warning shadow-sm">
+              <div class="card card-part fw-bold fs-4 text-center align-items-center">COVER THERMO 2MD</div>
+            </div>
+  
+            {{-- card total OK --}}
+            <div class="card  mt-3 ms-2 shadow-sm totalok">
+              <div class="row">
+                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL CHANGE </div>
+                <div class="col-3 d-flex align-items-center parent">
+                    <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-6">  
+            <div class="card  mt-3 ms-2 shadow-sm totalok">
+              <div class="row">
+                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL NG </div>
+                <div class="col-3 d-flex align-items-center parent">
+                    <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                </div>
+              </div>
+            </div>
+            <div class="card  mt-3 ms-2 shadow-sm totalok">
+              <div class="row">
+                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL OK </div>
+                <div class="col-3 d-flex align-items-center parent">
+                    <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-9 mt-2 ps-4 fw-bold fs-4"></div>
+                  <div class="col-3 d-flex align-items-center parent">
+                      <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="row mt-2">
+          <div class="col-12">
+            <div class="card main-card">
+              {{-- row pertama --}}
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">BELANG</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">BENGKOK</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">BERCAK HITAM</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+              {{-- row kedua --}}
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">BLASTING</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">BLISTER</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">BLONG</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">BUFFING KASAR</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">DATUM OVER</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">DEKOK</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">DENT</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">DIMENSI</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">DUST SPRAY</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">FLOWLINE</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">GELOMBANG</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">GOMPAL</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">HANDLING</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">JAMUR</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">KARAT</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">KASAR</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">KEROPOS</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">KOTOR</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">KURANG PROSES</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">MELER</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NG ASSY</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">NG BEARING</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NG BUSHING</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NG JOINT TUBE</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">NG PIN</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NG PLATE</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NG RUBBER</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">NG SEAL</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">99</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NG STEMPEL</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">9</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NG STICKER</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">NG WASHER</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NO BUSHING</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">NO JIG</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">NO TAP</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">OVER PROSES</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">OVERHEAT</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">PATAH</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">PECAH</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">RETAK</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">SERABUT</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">SERET</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">SHRINKAGE</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">STEP</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">TIPIS</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">UN  MATCH</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">UNCUTIN</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">UNDERCUT</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">UNFILL</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">SPARE 1</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">SPARE 2</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">SPARE 3</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row row-card-i mt-3 ">
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">999</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2 ">SPARE 4</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">SPARE 5</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                        <a onclick="ModalGambar()">
+                            <div class="card-inside1 float-start text-center text-center">
+                                <div class="font-ci1">0</div>
+                            </div>
+  
+                            <div class="card-inside2 float-end">
+                                <div class="font-ci2">SPARE 6</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+  
+  
+            </div>
+          </div>
+        </div>
+  
+        {{-- sebelum div container  --}}
+      </div>
+  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+   
+
+@endsection
