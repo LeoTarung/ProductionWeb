@@ -249,6 +249,12 @@ class CastingController extends Controller
         $nrp6 = $idCasting->nrp6 . ' |';
 
         $nrp = $nrp1;
-        return view('lhp.lhp-casting', compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6'));
+
+        $namaPart = $idCasting->mesincasting->nama_part;
+        // dd($namaPart);
+        //Define Mesin Casting untuk penggunaan Ajax
+        $range_hitung = MesinCasting::where('mc', '<=',  $idCasting->id_mesincasting)->get();
+        $mcfordata = $range_hitung->count();
+        return view('lhp.lhp-casting', compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6', 'mcfordata', 'namaPart'));
     }
 }

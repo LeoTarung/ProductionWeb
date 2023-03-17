@@ -131,17 +131,17 @@ function ModalSupply(mesin, id) {
 }
 
 //==============================['FUNCTION MODAL GAMBAR PART DI CASTING']==============================//
-function ModalGambar() {
+function ModalGambar(id) {
     // console.log('asad');
     $.get(
-        "/partial/modal-sementara",
+        "/partial/modal-sementara"+ "/" + id,
         {},
         function (data) {
             // $("#ModalGambarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
             //  $("#page").load('/partial/modal-sementara'); //menampilkan view create di dalam id page
              $("#ModalGambar").modal("show"); //kalo ID pake "#" kalo class pake "."
-             $('#ModalGambar .modal-body').load( '/partial/modal-sementara');
-             console.log('test');
+             $('#ModalGambar .modal-body').load( '/partial/modal-sementara' + '/' + id);
+             console.log(id);
         }
     );
 }

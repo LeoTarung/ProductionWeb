@@ -1,414 +1,229 @@
     <main>
-        <div class="col-12 d-grid" id="parts-all">
-            <div class="row">
-                <div class="col-8 d-grid pt-5 px-3">
-                    <div class="card p-3" style="border: none;">
-                        {{-- <img src="/images/a. Gbr Loc Sheet/Pipe Air Inlet ML288384 a.PNG" class="img-fluid ms-2" --}}
-                        {{-- alt="Responsive image" id="gambar-model-coverL" /> --}}
-                        <div class="col-12" id="bagian-atas">
-                            <div class="row">
-                                <div class="col-3 px-0 d-grid" id="button-atas">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content"
-                                            style="height: 200px;">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="A">
-                                                <h1>A</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-atas">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="B">
-                                                <h1>B</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-atas">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="C">
-                                                <h1>C</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-atas">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="D">
-                                                <h1>D</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12" id="bagian-bawah">
-                            <div class="row" id="row-bawah">
-                                <div class="col-3 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah"
-                                            style="height: 200px;">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="E">
-                                                <h1>E</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="F">
-                                                <h1>F</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="G">
-                                                <h1>G</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="H">
-                                                <h1>H</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-12">
 
-                <div class="col-4 d-grid mt-5">
-                    <div class="card p-3" style="border: none;">
-                        {{-- <img src="/images/a. Gbr Loc Sheet/Pipe Air Inlet ML288384 c.PNG" class="img-fluid ms-5 mt-5" --}}
-                        {{-- alt="Responsive image" id="gambar-2" /> --}}
-                        <div class="col-12" id="bagian-atas-panjang">
-                            <div class="row" id="row-atas-panjang">
-                                <div class="col-6 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="I">
-                                                <h1>I</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-6 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="J">
-                                                <h1>J</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12" id="bagian-bawah">
-                            <div class="row" id="row-bawah-panjang">
-                                <div class="col-6 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="K">
-                                                <h1>K</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-6 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="L">
-                                                <h1>L</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            @php
+                // $img1 = '/img/parts/' . {{ $idCasting->mesincasting->nama_part }} . '_a.png';
+                $img1 = asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_a.png');
+                $img2 = asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_b.png');
+                $img3 = asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_c.png');
+                $img4 = asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_d.png');
+                $img5 = asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_e.png');
+                $img6 = asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_f.png');
+                
+                // $imgSrc2 = file_exists(public_path('public/img/parts/' . $idCasting->mesincasting->nama_part . '_b.png')) ? asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_b.png') : null;
+                // $imgSrc3 = file_exists($img3) ? asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_c.png') : null;
+                // $imgSrc4 = file_exists($img4) ? asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_d.png') : null;
+                // $imgSrc5 = file_exists($img5) ? asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_e.png') : null;
+                // $imgSrc6 = file_exists($img6) ? asset('/img/parts/' . $idCasting->mesincasting->nama_part . '_f.png') : null;
+                // echo $imgSrc2;
+                
+            @endphp
 
-                <div class="col-12" id="tengah"></div>
+            <div class="container">
 
-                <div class="col-8 d-grid pt-5 px-3">
-                    <div class="card p-3" style="border: none;">
-                        {{-- <img src="/images/a. Gbr Loc Sheet/Pipe Air Inlet ML288384 b.PNG" class="img-fluid ms-2" --}}
-                        {{-- alt="Responsive image" id="gambar-model-coverL" /> --}}
-                        <div class="col-12" id="bagian-atas">
-                            <div class="row">
-                                <div class="col-3 px-0 d-grid" id="button-atas">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="M">
-                                                <h1>M</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-atas">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="N">
-                                                <h1>N</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-atas">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="O">
-                                                <h1>O</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-atas">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="P">
-                                                <h1>P</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12" id="bagian-bawah">
-                            <div class="row" id="row-bawah">
-                                <div class="col-3 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="Q">
-                                                <h1>Q</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="R">
-                                                <h1>R</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="S">
-                                                <h1>S</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-3 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="T">
-                                                <h1>T</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <img src="{{ $img1 }}" alt="Image">
 
-                <div class="col-4 d-grid mt-5">
-                    <div class="card p-3" style="border: none;">
-                        {{-- <img src="/images/a. Gbr Loc Sheet/Pipe Air Inlet ML288384 d.PNG" class="img-fluid ms-5 mt-5" --}}
-                        {{-- alt="Responsive image" id="gambar-2" /> --}}
-                        <div class="col-12" id="bagian-atas-panjang">
-                            <div class="row" id="row-atas-panjang">
-                                <div class="col-6 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="U">
-                                                <h1>U</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-6 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="V">
-                                                <h1>V</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12" id="bagian-bawah">
-                            <div class="row" id="row-bawah-panjang">
-                                <div class="col-6 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="W">
-                                                <h1>W</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-6 px-0 d-grid" id="button-bawah">
-                                    <form class="d-grid p-0" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-contentbawah">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="X">
-                                                <h1>X</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-8 d-grid mt-5">
-                    <div class="card p-3" style="border: none;">
-                        {{-- <img src="/images/a. Gbr Loc Sheet/Pipe Air Inlet ML288384 d.PNG" class="img-fluid ms-5 mt-5" --}}
-                        {{-- alt="Responsive image" id="gambar-2" /> --}}
-                        <div class="col-12" id="bagian-atas-panjang">
-                            <div class="row" id="row-atas-panjang">
-                                <div class="col-4 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="U">
-                                                <h1>A</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-4 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="V">
-                                                <h1>B</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-4 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="V">
-                                                <h1>C</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12" id="bagian-atas-panjang">
-                            <div class="row" id="row-atas-panjang">
-                                <div class="col-4 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="U">
-                                                <h1>A</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-4 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="V">
-                                                <h1>B</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-4 px-0 d-grid" id="button-atas-panjang">
-                                    <form class="d-grid" method="post"
-                                        action="/<%= namapart %>/<%= idprod %>/<%= line %>/locsheet/<%= reject %>/<%= kode %>/<%= undo %>">
-                                        <div class="card border-danger border-3 d-grid" id="card-content">
-                                            <button type="submit" class="btn d-grid" id="btn-bagianparts"
-                                                name="kode" value="V">
-                                                <h1>C</h1>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                <div class=" button1 font-red">1</div>
+                <div class=" button2 font-red">2</div>
+                <div class=" button3 font-red">3</div>
+                <div class=" button4 font-red">4</div>
+                <div class=" button5 font-red">5</div>
+                <div class=" button6 font-red">6</div>
 
-                    </div>
-                </div>
+
             </div>
-        </div>
+            <div class="container">
+                {{-- @if ($imgSrc2 != null) --}}
+                <img src="{{ $img2 }}" alt="Image">
+
+                <div class=" button1 font-red">1</div>
+                <div class=" button2 font-red">2</div>
+                <div class=" button3 font-red">3</div>
+                <div class=" button4 font-red">4</div>
+                <div class=" button5 font-red">5</div>
+                <div class=" button6 font-red">6</div>
+                {{-- @else --}}
+                {{-- @endif --}}
+
+
+                {{-- </div>
+            <div class="container">
+
+                @if ($imgSrc3)
+                    <img src="{{ $img3 }}" alt="Image">
+
+                    <div class=" button1 font-red">1</div>
+                    <div class=" button2 font-red">2</div>
+                    <div class=" button3 font-red">3</div>
+                    <div class=" button4 font-red">4</div>
+                    <div class=" button5 font-red">5</div>
+                    <div class=" button6 font-red">6</div>
+                @else
+                @endif
+
+            </div>
+            <div class="container">
+
+                @if ($imgSrc4)
+                    <img src="{{ $img4 }}" alt="Image">
+
+                    <div class=" button1 font-red">1</div>
+                    <div class=" button2 font-red">2</div>
+                    <div class=" button3 font-red">3</div>
+                    <div class=" button4 font-red">4</div>
+                    <div class=" button5 font-red">5</div>
+                    <div class=" button6 font-red">6</div>
+                @else
+                @endif
+
+            </div>
+            <div class="container">
+                @if ($imgSrc5)
+                    <img src="{{ $img5 }}" alt="Image">
+
+                    <div class=" button1 font-red">1</div>
+                    <div class=" button2 font-red">2</div>
+                    <div class=" button3 font-red">3</div>
+                    <div class=" button4 font-red">4</div>
+                    <div class=" button5 font-red">5</div>
+                    <div class=" button6 font-red">6</div>
+                @else
+                @endif
+
+            </div>
+            <div class="container">
+
+                @if ($imgSrc6)
+                    <img src="{{ $img6 }}" alt="Image">
+
+                    <div class=" button1 font-red">1</div>
+                    <div class=" button2 font-red">2</div>
+                    <div class=" button3 font-red">3</div>
+                    <div class=" button4 font-red">4</div>
+                    <div class=" button5 font-red">5</div>
+                    <div class=" button6 font-red">6</div>
+                @else
+                @endif
+
+            </div> --}}
+
+
+                <style>
+                    .container {
+                        position: relative;
+                        display: inline-block;
+                    }
+
+                    .font-red {
+                        color: #d30000;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        border: 5px solid #000;
+                    }
+
+                    .button1 {
+                        font-size: 50px;
+                        font-weight: 600;
+                        position: absolute;
+                        top: 0%;
+                        height: 50%;
+                        width: 32.1%;
+                        border: 3px solid #d30000;
+                        background-color: transparent;
+                    }
+
+
+                    .button2 {
+                        font-size: 50px;
+                        font-weight: 600;
+                        position: absolute;
+                        top: 0%;
+                        height: 50%;
+                        width: 33%;
+                        left: 33%;
+                        border: 3px solid #d30000;
+                        background-color: transparent;
+                    }
+
+                    .button3 {
+                        font-size: 50px;
+                        font-weight: 600;
+                        position: absolute;
+                        top: 0%;
+                        height: 50%;
+                        width: 33%;
+                        left: 66%;
+                        border: 3px solid #d30000;
+                        background-color: transparent;
+                    }
+
+                    .button4 {
+                        font-size: 50px;
+                        font-weight: 600;
+                        position: absolute;
+                        top: 50%;
+                        height: 50%;
+                        width: 32.1%;
+                        border: 3px solid #d30000;
+                        background-color: transparent;
+                    }
+
+
+                    .button5 {
+                        font-size: 50px;
+                        font-weight: 600;
+                        position: absolute;
+                        top: 50%;
+                        height: 50%;
+                        width: 33%;
+                        left: 33%;
+                        border: 3px solid #d30000;
+                        background-color: transparent;
+                    }
+
+                    .button6 {
+                        font-size: 50px;
+                        font-weight: 600;
+                        position: absolute;
+                        top: 50%;
+                        height: 50%;
+                        width: 33%;
+                        left: 66%;
+                        border: 3px solid #d30000;
+                        background-color: transparent;
+                    }
+
+                    .button1:hover {
+                        color: aliceblue;
+                        cursor: pointer;
+                    }
+
+                    .button2:hover {
+                        color: aliceblue;
+                        cursor: pointer;
+                    }
+
+                    .button3:hover {
+                        color: aliceblue;
+                        cursor: pointer;
+                    }
+
+                    .button4:hover {
+                        color: aliceblue;
+                        cursor: pointer;
+                    }
+
+                    .button5:hover {
+                        color: aliceblue;
+                        cursor: pointer;
+                    }
+
+                    .button6:hover {
+                        color: aliceblue;
+                        cursor: pointer;
+                    }
+                </style>
     </main>

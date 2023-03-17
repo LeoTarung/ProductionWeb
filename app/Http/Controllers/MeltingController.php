@@ -385,6 +385,7 @@ class MeltingController extends Controller
         $id_forklift10 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-10'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_forkliftblank = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-6'], ['shift', '=', $shift]])->first();
         $nrp = 0;
+
         // dd($id_forklift1->nrp);
         $mesin = "FORKLIFT";
         $forklift = "FORKLIFT";

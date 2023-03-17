@@ -195,7 +195,6 @@
                                 </div>
                             </div>
                         </div>
-                
                     @elseif($shift == 2)
                         <div class="row mt-4 mb-2">
                             <div class="col-3 text-center m-auto shift"> SHIFT 2</div>
@@ -235,7 +234,6 @@
                                 </div>
                             </div>
                         </div>
-
                     @elseif($shift == 3)
                         <div class="row mt-4 mb-2">
                             <div class="col-3 text-center m-auto shift"> SHIFT 3</div>
@@ -271,12 +269,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    @endif
-        </div>
+                </div>
+        @endif
     </div>
-    
-    @else
+    </div>
+@else
     {{-- jika henkaten tidak ada --}}
     <div class="row">
         <div class="col-12">
@@ -332,7 +329,6 @@
                         </div>
                     </div>
                 </div>
-        
             @elseif($shift == 2)
                 <div class="row mt-4 mb-3">
                     <div class="col-3 text-center m-auto shift"> SHIFT 2</div>
@@ -407,10 +403,10 @@
                     </div>
                 </div>
         </div>
-            @endif
+        @endif
     </div>
     </div>
-    
+
     @endif
     </div>
 
@@ -423,7 +419,7 @@
     <script>
         // hitung target
 
-        var target =55000;
+        var target = 55000;
         // var target = console.log("test")
 
         const element = document.getElementById("target");
@@ -538,15 +534,15 @@
 
                 //Jumlah Aktual Part
                 let for_mc = {{ $mcfordata }} - 1;
-                let aktual = data[for_mc].total_part;
+                let aktual = data[for_mc].total_produksi;
                 document.getElementById("aktual").innerHTML = aktual;
                 //Persentase
 
                 var ValPersen = (aktual / i * 100);
-                
+
                 pembulatan = ValPersen.toFixed(0);
                 // var persen = 96;
-            
+
                 let persen = document.getElementById("persen");
                 if (pembulatan >= 95) {
                     persen.innerHTML = pembulatan;
@@ -562,7 +558,7 @@
                     persen.style.animation = 'animate 2.0s linear infinite';
                     persen.style.color = '#ff0000';
                 }
-                
+
 
                 // console.log(data[for_mc].total_part);
 

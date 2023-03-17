@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LhpCasting;
 use App\Models\LhpMeltingRAW;
 use App\Models\LhpSupplyRAW;
 use App\Models\LhpSupply;
@@ -86,13 +87,16 @@ class UsableController extends Controller
     }
 
     // ============================= //PARTIAL GAMBAR PART // ================================= //
-    public function gambarPart(UsableController $useable)
+    public function gambarPart(UsableController $useable, $id)
     {
         $shift = $useable->Shift();
         $date = $useable->date();
 
+        $idCasting = LhpCasting::where('id', $id)->first();
+        // dd($idCasting->mesincasting->nama_part);
+
         // $sql1 = LhpSupplyRAW::groupBy(LhpSupplyRAW::raw('no_mc'))->groupBy(LhpSupplyRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, COUNT(jumlah_tapping) as frekuensi, SUM(jumlah_tapping) as total_tapping")->get();
         // dd($sql1);
-        return view('lhp.modal-casting-sementara');
+        return view('lhp.modal-casting-sementara', compact('idCasting'));
     }
 }

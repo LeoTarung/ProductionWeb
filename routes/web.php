@@ -40,7 +40,7 @@ Route::get('/lhp', function () {
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);
 Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'resume_supply']);
-Route::get('/partial/modal-sementara', [UsableController::class, 'gambarPart']);
+Route::get('/partial/modal-sementara/{id}', [UsableController::class, 'gambarPart']);
 //====================== API FOR SHARE ======================//
 Route::get('/dtkyrw/all', [ApiController::class, 'dtkyrwall']);
 Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
