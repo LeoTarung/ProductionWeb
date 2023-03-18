@@ -12,7 +12,7 @@
 
   </head>
 
- <body onload="kejs('{{ $mesin }}', '{{ $shift }}', '{{ $date }}')">
+ <body>
   <nav class="nav nav-header ">
     <div class="row w-100">
       <div class="col-4 mb-2">
@@ -713,7 +713,6 @@
                     socket.on('connection');
 
                     socket.on("bulananStriko-1", (datasql) => {
-                    console.log(datasql);
                         var data = [];
                         var ChartData = document.getElementById("chartdiv_S1").innerHTML;
                         for (i = 0; i < datasql.length; i++) {
@@ -892,7 +891,6 @@
                     socket.on('connection');
 
                     socket.on("bulananStriko-2", (datasql) => {
-                    console.log(datasql);
                         var data = [];
                         var ChartData = document.getElementById("chartdiv_S2").innerHTML;
                         for (i = 0; i < datasql.length; i++) {
@@ -1071,7 +1069,6 @@
                     socket.on('connection');
 
                     socket.on("bulananStriko-3", (datasql) => {
-                    console.log(datasql);
                         var data = [];
                         var ChartData = document.getElementById("chartdiv_S3").innerHTML;
                         for (i = 0; i < datasql.length; i++) {
@@ -1250,7 +1247,6 @@
                     socket.on('connection');
 
                     socket.on("bulananSwift_Asia", (datasql) => {
-                    console.log(datasql);
                         var data = [];
                         var ChartData = document.getElementById("chartdiv_SA").innerHTML;
                         for (i = 0; i < datasql.length; i++) {
@@ -1999,7 +1995,6 @@
         var time = h + ":" + m + ":" + s + " ";
         document.getElementById("MyClockDisplay").innerText = time;
         document.getElementById("MyClockDisplay").textContent = time;
-        // console.log(time)
         if (time >= '00:00:00' && time < '07:10:00') {
             shift = "SHIFT-1";
         } else if (time >= '07:10:00' && time < '16:00:00') {
