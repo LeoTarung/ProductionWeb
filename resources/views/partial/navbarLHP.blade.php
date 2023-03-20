@@ -257,8 +257,8 @@
         </li>
         <li>
             {{-- LHP PREPARATION FINAL INSPECTION --}}
-            @if (Request::url() == url('/prep-final-inspection'))
-                <a href="{{ url('/prep-final-inspection') }}" class="machine shadow-lg">
+            @if (Request::url() == url('/lhp-final-inspection'))
+                <a href="{{ url('/lhp-final-inspection') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'MELTING')
                             <div class="font-white "> {{ $mesin }} </div>
