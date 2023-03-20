@@ -87,7 +87,7 @@ class UsableController extends Controller
     }
 
     // ============================= //PARTIAL GAMBAR PART // ================================= //
-    public function gambarPart(UsableController $useable, $id)
+    public function gambarPart(UsableController $useable, $id, $reject)
     {
         $shift = $useable->Shift();
         $date = $useable->date();
