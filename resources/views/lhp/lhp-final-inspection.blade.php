@@ -9,13 +9,13 @@
           <div class="col-6"> 
             {{-- card part --}}
             <div class="card card-template mt-3 ms-2 bg-warning shadow-sm">
-              <div class="card card-part fw-bold fs-4 text-center align-items-center">COVER THERMO 2MD</div>
+              <div class="card card-part fw-bold fs-4 text-center align-items-center">COVER COVER COVER COVER THERMO 2MDI THERMO 2MDI</div>
             </div>
   
             {{-- card total OK --}}
-            <div class="card  mt-3 ms-2 shadow-sm totalok">
+            <div class="card  mt-3 ms-2 shadow-sm totalck">
               <div class="row">
-                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL CHANGE </div>
+                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL CHECK </div>
                 <div class="col-3 d-flex align-items-center parent">
                     <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
                 </div>
@@ -24,7 +24,7 @@
           </div>
   
           <div class="col-6">  
-            <div class="card  mt-3 ms-2 shadow-sm totalok">
+            <div class="card  mt-3 ms-2 shadow-sm totalng">
               <div class="row">
                 <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL NG </div>
                 <div class="col-3 d-flex align-items-center parent">
@@ -34,7 +34,7 @@
             </div>
             <div class="card  mt-3 ms-2 shadow-sm totalok">
               <div class="row">
-                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL OK </div>
+                <div class="col-9 mt-2 ps-4 fw-bold fs-4 align-items-center"> TOTAL OK </div>
                 <div class="col-3 d-flex align-items-center parent">
                     <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
                 </div>
@@ -42,7 +42,7 @@
               <div class="row">
                   <div class="col-9 mt-2 ps-4 fw-bold fs-4"></div>
                   <div class="col-3 d-flex align-items-center parent">
-                      <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                      <div class="child fw-bold fs-4 pt-2 mb-1 text-center align-items-center bg-warning">+1</div>
                   </div>
                 </div>
             </div>

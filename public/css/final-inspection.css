@@ -1,32 +1,25 @@
-:root {
-    --red: hsl(0, 100%, 50%);
-    --green: hsl(125, 68%, 41%);
-    --orange: hsl(25, 100%, 50%);
-    --blue: hsl(212, 67%, 41%);
-    --varyDarkBlue: hsl(234, 12%, 34%);
-    --grayishBlue: #2B3467;
-    --veryLightGray: hsl(0, 0%, 98%);
-    --weight1: 200;
-    --weight2: 400;
-    --weight3: 600;
-}
+/* PREP FINAL INSPECTION */
+
+
+
+/* LHP FINAL INSPECTION */
 
 .card-template {
-    height: 70px;
+    height: 35%;
 }
 
 .card-part {
     margin: 5px 5px 5px 5px;
-    padding: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     text-align: center;
-    height: 65px;
+    height: 85%;
 }
 
 .main-card {
-    margin: 10px 2px 5px 0px;
+    margin: 20px 2px 15px 0px;
     border-radius: 20px;
     /* height: 82.5%; */
-    height: 700px;
+    height: 619px;
     overflow-y: scroll;
 }
 
@@ -80,9 +73,19 @@
     margin: 3px 1px 0px 10px ;
 }
 
+.totalck{
+    background-color: rgb(106, 150, 211);
+    height: 35%;
+}
+
+.totalng{
+    background-color: #ee3030;
+    height: 35%;
+}
 
 .totalok{
-    background-color: #2B3467;
+    background-color: #37a755;
+    height: 60%;
 }
 
 .parent{
@@ -90,39 +93,12 @@
 }
 
 .child {
-    height: 50px; 
+    height: 60px; 
     width: 100%;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    margin: 10px 0px 10px 0px;
+    margin: 13px 0px 0px 0px;
     /* padding: 8px 0 0 0px; */
     border-radius: 10px 10px 10px 10px;
 }
-
-.card-green{
-    background-color: rgb(16, 230, 98);
-    height: 80px;
-    border-radius: 15px 0px 0px 15px;
-}
-.card-orange{
-    background-color: rgb(219, 92, 18);
-    height: 80px;
-    border-radius: 15px 0px 0px 15px;
-}
-.card-red{
-    background-color: rgb(219, 18, 18);
-    height: 80px;
-    border-radius: 15px 0px 0px 15px;
-}
-.card-yellow{
-    background-color: rgb(243, 247, 22);
-    height: 80px;
-    border-radius: 15px 0px 0px 15px;
-}
-.card-grey{
-    background-color: rgb(202, 202, 199);
-    height: 80px;
-    border-radius: 15px 0px 0px 15px;
-}
-
 
