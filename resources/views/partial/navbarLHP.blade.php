@@ -172,7 +172,6 @@
 
         </li>
         <li>
-
             {{-- Preparation Melting --}}
             @if (Route::currentRouteName() == 'preparationMelting')
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
@@ -186,6 +185,7 @@
                 </a>
                 {{-- LHP MELTING --}}
             @elseif(Route::currentRouteName() == 'LHPMelting')
+
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FINAL .INS')
@@ -195,19 +195,21 @@
                         @endif
                     </div>
                 </a>
-
+                
                 {{-- Preparation Forklift --}}
             @elseif(Route::currentRouteName() == 'preparationSupply')
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
-                        @if ($mesin == 'FINAL .INS')
+                        @if ($mesin == 'FORKLIFT')
                             <div class="font-white "> {{ $mesin }} </div>
                         @else
                             <div class="font-white choose_machine"> {{ $mesin }} </div>
                         @endif
                     </div>
                 </a>
-                {{-- LHP Forklift --}}
+                
+
+{{-- LHP Forklift --}}
             @elseif(Route::currentRouteName() == 'LHPSupply')
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -218,7 +220,6 @@
                         @endif
                     </div>
                 </a>
-
 
                 {{-- Setting --}}
             @elseif(Route::currentRouteName() == 'MainSettings')
@@ -231,6 +232,7 @@
                         @endif
                     </div>
                 </a>
+
             @elseif(Route::currentRouteName() == 'MCSettings')
                 <a href="{{ url('/settings') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -258,7 +260,7 @@
                     </div>
                 </a>
 
-            @endif
+           @endif
         </li>
         <li>
             <a onClick="ModalInstruksi('{{ $mesin }}')">

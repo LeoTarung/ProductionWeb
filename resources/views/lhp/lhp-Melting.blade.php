@@ -182,24 +182,19 @@
         </form>
     </div>
     <script>
-
-
-            $(function(){
-            let ip_node = location.hostname;
-            let socket_port = '1553';
-            let socket = io(ip_node + ':' + socket_port);
-            socket.on('connection');
-
-            socket.on("tv_melting_kiri", (data, mesin1) => {
-                console.log(data[0].stok_molten);
+        $(function(){
+        let ip_node = location.hostname;
+        let socket_port = '1553';
+        let socket = io(ip_node + ':' + socket_port);
+        let lokasi = "Kiri"+'{{ $mesin }}';
+        socket.on('connection');
+        socket.on(lokasi, (data) => {
                 if(data.length == 0){
-                document.getElementById("stok_molten").innerHTML = "BELUM stok_molten";
+                document.getElementById("stok_molten").innerHTML = "HUB DIGITAL";
                 } else {
                 document.getElementById("stok_molten").innerHTML = data[0].stok_molten.toLocaleString('de-DE') +" KG";
                 }
             })
-            socket.emit("Hello", '{{ $mesin }}', '{{ $shift }}', '{{ $date }}');
-            });
-
+        });
     </script>
 @endsection

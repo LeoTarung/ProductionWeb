@@ -53,10 +53,10 @@ Route::get('/dtmccasting/{mc}', [ApiController::class, 'showmc']);
 
 
 //====================== SETTINGS ======================//
+
 Route::get('/settings', [SettingController::class, 'index'])->name('MainSettings');
 Route::get('/settings/mesincasting/{id}', [SettingController::class, 'showMolten'])->name('MCSettings'); // Mes in Casting
 Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; // 
-
 
 
 //====================== AREA MELTING ======================//
@@ -70,7 +70,7 @@ Route::get('/lhp-melting', [MeltingController::class, 'prep_melting'])->name('pr
 Route::post('/lhp-melting/simpan', [MeltingController::class, 'prep_melting_simpan']);
 Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_raw'])->name('LHPMelting');
 Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
-Route::get('/tv/melting/{mesin}', [MeltingController::class, 'Dashboard_tv']);
+Route::get('/tv/melting', [MeltingController::class, 'Dashboard_tv']);
 Route::get('/tv', [MeltingController::class, 'testing']);
 
 
