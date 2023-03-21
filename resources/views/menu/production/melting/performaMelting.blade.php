@@ -34,6 +34,7 @@
   </nav>
 
     <div class="container-fluid profile">
+
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="pills-striko1-tab" data-bs-toggle="pill" data-bs-target="#pills-striko1" type="button" role="tab" aria-controls="pills-striko1" aria-selected="true">Striko-1</button>
@@ -106,6 +107,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -188,6 +190,7 @@
                             </div>
                         </div>
                     </div>
+
 
                     <div class="col-9 grafik">
                             <div class="row">
@@ -370,9 +373,6 @@
                 </div>
             </div>
           </div>
-
-
-
     </div>
 
     <script src="{{ asset('/js/Socketio454.js') }}"></script>
@@ -380,6 +380,7 @@
     <script src="/js/amchart/Dailychart-Melting/index.js"></script>
     <script src="/js/amchart/Dailychart-Melting/xy.js"></script>
     <script src="/js/amchart/Dailychart-Melting/Animated.js"></script>
+
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
 
     <script>

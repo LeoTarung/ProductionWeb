@@ -15,19 +15,20 @@ class CreateLhpCastingTable extends Migration
     {
         Schema::create('lhp_casting', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_mesincasting')->default('0');
-            $table->integer('nrp1')->default('0');
-            $table->integer('nrp2')->default('0');
-            $table->integer('nrp3')->default('0');
-            $table->integer('nrp4')->default('0');
-            $table->integer('nrp5')->default('0');
-            $table->integer('nrp6')->default('0');
+            $table->foreignId('id_mesincasting')->nullable();
+            $table->integer('nrp1')->default('0')->nullable();
+            $table->integer('nrp2')->default('0')->nullable();
+            $table->integer('nrp3')->default('0')->nullable();
+            $table->integer('nrp4')->default('0')->nullable();
+            $table->integer('nrp5')->default('0')->nullable();
+            $table->integer('nrp6')->default('0')->nullable();
             $table->date('tanggal')->nullable();
             $table->string('shift')->default('0');
             $table->time('jam_available')->default('0');
             $table->time('jam_running')->default('0');
             $table->string('nama_part')->default('0');
             $table->string('nomor_dies')->default("#");
+            $table->integer('cavity')->default("1");
             $table->integer('target')->default('0');
             $table->integer('total_produksi')->default('0');
             $table->integer('total_ok')->default('0');
