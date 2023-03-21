@@ -53,13 +53,12 @@ class MeltingController extends Controller
         ));
     }
 
-    public function Dashboard_tv(UsableController $useable, $mesin)
+    public function Dashboard_tv(UsableController $useable)
     {
-        // $sql = LHPMelting::where('mesin', '=', $mesin);
         $shift = $useable->Shift();
         $date = $useable->date();
 
-        return view('menu.production.melting.performaMelting', compact('shift', 'date', 'mesin'));
+        return view('menu.production.melting.performaMelting', compact('shift', 'date'));
     }
 
     public function testing(UsableController $useable)
