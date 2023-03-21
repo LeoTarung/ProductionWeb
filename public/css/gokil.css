@@ -60,7 +60,8 @@
 .font-ci2{
     font-size: 15px;
     font-weight: 700;
-    margin: 13px 1px 0px 10px ;
+    margin: 10% 1px 10% 10px;
+    /* top: 50%;*/
 }
 
 .font-with-enter{
