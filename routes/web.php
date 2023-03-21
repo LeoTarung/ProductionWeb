@@ -7,10 +7,11 @@ use App\Http\Controllers\UsableController;
 use App\Http\Controllers\CastingController;
 use App\Http\Controllers\MeltingController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\HenkatenController;
 use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
-use App\Http\Controllers\HenkatenController;
+use App\Http\Controllers\FinalInspectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,6 +87,10 @@ Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
 Route::get('/lhp-casting', [CastingController::class, 'prep_casting'])->name('preparationCasting');
 Route::post('/lhp-casting/simpan', [CastingController::class, 'prep_casting_simpan']);
 Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])->name('LHPCasting'); //link sementara, nanti diganti ketika preparation sudah selesai
+
+//====================== LHP FINAL INSPECTION ================//
+Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'FinalInspection']);
+Route::get('/prep-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection']);
 
 
 //====================== HC & GA ======================//
