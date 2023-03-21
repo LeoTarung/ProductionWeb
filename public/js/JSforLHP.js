@@ -141,6 +141,7 @@ function ModalGambar(id,reject) {
              $("#ModalGambar").modal("show"); //kalo ID pake "#" kalo class pake "."
              $('#ModalGambar .modal-body').load( '/partial/modal-casting' + '/' + id + "/" + reject);
              console.log(reject);
+             console.log(id);
         }
     );
 }

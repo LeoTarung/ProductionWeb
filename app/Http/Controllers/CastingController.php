@@ -242,7 +242,7 @@ class CastingController extends Controller
         $idCasting = LhpCasting::where('id', $id)->first();
 
         $sum = 0;
-        for ($i = 1; $i <= 25; $i++) {
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
             $sum = $sum + 72;
             ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
             $reject[] = ${'idReject_' . $i}->jenis_reject;
@@ -252,6 +252,7 @@ class CastingController extends Controller
             return str_replace(' ', '-', $value);
         }, $reject);
         // dd($reject);
+
 
 
         $nrp1 = $idCasting->nrp1 . ' |';

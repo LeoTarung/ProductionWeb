@@ -40,9 +40,10 @@
                 <div class="card card-left3 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">REJECTION <br><span
-                                class="fs-2">{{ $idCasting->total_ng }}
-                                part</span>
+                        <div class="col-11 text-center mt-2 fw-bold">REJECTION <br><span class="fs-2">
+                                <span class="" id="totalReject"></span>
+                                part
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -439,12 +440,12 @@
 
                 //Define Urutan Mesin Casting
                 let for_mc = {{ $mcfordata }} - 1;
-
+                console.log(data[for_mc].total_ng);
                 //Total Produksi
                 let totalProduksi = data[for_mc].total_produksi;
+                let totalReject = data[for_mc].total_ng;
                 document.getElementById("totalProduksi").innerHTML = totalProduksi;
-
-
+                document.getElementById("totalReject").innerHTML = totalReject;
 
             })
         });
