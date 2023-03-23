@@ -20,9 +20,10 @@ class LhpFinalInspTable extends Migration
             $table->string('shift')->default('0');
             $table->string('nama_part')->default('0');
             $table->integer('total_produksi')->default('0');
+            $table->integer('total_check')->default('0');
             $table->integer('total_ok')->default('0');
             $table->integer('total_ng')->default('0');
-            $table->time('total_downtime')->default('0');
+            // $table->time('total_downtime')->default('0');
             $table->timestamps();
         });
     }
