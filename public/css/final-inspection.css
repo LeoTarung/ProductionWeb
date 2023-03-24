@@ -13,8 +13,6 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-
-
 /* LHP FINAL INSPECTION */
 
 :root {
@@ -28,15 +26,14 @@ input[type=text], select, textarea {
     height: 70px;
     margin: 10px -22px 0px 10px;
     align-items: center;
-    padding: 15px 0px 0px 0px;
+    padding: 5px 0px 0px 0px;
 }
-
 
 .main-card {
     margin: 10px 2px 15px 0px;
     border-radius: 20px;
     /* height: 619px; */
-    height: 862px;
+    height: 61.2em;
     overflow-y: scroll;
 }
 
@@ -109,21 +106,26 @@ input[type=text], select, textarea {
 }
 
 .child2 {
-    height: 65px; 
+    height: 80px; 
     width: 100%;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    margin: 0px 0px 0px 0px;
+    margin: 0px 12px 0px -10px;
     /* padding: 8px 0 0 0px; */
     border-radius: 10px 10px 10px 10px;
+    border: 1px var(--green) ;
 }
 
+.childOK{
+    margin: 50px 0px 0px 0px;
+    position: absolute;
+}
 .parent3 {
     margin: 10px 0px 0px -10px;
 }
 
 .child3 {
-    height: 40px; 
+    height: 50px; 
     width: 100%;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -152,10 +154,11 @@ input[type=text], select, textarea {
 }
 
 .card-left3{
-  border-radius: 0px 20px 20px 0px;
-  border-right: 10px solid var(--green);
-  border-top: 1px solid var(--green);
+    border-radius: 0px 20px 20px 0px;
+    border-right: 10px solid var(--green);
+    border-top: 1px solid var(--green);
     border-bottom: 1px solid var(--green);
+    
   /* background: linear-gradient(-320deg, transparent 45px, #7d2727 0) top left,
              linear-gradient(-220deg, transparent 45px, #44bcc2 0) bottom right; */
     background: radial-gradient(circle at bottom left, transparent 64px, #ffffff 0) top left,
@@ -165,10 +168,6 @@ input[type=text], select, textarea {
     background-repeat: no-repeat;
     height: 100%;
 }
-/* 
-.totok{
-    height: 100%;
-} */
 
 /* 
 .card-left4{
@@ -179,36 +178,17 @@ input[type=text], select, textarea {
 
 .flex {
   /* display:flex; */
-  top: 12.5%;
-  left: 45.3%;
+  top: 12.6%;
+  left: 44.8%;
   position: absolute;
 }
 
 .oval {
     height: 150px;
-    width: 150px;
+    width: 160px;
     background-color: #ffffff;
     /* color: #2B3467; */
     border-radius: 50%;
     padding: 30px 25px ;
   }
-
-/* .triangle1 {
-    width:15px;
-	height: 0;
-	border-left: 82px solid transparent;
-	border-right: 80px solid transparent;
-	border-bottom: 67px solid #555;
-}
-
-.triangle2 {
-  width:150px;
-	height: 0;
-	border-left: 82px solid transparent;
-	border-right: 80px solid transparent;
-	border-top: 67px solid #555;
-}
- */
-
-
 

@@ -6,25 +6,19 @@
 
     <div class="container-fluid">
         <div class="row mt-2">
-            <div class="card cardpart fw-bold fs-4 text-center align-items-center">
+            <div class="card cardpart fw-bold fs-1 text-center align-items-center">
                 COVER K1ZG
             </div>
         </div>
-
-        {{-- <div class="flex">
-            <div class="triangle1"></div>
-            <div class="triangle2"></div>
-        </div> --}}
         
         <div class="row">
           <div class="col-6"> 
             {{-- card total Change --}}
-            
-            <div class=" card-left1 mt-2">
+            <div class="card-left1 mt-2">
                 <div class="row ps-4">
                     <div class="col-7 mt-2 fw-bold fs-1">TOTAL CHANGE</div>
                     <div class="col-3 d-flex align-items-center parent">
-                        <div class="child border fw-bold fs-2 pt-1 text-center align-items-center">
+                        <div class="child border shadow fw-bold fs-2 pt-1 text-center align-items-center">
                            999 </div>
                     </div>
                     <div class="col-2"></div>
@@ -47,7 +41,7 @@
                 <div class="row ps-4">
                     <div class="col-7 mt-2 fw-bold fs-1">TOTAL NG</div>
                     <div class="col-3 d-flex align-items-center parent">
-                        <div class="child border fw-bold fs-2 pt-1 text-center align-items-center">
+                        <div class="child border shadow fw-bold fs-2 pt-1 text-center align-items-center">
                            999 </div>
                     </div>
                     <div class="col-2"></div>
@@ -65,7 +59,10 @@
             </div> --}}
 
             <div class="flex">
-                <div class="oval shadow-lg">NO LHP</div>
+                <div class="oval border shadow-lg fw-bold fs-3">
+                    NO LHP
+                    <div class="ps-5">9</div>
+                </div>
             </div>
 
 
@@ -75,35 +72,27 @@
             <div class="card-left3">
                 <div class="row totok">
                     <div class="col-2"></div>
-                    <div class="col-7 mt-2 ps-4 fw-bold fs-1">TOTAL OK</div>
+                    <div class="col-7 ps-2 fw-bold fs-1 parentOK">
+                        <div class="childOK">TOTAL OK</div>
+                    </div>
                     <div class="col-3 d-flex align-items-center parent2">
-                        <div class="child2 border fw-bold fs-2 pt-2 text-center align-items-center">
+                        <div class="child2 border border-success shadow fw-bold fs-2 pt-2 text-center align-items-center">
                            999 </div>
                     </div>
                 </div>
                 <div class="row totok">
                     <div class="col-6"></div>
-                    <div class="col-3 ps-5 fw-bold fs-4">
-                        <div class="child border fw-bold fs-4 pt-2 text-center align-items-center">
-                            +1 </div>
+                    <div class="col-3 d-flex align-items-center parent">
+                        <div class="child border shadow bg-success fw-bold fs-2 pt-1 text-center align-items-center">
+                           +1 </div>
                     </div>
                     <div class="col-3 d-flex align-items-center parent3">
-                        <div class="child3 border fw-bold fs-4 text-center align-items-center">
-                           UNDO </div>
-                           
+                        <div class="child3 border shadow bg-warning fw-bold fs-2 text-center align-items-center">
+                            UNDO </div>
                     </div>
                 </div>
             </div>
-            {{-- <div class="card-left4 mt-2">
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-7 mt-2 ps-4 fw-bold fs-4"></div>
-                    <div class="col-3 d-flex align-items-center parent">
-                        <div class="child fw-bold fs-4 pt-2 text-center align-items-center">
-                           999 </div>
-                    </div>
-                </div>
-            </div> --}}
+            
             {{-- <div class="card mt-2 shadow-sm ">
               <div class="row">
                 <div class="col-9 mt-2 ps-4 fw-bold fs-4 align-items-center"> TOTAL OK </div>
