@@ -1,7 +1,7 @@
 html > body {
     width: 100%;
     min-height: 100vh;
-    background-color: #F7FAFF;  
+    background-color: #f7faff;
 }
 
 .nav {
@@ -10,11 +10,13 @@ html > body {
 }
 
 .nav .logo {
-    width: 220px ;
-    height:50px;
+    width: 220px;
+    height: 50px;
     margin-top: 7px;
     margin-left: 10px;
 }
+
+
 
 .section{
     font-size: 40px;
@@ -23,6 +25,7 @@ html > body {
 }
   
 #MyClockDisplay{
+
     margin-left: 300px;
     width: 500px;
     font-family: Kameron;
@@ -33,6 +36,7 @@ html > body {
     margin-top: 10px;
     margin-bottom: 15px;
 }
+
 
 .nav-tabs {
     background-color: #ffffff;
@@ -55,6 +59,7 @@ html > body {
     font-weight: 600;
     text-align: center;
 }
+
 
 .gambar {
     justify-content: center;
@@ -90,12 +95,12 @@ html > body {
 }
 
 .atas h1 {
-    font-weight:700;
+    font-weight: 700;
     margin-top: 0px;
     font-size: 2.5em;
 }
 
-.atas .hd{
+.atas .hd {
     font-size: 1.8em;
 }
 
@@ -103,7 +108,7 @@ html > body {
     font-size: 1.8em;
 }
 
-.bawah h3{
+.bawah h3 {
     font-size: 1.8em;
     font-weight: 400;
 }
@@ -174,30 +179,59 @@ html > body {
     padding-left: 15px;
 }
 
-#chartdiv {
+#chartdiv_S1 {
     width: 100%;
     height: 36vh;
-}  
+}
 
-#chartdiv2 {
+#chartdiv2_S1 {
+    width: 100%;
+    height: 36vh;
+}
+#chartdiv_S2 {
+    width: 100%;
+    height: 36vh;
+}
+
+#chartdiv2_S2 {
+    width: 100%;
+    height: 36vh;
+}
+
+#chartdiv_S3 {
+    width: 100%;
+    height: 36vh;
+}
+
+#chartdiv2_S3 {
+    width: 100%;
+    height: 36vh;
+}
+
+#chartdiv_SA {
+    width: 100%;
+    height: 36vh;
+}
+
+#chartdiv2_SA {
     width: 100%;
     height: 36vh;
 }
 
 .grafik .daily {
     text-align: center;
-    margin-top: 10px ;
+    margin-top: 10px;
     margin-left: 10px;
     margin-right: 5px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     height: 100%;
 }
 .grafik .monthly {
     text-align: center;
-    margin-top: 5px ;
+    margin-top: 5px;
     margin-left: 10px;
     margin-right: 5px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     height: 100%;
 }
 
@@ -207,7 +241,7 @@ html > body {
     font-size: larger;
     font-weight: 500;
 }
-.month{
+.month {
     background-color: white;
     color: black;
     font-size: larger;
@@ -219,20 +253,21 @@ html > body {
     html > body {
         width: 100%;
         min-height: 100vh;
-        background-color: #F7FAFF; 
+        background-color: #f7faff;
     }
 
     .nav {
         /* min-width: 100vw; */
         background-color: #e9ecef;
     }
-    
+
     .nav .logo {
-        width: 230px ;
-        height:55px;
+        width: 230px;
+        height: 55px;
         margin-top: 7px;
         margin-left: 10px;
     }
+
 
     .section{
         font-size: 40px;
@@ -252,7 +287,7 @@ html > body {
         margin-top: 10px;
         margin-bottom: 10px;
         border-radius: 5px;
-    }  
+    }
 
     .nav-tabs {
         background-color: #ffffff;
@@ -283,12 +318,13 @@ html > body {
         margin-bottom: 0;
         margin-right: 15%;
     }
-    
+
     .img-rounded {
         border-radius: 50%;
         width: 80%;
         height: 100%;
     }
+
     
     .child .identitas {
         margin-top: 10px;
@@ -297,40 +333,40 @@ html > body {
         margin-bottom: 0px;
         height: 97vh;
     }
-    
+
     .atas {
         margin-top: 20px;
         text-align: center;
     }
-    
+
     .bawah {
         margin-top: 25px;
         text-align: center;
     }
-    
+
     .atas h1 {
-        font-weight:700;
+        font-weight: 700;
         margin-top: 0px;
-        font-size: 3.0em;
+        font-size: 3em;
     }
-    
-    .atas .hd{
-        font-size: 2.0em;
+
+    .atas .hd {
+        font-size: 2em;
     }
-    
+
     .bawah h2 {
-        font-size: 2.0em;
+        font-size: 2em;
     }
-    
-    .bawah h3{
-        font-size: 2.0em;
+
+    .bawah h3 {
+        font-size: 2em;
         font-weight: 400;
     }
 
     .produk {
         margin-left: 40px;
     }
-    
+
     .card .tc {
         background-color: #095256;
         color: white;
@@ -342,7 +378,7 @@ html > body {
         padding-bottom: 2px;
         padding-left: 15px;
     }
-    
+
     .card .ingot {
         background-color: #095256;
         color: white;
@@ -352,7 +388,7 @@ html > body {
         padding-top: 0px;
         padding-left: 15px;
     }
-    
+
     .card .eg {
         background-color: #095256;
         color: white;
@@ -362,7 +398,7 @@ html > body {
         padding-top: 0px;
         padding-left: 15px;
     }
-    
+
     .card .reject {
         background-color: #095256;
         color: white;
@@ -372,7 +408,7 @@ html > body {
         padding-top: 0px;
         padding-left: 15px;
     }
-    
+
     .card .tapping {
         background-color: #095256;
         color: white;
@@ -382,7 +418,7 @@ html > body {
         padding-top: 0px;
         padding-left: 15px;
     }
-    
+
     .card .dross {
         background-color: #095256;
         color: white;
@@ -397,43 +433,42 @@ html > body {
     #chartdiv {
         width: 100%;
         height: 38.5vh;
-    }  
-    
+    }
+
     #chartdiv2 {
         width: 100%;
         height: 38.5vh;
     }
-    
+
     .grafik .daily {
         text-align: center;
-        margin-top: 10px ;
+        margin-top: 10px;
         margin-left: 10px;
-        margin-right: 5px;
+          margin-right: 5px;
         margin-bottom:10px;
         height: 100%;
     }
     .grafik .monthly {
         text-align: center;
-        margin-top: 2px ;
+        margin-top: 2px;
         margin-left: 10px;
         margin-right: 5px;
-        margin-bottom:10px;
+        margin-bottom: 10px;
         height: 100%;
     }
-    
+
     .day {
         background-color: white;
         color: black;
         font-size: larger;
         font-weight: 500;
     }
-    .month{
+    .month {
         background-color: white;
         color: black;
         font-size: larger;
         font-weight: 500;
     }
-    
 }
 /* For tablet  */
 @media only screen and (max-width: 1100px) {
@@ -448,7 +483,7 @@ html > body {
         padding-top: 0px;
         padding-left: 15px;
     }
-    
+
     .card .ingot {
         background-color: #095256;
         color: white;
@@ -459,7 +494,7 @@ html > body {
         padding-top: -4px;
         padding-left: 15px;
     }
-    
+
     .card .eg {
         background-color: #095256;
         color: white;
@@ -470,7 +505,7 @@ html > body {
         padding-top: -4px;
         padding-left: 15px;
     }
-    
+
     .card .reject {
         background-color: #095256;
         color: white;
@@ -481,7 +516,7 @@ html > body {
         padding-top: -4px;
         padding-left: 15px;
     }
-    
+
     .card .tapping {
         background-color: #095256;
         color: white;
@@ -492,7 +527,7 @@ html > body {
         padding-top: -4px;
         padding-left: 15px;
     }
-    
+
     .card .dross {
         background-color: #095256;
         color: white;
@@ -505,24 +540,22 @@ html > body {
         padding-left: 15px;
     }
 
-   
     .grafik .daily {
         text-align: center;
-        margin-top: 10px ;
+        margin-top: 10px;
         margin-left: 10px;
         margin-right: 3px;
-        margin-bottom:10px;
+        margin-bottom: 10px;
         height: 100%;
     }
     .grafik .monthly {
         text-align: center;
-        margin-top: 2px ;
+        margin-top: 2px;
         margin-left: 10px;
         margin-right: 5px;
-        margin-bottom:10px;
+        margin-bottom: 10px;
         height: 100%;
     }
-
 }
 
 /* for TV */
@@ -530,20 +563,20 @@ html > body {
     html > body {
         width: 100%;
         min-height: 100vh;
-        background-color: #F7FAFF; 
+        background-color: #f7faff;
     }
 
     .nav {
         /* min-width: 100vw; */
         background-color: #e9ecef;
     }
-    
+
     .nav .logo {
-        width: 230px ;
-        height:55px;
+        width: 230px;
+        height: 55px;
         margin-top: 7px;
         margin-left: 10px;
-      }
+
 
     .section{
         font-size: 40px;
@@ -562,7 +595,7 @@ html > body {
         margin-top: 10px;
         margin-bottom: 10px;
         border-radius: 5px;
-    }  
+    }
 
     .nav-tabs {
         background-color: #ffffff;
@@ -594,13 +627,13 @@ html > body {
         margin-bottom: 0;
         margin-right: 15%;
     }
-    
+
     .img-rounded {
         border-radius: 50%;
         width: 80%;
         height: 100%;
     }
-    
+
     .identitas {
         margin-top: 10px;
         margin-left: 20px;
@@ -608,8 +641,16 @@ html > body {
         margin-bottom: 0px;
         height: 100vh;
     }
-    
+
     .atas {
+
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .section {
+        font-size: 40px;
+        font-weight: 500;
         margin-top: 10px;
         text-align: center;
     }
@@ -618,30 +659,33 @@ html > body {
         margin-top: 25px;
         text-align: center;
     }
-    
+
     .atas h1 {
-        font-weight:700;
+        font-weight: 700;
         margin-top: 0px;
         font-size: 50px;
     }
-    
-    .atas .hd{
-        font-size: 40px;
-    }
-    
+
+
+    .atas .hd {
+        font-size: 45px;
+
+
     .bawah h2 {
         font-size: 40px;
     }
-    
-    .bawah h3{
-        font-size: 35px;
+
+
+    .bawah h3 {
+        font-size: 40px;
+
         font-weight: 400;
     }
 
     .produk {
         margin-left: 9.5%;
     }
-    
+
     .card .tc {
         background-color: #095256;
         color: white;
@@ -652,7 +696,7 @@ html > body {
         padding-top: 5px;
         padding-left: 5px;
     }
-    
+
     .card .ingot {
         background-color: #095256;
         color: white;
@@ -663,7 +707,7 @@ html > body {
         padding-top: 5px;
         padding-left: 15px;
     }
-    
+
     .card .eg {
         background-color: #095256;
         color: white;
@@ -673,7 +717,7 @@ html > body {
         padding-top: 5px;
         padding-left: 15px;
     }
-    
+
     .card .reject {
         background-color: #095256;
         color: white;
@@ -683,7 +727,7 @@ html > body {
         padding-top: 5px;
         padding-left: 15px;
     }
-    
+
     .card .tapping {
         background-color: #095256;
         color: white;
@@ -693,7 +737,7 @@ html > body {
         padding-top: 5px;
         padding-left: 15px;
     }
-    
+
     .card .dross {
         background-color: #095256;
         color: white;
@@ -707,44 +751,50 @@ html > body {
 
     #chartdiv {
         width: 100%;
-        height: 34vh;
-    }  
-    
-    #chartdiv2 {
+        height: 38.5vh;
+    }
+
+   #chartdiv2 {
         width: 100%;
         height: 34vh;
     }
-    
+
     .grafik .daily {
         text-align: center;
-        margin-top: 10px ;
-        margin-left: 0px;
-        margin-right: 20px;
-        margin-bottom:10px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 3px;
+        margin-bottom: 10px;
+
         height: 100%;
     }
     .grafik .monthly {
         text-align: center;
+
+        margin-top: 2px;
+        margin-left: 10px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+
         margin-top: 2px ;
         margin-left: 0px;
         margin-right: 20px;
         margin-bottom:10px;
         height: 100%;
     }
-    
+
     .day {
         background-color: white;
         color: black;
         font-size: 30px;
         font-weight: 500;
     }
-    .month{
+    .month {
         background-color: white;
         color: black;
         font-size: 30px;
         font-weight: 500;
     }
-    
 }
 
 /*------------------ Produk ingot dross card  */
@@ -773,4 +823,3 @@ html > body {
     margin-bottom: 0px;
     text-align: center;
 } */
-

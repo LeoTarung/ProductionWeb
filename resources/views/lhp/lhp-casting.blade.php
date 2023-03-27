@@ -40,9 +40,10 @@
                 <div class="card card-left3 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">REJECTION <br><span
-                                class="fs-2">{{ $idCasting->total_ng }}
-                                part</span>
+                        <div class="col-11 text-center mt-2 fw-bold">REJECTION <br><span class="fs-2">
+                                <span class="" id="totalReject"></span>
+                                part
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -69,7 +70,7 @@
                     <div class="row row-card-i mt-3 ">
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[0] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">999</div>
                                     </div>
@@ -82,7 +83,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[1] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -95,7 +96,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[2] }}')">
                                     <div class="card-inside1 float-start text-center text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -108,7 +109,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[3] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -123,7 +124,7 @@
                     <div class="row row-card-i mt-3 ">
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[4] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -136,7 +137,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[5] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -149,7 +150,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[6] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -162,7 +163,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[7] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -177,7 +178,7 @@
                     <div class="row row-card-i mt-3 ">
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[8] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -190,7 +191,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[9] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -203,7 +204,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[10] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -216,7 +217,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[11] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -231,7 +232,7 @@
                     <div class="row row-card-i mt-3 ">
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[12] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -244,7 +245,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[13] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -257,7 +258,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[14] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -270,7 +271,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[15] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -285,7 +286,7 @@
                     <div class="row row-card-i mt-3 ">
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[16] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -298,7 +299,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[17] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -311,7 +312,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[18] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -324,7 +325,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[19] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -339,7 +340,7 @@
                     <div class="row row-card-i mt-3 ">
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[20] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -352,7 +353,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[21] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -365,7 +366,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[22] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -378,7 +379,7 @@
                         </div>
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[23] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -393,7 +394,7 @@
                     <div class="row row-card-i mt-3 mb-2">
                         <div class="col-3 mt-2">
                             <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
-                                <a onclick="ModalGambar({{ $idCasting->id }})">
+                                <a onclick="ModalGambar('{{ $idCasting->id }}', '{{ $reject[24] }}')">
                                     <div class="card-inside1 float-start text-center">
                                         <div class="font-ci1">0</div>
                                     </div>
@@ -411,12 +412,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="ModalGambar"{{ $idCasting->id }} data-bs-backdrop="static" data-bs-keyboard="false"
-        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalGambar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-3" id="ModalGambarL{{ $idCasting->id }}abel"></h1>
+                    <h1 class="modal-title fs-3" id="ModalGambarLabel"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -439,12 +440,12 @@
 
                 //Define Urutan Mesin Casting
                 let for_mc = {{ $mcfordata }} - 1;
-
+                console.log(data[for_mc].total_ng);
                 //Total Produksi
                 let totalProduksi = data[for_mc].total_produksi;
+                let totalReject = data[for_mc].total_ng;
                 document.getElementById("totalProduksi").innerHTML = totalProduksi;
-
-
+                document.getElementById("totalReject").innerHTML = totalReject;
 
             })
         });

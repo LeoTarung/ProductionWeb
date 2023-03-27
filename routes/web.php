@@ -40,7 +40,9 @@ Route::get('/lhp', function () {
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);
 Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'resume_supply']);
-Route::get('/partial/modal-sementara/{id}', [UsableController::class, 'gambarPart']);
+Route::get('/partial/modal-casting/{id}/{reject}', [UsableController::class, 'gambarPart'])->name('showPicture');
+Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [UsableController::class, 'saveReject'])->name('saveReject');
+
 //====================== API FOR SHARE ======================//
 Route::get('/dtkyrw/all', [ApiController::class, 'dtkyrwall']);
 Route::get('/dtkyrw/{nrp}', [ApiController::class, 'dtkyrw']);
@@ -51,10 +53,10 @@ Route::get('/dtmccasting/{mc}', [ApiController::class, 'showmc']);
 
 
 //====================== SETTINGS ======================//
-Route::get('/settings', [SettingController::class, 'index']);
-Route::get('/settings/mesincasting/{id}', [SettingController::class, 'showMolten']); // Mes in Casting
-Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; // 
 
+Route::get('/settings', [SettingController::class, 'index'])->name('MainSettings');
+Route::get('/settings/mesincasting/{id}', [SettingController::class, 'showMolten'])->name('MCSettings'); // Mes in Casting
+Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; // 
 
 
 //====================== AREA MELTING ======================//
@@ -64,27 +66,27 @@ Route::get('/production/melting/{mesin}', [MeltingController::class, 'Details_da
 Route::post('/production/melting/{mesin}', [MeltingController::class, 'Details_dashboard']);
 Route::get('/production/melting/{mesin}/{mulai}/{selesai}', [MeltingController::class, 'export_LHPMelting']);
 Route::post('/production/melting/{mesin}/edit', [MeltingController::class, 'lhp_melting_raw_edit']);
-Route::get('/lhp-melting', [MeltingController::class, 'prep_melting']);
+Route::get('/lhp-melting', [MeltingController::class, 'prep_melting'])->name('preparationMelting');
 Route::post('/lhp-melting/simpan', [MeltingController::class, 'prep_melting_simpan']);
-Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_raw']);
+Route::get('/lhp-melting/{mesin}/{id}', [MeltingController::class, 'lhp_melting_raw'])->name('LHPMelting');
 Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_melting_raw_simpan']);
-Route::get('/tv/melting/{mesin}', [MeltingController::class, 'Dashboard_tv']);
+Route::get('/tv/melting', [MeltingController::class, 'Dashboard_tv']);
 Route::get('/tv', [MeltingController::class, 'testing']);
 
 
 //====================== FORKLIFT AREA MELTING ======================//
-Route::get('/lhpforklift', [MeltingController::class, 'prep_forklift']);
+Route::get('/lhpforklift', [MeltingController::class, 'prep_forklift'])->name('preparationSupply');
 Route::post('/lhpforklift/simpan', [MeltingController::class, 'prep_forklift_simpan']);
-Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift']);
+Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift'])->name('LHPSupply');
 Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_forklift_raw_simpan']);
 
 //====================== AREA CASTING ======================//
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
 Route::get('/tvCasting/{id}', [CastingController::class, 'tvCasting']);
 Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
-Route::get('/lhp-casting', [CastingController::class, 'prep_casting']);
+Route::get('/lhp-casting', [CastingController::class, 'prep_casting'])->name('preparationCasting');
 Route::post('/lhp-casting/simpan', [CastingController::class, 'prep_casting_simpan']);
-Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting']); //link sementara, nanti diganti ketika preparation sudah selesai
+Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])->name('LHPCasting'); //link sementara, nanti diganti ketika preparation sudah selesai
 
 //====================== LHP FINAL INSPECTION ================//
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'FinalInspection']);
