@@ -8,12 +8,12 @@
 <div class="container">
         <div class="card mt-4 mb-3">
             <div class="card-header">P R E P A R A T I O N</div>
-            <form action="/lhp-final-inspection" method="post">
-            
+            <form action="/lhp-final-inspection/simpan" method="post">
+            @csrf
               <div class="row mx-2 mt-3">
                 <div class="col-6">
                   <label for="nrp">NRP</label>
-                  <input type="text" id="nrp" name="nrp" placeholder="">
+                  <input type="number" id="nrp" name="nrp" placeholder="">
 
                 </div>
                 <div class="col-6">
@@ -50,21 +50,29 @@
                         <label class="btn btn-outline-success " for="gate5">Gate 5</label>
                         
                         <input type="radio" class="btn-check" name="gate" id="gate6"
-                            autocomplete="off" value="">
+                            autocomplete="off" value="6">
                         <label class="btn btn-outline-success " for="gate6">Gate 6</label>
                     </div>
                   </div>                
                 </div>     
                 <div class="col-6">
                   <label for="nolhp">No LHP</label>
-                  <input type="text" id="nolhp" name="nolhp" placeholder="">
+                  <input type="text" id="nolhp" name="no_lhp" placeholder="">
                 </div>              
               </div>
 
               <div class="row mx-2 mb-3">
                 <div class="col">
                   <label for="part">Part</label> <br>
-                  <div class="btn-group">
+                  
+                  <div class="modal-body">
+                    <div class="select-wrapper">
+                      <div class="form-outline">
+                        <input type="text" class="form-control" role="combobox" aria-multiselectable="false" aria-disabled="false">
+                      </div>
+                    </div>
+                  </div>
+                  {{-- <div class="btn-group">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Pilih Part
                     </button>
@@ -74,7 +82,7 @@
                     <li><a class="dropdown-item" href="#">Menu item</a></li>
                     <li><a class="dropdown-item" href="#">ica</a></li>
                     </ul>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
                 
@@ -89,27 +97,9 @@
     </div>
 
     <script>
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-        function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-        
-        function filterFunction() {
-          var input, filter, ul, li, a, i;
-          input = document.getElementById("myInput");
-          filter = input.value.toUpperCase();
-          div = document.getElementById("myDropdown");
-          a = div.getElementsByTagName("a");
-          for (i = 0; i < a.length; i++) {
-            txtValue = a[i].textContent || a[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              a[i].style.display = "";
-            } else {
-              a[i].style.display = "none";
-            }
-          }
-        }
+      
+
+
     </script>
 
 @endsection

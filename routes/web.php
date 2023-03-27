@@ -89,6 +89,7 @@ Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting']);
 //====================== LHP FINAL INSPECTION ================//
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'FinalInspection']);
 Route::get('/prep-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection']);
+Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
 
 
 //====================== HC & GA ======================//

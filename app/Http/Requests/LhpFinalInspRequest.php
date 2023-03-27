@@ -34,7 +34,7 @@ class LhpFinalInspRequest extends FormRequest
             'nrp' => 'Tolong masukan NRP anda terlebih dahulu',
             'gate' => 'Pilih Gate terlebih dahulu',
             'no_lhp' => 'Masukan No LHP',
-            'nama_part' =>'Pilih Nama Part'
+            'nama_part' =>'Pilih Nama Part',
         ];
     }
 }
