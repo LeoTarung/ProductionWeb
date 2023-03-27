@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-6">
                   <label for="nama">Nama</label>
-                  <input type="text" id="nama" name="nama" placeholder="">
+                  <input type="text" id="nama" name="nama" placeholder="" required>
                 </div>
               </div>
 
