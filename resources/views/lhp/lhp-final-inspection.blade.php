@@ -6,7 +6,7 @@
 
     <div class="container-fluid">
         <div class="row mt-2">
-            <div class="card cardpart fw-bold fs-1 text-center align-items-center">
+            <div class="card cardpart fw-bold fs-2 text-center align-items-center">
                 COVER K1ZG
             </div>
         </div>
@@ -16,7 +16,7 @@
             {{-- card total Change --}}
             <div class="card-left1 mt-2">
                 <div class="row ps-4">
-                    <div class="col-7 mt-2 fw-bold fs-1">TOTAL CHANGE</div>
+                    <div class="col-7 mt-2 fw-bold fs-2">TOTAL CHANGE</div>
                     <div class="col-3 d-flex align-items-center parent">
                         <div class="child border shadow fw-bold fs-2 pt-1 text-center align-items-center">
                            999 </div>
@@ -39,7 +39,7 @@
             {{-- card total OK --}}
             <div class="card-left2 mt-2">
                 <div class="row ps-4">
-                    <div class="col-7 mt-2 fw-bold fs-1">TOTAL NG</div>
+                    <div class="col-7 mt-2 fw-bold fs-2">TOTAL NG</div>
                     <div class="col-3 d-flex align-items-center parent">
                         <div class="child border shadow fw-bold fs-2 pt-1 text-center align-items-center">
                            999 </div>
@@ -72,7 +72,7 @@
             <div class="card-left3">
                 <div class="row totok">
                     <div class="col-2"></div>
-                    <div class="col-7 ps-2 fw-bold fs-1 parentOK">
+                    <div class="col-7 ps-2 fw-bold fs-2 parentOK">
                         <div class="childOK">TOTAL OK</div>
                     </div>
                     <div class="col-3 d-flex align-items-center parent2">

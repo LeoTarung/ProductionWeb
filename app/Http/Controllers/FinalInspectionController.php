@@ -29,18 +29,24 @@ class FinalInspectionController extends Controller
         // $nrp = 0;
         // $id = 0;
         // $gate =
+        // dd( $request->nrp);
 
         LhpFinalInspection::create([
+            'tanggal' => $date,
+            'shift' => $shift,
             'nrp' => $request->nrp,
             'gate' => $request->gate,
             'no_lhp' => $request->no_lhp,
-            // 'nama_part' =>'Pilih Nama Part',
+            'nama_part' =>$request->nama_part,
             ]);
 
-        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id'));
+         $id = LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+
+        return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+    
     }
 
-    public function FinalInspection(UsableController $useable){
+    public function Lhp_final_inspection(UsableController $useable){
         $date = $useable->date();
         $shift = $useable->Shift();
         $title = "Final Inspection";

@@ -3,7 +3,10 @@
 
  {{-- -------------------------------- CSS  ------------------------------ --}}
  <link rel="stylesheet" type="text/css" href="{{ asset('/css/final-inspection.css') }}">
- {{-- --------------------------------      ------------------------------ --}}
+ <link rel="stylesheet" type="text/css" href="{{ asset('/css/select2.min.css') }}" />
+ <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
+  {{-- --------------------------------      ------------------------------ --}}
 
 <div class="container">
         <div class="card mt-4 mb-3">
@@ -11,14 +14,14 @@
             <form action="/lhp-final-inspection/simpan" method="post">
             @csrf
               <div class="row mx-2 mt-3">
-                <div class="col-6">
+                <div class="col-6 ">
                   <label for="nrp">NRP</label>
-                  <input type="number" id="nrp" name="nrp" placeholder="">
+                  <input type="number" id="nrp" name="nrp" placeholder="" class="kotak" required>
 
                 </div>
                 <div class="col-6">
                   <label for="nama">Nama</label>
-                  <input type="text" id="nama" name="nama" placeholder="" required>
+                  <input type="text" id="nama" name="nama" placeholder="" class="kotak" required>
                 </div>
               </div>
 
@@ -26,7 +29,7 @@
                 <div class="col-6">
                   <div class="form-floating ">
                     <div class="btn-group-horizontal" role="group"
-                        aria-label="horizontal radio toggle  button group">
+                        aria-label="horizontal radio toggle  button group" required>
                         <label class="">Pilih Gate:</label><br>
 
                         <input type="radio" class="btn-check" name="gate" id="gate1"
@@ -57,21 +60,21 @@
                 </div>     
                 <div class="col-6">
                   <label for="nolhp">No LHP</label>
-                  <input type="text" id="nolhp" name="no_lhp" placeholder="">
+                  <input type="text" id="nolhp" name="no_lhp" placeholder="" class="kotak" required>
                 </div>              
               </div>
 
               <div class="row mx-2 mb-3">
                 <div class="col">
                   <label for="part">Part</label> <br>
-                  
-                  <div class="modal-body">
-                    <div class="select-wrapper">
-                      <div class="form-outline">
-                        <input type="text" class="form-control" role="combobox" aria-multiselectable="false" aria-disabled="false">
-                      </div>
-                    </div>
-                  </div>
+                  <select class="select" name="nama_part" required>
+              
+                    <option value="1">ABA</option>
+                    <option value="2">ICI</option>
+                    <option value="3">ODO</option>
+
+                  </select>
+
                   {{-- <div class="btn-group">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Pilih Part
@@ -98,8 +101,14 @@
 
     <script>
       
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script></body>
 
-
+      <script>
+        $(document).ready(function () {
+        $('select').select2();
+        });
     </script>
 
 @endsection
