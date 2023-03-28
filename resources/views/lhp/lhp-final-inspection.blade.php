@@ -76,7 +76,8 @@
                     </div>
                     <div class="col-4 d-flex align-items-center parent2">
                         <div id="count" class="child2 border border-success shadow fw-bold fs-1 text-center align-items-center">
-                            </div>
+                     
+                        </div>
                            <label id="count"></label>
                     </div>
                 </div>
