@@ -36,7 +36,7 @@ class FinalInspectionController extends Controller
             'shift' => $shift,
             'nrp' => $request->nrp,
             'gate' => $request->gate,
-            'no_lhp' => $request->no_lhp,
+            // 'no_lhp' => $request->no_lhp,
             'nama_part' =>$request->nama_part,
             ]);
 
@@ -46,13 +46,16 @@ class FinalInspectionController extends Controller
     
     }
 
-    public function Lhp_final_inspection(UsableController $useable){
+    public function Lhp_final_inspection(UsableController $useable,$id){
         $date = $useable->date();
         $shift = $useable->Shift();
         $title = "Final Inspection";
         $mesin = "Final Inspection";
-        $nrp = 0;
-        $id = 0;
+
+        $lhp = LhpFinalInspection::where('id', $id)->first();
+        // dd( $test);
+        $nrp = $lhp->nrp;
+        // $id = 0;
         return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id'));
     }
 }

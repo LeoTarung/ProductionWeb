@@ -2,7 +2,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
-select, textarea {
+select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -12,9 +12,10 @@ select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
+
 .kotak {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -70,7 +71,7 @@ select, textarea {
 .main-card {
     margin: 10px 2px 15px 0px;
     border-radius: 20px;
-    height: 619px;
+    height: 587px;
     /* height: 61.2em; */
     overflow-y: scroll;
 }
@@ -125,18 +126,24 @@ select, textarea {
     margin: 3px 1px 0px 10px ;
 }
 
+.total {
+    padding: 20px 0px 0px 0px;
+    align-items: center;
+}
 .parent{
     margin-left: -10px;
 }
 
 .child {
-    height: 60px; 
+    height: 80px; 
     width: 100%;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    color: black;
     margin: 10px 0px 10px 0px;
-    padding: 10px 0px 0px 10px;
+    padding: 10px 0px 0px 0px;
     border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    box-shadow:  0px 0px 7px rgb(255, 0, 0);
 }
 
 .parent2 {
@@ -144,14 +151,15 @@ select, textarea {
 }
 
 .child2 {
-    height: 80px; 
+    height: 120px; 
     width: 100%;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    margin: 0px 12px 0px -10px;
-    /* padding: 8px 0 0 0px; */
+    margin: 0px 0px 0px -15px;
+    padding: 25px 0 0 0px;
     border-radius: 10px 10px 10px 10px;
     border: 1px var(--green) ;
+    text-align: center;
 }
 
 .childOK{
@@ -163,13 +171,14 @@ select, textarea {
 }
 
 .child3 {
-    height: 50px; 
+    height: 60px; 
     width: 100%;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    margin: 0px 0px 0px 0px;
-    /* padding: 8px 0 0 0px; */
+    margin: 0px 0px 0px -15px;
+    padding: 10px 0 0 0px;
     border-radius: 10px 10px 10px 10px;
+    text-align: center;
 }
 
 .card-left1{
@@ -216,17 +225,18 @@ select, textarea {
 
 .flex {
   /* display:flex; */
-  top: 12.6%;
-  left: 44.8%;
+  top: 18%;
+  left: 43%;
   position: absolute;
 }
 
 .oval {
-    height: 150px;
+    height: 160px;
     width: 160px;
     background-color: #ffffff;
     /* color: #2B3467; */
     border-radius: 50%;
-    padding: 30px 25px ;
+    padding: 20px 0px 0px 0px ;
+    font-size: 5em;
   }
 

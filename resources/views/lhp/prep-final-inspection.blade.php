@@ -59,12 +59,23 @@
                   </div>                
                 </div>     
                 <div class="col-6">
-                  <label for="nolhp">No LHP</label>
-                  <input type="text" id="nolhp" name="no_lhp" placeholder="" class="kotak" required>
-                </div>              
+                    {{-- <label for="nolhp">No LHP</label>
+                    <input type="text" id="nolhp" name="no_lhp" placeholder="" class="kotak" required>
+                    --}}
+
+                    <label for="part">Part</label> <br>
+                    <select class="select" name="nama_part" style="height: 100%; !important" required>
+                
+                      <option value="1">ABA</option>
+                      <option value="2">ICI</option>
+                      <option value="3">ODO</option>
+
+                    </select>
+                </div>      
+
               </div>
 
-              <div class="row mx-2 mb-3">
+              {{-- <div class="row mx-2 mb-3">
                 <div class="col">
                   <label for="part">Part</label> <br>
                   <select class="select" name="nama_part" required>
@@ -75,19 +86,8 @@
 
                   </select>
 
-                  {{-- <div class="btn-group">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Pilih Part
-                    </button>
-                    <ul class="dropdown-menu">
-                    <li><input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"></li>
-                    <li><a class="dropdown-item" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item" href="#">ica</a></li>
-                    </ul>
-                  </div> --}}
                 </div>
-              </div>
+              </div> --}}
                 
                 <div class="card-footer d-flex justify-content-end">
                     <button type="reset" class="btn btn-danger">Reset

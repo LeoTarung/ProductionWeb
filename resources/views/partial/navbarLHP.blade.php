@@ -117,7 +117,7 @@
                 </a>
             
                 {{-- LHP FINAL INSPECTION --}}
-                @elseif (Route::currentRouteName() == 'Lhp_final_inspection')
+                @elseif (Route::currentRouteName() == 'LHPFinalInspection')
                 <a href="{{ url('/lhp-final-inspection') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
