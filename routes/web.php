@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
 use App\Http\Controllers\HenkatenController;
+use App\Http\Controllers\IngotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,7 +94,7 @@ Route::get('/table', [MeltingTestController::class, 'table']);
 Route::get('/final', [MeltingTestController::class, 'final_inspection']);
 
 
-//====================== henkaten ======================//
+//====================== Henkaten ======================//
 
 // man
 Route::get('/tampilan', [HenkatenController::class, 'tampilan']);
@@ -124,3 +125,6 @@ Route::post('/update/{No}', [HenkatenController::class, 'update']);
 Route::get('/material_delete/{No}', [HenkatenController::class, 'material_delete']);
 
 Route::get('/include', [HenkatenController::class, 'include']);
+
+//====================== Stock Ingot ======================//
+Route::get('/Ingot',[IngotController::class, 'Ingot']);
