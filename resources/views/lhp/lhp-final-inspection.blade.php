@@ -6,8 +6,8 @@
 
     <div class="container-fluid">
         <div class="row mt-2">
-            <div class="card cardpart fw-bold fs-1 text-center align-items-center">
-                COVER K1ZG
+            <div class="card cardpart fw-bold fs-2  pt-2 text-center align-items-center">
+                {{ $lhp->nama_part}}
             </div>
         </div>
         
@@ -16,9 +16,9 @@
             {{-- card total Change --}}
             <div class="card-left1 mt-2">
                 <div class="row ps-4">
-                    <div class="col-7 mt-2 fw-bold fs-1">TOTAL CHANGE</div>
-                    <div class="col-3 d-flex align-items-center parent">
-                        <div class="child border shadow fw-bold fs-2 pt-1 text-center align-items-center">
+                    <div class="col-6 mt-2 fw-bold fs-2 total">TOTAL  CHECK</div>
+                    <div class="col-4 d-flex align-items-center parent">
+                        <div class="child border shadow fw-bold fs-1 text-center align-items-center">
                            999 </div>
                     </div>
                     <div class="col-2"></div>
@@ -39,10 +39,10 @@
             {{-- card total OK --}}
             <div class="card-left2 mt-2">
                 <div class="row ps-4">
-                    <div class="col-7 mt-2 fw-bold fs-1">TOTAL NG</div>
-                    <div class="col-3 d-flex align-items-center parent">
-                        <div class="child border shadow fw-bold fs-2 pt-1 text-center align-items-center">
-                           999 </div>
+                    <div class="col-6 mt-2 fw-bold fs-2 total">TOTAL NG</div>
+                    <div class="col-4 d-flex align-items-center parent">
+                        <div class="child border fw-bold fs-1 text-danger text-center align-items-center">
+                           12345 </div>
                     </div>
                     <div class="col-2"></div>
                 </div>
@@ -59,9 +59,8 @@
             </div> --}}
 
             <div class="flex">
-                <div class="oval border shadow-lg fw-bold fs-3">
-                    NO LHP
-                    <div class="ps-5">9</div>
+                <div class="oval border shadow bg-success fw-bold text-center align-items-center" onclick="counterFunc()"> 
+                    +1
                 </div>
             </div>
 
@@ -72,23 +71,28 @@
             <div class="card-left3">
                 <div class="row totok">
                     <div class="col-2"></div>
-                    <div class="col-7 ps-2 fw-bold fs-1 parentOK">
+                    <div class="col-6 pt-2 ps-2 fw-bold fs-2 parentOK">
                         <div class="childOK">TOTAL OK</div>
                     </div>
-                    <div class="col-3 d-flex align-items-center parent2">
-                        <div class="child2 border border-success shadow fw-bold fs-2 pt-2 text-center align-items-center">
-                           999 </div>
+                    <div class="col-4 d-flex align-items-center parent2">
+                        <div id="count" class="child2 border border-success shadow fw-bold fs-1 text-center align-items-center">
+                     
+                        </div>
+                           <label id="count"></label>
                     </div>
                 </div>
                 <div class="row totok">
-                    <div class="col-6"></div>
-                    <div class="col-3 d-flex align-items-center parent">
-                        <div class="child border shadow bg-success fw-bold fs-2 pt-1 text-center align-items-center">
-                           +1 </div>
-                    </div>
-                    <div class="col-3 d-flex align-items-center parent3">
-                        <div class="child3 border shadow bg-warning fw-bold fs-2 text-center align-items-center">
-                            UNDO </div>
+                    <div class="col-8"></div>
+                    {{-- <div class="col-2 d-flex align-items-center parent">
+                        <div class="child border shadow bg-success fw-bold fs-2 pt-1 text-center align-items-center" onclick="counterFunc()">
+                           +1 
+                        </div>
+                    </div> --}}
+                    <div class="col-4 d-flex align-items-center parent3">
+                        <div class="child3 border shadow bg-warning fw-bold fs-2 text-center align-items-center" onclick="resetFunc()">
+                            UNDO 
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -919,9 +923,39 @@
         </div>
   
         {{-- sebelum div container  --}}
-      </div>
+    </div>
+
+    <div class="modal fade" id="ModalGambar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="ModalGambarLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="page" class="p-2"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
   
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-   
+      <script>
+        count = 0;
+
+        function counterFunc(){
+            count++;
+            document.getElementById("count").innerHTML = count;
+        }
+
+        function resetFunc(){
+            count--;
+            document.getElementById("count").innerHTML = count;
+        }
+      </script>
 
 @endsection
