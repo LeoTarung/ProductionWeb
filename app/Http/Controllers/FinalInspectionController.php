@@ -6,6 +6,7 @@ use App\Http\Requests\LhpFinalInspRequest;
 use Illuminate\Http\Request;
 use LhpFinalInspTable;
 use App\Models\LhpFinalInspection;
+use App\Models\PartFinalInspection;
 
 class FinalInspectionController extends Controller
 {
@@ -17,8 +18,10 @@ class FinalInspectionController extends Controller
         $mesin = "Final Inspection";
         $nrp = 0;
         $id = 0;
+        $nama_part = PartFinalInspection::get();
 
-        return view('lhp.prep-final-inspection', compact('title','shift', 'mesin','nrp','id'));
+
+        return view('lhp.prep-final-inspection', compact('title','shift', 'mesin','nrp','id','nama_part'));
     }
 
     public function Prep_final_inspection_simpan(UsableController $useable, LhpFinalInspRequest $request){
@@ -26,6 +29,7 @@ class FinalInspectionController extends Controller
         $shift = $useable->Shift();
         $title = "Final Inspection";
         $mesin = "Final Inspection";
+        
         // $nrp = 0;
         // $id = 0;
         // $gate =
@@ -56,7 +60,7 @@ class FinalInspectionController extends Controller
         // dd( $test);
         $nrp = $lhp->nrp;
         // $id = 0;
-        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id'));
+        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id', 'lhp'));
     }
 }
 
