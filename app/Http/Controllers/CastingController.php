@@ -9,6 +9,7 @@ use Maatwebsite\Excel\Facades\Excel;
 // use Clockwork\Support\Lumen\Controller;
 use App\Http\Controllers\UsableController;
 use App\Http\Requests\LhpCastingRequest;
+use App\Models\Downtime;
 use App\Models\LhpCasting;
 use App\Models\RejectNG;
 use Illuminate\Support\Facades\DB;
@@ -240,20 +241,11 @@ class CastingController extends Controller
         $mesin = "CASTING";
         $title = "LHP Casting";
         $idCasting = LhpCasting::where('id', $id)->first();
-
-        $sum = 0;
-        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
-            $sum = $sum + 72;
-            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
-            $reject[] = ${'idReject_' . $i}->jenis_reject;
-        }
-
-        $reject = array_map(function ($value) {
-            return str_replace(' ', '-', $value);
-        }, $reject);
-        // dd($reject);
-
-
+        $reject = collect($useable->RejectCastingWithStrip());
+        $rejectforView = collect($useable->RejectCastingWithoutStrip());
+        $reject = collect($useable->RejectCastingWithStrip());
+        $downtime = Downtime::all();
+        // dd($downtime);
 
         $nrp1 = $idCasting->nrp1 . ' |';
         $nrp2 = $idCasting->nrp2 . ' |';
@@ -269,6 +261,8 @@ class CastingController extends Controller
         //Define Mesin Casting untuk penggunaan Ajax
         $range_hitung = MesinCasting::where('mc', '<=',  $idCasting->id_mesincasting)->get();
         $mcfordata = $range_hitung->count();
-        return view('lhp.lhp-casting', compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6', 'mcfordata', 'namaPart', 'reject'));
+        $jumlahReject = $reject->count();
+        // dd($jumlahReject);
+        return view('lhp.lhp-casting', compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6', 'mcfordata', 'namaPart', 'reject', 'rejectforView', 'jumlahReject', 'downtime'));
     }
 }

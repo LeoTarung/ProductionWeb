@@ -145,3 +145,19 @@ function ModalGambar(id,reject) {
         }
     );
 }
+
+//==============================['FUNCTION MODAL DOWNTIME DI CASTING']==============================//
+// function ModalDowntime(id) {
+//     $.get(
+//         "/partial/modal-casting-dt"+ "/" + id ,
+//         {},
+//         function (data) {
+//             // $("#ModalGambarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
+//             //  $("#page").load('/partial/modal-sementara'); //menampilkan view create di dalam id page
+//              $("#ModalDowntime").modal("show"); //kalo ID pake "#" kalo class pake "."
+//              $('#ModalDowntime .modal-body').load( '/partial/modal-casting-dt' + '/' + id );
+//             //  console.log(reject);
+//              console.log(id);
+//         }
+//     );
+// }
