@@ -89,9 +89,9 @@ Route::post('/lhp-casting/simpan', [CastingController::class, 'prep_casting_simp
 Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])->name('LHPCasting'); //link sementara, nanti diganti ketika preparation sudah selesai
 
 //====================== LHP FINAL INSPECTION ================//
-Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'FinalInspection']);
-Route::get('/prep-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection']);
+Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
+Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
 
 
 //====================== HC & GA ======================//

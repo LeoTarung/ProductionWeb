@@ -6,6 +6,7 @@ use App\Http\Requests\LhpFinalInspRequest;
 use Illuminate\Http\Request;
 use LhpFinalInspTable;
 use App\Models\LhpFinalInspection;
+use App\Models\PartFinalInspection;
 
 class FinalInspectionController extends Controller
 {
@@ -17,8 +18,10 @@ class FinalInspectionController extends Controller
         $mesin = "Final Inspection";
         $nrp = 0;
         $id = 0;
+        $nama_part = PartFinalInspection::get();
 
-        return view('lhp.prep-final-inspection', compact('title','shift', 'mesin','nrp','id'));
+
+        return view('lhp.prep-final-inspection', compact('title','shift', 'mesin','nrp','id','nama_part'));
     }
 
     public function Prep_final_inspection_simpan(UsableController $useable, LhpFinalInspRequest $request){
@@ -26,28 +29,38 @@ class FinalInspectionController extends Controller
         $shift = $useable->Shift();
         $title = "Final Inspection";
         $mesin = "Final Inspection";
+        
         // $nrp = 0;
         // $id = 0;
         // $gate =
+        // dd( $request->nrp);
 
         LhpFinalInspection::create([
+            'tanggal' => $date,
+            'shift' => $shift,
             'nrp' => $request->nrp,
             'gate' => $request->gate,
-            'no_lhp' => $request->no_lhp,
-            // 'nama_part' =>'Pilih Nama Part',
+            // 'no_lhp' => $request->no_lhp,
+            'nama_part' =>$request->nama_part,
             ]);
 
-        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id'));
+         $id = LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+
+        return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+    
     }
 
-    public function FinalInspection(UsableController $useable){
+    public function Lhp_final_inspection(UsableController $useable,$id){
         $date = $useable->date();
         $shift = $useable->Shift();
         $title = "Final Inspection";
         $mesin = "Final Inspection";
-        $nrp = 0;
-        $id = 0;
-        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id'));
+
+        $lhp = LhpFinalInspection::where('id', $id)->first();
+        // dd( $test);
+        $nrp = $lhp->nrp;
+        // $id = 0;
+        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id', 'lhp'));
     }
 }
 
