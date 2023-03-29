@@ -5,36 +5,97 @@
     {{-- --------------------------------      ------------------------------ --}}
 
     <div class="container-fluid">
+        <div class="row mt-2">
+            <div class="card cardpart fw-bold fs-1 text-center align-items-center">
+                COVER K1ZG
+            </div>
+        </div>
+        
         <div class="row">
           <div class="col-6"> 
-            {{-- card part --}}
-            <div class="card card-template mt-3 ms-2 bg-warning shadow-sm">
-              <div class="card card-part fw-bold fs-4 text-center align-items-center">COVER THERMO 2MD</div>
+            {{-- card total Change --}}
+            <div class="card-left1 mt-2">
+                <div class="row ps-4">
+                    <div class="col-7 mt-2 fw-bold fs-1">TOTAL CHANGE</div>
+                    <div class="col-3 d-flex align-items-center parent">
+                        <div class="child border shadow fw-bold fs-2 pt-1 text-center align-items-center">
+                           999 </div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
             </div>
+
+            {{-- <div class="card card-left1 my-2 shadow-sm">
+                <div class="row">
+                    <div class="col-8 mt-2 ps-4 fw-bold fs-4">TOTAL CHANGE</div>
+                    <div class="col-3 d-flex align-items-center parent">
+                        <div class="child fw-bold fs-4 pt-2 text-center align-items-center">
+                           999 </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div> --}}
   
             {{-- card total OK --}}
-            <div class="card  mt-3 ms-2 shadow-sm totalok">
-              <div class="row">
-                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL CHANGE </div>
-                <div class="col-3 d-flex align-items-center parent">
-                    <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+            <div class="card-left2 mt-2">
+                <div class="row ps-4">
+                    <div class="col-7 mt-2 fw-bold fs-1">TOTAL NG</div>
+                    <div class="col-3 d-flex align-items-center parent">
+                        <div class="child border shadow fw-bold fs-2 pt-1 text-center align-items-center">
+                           999 </div>
+                    </div>
+                    <div class="col-2"></div>
                 </div>
-              </div>
             </div>
+            {{-- <div class="card card-left2 my-2 shadow-sm">
+                <div class="row">
+                    <div class="col-8 mt-2 ps-4 fw-bold fs-4">TOTAL OK</div>
+                    <div class="col-3 d-flex align-items-center parent">
+                        <div class="child fw-bold fs-4 pt-2 text-center align-items-center">
+                           999 </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div> --}}
+
+            <div class="flex">
+                <div class="oval border shadow-lg fw-bold fs-3">
+                    NO LHP
+                    <div class="ps-5">9</div>
+                </div>
+            </div>
+
+
           </div>
-  
-          <div class="col-6">  
-            <div class="card  mt-3 ms-2 shadow-sm totalok">
-              <div class="row">
-                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL NG </div>
-                <div class="col-3 d-flex align-items-center parent">
-                    <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+
+          <div class="col-6 mt-2">  
+            <div class="card-left3">
+                <div class="row totok">
+                    <div class="col-2"></div>
+                    <div class="col-7 ps-2 fw-bold fs-1 parentOK">
+                        <div class="childOK">TOTAL OK</div>
+                    </div>
+                    <div class="col-3 d-flex align-items-center parent2">
+                        <div class="child2 border border-success shadow fw-bold fs-2 pt-2 text-center align-items-center">
+                           999 </div>
+                    </div>
                 </div>
-              </div>
+                <div class="row totok">
+                    <div class="col-6"></div>
+                    <div class="col-3 d-flex align-items-center parent">
+                        <div class="child border shadow bg-success fw-bold fs-2 pt-1 text-center align-items-center">
+                           +1 </div>
+                    </div>
+                    <div class="col-3 d-flex align-items-center parent3">
+                        <div class="child3 border shadow bg-warning fw-bold fs-2 text-center align-items-center">
+                            UNDO </div>
+                    </div>
+                </div>
             </div>
-            <div class="card  mt-3 ms-2 shadow-sm totalok">
+            
+            {{-- <div class="card mt-2 shadow-sm ">
               <div class="row">
-                <div class="col-9 mt-2 ps-4 fw-bold fs-4"> TOTAL OK </div>
+                <div class="col-9 mt-2 ps-4 fw-bold fs-4 align-items-center"> TOTAL OK </div>
                 <div class="col-3 d-flex align-items-center parent">
                     <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
                 </div>
@@ -42,14 +103,15 @@
               <div class="row">
                   <div class="col-9 mt-2 ps-4 fw-bold fs-4"></div>
                   <div class="col-3 d-flex align-items-center parent">
-                      <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                      <div class="child fw-bold fs-4 pt-2 mb-1 text-center align-items-center bg-warning">+1</div>
                   </div>
                 </div>
-            </div>
+            </div> --}}
           </div>
+
         </div>
           
-        <div class="row mt-2">
+        <div class="row mt">
           <div class="col-12">
             <div class="card main-card">
               {{-- row pertama --}}
