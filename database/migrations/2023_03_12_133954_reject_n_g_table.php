@@ -17,6 +17,14 @@ class RejectNGTable extends Migration
             $table->id();
             $table->string('jenis_reject');
             $table->integer('posisi');
+            $table->boolean('casting')->default(false);
+            $table->boolean('machining')->default(false);
+            $table->boolean('gravity')->default(false);
+            $table->boolean('gravity_casting')->default(false);
+            $table->boolean('gravity_finishing')->default(false);
+            $table->boolean('assembling')->default(false);
+            $table->boolean('final_inspection')->default(false);
+            $table->boolean('painting')->default(false);
         });
     }
 

@@ -42,6 +42,8 @@ Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 're
 Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'resume_supply']);
 Route::get('/partial/modal-casting/{id}/{reject}', [UsableController::class, 'gambarPart'])->name('showPicture');
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [UsableController::class, 'saveReject'])->name('saveReject');
+Route::get('/partial/modal-casting-dt/{id}', [UsableController::class, 'DowntimeCasting'])->name('DowntimeCasting');
+
 
 //====================== API FOR SHARE ======================//
 Route::get('/dtkyrw/all', [ApiController::class, 'dtkyrwall']);
@@ -50,10 +52,10 @@ Route::get('/dthourlymltng/{id}', [ApiController::class, 'hourly_lhpmelting']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dtmccasting/{mc}', [ApiController::class, 'showmc']);
+Route::get('/dtRjtcasting/{id_lhp}', [ApiController::class, 'totalReject']);
 
 
 //====================== SETTINGS ======================//
-
 Route::get('/settings', [SettingController::class, 'index'])->name('MainSettings');
 Route::get('/settings/mesincasting/{id}', [SettingController::class, 'showMolten'])->name('MCSettings'); // Mes in Casting
 Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; // 

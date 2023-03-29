@@ -88,7 +88,40 @@ class UsableController extends Controller
         return view('lhp.resume-forklift', compact('sql1', 'mesin', 'id'));
     }
 
-    // ============================= //PARTIAL GAMBAR PART // ================================= //
+    // ============================= //REJECT // ================================= //
+    // =================== //REJECT CASTING // ============================ //
+
+    function RejectCastingWithStrip()
+    {
+        $sum = 0;
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
+            $reject[] = ${'idReject_' . $i}->jenis_reject;
+        }
+
+        $reject = array_map(function ($value) {
+            return str_replace(' ', '-', $value);
+        }, $reject);
+        return $reject;
+    }
+
+    function RejectCastingWithoutStrip()
+    {
+        $sum = 0;
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
+            $reject[] = ${'idReject_' . $i}->jenis_reject;
+        }
+
+        // $reject = array_map(function ($value) {
+        //     return str_replace(' ', '-', $value);
+        // }, $reject);
+        return $reject;
+    }
+
+    // ============================= //PARTIAL GAMBAR PART  CASTING// ================================= //
     public function gambarPart(UsableController $useable, $id, $reject)
     {
         $shift = $useable->Shift();
@@ -97,28 +130,21 @@ class UsableController extends Controller
         $idCasting = LhpCasting::where('id', $id)->first();
         $ng = $reject;
 
-        // $sql1 = LhpSupplyRAW::groupBy(LhpSupplyRAW::raw('no_mc'))->groupBy(LhpSupplyRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, COUNT(jumlah_tapping) as frekuensi, SUM(jumlah_tapping) as total_tapping")->get();
-        // dd($sql1);
         return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
     }
 
     public function saveReject(UsableController $useable, $id, $reject, $posisi)
     {
-        $shift = $useable->Shift();
-        $date = $useable->date();
-
-
-        $rejectnew = str_replace('-', ' ', $reject);
-        // dd($rejectnew);
+        $rejectnew = str_replace("-", " ", $reject);
         $ng = RejectNG::where('jenis_reject', $rejectnew)
             ->where('posisi', $posisi)
             ->pluck('id');
+        // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
         $integerNG =  (int) $ng->first();;
         $integerId =  intval($id);
 
         $idCasting = LhpCasting::where('id', $integerId)->first();
-
-        // Casting Raw
+        $mc =  $idCasting->id_mesincasting;
         LhpCastingRaw::create([
             'id_lhp' => $integerId,
             'id_ng' => $integerNG,
@@ -126,14 +152,23 @@ class UsableController extends Controller
 
         //Update Total NG
         $total_ng = $idCasting->total_ng;
-        // dd($idCasting->total_ng);
+
         LhpCasting::where('id', $integerId)->update([
             'total_ng' =>  $total_ng + 1
         ]);
 
+        return redirect("/lhp-casting/$mc/$id")->with('behasilditambahkan', 'behasilditambahkan');
+    }
 
-        $ng = $reject;
 
-        return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
+    public function DowntimeCasting(UsableController $useable, $id)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+        $idCasting = LhpCasting::where('id', $id)->first();
+        // $ng = $reject;
+
+        return view('lhp.modal-casting-downtime', compact('idCasting'));
     }
 }
