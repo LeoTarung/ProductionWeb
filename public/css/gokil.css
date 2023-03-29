@@ -15,7 +15,7 @@
     margin: 10px 2px 5px 0px;
     border-radius: 20px;
     /* height: 82.5%; */
-    height: 575px;
+    height: 500px;
     overflow-y: scroll;
 }
 
@@ -48,6 +48,7 @@
     border-radius: 0px 40px 40px 0px;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
+    align-self: center;
     /* float: right; */
 }
 
@@ -58,9 +59,10 @@
 }
 
 .font-ci2{
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
-    margin: 10% 1px 10% 10px;
+    margin:0% 1px 0% 10px;
+
     /* top: 50%;*/
 }
 
@@ -141,4 +143,86 @@
     border-radius: 15px 0px 0px 15px;
 }
 
+.warpper {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7faff;
+
+    /* align-items: center; */
+}
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0px 0px;
+    background: var( --varyDarkBlue);
+    display: inline-block;
+    color: #fff;
+    border-radius: 3px 3px 0px 0px;
+    transition: all 0.1s ease;
+    /* box-shadow: 0px 4px 7px #00000069; */
+}
+.panels {
+    background: #f7faff;
+    box-shadow: 0px 4px 7px #00000044;
+    /* min-height:200px; */
+    min-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    padding: 20px;
+    transition: all 0.1s ease;
+}
+.panel {
+    display: none;
+    animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.panel-title {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.radio {
+    display: none;
+}
+
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel,
+#five:checked ~ .panels #five-panel {
+    display: block;
+    font-size: 15px;
+    transition: all 0.1s ease;
+}
+
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab,
+#five:checked ~ .tabs #five-tab {
+    background: #f7faff;
+    color: var( --varyDarkBlue);
+    border-top: 3px solid var( --varyDarkBlue);
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.1s ease;
+}
+.chart-daily .card-header {
+    /* box-shadow: 0px 4px 4px rgba(104, 104, 104, 0.25); */
+    border-radius: 5px;
+    background-color: #f7faff;
+}
+
+.chart-daily {
+    margin-bottom: -50px;
+}
 

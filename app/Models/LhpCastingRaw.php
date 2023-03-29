@@ -12,8 +12,13 @@ class LhpCastingRaw extends Model
     protected $table = "lhp_casting_raw";
     protected $guarded = [];
 
-    public function lhpCastingRaw()
+    public function lhpCasting()
     {
         return $this->belongsTo(LhpCasting::class, 'id_lhp', 'id'); //One to one
+    }
+
+    public function reject()
+    {
+        return $this->belongsTo(RejectNG::class, 'id_ng', 'id'); //One to one
     }
 }
