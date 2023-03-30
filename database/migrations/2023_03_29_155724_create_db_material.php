@@ -17,7 +17,12 @@ class CreateDbMaterial extends Migration
                 $table->id('No');
                 $table->string('nama');
                 $table->string('nrp');
-                $table->string('initial');
+                $table->string('kode_sap');
+                $table->string('kebutuhan_mrp');
+                $table->string('kebutuhan_daily');
+                $table->timestamp('timestamp');
+                $table->string('tipe_ingot');
+                $table->string('quantity');
             });
     }
 

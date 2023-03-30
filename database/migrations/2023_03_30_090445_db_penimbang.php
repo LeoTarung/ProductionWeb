@@ -28,6 +28,6 @@ class DbPenimbang extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('db_penimbang');
     }
 }
