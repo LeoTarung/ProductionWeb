@@ -882,6 +882,9 @@ chart.appear(1000, 100);
                 INPUT INGOT : <input type="text" class="input" name="Deskripsi">
               </div>
               <br>
+              <div>
+                
+              </div>
               <label for="start_date">TANGGAL : </label>
               <input type="datetime-local" name="start_date" id="start_date">
               <br><br>
