@@ -121,6 +121,42 @@ class UsableController extends Controller
         return $reject;
     }
 
+    // =================== //REJECT FINAL INSPECTION // ============================ //
+
+    function RejectFinalInspectionWithStrip()
+    {
+        $array = RejectNG::where('final_inspection', 1);
+        $reject = $array;
+
+        // $sum = 0;
+        // for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+        //     $sum = $sum + 72;
+        //     ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
+        //     ->where('id', $sum)->first();
+        //     $reject[] = ${'idReject_' . $i}->jenis_reject;
+        // }
+
+        // $reject = array_map(function ($value) {
+        //     return str_replace(' ', '-', $value);
+        // }, $reject);
+        return $reject;
+    }
+
+    function RejectFinalInspectioWithoutStrip()
+    {
+        $sum = 0;
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
+            $reject[] = ${'idReject_' . $i}->jenis_reject;
+        }
+
+        // $reject = array_map(function ($value) {
+        //     return str_replace(' ', '-', $value);
+        // }, $reject);
+        return $reject;
+    }
+
     // ============================= //PARTIAL GAMBAR PART  CASTING// ================================= //
     public function gambarPart(UsableController $useable, $id, $reject)
     {

@@ -243,7 +243,6 @@ class CastingController extends Controller
         $idCasting = LhpCasting::where('id', $id)->first();
         $reject = collect($useable->RejectCastingWithStrip());
         $rejectforView = collect($useable->RejectCastingWithoutStrip());
-        $reject = collect($useable->RejectCastingWithStrip());
         $downtime = Downtime::all();
         // dd($downtime);
 

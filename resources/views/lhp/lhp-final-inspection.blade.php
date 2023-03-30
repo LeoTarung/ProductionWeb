@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row mt-2">
             <div class="card cardpart fw-bold fs-2  pt-2 text-center align-items-center">
-                {{ $lhp->nama_part}}
+                {{ $lhp->part->nama_part}}
             </div>
         </div>
         

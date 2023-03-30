@@ -23,9 +23,12 @@ use App\Http\Controllers\FinalInspectionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//====================== MODAL ======================//
 Route::get('/modal-sementara', function () {
     return view('lhp.modal-casting-sementara');
+});
+Route::get('/modal-finalinspection', function () {
+    return view('lhp.modal-final-inspection');
 });
 
 Route::get('/manufacturing', [ManufactureController::class, 'index']);

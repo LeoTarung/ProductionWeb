@@ -11,4 +11,9 @@ class LhpFinalInspection extends Model
     protected $table = "lhp_final_insp";
     protected $guarded = [];
 
+    public function part()
+    {
+        return $this->belongsTo(Part::class, 'id_part'); //One to one
+    } 
 }
+
