@@ -121,6 +121,15 @@
   
   <!-- HTML -->
   <div id="chartdiv"></div>
+  <div class="tulisan">
+    <p>80.000</p>
+    <style>
+      .tulisan{
+        color: black;
+        background-color: aliceblue
+      }
+    </style>
+  </div>
               </div>
               {{-- /////////////////////////////////ijo/////////////////////////////////////////// --}}
               
@@ -227,6 +236,15 @@ chart.appear(1000, 100);
 
 <!-- HTML -->
 <div id="chartdiv1"></div>
+<div class="tulisan">
+  <p>80.000</p>
+  <style>
+    .tulisan{
+      color: black;
+      background-color: aliceblue
+    }
+  </style>
+</div>
 </div>
             </div>
             {{-- /////////////////////////////////oren/////////////////////////////////////////// --}}
@@ -333,6 +351,15 @@ chart.appear(1000, 100);
 
 <!-- HTML -->
 <div id="chartdiv2"></div>
+<div class="tulisan">
+  <p>80.000</p>
+  <style>
+    .tulisan{
+      color: black;
+      background-color: aliceblue
+    }
+  </style>
+</div>
           </div>
             </div>
           {{-- /////////////////////////////////biru/////////////////////////////////////////// --}}
@@ -438,6 +465,15 @@ chart.appear(1000, 100);
 
 <!-- HTML -->
 <div id="chartdiv3"></div>
+<div class="tulisan">
+  <p>80.000</p>
+  <style>
+    .tulisan{
+      color: black;
+      background-color: aliceblue
+    }
+  </style>
+</div>
         </div>
           </div>
           {{-- //////////////////////////////////kuning/////////////////////////////////////////// --}}
@@ -543,6 +579,15 @@ chart.appear(1000, 100);
 
 <!-- HTML -->
 <div id="chartdiv4"></div>
+<div class="tulisan">
+  <p>80.000</p>
+  <style>
+    .tulisan{
+      color: black;
+      background-color: aliceblue
+    }
+  </style>
+</div>
             </div>
           </div>
           {{-- /////////////////////////////////oren/////////////////////////////////////////// --}}
@@ -647,6 +692,15 @@ chart.appear(1000, 100);
 
 <!-- HTML -->
 <div id="chartdiv5"></div>
+<div class="tulisan">
+  <p>80.000</p>
+  <style>
+    .tulisan{
+      color: black;
+      background-color: aliceblue
+    }
+  </style>
+</div>
 </div>
         </div>
         {{-- /////////////////////////////////oren/////////////////////////////////////////// --}}
@@ -753,6 +807,15 @@ chart.appear(1000, 100);
 
 <!-- HTML -->
 <div id="chartdiv6"></div>
+<div class="tulisan">
+  <p>80.000</p>
+  <style>
+    .tulisan{
+      color: black;
+      background-color: aliceblue
+    }
+  </style>
+</div>
       </div>
         </div>
       {{-- /////////////////////////////////biru/////////////////////////////////////////// --}}
@@ -858,64 +921,80 @@ chart.appear(1000, 100);
 
 <!-- HTML -->
 <div id="chartdiv7"></div>
+<div class="tulisan">
+  <p>80.000</p>
+  <style>
+    .tulisan{
+      color: black;
+      background-color: aliceblue
+    }
+  </style>
+</div>
     </div>
           </div>
           <div class="col">
             <button type="button" class="btn btn-info btn-lg" data-bs-target="#review" data-bs-toggle="modal" id="submit">UPDATE DATA</button>
-          </div>
+          </div>  
         </div>
+      </div>
       </div>
     </div>
   </div>
 
   <div class="modal" id="review" tabindex="-1">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">INPUT INGOT</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="overflow-x: auto;">
-          <table class="table table-bordered table-responsive">
-            <thead class="table-light">
               <div class="Deskripsi"> 
-                INPUT INGOT : <input type="text" class="input" name="Deskripsi">
+                KODE SAP : <input type="text" class="input" name="Deskripsi">
+              </div>
+              <br>
+              <div class="Deskripsi"> 
+                KEBUTUHAN MRP   : <input type="text" class="input" name="Deskripsi">
+              </div>
+              <br>
+              <div class="Deskripsi"> 
+                KEBUTUHAN DAILY : <input type="text" class="input" name="Deskripsi">
               </div>
               <br>
               <div>
-                
+                <label for="start_date">TANGGAL : </label>
+                <input type="datetime-local" name="start_date" id="start_date">  
               </div>
-              <label for="start_date">TANGGAL : </label>
-              <input type="datetime-local" name="start_date" id="start_date">
-              <br><br>
+              <br>
               <!-- Split dropend button -->
-<div class="btn-group dropend">
-  <button type="button" class="btn btn-secondary">
-    TIPE INGOT
-  </button>
-  <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="true">
-    <span class="visually-hidden">TIPE INGOT</span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><button class="dropdown-item" type="button">AC2B</button></li>
-    <li><button class="dropdown-item" type="button">AC2BF</button></li>
-    <li><button class="dropdown-item" type="button">AC4B</button></li>
-    <li><button class="dropdown-item" type="button">AC4CH</button></li>
-    <li><button class="dropdown-item" type="button">ADC12</button></li>
-    <li><button class="dropdown-item" type="button">HD2</button></li>
-    <li><button class="dropdown-item" type="button">HD4</button></li>
-    <li><button class="dropdown-item" type="button">YH3R</button></li>
-  </ul>
-</div>
-<br>
-QUANTITY : <input type="text">
-
-<br>
-
-<button class="btn btn-primary" type="submit" name="submit" id="submit">SUBMIT!</button>
-<div class="modal-footer">
-  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-</div>
-
+              <div class="btn-group dropend">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  TIPE INGOT
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">AC2B</a></li>
+                  <li><a class="dropdown-item" href="#">AC2BF</a></li>
+                  <li><a class="dropdown-item" href="#">AC4B</a></li>
+                  <li><a class="dropdown-item" href="#">AC4CH</a></li>
+                  <li><a class="dropdown-item" href="#">ADC12</a></li>
+                  <li><a class="dropdown-item" href="#">HD2</a></li>
+                  <li><a class="dropdown-item" href="#">HD4</a></li>
+                  <li><a class="dropdown-item" href="#">YH3R</a></li>
+                </ul>
+              </div>
+              <br><br>
+              <div>
+                QUANTITY : <input type="text">
+              </div>
+              <br>
+              <button class="btn btn-primary" type="submit" name="submit" id="submit">SUBMIT!</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
