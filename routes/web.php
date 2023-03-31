@@ -46,6 +46,8 @@ Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'r
 Route::get('/partial/modal-casting/{id}/{reject}', [UsableController::class, 'gambarPart'])->name('showPicture');
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [UsableController::class, 'saveReject'])->name('saveReject');
 Route::get('/partial/modal-casting-dt/{id}', [UsableController::class, 'DowntimeCasting'])->name('DowntimeCasting');
+Route::get('/partial/modal-final-inspection/{id}/{reject}', [UsableController::class, 'gambarPartFinal'])->name('showPicture');
+Route::post('/partial/modal-final-inspection/{id}/{reject}/{posisi}', [UsableController::class, 'saveRejectFinal'])->name('saveRejectFinal');
 
 
 //====================== API FOR SHARE ======================//

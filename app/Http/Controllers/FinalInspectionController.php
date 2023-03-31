@@ -57,7 +57,6 @@ class FinalInspectionController extends Controller
         $mesin = "Final Inspection";
 
         $lhp = LhpFinalInspection::where('id', $id)->first();
-        // dd( $test);
         $nrp = $lhp->nrp;
         // $id = 0;
         $reject = collect($useable->RejectFinalInspectionWithStrip());

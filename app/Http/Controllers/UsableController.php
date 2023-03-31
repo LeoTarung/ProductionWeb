@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\LhpCasting;
 use App\Models\LhpCastingRaw;
+use App\Models\LhpFinalInspection;
+use App\Models\LhpFinalInspectionRaw;
 use App\Models\LhpMeltingRAW;
 use App\Models\LhpSupplyRAW;
 use App\Models\LhpSupply;
@@ -142,7 +144,7 @@ class UsableController extends Controller
         return $reject;
     }
 
-    function RejectFinalInspectioWithoutStrip()
+    function RejectFinalInspectionWithoutStrip()
     {
         $sum = 0;
         for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
@@ -207,4 +209,45 @@ class UsableController extends Controller
 
         return view('lhp.modal-casting-downtime', compact('idCasting'));
     }
+
+    // ============================= //PARTIAL GAMBAR PART FINAL INSPECTION// ================================= //
+    public function gambarPartFinal(UsableController $useable, $id, $reject)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+        $lhp = LhpFinalInspection::where('id', $id)->first();
+        $ng = $reject;
+
+        return view('lhp.modal-final-inspection', compact('lhp', 'ng'));
+    }
+
+    public function saveRejectFinal(UsableController $useable, $id, $reject, $posisi)
+    {
+        $rejectnew = str_replace("-", " ", $reject);
+        $ng = RejectNG::where('jenis_reject', $rejectnew)
+            ->where('posisi', $posisi)
+            ->pluck('id');
+        // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
+        $integerNG =  (int) $ng->first();;
+        $integerId =  intval($id);
+
+        $lhp = LhpFinalInspection::where('id', $integerId)->first();
+        $mc =  $lhp->id_mesincasting;
+        LhpFinalInspectionRaw::create([
+            'id_lhp' => $integerId,
+            'id_ng' => $integerNG,
+        ]);
+
+        //Update Total NG
+        $total_ng = $lhp->total_ng;
+
+        LhpFinalInspection::where('id', $integerId)->update([
+            'total_ng' =>  $total_ng + 1
+        ]);
+
+        return redirect("/lhp-final-inspection/$id")->with('behasilditambahkan', 'behasilditambahkan');
+    }
+
+
 }

@@ -224,38 +224,38 @@
                 cursor: pointer;
             }
         </style>
-        @php
-            $img1 = asset('/img/parts/' . $lhp->mesincasting->nama_part . '_a.png');
-            $img2 = asset('/img/parts/' . $lhp->mesincasting->nama_part . '_b.png');
-            $img3 = asset('/img/parts/' . $lhp->mesincasting->nama_part . '_c.png');
-            $img4 = asset('/img/parts/' . $lhp->mesincasting->nama_part . '_d.png');
-            $img5 = asset('/img/parts/' . $lhp->mesincasting->nama_part . '_e.png');
-            $img6 = asset('/img/parts/' . $lhp->mesincasting->nama_part . '_f.png');
+        {{-- @php
+            $img1 = asset('/img/parts/' . $lhp->part->nama_part . '_a.png');
+            $img2 = asset('/img/parts/' . $lhp->part->nama_part . '_b.png');
+            $img3 = asset('/img/parts/' . $lhp->part->nama_part . '_c.png');
+            $img4 = asset('/img/parts/' . $lhp->part->nama_part . '_d.png');
+            $img5 = asset('/img/parts/' . $lhp->part->nama_part . '_e.png');
+            $img6 = asset('/img/parts/' . $lhp->part->nama_part . '_f.png');
             
-            $imgSrc2 = file_exists(public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_b.png')) ? public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_b.png') : null;
-            $imgSrc3 = file_exists(public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_c.png')) ? public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_c.png') : null;
-            $imgSrc4 = file_exists(public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_d.png')) ? public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_d.png') : null;
-            $imgSrc5 = file_exists(public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_e.png')) ? public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_e.png') : null;
-            $imgSrc6 = file_exists(public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_f.png')) ? public_path('/img/parts' . '/' . $idCasting->mesincasting->nama_part . '_f.png') : null;
-        @endphp
+            $imgSrc2 = file_exists(public_path('/img/parts' . '/' . $lhp->part->nama_part . '_b.png')) ? public_path('/img/parts' . '/' . $lhp->part->nama_part . '_b.png') : null;
+            $imgSrc3 = file_exists(public_path('/img/parts' . '/' . $lhp->part->nama_part . '_c.png')) ? public_path('/img/parts' . '/' . $lhp->part->nama_part . '_c.png') : null;
+            $imgSrc4 = file_exists(public_path('/img/parts' . '/' . $lhp->part->nama_part . '_d.png')) ? public_path('/img/parts' . '/' . $lhp->part->nama_part . '_d.png') : null;
+            $imgSrc5 = file_exists(public_path('/img/parts' . '/' . $lhp->part->nama_part . '_e.png')) ? public_path('/img/parts' . '/' . $lhp->part->nama_part . '_e.png') : null;
+            $imgSrc6 = file_exists(public_path('/img/parts' . '/' . $lhp->part->nama_part . '_f.png')) ? public_path('/img/parts' . '/' . $lhp->part->nama_part . '_f.png') : null;
+        @endphp --}}
 
 
         {{-- Gambar 1 --}}
         <div class="container" style="margin-left:0%; padding-left: 0px;">
             <div class="row" style="margin-left:0%; padding-left: 0px;">
                 <div class="col-5"
-                    style="background-image: url('{{ $img1 }}'); background-size:100%; margin-left:0%; padding-left:0px;">
+                    >
                     @for ($i = 1; $i <= 6; $i++)
                         <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px;"
-                            onclick="saveReject('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
+                            onclick="saveReject('{{ $lhp->id }}', '{{ $ng }}', '{{ $i }}')">
                             {{ $i }}</div>
                     @endfor
                 </div>
                 <div class="col-5"
-                    style="background-image: url('{{ $img2 }}'); background-size:100%; margin-left:0%; padding-left:0px;">
+                    >
                     @for ($i = 7; $i <= 12; $i++)
                         <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px;"
-                            onclick="saveReject('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
+                            onclick="saveReject('{{ $lhp->id }}', '{{ $ng }}', '{{ $i }}')">
                             {{ $i }}</div>
                     @endfor>
                 </div>

@@ -1,7 +1,4 @@
 /* PREP FINAL INSPECTION */
-/* body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
- */
 
  .select2-results__options {
      display: block;
@@ -20,17 +17,18 @@
 }
 
 .cardpart {
-    width: 98.5%;
-    height: 70px;
-    margin: 10px -22px 0px 10px;
+    /* width: 98%; */
+    height: 65px;
+    /* margin: 10px 0px 0px 10px; */
     align-items: center;
     padding: 5px 0px 0px 0px;
+    font-size: 40px;
 }
 
 .main-card {
-    margin: 10px 2px 15px 0px;
+    /* margin: 10px 2px 15px 0px !important; */
     border-radius: 20px;
-    height: 587px;
+    /* height: 590px !important; */
     /* height: 61.2em; */
     overflow-y: scroll;
 }
@@ -88,6 +86,7 @@
 .total {
     padding: 20px 0px 0px 0px;
     align-items: center;
+    font-size: 35px !important;
 }
 .parent{
     margin-left: -10px;
@@ -103,6 +102,7 @@
     border-radius: 10px 10px 10px 10px;
     text-align: center;
     box-shadow:  0px 0px 7px rgb(255, 0, 0);
+    font-size: 40px;
 }
 
 .parent2 {
@@ -119,12 +119,15 @@
     border-radius: 10px 10px 10px 10px;
     border: 1px var(--green) ;
     text-align: center;
+    font-size: 45px;
 }
 
 .childOK{
     margin: 50px 0px 0px 0px;
     position: absolute;
+    font-size: 35px;
 }
+
 .parent3 {
     margin: 10px 0px 0px -10px;
 }
@@ -135,9 +138,10 @@
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     margin: 0px 0px 0px -15px;
-    padding: 10px 0 0 0px;
+    padding: 3px 0 0 0px;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
+    font-size: 35px;
 }
 
 .card-left1{
@@ -184,7 +188,7 @@
 
 .flex {
   /* display:flex; */
-  top: 18%;
+  top: 185px;
   left: 43%;
   position: absolute;
 }
@@ -198,4 +202,211 @@
     padding: 20px 0px 0px 0px ;
     font-size: 5em;
   }
+
+@media only screen and (min-height: 1200in) {
+    /* PREP FINAL INSPECTION */
+
+ .select2-results__options {
+    display: block;
+}
+
+.select2-container .select2-selection--single {
+   height: 37px !important;
+}
+
+/* LHP FINAL INSPECTION */
+
+:root {
+   --red: hsl(0, 100%, 62%);
+   --green: hsl(150, 55%, 41%);
+   --grayishBlue: #2B3467;   
+}
+
+.cardpart {
+   width: 98.5%;
+   height: 70px;
+   margin: 0px -22px 0px 10px;
+   align-items: center;
+   padding: 0px 0px 0px 0px;
+   font-size: 40px;
+}
+
+.main-card {
+   margin: 10px 2px 15px 0px;
+   border-radius: 20px;
+   height: 720px;
+   /* height: 61.2em; */
+   overflow-y: scroll;
+}
+
+.row-card-i{
+   margin: 0px 2px 2px 0px;
+}
+
+.card-inside{
+   height: 70px;
+   width: 100%;
+   border-radius: 40px;
+   background-color: rgb(143, 6, 6);
+}
+
+.card-inside1 {
+   height: 90%;
+   width: 40%;
+   margin: 3.5px -10px 4px 3px;
+   border-radius:  40px;
+   background-color: rgb(255, 255, 255);
+   overflow: hidden;
+   padding: 0 0 0 0;
+}
+
+.card-inside2{
+   height: 74%;
+   width: 61%;
+   margin: 8.5px 9px 0px -10px;
+   padding: 0 0 0 -6px;
+   border-radius: 0px 40px 40px 0px;
+   overflow: hidden;
+   background-color: rgb(255, 255, 255);
+   /* float: right; */
+}
+
+.font-ci1{
+   font-size: 33px;
+   font-weight: 700;
+   margin: 5px 0px 0px -7px ;
+}
+
+.font-ci2{
+   font-size: 15px;
+   font-weight: 700;
+   margin: 13px 1px 0px 10px ;
+}
+
+.font-with-enter{
+   font-size: 15px;
+   font-weight: 700;
+   margin: 3px 1px 0px 10px ;
+}
+
+.total {
+   padding: 20px 0px 0px 0px;
+   align-items: center;
+   font-size: 25px;
+}
+.parent{
+   margin-left: 0px;
+}
+
+.child {
+   height: 60px; 
+   width: 90%;
+   background-color: #ffffff;
+   color: black;
+   margin: 10px 0px 10px 12px;
+   padding: 10px 0px 0px 0px;
+   border-radius: 10px 10px 10px 10px;
+   text-align: center;
+   box-shadow:  0px 0px 7px rgb(255, 0, 0);
+   font-size: 25px;
+}
+
+.parent2 {
+   margin: 10px 0px 0px -10px;
+}
+
+.child2 {
+   height: 80px; 
+   width: 100%;
+   background-color: #ffffff;
+   color: rgb(0, 0, 0);
+   margin: 0px 0px 0px -15px;
+   padding: 15px 0px 0px 0px;
+   border-radius: 10px 10px 10px 10px;
+   border: 1px var(--green) ;
+   text-align: center;
+   font-size: 28px;
+}
+
+.childOK{
+   margin: 50px 0px 0px 0px;
+   position: absolute;
+   font-size: 25px;
+}
+.parent3 {
+   margin: 10px 0px 0px -10px;
+}
+
+.child3 {
+   height: 60px; 
+   width: 100%;
+   background-color: #ffffff;
+   color: rgb(0, 0, 0);
+   margin: 0px 0px 0px -15px;
+   padding: 10px 0 0 0px;
+   border-radius: 10px 10px 10px 10px;
+   text-align: center;
+   font-size: 25px;
+}
+
+.card-left1{
+   /* height: 50%; */
+   border-radius: 20px 0px 0px 20px;
+   border-left: 10px solid var(--grayishBlue);
+   border-top: 1px solid var(--grayishBlue);
+   border-bottom: 1px solid var(--grayishBlue);
+   /* background: linear-gradient(320deg, transparent 45px, #ddd 0); */
+   background: radial-gradient(circle at bottom right, transparent 60px, #ffffff 0);
+}
+
+.card-left2{
+   border-radius: 20px 0px 0px 20px;
+   border-left: 10px solid var(--red);
+   border-top: 1px solid var(--red);
+   border-bottom: 1px solid var(--red);
+   /* background: linear-gradient(220deg, transparent 45px, #f0f0f0 0); */
+   background: radial-gradient(circle at top right, transparent 60px, #ffffff 0);
+}
+
+.card-left3{
+   border-radius: 0px 20px 20px 0px;
+   border-right: 10px solid var(--green);
+   border-top: 1px solid var(--green);
+   border-bottom: 1px solid var(--green);
+   
+ /* background: linear-gradient(-320deg, transparent 45px, #7d2727 0) top left,
+            linear-gradient(-220deg, transparent 45px, #44bcc2 0) bottom right; */
+   background: radial-gradient(circle at bottom left, transparent 64px, #ffffff 0) top left,
+               radial-gradient(circle at top left, transparent 64px, #ffffff 0) bottom right;
+
+   background-size: 100% 50%;
+   background-repeat: no-repeat;
+   height: 100%;
+}
+
+/* 
+.card-left4{
+ border-radius: 0px 10px 10px 0px;
+ border-left: 10px solid var(--blue);
+ background: linear-gradient(-220deg, transparent 45px, #ececec 0);
+} */
+
+.flex {
+ /* display:flex; */
+ top: 14.5%;
+ left: 42.5%;
+ position: absolute;
+}
+
+.oval {
+   height: 120px;
+   width: 120px;
+   color: #ffffff;
+   /* color: #2B3467; */
+   border-radius: 50%;
+   padding: 20px 0px 0px 0px ;
+   font-size: 3em;
+ }  
+}
+
 
