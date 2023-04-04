@@ -127,30 +127,36 @@ class UsableController extends Controller
 
     function RejectFinalInspectionWithStrip()
     {
-        $array = RejectNG::where('final_inspection', 1);
-        $reject = $array;
+             $sum = 0;
+            for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
+                ->where('id', $sum)->first();
 
-        // $sum = 0;
-        // for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
-        //     $sum = $sum + 72;
-        //     ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
-        //     ->where('id', $sum)->first();
-        //     $reject[] = ${'idReject_' . $i}->jenis_reject;
-        // }
-
-        // $reject = array_map(function ($value) {
-        //     return str_replace(' ', '-', $value);
-        // }, $reject);
+            // Check if ${'idReject_' . $i} is not null before accessing its property
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+            }
+        $reject = array_map(function ($value) {
+            return str_replace(' ', '-', $value);
+        }, $reject);
         return $reject;
     }
 
     function RejectFinalInspectionWithoutStrip()
     {
+      
         $sum = 0;
         for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
-            $sum = $sum + 72;
-            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
+        $sum = $sum + 72;
+        ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
+            ->where('id', $sum)->first();
+
+        // Check if ${'idReject_' . $i} is not null before accessing its property
+        if (!is_null(${'idReject_' . $i})) {
             $reject[] = ${'idReject_' . $i}->jenis_reject;
+        }
         }
 
         // $reject = array_map(function ($value) {
@@ -228,18 +234,19 @@ class UsableController extends Controller
         $ng = RejectNG::where('jenis_reject', $rejectnew)
             ->where('posisi', $posisi)
             ->pluck('id');
+            // dd($ng);
         // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
         $integerNG =  (int) $ng->first();;
         $integerId =  intval($id);
 
         $lhp = LhpFinalInspection::where('id', $integerId)->first();
-        $mc =  $lhp->id_mesincasting;
+        // $mc =  $lhp->id_mesincasting;
         LhpFinalInspectionRaw::create([
             'id_lhp' => $integerId,
             'id_ng' => $integerNG,
         ]);
 
-        //Update Total NG
+        //Update Total 
         $total_ng = $lhp->total_ng;
 
         LhpFinalInspection::where('id', $integerId)->update([

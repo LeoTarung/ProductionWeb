@@ -28,7 +28,7 @@
 .main-card {
     /* margin: 10px 2px 15px 0px !important; */
     border-radius: 20px;
-    /* height: 590px !important; */
+    height: 596px !important;
     /* height: 61.2em; */
     overflow-y: scroll;
 }
@@ -58,7 +58,7 @@
     height: 74%;
     width: 61%;
     margin: 8.5px 9px 0px -10px;
-    padding: 0 0 0 -6px;
+    padding: 0px 0px 0px -6px;
     border-radius: 0px 40px 40px 0px;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
@@ -68,20 +68,21 @@
 .font-ci1{
     font-size: 33px;
     font-weight: 700;
-    margin: 5px 0px 0px -7px ;
+    margin: 3px 0px 0px -7px ;
 }
 
 .font-ci2{
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
-    margin: 13px 1px 0px 10px ;
+    margin: 0px 1px 0px 10px ;
 }
 
+/* 
 .font-with-enter{
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 700;
     margin: 3px 1px 0px 10px ;
-}
+} */
 
 .total {
     padding: 20px 0px 0px 0px;
@@ -152,7 +153,8 @@
     border-bottom: 1px solid var(--grayishBlue);
     /* background: linear-gradient(320deg, transparent 45px, #ddd 0); */
     background: radial-gradient(circle at bottom right, transparent 60px, #ffffff 0);
-}
+    /* box-shadow: 0 0 0 10px #a42b2b inset; */
+   }
  
 .card-left2{
     border-radius: 20px 0px 0px 20px;

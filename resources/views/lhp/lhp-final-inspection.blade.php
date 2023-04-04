@@ -20,16 +20,16 @@
                     <div class="col-6 mt-2 fs-2 fw-bold total">
                         TOTAL CHECK</div>
                     <div class="col-4 d-flex align-items-center parent">
-                        <div class="child border shadow fw-bold text-center align-items-center">
-                           999 </div>
+                        <div id="count" class="child border shadow fw-bold text-center align-items-center">
+                          </div>
                     </div>
-                    <div class="col-2">
+                    {{-- <div class="col-2">
                         <div class="flex">
                             <div class="oval border shadow bg-success fw-bold text-center align-items-center" onclick="counterFunc()"> 
                                 +1
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="flex">
                     <div class="oval border shadow bg-success fw-bold text-center align-items-center" onclick="counterFunc()"> 
@@ -52,10 +52,11 @@
             {{-- card total OK --}}
             <div class="card-left2 mt-2">
                 <div class="row ps-4">
-                    <div class="col-6 mt-2 fs-2 fw-bold total">TOTAL NG</div>
+                    <div class="col-6 mt-2 fs-2 fw-bold total" onclick="getReject()">TOTAL NG</div>
                     <div class="col-4 d-flex align-items-center parent">
-                        <div class="child border fw-bold text-danger text-center align-items-center">
-                           12345 </div>
+                        <div id="totalReject" class="child border fw-bold text-danger text-center align-items-center">
+                           
+                        </div>
                     </div>
                     <div class="col-2"></div>
                 </div>
@@ -87,19 +88,14 @@
                         <div class="childOK">TOTAL OK</div>
                     </div>
                     <div class="col-4 mt-2 mb-1 d-flex align-items-center parent2">
-                        <div id="count" class="child2 border border-success shadow fw-bold text-center align-items-center">
+                        <div class ="child2 border border-success shadow fw-bold text-center align-items-center" onclick="getTotalOk()">
                      
                         </div>
-                           <label id="count"></label>
+                           <label></label>
                     </div>
                 </div>
                 <div class="row totok">
                     <div class="col-8"></div>
-                    {{-- <div class="col-2 d-flex align-items-center parent">
-                        <div class="child border shadow bg-success fw-bold fs-2 pt-1 text-center align-items-center" onclick="counterFunc()">
-                           +1 
-                        </div>
-                    </div> --}}
                     <div class="col-4 d-flex mt-2 align-items-center parent3">
                         <div class="child3 border shadow bg-warning fw-bold text-center align-items-center" onclick="resetFunc()">
                             UNDO 
@@ -129,14 +125,30 @@
           
         <div class="row mt">
           <div class="col-12">
-            <div class="card main-card" style="height: 580px; margin: 10px 2px 15px 0px; overflow-y:scroll">
-              {{-- row pertama --}}
-              <div class="row row-card-i mt-3 ">
+            <div class="card main-card" style=" margin: 10px 2px 15px 0px; overflow-y:scroll">
+              <div class="row row-card-i mt-3">
+                    @for ($i = 0; $i < $jumlahReject; $i++)
+                            <div class="col-4 mt-2">
+                                <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
+                                    <a onclick="ModalGambarFinal('{{ $lhp->id }}', '{{ $reject[$i] }}')">
+                                        <div class="card-inside1 float-start text-center">
+                                            <div class="font-ci1" id="jenisReject{{ $i }}"></div>
+                                        </div>
+
+                                        <div class="card-inside2 float-end  d-flex align-items-center">
+                                            <div class="font-ci2 ">{{ $rejectforView[$i] }}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                    @endfor
+              </div>
+              {{-- <div class="row row-card-i mt-3 ">
                 <div class="col-4 mt-2">
                     <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
                         <a onclick="ModalGambarFinal('{{ $lhp->id }}', 'BELANG')">
                             <div class="card-inside1 float-start text-center">
-                                <div class="font-ci1">999</div>
+                                <div class="font-ci1"></div>
                             </div>
   
                             <div class="card-inside2 float-end">
@@ -172,7 +184,7 @@
                     </div>
                 </div>
               </div>
-              {{-- row kedua --}}
+             
               <div class="row row-card-i mt-3 ">
                 <div class="col-4 mt-2">
                     <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
@@ -1012,10 +1024,10 @@
                         </a>
                     </div>
                 </div>
-              </div>  
+              </div>   --}}
   
             </div>
-          </div>
+          </div>e
         </div>
   
         {{-- sebelum div container  --}}
@@ -1038,6 +1050,11 @@
             </div>
         </div>
     </div>
+
+    @php
+        $reject = $lhp->id;
+    @endphp
+
   
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
       <script>
@@ -1052,6 +1069,40 @@
             count--;
             document.getElementById("count").innerHTML = count;
         }
+
+        let reject = document.getElementById('reject');     
+
+        function getReject(id) {
+            reject.hidden = false;
+            downtime.hidden = true;
+        }
+
+        let id_lhp = {!! json_encode($reject) !!};
+
+        function getTotalReject() {
+            $.ajax({
+                url: "/dtRjtfinalinspection" + "/" + id_lhp,
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    document.getElementById("totalReject").innerHTML = data[0];
+                    for (let i = 1; i <= {{ $jumlahReject }}; i++) {
+                        document.getElementById('jenisReject' + (i - 1)).innerHTML = data[i];
+                    }
+                },
+                error: function() {
+                    console.log('Error data saat mengambil total Reject');
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            setInterval(function() {
+                getTotalReject();
+            }, 3000);
+        });
+
+
       </script>
 
 @endsection
