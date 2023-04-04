@@ -9,6 +9,7 @@ use App\Models\LhpFinalInspectionRaw;
 use App\Models\Part;
 use App\Http\Requests\LhpFinalInspRequest;
 use App\Models\RejectNG;
+// use LhpFinalInspRaw;
 
 class FinalInspectionController extends Controller
 {
@@ -61,8 +62,7 @@ class FinalInspectionController extends Controller
         // $id = 0;
         $reject = collect($useable->RejectFinalInspectionWithStrip());
         $rejectforView = collect($useable->RejectFinalInspectionWithoutStrip());
-        // dd($reject,  $rejectforView/)
-        // $rejectforView = collect($useable->RejectFinalInspectionWithoutStrip());
+
         $namaPart = $lhp->part->nama_part;
 
         $jumlahReject = $reject->count();
@@ -70,6 +70,16 @@ class FinalInspectionController extends Controller
         return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id', 'lhp','namaPart', 'reject', 'rejectforView', 'jumlahReject'));
     }
 
+    public function totalCheck(UsableController $usable, $id, $hitung)
+    {
+        $lhp= LhpFinalInspection::where('id', $id)->first();
+        $lhp->update([
+        'total_check' => $hitung
+        ]);
+        // $hitung = $lhp->selectRaw('COUNT(total_check) as hitung')->get();
+        return redirect("/lhp-final-inspection/$lhp->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+        // return response()->json($hitung);
+    }
 
     public function totalReject(Usablecontroller $usable, $id_lhp)
     {
@@ -90,7 +100,35 @@ class FinalInspectionController extends Controller
             $ceiling =  $ceiling + 72;
         }
         // dd($data);
+        // dd( LhpFinalInspectionRaw::where('id_lhp', $id_lhp)
+        // ->whereBetween('id_ng', [1,72])->get());
+// $id_ng = 1 ;
+//         $posts = LhpFinalInspectionRaw::with(['reject' => function($query) {
+//             $query->select('id', 'jenis_reject');
+//         }])->whereHas('reject', function($query) use ($id_ng) {
+//             $query->where('id', $id_ng);
+//         })->count();
+
+//         dd($posts);
         return response()->json($data);
     }
+
+    public function totalOk()
+    {
+        // Retrieve the values from the database
+        $hitung = LhpFinalInspection::getHitungValue();
+        $totalReject = LhpFinalInspection::getTotalRejectValue();
+
+        // Perform the calculation
+        $total = $hitung - $totalReject;
+
+        // Update the value in the database
+        LhpFinalInspection::updateTotalValue($total);
+
+        // Return a response
+        return response()->json(['total' => $total]);
+    }
+    
+
 }
 

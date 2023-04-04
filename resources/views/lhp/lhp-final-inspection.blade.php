@@ -20,16 +20,10 @@
                     <div class="col-6 mt-2 fs-2 fw-bold total">
                         TOTAL CHECK</div>
                     <div class="col-4 d-flex align-items-center parent">
-                        <div id="count" class="child border shadow fw-bold text-center align-items-center">
-                          </div>
-                    </div>
-                    {{-- <div class="col-2">
-                        <div class="flex">
-                            <div class="oval border shadow bg-success fw-bold text-center align-items-center" onclick="counterFunc()"> 
-                                +1
-                            </div>
+                        <div id="hitung" class="child border shadow fw-bold text-center align-items-center">
                         </div>
-                    </div> --}}
+                    </div>
+
                 </div>
                 <div class="flex">
                     <div class="oval border shadow bg-success fw-bold text-center align-items-center" onclick="counterFunc()"> 
@@ -37,17 +31,6 @@
                     </div>
                 </div>
             </div>
-
-            {{-- <div class="card card-left1 my-2 shadow-sm">
-                <div class="row">
-                    <div class="col-8 mt-2 ps-4 fw-bold fs-4">TOTAL CHANGE</div>
-                    <div class="col-3 d-flex align-items-center parent">
-                        <div class="child fw-bold fs-4 pt-2 text-center align-items-center">
-                           999 </div>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
-            </div> --}}
 
             {{-- card total OK --}}
             <div class="card-left2 mt-2">
@@ -61,22 +44,7 @@
                     <div class="col-2"></div>
                 </div>
             </div>
-            {{-- <div class="card card-left2 my-2 shadow-sm">
-                <div class="row">
-                    <div class="col-8 mt-2 ps-4 fw-bold fs-4">TOTAL OK</div>
-                    <div class="col-3 d-flex align-items-center parent">
-                        <div class="child fw-bold fs-4 pt-2 text-center align-items-center">
-                           999 </div>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
-            </div> --}}
 
-            {{-- <div class="flex">
-                <div class="oval border shadow bg-success fw-bold text-center align-items-center" onclick="counterFunc()"> 
-                    +1
-                </div>
-            </div> --}}
 
           </div>
 
@@ -88,8 +56,7 @@
                         <div class="childOK">TOTAL OK</div>
                     </div>
                     <div class="col-4 mt-2 mb-1 d-flex align-items-center parent2">
-                        <div class ="child2 border border-success shadow fw-bold text-center align-items-center" onclick="getTotalOk()">
-                     
+                        <div class ="child2 border border-success shadow fw-bold text-center align-items-center">
                         </div>
                            <label></label>
                     </div>
@@ -1055,19 +1022,39 @@
         $reject = $lhp->id;
     @endphp
 
-  
+    <meta name="csrf-token" content="{{ csrf_token() }}">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
       <script>
-        count = 0;
+        let hitung = 0;
 
         function counterFunc(){
-            count++;
-            document.getElementById("count").innerHTML = count;
+            hitung++;
+            document.getElementById("hitung").innerHTML = hitung;
+            const id = {{ $lhp->id }};
+                var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
+                var token = $('meta[name="csrf-token"]').attr('content');
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {
+                        _token: token
+                    },
+                });
         }
 
         function resetFunc(){
-            count--;
-            document.getElementById("count").innerHTML = count;
+            hitung--;
+            document.getElementById("hitung").innerHTML = hitung;
+               const id = {{ $lhp->id }};
+                var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
+                var token = $('meta[name="csrf-token"]').attr('content');
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {
+                        _token: token
+                    },
+                });
         }
 
         let reject = document.getElementById('reject');     
@@ -1087,7 +1074,7 @@
                 success: function(data) {
                     document.getElementById("totalReject").innerHTML = data[0];
                     for (let i = 1; i <= {{ $jumlahReject }}; i++) {
-                        document.getElementById('jenisReject' + (i - 1)).innerHTML = data[i];
+                        document.getElementById('jenisReject' + (i-1)).innerHTML = data[i];
                     }
                 },
                 error: function() {
@@ -1102,7 +1089,10 @@
             }, 3000);
         });
 
+        var totalOk = $hitung - $totalReject;
+        document.getElementById("totalOk").innerHTML = totalOk;
 
       </script>
+
 
 @endsection

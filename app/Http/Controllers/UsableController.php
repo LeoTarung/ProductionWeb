@@ -228,6 +228,8 @@ class UsableController extends Controller
         return view('lhp.modal-final-inspection', compact('lhp', 'ng'));
     }
 
+
+    
     public function saveRejectFinal(UsableController $useable, $id, $reject, $posisi)
     {
         $rejectnew = str_replace("-", " ", $reject);
