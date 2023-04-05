@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/final-inspection.css') }}">
     {{-- --------------------------------      ------------------------------ --}}
 
+    @csrf
     <div class="container-fluid">
         <div class="row mt-2">
             <div class="card cardpart fw-bold text-center align-items-center" 
@@ -56,9 +57,9 @@
                         <div class="childOK">TOTAL OK</div>
                     </div>
                     <div class="col-4 mt-2 mb-1 d-flex align-items-center parent2">
-                        <div class ="child2 border border-success shadow fw-bold text-center align-items-center">
+                        <div class ="child2 border border-success shadow fw-bold text-center align-items-center" id="total_ok">
                         </div>
-                           <label></label>
+                    
                     </div>
                 </div>
                 <div class="row totok">
@@ -1022,25 +1023,50 @@
         $reject = $lhp->id;
     @endphp
 
+    @php
+        $hitung = $lhp->id;
+    @endphp
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
       <script>
-        let hitung = 0;
+        var hitung;
+        function totalcheck(){
+        $.get("/dtTotalCheck/api/" + {{ $lhp->id }}, function(kucing) {
+            document.getElementById("hitung").innerHTML = kucing.total_check;                           
+            
+            var total = kucing.total_check - kucing.total_ng
+            document.getElementById("total_ok").innerHTML = total;
 
+            hitung = kucing.total_check
+
+        });
+        
+        }
+        
+        setInterval(totalcheck, 1000)
+       
+        setInterval(function(){
+            console.log(hitung)
+        }, 1000)
+
+        // FUNGSI INI UNTUK INPUT KE DB
         function counterFunc(){
             hitung++;
-            document.getElementById("hitung").innerHTML = hitung;
+            // document.getElementById("hitung").innerHTML = hitung;
             const id = {{ $lhp->id }};
-                var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
-                var token = $('meta[name="csrf-token"]').attr('content');
-                $.ajax({
-                    url: url,
-                    type: 'POST',
-                    data: {
-                        _token: token
-                    },
-                });
+            var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
+            var token = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    _token: token
+                },
+            });
+            // document.getElementById("hitung").innerHTML = hitung;
         }
+        // counterFunc()
 
         function resetFunc(){
             hitung--;
@@ -1089,8 +1115,15 @@
             }, 3000);
         });
 
-        var totalOk = $hitung - $totalReject;
-        document.getElementById("totalOk").innerHTML = totalOk;
+        // var totalOk = $hitung - $totalReject;
+        // document.getElementById("totalOk").innerHTML = totalOk;
+
+        // function total_ok(){
+        // var kucing = hitung
+        // var total = kucing.total_check - kucing.total_ng
+        // document.getElementById("total_ok").innerHTML = total;
+        
+        // }
 
       </script>
 

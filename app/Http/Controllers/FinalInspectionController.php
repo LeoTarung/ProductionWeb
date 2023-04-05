@@ -81,6 +81,13 @@ class FinalInspectionController extends Controller
         // return response()->json($hitung);
     }
 
+
+    public function apinadif($id)
+    {
+        $data = LhpFinalInspection::find($id);
+        return $data;
+    }
+
     public function totalReject(Usablecontroller $usable, $id_lhp)
     {
         $reject = LhpFinalInspectionRaw::where('id_lhp', $id_lhp);
@@ -113,20 +120,15 @@ class FinalInspectionController extends Controller
         return response()->json($data);
     }
 
-    public function totalOk()
+    public function totalOk(UsableController $usable, $id, $total)
     {
-        // Retrieve the values from the database
-        $hitung = LhpFinalInspection::getHitungValue();
-        $totalReject = LhpFinalInspection::getTotalRejectValue();
-
-        // Perform the calculation
-        $total = $hitung - $totalReject;
-
-        // Update the value in the database
-        LhpFinalInspection::updateTotalValue($total);
-
-        // Return a response
-        return response()->json(['total' => $total]);
+        $lhp= LhpFinalInspection::where('id', $id)->first();
+        $lhp->update([
+        'total_ok' => $total
+        ]);
+        // $hitung = $lhp->selectRaw('COUNT(total_check) as hitung')->get();
+        return redirect("/lhp-final-inspection/$lhp->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+        // return response()->json($hitung);
     }
     
 
