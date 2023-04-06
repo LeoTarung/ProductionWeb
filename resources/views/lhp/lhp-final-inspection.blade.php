@@ -1052,6 +1052,7 @@
        
         setInterval(function(){
             console.log(hitung)
+            // document.getElementById("hitung").innerHTML = hitung;
         }, 1000)
 
         // FUNGSI INI UNTUK INPUT KE DB
@@ -1071,7 +1072,7 @@
 
         function resetFunc(){
             hitung--;
-            document.getElementById("hitung").innerHTML = hitung;
+          
                const id = {{ $lhp->id }};
                 var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
                 var token = $('meta[name="csrf-token"]').attr('content');
@@ -1082,8 +1083,11 @@
                         _token: token
                     },
                 });
+           
         }
 
+        // setInterval(counterFunc, 1000);
+        // setInterval(resetFunc, 1000);
 
         let reject = document.getElementById('reject');     
 
@@ -1128,7 +1132,7 @@
                 type: 'POST',
                 data: {
                     _token: token,
-                    // total_ok: total // nilai total dimasukkan ke dalam data yang dikirim
+                    total_ok: total // nilai total dimasukkan ke dalam data yang dikirim
                 },
             });
         }

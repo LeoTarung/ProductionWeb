@@ -32,24 +32,37 @@ class FinalInspectionController extends Controller
         $shift = $useable->Shift();
         $title = "Final Inspection";
         $mesin = "Final Inspection";
-        // $gate = 0;
-       $get_part = Part::where('nama_part',$request->nama_part )->select('id');
-       $id_part = $get_part->pluck('id')->first();
-    //    $id_part = array_map('intval', $array_part);
 
-        LhpFinalInspection::create([
-            'tanggal' => $date,
-            'shift' => $shift,
-            'nrp' => $request->nrp,
-            'gate' => $request->gate,
-            // 'no_lhp' => $request->no_lhp,
-            'id_part' =>$id_part,
-            ]);
+        $get_part = Part::where('nama_part',$request->nama_part )->select('id');
+        $id_part = $get_part->pluck('id')->first();
 
-        $id =  LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift],['id_part', '=' ,$id_part]])->orderBy('id', 'DESC')->first();
+        $oldprep = LhpFinalInspection::where('nrp', $request->nrp)
+            ->where('id_part', $request->id_part)
+            ->where('tanggal', $date)
+            ->where('shift', $shift)
+        ->first();
 
-        return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
-    
+        // dd($oldprep);
+        if ($oldprep == null) {
+            $id =  LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift],['id_part', '=' ,$id_part]])->orderBy('id', 'DESC')->first();
+
+            return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+           
+        } else {
+            LhpFinalInspection::create([
+                'tanggal' => $date,
+                'shift' => $shift,
+                'nrp' => $request->nrp,
+                'gate' => $request->gate,
+                // 'no_lhp' => $request->no_lhp,
+                'id_part' =>$id_part,
+                ]);
+                $id =  LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift],['id_part', '=' ,$id_part]])->orderBy('id', 'DESC')->first();
+                dd($oldprep);
+                return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+
+        }
+        
     }
 
     public function Lhp_final_inspection(UsableController $useable,$id){
