@@ -107,9 +107,11 @@
                                             <div class="font-ci2 ">{{ $rejectforView[$i] }}</div>
                                         </div>
                                     </a>
+                                    
                                 </div>
                             </div>
                     @endfor
+        
               </div>
               {{-- <div class="row row-card-i mt-3 ">
                 <div class="col-4 mt-2">
@@ -995,7 +997,7 @@
               </div>   --}}
   
             </div>
-          </div>e
+          </div>
         </div>
   
         {{-- sebelum div container  --}}
@@ -1031,7 +1033,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
       <script>
         var hitung;
-        function totalcheck(){
+        function totalCheck(){
         $.get("/dtTotalCheck/api/" + {{ $lhp->id }}, function(kucing) {
             document.getElementById("hitung").innerHTML = kucing.total_check;                           
             
@@ -1039,12 +1041,14 @@
             document.getElementById("total_ok").innerHTML = total;
 
             hitung = kucing.total_check
+            
+            totalOk(total);
 
         });
-        
+
         }
         
-        setInterval(totalcheck, 1000)
+        setInterval(totalCheck, 1000)
        
         setInterval(function(){
             console.log(hitung)
@@ -1053,7 +1057,6 @@
         // FUNGSI INI UNTUK INPUT KE DB
         function counterFunc(){
             hitung++;
-            // document.getElementById("hitung").innerHTML = hitung;
             const id = {{ $lhp->id }};
             var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
             var token = $('meta[name="csrf-token"]').attr('content');
@@ -1064,9 +1067,7 @@
                     _token: token
                 },
             });
-            // document.getElementById("hitung").innerHTML = hitung;
         }
-        // counterFunc()
 
         function resetFunc(){
             hitung--;
@@ -1082,6 +1083,7 @@
                     },
                 });
         }
+
 
         let reject = document.getElementById('reject');     
 
@@ -1114,16 +1116,24 @@
                 getTotalReject();
             }, 3000);
         });
-
-        // var totalOk = $hitung - $totalReject;
-        // document.getElementById("totalOk").innerHTML = totalOk;
-
-        // function total_ok(){
-        // var kucing = hitung
-        // var total = kucing.total_check - kucing.total_ng
-        // document.getElementById("total_ok").innerHTML = total;
         
-        // }
+        
+        // FUNGSI INI UNTUK INPUT KE DB
+        function totalOk(total){
+            const id = {{ $lhp->id }};
+            var url = "/dtTotalOk"  + "/" + id + "/" + total  // replace with your desired URL
+            var token = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    _token: token,
+                    // total_ok: total // nilai total dimasukkan ke dalam data yang dikirim
+                },
+            });
+        }
+        
+
 
       </script>
 
