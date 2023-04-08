@@ -35,7 +35,7 @@
 
     <div class="container-fluid profile">
 
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills mb-2" id="pills-tab" role="tablist" style="background-color: #f7faff">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="pills-striko1-tab" data-bs-toggle="pill" data-bs-target="#pills-striko1" type="button" role="tab" aria-controls="pills-striko1" aria-selected="true">Striko-1</button>
             </li>
@@ -49,7 +49,8 @@
               <button class="nav-link" id="pills-swiftAsia-tab" data-bs-toggle="pill" data-bs-target="#pills-swiftAsia" type="button" role="tab" aria-controls="pills-swiftAsia" aria-selected="false">swiftAsia</button>
             </li>
         </ul>
-          <div class="tab-content" id="pills-tabContent">
+        
+          <div class="tab-content" id="pills-tabContent" style="background-color: beige">
             <div class="tab-pane fade show active" id="pills-striko1" role="tabpanel" aria-labelledby="pills-striko1-tab" tabindex="0">
                 <div class="row">
                     <div class="col-3 sidebar">
@@ -71,8 +72,8 @@
                                 <div class="col-10 produk">
                                     <div class="card tc">
                                         <div class="row">
-                                            <div class="col-7 text-center">Total Charging </div>
-                                            <div class="col-5 text-center" id="total_charging_S1"></div>
+                                            <div class="col-8">Total Charging </div>
+                                            <div class="col-4" id="total_charging_S1">kg</div>
                                         </div>
                                     </div>
                                     <div class="card mt-2 ingot">
@@ -152,8 +153,8 @@
                                 <div class="col-10 produk">
                                     <div class="card tc">
                                         <div class="row">
-                                            <div class="col-7 text-center">Total Charging </div>
-                                            <div class="col-5 text-center" id="total_charging_S2"></div>
+                                            <div class="col-8">Total Charging </div>
+                                            <div class="col-4" id="total_charging_S2"></div>
                                         </div>
                                     </div>
                                     <div class="card mt-2 ingot">
@@ -233,8 +234,8 @@
                                 <div class="col-10 produk">
                                     <div class="card tc">
                                         <div class="row">
-                                            <div class="col-7 text-center">Total Charging </div>
-                                            <div class="col-5 text-center" id="total_charging_S3"></div>
+                                            <div class="col-8">Total Charging </div>
+                                            <div class="col-4" id="total_charging_S3"></div>
                                         </div>
                                     </div>
                                     <div class="card mt-2 ingot">
@@ -297,7 +298,7 @@
                     <div class="col-3 sidebar">
                         <div class="card shadow identitas">
                             <div class="col atas py-0">
-                            <h1> SWIF ASIA</h1>
+                            <h1> SWIFT ASIA</h1>
                             <h2 class="hd" id="material_SA"></h2>
                             </div>
 
@@ -313,8 +314,8 @@
                                 <div class="col-10 produk">
                                     <div class="card tc">
                                         <div class="row">
-                                            <div class="col-7 text-center">Total Charging </div>
-                                            <div class="col-5 text-center" id="total_charging_SA"></div>
+                                            <div class="col-8">Total Charging </div>
+                                            <div class="col-4" id="total_charging_SA"></div>
                                         </div>
                                     </div>
                                     <div class="card mt-2 ingot">
