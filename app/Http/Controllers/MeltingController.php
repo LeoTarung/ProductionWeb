@@ -14,8 +14,7 @@ use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\LHPMelting_Export;
 use App\Http\Controllers\UsableController;
-
-
+use App\Models\LotIngot;
 
 class MeltingController extends Controller
 {
@@ -523,5 +522,18 @@ class MeltingController extends Controller
         } else {
             return redirect('lhp.lhp-forklift')->with('preulang', 'preulang');
         }
+    }
+
+    public function ingot_index()
+    {
+        $title = "LOT INGOT";
+        $data = LotIngot::orderBy('id', 'DESC')->get();
+        return view('menu.production.melting.lotingot', compact('title', 'data'));
+    }
+
+    public function ingot_simpan()
+    {
+
+        return redirect("/production/lot-ingot");
     }
 }

@@ -16,6 +16,12 @@ html > body {
     margin-left: 10px;
 }
 
+.section {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
 #MyClockDisplay {
     margin-left: 300px;
     width: 500px;
@@ -28,9 +34,27 @@ html > body {
     margin-bottom: 15px;
 }
 
-/* .profile {
-    background-color: #095256;
-}  */
+.nav-tabs {
+    background-color: #ffffff;
+}
+
+.nav-item {
+    background-color: #55769c;
+    border-radius: 5px 5px 0px 0px;
+    font-size: large;
+}
+
+.active {
+    color: black !important;
+    font-size: large !important;
+    font-weight: 600 !important;
+}
+
+.report {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
 
 .gambar {
     justify-content: center;
@@ -49,8 +73,8 @@ html > body {
 
 .identitas {
     margin-top: 10px;
-    margin-left: 0px;
-    margin-right: -20px;
+    margin-left: 10px;
+    /* margin-right: 20px; */
     margin-bottom: 10px;
     height: 97vh;
 }
@@ -152,41 +176,41 @@ html > body {
 
 #chartdiv_S1 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv2_S1 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 #chartdiv_S2 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv2_S2 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv_S3 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv2_S3 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv_SA {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv2_SA {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 .grafik .daily {
@@ -239,6 +263,12 @@ html > body {
         margin-left: 10px;
     }
 
+    .section {
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+    }
+
     #MyClockDisplay {
         margin-left: 280px;
         width: 500px;
@@ -252,6 +282,34 @@ html > body {
         border-radius: 5px;
     }
 
+    .nav-tabs {
+        background-color: #ffffff;
+    }
+
+    .nav-item {
+        background-color: #ffffff;
+        border-radius: 5px 5px 0px 0px;
+        font-size: large;
+    }
+
+    .nav-pills {
+        margin: 0px -12px 0px -15px;
+        --bs-nav-pills-border-radius: 0.375rem;
+        --bs-nav-pills-link-active-color: #fff;
+        --bs-nav-pills-link-active-bg: #ffffff !important;
+    }
+
+    .active {
+        color: black !important;
+        font-size: large !important;
+        font-weight: 600 !important;
+    }
+
+    .report {
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+    }
     .gambar {
         justify-content: center;
         align-items: center;
@@ -267,10 +325,10 @@ html > body {
         height: 100%;
     }
 
-    .identitas {
+    .child .identitas {
         margin-top: 10px;
-        margin-left: 0px;
-        margin-right: -20px;
+        margin-left: 10px;
+        /* margin-right: -20px; */
         margin-bottom: 0px;
         height: 97vh;
     }
@@ -385,7 +443,7 @@ html > body {
         text-align: center;
         margin-top: 10px;
         margin-left: 10px;
-        margin-right: 3px;
+        margin-right: 5px;
         margin-bottom: 10px;
         height: 100%;
     }
@@ -519,6 +577,12 @@ html > body {
         margin-left: 10px;
     }
 
+    .section {
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+    }
+
     #MyClockDisplay {
         margin-left: 280px;
         width: 500px;
@@ -532,10 +596,39 @@ html > body {
         border-radius: 5px;
     }
 
+    .nav-tabs {
+        background-color: #ffffff !important;
+    }
+
+    .nav-item {
+        background-color: #e9ecef;
+        border-radius: 5px 5px 0px 0px;
+        font-size: large;
+    }
+
+    .nav-pills {
+        margin: 0px -12px 0px -15px;
+        --bs-nav-pills-border-radius: 0.375rem;
+        --bs-nav-pills-link-active-color: #fff;
+        --bs-nav-pills-link-active-bg: #ffffff !important;
+    }
+
+    .active {
+        color: black !important;
+        font-size: large !important;
+        font-weight: 600 !important;
+    }
+
+    .report {
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+    }
+
     .gambar {
         justify-content: center;
         align-items: center;
-        margin-top: 25px;
+        margin-top: 5px;
         margin-left: 25%;
         margin-bottom: 0;
         margin-right: 15%;
@@ -549,8 +642,8 @@ html > body {
 
     .identitas {
         margin-top: 10px;
-        margin-left: 0px;
-        margin-right: -20px;
+        margin-left: 10px;
+        margin-right: -10px;
         margin-bottom: 0px;
         height: 100vh;
     }
@@ -563,6 +656,7 @@ html > body {
     .section {
         font-size: 40px;
         font-weight: 500;
+        margin-top: 10px;
         text-align: center;
     }
 
@@ -574,7 +668,7 @@ html > body {
     .atas h1 {
         font-weight: 700;
         margin-top: 0px;
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .atas .hd {
@@ -582,71 +676,68 @@ html > body {
     }
 
     .bawah h2 {
-        font-size: 45px;
+        font-size: 40px;
     }
 
     .bawah h3 {
         font-size: 40px;
+
         font-weight: 400;
     }
 
     .produk {
-        margin-left: 40px;
+        margin-left: 9.5%;
     }
 
     .card .tc {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 60px;
-        margin-top: 30px;
-        margin-left: -10px;
-        margin-right: -10px;
-        padding-top: 5px;
-        padding-left: 5px;
+        font-size: 28px;
+        height: 50px;
+        margin-top: 28px;
+        /* margin: 0px -50px 0px -10px ; */
+        /* padding-top: 5px; */
+        padding-left: 15px;
     }
 
     .card .ingot {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
-        padding-top: 5px;
+        font-size: 28px;
+        height: 50px;
+        /* margin-left: -10px; */
+        /* margin-right: -50px; */
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
     .card .eg {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
-        padding-top: 5px;
+        font-size: 28px;
+        height: 50px;
+        /* margin: 0px -50px 0px -10px ; */
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
     .card .reject {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
-        padding-top: 5px;
+        font-size: 28px;
+        height: 50px;
+        /* margin: 0px -50px 0px -10px ; */
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
     .card .tapping {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
-        padding-top: 5px;
+        font-size: 28px;
+        height: 50px;
+        /* margin: 0px -50px 0px -10px ; */
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
@@ -654,11 +745,10 @@ html > body {
         background-color: #095256;
         color: white;
         font-size: 30px;
-        height: 55px;
-        margin-left: -10px;
-        margin-right: -10px;
+        height: 50px;
+        /* margin: 0px -50px 0px -10px ; */
         margin-bottom: 25px;
-        padding-top: 5px;
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
@@ -674,58 +764,26 @@ html > body {
 
     .grafik .daily {
         text-align: center;
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-right: 3px;
-        margin-bottom: 10px;
+        margin: 10px 15px 10px 10px;
         height: 100%;
     }
+
     .grafik .monthly {
         text-align: center;
-        margin-top: 2px;
-        margin-left: 10px;
-        margin-right: 5px;
-        margin-bottom: 10px;
+        margin: 7px 15px 0px 10px;
         height: 100%;
     }
 
     .day {
-        background-color: white;
+        background-color: #e9ecef !important;
         color: black;
         font-size: 30px;
         font-weight: 500;
     }
     .month {
-        background-color: white;
+        background-color: #e9ecef !important;
         color: black;
         font-size: 30px;
         font-weight: 500;
     }
 }
-
-/*------------------ Produk ingot dross card  */
-/* .produk .card-header {
-    background-color: #1e206d;
-    color:white;
-    font-weight: 700;
-    font-size: 1.0em;
-}
-
-.card-title {
-   text-align: center;
-   font-size: 1.5em;
-}
-
-.wrapper-cards {
-    margin-top: 15px;
-    margin-bottom: 22px;
-}
-
-.produk {
-    width: 90%;
-    margin-top: 40px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 0px;
-    text-align: center;
-} */
