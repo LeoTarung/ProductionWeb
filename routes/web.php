@@ -127,4 +127,7 @@ Route::get('/material_delete/{No}', [HenkatenController::class, 'material_delete
 Route::get('/include', [HenkatenController::class, 'include']);
 
 //====================== Stock Ingot ======================//
-Route::get('/Ingot',[IngotController::class, 'Ingot']);
+Route::get('/InputIngot',[IngotController::class, 'InputIngot']);
+Route::get('/LihatIngot',[IngotController::class, 'LihatIngot']);
+Route::get('/PenimbangIngot',[IngotController::class, 'PenimbangIngot']);
+Route::get('/IsiOtomatis',[IngotController::class, 'IsiOtomatis']);

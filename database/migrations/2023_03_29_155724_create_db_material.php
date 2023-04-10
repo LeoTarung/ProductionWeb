@@ -15,14 +15,14 @@ class CreateDbMaterial extends Migration
     {
         Schema::create('db_material', function (Blueprint $table) {
                 $table->id('No');
-                $table->string('nama');
-                $table->string('nrp');
-                $table->string('kode_sap');
-                $table->string('kebutuhan_mrp');
-                $table->string('kebutuhan_daily');
-                $table->timestamp('timestamp');
-                $table->string('tipe_ingot');
-                $table->string('quantity');
+                $table->char('material_sap');
+                $table->char('initial');
+                $table->char('kode_sap');
+                $table->integer('kebutuhan_mrp');
+                $table->integer('kebutuhan_daily');
+                $table->integer('min_stock');
+                $table->integer('max_stock');
+                $table->integer('actual_stock');
             });
     }
 

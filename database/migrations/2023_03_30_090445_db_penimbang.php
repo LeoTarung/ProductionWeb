@@ -16,7 +16,7 @@ class DbPenimbang extends Migration
         Schema::create('db_penimbang', function (Blueprint $table) {
             $table->id('No');
             $table->string('nama');
-            $table->string('nrp');
+            $table->integer('nrp');
             $table->string('initial');
         });
     }
