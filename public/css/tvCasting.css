@@ -446,6 +446,7 @@ footer {
   font-weight: 500;
 }
 
+/* tv  */
 @media only screen and (min-width: 1400px) { 
   .body {
     background-color: #00af50;
@@ -892,7 +893,7 @@ footer {
 }
 
 
-/* untuk 2tv */
+/* untuk 2 slide tv */
 .kkbody {
   background-color: #00af50;
 }

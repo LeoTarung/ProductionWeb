@@ -559,7 +559,40 @@
     <script>
         //============[' CHART DAILY REPORT ']===========//
         am5.ready(function() {
-            var data = [];
+            var data = [{
+                "date": "2023-01-01",
+                "ingot": 20,
+                "series": 30,
+                "charging": 20000,
+                "loss": 12,
+                },
+                            {
+                "date": "2023-01-02",
+                "ingot": 50,
+                "series": 30,
+                "charging": 10000,
+                "loss": 10,
+                            },
+                            {
+                "date": "2023-01-03",
+                "ingot": 30,
+                "charging": 25000,
+                "loss": 5,
+                            },
+                            {
+                "date": "2023-01-04",
+                "ingot": 23,
+                "series": 30,
+                "charging": 30000,
+                "loss": 18,
+                            },
+            {
+                "date": "2023-01-05",
+                "ingot": 27,
+                "series": 30,
+                "charging": 18000,
+                "loss": 20,
+                }];
 
             // Create root element
             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
@@ -588,8 +621,8 @@
 
             am5.color(0x095256), // total charging
             am5.color(0xFF0000), // loss
-            am5.color(0x3C57E1), // ingot
-            am5.color(0x31FF4B), //series
+            am5.color(0x262A56), // ingot
+            am5.color(0xFF0000), //series 
             ]);
 
             // Create axes
@@ -652,7 +685,7 @@
                     valueYField: "loss",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "loss: {valueY}%"
+                        labelText: "Loss: {valueY}%"
                     })
                 }));
                 lossSeries.strokes.template.setAll({
@@ -683,7 +716,7 @@
                     valueYField: "ingot",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "ingot: {valueY} %"
+                        labelText: "Ingot: {valueY} %"
                     })
                 }));
                 ingotSeries.strokes.template.setAll({
@@ -717,13 +750,13 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
                 series.strokes.template.setAll({ 
-                    strokeDasharray: [8, 5], // untuk garis-garis
-                    strokeWidth: 2 });
+                    strokeDasharray: [8, 6], // untuk garis-garis
+                    strokeWidth: 3 });
 
                 // series.fills.template.setAll({
                     // fillOpacity: 0,
@@ -908,7 +941,7 @@
                     valueYField: "loss",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "loss: {valueY}%"
+                        labelText: "Loss: {valueY}%"
                     })
                 }));
                 lossSeries.strokes.template.setAll({
@@ -938,7 +971,7 @@
                     valueYField: "ingot",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "ingot: {valueY} %"
+                        labelText: "Ingot: {valueY} %"
                     })
                 }));
                 ingotSeries.strokes.template.setAll({
@@ -972,7 +1005,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -1128,7 +1161,7 @@
                     valueYField: "loss",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "loss: {valueY}%"
+                        labelText: "Loss: {valueY}%"
                     })
                 }));
                 lossSeries.strokes.template.setAll({
@@ -1157,7 +1190,7 @@
                     valueYField: "ingot",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "ingot: {valueY} %"
+                        labelText: "Ingot: {valueY} %"
                     })
                 }));
                 ingotSeries.strokes.template.setAll({
@@ -1192,7 +1225,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -1347,7 +1380,7 @@
                     valueYField: "loss",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "loss: {valueY}%"
+                        labelText: "Loss: {valueY}%"
                     })
                 }));
                 lossSeries.strokes.template.setAll({
@@ -1376,7 +1409,7 @@
                     valueYField: "ingot",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "ingot: {valueY} %"
+                        labelText: "Ingot: {valueY} %"
                     })
                 }));
                 ingotSeries.strokes.template.setAll({
@@ -1410,7 +1443,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -1567,7 +1600,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY}%"
+                    labelText: "Loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -1596,7 +1629,7 @@
                 valueYField: "ingot",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
+                    labelText: "Ingot: {valueY} %"
                 })
             }));
             ingotSeries.strokes.template.setAll({
@@ -1630,7 +1663,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -1783,7 +1816,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY}%"
+                    labelText: "Loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -1812,7 +1845,7 @@
                 valueYField: "ingot",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
+                    labelText: "Ingot: {valueY} %"
                 })
             }));
             ingotSeries.strokes.template.setAll({
@@ -1846,7 +1879,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -2001,7 +2034,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY}%"
+                    labelText: "Loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -2030,7 +2063,7 @@
                 valueYField: "ingot",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
+                    labelText: "Ingot: {valueY} %"
                 })
             }));
             ingotSeries.strokes.template.setAll({
@@ -2045,7 +2078,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -2220,7 +2253,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY}%"
+                    labelText: "Loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -2249,7 +2282,7 @@
                 valueYField: "ingot",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
+                    labelText: "Ingot: {valueY} %"
                 })
             }));
             ingotSeries.strokes.template.setAll({
@@ -2283,7 +2316,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
