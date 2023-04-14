@@ -110,17 +110,32 @@ class UsableController extends Controller
 
     function RejectCastingWithoutStrip()
     {
-        $sum = 0;
-        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
-            $sum = $sum + 72;
-            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
-            $reject[] = ${'idReject_' . $i}->jenis_reject;
-        }
+        // $sum = 0;
+        // for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+        //     $sum = $sum + 72;
+        //     ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
+        //     $reject[] = ${'idReject_' . $i}->jenis_reject;
+        // }
 
         // $reject = array_map(function ($value) {
         //     return str_replace(' ', '-', $value);
         // }, $reject);
-        return $reject;
+        // return $reject;
+
+        $sum = 0;
+        $getReject = RejectNG::where('final_inspection', 1)->where('jenis_reject', 'OVER PROSES')->get();
+       
+        // foreach ($getReject as $row) {
+        //     $array[] = $row->jenis_reject;
+        // }
+
+        //    for ($i = 1; $i <=  $getReject->count() / 72; $i++) {
+        //     $sum = $sum + 72;
+        //     ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
+        //     $reject[] = ${'idReject_' . $i}->jenis_reject;
+        // }
+        $array = $getReject->count();
+        return $array;
     }
 
     // =================== //REJECT FINAL INSPECTION // ============================ //

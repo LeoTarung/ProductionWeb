@@ -7601,507 +7601,507 @@ class RejectSeeder extends Seeder
                 'posisi' => 72
             ],
 
-            ////{([       'Retak            ])}////
+            ////{([       'RETAK            ])}////
 
             [
                 'id' => 1081,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 1
             ], [
                 'id' => 1082,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 2
 
             ], [
                 'id' => 1083,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 3
 
             ], [
                 'id' => 1084,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 4
 
             ], [
                 'id' => 1085,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 5
 
             ], [
                 'id' => 1086,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 6
 
             ], [
                 'id' => 1087,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 7
 
             ], [
                 'id' => 1088,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 8
 
             ], [
                 'id' => 1089,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 9
 
             ], [
                 'id' => 1090,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 10
 
             ], [
                 'id' => 1091,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 11
 
             ], [
                 'id' => 1092,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 12
 
             ], [
                 'id' => 1093,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 13
 
             ], [
                 'id' => 1094,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 14
 
             ], [
                 'id' => 1095,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 15
 
             ], [
                 'id' => 1096,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 16
 
             ], [
                 'id' => 1097,
-                'jenis_rejct' => 'Retak',
+                'jenis_rejct' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 17
 
             ], [
                 'id' => 1098,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 19
 
             ], [
                 'id' => 1099,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 19
 
             ], [
                 'id' => 1100,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 20
 
             ], [
                 'id' => 1101,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 21
 
             ], [
                 'id' => 1102,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 22
 
             ], [
                 'id' => 1103,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 23
 
             ], [
                 'id' => 1104,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 24
 
             ], [
                 'id' => 1105,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 25
 
             ], [
                 'id' => 1106,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 26
 
             ], [
                 'id' => 1107,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 27
 
             ], [
                 'id' => 1108,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 28
 
             ], [
                 'id' => 1109,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 29
 
             ], [
                 'id' => 1110,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 30
 
             ], [
                 'id' => 1111,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 31
 
             ], [
                 'id' => 1112,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 32
 
             ], [
                 'id' => 1113,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 33
 
             ], [
                 'id' => 1114,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 34
 
             ], [
                 'id' => 1115,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 35
 
             ], [
                 'id' => 1116,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 36
 
             ], [
                 'id' => 1117,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 37
 
             ], [
                 'id' => 1118,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 38
 
             ], [
                 'id' => 1119,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 39
 
             ], [
                 'id' => 1120,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 40
 
             ], [
                 'id' => 1121,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 41
 
             ], [
                 'id' => 1122,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 42
 
             ], [
                 'id' => 1123,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 43
 
             ], [
                 'id' => 1124,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 44
 
             ], [
                 'id' => 1125,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 45
 
             ], [
                 'id' => 1126,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 46
 
             ], [
                 'id' => 1127,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 47
 
             ], [
                 'id' => 1128,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 48
 
             ], [
                 'id' => 1129,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 49
 
             ], [
                 'id' => 1130,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 50
 
             ], [
                 'id' => 1131,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 51
 
             ], [
                 'id' => 1132,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 52
 
             ], [
                 'id' => 1133,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 53
 
             ], [
                 'id' => 1134,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 54
 
             ], [
                 'id' => 1135,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 55
 
             ], [
                 'id' => 1136,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 56
 
             ], [
                 'id' => 1137,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 57
 
             ], [
                 'id' => 1138,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 58
 
             ], [
                 'id' => 1139,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 59
 
             ], [
                 'id' => 1140,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 60
 
             ], [
                 'id' => 1141,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 61
 
             ], [
                 'id' => 1142,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 62
 
             ], [
                 'id' => 1143,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 63
 
             ], [
                 'id' => 1144,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 64
 
             ], [
                 'id' => 1145,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 65
 
             ], [
                 'id' => 1146,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 66
 
             ], [
                 'id' => 1147,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 67
 
             ], [
                 'id' => 1148,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 68
 
             ], [
                 'id' => 1149,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 69
 
             ], [
                 'id' => 1150,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 70
 
             ], [
                 'id' => 1151,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 71
 
             ], [
                 'id' => 1152,
-                'jenis_reject' => 'Retak',
+                'jenis_reject' => 'RETAK',
                 'casting' => true,
                 'final_inspection'=> true,
                 'posisi' => 72
@@ -34931,7 +34931,7 @@ class RejectSeeder extends Seeder
             ], [
                 'id' => 4968,
                 'jenis_reject' => 'FERRO',
-                'casting' => false,
+                'casting' => false, 
                 'final_inspection' => true,
                 'posisi' => 72
             ],
@@ -37977,5 +37977,6 @@ class RejectSeeder extends Seeder
         ];
 
         RejectNG::insert($reject);
+
     }
 }

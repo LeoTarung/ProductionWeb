@@ -28,7 +28,7 @@
 .main-card {
     /* margin: 10px 2px 15px 0px !important; */
     border-radius: 20px;
-    height: 596px !important;
+    height: 480px !important;
     /* height: 61.2em; */
     overflow-y: scroll;
 }
@@ -87,7 +87,7 @@
 .total {
     padding: 20px 0px 0px 0px;
     align-items: center;
-    font-size: 35px !important;
+    /* font-size: 35px !important; */
 }
 .parent{
     margin-left: -10px;
@@ -124,9 +124,9 @@
 }
 
 .childOK{
-    margin: 50px 0px 0px 0px;
+    margin: 80px 0px 0px 10px;
     position: absolute;
-    font-size: 35px;
+    /* font-size: 35px; */
 }
 
 .parent3 {
@@ -141,8 +141,10 @@
     margin: 0px 0px 0px -15px;
     padding: 3px 0 0 0px;
     border-radius: 10px 10px 10px 10px;
-    text-align: center;
-    font-size: 35px;
+    display: flex;
+      align-items: center; 
+      justify-content: center;
+    /* font-size: 35px; */
 }
 
 .card-left1{

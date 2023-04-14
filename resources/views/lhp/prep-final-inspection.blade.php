@@ -104,7 +104,23 @@
 //     $('.js-example-basic-single').select2();
 // });
 
-    
+        $(document).ready(function() {
+            $('#nrp').keyup(function() {
+                $('#result').html('');
+                var searchnrp = $('#nrp').val();
+                console.log(searchnrp);
+                $.ajax({
+                    method: "GET",
+                    dataType: "json",
+
+                    url: "{{ url('/dtkyrw') }}" +"/"+ searchnrp,
+
+                    success: function(data) {
+                        document.getElementById("nama").value = data[0].name;
+                    }
+                });
+            });
+        });
 
       </script>
 

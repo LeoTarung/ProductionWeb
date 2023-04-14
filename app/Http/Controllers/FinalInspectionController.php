@@ -37,18 +37,14 @@ class FinalInspectionController extends Controller
         $id_part = $get_part->pluck('id')->first();
 
         $oldprep = LhpFinalInspection::where('nrp', $request->nrp)
-            ->where('id_part', $request->id_part)
+            ->where('id_part', $id_part)
             ->where('tanggal', $date)
             ->where('shift', $shift)
         ->first();
-
-        // dd($oldprep);
+// dd($request);
+        // dd($oldprep, $shift,$date,$id_part,$request->nrp);
         if ($oldprep == null) {
-            $id =  LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift],['id_part', '=' ,$id_part]])->orderBy('id', 'DESC')->first();
-
-            return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
            
-        } else {
             LhpFinalInspection::create([
                 'tanggal' => $date,
                 'shift' => $shift,
@@ -57,15 +53,25 @@ class FinalInspectionController extends Controller
                 // 'no_lhp' => $request->no_lhp,
                 'id_part' =>$id_part,
                 ]);
-                $id =  LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift],['id_part', '=' ,$id_part]])->orderBy('id', 'DESC')->first();
-                dd($oldprep);
-                return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+                // $id =  LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift],['id_part', '=' ,$id_part]])->orderBy('id', 'DESC')->first();
+                // // dd($oldprep);
+                // return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+
+            $id =  LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift],['id_part', '=' ,$id_part]])->orderBy('id', 'DESC')->first();
+
+            return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+           
+        } else {
+            $id =  LhpFinalInspection::where([['tanggal', '=', $date],['shift', '=', $shift],['nrp', '=', $request->nrp],['id_part', '=' ,$id_part]])->orderBy('id', 'DESC')->first();
+
+            return redirect("/lhp-final-inspection/$id->id")->with('berhasilditambahkan', 'berhasilditambahkan');
 
         }
         
     }
 
     public function Lhp_final_inspection(UsableController $useable,$id){
+        // dd($useable->RejectCastingWithoutStrip());
         $date = $useable->date();
         $shift = $useable->Shift();
         $title = "LHP Final Inspection";
