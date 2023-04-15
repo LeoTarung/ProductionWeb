@@ -243,15 +243,17 @@
             {{-- Gambar 1 --}}
             <div class="container" style="margin-left:0%; padding-left: 0px;">
                 <div class="row" style="margin-left:0%; padding-left: 0px;">
-                    <div class="col-5"
-                        style="background-image: url('{{ $img1 }}'); background-size:100%; margin-left:0%; padding-left:0px;">
+                    <div class="col-6"
+                        style="background-image: url('{{ $img1 }}'); background-size:100%; height:100%; margin-left:0%; padding-left:0px;">
                         @for ($i = 1; $i <= 6; $i++)
-                            <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px;"
+                            <div class=" button{{ $i }}  font-red"
+                                style="margin-left:0%;padding-left:0px; height:100%"
                                 onclick="saveReject('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
                                 {{ $i }}</div>
                         @endfor
                     </div>
-                    <div class="col-5"
+                    {{-- <div class="col-2"></div> --}}
+                    <div class="col-6"
                         style="background-image: url('{{ $img2 }}'); background-size:100%; margin-left:0%; padding-left:0px;">
                         @for ($i = 7; $i <= 12; $i++)
                             <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px;"
@@ -259,9 +261,9 @@
                                 {{ $i }}</div>
                         @endfor>
                     </div>
-                    <div class="col-auto ">
+                    {{-- <div class="col-auto ">
                         <div class="test" style="color:aliceblue; height:225px"> </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 {{-- @for ($i = 1; $i <= 6; $i++)

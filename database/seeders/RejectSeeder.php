@@ -19,6 +19,7 @@ class RejectSeeder extends Seeder
                 'id' => 1,
                 'jenis_reject' => 'Bercak Hitam',
                 'casting' => true,
+
                 'posisi' => 1
             ], [
                 'id' => 2,

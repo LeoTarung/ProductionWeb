@@ -11,8 +11,10 @@ use App\Http\Controllers\UsableController;
 use App\Http\Requests\LhpCastingRequest;
 use App\Models\Downtime;
 use App\Models\LhpCasting;
+use App\Models\LhpCastingRaw;
 use App\Models\RejectNG;
 use Illuminate\Support\Facades\DB;
+
 
 use function PHPSTORM_META\elementType;
 
@@ -244,8 +246,67 @@ class CastingController extends Controller
         $reject = collect($useable->RejectCastingWithStrip());
         $rejectforView = collect($useable->RejectCastingWithoutStrip());
         $reject = collect($useable->RejectCastingWithStrip());
-        $downtime = Downtime::all();
-        // dd($downtime);
+        $downtime = Downtime::where('casting', 1)->get();
+        $arrayDt =  DB::table('downtime')->select('id')->orderByRaw("CASE
+        WHEN Kategori = 'Material' THEN 1
+        WHEN Kategori = 'Mesin' THEN 2
+        WHEN Kategori = 'Proses' THEN 3
+        WHEN Kategori = 'Dies' THEN 4
+        WHEN Kategori = 'Terplanning' THEN 5
+            END")->get();
+
+        foreach ($arrayDt as $row) {
+            $listIdDt[] = $row->id;
+        }
+        // dd($listDt);
+        foreach ($listIdDt as $row) {
+            // $waktu_dt[] =  collect(DB::select('SELECT SUM(waktu_dt) AS Total_waktu FROM lhp_casting_raw WHERE id_lhp = ? AND id_dt = ?', [$id, $row]))->first()->Total_waktu;
+            $listWaktu_dt[] =  LhpCastingRaw::where('id_lhp', $id)->where('id_dt', $row)->select('waktu_dt')->orderBy('updated_at', 'desc')->first();
+        }
+
+        // $waktu_dt =
+
+        foreach ($listWaktu_dt as $row) {
+            if ($row == null) {
+                $waktu_dt[] = 0;
+            } else {
+                $waktu_dt[] = $row->waktu_dt;
+            }
+        }
+        // dd($waktu_dt);
+        $waktu_dt = $useable->convertStringToNumber($waktu_dt);
+
+        $countDtMat  = $downtime->where('kategori', 'material')->count();
+        $countDtMsn  = $downtime->where('kategori', 'mesin')->count();
+        $countDtPro  = $downtime->where('kategori', 'proses')->count();
+        $countDtDies = $downtime->where('kategori', 'dies')->count();
+        $countDtPlan = $downtime->where('kategori', 'terplanning')->count();
+        $countdt = $countDtMat + $countDtMsn + $countDtPro + $countDtDies + $countDtPlan;
+        // dd($countdt);
+        $sumDtMat = 0;
+        for ($i = 0; $i <=  $countDtMat - 1; $i++) {
+            $sumDtMat += $waktu_dt[$i];
+        }
+
+        $sumDtMsn = 0;
+        for ($i = $countDtMat; $i <=  ($countDtMat +  $countDtMsn) - 1; $i++) {
+            $sumDtMsn += $waktu_dt[$i];
+        }
+
+        $sumDtPro = 0;
+        for ($i = $countDtMat +  $countDtMsn; $i <=  ($countDtMat +  $countDtMsn + $countDtPro) - 1; $i++) {
+            $sumDtPro += $waktu_dt[$i];
+        }
+
+        $sumDtDies = 0;
+        for ($i = $countDtMat +  $countDtMsn + $countDtPro; $i <=  ($countDtMat +  $countDtMsn + $countDtPro + $countDtDies) - 1; $i++) {
+            $sumDtDies += $waktu_dt[$i];
+        }
+
+        $sumDtPlan = 0;
+        for ($i = $countDtMat +  $countDtMsn + $countDtPro + $countDtDies; $i <=  ($countDtMat +  $countDtMsn + $countDtPro + $countDtDies + $countDtPlan) - 1; $i++) {
+            $sumDtPlan += $waktu_dt[$i];
+        }
 
         $nrp1 = $idCasting->nrp1 . ' |';
         $nrp2 = $idCasting->nrp2 . ' |';
@@ -257,12 +318,144 @@ class CastingController extends Controller
         $nrp = $nrp1;
 
         $namaPart = $idCasting->mesincasting->nama_part;
-        // dd($namaPart);
+
         //Define Mesin Casting untuk penggunaan Ajax
         $range_hitung = MesinCasting::where('mc', '<=',  $idCasting->id_mesincasting)->get();
         $mcfordata = $range_hitung->count();
         $jumlahReject = $reject->count();
         // dd($jumlahReject);
-        return view('lhp.lhp-casting', compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6', 'mcfordata', 'namaPart', 'reject', 'rejectforView', 'jumlahReject', 'downtime'));
+        return view(
+            'lhp.lhp-casting',
+            compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6', 'mcfordata', 'namaPart', 'reject', 'rejectforView', 'jumlahReject', 'downtime', 'waktu_dt', 'countDtMat', 'countDtMsn', 'countDtDies', 'countDtPro', 'countDtPlan', 'countdt', 'sumDtMat', 'sumDtMsn', 'sumDtPro', 'sumDtDies', 'sumDtPlan')
+        );
+    }
+
+    public function totalReject(Usablecontroller $usable, $id_lhp)
+    {
+        $reject = LhpCastingRaw::where('id_lhp', $id_lhp);
+        $total_reject = $reject->selectRaw('COUNT(id_ng) as total_reject')->get();
+        $data = array();
+        $data[] = $total_reject[0]->total_reject;
+        $rejectList = collect($usable->RejectCastingWithoutStrip());
+
+
+        $floor = 1;
+        $ceiling = 72;
+        for ($i = 1; $i <= $rejectList->count(); $i++) {
+            $data[$i] =  LhpCastingRaw::where('id_lhp', $id_lhp)
+                ->whereBetween('id_ng', [$floor, $ceiling])
+                ->count();
+            $floor = $floor + 72;
+            $ceiling =  $ceiling + 72;
+        }
+        // $header = [1, 2, 4, 5];
+        // dd($data);
+        return response()->json($data);
+    }
+
+
+
+    public function jsonDowntime(Usablecontroller $usable, $id_lhp)
+    {
+        $downtime = Downtime::where('casting', 1)->get();
+        $arrayDt =  DB::table('downtime')->select('id')->orderByRaw("CASE
+        WHEN Kategori = 'Material' THEN 1
+        WHEN Kategori = 'Mesin' THEN 2
+        WHEN Kategori = 'Dies' THEN 3
+        WHEN Kategori = 'Proses' THEN 4
+        WHEN Kategori = 'Terplanning' THEN 5
+            END")->get();
+        // dd($arrayDt);
+        foreach ($arrayDt as $row) {
+            $listIdDt[] = $row->id;
+        }
+        // dd($listDt);
+        foreach ($listIdDt as $row) {
+            // $waktu_dt[] =  collect(DB::select('SELECT SUM(waktu_dt) AS Total_waktu FROM lhp_casting_raw WHERE id_lhp = ? AND id_dt = ?', [$id, $row]))->first()->Total_waktu;
+            $listWaktu_dt[] =  LhpCastingRaw::where('id_lhp', $id_lhp)->where('id_dt', $row)->select('waktu_dt')->orderBy('updated_at', 'desc')->first();
+        }
+
+        // $waktu_dt =
+
+        foreach ($listWaktu_dt as $row) {
+            if ($row == null) {
+                $waktu_dt[] = 0;
+            } else {
+                $waktu_dt[] = $row->waktu_dt;
+            }
+        }
+
+        $countDtMat =  $downtime->where('kategori', 'material')->count();
+        $countDtMsn = $downtime->where('kategori', 'mesin')->count();
+        $countDtPro = $downtime->where('kategori', 'proses')->count();
+        $countDtDies = $downtime->where('kategori', 'dies')->count();
+        $countDtPlan = $downtime->where('kategori', 'terplanning')->count();
+
+        $sumDtMat = 0;
+        for ($i = 0; $i <=  $countDtMat - 1; $i++) {
+            $sumDtMat += $waktu_dt[$i];
+        }
+
+        $sumDtMsn = 0;
+        for ($i = $countDtMat; $i <=  ($countDtMat +  $countDtMsn) - 1; $i++) {
+            $sumDtMsn += $waktu_dt[$i];
+        }
+
+        $sumDtPro = 0;
+        for ($i = $countDtMat +  $countDtMsn; $i <=  ($countDtMat +  $countDtMsn + $countDtPro) - 1; $i++) {
+            $sumDtPro += $waktu_dt[$i];
+        }
+
+        $sumDtDies = 0;
+        for ($i = $countDtMat +  $countDtMsn + $countDtPro; $i <=  ($countDtMat +  $countDtMsn + $countDtPro + $countDtDies) - 1; $i++) {
+            $sumDtDies += $waktu_dt[$i];
+        }
+
+        $sumDtPlan = 0;
+        for ($i = $countDtMat +  $countDtMsn + $countDtPro + $countDtDies; $i <=  ($countDtMat +  $countDtMsn + $countDtPro + $countDtDies + $countDtPlan) - 1; $i++) {
+            $sumDtPlan += $waktu_dt[$i];
+        }
+
+        $data[] = $sumDtMat;
+        $data[] = $sumDtMsn;
+        $data[] = $sumDtPro;
+        $data[] = $sumDtDies;
+        $data[] = $sumDtPlan;
+        foreach ($waktu_dt as $row) {
+            $data[] = $row;
+        }
+
+        $data = $usable->convertNullToZero($data);
+
+        $data = $usable->convertStringToNumber($data);
+        // {{ Notes }} // 
+        //-- Untuk baris 0 - 4 pada variabel data berisi : //
+        // [0] = Total downtime Material    // 
+        // [1] = Total downtime Mesin       //
+        // [2] = Total downtime Proses      //
+        // [3] = Total downtime Dies        //
+        // [4] = Total downtime Terplanning //
+        //-- Untuk baris 5- seterusnya pada variabel data berisi waktu downtime per jenis downtime --//
+
+        // dd($data);
+        return response()->json($data, 200);
+    }
+
+    public function saveDowntimeCasting(UsableController $useable, $id, $dtName, $minute)
+    {
+        $newDtName = str_replace('-', ' ', $dtName);
+        $downtime = Downtime::where('nama_downtime', $newDtName)->pluck('id');
+
+        $dt = (int)$downtime->first();
+        $id_lhp = intval($id);
+
+        LhpCastingRaw::create([
+            'id_lhp' =>  $id_lhp,
+            'id_dt' => $dt,
+            'waktu_dt' => $minute
+        ]);
+        $idCasting = LhpCasting::where('id', $id)->first();
+        // dd($idCasting->id_mesincasting);
+        return redirect("/lhp-casting/$idCasting->id_mesincasting/$idCasting->id")->with('behasilditambahkan', 'behasilditambahkan');
     }
 }

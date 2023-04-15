@@ -42,7 +42,7 @@ Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 're
 Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'resume_supply']);
 Route::get('/partial/modal-casting/{id}/{reject}', [UsableController::class, 'gambarPart'])->name('showPicture');
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [UsableController::class, 'saveReject'])->name('saveReject');
-Route::get('/partial/modal-casting-dt/{id}', [UsableController::class, 'DowntimeCasting'])->name('DowntimeCasting');
+// Route::get('/partial/modal-casting-dt/{id}', [UsableController::class, 'DowntimeCasting'])->name('DowntimeCasting');
 
 
 //====================== API FOR SHARE ======================//
@@ -52,7 +52,7 @@ Route::get('/dthourlymltng/{id}', [ApiController::class, 'hourly_lhpmelting']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dthourlymltngraw/{id}', [ApiController::class, 'hourly_edit']);
 Route::get('/dtmccasting/{mc}', [ApiController::class, 'showmc']);
-Route::get('/dtRjtcasting/{id_lhp}', [ApiController::class, 'totalReject']);
+
 
 
 //====================== SETTINGS ======================//
@@ -89,6 +89,10 @@ Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
 Route::get('/lhp-casting', [CastingController::class, 'prep_casting'])->name('preparationCasting');
 Route::post('/lhp-casting/simpan', [CastingController::class, 'prep_casting_simpan']);
 Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])->name('LHPCasting'); //link sementara, nanti diganti ketika preparation sudah selesai
+Route::post('/lhp-casting/{id}/{dtName}/{minute}', [CastingController::class, 'saveDowntimeCasting'])->name('saveDowntime');
+Route::get('/dtRjtcasting/{id_lhp}', [CastingController::class, 'totalReject'])->name('totalReject');
+Route::get('/dtDowntime/{id_lhp}', [CastingController::class, 'jsonDowntime'])->name('jsonDowntime');
+
 
 //====================== LHP FINAL INSPECTION ================//
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'FinalInspection']);
