@@ -1,5 +1,5 @@
     <main>
-        <div class="col-12">
+        <div class="col-12" style="min-height: 100vh;">
             <link rel="stylesheet" type="text/css"
                 href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
             <style>
@@ -24,8 +24,8 @@
                     font-weight: 600;
                     position: absolute;
                     top: 0%;
-                    height: 50%;
-                    width: calc(475px / 3);
+                    height: 21%;
+                    width: calc(50% / 3);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -36,9 +36,9 @@
                     font-weight: 600;
                     position: absolute;
                     top: 0%;
-                    height: 50%;
-                    width: calc(475px / 3);
-                    left: calc(475px / 3);
+                    height: 21%;
+                    width: calc(50% / 3);
+                    left: calc(50% / 3);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -48,9 +48,9 @@
                     font-weight: 600;
                     position: absolute;
                     top: 0%;
-                    height: 50%;
-                    width: calc(475px / 3);
-                    left: calc((475px / 3)*2);
+                    height: 21%;
+                    width: calc(50% / 3);
+                    left: calc((50% / 3)*2);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -59,9 +59,9 @@
                     font-size: 50px;
                     font-weight: 600;
                     position: absolute;
-                    top: 50%;
-                    height: 50%;
-                    width: calc(475px/ 3);
+                    top: 21%;
+                    height: 21%;
+                    width: calc(50%/ 3);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -71,10 +71,10 @@
                     font-size: 50px;
                     font-weight: 600;
                     position: absolute;
-                    top: 50%;
-                    height: 50%;
-                    width: calc(475px / 3);
-                    left: calc(475px / 3);
+                    top: 21%;
+                    height: 21%;
+                    width: calc(50% / 3);
+                    left: calc(50% / 3);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -83,10 +83,10 @@
                     font-size: 50px;
                     font-weight: 600;
                     position: absolute;
-                    top: 50%;
-                    height: 50%;
-                    width: calc(475px / 3);
-                    left: calc((475px / 3)*2);
+                    top: 21%;
+                    height: 21%;
+                    width: calc(50% / 3);
+                    left: calc((50% / 3)*2);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -127,8 +127,8 @@
                     font-weight: 600;
                     position: absolute;
                     top: 0%;
-                    height: 50%;
-                    width: calc(475px / 3);
+                    height: 21%;
+                    width: calc(50% / 3);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -139,9 +139,9 @@
                     font-weight: 600;
                     position: absolute;
                     top: 0%;
-                    height: 50%;
-                    width: calc(475px / 3);
-                    left: calc((475px / 3)*4);
+                    height: 21%;
+                    width: calc(50% / 3);
+                    left: calc((50% / 3)*4);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -151,9 +151,9 @@
                     font-weight: 600;
                     position: absolute;
                     top: 0%;
-                    height: 50%;
-                    width: calc(475px / 3);
-                    left: calc((475px / 3)*5);
+                    height: 21%;
+                    width: calc(50% / 3);
+                    left: calc((50% / 3)*5);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -162,9 +162,9 @@
                     font-size: 50px;
                     font-weight: 600;
                     position: absolute;
-                    top: 50%;
-                    height: 50%;
-                    width: calc(475px/ 3);
+                    top: 21%;
+                    height: 21%;
+                    width: calc(50%/ 3);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -174,10 +174,10 @@
                     font-size: 50px;
                     font-weight: 600;
                     position: absolute;
-                    top: 50%;
-                    height: 50%;
-                    width: calc(475px / 3);
-                    left: calc((475px / 3)*4);
+                    top: 21%;
+                    height: 21%;
+                    width: calc(50% / 3);
+                    left: calc((50% / 3)*4);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -186,10 +186,10 @@
                     font-size: 50px;
                     font-weight: 600;
                     position: absolute;
-                    top: 50%;
-                    height: 50%;
-                    width: calc(475px / 3);
-                    left: calc((475px / 3)*5);
+                    top: 21%;
+                    height: 21%;
+                    width: calc(50% / 3);
+                    left: calc((50% / 3)*5);
                     border: 3px solid #d30000;
                     background-color: transparent;
                 }
@@ -241,18 +241,19 @@
 
 
             {{-- Gambar 1 --}}
-            <div class="container" style="margin-left:0%; padding-left: 0px;">
-                <div class="row" style="margin-left:0%; padding-left: 0px;">
+            <div class="container" style="margin-left:0%; padding-left: 0px; min-height: 100vh;">
+                <div class="row" style="margin-left:0%; padding-left: 0px; min-height: 41.5%;">
                     <div class="col-6"
-                        style="background-image: url('{{ $img1 }}'); background-size:100%; height:100%; margin-left:0%; padding-left:0px;">
+                        style="background-image: url('{{ $img1 }}'); background-size:100%;  margin-left:0%; padding-left:0px;">
                         @for ($i = 1; $i <= 6; $i++)
-                            <div class=" button{{ $i }}  font-red"
-                                style="margin-left:0%;padding-left:0px; height:100%"
+                            <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px; "
                                 onclick="saveReject('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
                                 {{ $i }}</div>
                         @endfor
                     </div>
-                    {{-- <div class="col-2"></div> --}}
+                    {{-- <div class="col-auto ">
+                        <div class="test" style="color:aliceblue; height:225px"> </div>
+                    </div> --}}
                     <div class="col-6"
                         style="background-image: url('{{ $img2 }}'); background-size:100%; margin-left:0%; padding-left:0px;">
                         @for ($i = 7; $i <= 12; $i++)
@@ -261,16 +262,53 @@
                                 {{ $i }}</div>
                         @endfor>
                     </div>
+
+                </div>
+
+                <div class="row" style="margin-left:0%; padding-left: 0px; min-height: 41.5%;">
+                    <div class="col-6"
+                        style="background-image: url('{{ $img1 }}'); background-size:100%;  margin-left:0%; padding-left:0px;">
+                        @for ($i = 1; $i <= 6; $i++)
+                            <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px; "
+                                onclick="saveReject ('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
+                                {{ $i }}</div>
+                        @endfor
+                    </div>
                     {{-- <div class="col-auto ">
                         <div class="test" style="color:aliceblue; height:225px"> </div>
                     </div> --}}
-                </div>
+                    <div class="col-6"
+                        style="background-image: url('{{ $img2 }}'); background-size:100%; margin-left:0%; padding-left:0px;">
+                        @for ($i = 7; $i <= 12; $i++)
+                            <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px;"
+                                onclick="saveReject('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
+                                {{ $i }}</div>
+                        @endfor>
+                    </div>
 
-                {{-- @for ($i = 1; $i <= 6; $i++)
-                    <div class=" button{{ $i }}  font-red"
-                        onclick="saveReject('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
-                        {{ $i }}</div>
-                @endfor --}}
+                </div>
+                <div class="row" style="margin-left:0%; padding-left: 0px; min-height: 41.5%;">
+                    <div class="col-6"
+                        style="background-image: url('{{ $img1 }}'); background-size:100%;  margin-left:0%; padding-left:0px;">
+                        @for ($i = 1; $i <= 6; $i++)
+                            <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px; "
+                                onclick="saveReject ('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
+                                {{ $i }}</div>
+                        @endfor
+                    </div>
+                    {{-- <div class="col-auto ">
+                        <div class="test" style="color:aliceblue; height:225px"> </div>
+                    </div> --}}
+                    <div class="col-6"
+                        style="background-image: url('{{ $img2 }}'); background-size:100%; margin-left:0%; padding-left:0px;">
+                        @for ($i = 7; $i <= 12; $i++)
+                            <div class=" button{{ $i }}  font-red" style="margin-left:0%;padding-left:0px;"
+                                onclick="saveReject('{{ $idCasting->id }}', '{{ $ng }}', '{{ $i }}')">
+                                {{ $i }}</div>
+                        @endfor>
+                    </div>
+
+                </div>
             </div>
 
 
