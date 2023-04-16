@@ -307,7 +307,7 @@ li a {
 }
 
 /* Navbar Media Query Final Inspection */
-@media only screen and (min-width: 400px) {
+@media only screen and (max-width: 800in) {
     /* Navbar */
 nav{
     margin: auto;

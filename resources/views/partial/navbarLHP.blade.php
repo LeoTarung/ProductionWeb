@@ -7,36 +7,25 @@
             </a>
         </li>
         <li>
-            {{-- LHP FINAL INSPECTION --}}
-            @if (Request::url() == url('/lhp-final-inspection'))
+     
+            {{-- { LHP Final Inspection} --}}
+            @if (Route::currentRouteName() == 'prepareFinalInspection')
+
                 <a>
                     <div class="shift border-bottom">
                         {{ $shift }}
                     </div>
                 </a>
-            @elseif(Request::url() == url('/lhp-final-inspection/' . $mesin . '/' . $id . ''))
+            @elseif(Route::currentRouteName() == 'LHPFinalInspection')
                 <a onClick="ModalResume('{{ $mesin }}', '{{ $id }}')">
                     <div class="shift border-bottom">
                         {{ $shift }}
                     </div>
                 </a>
 
-                {{-- LHP PREPARATION FINAL INSPECTION --}}
-            @elseif (Request::url() == url('/prep-final-inspection'))
-                <a>
-                    <div class="shift border-bottom">
-                        {{ $shift }}
-                    </div>
-                </a>
-            @elseif(Request::url() == url('/prep-final-inspection/' . $mesin . '/' . $id . ''))
-                <a onClick="ModalResume('{{ $mesin }}', '{{ $id }}')">
-                    <div class="shift border-bottom">
-                        {{ $shift }}
-                    </div>
-                </a>
-
-                {{-- { LHP MELTING} --}}
+            {{-- { LHP MELTING} --}}
             @elseif (Route::currentRouteName() == 'preparationMelting')
+
                 <a>
                     <div class="shift border-bottom">
                         {{ $shift }}
@@ -90,6 +79,9 @@
                         {{ $shift }}
                     </div>
                 </a>
+
+              
+
             @endif
         </li>
         <li class="ms-2 ">
@@ -104,8 +96,10 @@
             <!-- </a> -->
         </li>
         <li>
-            {{-- LHP FINAL INSPECTION --}}
-            @if ($nrp != 0 && Request::url() == url('/lhp-final-inspection'))
+            {{-- PREP FINAL INSPECTION --}}
+
+                @if (Route::currentRouteName() == 'prepareFinalInspection')
+
                 <a href="{{ url('/lhp-final-inspection') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -114,13 +108,16 @@
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 </a>
-            @elseif(Request::url() == url('/lhp-final-inspection'))
+           
+                @elseif(Route::currentRouteName() == 'prepareFinalInspection')
                 <a href="{{ url('/lhp-final-inspection') }}" class="navitems">
                     <div class="nrp border-bottom">
                         <div class="font-white"> PILIH MESIN </div>
                     </div>
                 </a>
-            @elseif(Request::url() == url('/lhp-final-inspection/' . $mesin . '/' . $id . ''))
+            
+                {{-- LHP FINAL INSPECTION --}}
+                @elseif (Route::currentRouteName() == 'LHPFinalInspection')
                 <a href="{{ url('/lhp-final-inspection') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -129,35 +126,12 @@
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 </a>
+            
 
-                {{-- LHP PREPARATION FINAL INSPECTION --}}
-            @elseif ($nrp != 0 && Request::url() == url('/prep-final-inspection'))
-                <a href="{{ url('/prep-final-inspection') }}" class="navitems">
-                    <div class="nrp">
-                        <div class="font-white"> NRP : </div>
-                    </div>
-                    <div class="nrp nrp-child border-bottom ">
-                        <div class="font-white fw-bold">{{ $nrp }}</div>
-                    </div>
-                </a>
-            @elseif(Request::url() == url('/prep-final-inspection'))
-                <a href="{{ url('/prep-final-inspection') }}" class="navitems">
-                    <div class="nrp border-bottom">
-                        <div class="font-white"> PILIH MESIN </div>
-                    </div>
-                </a>
-            @elseif(Request::url() == url('/prep-final-inspection' . $mesin . '/' . $id . ''))
-                <a href="{{ url('/prep-final-inspection/') }}" class="navitems">
-                    <div class="nrp">
-                        <div class="font-white"> NRP : </div>
-                    </div>
-                    <div class="nrp nrp-child border-bottom ">
-                        <div class="font-white fw-bold">{{ $nrp }}</div>
-                    </div>
-                </a>
+            {{-- LHP MELTING --}}
 
-                {{-- LHP MELTING --}}
             @elseif (Route::currentRouteName() == 'preparationMelting')
+
                 <a href="{{ url('/lhp-melting') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -248,13 +222,38 @@
                         {{ $nrp4 }} {{ $nrp5 }} {{ $nrp6 }} <br>
                     </div>
                 </div>
+
             @endif
 
         </li>
         <li>
+            {{-- Preparation Final Inspection --}}
+            @if (Route::currentRouteName() == 'prepareFinalInspection')
+
+                <a href="{{ url('/lhp-final-inspection') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'MELTING')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
+                {{-- LHP Final Inspection --}}
+            @elseif(Route::currentRouteName() == 'LHPFinalInspection')
+
+                <a href="{{ url('/lhp-final-inspection') }}" class="machine shadow-lg">
+                    <div class="mesin">
+                        @if ($mesin == 'FINAL .INS')
+                            <div class="font-white "> {{ $mesin }} </div>
+                        @else
+                            <div class="font-white choose_machine"> {{ $mesin }} </div>
+                        @endif
+                    </div>
+                </a>
 
             {{-- Preparation Melting --}}
-            @if (Route::currentRouteName() == 'preparationMelting')
+            @elseif (Route::currentRouteName() == 'preparationMelting')
 
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -267,6 +266,7 @@
                 </a>
                 {{-- LHP MELTING --}}
             @elseif(Route::currentRouteName() == 'LHPMelting')
+
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FINAL .INS')
@@ -276,7 +276,7 @@
                         @endif
                     </div>
                 </a>
-
+                
                 {{-- Preparation Forklift --}}
             @elseif(Route::currentRouteName() == 'preparationSupply')
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
@@ -288,9 +288,9 @@
                         @endif
                     </div>
                 </a>
+                
 
-
-                {{-- LHP Forklift --}}
+{{-- LHP Forklift --}}
             @elseif(Route::currentRouteName() == 'LHPSupply')
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -313,6 +313,7 @@
                         @endif
                     </div>
                 </a>
+
             @elseif(Route::currentRouteName() == 'MCSettings')
                 <a href="{{ url('/settings') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -340,7 +341,7 @@
                     </div>
                 </a>
 
-            @endif
+           @endif
 
         </li>
         <li>
@@ -373,4 +374,4 @@
     </div>
 </div>
 
-{{-- </nav> --}}
+</nav>
