@@ -8,8 +8,11 @@ use App\Models\LhpMeltingRAW;
 use App\Models\LhpSupplyRAW;
 use App\Models\LhpSupply;
 use App\Models\LhpMelting;
+use App\Models\MesinCasting;
 use Illuminate\Http\Request;
 use App\Models\RejectNG;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class UsableController extends Controller
 {
@@ -86,6 +89,25 @@ class UsableController extends Controller
         $sql1 = LhpSupplyRAW::groupBy(LhpSupplyRAW::raw('no_mc'))->groupBy(LhpSupplyRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, COUNT(jumlah_tapping) as frekuensi, SUM(jumlah_tapping) as total_tapping")->get();
         // dd($sql1);
         return view('lhp.resume-forklift', compact('sql1', 'mesin', 'id'));
+    }
+
+    // ============================= // PARTIAL CASTING // ================================= //
+
+    public function resume_casting(UsableController $useable, $mesin, $id)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+        $targetHours = MesinCasting::where('mc', $mesin)->selectRaw('CEILING(3600/cycle_time * 0.90) AS Target');
+        // $sql1 = LhpCastingRaw::groupBy(LhpCastingRaw::raw('HOUR(created_at)'))->where(DB::raw('DATE(created_at)', $date))->where('id_lhp', $id)->selectRaw("created_at, COUNT(id_ng) AS reject, COUNT(id_dt) AS downtime")->get();
+        // $sql1 = LhpCastingRaw::groupBy(LhpCastingRaw::raw('HOUR(created_at)'))->where('created_at', $date)->get();
+        // dd($sql1);
+        $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
+        $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
+        $records = LhpCastingRaw::groupBy(LhpCastingRaw::raw('HOUR(created_at)'))->whereBetween(DB::raw('DATE(created_at)'), [$start_date, $end_date])
+            ->get();
+        dd($records);
+        return view('lhp.resume-casting', compact('sql1', 'mesin', 'id', 'targetHours'));
     }
 
 

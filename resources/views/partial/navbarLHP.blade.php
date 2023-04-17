@@ -7,10 +7,9 @@
             </a>
         </li>
         <li>
-     
+
             {{-- { LHP Final Inspection} --}}
             @if (Route::currentRouteName() == 'prepareFinalInspection')
-
                 <a>
                     <div class="shift border-bottom">
                         {{ $shift }}
@@ -23,9 +22,8 @@
                     </div>
                 </a>
 
-            {{-- { LHP MELTING} --}}
+                {{-- { LHP MELTING} --}}
             @elseif (Route::currentRouteName() == 'preparationMelting')
-
                 <a>
                     <div class="shift border-bottom">
                         {{ $shift }}
@@ -74,14 +72,11 @@
                     </div>
                 </a>
             @elseif (Route::currentRouteName() == 'LHPCasting')
-                <a>
+                <a onClick="ModalCasting('{{ $mesin }}', '{{ $id }}')">
                     <div class="shift border-bottom">
                         {{ $shift }}
                     </div>
                 </a>
-
-              
-
             @endif
         </li>
         <li class="ms-2 ">
@@ -98,8 +93,7 @@
         <li>
             {{-- PREP FINAL INSPECTION --}}
 
-                @if (Route::currentRouteName() == 'prepareFinalInspection')
-
+            @if (Route::currentRouteName() == 'prepareFinalInspection')
                 <a href="{{ url('/lhp-final-inspection') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -108,16 +102,15 @@
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 </a>
-           
-                @elseif(Route::currentRouteName() == 'prepareFinalInspection')
+            @elseif(Route::currentRouteName() == 'prepareFinalInspection')
                 <a href="{{ url('/lhp-final-inspection') }}" class="navitems">
                     <div class="nrp border-bottom">
                         <div class="font-white"> PILIH MESIN </div>
                     </div>
                 </a>
-            
+
                 {{-- LHP FINAL INSPECTION --}}
-                @elseif (Route::currentRouteName() == 'LHPFinalInspection')
+            @elseif (Route::currentRouteName() == 'LHPFinalInspection')
                 <a href="{{ url('/lhp-final-inspection') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -126,12 +119,10 @@
                         <div class="font-white fw-bold">{{ $nrp }}</div>
                     </div>
                 </a>
-            
 
-            {{-- LHP MELTING --}}
 
+                {{-- LHP MELTING --}}
             @elseif (Route::currentRouteName() == 'preparationMelting')
-
                 <a href="{{ url('/lhp-melting') }}" class="navitems">
                     <div class="nrp">
                         <div class="font-white"> NRP : </div>
@@ -222,7 +213,6 @@
                         {{ $nrp4 }} {{ $nrp5 }} {{ $nrp6 }} <br>
                     </div>
                 </div>
-
             @endif
 
         </li>
@@ -241,7 +231,6 @@
                 </a>
                 {{-- LHP Final Inspection --}}
             @elseif(Route::currentRouteName() == 'LHPFinalInspection')
-
                 <a href="{{ url('/lhp-final-inspection') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FINAL .INS')
@@ -252,9 +241,8 @@
                     </div>
                 </a>
 
-            {{-- Preparation Melting --}}
+                {{-- Preparation Melting --}}
             @elseif (Route::currentRouteName() == 'preparationMelting')
-
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'MELTING')
@@ -266,7 +254,6 @@
                 </a>
                 {{-- LHP MELTING --}}
             @elseif(Route::currentRouteName() == 'LHPMelting')
-
                 <a href="{{ url('/lhp-melting') }}" class="machine shadow-lg">
                     <div class="mesin">
                         @if ($mesin == 'FINAL .INS')
@@ -276,7 +263,7 @@
                         @endif
                     </div>
                 </a>
-                
+
                 {{-- Preparation Forklift --}}
             @elseif(Route::currentRouteName() == 'preparationSupply')
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
@@ -288,9 +275,9 @@
                         @endif
                     </div>
                 </a>
-                
 
-{{-- LHP Forklift --}}
+
+                {{-- LHP Forklift --}}
             @elseif(Route::currentRouteName() == 'LHPSupply')
                 <a href="{{ url('/lhpforklift') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -313,7 +300,6 @@
                         @endif
                     </div>
                 </a>
-
             @elseif(Route::currentRouteName() == 'MCSettings')
                 <a href="{{ url('/settings') }}" class="machine shadow-lg">
                     <div class="mesin">
@@ -341,7 +327,7 @@
                     </div>
                 </a>
 
-           @endif
+            @endif
 
         </li>
         <li>

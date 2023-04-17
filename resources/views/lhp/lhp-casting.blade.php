@@ -421,15 +421,15 @@
                         // Total Downtime Downtime
                         document.getElementById("totalDt").innerHTML = data[0] + data[1] + data[2] + data[3] + data[
                             4];
-                        let test = document.getElementById('timer' + 91)
-                        console.log(test);
-                        if (test === null) {
-                            // The variable is null
-                            console.log("The variable is null");
-                        } else {
-                            // The variable is not null
-                            console.log("The variable is not null");
-                        }
+                        // let test = document.getElementById('timer' + 91)
+                        // // console.log(test);
+                        // if (test === null) {
+                        //     // The variable is null
+                        //     console.log("The variable is null");
+                        // } else {
+                        //     // The variable is not null
+                        //     console.log("The variable is not null");
+                        // }
 
                         // Total downtime perKategori
                         for (let i = 1; i <= 5; i++) {
@@ -544,7 +544,7 @@
                         var save = setInterval(function() {
                             saveDowntimeCasting();
                             console.log(test);
-                        }, 30000);
+                        }, 60000);
 
                         var popUp = document.getElementById('popUp');
 
