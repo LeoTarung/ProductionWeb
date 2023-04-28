@@ -1,3 +1,5 @@
+/* TABLET HUAWEI */
+
 /* PREP FINAL INSPECTION */
 
  .select2-results__options {
@@ -7,6 +9,12 @@
  .select2-container .select2-selection--single {
     height: 37px !important;
  }
+
+ .prep {
+   margin-top: 11.7em;
+   margin-bottom: 11.8em;
+ }
+
 
 /* LHP FINAL INSPECTION */
 
@@ -18,19 +26,20 @@
 
 .cardpart {
     /* width: 98%; */
-    height: 65px;
-    /* margin: 10px 0px 0px 10px; */
+    height: 60px;
+    margin: 0px 0px 0px 0px;
     align-items: center;
-    padding: 5px 0px 0px 0px;
-    font-size: 40px;
+    padding: 3px 0px 0px 0px;
+    font-size: 35px;
 }
 
 .main-card {
     /* margin: 10px 2px 15px 0px !important; */
     border-radius: 20px;
-    height: 480px !important;
+    height: 500px !important;
     /* height: 61.2em; */
     overflow-y: scroll;
+    background-color: white;
 }
 
 .row-card-i{
@@ -66,15 +75,15 @@
 }
 
 .font-ci1{
-    font-size: 33px;
+    font-size: 30px;
     font-weight: 700;
-    margin: 3px 0px 0px -7px ;
+    margin: 7px 0px 0px -7px ;
 }
 
 .font-ci2{
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0px 1px 0px 10px ;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 1px 0px 0px ;
 }
 
 /* 
@@ -94,16 +103,16 @@
 }
 
 .child {
-    height: 80px; 
+    height: 50px; 
     width: 100%;
     background-color: #ffffff;
     color: black;
     margin: 10px 0px 10px 0px;
-    padding: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
     box-shadow:  0px 0px 7px rgb(255, 0, 0);
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .parent2 {
@@ -111,20 +120,21 @@
 }
 
 .child2 {
-    height: 120px; 
+    height: 80px; 
     width: 100%;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    margin: 0px 0px 0px -15px;
-    padding: 25px 0 0 0px;
+    margin: 0px 0px 0px -10px;
+    padding: 13px 0px 0px 0px;
     border-radius: 10px 10px 10px 10px;
     border: 1px var(--green) ;
     text-align: center;
-    font-size: 45px;
+    font-size: 30px;
 }
 
 .childOK{
-    margin: 80px 0px 0px 10px;
+   text-align: center;
+    margin: 20px 0px 0px 10px;
     position: absolute;
     /* font-size: 35px; */
 }
@@ -133,19 +143,92 @@
     margin: 10px 0px 0px -10px;
 }
 
-.child3 {
-    height: 60px; 
+/* .child3 {
+    height: 40px; 
     width: 100%;
-    background-color: #ffffff;
     color: rgb(0, 0, 0);
-    margin: 0px 0px 0px -15px;
-    padding: 3px 0 0 0px;
+    margin: 0px 0px 0px -10px;
+    padding: 0px 0 0 0px;
     border-radius: 10px 10px 10px 10px;
     display: flex;
-      align-items: center; 
-      justify-content: center;
-    /* font-size: 35px; */
+    align-items: center; 
+    justify-content: center;
+    font-size: 15px;
+} */
+.child3 {
+   height: 40px; 
+   width: 100%;
+   margin: 0px 0px 0px -10px;
+   padding: 0px 0 0 0px;
+   display: flex;
+   align-items: center; 
+   justify-content: center;
+   font-size: 15px;
+   background-color: #ffb803;
+   border-radius: 50px;
+   box-shadow: inset 4px 4px 10px #ffb803, inset -4px -4px 10px #ffcf3f;
+   color: #000000;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+   border: 2px solid rgb(206, 206, 206);
+ }
+ 
+ .child3:hover {
+   box-shadow: inset 2px 2px 5px #ffb803, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+ }
+ 
+ .child3:focus {
+   outline: none;
+   box-shadow: inset 2px 2px 5px #ffb803, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+ }
+
+.parentT {
+   margin: -20px 0px 0px 0px; 
 }
+
+#tambahPart {
+   align-items: center;
+   background-color: #5e91e2;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: .25rem;
+   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+   box-sizing: border-box;
+   color: rgba(255, 255, 255, 0.85);
+   cursor: pointer;
+   display: inline-flex;
+   font-size: 25px;
+   font-weight: 600;
+   justify-content: center;
+   /* line-height: 1.25; */
+   min-height: 4rem;
+   width: 50%;
+   margin: 0px 0px 0px 5px;
+   /* padding: calc(.875rem - 1px) calc(1.5rem - 1px); */
+   /* transition: all 250ms;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: baseline; */
+  }
+  
+  #tambahPart:hover,
+  #tambahPart:focus {
+   border-color: rgba(0, 0, 0, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+   color: rgba(0, 0, 0, 0.65);
+  }
+  
+  #tambahPart:hover {
+   transform: translateY(-1px);
+  }
+  
+  #tambahPart:active {
+   background-color: #6c6ccd;
+   border-color: rgba(0, 0, 0, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+   color: rgba(0, 0, 0, 0.65);
+   transform: translateY(0);
+  }
 
 .card-left1{
     /* height: 50%; */
@@ -154,7 +237,7 @@
     border-top: 1px solid var(--grayishBlue);
     border-bottom: 1px solid var(--grayishBlue);
     /* background: linear-gradient(320deg, transparent 45px, #ddd 0); */
-    background: radial-gradient(circle at bottom right, transparent 60px, #ffffff 0);
+    background: radial-gradient(circle at bottom right, transparent 35px, #ffffff 0);
     /* box-shadow: 0 0 0 10px #a42b2b inset; */
    }
  
@@ -164,7 +247,7 @@
     border-top: 1px solid var(--red);
     border-bottom: 1px solid var(--red);
     /* background: linear-gradient(220deg, transparent 45px, #f0f0f0 0); */
-    background: radial-gradient(circle at top right, transparent 60px, #ffffff 0);
+    background: radial-gradient(circle at top right, transparent 35px, #ffffff 0);
 }
 
 .card-left3{
@@ -175,39 +258,56 @@
     
   /* background: linear-gradient(-320deg, transparent 45px, #7d2727 0) top left,
              linear-gradient(-220deg, transparent 45px, #44bcc2 0) bottom right; */
-    background: radial-gradient(circle at bottom left, transparent 64px, #ffffff 0) top left,
-                radial-gradient(circle at top left, transparent 64px, #ffffff 0) bottom right;
+    background: radial-gradient(circle at bottom left, transparent 40px, #ffffff 0) top left,
+                radial-gradient(circle at top left, transparent 40px, #ffffff 0) bottom right;
 
     background-size: 100% 50%;
     background-repeat: no-repeat;
     height: 100%;
 }
 
-/* 
-.card-left4{
-  border-radius: 0px 10px 10px 0px;
-  border-left: 10px solid var(--blue);
-  background: linear-gradient(-220deg, transparent 45px, #ececec 0);
-} */
-
 .flex {
   /* display:flex; */
-  top: 185px;
-  left: 43%;
+  top: 19%;
+  left: 42%;
   position: absolute;
 }
 
 .oval {
-    height: 160px;
-    width: 160px;
+    height: 100px;
+    width: 100px;
     color: #ffffff;
+    background-color: #198754;
     /* color: #2B3467; */
     border-radius: 50%;
     padding: 20px 0px 0px 0px ;
-    font-size: 5em;
+    font-size: 2.5em;
+    cursor: pointer;
   }
 
-@media only screen and (min-height: 1200in) {
+  .oval:hover,
+  .oval:focus {
+   border-color: rgba(0, 0, 0, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+   color: rgba(0, 0, 0, 0.65);
+  }
+  
+  .oval:hover {
+   transform: translateY(-1px);
+  }
+  
+  .oval:active {
+   background-color: #ffffff;
+   border-color: rgba(0, 0, 0, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+   color: rgba(0, 0, 0, 0.65);
+   transform: translateY(0);
+  }
+
+  
+
+  /* tablet huawei */
+@media only screen and (max-height: 1200px) {
     /* PREP FINAL INSPECTION */
 
  .select2-results__options {
@@ -227,9 +327,9 @@
 }
 
 .cardpart {
-   width: 98.5%;
+   width: 100%;
    height: 70px;
-   margin: 0px -22px 0px 10px;
+   margin: 0px 0px 0px 10px;
    align-items: center;
    padding: 0px 0px 0px 0px;
    font-size: 40px;
@@ -276,7 +376,7 @@
 }
 
 .font-ci1{
-   font-size: 33px;
+   font-size: 20px;
    font-weight: 700;
    margin: 5px 0px 0px -7px ;
 }
@@ -350,8 +450,74 @@
    padding: 10px 0 0 0px;
    border-radius: 10px 10px 10px 10px;
    text-align: center;
-   font-size: 25px;
+   align-items: center; 
+   justify-content: center;
+   font-size: 15px;
+   background-color: #ffb803;
+   border-radius: 50px;
+   box-shadow: inset 4px 4px 10px #ffb803, inset -4px -4px 10px #ffcf3f;
+   color: #000000;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+   border: 2px solid rgb(206, 206, 206);
 }
+
+.child3:hover {
+   box-shadow: inset 2px 2px 5px #ffb803, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+ }
+ 
+ .child3:focus {
+   outline: none;
+   box-shadow: inset 2px 2px 5px #ffb803, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+ }
+
+.parentT {
+   margin: -20px 0px 0px 0px; 
+}
+
+#tambahPart {
+   align-items: center;
+   background-color: #5e91e2;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: .25rem;
+   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+   box-sizing: border-box;
+   color: rgba(255, 255, 255, 0.85);
+   cursor: pointer;
+   display: inline-flex;
+   font-size: 25px;
+   font-weight: 600;
+   justify-content: center;
+   /* line-height: 1.25; */
+   min-height: 4rem;
+   width: 50%;
+   margin: 0px 0px 0px 5px;
+   /* padding: calc(.875rem - 1px) calc(1.5rem - 1px); */
+   /* transition: all 250ms;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: baseline; */
+  }
+  
+  #tambahPart:hover,
+  #tambahPart:focus {
+   border-color: rgba(0, 0, 0, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+   color: rgba(0, 0, 0, 0.65);
+  }
+  
+  #tambahPart:hover {
+   transform: translateY(-1px);
+  }
+  
+  #tambahPart:active {
+   background-color: #6c6ccd;
+   border-color: rgba(0, 0, 0, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+   color: rgba(0, 0, 0, 0.65);
+   transform: translateY(0);
+  }
 
 .card-left1{
    /* height: 50%; */
@@ -397,7 +563,7 @@
 
 .flex {
  /* display:flex; */
- top: 14.5%;
+ top: 20%;
  left: 42.5%;
  position: absolute;
 }

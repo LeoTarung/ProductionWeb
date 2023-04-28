@@ -13,31 +13,30 @@
             </div>
         </div>
         
-        <div class="row">
+        <div class="row mt-1">
           <div class="col-6"> 
             {{-- card total Change --}}
             <div class="card-left1 mt-2">
                 <div class="row ps-4">
-                    <div class="col-6 mt-2 fs-2 fw-bold total">
+                    <div class="col-6 fs-5 fw-bold total">
                         TOTAL CHECK</div>
-                    <div class="col-4 d-flex align-items-center parent">
+                    <div class="col-4 d-flex align-items-center parent" style="margin: 0px 0px 0px 0px">
                         <div id="hitung" class="child border shadow fw-bold text-center align-items-center">
                         </div>
                     </div>
-
                 </div>
                 <div class="flex">
-                    <div class="oval border shadow bg-success fw-bold text-center align-items-center" onclick="counterFunc()"> 
+                    <div class="oval border shadow fw-bold text-center align-items-center" onclick="counterFunc()"> 
                         +1
                     </div>
                 </div>
             </div>
 
-            {{-- card total OK --}}
+            {{-- card total NG --}}
             <div class="card-left2 mt-2">
                 <div class="row ps-4">
-                    <div class="col-6 mt-2 fs-2 fw-bold total" onclick="getReject()">TOTAL NG</div>
-                    <div class="col-4 d-flex align-items-center parent">
+                    <div class="col-6 fs-5 fw-bold total" onclick="getReject()">TOTAL NG</div>
+                    <div class="col-4 d-flex align-items-center parent" style="margin: 0px 0px 0px 0px">
                         <div id="totalReject" class="child border fw-bold text-danger text-center align-items-center">
                            
                         </div>
@@ -45,15 +44,13 @@
                     <div class="col-2"></div>
                 </div>
             </div>
-
-
           </div>
 
           <div class="col-6 mt-2">  
             <div class="card-left3">
                 <div class="row totok">
                     <div class="col-2"></div>
-                    <div class="col-6 fs-2 fw-bold parentOK">
+                    <div class="col-6 fs-5 fw-bold parentOK">
                         <div class="childOK">TOTAL OK</div>
                     </div>
                     <div class="col-4 mt-2 mb-1 d-flex align-items-center parent2">
@@ -63,9 +60,12 @@
                     </div>
                 </div>
                 <div class="row totok">
-                    <div class="col-8"></div>
+                    <div class="col-2"></div>
+                    <div class="col-6 parentT">                        
+                        <div id="tambahPart" onclick="counterFunc()">++</div>
+                    </div>
                     <div class="col-4 d-flex mt-2 align-items-center parent3">
-                        <div class="child3 border shadow bg-warning  fs-2 fw-bold " onclick="resetFunc()">
+                        <div class="child3 fw-bold " onclick="resetFunc()">
                             UNDO 
                         </div>
                         
@@ -92,9 +92,9 @@
         </div>
           
         <div class="row mt">
-          <div class="col-12">
+          <div class="col-12 ">
             <div class="card main-card" style=" margin: 10px 2px 15px 0px; overflow-y:scroll">
-              <div class="row row-card-i mt-3">
+              <div class="row row-card-i mt-1">
                     @for ($i = 0; $i < $jumlahReject; $i++)
                             <div class="col-4 mt-2">
                                 <div class="card-inside shadow-lg border border-2 border border-dark align-items-center">
@@ -139,14 +139,12 @@
 
     @php
         $reject = $lhp->id;
-    @endphp
-
-    @php
         $hitung = $lhp->id;
     @endphp
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> --}}
+      <script src="/js/bootstrap.bundle.min.js"></script>
       <script>
         var hitung;
         function totalCheck(){
@@ -157,14 +155,14 @@
             document.getElementById("total_ok").innerHTML = total;
 
             hitung = kucing.total_check
-            
+
             totalOk(total);
 
         });
 
         }
         
-        setInterval(totalCheck, 1000)
+        setInterval(totalCheck, 2000)
        
         setInterval(function(){
             console.log(hitung)
@@ -192,7 +190,6 @@
 
         function resetFunc(){
             hitung--;
-          
                const id = {{ $lhp->id }};
                 var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
                 var token = $('meta[name="csrf-token"]').attr('content');
@@ -207,16 +204,15 @@
                     sessionStorage.setItem("hitung", hitung);
                     }
                 });
-           
         }
 
-        // Ambil nilai counter terbaru dari session saat halaman di-refresh
-        $(document).ready(function(){
-        if(sessionStorage.getItem("hitung")){
-            hitung = sessionStorage.getItem("hitung");
-            document.getElementById("hitung").innerHTML = hitung;
-        }
-});
+        // // Ambil nilai counter terbaru dari session saat halaman di-refresh
+        //         $(document).ready(function(){
+        //         if(sessionStorage.getItem("hitung")){
+        //             hitung = sessionStorage.getItem("hitung");
+        //             document.getElementById("hitung").innerHTML = hitung;
+        //         }
+        // });
 
         // setInterval(counterFunc, 1000);
         // setInterval(resetFunc, 1000);
@@ -251,8 +247,7 @@
             setInterval(function() {
                 getTotalReject();
             }, 3000);
-        });
-        
+        });     
         
         // FUNGSI INI UNTUK INPUT KE DB
         function totalOk(total){
@@ -268,8 +263,6 @@
                 },
             });
         }
-        
-
 
       </script>
 

@@ -276,8 +276,6 @@ class UsableController extends Controller
         return view('lhp.modal-final-inspection', compact('lhp', 'ng'));
     }
 
-
-    
     public function saveRejectFinal(UsableController $useable, $id, $reject, $posisi)
     {
         $rejectnew = str_replace("-", " ", $reject);
@@ -285,10 +283,10 @@ class UsableController extends Controller
             ->where('posisi', $posisi)
             ->pluck('id');
             // dd($ng);
-        // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
+        dd(RejectNG::where('jenis_reject', $rejectnew)->get());
         $integerNG =  (int) $ng->first();
         $integerId =  intval($id);
-        dd($integerNG);
+        // dd($integerNG);
         $lhp = LhpFinalInspection::where('id', $integerId)->first();
         // $mc =  $lhp->id_mesincasting;
         LhpFinalInspectionRaw::create([
