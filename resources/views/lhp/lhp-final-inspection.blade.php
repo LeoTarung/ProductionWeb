@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row mt-2">
             <div class="card cardpart fw-bold text-center align-items-center" 
-            style="width: 98%; margin: 5px 0px 0px 10px">
+           >
                 {{ $lhp->part->nama_part}}
             </div>
         </div>
@@ -24,6 +24,7 @@
                         <div id="hitung" class="child border shadow fw-bold text-center align-items-center">
                         </div>
                     </div>
+                    <div class="col-2"></div>
                 </div>
                 <div class="flex">
                     <div class="oval border shadow fw-bold text-center align-items-center" onclick="counterFunc()"> 
@@ -55,8 +56,7 @@
                     </div>
                     <div class="col-4 mt-2 mb-1 d-flex align-items-center parent2">
                         <div class ="child2 border border-success shadow fw-bold text-center align-items-center" id="total_ok">
-                        </div>
-                    
+                        </div>                   
                     </div>
                 </div>
                 <div class="row totok">
