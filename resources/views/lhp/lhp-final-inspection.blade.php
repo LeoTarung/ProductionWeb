@@ -62,7 +62,7 @@
                 <div class="row totok">
                     <div class="col-2"></div>
                     <div class="col-6 parentT">                        
-                        <div id="tambahPart" onclick="counterFunc()">++</div>
+                        <div id="tambahPart" onclick="counterFunc()"> +BOX</div>
                     </div>
                     <div class="col-4 d-flex mt-2 align-items-center parent3">
                         <div class="child3 fw-bold " onclick="resetFunc()">
