@@ -100,7 +100,6 @@ class FinalInspectionController extends Controller
         // return response()->json($hitung);
     }
 
-
     public function apinadif($id)
     {
         $data = LhpFinalInspection::find($id);

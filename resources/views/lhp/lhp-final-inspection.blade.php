@@ -20,73 +20,61 @@
                 <div class="row ps-4">
                     <div class="col-6 fs-5 fw-bold total">
                         TOTAL CHECK</div>
-                    <div class="col-4 d-flex align-items-center parent" style="margin: 0px 0px 0px 0px">
+                    <div class="col-5 d-flex align-items-center parent">
                         <div id="hitung" class="child border shadow fw-bold text-center align-items-center">
                         </div>
                     </div>
-                    <div class="col-2"></div>
+                    <div class="col-1"></div>
                 </div>
-                <div class="flex">
+                {{-- <div class="flex">
                     <div class="oval border shadow fw-bold text-center align-items-center" onclick="counterFunc()"> 
                         +1
                     </div>
-                </div>
+                </div> --}}
             </div>
 
             {{-- card total NG --}}
             <div class="card-left2 mt-2">
                 <div class="row ps-4">
                     <div class="col-6 fs-5 fw-bold total" onclick="getReject()">TOTAL NG</div>
-                    <div class="col-4 d-flex align-items-center parent" style="margin: 0px 0px 0px 0px">
+                    <div class="col-5 d-flex align-items-center parent" style="margin: 0px 0px 0px 0px">
                         <div id="totalReject" class="child border fw-bold text-danger text-center align-items-center">
-                           
                         </div>
                     </div>
-                    <div class="col-2"></div>
+                    <div class="col-1"></div>
                 </div>
             </div>
           </div>
 
+            {{-- card total ok --}}
           <div class="col-6 mt-2">  
             <div class="card-left3">
-                <div class="row totok">
-                    <div class="col-2"></div>
-                    <div class="col-6 fs-5 fw-bold parentOK">
-                        <div class="childOK">TOTAL OK</div>
+                <div class="row">
+                    <div class="col-4 fs-5 fw-bold ">
+                        <div class="totalOK">TOTAL OK</div>
                     </div>
-                    <div class="col-4 mt-2 mb-1 d-flex align-items-center parent2">
-                        <div class ="child2 border border-success shadow fw-bold text-center align-items-center" id="total_ok">
-                        </div>                   
+                    <div class="col-8">
+                        <div class="tambah border shadow fw-bold text-center align-items-center" onclick="counterFunc()"> 
+                            +1
+                        </div>
                     </div>
                 </div>
-                <div class="row totok">
-                    <div class="col-2"></div>
-                    <div class="col-6 parentT">                        
+
+                <div class="row">
+                    <div class="col-4 align-items-center pboxOK ">
+                        <div class ="cboxOK border border-success shadow fw-bold text-center align-items-center" id="total_ok">
+                        </div>                   
+                    </div>
+                    <div class="col-4 parentT">                        
                         <div id="tambahPart" onclick="counterFunc()"> +BOX</div>
                     </div>
-                    <div class="col-4 d-flex mt-2 align-items-center parent3">
+                    <div class="col-4 d-flex align-items-center parent3">
                         <div class="child3 fw-bold " onclick="resetFunc()">
                             UNDO 
                         </div>
-                        
                     </div>
                 </div>
             </div>
-            
-            {{-- <div class="card mt-2 shadow-sm ">
-              <div class="row">
-                <div class="col-9 mt-2 ps-4 fw-bold fs-4 align-items-center"> TOTAL OK </div>
-                <div class="col-3 d-flex align-items-center parent">
-                    <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-9 mt-2 ps-4 fw-bold fs-4"></div>
-                  <div class="col-3 d-flex align-items-center parent">
-                      <div class="child fw-bold fs-4 pt-2 mb-1 text-center align-items-center bg-warning">+1</div>
-                  </div>
-                </div>
-            </div> --}}
           </div>
 
         </div>
@@ -190,7 +178,7 @@
 
         function resetFunc(){
             hitung--;
-               const id = {{ $lhp->id }};
+                const id = {{ $lhp->id }};
                 var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
                 var token = $('meta[name="csrf-token"]').attr('content');
                 $.ajax({
@@ -205,6 +193,25 @@
                     }
                 });
         }
+
+        function counterboxFunc(){
+            hitung++;
+            const id = {{ $lhp->id }};
+            var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
+            var token = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    _token: token
+                },
+                success: function(){
+                // Simpan nilai terbaru ke dalam session
+                sessionStorage.setItem("hitung", hitung);
+                }
+            });
+        }
+
 
         // // Ambil nilai counter terbaru dari session saat halaman di-refresh
         //         $(document).ready(function(){
