@@ -295,6 +295,7 @@ li a {
 }
 
 /* Navbar Media Query Final Inspection */
+/* gajadi */
 @media only screen and (max-width: 1000in) {
     /* Navbar */
 nav{
@@ -765,7 +766,7 @@ a .font-forklift10 {
 
 /* final inspection */
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-height: 1200px) {
     /* Nav */
     nav {
         height: 50px;
@@ -778,12 +779,14 @@ a .font-forklift10 {
     .rectangle-logo {
         height: 35px;
         margin-top: 0.5rem;
+        margin-left: -30px;
     }
 
     .shift {
         width: 60px;
         font-size:medium;
         margin-top: 0.5rem;
+
     }
 
     #MyClockDisplay {
@@ -798,13 +801,13 @@ a .font-forklift10 {
 
     .machine {
         height: 55px;
-        width: 130px;
+        width: 115px;
     }
 
     .mesin {
-        font-size: medium;
+        font-size: 15px;
         text-align: center;
-        margin: 0px 0px 0px -5px;
+        margin: 0px 0px 0px -10px;
     }
 
     .information {

@@ -66,7 +66,7 @@
                         </div>                   
                     </div>
                     <div class="col-4 parentT">                        
-                        <div id="tambahPart" onclick="counterFunc()"> +BOX</div>
+                        <div class="tambahPart" id="box" onclick="counterboxFunc()"> +BOX</div>
                     </div>
                     <div class="col-4 d-flex align-items-center parent3">
                         <div class="child3 fw-bold " onclick="resetFunc()">
@@ -81,7 +81,7 @@
           
         <div class="row mt">
           <div class="col-12 ">
-            <div class="card main-card" style=" margin: 10px 2px 15px 0px; overflow-y:scroll">
+            <div class="card main-card" style=" margin: 10px 2px 15px 0px;">
               <div class="row row-card-i mt-1">
                     @for ($i = 0; $i < $jumlahReject; $i++)
                             <div class="col-4 mt-2">
@@ -149,8 +149,7 @@
         });
 
         }
-        
-        setInterval(totalCheck, 2000)
+            setInterval(totalCheck, 2000)
        
         setInterval(function(){
             console.log(hitung)
@@ -195,9 +194,9 @@
         }
 
         function counterboxFunc(){
-            hitung++;
-            const id = {{ $lhp->id }};
-            var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
+           let box = {{ $box }};
+           const id = {{ $lhp->id }};
+            var url = "/dtTotalCheck"  + "/" + id + "/" + box  // replace with your desired URL
             var token = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
                 url: url,
@@ -207,9 +206,10 @@
                 },
                 success: function(){
                 // Simpan nilai terbaru ke dalam session
-                sessionStorage.setItem("hitung", hitung);
+                sessionStorage.setItem("box", box);
                 }
             });
+            console.log(box);
         }
 
 

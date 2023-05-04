@@ -9,6 +9,7 @@ use App\Models\LhpFinalInspectionRaw;
 use App\Models\Part;
 use App\Http\Requests\LhpFinalInspRequest;
 use App\Models\RejectNG;
+use Illuminate\Support\Facades\DB;
 // use LhpFinalInspRaw;
 
 class FinalInspectionController extends Controller
@@ -78,6 +79,18 @@ class FinalInspectionController extends Controller
         $mesin = "Final Inspection";
         $lhp = LhpFinalInspection::where('id', $id)->first();
         $nrp = $lhp->nrp;
+        $box = $lhp->part->std_packaging;
+        if ($box == null)
+            {
+                $box = 0;
+            }
+        else {
+            // do nothing
+        }
+            // $box = DB::table('part')
+            // ->where('id', $lhp->part)
+            // ->value(DB::raw('IFNULL(std_packaging,0)'));
+        // dd($box);
         // $id = 0;
         $reject = collect($useable->RejectFinalInspectionWithStrip());
         $rejectforView = collect($useable->RejectFinalInspectionWithoutStrip());
@@ -86,7 +99,7 @@ class FinalInspectionController extends Controller
 
         $jumlahReject = $reject->count();
 
-        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id', 'lhp','namaPart', 'reject', 'rejectforView', 'jumlahReject'));
+        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id', 'lhp','namaPart', 'box','reject', 'rejectforView', 'jumlahReject'));
     }
 
     public function totalCheck(UsableController $usable, $id, $hitung)

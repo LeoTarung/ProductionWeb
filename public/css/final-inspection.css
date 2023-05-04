@@ -227,7 +227,7 @@
    margin: 0px 0px 0px 0px; 
 }
 
-#tambahPart {
+.tambahPart {
    align-items: center;
    background-color: #5e91e2;
    border: 1px solid rgba(0, 0, 0, 0.1);
@@ -252,18 +252,18 @@
    vertical-align: baseline; */
   }
   
-  #tambahPart:hover,
-  #tambahPart:focus {
+  .tambahPart:hover,
+  .tambahPart:focus {
    border-color: rgba(0, 0, 0, 0.15);
    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
    color: rgba(0, 0, 0, 0.65);
   }
   
-  #tambahPart:hover {
+  .tambahPart:hover {
    transform: translateY(-1px);
   }
   
-  #tambahPart:active {
+  .tambahPart:active {
    background-color: #6c6ccd;
    border-color: rgba(0, 0, 0, 0.15);
    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
@@ -297,15 +297,15 @@
    margin: 5px 0px 0px 10px;
    align-items: center;
    padding: 0px 0px 0px 0px;
-   font-size: 35px;
+   font-size: 25px;
 }
 
 .main-card {
    margin: 10px 2px 15px 0px;
    border-radius: 20px;
-   height: 530px;
+   height: 520px;
    /* height: 685em; */
-   overflow-y: scroll;
+   /* overflow-y: scroll; */
 }
 
 .row-card-i{
@@ -388,7 +388,7 @@
 }
 
 .child {
-   height: 60px; 
+   height: 62px; 
    width: 100%;
    background-color: #ffffff;
    color: black;
@@ -405,7 +405,7 @@
    text-align: center; 
    align-items: center; /* untuk menengahkan secara vertikal */
    justify-content: center; /* untuk menengahkan secara horizontal */
-   margin: 20px 0px 0px 10px;
+   margin: 10px 0px 0px 8px;
    padding: 0px 0px 0px 0px;
     position: absolute;
     /* font-size: 35px; */
@@ -448,11 +448,11 @@
 }
 
 .cboxOK{
-   height: 112px; 
+   height: 123px; 
    /* width: 150px; */
    background-color: #ffffff;
    color: rgb(0, 0, 0);
-   margin: -60px -25px 0px 10px;
+   margin: -70px -25px 0px 10px;
    padding: 30px 0px 0px 0px;
    border-radius: 10px ;
    border: 1px var(--green) ;
@@ -464,7 +464,7 @@
    margin: 5px 0px 10px 0px; 
 }
 
-#tambahPart {
+.tambahPart {
    align-items: center;
    background-color: #27426d;
    border: 1px solid rgba(0, 0, 0, 0.1);
@@ -483,18 +483,18 @@
    margin: 0px 0px 0px 20px;
   }
   
-  #tambahPart:hover,
-  #tambahPart:focus {
+  .tambahPart:hover,
+  .tambahPart:focus {
    border-color: rgba(0, 0, 0, 0.15);
    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
    color: rgb(0, 0, 0);
   }
   
-  #tambahPart:hover {
+  .tambahPart:hover {
    transform: translateY(-1px);
   }
   
-  #tambahPart:active {
+  .tambahPart:active {
    background-color: #ffffff;
    border-color: rgba(0, 0, 0, 0.15);
    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
@@ -520,10 +520,10 @@
    justify-content: center;
    font-size: 15px;
    background-color: #ffb803;
-   box-shadow: inset 4px 4px 10px #ffb803, inset -4px -4px 10px #ffcf3f;
+   box-shadow: inset 4px 4px 10px #ffb700, inset -4px -4px 10px #ffcf3f;
    cursor: pointer;
    transition: all 0.2s ease-in-out;
-   border: 2px solid rgb(206, 206, 206);
+   border: 2px solid #f6b000
 }
 
 .child3:hover {
