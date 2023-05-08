@@ -127,7 +127,8 @@
 
     @php
         $reject = $lhp->id;
-        $hitung = $lhp->id;
+        $hitung = $lhp->id + $box;
+        
     @endphp
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -136,7 +137,8 @@
       <script>
         var hitung;
         function totalCheck(){
-        $.get("/dtTotalCheck/api/" + {{ $lhp->id }}, function(kucing) {
+        $.get("/dtTotalCheck/api/" + {{ $lhp->id }} , function(kucing) {
+        
             document.getElementById("hitung").innerHTML = kucing.total_check;                           
             
             var total = kucing.total_check - kucing.total_ng
@@ -154,7 +156,7 @@
         setInterval(function(){
             console.log(hitung)
             // document.getElementById("hitung").innerHTML = hitung;
-        }, 1000)
+        }, 2000)
 
         // FUNGSI INI UNTUK INPUT KE DB
         function counterFunc(){
@@ -196,7 +198,7 @@
         function counterboxFunc(){
            let box = {{ $box }};
            const id = {{ $lhp->id }};
-            var url = "/dtTotalCheck"  + "/" + id + "/" + box  // replace with your desired URL
+            var url = "/dtTotalCheck"  + "/" + id + "/" + (hitung + box)  // replace with your desired URL
             var token = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
                 url: url,
@@ -207,6 +209,7 @@
                 success: function(){
                 // Simpan nilai terbaru ke dalam session
                 sessionStorage.setItem("box", box);
+                sessionStorage.setItem("hitung", hitung + box);
                 }
             });
             console.log(box);
