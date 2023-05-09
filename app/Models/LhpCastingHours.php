@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LhpCastingRaw extends Model
+class LhpCastingHours extends Model
 {
     use HasFactory;
 
-    protected $table = "lhp_casting_raw";
+    protected $table = "lhp_casting_hours";
     protected $guarded = [];
 
     public function lhpCasting()
@@ -20,5 +20,10 @@ class LhpCastingRaw extends Model
     public function reject()
     {
         return $this->belongsTo(RejectNG::class, 'id_ng', 'id'); //One to one
+    }
+
+    public function downtime()
+    {
+        return $this->belongsTo(Downtime::class, 'id_dt', 'id'); //One to one
     }
 }

@@ -6,6 +6,7 @@
                 </div>
             </a>
         </li>
+        {{-- SHIFT --}}
         <li>
 
             {{-- { LHP Final Inspection} --}}
@@ -72,13 +73,14 @@
                     </div>
                 </a>
             @elseif (Route::currentRouteName() == 'LHPCasting')
-                <a onClick="ModalCasting('{{ $mesin }}', '{{ $id }}')">
+                <a onClick="ModalCasting('{{ $mc }}', '{{ $id }}')">
                     <div class="shift border-bottom">
                         {{ $shift }}
                     </div>
                 </a>
             @endif
         </li>
+        {{-- JAM --}}
         <li class="ms-2 ">
             <!-- <a href="" class="time1"> -->
             <a href="" class="time shadow-lg navitems">
@@ -90,6 +92,7 @@
             </a>
             <!-- </a> -->
         </li>
+        {{-- NRP --}}
         <li>
             {{-- PREP FINAL INSPECTION --}}
 
@@ -216,6 +219,7 @@
             @endif
 
         </li>
+        {{-- MESIN --}}
         <li>
             {{-- Preparation Final Inspection --}}
             @if (Route::currentRouteName() == 'prepareFinalInspection')
@@ -330,6 +334,7 @@
             @endif
 
         </li>
+        {{-- INSTRUKSI --}}
         <li>
             <a onClick="ModalInstruksi('{{ $mesin }}')">
                 <div class="information " data-bs-toggle="modal" data-bs-target="#instruksi-kerja">
@@ -351,7 +356,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div id="page" class="p-2"></div>
+                <div id="page" class=""></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>

@@ -91,8 +91,11 @@ Route::get('/lhp-casting', [CastingController::class, 'prep_casting'])->name('pr
 Route::post('/lhp-casting/simpan', [CastingController::class, 'prep_casting_simpan']);
 Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])->name('LHPCasting'); //link sementara, nanti diganti ketika preparation sudah selesai
 Route::post('/lhp-casting/{id}/{dtName}/{minute}', [CastingController::class, 'saveDowntimeCasting'])->name('saveDowntime');
+Route::get('/casting/target/{id}', [CastingController::class, 'getTarget']);
 Route::get('/dtRjtcasting/{id_lhp}', [CastingController::class, 'totalReject'])->name('totalReject');
 Route::get('/dtDowntime/{id_lhp}', [CastingController::class, 'jsonDowntime'])->name('jsonDowntime');
+Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController::class, 'saveReject'])->name('saveReject');
+
 
 
 //====================== LHP FINAL INSPECTION ================//

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LhpCasting;
-use App\Models\LhpCastingRaw;
+use App\Models\LhpCastingHours;
 use App\Models\LhpMeltingRAW;
 use App\Models\LhpSupplyRAW;
 use App\Models\LhpSupply;
@@ -98,16 +98,112 @@ class UsableController extends Controller
         $shift = $useable->Shift();
         $date = $useable->date();
 
-        $targetHours = MesinCasting::where('mc', $mesin)->selectRaw('CEILING(3600/cycle_time * 0.90) AS Target');
+        $gettargetHours = MesinCasting::where('mc', $mesin)->selectRaw('CEILING(3600/cycle_time * 0.90) AS Target')->first();
+        $targetHours = $gettargetHours->Target;
         // $sql1 = LhpCastingRaw::groupBy(LhpCastingRaw::raw('HOUR(created_at)'))->where(DB::raw('DATE(created_at)', $date))->where('id_lhp', $id)->selectRaw("created_at, COUNT(id_ng) AS reject, COUNT(id_dt) AS downtime")->get();
         // $sql1 = LhpCastingRaw::groupBy(LhpCastingRaw::raw('HOUR(created_at)'))->where('created_at', $date)->get();
         // dd($sql1);
         $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
-        $records = LhpCastingRaw::groupBy(LhpCastingRaw::raw('HOUR(created_at)'))->whereBetween(DB::raw('DATE(created_at)'), [$start_date, $end_date])
-            ->get();
-        dd($records);
-        return view('lhp.resume-casting', compact('sql1', 'mesin', 'id', 'targetHours'));
+        // $start_time = Carbon::createFromFormat('H:i:s', '0' . 9 . ':00:00');
+        // $end_time = Carbon::createFromFormat('H:i:s',  10 . ':00:00');
+        $sql1 = LhpCastingHours::whereBetween('created_at', [$start_date, $end_date])->get();
+
+
+
+        for ($i = 0; $i < 9; $i++) {
+            $start_time = Carbon::createFromFormat('H:i:s', '0' . $i . ':00:00');
+            $end_time = Carbon::createFromFormat('H:i:s', '0' . $i + 1 . ':00:00');
+            $waktu =  '0' . $i . ':00';
+            ${'getdata' . $i} = collect($sql1->whereBetween('created_at', [$start_time, $end_time])->all());
+            if (${'getdata' . $i} != null) {
+                $tp = ${'getdata' . $i}->sum('tp_' . $i);
+                $tn = ${'getdata' . $i}->sum('tn_' . $i);
+                $td = ${'getdata' . $i}->sum('td_' . $i);
+                ${'forData' . $i}[] =  $waktu;
+                // ${'forData' . $i}[] =${'getdata' . $i};
+                ${'forData' . $i}[] = $tp;
+                ${'forData' . $i}[] =  $tn;
+                ${'forData' . $i}[] = $td;
+            } else {
+                ${'forData' . $i}[] = 0;
+                // ${'forData' . $i}[] =${'getdata' . $i};
+                ${'forData' . $i}[] = 0;
+                ${'forData' . $i}[] =  0;
+                ${'forData' . $i}[] = 0;
+            }
+        }
+
+        $start_time = Carbon::createFromFormat('H:i:s', '0' . 9 . ':00:00');
+        $end_time = Carbon::createFromFormat('H:i:s',  10 . ':00:00');
+        $waktu =  '0' . 9 . ':00';
+        ${'getdata' . 9} = collect($sql1->whereBetween('created_at', [$start_time, $end_time])->all());
+        if (${'getdata' . 9} != null) {
+            $tp = ${'getdata' . 9}->sum('tp_' . 9);
+            $tn = ${'getdata' . 9}->sum('tn_' . 9);
+            $td = ${'getdata' . 9}->sum('td_' . 9);
+            ${'forData' . 9}[] =  $waktu;
+            // ${'forData' . 9}[] =${'getdata' . 9};
+            ${'forData' . 9}[] = $tp;
+            ${'forData' . 9}[] =  $tn;
+            ${'forData' . 9}[] = $td;
+        } else {
+            ${'forData' . 9}[] = 0;
+            // ${'forData' . 9}[] =${'getdata' . 9};
+            ${'forData' . 9}[] = 0;
+            ${'forData' . 9}[] =  0;
+            ${'forData' . 9}[] = 0;
+        }
+        // dd($sql1->whereBetween('created_at', [$start_time, $end_time])->dd());
+        for ($i = 10; $i < 23; $i++) {
+            $start_time = Carbon::createFromFormat('H:i:s',  $i . ':00:00');
+            $end_time = Carbon::createFromFormat('H:i:s',  $i + 1 . ':00:00');
+            $waktu =   $i . ':00';
+            ${'getdata' . $i} = collect($sql1->whereBetween('created_at', [$start_time, $end_time])->all());
+            if (${'getdata' . $i} != null) {
+                $tp = ${'getdata' . $i}->sum('tp_' . $i);
+                $tn = ${'getdata' . $i}->sum('tn_' . $i);
+                $td = ${'getdata' . $i}->sum('td_' . $i);
+                ${'forData' . $i}[] =  $waktu;
+                // ${'forData' . $i}[] =${'getdata' . $i};
+                ${'forData' . $i}[] = $tp;
+                ${'forData' . $i}[] =  $tn;
+                ${'forData' . $i}[] = $td;
+            } else {
+                ${'forData' . $i}[] = 0;
+                // ${'forData' . $i}[] =${'getdata' . $i};
+                ${'forData' . $i}[] = 0;
+                ${'forData' . $i}[] =  0;
+                ${'forData' . $i}[] = 0;
+            }
+        }
+
+        $start_time = Carbon::createFromFormat('H:i:s', 23 . ':00:00');
+        $end_time = Carbon::createFromFormat('H:i:s', 00 . ':00:00');
+        $waktu =   23 . ':00';
+        ${'getdata' . 23} = collect($sql1->whereBetween('created_at', [$start_time, $end_time])->all());
+        if (${'getdata' . 23} != null) {
+            $tp = ${'getdata' . 23}->sum('tp_' . 23);
+            $tn = ${'getdata' . 23}->sum('tn_' . 23);
+            $td = ${'getdata' . 23}->sum('td_' . 23);
+            ${'forData' . 23}[] =  $waktu;
+            // ${'forData' . 23}[] =${'getdata' . 23};
+            ${'forData' . 23}[] = $tp;
+            ${'forData' . 23}[] =  $tn;
+            ${'forData' . 23}[] = $td;
+        } else {
+            ${'forData' . 23}[] = 0;
+            // ${'forData' . 23}[] =${'getdata' . 23};
+            ${'forData' . 23}[] = 0;
+            ${'forData' . 23}[] =  0;
+            ${'forData' . 23}[] = 0;
+        }
+        for ($x = 0; $x < 24; $x++) {
+            $data[] = ${'forData' . $x};
+        }
+
+        // dd($data[9][1] - $data[9][2]);
+        return view('lhp.resume-casting', compact('mesin', 'id', 'targetHours', 'data', 'date'));
     }
 
 
@@ -135,7 +231,7 @@ class UsableController extends Controller
     }
 
     // ============================= // Pengubah string menjadi integer  // ================================= //
-    function convertStringToNumber($array)
+    function convertArrayStringToNumber($array)
     {
         foreach ($array as $key => $element) {
             if (is_string($element) && is_numeric($element)) {
@@ -144,6 +240,9 @@ class UsableController extends Controller
         }
         return $array;
     }
+
+
+
     // ============================= //REJECT // ================================= //
     // =================== //REJECT CASTING // ============================ //
 
@@ -199,32 +298,5 @@ class UsableController extends Controller
         $ng = $reject;
 
         return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
-    }
-
-    public function saveReject(UsableController $useable, $id, $reject, $posisi)
-    {
-        $rejectnew = str_replace("-", " ", $reject);
-        $ng = RejectNG::where('jenis_reject', $rejectnew)
-            ->where('posisi', $posisi)
-            ->pluck('id');
-        // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
-        $integerNG =  (int) $ng->first();;
-        $integerId =  intval($id);
-
-        $idCasting = LhpCasting::where('id', $integerId)->first();
-        $mc =  $idCasting->id_mesincasting;
-        LhpCastingRaw::create([
-            'id_lhp' => $integerId,
-            'id_ng' => $integerNG,
-        ]);
-
-        //Update Total NG
-        $total_ng = $idCasting->total_ng;
-
-        LhpCasting::where('id', $integerId)->update([
-            'total_ng' =>  $total_ng + 1
-        ]);
-
-        return redirect("/lhp-casting/$mc/$id")->with('behasilditambahkan', 'behasilditambahkan');
     }
 }

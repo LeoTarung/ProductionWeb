@@ -6,22 +6,23 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3 mt-2">
-                <div class="card card-left1 ms-2 shadow-sm">
+            <div class="col-3 ">
+                {{-- <div class="card card-left1 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-9 mt-2 ps-4 fw-bold fs-4 "> {{ $idCasting->nama_part }} </div>
                         <div class="col-3 d-flex align-items-center parent">
-                            <div class="child fw-bold fs-4 pt-2 text-center align-items-center">
-                                {{ $idCasting->mesincasting->cycle_time }}</div>
+                            <div class="child fw-bold fs-4 pt-2 text-center align-items-center">Dies
+                                {{ $idCasting->mesincasting->nomor_dies }}</div>
+
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="card card-left5 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span
-                                class="fs-2">{{ $idCasting->target }}</span>
-                            <span> part</span>
+                        <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2"
+                                id="target">{{ $idCasting->target }}</span>
+                            <span> pieces</span>
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">TOTAL PRODUKSI <br>
                             <span class="fs-2" id="totalProduksi"></span>
-                            <span> part</span>
+                            <span> pieces</span>
                         </div>
                     </div>
                 </div>
@@ -38,7 +39,7 @@
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">TOTAL OK<br><span class="fs-2" id="totalOk"></span>
-                            <span> part</span>
+                            <span> pieces</span>
                         </div>
                     </div>
                 </div>
@@ -47,7 +48,7 @@
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">REJECTION <br>
-                            <span class="fs-2" id="totalReject"></span><span> part</span>
+                            <span class="fs-2" id="totalReject"></span><span> pieces</span>
                         </div>
                     </div>
                 </div>
@@ -71,6 +72,19 @@
                 </div> --}}
             </div>
             <div class="col-9 mb-2">
+                <div class="card upper mt-3 mb-1 shadow-sm">
+                    <div class="row parent">
+                        <div class="col-9 mt-2 ps-4 fw-bold fs-4  "> {{ $idCasting->nama_part }} </div>
+                        <div class="col-3 d-flex align-items-center">
+                            <div class="child fw-bold fs-4  text-center d-flex align-items-center">
+                                <div class="dies">
+                                    DIES :
+                                    {{ $idCasting->mesincasting->nomor_dies }}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="card main-card"id="reject">
                     <div class="row row-card-i mt-3 ms-2">
                         @for ($i = 0; $i < $jumlahReject; $i++)
@@ -305,7 +319,8 @@
                                     <span class="text-center" style="font-size:110px; margin-top: -30px"
                                         id="modalMinute">0</span>
                                 </div>
-                                <div class=" text-center font-white" id="totalModalMinute">Downtime terplanning : 00 Detik
+                                <div class=" text-center font-white" id="totalModalMinute">Downtime terplanning : 00
+                                    Detik
                                 </div>
                             </div>
                         </div>
@@ -421,15 +436,6 @@
                         // Total Downtime Downtime
                         document.getElementById("totalDt").innerHTML = data[0] + data[1] + data[2] + data[3] + data[
                             4];
-                        // let test = document.getElementById('timer' + 91)
-                        // // console.log(test);
-                        // if (test === null) {
-                        //     // The variable is null
-                        //     console.log("The variable is null");
-                        // } else {
-                        //     // The variable is not null
-                        //     console.log("The variable is not null");
-                        // }
 
                         // Total downtime perKategori
                         for (let i = 1; i <= 5; i++) {
@@ -470,10 +476,27 @@
                     // console.log(data[for_mc]);
                     document.getElementById("totalProduksi").innerHTML = totalProduksi;
                     document.getElementById("totalOk").innerHTML = totalOk;
-                    // document.getElementById("totalReject").innerHTML = totalReject;
+                    // console.log(data[for_mc].cycle_time);
+
+                    //----------- Get target -----------------//
+                    $.ajax({
+                        url: "/casting/target" + "/" + id_lhp,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(target) {
+                            document.getElementById('target').innerHTML = target;
+                        }
+                    });
+
+                    // var test = setInterval(function() {
+                    //     console.log('test');
+                    // }, 60000);
+
+                   
                 })
             });
 
+            // -------------- Downtime -------------- //
 
             var Totaltime = 0;
             var minute = 0;
@@ -529,7 +552,8 @@
 
                         var timer = setInterval(function() {
                             minute++;
-                            document.getElementById('modalMinute').innerHTML = minute;
+                            document.getElementById('modalMinute').innerHTML =
+                                minute;
                             // console.log(minute);
                         }, 60000);
 
@@ -537,13 +561,14 @@
                             Totaltime++;
                             // document.getElementById('modalMinute').innerHTML = formatTime(Math.floor(time / 60));
                             document.getElementById('totalModalMinute').innerHTML =
-                                'Downtime ' + UrutanKategori + ': ' + Totaltime + ' detik';
+                                'Downtime ' + UrutanKategori + ': ' + Totaltime +
+                                ' detik';
                             // console.log('Minutes: ' + formatTime(Math.floor(Totaltime / 60)))
                         }, 1000);
 
                         var save = setInterval(function() {
                             saveDowntimeCasting();
-                            console.log(test);
+                            // console.log(test);
                         }, 60000);
 
                         var popUp = document.getElementById('popUp');
@@ -572,12 +597,5 @@
                     }
                 });
             }
-
-
-
-            // setInterval(function() {
-            //     console.log('minute after: ' +
-            //         minute);
-            // }, 1000);
         </script>
     @endsection

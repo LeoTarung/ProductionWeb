@@ -145,6 +145,7 @@
                                                             value="{{ $line->mc }}">
                                                         <label id="label_mc_{{ $line->mc }}"
                                                             class="btn btn-outline-success"
+                                                            
                                                             for="mc_{{ $line->mc }}">{{ $line->mc }}</label>
                                                     @endforeach
                                                 </div>
