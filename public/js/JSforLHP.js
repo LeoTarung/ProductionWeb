@@ -161,3 +161,19 @@ function ModalGambar(id,reject) {
 //         }
 //     );
 // }
+
+//==============================['FUNCTION MODAL GAMBAR PART DI FINAL INSPECTION']==============================//
+function ModalGambarFinal(id,reject) {
+    $.get(
+        "/partial/modal-final-inspection"+ "/" + id + "/" + reject,
+        {},
+        function (data) {
+            // $("#ModalGambarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
+            //  $("#page").load('/partial/modal-sementara'); //menampilkan view create di dalam id page
+             $("#ModalGambarFinal").modal("show"); //kalo ID pake "#" kalo class pake "."
+             $('#ModalGambarFinal .modal-body').load( '/partial/modal-final-inspection' + '/' + id + "/" + reject);
+             console.log(reject);
+             console.log(id);
+        }
+    );
+}

@@ -23,9 +23,12 @@ use App\Http\Controllers\FinalInspectionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//====================== MODAL ======================//
 Route::get('/modal-sementara', function () {
     return view('lhp.modal-casting-sementara');
+});
+Route::get('/modal-finalinspection', function () {
+    return view('lhp.modal-final-inspection');
 });
 
 Route::get('/manufacturing', [ManufactureController::class, 'index']);
@@ -43,6 +46,8 @@ Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'r
 Route::get('/partial/modal-casting/{id}/{reject}', [UsableController::class, 'gambarPart'])->name('showPicture');
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [UsableController::class, 'saveReject'])->name('saveReject');
 Route::get('/partial/modal-casting-dt/{id}', [UsableController::class, 'DowntimeCasting'])->name('DowntimeCasting');
+Route::get('/partial/modal-final-inspection/{id}/{reject}', [UsableController::class, 'gambarPartFinal'])->name('showPicture');
+Route::post('/partial/modal-final-inspection/{id}/{reject}/{posisi}', [UsableController::class, 'saveRejectFinal'])->name('saveRejectFinal');
 
 
 //====================== API FOR SHARE ======================//
@@ -94,6 +99,13 @@ Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])-
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
 Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
+// total reject
+Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
+// total check
+Route::get('/dtTotalCheck/api/{id_lhp}', [FinalInspectionController::class, 'apinadif']);
+Route::post('/dtTotalCheck/{id}/{hitung}', [FinalInspectionController::class, 'totalCheck']);
+//total ok
+Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'totalOk']);
 
 
 //====================== HC & GA ======================//
