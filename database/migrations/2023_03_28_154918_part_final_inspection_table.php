@@ -14,9 +14,10 @@ class PartFinalInspectionTable extends Migration
     public function up()
     {
         //
-        Schema::create('part_final_inspection', function (Blueprint $table) {
+        Schema::create('part', function (Blueprint $table) {
             $table->integer('id')->primary();
             $table->string('nama_part')->nullable()->default("");
+            $table->integer('std_packaging')->nullable();
         });
     }
 

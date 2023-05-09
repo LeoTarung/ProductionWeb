@@ -446,6 +446,7 @@ footer {
   font-weight: 500;
 }
 
+/* tv  */
 @media only screen and (min-width: 1400px) { 
   .body {
     background-color: #00af50;
@@ -466,7 +467,7 @@ footer {
   }
 
   .part{
-    font-size: 65px;
+    font-size: 70px;
     font-weight: 700;
     color: white;
   }
@@ -492,8 +493,8 @@ footer {
     padding-top: 10px;
     padding-bottom: 20px;
     background-color: #0d0148;
-    font-size: 45px;
-    font-weight: 500;
+    font-size: 50px;
+    font-weight: 650;
     border-radius: 0em 0em 1em 1em / 1em;
     color: white;
     text-align: center;
@@ -535,7 +536,7 @@ footer {
 
   .parent .pperform {
     font-size: 50px;
-    font-weight: 500;
+    font-weight: 650;
     padding-top: 40px;
     padding-bottom: 20px;
   }
@@ -892,7 +893,7 @@ footer {
 }
 
 
-/* untuk 2tv */
+/* untuk 2 slide tv */
 .kkbody {
   background-color: #00af50;
 }

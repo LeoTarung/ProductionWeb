@@ -23,9 +23,12 @@ use App\Http\Controllers\FinalInspectionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//====================== MODAL ======================//
 Route::get('/modal-sementara', function () {
     return view('lhp.modal-casting-sementara');
+});
+Route::get('/modal-finalinspection', function () {
+    return view('lhp.modal-final-inspection');
 });
 
 Route::get('/manufacturing', [ManufactureController::class, 'index']);
@@ -43,7 +46,7 @@ Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'r
 Route::get('/partial/resume-casting/{mesin}/{id}', [UsableController::class, 'resume_casting']);
 Route::get('/partial/modal-casting/{id}/{reject}', [UsableController::class, 'gambarPart'])->name('showPicture');
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [UsableController::class, 'saveReject'])->name('saveReject');
-// Route::get('/partial/modal-casting-dt/{id}', [UsableController::class, 'DowntimeCasting'])->name('DowntimeCasting');
+Route::get('/partial/modal-casting-dt/{id}', [UsableController::class, 'DowntimeCasting'])->name('DowntimeCasting');
 
 
 //====================== API FOR SHARE ======================//
@@ -101,7 +104,7 @@ Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController:
 //====================== LHP FINAL INSPECTION ================//
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
-Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection');
+Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
 
 
 //====================== HC & GA ======================//
