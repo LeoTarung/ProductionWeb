@@ -42,6 +42,18 @@ body{
     width: 100%;
     transition: margin-left 0.4s ease-out;
 }
+
+/* #main.active{
+    filter: blur(5px);
+} */
+
+/* body.blurred { */
+    /* filter: blur(5px); */
+    /* filter: brightness(50%) blur(2.5px);
+    pointer-events: none;
+  } */
+
+
 #main .main-content {
     padding: 0rem 1.5rem;
     min-height: 100vh;

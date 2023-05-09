@@ -104,7 +104,7 @@ function ModalResume(mesin, id) {
         }
     );
 }
-//==============================['FUNCTION INSTRUKSI DI LHP']==============================//
+//==============================['FUNCTION INSTRUKSI DI LHP MELTING']==============================//
 function ModalInstruksi(mesin) {
     // console.log("asdasd");
     $.get("/partial/instruksi", {}, function (data, status) {
@@ -114,12 +114,28 @@ function ModalInstruksi(mesin) {
     });
 }
 
-//==============================['FUNCTION RESUME DI LHP']==============================//
+//==============================['FUNCTION RESUME DI LHP SUPPLY']==============================//
 
 function ModalSupply(mesin, id) {
     // console.log('asad');
     $.get(
         "/partial/resume-forklift" + "/" + mesin + "/" + id,
+        {},
+        function (data, status) {
+            $("#ModalNavbarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
+             $("#page").html(data); //menampilkan view create di dalam id page
+             $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
+             console.log(mesin);
+        }
+    );
+}
+
+//==============================['FUNCTION RESUME DI LHP CASTING']==============================//
+
+function ModalCasting(mesin, id) {
+    // console.log('asad');
+    $.get(
+        "/partial/resume-casting" + "/" + mesin + "/" + id,
         {},
         function (data, status) {
             $("#ModalNavbarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
@@ -146,22 +162,6 @@ function ModalGambar(id,reject) {
     );
 }
 
-//==============================['FUNCTION MODAL DOWNTIME DI CASTING']==============================//
-// function ModalDowntime(id) {
-//     $.get(
-//         "/partial/modal-casting-dt"+ "/" + id ,
-//         {},
-//         function (data) {
-//             // $("#ModalGambarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
-//             //  $("#page").load('/partial/modal-sementara'); //menampilkan view create di dalam id page
-//              $("#ModalDowntime").modal("show"); //kalo ID pake "#" kalo class pake "."
-//              $('#ModalDowntime .modal-body').load( '/partial/modal-casting-dt' + '/' + id );
-//             //  console.log(reject);
-//              console.log(id);
-//         }
-//     );
-// }
-
 //==============================['FUNCTION MODAL GAMBAR PART DI FINAL INSPECTION']==============================//
 function ModalGambarFinal(id,reject) {
     $.get(
@@ -177,3 +177,4 @@ function ModalGambarFinal(id,reject) {
         }
     );
 }
+

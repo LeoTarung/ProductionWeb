@@ -19,7 +19,11 @@ class RejectSeeder extends Seeder
                 'id' => 1,
                 'jenis_reject' => 'BERCAK HITAM',
                 'casting' => true,
+<<<<<<< HEAD
+
+=======
                 'final_inspection'=> true,
+>>>>>>> origin/nadip19
                 'posisi' => 1
             ], [
                 'id' => 2,
