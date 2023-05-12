@@ -46,6 +46,8 @@ Route::get('/partial/resume-forklift/{mesin}/{id}', [UsableController::class, 'r
 Route::get('/partial/resume-casting/{mesin}/{id}', [UsableController::class, 'resume_casting']);
 Route::get('/partial/modal-casting/{id}/{reject}', [UsableController::class, 'gambarPart'])->name('showPicture');
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [UsableController::class, 'saveReject'])->name('saveReject');
+Route::get('/partial/modal-final-inspection/{id}/{reject}', [UsableController::class, 'gambarPartFinal'])->name('showPictureFinal');
+
 Route::get('/partial/modal-casting-dt/{id}', [UsableController::class, 'DowntimeCasting'])->name('DowntimeCasting');
 
 
@@ -86,6 +88,7 @@ Route::post('/lhpforklift/simpan', [MeltingController::class, 'prep_forklift_sim
 Route::get('/forklift/{mesin}/{id}', [MeltingController::class, 'lhp_forklift'])->name('LHPSupply');
 Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_forklift_raw_simpan']);
 
+
 //====================== AREA CASTING ======================//
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
 Route::get('/tvCasting/{id}', [CastingController::class, 'tvCasting']);
@@ -105,7 +108,13 @@ Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController:
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
 Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
-
+// total reject
+Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
+// total check
+Route::get('/dtTotalCheck/api/{id_lhp}', [FinalInspectionController::class, 'apinadif']);
+Route::post('/dtTotalCheck/{id}/{hitung}', [FinalInspectionController::class, 'totalCheck']);
+//total ok
+Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'totalOk']);
 
 //====================== HC & GA ======================//
 Route::get('/hrd/karyawan', [HcgaController::class, 'karyawan']);
