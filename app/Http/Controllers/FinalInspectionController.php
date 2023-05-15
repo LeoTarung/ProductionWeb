@@ -128,7 +128,7 @@ class FinalInspectionController extends Controller
         $rejectList = collect($usable->RejectFinalInspectionWithoutStrip());
 
 
-        $floor = 1;
+        $floor = 1; 
         $ceiling = 72;
         for ($i = 1; $i <= $rejectList->count(); $i++) {
             $data[$i] =  LhpFinalInspectionRaw::where('id_lhp', $id_lhp)

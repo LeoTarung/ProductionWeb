@@ -51,7 +51,7 @@
             <div class="card-left3">
                 <div class="row">
                     <div class="col-4 fs-5 fw-bold ">
-                        <div class="totalOK">TOTAL OK</div>
+                        <div class="totalOK text-center align-items-center">TOTAL OK</div>
                     </div>
                     <div class="col-8">
                         <div class="tambah border shadow fw-bold text-center align-items-center" onclick="counterFunc()"> 

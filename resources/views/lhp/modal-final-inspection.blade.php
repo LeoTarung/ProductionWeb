@@ -148,14 +148,14 @@
         
         // Gambar sisi 2-6 (lg)
         for ($a = 1; $a <= 6; $a++) {
-            ${'img_lg_' . $a} = asset('/img/parts/' . $lhp->mesincasting->nama_part . '_' . 'lg' . '_' . $a . '.png');
-            ${'imgSrc_lg_' . $a} = file_exists(public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_' . 'lg' . '_' . $a . '.png')) ? public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_' . 'lg' . '_' . $a . '.png') : null;
+            ${'img_lg_' . $a} = asset('/img/parts/' . $lhp->part->nama_part . '_' . 'lg' . '_' . $a . '.png');
+            ${'imgSrc_lg_' . $a} = file_exists(public_path('/img/parts' . '/' . $lhp->part->nama_part . '_' . 'lg' . '_' . $a . '.png')) ? public_path('/img/parts' . '/' . $lhp->part->nama_part . '_' . 'lg' . '_' . $a . '.png') : null;
         }
         
         // Gambar sisi 2-6 (sm)
         for ($a = 1; $a <= 6; $a++) {
-            ${'img_sm_' . $a} = asset('/img/parts/' . $lhp->mesincasting->nama_part . '_' . 'sm' . '_' . $a . '.png');
-            ${'imgSrc_sm_' . $a} = file_exists(public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_' . 'sm' . '_' . $a . '.png')) ? public_path('/img/parts' . '/' . $lhp->mesincasting->nama_part . '_' . 'sm' . '_' . $a . '.png') : null;
+            ${'img_sm_' . $a} = asset('/img/parts/' . $lhp->part->nama_part . '_' . 'sm' . '_' . $a . '.png');
+            ${'imgSrc_sm_' . $a} = file_exists(public_path('/img/parts' . '/' . $lhp->part->nama_part . '_' . 'sm' . '_' . $a . '.png')) ? public_path('/img/parts' . '/' . $lhp->part->nama_part . '_' . 'sm' . '_' . $a . '.png') : null;
         }
         
     @endphp
