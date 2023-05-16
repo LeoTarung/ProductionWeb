@@ -1,5 +1,5 @@
 <main>
-    {{-- <div class="col-12" style="min-height:100%"> --}}
+    {{-- <div class="col-10" style="min-height:100%"> --}}
     <link rel="stylesheet" type="text/css"
         href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
     <style>
@@ -165,7 +165,7 @@
     <div class="container" style="margin-left:0%; padding-left: 0px;" id="modal">
         <div class="row d-flex justify-content-center">
             @if ($imgSrc_lg_1 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10 mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_lg_1 }}" alt="Image">
                     @for ($i = 1; $i <= 6; $i++)
                         <div name="button" class=" buttonlg{{ $i }}  font-red"
@@ -176,7 +176,7 @@
                     @endfor
                 </div>
             @elseif ($imgSrc_sm_1 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10 mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_sm_1 }}" alt="Image">
                     @for ($i = 1; $i <= 4; $i++)
                         <div name="button" class=" buttonsm{{ $i }} font-red"
@@ -192,7 +192,7 @@
 
             {{-- Gambar 2 - 6 --}}
             @if ($imgSrc_lg_2 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10 mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_lg_2 }}" alt="Image">
                     @for ($i = 7, $x = 1; $i <= 12, $x <= 6; $i++, $x++)
                         <div name="button" class=" buttonlg{{ $x }}  font-red"
@@ -202,7 +202,7 @@
                     @endfor
                 </div>
             @elseif ($imgSrc_sm_2 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10 mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_sm_2 }}" alt="Image">
                     @for ($i = 5, $x = 1; $i <= 8, $x <= 4; $i++, $x++)
                         <div name="button" class=" buttonsm{{ $x }}  font-red"
@@ -216,7 +216,7 @@
 
 
             @if ($imgSrc_lg_3 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10  mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_lg_3 }}" alt="Image">
                     @for ($i = 13, $x = 1; $i <= 18, $x <= 6; $i++, $x++)
                         <div name="button" class=" buttonlg{{ $x }}  font-red"
@@ -226,7 +226,7 @@
                     @endfor
                 </div>
             @elseif ($imgSrc_sm_3 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10 mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_sm_3 }}" alt="Image">
                     @for ($i = 9, $x = 1; $i <= 12, $x <= 4; $i++, $x++)
                         <div name="button" class=" buttonsm{{ $x }}  font-red"
@@ -240,7 +240,7 @@
 
 
             @if ($imgSrc_lg_4 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10  mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_lg_4 }}" alt="Image">
                     @for ($i = 19, $x = 1; $i <= 24, $x <= 6; $i++, $x++)
                         <div name="button" class=" buttonlg{{ $x }}  font-red"
@@ -250,7 +250,7 @@
                     @endfor
                 </div>
             @elseif ($imgSrc_sm_4 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10  mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_sm_4 }}" alt="Image">
                     @for ($i = 13, $x = 1; $i <= 16, $x <= 4; $i++, $x++)
                         <div name="button" class=" buttonsm{{ $x }}  font-red"
@@ -264,7 +264,7 @@
 
 
             @if ($imgSrc_lg_5 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10  mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_lg_5 }}" alt="Image">
                     @for ($i = 25, $x = 1; $i <= 30, $x <= 6; $i++, $x++)
                         <div name="button" class=" buttonlg{{ $x }}  font-red"
@@ -274,7 +274,7 @@
                     @endfor
                 </div>
             @elseif ($imgSrc_sm_5 != null)
-                <div class="col-6 mb-4" style=" position: relative;">
+                <div class="col-10  mb-4" style=" position: relative;">
                     <img class="img" src="{{ $img_sm_5 }}" alt="Image">
                     @for ($i = 17, $x = 1; $i <= 20, $x <= 4; $i++, $x++)
                         <div name="button" class=" buttonsm{{ $x }}  font-red"
@@ -288,7 +288,7 @@
 
 
             @if ($imgSrc_lg_6 != null)
-                <div class="col-6" style=" position: relative;">
+                <div class="col-10 " style=" position: relative;">
                     <img class="img" src="{{ $img_lg_6 }}" alt="Image">
                     @for ($i = 31, $x = 1; $i <= 36, $x <= 6; $i++, $x++)
                         <div name="button" class=" buttonlg{{ $x }}  font-red"
@@ -298,7 +298,7 @@
                     @endfor
                 </div>
             @elseif ($imgSrc_sm_6 != null)
-                <div class="col-6" style=" position: relative;">
+                <div class="col-10 " style=" position: relative;">
                     <img class="img" src="{{ $img_sm_6 }}" alt="Image">
                     @for ($i = 21, $x = 1; $i <= 24, $x <= 4; $i++, $x++)
                         <div name="button" class=" buttonsm{{ $x }}  font-red"
@@ -337,7 +337,7 @@
                     _token: token
                 },
                 success: function(response) {
-                    $("#ModalGambar").modal("hide");
+                    $("#ModalGambarFinal").modal("hide");
                     processing = true;
                 },
                 error: function(xhr) {

@@ -94,6 +94,7 @@ class FinalInspectionController extends Controller
         // $id = 0;
         $reject = collect($useable->RejectFinalInspectionWithStrip());
         $rejectforView = collect($useable->RejectFinalInspectionWithoutStrip());
+        // dd($rejectforView, $reject);
 
         $namaPart = $lhp->part->nama_part;
 
@@ -127,27 +128,20 @@ class FinalInspectionController extends Controller
         $data[] = $total_reject[0]->total_reject;
         $rejectList = collect($usable->RejectFinalInspectionWithoutStrip());
 
+        foreach ($rejectList as $key ) {
+            $wadah[] = RejectNG::where('jenis_reject', $key)->pluck('id') ;
+        }
+// dd($wadah[0]->last());
 
-        $floor = 1; 
-        $ceiling = 72;
+        // $floor = 1; 
+        // $ceiling = 72;
         for ($i = 1; $i <= $rejectList->count(); $i++) {
             $data[$i] =  LhpFinalInspectionRaw::where('id_lhp', $id_lhp)
-                ->whereBetween('id_ng', [$floor, $ceiling])
+                ->whereBetween('id_ng', [$wadah[$i-1]->first(), $wadah[$i-1]->last()])
                 ->count();
-            $floor = $floor + 72;
-            $ceiling =  $ceiling + 72;
-        }
-        // dd($data);
-        // dd( LhpFinalInspectionRaw::where('id_lhp', $id_lhp)
-        // ->whereBetween('id_ng', [1,72])->get());
-// $id_ng = 1 ;
-//         $posts = LhpFinalInspectionRaw::with(['reject' => function($query) {
-//             $query->select('id', 'jenis_reject');
-//         }])->whereHas('reject', function($query) use ($id_ng) {
-//             $query->where('id', $id_ng);
-//         })->count();
 
-//         dd($posts);
+        }
+        
         return response()->json($data);
     }
 

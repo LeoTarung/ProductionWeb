@@ -249,12 +249,13 @@ class UsableController extends Controller
             ->where('posisi', $posisi)
             ->pluck('id');
             // dd($ng);
-        dd(RejectNG::where('jenis_reject', $rejectnew)->get());
+        // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
         $integerNG =  (int) $ng->first();
         $integerId =  intval($id);
-        // dd($integerNG);
+    
         $lhp = LhpFinalInspection::where('id', $integerId)->first();
         // $mc =  $lhp->id_mesincasting;
+        // dd($integerNG);
         LhpFinalInspectionRaw::create([
             'id_lhp' => $integerId,
             'id_ng' => $integerNG,

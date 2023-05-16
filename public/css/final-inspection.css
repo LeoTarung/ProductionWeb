@@ -283,6 +283,11 @@ transform: translateY(0);
  height: 37px !important;
 }
 
+.prep {
+  margin-top: 11.95em;
+  margin-bottom: 11.95em;
+ }
+
 /* LHP FINAL INSPECTION */
 
 :root {
@@ -292,7 +297,7 @@ transform: translateY(0);
 }
 
 .cardpart {
- width: 97.3% !important;
+ width: 96.5% !important;
  height: 100%;
  margin: 5px 0px 0px 10px;
  align-items: center;
@@ -301,28 +306,28 @@ transform: translateY(0);
 }
 
 .main-card {
- margin: 10px 2px 15px 0px;
- border-radius: 20px;
- height: 520px !important;
+ margin: 10px 2px 15px 0px !important;
+ border-radius: 20px !important;
+ height: 530px !important;
  /* height: 685em; */
  overflow-y: scroll !important;
 }
 
 .row-card-i{
- margin: 0px 2px 2px 0px;
+ margin: 0px 2px 2px 0px !important;
 }
 
 .card-inside{
- height: 70px;
- width: 100%;
+ height: 70px !important;
+ width: 100% !important;
  border-radius: 40px;
  background-color: rgb(143, 6, 6);
 }
 
 .card-inside1 {
- height: 90%;
- width: 40%;
- margin: 3.5px -10px 4px 3px;
+ height: 90% !important;
+ width: 40% !important;
+ margin: 3.5px -10px 4px 3px !important;
  border-radius:  40px;
  background-color: rgb(255, 255, 255);
  overflow: hidden;
@@ -330,9 +335,9 @@ transform: translateY(0);
 }
 
 .card-inside2{
- height: 74%;
- width: 61%;
- margin: 8.5px 9px 0px -10px;
+ height: 74% !important;
+ width: 61% !important;
+ margin: 8.5px 9px 0px -10px !important;
  padding: 0 0 0 -6px;
  border-radius: 0px 40px 40px 0px;
  overflow: hidden;
@@ -380,20 +385,20 @@ transform: translateY(0);
 }
 
 .total {
- padding: 25px 0px 0px 0px;
+ padding: 25px 0px 0px 0px !important;
  /* text-align: center; */
  /* align-items: center; */
- justify-content: center;
+ justify-content: center !important;
  font-size: 20px;
 }
 
 .child {
- height: 62px; 
- width: 100%;
+ height: 62px !important; 
+ width: 100% !important;
  background-color: #ffffff;
  color: black;
- margin: 10px 0px 10px 0px;
- padding: 10px 0px 0px 0px;
+ margin: 10px 0px 10px 0px !important;
+ padding: 10px 0px 0px 0px !important;
  border-radius: 10px 10px 10px 10px;
  text-align: center;
  box-shadow:  0px 0px 7px rgb(255, 0, 0);
@@ -403,13 +408,14 @@ transform: translateY(0);
 .totalOK{
  display: flex;
  text-align: center; 
- align-items: center; /* untuk menengahkan secara vertikal */
- justify-content: center; /* untuk menengahkan secara horizontal */
- margin: 10px 0px 0px 10px;
- padding: 0px 0px 0px 0px;
-  position: absolute;
+  /* untuk menengahkan secara vertikal */
+  align-items: center;
+  /* untuk menengahkan secara horizontal */
+ justify-content: center; 
+position: absolute;
   /* font-size: 35px; */
 }
+
 
 .tambah {
  height: 100px;
@@ -444,16 +450,16 @@ transform: translateY(0);
 
 .pboxOK {
  /* display: flex; */
- margin: 0px -10px 0px 0px;
+ margin: 0px -10px 0px 0px !important;
 }
 
 .cboxOK{
- height: 123px; 
+ height: 123px !important; 
  /* width: 150px; */
  background-color: #ffffff;
  color: rgb(0, 0, 0);
- margin: -70px -25px 0px 10px;
- padding: 30px 0px 0px 0px;
+ margin: -70px -25px 0px 10px !important;
+ padding: 30px 0px 0px 0px !important;
  border-radius: 10px ;
  border: 1px var(--green) ;
  text-align: center;
@@ -461,7 +467,7 @@ transform: translateY(0);
 }
 
 .parentT {
- margin: 5px 0px 10px 0px; 
+ margin: 5px 0px 10px 0px !important; 
 }
 
 .tambahPart {
@@ -478,7 +484,7 @@ transform: translateY(0);
  font-weight: 600;
  justify-content: center;
  /* line-height: 1.25; */
- min-height: 3rem;
+ min-height: 3rem !important;
  width: 100%;
  margin: 0px 0px 0px 20px !important;
 }
@@ -503,9 +509,9 @@ transform: translateY(0);
 }
 
 .parent3 {
- margin: 5px 0px 10px 0px;
+ margin: 5px 0px 10px 0px !important;
 }
-
+ 
 .child3 {
  /* height: 50px;  */
  min-height: 3rem;
@@ -525,7 +531,7 @@ transform: translateY(0);
  transition: all 0.2s ease-in-out;
  border: 2px solid #f6b000
 }
-
+/* 
 .child3:hover {
  box-shadow: inset 2px 2px 5px #ffb803, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
@@ -533,6 +539,24 @@ transform: translateY(0);
 .child3:focus {
  outline: none;
  box-shadow: inset 2px 2px 5px #ffb803, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+} */
+.child3:hover,
+.child3:focus {
+ border-color: rgba(0, 0, 0, 0.15);
+ box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+ color: rgb(255, 255, 255);
+}
+
+.child3:hover {
+ transform: translateY(-1px);
+}
+
+.child3:active {
+ background-color: #000000;
+ border-color: rgba(0, 0, 0, 0.15);
+ box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+ color: rgba(0, 0, 0, 0.65);
+ transform: translateY(0);
 }
 
 }
