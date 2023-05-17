@@ -131,17 +131,15 @@ class FinalInspectionController extends Controller
         foreach ($rejectList as $key ) {
             $wadah[] = RejectNG::where('jenis_reject', $key)->pluck('id') ;
         }
-// dd($wadah[0]->last());
+dd($rejectList);
 
-        // $floor = 1; 
-        // $ceiling = 72;
+        // $floor = 1; // $ceiling = 72;
         for ($i = 1; $i <= $rejectList->count(); $i++) {
             $data[$i] =  LhpFinalInspectionRaw::where('id_lhp', $id_lhp)
                 ->whereBetween('id_ng', [$wadah[$i-1]->first(), $wadah[$i-1]->last()])
                 ->count();
-
         }
-        
+        dd(count($data));
         return response()->json($data);
     }
 

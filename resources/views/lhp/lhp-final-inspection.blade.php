@@ -139,6 +139,7 @@
         var hitung;
         function totalCheck(){
         $.get("/dtTotalCheck/api/" + {{ $lhp->id }} , function(kucing) {
+        
             document.getElementById("hitung").innerHTML = kucing.total_check;                           
             
             var total = kucing.total_check - kucing.total_ng
@@ -210,7 +211,7 @@
                 data: {
                     _token: token //pake token untuk keamanan
                 },
-                success: function(data){
+                success: function(){
                     // Simpan nilai terbaru ke dalam session
                         // sessionStorage.setItem("box", box);
                         // sessionStorage.setItem("hitung", hitung + box); 
@@ -222,6 +223,18 @@
             });
             console.log(box);
         }
+
+
+        // // Ambil nilai counter terbaru dari session saat halaman di-refresh
+        //         $(document).ready(function(){
+        //         if(sessionStorage.getItem("hitung")){
+        //             hitung = sessionStorage.getItem("hitung");
+        //             document.getElementById("hitung").innerHTML = hitung;
+        //         }
+        // });
+
+        // setInterval(counterFunc, 1000);
+        // setInterval(resetFunc, 1000);
 
         let reject = document.getElementById('reject');     
 
