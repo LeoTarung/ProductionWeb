@@ -24,9 +24,7 @@ use App\Http\Controllers\FinalInspectionController;
 |
 */
 //====================== MODAL ======================//
-Route::get('/modal-sementara', function () {
-    return view('lhp.modal-casting-sementara');
-});
+
 Route::get('/modal-finalinspection', function () {
     return view('lhp.modal-final-inspection');
 });
@@ -67,7 +65,7 @@ Route::get('/dtmccasting/{mc}', [ApiController::class, 'showmc']);
 //====================== SETTINGS ======================//
 Route::get('/settings', [SettingController::class, 'index'])->name('MainSettings');
 Route::get('/settings/mesincasting/{id}', [SettingController::class, 'showMolten'])->name('MCSettings'); // Mes in Casting
-Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; // 
+Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; //
 
 
 //====================== AREA MELTING ======================//
@@ -84,6 +82,8 @@ Route::post('/lhp-melting/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_
 Route::get('/tv/melting', [MeltingController::class, 'Dashboard_tv']);
 Route::get('/tv', [MeltingController::class, 'testing']);
 
+Route::get('/production/lot-ingot', [MeltingController::class, 'ingot_index']);
+Route::post('/production/lot-ingot/save', [MeltingController::class, 'ingot_simpan']);
 
 //====================== FORKLIFT AREA MELTING ======================//
 Route::get('/lhpforklift', [MeltingController::class, 'prep_forklift'])->name('preparationSupply');
@@ -113,7 +113,7 @@ Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController:
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
 
-Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
+Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection');
 
 // total reject
 Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
