@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LhpCasting;
+use App\Models\LhpCastingRaw;
 use App\Models\LhpMeltingRAW;
 use App\Models\LhpSupplyRAW;
 use App\Models\LhpSupply;
 use App\Models\LhpMelting;
 use Illuminate\Http\Request;
+use App\Models\RejectNG;
 
 class UsableController extends Controller
 {
@@ -83,5 +86,54 @@ class UsableController extends Controller
         $sql1 = LhpSupplyRAW::groupBy(LhpSupplyRAW::raw('no_mc'))->groupBy(LhpSupplyRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, COUNT(jumlah_tapping) as frekuensi, SUM(jumlah_tapping) as total_tapping")->get();
         // dd($sql1);
         return view('lhp.resume-forklift', compact('sql1', 'mesin', 'id'));
+    }
+
+    // ============================= //PARTIAL GAMBAR PART // ================================= //
+    public function gambarPart(UsableController $useable, $id, $reject)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+        $idCasting = LhpCasting::where('id', $id)->first();
+        $ng = $reject;
+
+        // $sql1 = LhpSupplyRAW::groupBy(LhpSupplyRAW::raw('no_mc'))->groupBy(LhpSupplyRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, COUNT(jumlah_tapping) as frekuensi, SUM(jumlah_tapping) as total_tapping")->get();
+        // dd($sql1);
+        return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
+    }
+
+    public function saveReject(UsableController $useable, $id, $reject, $posisi)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+
+        $rejectnew = str_replace('-', ' ', $reject);
+        // dd($rejectnew);
+        $ng = RejectNG::where('jenis_reject', $rejectnew)
+            ->where('posisi', $posisi)
+            ->pluck('id');
+        $integerNG =  (int) $ng->first();;
+        $integerId =  intval($id);
+
+        $idCasting = LhpCasting::where('id', $integerId)->first();
+
+        // Casting Raw
+        LhpCastingRaw::create([
+            'id_lhp' => $integerId,
+            'id_ng' => $integerNG,
+        ]);
+
+        //Update Total NG
+        $total_ng = $idCasting->total_ng;
+        // dd($idCasting->total_ng);
+        LhpCasting::where('id', $integerId)->update([
+            'total_ng' =>  $total_ng + 1
+        ]);
+
+
+        $ng = $reject;
+
+        return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
     }
 }

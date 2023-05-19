@@ -36,6 +36,7 @@
     <div class="container-fluid profile">
 
         <ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
+
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="pills-striko1-tab" data-bs-toggle="pill" data-bs-target="#pills-striko1" type="button" role="tab" aria-controls="pills-striko1" aria-selected="true">Striko-1</button>
             </li>
@@ -587,9 +588,9 @@
             chart.get("colors").set("colors",[
 
             am5.color(0x095256), // total charging
-            am5.color(0xFF0000), // loss
+            am5.color(0xF88F01), // loss
             am5.color(0x3C57E1), // ingot
-            am5.color(0x31FF4B), //series
+            am5.color(0xFF0000), //series
             ]);
 
             // Create axes
@@ -652,7 +653,7 @@
                     valueYField: "loss",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "loss: {valueY}%"
+                        labelText: "Loss: {valueY}%"
                     })
                 }));
                 lossSeries.strokes.template.setAll({
@@ -683,7 +684,7 @@
                     valueYField: "ingot",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "ingot: {valueY} %"
+                        labelText: "Ingot: {valueY} %"
                     })
                 }));
                 ingotSeries.strokes.template.setAll({
@@ -717,7 +718,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -847,7 +848,7 @@
             am5.color(0x095256), // total charging
             am5.color(0xFF0000), // loss
             am5.color(0x3C57E1), // ingot
-            am5.color(0x31FF4B), //series
+            am5.color(0xFF0000), //series
             ]);
 
             // Create axes
@@ -908,7 +909,7 @@
                     valueYField: "loss",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "loss: {valueY}%"
+                        labelText: "Loss: {valueY}%"
                     })
                 }));
                 lossSeries.strokes.template.setAll({
@@ -938,7 +939,7 @@
                     valueYField: "ingot",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "ingot: {valueY} %"
+                        labelText: "Ingot: {valueY} %"
                     })
                 }));
                 ingotSeries.strokes.template.setAll({
@@ -972,7 +973,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -1068,7 +1069,7 @@
             am5.color(0x095256), // total charging
             am5.color(0xFF0000), // loss
             am5.color(0x3C57E1), // ingot
-            am5.color(0x31FF4B), //series
+            am5.color(0xFF0000), //series
             ]);
 
             // Create axes
@@ -1128,7 +1129,7 @@
                     valueYField: "loss",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "loss: {valueY}%"
+                        labelText: "Loss: {valueY}%"
                     })
                 }));
                 lossSeries.strokes.template.setAll({
@@ -1157,7 +1158,7 @@
                     valueYField: "ingot",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "ingot: {valueY} %"
+                        labelText: "Ingot: {valueY} %"
                     })
                 }));
                 ingotSeries.strokes.template.setAll({
@@ -1192,7 +1193,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -1287,7 +1288,7 @@
             am5.color(0x095256), // total charging
             am5.color(0xFF0000), // loss
             am5.color(0x3C57E1), // ingot
-            am5.color(0x31FF4B), //series
+            am5.color(0xFF0000), //series
             ]);
 
             // Create axes
@@ -1347,7 +1348,7 @@
                     valueYField: "loss",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "loss: {valueY}%"
+                        labelText: "Loss: {valueY}%"
                     })
                 }));
                 lossSeries.strokes.template.setAll({
@@ -1376,7 +1377,7 @@
                     valueYField: "ingot",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "ingot: {valueY} %"
+                        labelText: "Ingot: {valueY} %"
                     })
                 }));
                 ingotSeries.strokes.template.setAll({
@@ -1410,7 +1411,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -1476,440 +1477,6 @@
     </script>
     <script>
         //============[' CHART MONTHLY REPORT ']===========//
-        // am5.ready(function() {
-        //     var data = [];
-
-        //     // Create root element
-        //     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-        //     var root = am5.Root.new("chartdiv2_S2");
-
-        //     // Set themes
-        //         // https://www.amcharts.com/docs/v5/concepts/themes/
-        //         root.setThemes([
-        //         am5themes_Animated.new(root)
-        //         ]);
-
-
-        //         // Create chart
-        //         // https://www.amcharts.com/docs/v5/charts/xy-chart/
-        //         var chart = root.container.children.push(am5xy.XYChart.new(root, {
-        //         panX: false,
-        //         panY: false,
-        //         wheelY: "none"
-        //         }));
-
-        //         chart.zoomOutButton.set("forceHidden", true);
-
-        //         // chart.get("colors").set("step", 2);
-
-        //         chart.get("colors").set("colors",[
-
-        //         am5.color(0x095256), // total charging
-        //         am5.color(0xFF0000), // loss
-        //         am5.color(0x3C57E1), // ingot
-        //         am5.color(0x31FF4B), //series
-        //         ]);
-
-        //     // Create axes
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-        //     var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-        //         baseInterval: {
-        //             timeUnit: "month",
-        //             count: 1
-        //         },
-        //         renderer: am5xy.AxisRendererX.new(root, {
-        //             minGridDistance: 50
-        //         }),
-        //         tooltip: am5.Tooltip.new(root, {})
-        //     }));
-
-        //     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-        //             renderer: am5xy.AxisRendererY.new(root, {})
-        //         }));
-
-        //     var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
-        //     chargingAxisRenderer.grid.template.set("forceHidden", true);
-        //     var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-        //         renderer: chargingAxisRenderer,
-        //         tooltip: am5.Tooltip.new(root, {})
-        //     }));
-
-        //     var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
-        //         opposite: true
-        //     });
-        //     ingotAxisRenderer.grid.template.set("forceHidden", true);
-        //     var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-        //         renderer: ingotAxisRenderer,
-        //         // forceHidden: true
-        //         numberFormat: "#'%'"
-        //     }));
-
-        //     // Create series
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-        //     var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
-        //         name: " Total charging",
-        //         xAxis: xAxis,
-        //         yAxis: chargingAxis,
-        //         valueYField: "charging",
-        //         valueXField: "date",
-        //         tooltip: am5.Tooltip.new(root, {
-        //             labelText: "Total Charging: {valueY} kg"
-        //         })
-        //     }));
-        //     chargingSeries.data.processor = am5.DataProcessor.new(root, {
-        //         dateFields: ["date"],
-        //         dateFormat: "yyyy-MM-dd"
-        //     });
-        //     var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
-        //         name: "Loss",
-        //         xAxis: xAxis,
-        //         yAxis: ingotAxis,
-        //         valueYField: "loss",
-        //         valueXField: "date",
-        //         tooltip: am5.Tooltip.new(root, {
-        //             labelText: "loss: {valueY}%"
-        //         })
-        //     }));
-        //     lossSeries.strokes.template.setAll({
-        //         strokeWidth: 2
-        //     });
-        //     // Add circle bullet
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
-        //     lossSeries.bullets.push(function() {
-        //         var graphics = am5.Circle.new(root, {
-        //             strokeWidth: 2,
-        //             radius: 5,
-        //             stroke: lossSeries.get("stroke"),
-        //             fill: root.interfaceColors.get("background"),
-        //         });
-        //         graphics.adapters.add("radius", function(radius, target) {
-        //             return target.dataItem.dataContext.townSize;
-        //         })
-        //         return am5.Bullet.new(root, {
-        //             sprite: graphics
-        //         });
-        //     });
-        //     var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
-        //         name: "Ingot",
-        //         xAxis: xAxis,
-        //         yAxis: ingotAxis,
-        //         valueYField: "ingot",
-        //         valueXField: "date",
-        //         tooltip: am5.Tooltip.new(root, {
-        //             labelText: "ingot: {valueY} %"
-        //         })
-        //     }));
-        //     ingotSeries.strokes.template.setAll({
-        //         strokeWidth: 3
-        //     });
-        //     // Add circle bullet
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
-        //     ingotSeries.bullets.push(function() {
-        //         var graphics = am5.Circle.new(root, {
-        //             width: 5,
-        //             height: 5,
-        //             centerX: am5.p50,
-        //             centerY: am5.p50,
-        //             stroketWidth: 5,
-        //             stroke: ingotSeries.get("stroke"),
-        //             fill: root.interfaceColors.get("background"),
-        //         });
-        //         graphics.adapters.add("radius", function(radius, target) {
-        //             return target.dataItem.dataContext.townSize;
-        //         })
-        //         return am5.Bullet.new(root, {
-        //             sprite: graphics
-        //         });
-        //     });
-
-        //     // TARGET
-        //     var series = chart.series.push(am5xy.LineSeries.new(root, {
-        //             name: "Target",
-        //             xAxis: xAxis,
-        //             yAxis: ingotAxis,
-        //             valueYField: "series",
-        //             valueXField: "date",
-        //             tooltip: am5.Tooltip.new(root, {
-        //                 labelText: "series: 30 %"
-        //             })
-        //         }));
-
-        //         series.strokes.template.setAll({
-        //             strokeDasharray: [8, 5], // untuk garis-garis
-        //             strokeWidth: 2 });
-
-        //     // Add cursor
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-        //     chart.set("cursor", am5xy.XYCursor.new(root, {
-        //         xAxis: xAxis,
-        //         yAxis: chargingAxis
-        //     }));
-
-        //     chargingSeries.data.setAll(data);
-        //     lossSeries.data.setAll(data);
-        //     ingotSeries.data.setAll(data);
-        //     series.data.setAll(data);
-        //     xAxis.data.setAll(data);
-
-        //        // add legend
-        //        var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
-        //             centerX: am5.p50,
-        //             x: am5.p50,
-        //             y: 25
-        //         }));
-        //         legend.data.setAll(chart.series.values);
-
-        //     // Make stuff animate on load
-        //     // https://www.amcharts.com/docs/v5/concepts/animations/
-        //     chargingSeries.appear(1000);
-        //     series.appear(1000);
-        //     chart.appear(1000, 100);
-        //     $(function() {
-        //         let ip_node = location.hostname;
-        //         let socket_port = '1553';
-        //         let socket = io(ip_node + ':' + socket_port);
-        //         socket.on('connection');
-
-        //         socket.on("TahunanStriko-1", (datasql) => {
-        //             var data = [];
-        //             var ChartData = document.getElementById("chartdiv2_S1").innerHTML;
-        //             for (i = 0; i < datasql.length; i++) {
-        //             var obj = {};
-        //             obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
-        //             obj['charging'] = parseInt(datasql[i].total_chargings);
-        //             obj['townSize'] = "12";
-        //             obj['series'] = 30;
-        //             obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
-        //                 0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-        //             obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-        //                 0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
-        //             data.push(obj);
-        //             }
-        //             chargingSeries.data.setAll(data);
-        //             lossSeries.data.setAll(data);
-        //             ingotSeries.data.setAll(data);
-        //             xAxis.data.setAll(data);
-        //         })
-        //     });
-        // });
-
-        // am5.ready(function() {
-        //     var data = [];
-
-        //     // Create root element
-        //     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-        //     var root = am5.Root.new("chartdiv2_S2");
-
-        //     // Set themes
-        //         // https://www.amcharts.com/docs/v5/concepts/themes/
-        //         root.setThemes([
-        //         am5themes_Animated.new(root)
-        //         ]);
-
-
-        //         // Create chart
-        //         // https://www.amcharts.com/docs/v5/charts/xy-chart/
-        //         var chart = root.container.children.push(am5xy.XYChart.new(root, {
-        //         panX: false,
-        //         panY: false,
-        //         wheelY: "none"
-        //         }));
-
-        //         chart.zoomOutButton.set("forceHidden", true);
-
-        //         // chart.get("colors").set("step", 2);
-
-        //         chart.get("colors").set("colors",[
-
-        //         am5.color(0x095256), // total charging
-        //         am5.color(0xFF0000), // loss
-        //         am5.color(0x3C57E1), // ingot
-        //         am5.color(0x31FF4B), //series
-        //         ]);
-
-        //     // Create axes
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-        //     var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-        //         baseInterval: {
-        //             timeUnit: "month",
-        //             count: 1
-        //         },
-        //         renderer: am5xy.AxisRendererX.new(root, {
-        //             minGridDistance: 50
-        //         }),
-        //         tooltip: am5.Tooltip.new(root, {})
-        //     }));
-
-        //     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-        //             renderer: am5xy.AxisRendererY.new(root, {})
-        //         }));
-
-        //     var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
-        //     chargingAxisRenderer.grid.template.set("forceHidden", true);
-        //     var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-        //         renderer: chargingAxisRenderer,
-        //         tooltip: am5.Tooltip.new(root, {})
-        //     }));
-
-        //     var ingotAxisRenderer = am5xy.AxisRendererY.new(root, {
-        //         opposite: true
-        //     });
-        //     ingotAxisRenderer.grid.template.set("forceHidden", true);
-        //     var ingotAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-        //         renderer: ingotAxisRenderer,
-        //         // forceHidden: true
-        //         numberFormat: "#'%'"
-        //     }));
-
-        //     // Create series
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-        //     var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
-        //         name: " Total charging",
-        //         xAxis: xAxis,
-        //         yAxis: chargingAxis,
-        //         valueYField: "charging",
-        //         valueXField: "date",
-        //         tooltip: am5.Tooltip.new(root, {
-        //             labelText: "Total Charging: {valueY} kg"
-        //         })
-        //     }));
-        //     chargingSeries.data.processor = am5.DataProcessor.new(root, {
-        //         dateFields: ["date"],
-        //         dateFormat: "yyyy-MM-dd"
-        //     });
-        //     var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
-        //         name: "Loss",
-        //         xAxis: xAxis,
-        //         yAxis: ingotAxis,
-        //         valueYField: "loss",
-        //         valueXField: "date",
-        //         tooltip: am5.Tooltip.new(root, {
-        //             labelText: "loss: {valueY}%"
-        //         })
-        //     }));
-        //     lossSeries.strokes.template.setAll({
-        //         strokeWidth: 2
-        //     });
-        //     // Add circle bullet
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
-        //     lossSeries.bullets.push(function() {
-        //         var graphics = am5.Circle.new(root, {
-        //             strokeWidth: 2,
-        //             radius: 5,
-        //             stroke: lossSeries.get("stroke"),
-        //             fill: root.interfaceColors.get("background"),
-        //         });
-        //         graphics.adapters.add("radius", function(radius, target) {
-        //             return target.dataItem.dataContext.townSize;
-        //         })
-        //         return am5.Bullet.new(root, {
-        //             sprite: graphics
-        //         });
-        //     });
-        //     var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
-        //         name: "Ingot",
-        //         xAxis: xAxis,
-        //         yAxis: ingotAxis,
-        //         valueYField: "ingot",
-        //         valueXField: "date",
-        //         tooltip: am5.Tooltip.new(root, {
-        //             labelText: "ingot: {valueY} %"
-        //         })
-        //     }));
-        //     ingotSeries.strokes.template.setAll({
-        //         strokeWidth: 3
-        //     });
-        //     // Add circle bullet
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
-        //     ingotSeries.bullets.push(function() {
-        //         var graphics = am5.Circle.new(root, {
-        //             width: 5,
-        //             height: 5,
-        //             centerX: am5.p50,
-        //             centerY: am5.p50,
-        //             stroketWidth: 5,
-        //             stroke: ingotSeries.get("stroke"),
-        //             fill: root.interfaceColors.get("background"),
-        //         });
-        //         graphics.adapters.add("radius", function(radius, target) {
-        //             return target.dataItem.dataContext.townSize;
-        //         })
-        //         return am5.Bullet.new(root, {
-        //             sprite: graphics
-        //         });
-        //     });
-
-        //     // TARGET
-        //     var series = chart.series.push(am5xy.LineSeries.new(root, {
-        //             name: "Target",
-        //             xAxis: xAxis,
-        //             yAxis: ingotAxis,
-        //             valueYField: "series",
-        //             valueXField: "date",
-        //             tooltip: am5.Tooltip.new(root, {
-        //                 labelText: "series: 30 %"
-        //             })
-        //         }));
-
-        //         series.strokes.template.setAll({
-        //             strokeDasharray: [8, 5], // untuk garis-garis
-        //             strokeWidth: 2 });
-
-        //     // Add cursor
-        //     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-        //     chart.set("cursor", am5xy.XYCursor.new(root, {
-        //         xAxis: xAxis,
-        //         yAxis: chargingAxis
-        //     }));
-
-        //     chargingSeries.data.setAll(data);
-        //     lossSeries.data.setAll(data);
-        //     ingotSeries.data.setAll(data);
-        //     series.data.setAll(data);
-        //     xAxis.data.setAll(data);
-
-        //        // add legend
-        //        var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
-        //             centerX: am5.p50,
-        //             x: am5.p50,
-        //             y: 25
-        //         }));
-        //         legend.data.setAll(chart.series.values);
-
-        //     // Make stuff animate on load
-        //     // https://www.amcharts.com/docs/v5/concepts/animations/
-        //     chargingSeries.appear(1000);
-        //     series.appear(1000);
-        //     chart.appear(1000, 100);
-        //     $(function() {
-        //         let ip_node = location.hostname;
-        //         let socket_port = '1553';
-        //         let socket = io(ip_node + ':' + socket_port);
-        //         socket.on('connection');
-
-        //         socket.on("TahunanStriko-2", (datasql) => {
-        //             var data = [];
-        //             var ChartData = document.getElementById("chartdiv2_S2").innerHTML;
-        //             for (i = 0; i < datasql.length; i++) {
-        //             var obj = {};
-        //             obj['date'] = moment(datasql[i].tanggal).format('MM/DD/YY');
-        //             obj['charging'] = parseInt(datasql[i].total_chargings);
-        //             obj['townSize'] = "12";
-        //             obj['series'] = 30;
-        //             obj["loss"] = parseInt(parseFloat(datasql[i].persen_loss).toFixed(
-        //                 0)); //parseFloat(datasql[i].persen_loss).toFixed(2)
-        //             obj["ingot"] = parseInt(parseFloat(datasql[i].persen_ingots).toFixed(
-        //                 0)); //parseFloat(datasql[i].persen_ingots).toFixed(2)
-        //             data.push(obj);
-        //             }
-        //             chargingSeries.data.setAll(data);
-        //             lossSeries.data.setAll(data);
-        //             ingotSeries.data.setAll(data);
-        //             series.data.setAll(data);
-        //             xAxis.data.setAll(data);
-        //         })
-        //     });
-        // });
         am5.ready(function() {
             var data = [];
 
@@ -1941,7 +1508,7 @@
                 am5.color(0x095256), // total charging
                 am5.color(0xFF0000), // loss
                 am5.color(0x3C57E1), // ingot
-                am5.color(0x31FF4B), //series
+                am5.color(0xFF0000), //series
                 ]);
 
             // Create axes
@@ -2001,7 +1568,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY}%"
+                    labelText: "Loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -2030,7 +1597,7 @@
                 valueYField: "ingot",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
+                    labelText: "Ingot: {valueY} %"
                 })
             }));
             ingotSeries.strokes.template.setAll({
@@ -2045,7 +1612,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -2160,7 +1727,7 @@
                 am5.color(0x095256), // total charging
                 am5.color(0xFF0000), // loss
                 am5.color(0x3C57E1), // ingot
-                am5.color(0x31FF4B), //series
+                am5.color(0xFF0000), //series
                 ]);
 
             // Create axes
@@ -2220,7 +1787,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY}%"
+                    labelText: "Loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -2249,7 +1816,7 @@
                 valueYField: "ingot",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
+                    labelText: "Ingot: {valueY} %"
                 })
             }));
             ingotSeries.strokes.template.setAll({
@@ -2264,7 +1831,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -2379,7 +1946,7 @@
                 am5.color(0x095256), // total charging
                 am5.color(0xFF0000), // loss
                 am5.color(0x3C57E1), // ingot
-                am5.color(0x31FF4B), //series
+                am5.color(0xFF0000), //series
                 ]);
 
             // Create axes
@@ -2439,7 +2006,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY}%"
+                    labelText: "Loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -2468,7 +2035,7 @@
                 valueYField: "ingot",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
+                    labelText: "Ingot: {valueY} %"
                 })
             }));
             ingotSeries.strokes.template.setAll({
@@ -2483,7 +2050,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 
@@ -2598,7 +2165,7 @@
                 am5.color(0x095256), // total charging
                 am5.color(0xFF0000), // loss
                 am5.color(0x3C57E1), // ingot
-                am5.color(0x31FF4B), //series
+                am5.color(0xFF0000), //series
                 ]);
 
             // Create axes
@@ -2658,7 +2225,7 @@
                 valueYField: "loss",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "loss: {valueY}%"
+                    labelText: "Loss: {valueY}%"
                 })
             }));
             lossSeries.strokes.template.setAll({
@@ -2687,7 +2254,7 @@
                 valueYField: "ingot",
                 valueXField: "date",
                 tooltip: am5.Tooltip.new(root, {
-                    labelText: "ingot: {valueY} %"
+                    labelText: "Ingot: {valueY} %"
                 })
             }));
             ingotSeries.strokes.template.setAll({
@@ -2721,7 +2288,7 @@
                     valueYField: "series",
                     valueXField: "date",
                     tooltip: am5.Tooltip.new(root, {
-                        labelText: "series: 30 %"
+                        labelText: "Target: 30 %"
                     })
                 }));
 

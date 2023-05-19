@@ -55,14 +55,14 @@ class ApiController extends Controller
         return $exhourly;
     }
 
-    public function showmc($id)
+    public function showmc($mc)
     {
-        $mc = MesinCasting::where('mc', '=', $id)->get();
-        if ($mc != null) {
-            $editmc = $mc;
+        $nama_part = MesinCasting::where('mc', '=', $mc)->get()->all();
+        if ($nama_part != null) {
+            $exuser = $nama_part;
         } else {
-            $editmc = ["NULLAH"];
+            $nama_part = ["NULLAH"];
         }
-        return $editmc;
+        return $nama_part;
     }
 }

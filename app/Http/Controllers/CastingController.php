@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 // use Clockwork\Support\Lumen\Controller;
 use App\Http\Controllers\UsableController;
+use App\Http\Requests\LhpCastingRequest;
+use App\Models\LhpCasting;
+use App\Models\RejectNG;
 use Illuminate\Support\Facades\DB;
 
 use function PHPSTORM_META\elementType;
@@ -164,30 +167,108 @@ class CastingController extends Controller
         $mesin = "CASTING";
         $title = "LHP Casting";
         $nrp = 0;
+        $id = 0;
 
-        return view('lhp.prepare-casting', compact('title', 'shift', 'date', 'mesin', 'nrp'));
+        $line1 = MesinCasting::where('line', 1)->get();
+        $line2 = MesinCasting::where('line', 2)->get();
+        $line3 = MesinCasting::where('line', 3)->get();
+
+        return view('lhp.prepare-casting', compact('title', 'shift', 'date', 'mesin', 'nrp', 'id', 'line1', 'line2', 'line3'));
     }
 
-    public function prep_casting_simpan(UsableController $useable)
+    public function prep_casting_simpan(UsableController $useable, LhpCastingRequest $request)
     {
         $date = $useable->date();
         $shift = $useable->Shift();
         $mesin = "CASTING";
         $title = "LHP Casting";
-        $nrp = 0;
 
-        return view('lhp.prepare-casting', compact('title', 'shift', 'date', 'mesin', 'nrp'));
+        $line1 = MesinCasting::where('line', 1)->get();
+        $line2 = MesinCasting::where('line', 2)->get();
+        $line3 = MesinCasting::where('line', 3)->get();
+
+        $oldPreparation = LhpCasting::where('nrp1', $request->nrp1)
+            ->where('nama_part', $request->nama_part)
+            ->where('id_mesincasting', $request->mc)
+            ->where('tanggal', $date)
+            ->where('shift', $shift)
+            ->first();
+        // dd($oldPreparation->id);
+
+        if ($oldPreparation != null) {
+
+            LhpCasting::where('id', $oldPreparation->id)->update([
+                // 'id_mesincasting' => $request->mc,
+                // 'nrp1' => $request->nrp1,
+                'nrp2' => $request->nrp2,
+                'nrp3' => $request->nrp3,
+                'nrp4' => $request->nrp4,
+                'nrp5' => $request->nrp5,
+                'nrp6' => $request->nrp6
+            ]);
+
+            // dd($request);
+        } else {
+            LhpCasting::create([
+                'id_mesincasting' => $request->mc,
+                'nrp1' => $request->nrp1,
+                'nrp2' => $request->nrp2,
+                'nrp3' => $request->nrp3,
+                'nrp4' => $request->nrp5,
+                'nrp5' => $request->nrp5,
+                'nrp6' => $request->nrp6,
+                'tanggal' => $date,
+                'shift' => $shift,
+                'nomor_dies' =>  $request->dies,
+                'nama_part' => $request->nama_part,
+                'cavity' => $request->cavity,
+            ]);
+        }
+        $id = LhpCasting::where([['tanggal', '=', $date], ['id_mesincasting', '=', $request->mc], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
+
+        return redirect("/lhp-casting/$request->mc/$id->id")->with('behasilditambahkan', 'behasilditambahkan');
+
+
+        // return view('lhp.prepare-casting', compact('title', 'shift', 'date', 'mesin', 'nrp', 'line1', 'line2', 'line3'))->with('behasilditambahkan', 'behasilditambahkan');;
     }
 
 
-    public function lhp_casting(UsableController $useable)
+    public function lhp_casting(UsableController $useable, $mc, $id)
     {
         $date = $useable->date();
         $shift = $useable->Shift();
         $mesin = "CASTING";
         $title = "LHP Casting";
-        $nrp = 0;
+        $idCasting = LhpCasting::where('id', $id)->first();
 
-        return view('lhp.lhp-casting', compact('title', 'shift', 'date', 'mesin', 'nrp'));
+        $sum = 0;
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
+            $reject[] = ${'idReject_' . $i}->jenis_reject;
+        }
+
+        $reject = array_map(function ($value) {
+            return str_replace(' ', '-', $value);
+        }, $reject);
+        // dd($reject);
+
+
+
+        $nrp1 = $idCasting->nrp1 . ' |';
+        $nrp2 = $idCasting->nrp2 . ' |';
+        $nrp3 = $idCasting->nrp3 . ' |';
+        $nrp4 = $idCasting->nrp4 . ' |';
+        $nrp5 = $idCasting->nrp5 . ' |';
+        $nrp6 = $idCasting->nrp6 . ' |';
+
+        $nrp = $nrp1;
+
+        $namaPart = $idCasting->mesincasting->nama_part;
+        // dd($namaPart);
+        //Define Mesin Casting untuk penggunaan Ajax
+        $range_hitung = MesinCasting::where('mc', '<=',  $idCasting->id_mesincasting)->get();
+        $mcfordata = $range_hitung->count();
+        return view('lhp.lhp-casting', compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6', 'mcfordata', 'namaPart', 'reject'));
     }
 }
