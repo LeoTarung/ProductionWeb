@@ -97,35 +97,49 @@ class UsableController extends Controller
 
     function RejectCastingWithStrip()
     {
+
         $sum = 0;
         for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
             $sum = $sum + 72;
-            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
-            $reject[] = ${'idReject_' . $i}->jenis_reject;
-        }
+            ${'idReject_' . $i} = RejectNG::where('casting', 1)
+                ->where('id', $sum)->first();
 
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+        }
         $reject = array_map(function ($value) {
             return str_replace(' ', '-', $value);
         }, $reject);
+
         return $reject;
     }
 
     function RejectCastingWithoutStrip()
     {
-     
 
         $sum = 0;
-        $gtReject = RejectNG::where('final_inspection', 1)->where('jenis_reject', 'OVER PROSES')->get();
-       
-      
-        $array = $gtReject->count();
-        return $array;
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('casting', 1)
+                ->where('id', $sum)->first();
+
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+        }
+
+        return $reject;
+
     }
+
 
     // =================== //REJECT FINAL INSPECTION // ============================ //
 
     function RejectFinalInspectionWithStrip()
     {
+
+
         $sum = 0;
         for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
             $sum = $sum + 72;
@@ -156,7 +170,9 @@ class UsableController extends Controller
                 $reject[] = ${'idReject_' . $i}->jenis_reject;
             }
         }
+
       
+
         return $reject;
     }
 
@@ -166,38 +182,14 @@ class UsableController extends Controller
         $shift = $useable->Shift();
         $date = $useable->date();
 
+
         $idCasting = LhpCasting::where('id', $id)->first();
         $ng = $reject;
 
         return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
     }
 
-    public function saveReject(UsableController $useable, $id, $reject, $posisi)
-    {
-        $rejectnew = str_replace("-", " ", $reject);
-        $ng = RejectNG::where('jenis_reject', $rejectnew)
-            ->where('posisi', $posisi)
-            ->pluck('id');
-        // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
-        $integerNG =  (int) $ng->first();;
-        $integerId =  intval($id);
-
-        $idCasting = LhpCasting::where('id', $integerId)->first();
-        $mc =  $idCasting->id_mesincasting;
-        LhpCastingHours::create([
-            'id_lhp' => $integerId,
-            'id_ng' => $integerNG,
-        ]);
-
-        //Update Total NG
-        $total_ng = $idCasting->total_ng;
-
-        LhpCasting::where('id', $integerId)->update([
-            'total_ng' =>  $total_ng + 1
-        ]);
-
-        return redirect("/lhp-casting/$mc/$id")->with('behasilditambahkan', 'behasilditambahkan');
-    }
+    
 
 
     public function DowntimeCasting(UsableController $useable, $id)

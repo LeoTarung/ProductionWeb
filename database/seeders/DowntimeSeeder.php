@@ -17,19 +17,19 @@ class DowntimeSeeder extends Seeder
         $dt = [
             [
                 'id' => 1,
-                'nama_downtime' => 'Dandory',
+                'nama_downtime' => 'DANDORY',
                 'kategori' => 'terplanning',
                 'casting' => true,
             ],
             [
                 'id' => 2,
-                'nama_downtime' => 'Trial After Dandory',
+                'nama_downtime' => 'TRIAL AFTER DANDORY',
                 'kategori' => 'terplanning',
                 'casting' => true,
             ],
             [
                 'id' => 3,
-                'nama_downtime' => 'Trial Engineering',
+                'nama_downtime' => 'TRIAL ENGINEERING',
                 'kategori' => 'terplanning',
                 'casting' => true,
             ],
@@ -41,7 +41,7 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'nama_downtime' => 'Preventive',
+                'nama_downtime' => 'PREVENTIVE',
                 'kategori' => 'terplanning',
                 'casting' => true,
             ],
@@ -53,54 +53,54 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 7,
-                'nama_downtime' => 'Lay Off',
+                'nama_downtime' => 'LAY OFF',
                 'kategori' => 'terplanning',
                 'casting' => true,
             ],
             [
                 'id' => 8,
-                'nama_downtime' => 'Cleaning KF',
+                'nama_downtime' => 'CLEANING KF',
                 'kategori' => 'terplanning',
                 'casting' => true,
             ],
             [
                 'id' => 9,
-                'nama_downtime' => 'Molten Habis',
+                'nama_downtime' => 'MOLTEN HABIS',
                 'kategori' => 'material',
                 'casting' => true,
             ],
 
             [
                 'id' => 10,
-                'nama_downtime' => 'Kereta Kosong',
+                'nama_downtime' => 'KERETA KOSONG',
                 'kategori' => 'material',
                 'casting' => true,
             ],
 
             [
                 'id' => 11,
-                'nama_downtime' => 'Basket',
+                'nama_downtime' => 'BASKET',
                 'kategori' => 'material',
                 'casting' => true,
             ],
 
             [
                 'id' => 12,
-                'nama_downtime' => 'Molten Kepenuhan',
+                'nama_downtime' => 'MOLTEN KEPENUHAN',
                 'kategori' => 'material',
                 'casting' => true,
             ],
 
             [
                 'id' => 13,
-                'nama_downtime' => 'Molten Drop ',
+                'nama_downtime' => 'MOLTEN DROP',
                 'kategori' => 'material',
                 'casting' => true,
             ],
 
             [
                 'id' => 14,
-                'nama_downtime' => 'Kuras Molten',
+                'nama_downtime' => 'KURAS MOLTEN',
                 'kategori' => 'material',
                 'casting' => true,
             ],
@@ -238,19 +238,19 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 37,
-                'nama_downtime' => 'SELANG ANGIN BOCOR',
+                'nama_downtime' => 'ANGIN BOCOR',
                 'kategori' => 'mesin',
                 'casting' => true,
             ],
             [
                 'id' => 38,
-                'nama_downtime' => 'SELANG HIDROLIK BOCOR',
+                'nama_downtime' => 'HIDROLIK BOCOR',
                 'kategori' => 'mesin',
                 'casting' => true,
             ],
             [
                 'id' => 39,
-                'nama_downtime' => 'SETTING SENSOR PRODUCT',
+                'nama_downtime' => 'SETTING SENSOR ',
                 'kategori' => 'mesin',
                 'casting' => true,
             ],
@@ -274,7 +274,7 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 43,
-                'nama_downtime' => 'TRIMMING PRES TROUBLE',
+                'nama_downtime' => 'TRIMMING PRES ',
                 'kategori' => 'mesin',
                 'casting' => true,
             ],
@@ -292,7 +292,7 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 46,
-                'nama_downtime' => 'TROUBLE ROBOT SPRAY',
+                'nama_downtime' => 'ROBOT SPRAY',
                 'kategori' => 'mesin',
                 'casting' => true,
             ],
@@ -304,7 +304,7 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 48,
-                'nama_downtime' => 'BERSIH-BERSIH SCRAP DIES',
+                'nama_downtime' => '5R SCRAP DIES',
                 'kategori' => 'dies',
                 'casting' => true,
             ],
@@ -449,7 +449,7 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 72,
-                'nama_downtime' => 'REPAIR DIES CACAT',
+                'nama_downtime' => 'REPAIR DIES',
                 'kategori' => 'dies',
                 'casting' => true,
             ],
@@ -497,13 +497,13 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 80,
-                'nama_downtime' => 'GATE SERING PATAH',
+                'nama_downtime' => 'GATE PATAH',
                 'kategori' => 'proses',
                 'casting' => true,
             ],
             [
                 'id' => 81,
-                'nama_downtime' => 'JIG_TOOL REPAIR',
+                'nama_downtime' => 'JIG TOOL REPAIR',
                 'kategori' => 'proses',
                 'casting' => true,
             ],
@@ -557,7 +557,7 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 90,
-                'nama_downtime' => 'SETTING SENSOR PRODUCT',
+                'nama_downtime' => 'SETTING SENSOR',
                 'kategori' => 'proses',
                 'casting' => true,
             ],
