@@ -307,8 +307,7 @@ li a {
 }
 
 /* Navbar Media Query Final Inspection */
-/* gajadi */
-@media only screen and (max-width: 1000in) {
+@media only screen and (max-width: 800in) {
     /* Navbar */
 nav{
     margin: auto;
@@ -775,62 +774,45 @@ a .font-forklift10 {
         margin-right: 15px;
     }
 }
+/* Samsung Galaxy Tablet */
 
-/* final inspection */
-
-@media only screen and (max-height: 1200px) {
+@media only screen and (max-width: 1000px) {
     /* Nav */
     nav {
-        height: 50px;
+        height: 60px;
     }
     .navbarimg {
-        height: 30px;
-        width: 100px;
+        height: 40px;
+        width: 155px;
     }
 
     .rectangle-logo {
-        height: 35px;
-        margin-top: 0.5rem;
-        margin-left: -30px;
+        height: 42px;
+        margin-top: 0.25rem;
     }
 
     .shift {
-        width: 60px;
-        font-size:medium;
-        margin-top: 0.5rem;
-
+        width: 115px;
+        font-size: x-large;
     }
 
     #MyClockDisplay {
-        width: 110px;
-        font-size: 15px;
+        width: 140px;
+        font-size: 20px;
     }
 
     .nrp {
-        margin-top: -5px;
         width: 100%;
     }
 
     .machine {
-        height: 55px;
-        width: 115px;
+        height: 50px;
     }
 
     .mesin {
-        font-size: 15px;
-        text-align: center;
-        margin: 0px 0px 0px -10px;
+        font-size: 19px;
+        margin-top: 3px;
     }
-
-    .information {
-        margin: 2px 0px 0px -8px;
-    }
-    
-    .information i {
-        color: white;
-    }
-    
-/* sampai sini final ins */
 
     /* Prep Melting */
     a .big-font {
@@ -950,4 +932,3 @@ area:active {
 
 
 /* SETTINGS */
-

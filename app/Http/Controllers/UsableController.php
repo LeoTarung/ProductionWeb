@@ -250,91 +250,47 @@ class UsableController extends Controller
 
     function RejectCastingWithStrip()
     {
+
         $sum = 0;
         for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
             $sum = $sum + 72;
-            ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
-            $reject[] = ${'idReject_' . $i}->jenis_reject;
-        }
+            ${'idReject_' . $i} = RejectNG::where('casting', 1)
+                ->where('id', $sum)->first();
 
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+        }
         $reject = array_map(function ($value) {
             return str_replace(' ', '-', $value);
         }, $reject);
+
         return $reject;
     }
 
     function RejectCastingWithoutStrip()
     {
-        // $sum = 0;
-        // for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
-        //     $sum = $sum + 72;
-        //     ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
-        //     $reject[] = ${'idReject_' . $i}->jenis_reject;
-        // }
-
-        // $reject = array_map(function ($value) {
-        //     return str_replace(' ', '-', $value);
-        // }, $reject);
-        // return $reject;
-
         $sum = 0;
-        $gtReject = RejectNG::where('final_inspection', 1)->where('jenis_reject', 'OVER PROSES')->get();
-
-        // foreach ($getReject as $row) {
-        //     $array[] = $row->jenis_reject;
-        // }
-
-        //    for ($i = 1; $i <=  $getReject->count() / 72; $i++) {
-        //     $sum = $sum + 72;
-        //     ${'idReject_' . $i} = RejectNG::where('id', $sum)->first();
-        //     $reject[] = ${'idReject_' . $i}->jenis_reject;
-        // }
-        $array = $gtReject->count();
-        return $array;
-    }
-
-    // =================== //REJECT FINAL INSPECTION // ============================ //
-
-    function RejectFinalInspectionWithStrip()
-    {
-        //     $sum = 0;
-        //     for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
-        //     $sum = $sum + 72;
-        //     ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
-        //         ->where('id', $sum)->first();
-
-        //     // Check if ${'idReject_' . $i} is not null before accessing its property
-        //     if (!is_null(${'idReject_' . $i})) {
-        //         $reject[] = ${'idReject_' . $i}->jenis_reject;
-        //     }
-        //     }
-        // $reject = array_map(function ($value) {
-        //     return str_replace(' ', '-', $value);
-        // }, $reject);
-        // return $reject;
-        $sum = 0;
-        $getReject = RejectNG::where('final_inspection', 1)->get();
-
-        for ($i = 1; $i <= $getReject->count() / 72; $i++) {
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
             $sum = $sum + 72;
-            ${'idReject_' . $i} = $getReject->where('id', $sum)->first();
+            ${'idReject_' . $i} = RejectNG::where('casting', 1)
+                ->where('id', $sum)->first();
 
             if (!is_null(${'idReject_' . $i})) {
                 $reject[] = ${'idReject_' . $i}->jenis_reject;
             }
         }
 
-        $reject = array_map(function ($value) {
-            return str_replace(' ', '-', $value);
-        }, $reject);
-
         return $reject;
     }
 
-    function RejectFinalInspectionWithoutStrip()
+
+    // =================== //REJECT FINAL INSPECTION // ============================ //
+
+    function RejectFinalInspectionWithStrip()
     {
+
         $sum = 0;
-        $getReject = RejectNG::where('final_inspection', 1)->get();
         for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
             $sum = $sum + 72;
             ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
@@ -345,37 +301,28 @@ class UsableController extends Controller
             }
         }
         $reject = array_map(function ($value) {
-            return str_replace(' ', ' ', $value);
+            return str_replace(' ', '-', $value);
         }, $reject);
-        // $array = $getReject;
+
         return $reject;
-        // $sum = 0;
-        // for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
-        // $sum = $sum + 72;
-        // ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
-        //     ->where('id', $sum)->first();
-
-        // // Check if ${'idReject_' . $i} is not null before accessing its property
-        // if (!is_null(${'idReject_' . $i})) {
-        //     $reject[] = ${'idReject_' . $i}->jenis_reject;
-        // }
-        // }
-
-        // // $reject = array_map(function ($value) {
-        // //     return str_replace(' ', '-', $value);
-        // // }, $reject);
-        // return $reject;
     }
 
+    function RejectFinalInspectionWithoutStrip()
+    {
+        $sum = 0;
+        // $getReject = RejectNG::where('final_inspection', 1)->get();
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
+                ->where('id', $sum)->first();
 
-    // function DowntimeWithoutStrip($dtName)
-    // {
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+        }
 
-    //     $dtName = array_map(function ($value) {
-    //         return str_replace(' ', '-', $value);
-    //     }, $dtName);
-    //     return $dtName;
-    // }
+        return $reject;
+    }
 
 
 

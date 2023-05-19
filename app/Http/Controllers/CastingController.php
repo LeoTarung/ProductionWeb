@@ -241,8 +241,11 @@ class CastingController extends Controller
     {
         $date = $useable->date();
         $shift = $useable->Shift();
+        // $test =  $useable->RejectFinalInspectionWithStrip();
+        // dd($test);
         $mesin = "CASTING";
         $title = "LHP Casting";
+        $datamc = MesinCasting::where('mc', $mc)->first();
         $idCasting = LhpCasting::where('id', $id)->first();
         $reject = collect($useable->RejectCastingWithStrip());
         $rejectforView = collect($useable->RejectCastingWithoutStrip());
@@ -259,7 +262,7 @@ class CastingController extends Controller
         foreach ($arrayDt as $row) {
             $listIdDt[] = $row->id;
         }
-        // dd($listDt);
+        // dd($reject);
         foreach ($listIdDt as $row) {
             // $waktu_dt[] =  collect(DB::select('SELECT SUM(waktu_dt) AS Total_waktu FROM lhp_casting_raw WHERE id_lhp = ? AND id_dt = ?', [$id, $row]))->first()->Total_waktu;
             $listWaktu_dt[] =  LhpCastingHours::where('id_lhp', $id)->where('id_dt', $row)->select('td_0', 'td_1', 'td_2', 'td_3', 'td_4', 'td_5', 'td_6', 'td_7', 'td_8', 'td_9', 'td_10', 'td_11', 'td_12', 'td_13', 'td_14', 'td_15', 'td_16', 'td_17', 'td_18', 'td_19', 'td_20', 'td_21', 'td_22', 'td_23')
@@ -337,20 +340,192 @@ class CastingController extends Controller
         $range_hitung = MesinCasting::where('mc', '<=',  $idCasting->id_mesincasting)->get();
         $mcfordata = $range_hitung->count();
         $jumlahReject = $reject->count();
-        // dd($jumlahReject);
+        // dd($datamc);
         return view(
             'lhp.lhp-casting',
-            compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6', 'mcfordata', 'namaPart', 'reject', 'rejectforView', 'jumlahReject', 'downtime', 'waktu_dt', 'countDtMat', 'countDtMsn', 'countDtDies', 'countDtPro', 'countDtPlan', 'countdt', 'sumDtMat', 'sumDtMsn', 'sumDtPro', 'sumDtDies', 'sumDtPlan')
+            compact('idCasting', 'title', 'shift', 'date', 'mesin', 'id', 'datamc', 'mc', 'nrp', 'nrp1', 'nrp2', 'nrp3', 'nrp4', 'nrp5', 'nrp6', 'mcfordata', 'namaPart', 'reject', 'rejectforView', 'jumlahReject', 'downtime', 'waktu_dt', 'countDtMat', 'countDtMsn', 'countDtDies', 'countDtPro', 'countDtPlan', 'countdt', 'sumDtMat', 'sumDtMsn', 'sumDtPro', 'sumDtDies', 'sumDtPlan')
         );
     }
 
     public function getTarget($id)
     {
         $idlhp = LhpCasting::where('id', $id)->get();
-        $data = LhpCasting::pluck('target');
-        // dd($data);
+        $data =  $idlhp->pluck('target');
+        // dd($idlhp);
         return response()->json($data);
     }
+
+    public function setTarget($id)
+    {
+        $idlhp = LhpCasting::where('id', $id)->first();
+        $target = $idlhp->target;
+        // dd($target);
+        $idlhp->update([
+            'target' => $target + 1
+        ]);
+    }
+
+    public function updateTotalProduksi(Usablecontroller $usable, $id)
+    {
+        $idlhp = LhpCasting::where('id', $id)->first();
+        $date = $usable->date();
+
+        $mc = MesinCasting::where('mc', $idlhp->id_mesincasting)->first();
+        // dd($mc->total_produksi);
+
+        //---- Notes skalian update total OK  ----//
+        $idlhp->update([
+            'total_produksi' => $mc->total_produksi,
+            'total_ok' => $mc->total_produksi - $idlhp->total_ng
+        ]);
+
+        $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
+        $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
+
+
+        $idlhpHours = LhpCastingHours::where('id_lhp', $id)
+            ->whereBetween('created_at', [$start_date, $end_date])
+            ->where('id_ng', null)
+            ->where('id_dt', null)
+            ->first();
+
+
+        if ($idlhpHours == null) {
+            LhpCastingHours::create([
+                'id_lhp' => $id,
+            ]);
+        } else {
+        }
+        // dd($idlhpHours);
+        switch ($currentTime = date("H:i")) {
+                // SHIFT 1
+            case $currentTime >= "00:00" && $currentTime < "01:00":
+                $idlhpHours->update([
+                    'tp_0' => $mc->total_produksi
+                ]);
+                break;
+            case $currentTime >= "01:00" && $currentTime < "02:00":
+                $idlhpHours->update([
+                    'tp_1' => $mc->total_produksi - $idlhpHours->tp_0
+                ]);
+                break;
+            case $currentTime >= "02:00" && $currentTime < "03:00":
+                $idlhpHours->update([
+                    'tp_2' => $mc->total_produksi - ($idlhpHours->tp_0 + $idlhpHours->tp_1)
+                ]);
+                break;
+            case $currentTime >= "03:00" && $currentTime < "04:00":
+                $idlhpHours->update([
+                    'tp_3' => $mc->total_produksi - ($idlhpHours->tp_0 + $idlhpHours->tp_1 + $idlhpHours->tp_2)
+                ]);
+                break;
+            case $currentTime >= "04:00" && $currentTime < "05:00":
+                $idlhpHours->update([
+                    'tp_4' => $mc->total_produksi - ($idlhpHours->tp_0 + $idlhpHours->tp_1 + $idlhpHours->tp_2 + $idlhpHours->tp_3)
+                ]);
+                break;
+            case $currentTime >= "05:00" && $currentTime < "06:00":
+                $idlhpHours->update([
+                    'tp_5' => $mc->total_produksi - ($idlhpHours->tp_0 + $idlhpHours->tp_1 + $idlhpHours->tp_2 + $idlhpHours->tp_3 + $idlhpHours->tp_4)
+                ]);
+                break;
+            case $currentTime >= "06:00" && $currentTime < "07:09":
+                $idlhpHours->update([
+                    'tp_6' => $mc->total_produksi - ($idlhpHours->tp_0 + $idlhpHours->tp_1 + $idlhpHours->tp_2 + $idlhpHours->tp_3 + $idlhpHours->tp_4 + $idlhpHours->tp_5)
+                ]);
+                break;
+
+                // ---- SHIFT 2 ----//
+            case $currentTime >= "07:10" && $currentTime < "08:00":
+                $idlhpHours->update([
+                    'tp_7' => $mc->total_produksi
+                ]);
+                break;
+            case $currentTime >= "08:00" && $currentTime < "09:00":
+                $idlhpHours->update([
+                    'tp_8' => $mc->total_produksi - $idlhpHours->tp_7
+                ]);
+                break;
+            case $currentTime >= "09:00" && $currentTime < "10:00":
+                $idlhpHours->update([
+                    'tp_9' => $mc->total_produksi - ($idlhpHours->tp_7 + $idlhpHours->tp_8)
+                ]);
+                break;
+            case $currentTime >= "10:00" && $currentTime < "11:00":
+                $idlhpHours->update([
+                    'tp_10' => $mc->total_produksi - ($idlhpHours->tp_7 + $idlhpHours->tp_8 + $idlhpHours->tp_9)
+                ]);
+                break;
+            case $currentTime >= "11:00" && $currentTime < "12:00":
+                $idlhpHours->update([
+                    'tp_11' => $mc->total_produksi - ($idlhpHours->tp_7 + $idlhpHours->tp_8 + $idlhpHours->tp_9 + $idlhpHours->tp_10)
+                ]);
+                break;
+            case $currentTime >= "12:00" && $currentTime < "13:00":
+                $idlhpHours->update([
+                    'tp_12' => $mc->total_produksi - ($idlhpHours->tp_7 + $idlhpHours->tp_8 + $idlhpHours->tp_9 + $idlhpHours->tp_10 + $idlhpHours->tp_11)
+                ]);
+                break;
+            case $currentTime >= "13:00" && $currentTime < "14:00":
+                $idlhpHours->update([
+                    'tp_13' => $mc->total_produksi - ($idlhpHours->tp_7 + $idlhpHours->tp_8 + $idlhpHours->tp_9 + $idlhpHours->tp_10 + $idlhpHours->tp_11 + $idlhpHours->tp_12)
+                ]);
+                break;
+            case $currentTime >= "14:00" && $currentTime < "15:00":
+                $idlhpHours->update([
+                    'tp_14' => $mc->total_produksi - ($idlhpHours->tp_7 + $idlhpHours->tp_8 + $idlhpHours->tp_9 + $idlhpHours->tp_10 + $idlhpHours->tp_11 + $idlhpHours->tp_12 + $idlhpHours->tp_13)
+                ]);
+                break;
+            case $currentTime >= "15:00" && $currentTime < "16:00":
+                $idlhpHours->update([
+                    'tp_15' => $mc->total_produksi - ($idlhpHours->tp_7 + $idlhpHours->tp_8 + $idlhpHours->tp_9 + $idlhpHours->tp_10 + $idlhpHours->tp_11 + $idlhpHours->tp_12 + $idlhpHours->tp_13 + $idlhpHours->tp_14)
+                ]);
+                break;
+
+                // ---- SHIFT 3 ----//
+            case $currentTime >= "16:00" && $currentTime < "17:00":
+                $idlhpHours->update([
+                    'tp_16' => $mc->total_produksi
+                ]);
+                break;
+            case $currentTime >= "17:00" && $currentTime < "18:00":
+                $idlhpHours->update([
+                    'tp_17' => $mc->total_produksi - $idlhpHours->tp_16
+                ]);
+                break;
+            case $currentTime >= "18:00" && $currentTime < "19:00":
+                $idlhpHours->update([
+                    'tp_18' => $mc->total_produksi - ($idlhpHours->tp_16 + $idlhpHours->tp_17)
+                ]);
+                break;
+            case $currentTime >= "19:00" && $currentTime < "20:00":
+                $idlhpHours->update([
+                    'tp_19' => $mc->total_produksi - ($idlhpHours->tp_16 + $idlhpHours->tp_17 + $idlhpHours->tp_18)
+                ]);
+                break;
+            case $currentTime >= "20:00" && $currentTime < "21:00":
+                $idlhpHours->update([
+                    'tp_20' => $mc->total_produksi - ($idlhpHours->tp_16 + $idlhpHours->tp_17 + $idlhpHours->tp_18 + $idlhpHours->tp_19)
+                ]);
+                break;
+            case $currentTime >= "21:00" && $currentTime < "22:00":
+                $idlhpHours->update([
+                    'tp_21' => $mc->total_produksi - ($idlhpHours->tp_16 + $idlhpHours->tp_17 + $idlhpHours->tp_18 + $idlhpHours->tp_19 + $idlhpHours->tp_20)
+                ]);
+                break;
+            case $currentTime >= "22:00" && $currentTime < "23:00":
+                $idlhpHours->update([
+                    'tp_22' => $mc->total_produksi - ($idlhpHours->tp_16 + $idlhpHours->tp_17 + $idlhpHours->tp_18 + $idlhpHours->tp_19 + $idlhpHours->tp_20 + $idlhpHours->tp_21)
+                ]);
+                break;
+            case $currentTime >= "23:00" && $currentTime < "00:00":
+                $idlhpHours->update([
+                    'tp_23' => $mc->total_produksi - ($idlhpHours->tp_16 + $idlhpHours->tp_17 + $idlhpHours->tp_18 + $idlhpHours->tp_19 + $idlhpHours->tp_20 + $idlhpHours->tp_21 + $idlhpHours->tp_22)
+                ]);
+                break;
+        }
+    }
+
 
     public function totalReject(Usablecontroller $usable, $id_lhp)
     {
@@ -380,8 +555,6 @@ class CastingController extends Controller
         // dd($data);
         return response()->json($data);
     }
-
-
 
     public function jsonDowntime(Usablecontroller $usable, $id_lhp)
     {
@@ -1653,5 +1826,14 @@ class CastingController extends Controller
         ]);
 
         return redirect("/lhp-casting/$mc/$id")->with('behasilditambahkan', 'behasilditambahkan');
+    }
+
+    public function test(UsableController $usable)
+    {
+        // $reject = $usable->RejectFinalInspectionWithStrip();
+
+
+
+        return view('lhp.test');
     }
 }
