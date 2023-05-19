@@ -13,14 +13,15 @@
                                 {{-- <div class="form-floating"> --}}
                                 <div class="form-group form-group-sm">
                                     {{-- <label for="nrp1" class="">N R P - 1</label> --}}
-                                    <input type="number" class="form-control border-dark" id="nrp1"
-                                        name="nrp1" placeholder="N R P - 1" required>                                </div>
+                                    <input type="number" class="form-control border-dark" id="nrp1" name="nrp1"
+                                        placeholder="N R P - 1" required>
+                                </div>
                             </div>
 
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="text" class="form-control border-dark" id="nama1"
-                                        name="nama1" placeholder="N A M A - 1" required readonly>
+                                    <input type="text" class="form-control border-dark" id="nama1" name="nama1"
+                                        placeholder="N A M A - 1" required readonly>
                                     {{-- <label for="nama1" class="">N A M A - 1</label> --}}
                                 </div>
                             </div>
@@ -28,15 +29,15 @@
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="number" class="form-control border-dark" id="nrp2"
-                                        name="nrp2" placeholder="N R P - 2">
+                                    <input type="number" class="form-control border-dark" id="nrp2" name="nrp2"
+                                        placeholder="N R P - 2">
                                     {{-- <label for="nrp2" class="">N R P - 2</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="text" class="form-control border-dark" id="nama2"
-                                        name="nama2" placeholder="N A M A - 2" readonly>
+                                    <input type="text" class="form-control border-dark" id="nama2" name="nama2"
+                                        placeholder="N A M A - 2" readonly>
                                     {{-- <label for="nama2" class="">N A M A - 2</label> --}}
                                 </div>
                             </div>
@@ -44,15 +45,15 @@
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
                                 <div class="form-group form-group-sm-">
-                                    <input type="number" class="form-control border-dark" id="nrp3"
-                                        name="nrp3" placeholder="N R P - 3">
+                                    <input type="number" class="form-control border-dark" id="nrp3" name="nrp3"
+                                        placeholder="N R P - 3">
                                     {{-- <label for="nrp3" class="">N R P - 3</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="text" class="form-control border-dark" id="nama3"
-                                        name="nama3" placeholder="N A M A - 3" readonly>
+                                    <input type="text" class="form-control border-dark" id="nama3" name="nama3"
+                                        placeholder="N A M A - 3" readonly>
                                     {{-- <label for="nama3" class="">N A M A - 3</label> --}}
                                 </div>
                             </div>
@@ -60,15 +61,15 @@
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="number" class="form-control border-dark" id="nrp4"
-                                        name="nrp4" placeholder="N R P - 4">
+                                    <input type="number" class="form-control border-dark" id="nrp4" name="nrp4"
+                                        placeholder="N R P - 4">
                                     {{-- <label for="nrp4" class="">N R P - 4</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="text" class="form-control border-dark" id="nama4"
-                                        name="nama4" placeholder="N A M A - 4" readonly>
+                                    <input type="text" class="form-control border-dark" id="nama4" name="nama4"
+                                        placeholder="N A M A - 4" readonly>
                                     {{-- <label for="nama4" class="">N A M A - 4</label> --}}
                                 </div>
                             </div>
@@ -76,15 +77,15 @@
                         <div class="row mt-3 ms-3">
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="number" class="form-control border-dark" id="nrp5"
-                                        name="nrp5" placeholder="N R P - 5">
+                                    <input type="number" class="form-control border-dark" id="nrp5" name="nrp5"
+                                        placeholder="N R P - 5">
                                     {{-- <label for="nrp5" class="">N R P - 5</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="text" class="form-control border-dark" id="nama5"
-                                        name="nama5" placeholder="N A M A - 5" readonly>
+                                    <input type="text" class="form-control border-dark" id="nama5" name="nama5"
+                                        placeholder="N A M A - 5" readonly>
                                     {{-- <label for="nama5" class="">N A M A - 5</label> --}}
                                 </div>
                             </div>
@@ -92,15 +93,15 @@
                         <div class="row my-3 ms-3">
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="number" class="form-control border-dark" id="nrp6"
-                                        name="nrp6" placeholder="N R P - 6">
+                                    <input type="number" class="form-control border-dark" id="nrp6" name="nrp6"
+                                        placeholder="N R P - 6">
                                     {{-- <label for="nrp6" class="">N R P - 6</label> --}}
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group form-group-sm">
-                                    <input type="text" class="form-control border-dark" id="nama6"
-                                        name="nama6" placeholder="N A M A - 6" readonly>
+                                    <input type="text" class="form-control border-dark" id="nama6" name="nama6"
+                                        placeholder="N A M A - 6" readonly>
                                     {{-- <label for="nama6" class="">N A M A - 6</label> --}}
                                 </div>
                             </div>
@@ -127,12 +128,12 @@
                             </div>
                             <div class="row mt-3 ms-2">
                                 <div class="col-auto">Pilih MC:</div>
-                                <div class="col-2"><input type="number" class="form-control border-dark fw-bold "
-                                        id="mc" name="mc" readonly></div>
+                                {{-- <div class="col-2"><input type="number" class="form-control border-dark fw-bold "
+                                        id="mc" name="mc" readonly></div> --}}
                                 <div class="col-7">
                                     <div class="form-floating ">
-                                        <button class="btn btn-secondary dropdown-toggle " type="button" id="btn_mc"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn btn-outline-secondary fw-bold dropdown-toggle " type="button"
+                                            id="btn_mc" data-bs-toggle="dropdown" aria-expanded="false">
                                             MC
                                         </button>
                                         <div class="dropdown">
@@ -237,6 +238,8 @@
             }
         }
 
+        let buttonmc = document.getElementById('btn_mc');
+
         function mesin(id) {
             $.ajax({
                 method: "GET",
@@ -244,6 +247,7 @@
                 url: "{{ url('/dtmccasting') }}" + "/" + id,
                 success: function(data) {
                     // console.log(data);
+                    buttonmc.innerHTML = data[0].mc;
                     $("#mc").val(data[0].mc);
                     $("#nama_part").val(data[0].nama_part);
                     $("#cavity").val(data[0].cavity);

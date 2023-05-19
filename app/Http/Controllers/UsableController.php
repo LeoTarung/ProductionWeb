@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\LhpCasting;
-use App\Models\LhpCastingRaw;
+use App\Models\LhpCastingHours;
+use App\Models\LhpFinalInspection;
+use App\Models\LhpFinalInspectionRaw;
 use App\Models\LhpMeltingRAW;
 use App\Models\LhpSupplyRAW;
+use App\Models\MesinCasting;
 use App\Models\LhpSupply;
 use App\Models\LhpMelting;
 use Illuminate\Http\Request;
 use App\Models\RejectNG;
-
+use LhpCastingHoursTable;
+use Illuminate\Support\FacadesDB;
 class UsableController extends Controller
 {
 
@@ -88,52 +92,157 @@ class UsableController extends Controller
         return view('lhp.resume-forklift', compact('sql1', 'mesin', 'id'));
     }
 
-    // ============================= //PARTIAL GAMBAR PART // ================================= //
+    // ============================= //REJECT // ================================= //
+    // =================== //REJECT CASTING // ============================ //
+
+    function RejectCastingWithStrip()
+    {
+
+        $sum = 0;
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('casting', 1)
+                ->where('id', $sum)->first();
+
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+        }
+        $reject = array_map(function ($value) {
+            return str_replace(' ', '-', $value);
+        }, $reject);
+
+        return $reject;
+    }
+
+    function RejectCastingWithoutStrip()
+    {
+
+        $sum = 0;
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('casting', 1)
+                ->where('id', $sum)->first();
+
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+        }
+
+        return $reject;
+
+    }
+
+
+    // =================== //REJECT FINAL INSPECTION // ============================ //
+
+    function RejectFinalInspectionWithStrip()
+    {
+
+
+        $sum = 0;
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
+                ->where('id', $sum)->first();
+
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+        }
+        $reject = array_map(function ($value) {
+            return str_replace(' ', '-', $value);
+        }, $reject);
+   
+        return $reject;
+    }
+
+    function RejectFinalInspectionWithoutStrip()
+    {
+        $sum = 0;
+        // $getReject = RejectNG::where('final_inspection', 1)->get();
+        for ($i = 1; $i <= RejectNG::count() / 72; $i++) {
+            $sum = $sum + 72;
+            ${'idReject_' . $i} = RejectNG::where('final_inspection', 1)
+                ->where('id', $sum)->first();
+
+            if (!is_null(${'idReject_' . $i})) {
+                $reject[] = ${'idReject_' . $i}->jenis_reject;
+            }
+        }
+
+      
+
+        return $reject;
+    }
+
+    // ============================= //PARTIAL GAMBAR PART  CASTING// ================================= //
     public function gambarPart(UsableController $useable, $id, $reject)
     {
         $shift = $useable->Shift();
         $date = $useable->date();
 
+
         $idCasting = LhpCasting::where('id', $id)->first();
         $ng = $reject;
 
-        // $sql1 = LhpSupplyRAW::groupBy(LhpSupplyRAW::raw('no_mc'))->groupBy(LhpSupplyRAW::raw('hour(jam)'))->where([['tanggal', '=', $date], ['forklift', '=', $mesin]])->selectRaw("tanggal, jam, furnace, no_mc as Mesin_Casting, jumlah_tapping, COUNT(jumlah_tapping) as frekuensi, SUM(jumlah_tapping) as total_tapping")->get();
-        // dd($sql1);
         return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
     }
 
-    public function saveReject(UsableController $useable, $id, $reject, $posisi)
+    
+
+
+    public function DowntimeCasting(UsableController $useable, $id)
     {
         $shift = $useable->Shift();
         $date = $useable->date();
 
+        $idCasting = LhpCasting::where('id', $id)->first();
+        // $ng = $reject;
 
-        $rejectnew = str_replace('-', ' ', $reject);
-        // dd($rejectnew);
+        return view('lhp.modal-casting-downtime', compact('idCasting'));
+    }
+
+    // ============================= //PARTIAL GAMBAR PART FINAL INSPECTION// ================================= //
+    public function gambarPartFinal(UsableController $useable, $id, $reject)
+    {
+        $shift = $useable->Shift();
+        $date = $useable->date();
+
+        $lhp = LhpFinalInspection::where('id', $id)->first();
+        $ng = $reject;
+
+        return view('lhp.modal-final-inspection', compact('lhp', 'ng'));
+    }
+
+    public function saveRejectFinal(UsableController $useable, $id, $reject, $posisi)
+    {
+        $rejectnew = str_replace("-", " ", $reject);
         $ng = RejectNG::where('jenis_reject', $rejectnew)
             ->where('posisi', $posisi)
             ->pluck('id');
-        $integerNG =  (int) $ng->first();;
+            // dd($ng);
+        // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
+        $integerNG =  (int) $ng->first();
         $integerId =  intval($id);
-
-        $idCasting = LhpCasting::where('id', $integerId)->first();
-
-        // Casting Raw
-        LhpCastingRaw::create([
+    
+        $lhp = LhpFinalInspection::where('id', $integerId)->first();
+        // $mc =  $lhp->id_mesincasting;
+        // dd($integerNG);
+        LhpFinalInspectionRaw::create([
             'id_lhp' => $integerId,
             'id_ng' => $integerNG,
         ]);
 
-        //Update Total NG
-        $total_ng = $idCasting->total_ng;
-        // dd($idCasting->total_ng);
-        LhpCasting::where('id', $integerId)->update([
+        //Update Total 
+        $total_ng = $lhp->total_ng;
+
+        LhpFinalInspection::where('id', $integerId)->update([
             'total_ng' =>  $total_ng + 1
         ]);
 
-
-        $ng = $reject;
-
-        return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
+        return redirect("/lhp-final-inspection/$id")->with('behasilditambahkan', 'behasilditambahkan');
     }
+
+
 }
