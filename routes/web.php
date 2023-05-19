@@ -12,6 +12,7 @@ use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
 use App\Http\Controllers\FinalInspectionController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ use App\Http\Controllers\FinalInspectionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/test/{id}', [TestController::class, 'index']);
 
 Route::get('/modal-sementara', function () {
     return view('lhp.modal-casting-sementara');
@@ -36,6 +39,7 @@ Route::get('/lhp', function () {
         "title" => 'LHP Melting'
     ]);
 });
+
 //====================== PARTIAL ======================//
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);

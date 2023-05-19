@@ -35,6 +35,7 @@
 
     <div class="container-fluid profile">
 
+
         <ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
 
             <li class="nav-item" role="presentation">
@@ -458,7 +459,7 @@
             //============[' SIDE BAR KIRI ']===========//
             $(function(){
                 let ip_node = location.hostname;
-                let socket_port = '1553';
+                let socket_port = '5631';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -546,12 +547,12 @@
                     document.getElementById("material_SA").innerHTML = data[0].material;
                     document.getElementById("nama_SA").innerHTML = data[0].nama;
                     document.getElementById("nrp_SA").innerHTML = data[0].nrp;
-                    document.getElementById("total_charging_SA").innerHTML = data[0].total_charging + " kg";
-                    document.getElementById("ingot_SA").innerHTML = data[0].ingot + " kg";
-                    document.getElementById("exgate_SA").innerHTML = data[0].exgate + " kg";
-                    document.getElementById("reject_parts_SA").innerHTML = data[0].reject_parts + " kg";
-                    document.getElementById("tapping_SA").innerHTML = data[0].tapping + " kg";
-                    document.getElementById("dross_SA").innerHTML = data[0].dross + " kg";
+                    document.getElementById("total_charging_SA").innerHTML = data[0].total_charging ;
+                    document.getElementById("ingot_SA").innerHTML = data[0].ingot ;
+                    document.getElementById("exgate_SA").innerHTML = data[0].exgate ;
+                    document.getElementById("reject_parts_SA").innerHTML = data[0].reject_parts ;
+                    document.getElementById("tapping_SA").innerHTML = data[0].tapping ;
+                    document.getElementById("dross_SA").innerHTML = data[0].dross ;
                     }
                 })
             });
@@ -789,7 +790,7 @@
 
                 $(function() {
                     let ip_node = location.hostname;
-                    let socket_port = '1553';
+                    let socket_port = '5631';
                     let socket = io(ip_node + ':' + socket_port);
                     socket.on('connection');
 
@@ -846,7 +847,7 @@
             chart.get("colors").set("colors",[
 
             am5.color(0x095256), // total charging
-            am5.color(0xFF0000), // loss
+            am5.color(0xF88F01), // loss
             am5.color(0x3C57E1), // ingot
             am5.color(0xFF0000), //series
             ]);
@@ -1010,7 +1011,7 @@
 
                 $(function() {
                     let ip_node = location.hostname;
-                    let socket_port = '1553';
+                    let socket_port = '5631';
                     let socket = io(ip_node + ':' + socket_port);
                     socket.on('connection');
 
@@ -1067,7 +1068,7 @@
             chart.get("colors").set("colors",[
 
             am5.color(0x095256), // total charging
-            am5.color(0xFF0000), // loss
+            am5.color(0xF88F01), // loss
             am5.color(0x3C57E1), // ingot
             am5.color(0xFF0000), //series
             ]);
@@ -1229,7 +1230,7 @@
 
                 $(function() {
                     let ip_node = location.hostname;
-                    let socket_port = '1553';
+                    let socket_port = '5631';
                     let socket = io(ip_node + ':' + socket_port);
                     socket.on('connection');
 
@@ -1286,7 +1287,7 @@
             chart.get("colors").set("colors",[
 
             am5.color(0x095256), // total charging
-            am5.color(0xFF0000), // loss
+            am5.color(0xF88F01), // loss
             am5.color(0x3C57E1), // ingot
             am5.color(0xFF0000), //series
             ]);
@@ -1447,7 +1448,7 @@
                 chart.appear(1000, 100);
                 $(function() {
                     let ip_node = location.hostname;
-                    let socket_port = '1553';
+                    let socket_port = '5631';
                     let socket = io(ip_node + ':' + socket_port);
                     socket.on('connection');
 
@@ -1506,7 +1507,7 @@
                 chart.get("colors").set("colors",[
 
                 am5.color(0x095256), // total charging
-                am5.color(0xFF0000), // loss
+                am5.color(0xF88F01), // loss
                 am5.color(0x3C57E1), // ingot
                 am5.color(0xFF0000), //series
                 ]);
@@ -1668,7 +1669,7 @@
 
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '1553';
+                let socket_port = '5631';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -1725,7 +1726,7 @@
                 chart.get("colors").set("colors",[
 
                 am5.color(0x095256), // total charging
-                am5.color(0xFF0000), // loss
+                am5.color(0xF88F01), // loss
                 am5.color(0x3C57E1), // ingot
                 am5.color(0xFF0000), //series
                 ]);
@@ -1887,7 +1888,7 @@
 
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '1553';
+                let socket_port = '5631';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -1944,7 +1945,7 @@
                 chart.get("colors").set("colors",[
 
                 am5.color(0x095256), // total charging
-                am5.color(0xFF0000), // loss
+                am5.color(0xF88F01), // loss
                 am5.color(0x3C57E1), // ingot
                 am5.color(0xFF0000), //series
                 ]);
@@ -2106,7 +2107,7 @@
 
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '1553';
+                let socket_port = '5631';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -2163,7 +2164,7 @@
                  chart.get("colors").set("colors",[
 
                 am5.color(0x095256), // total charging
-                am5.color(0xFF0000), // loss
+                am5.color(0xF88F01), // loss
                 am5.color(0x3C57E1), // ingot
                 am5.color(0xFF0000), //series
                 ]);
@@ -2323,7 +2324,7 @@
             chart.appear(1000, 100);
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '1553';
+                let socket_port = '5631';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 

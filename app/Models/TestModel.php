@@ -10,5 +10,5 @@ class TestModel extends Model
     use HasFactory;
 
     protected $table = "test";
-    
+    protected $guarded = [];
 }

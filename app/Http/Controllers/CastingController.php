@@ -69,15 +69,15 @@ class CastingController extends Controller
         $mcfordata = $range_hitung->count();
 
         return view('menu.production.casting.tvCasting', [
-            'line' => "NM.FR.AH091",
-            'part' => "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
+            'line' => "NM.FR.AH.CA047",
+            'part' => "COVER L SIDE K1ZG (SFG)",
             'urgent' => 0,
-            'aktual' => 4009,
+            'aktual' => 409,
             // 'aktual' => $range_hitung->total_part,
             'mcfordata' => $mcfordata,
             // 'aktual2'=> 400///
             'target' => 0,
-            'persen' => 94,
+            'persen' => 96,
             'preparation' => 1,
             'prep' => 4,
             'running' => 0,
