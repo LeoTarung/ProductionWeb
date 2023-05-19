@@ -51,7 +51,8 @@
             <div class="card-left3">
                 <div class="row">
                     <div class="col-4 fs-5 fw-bold ">
-                        <div class="totalOK">TOTAL OK</div>
+                        <div class="totalOK text-center align-items-center" 
+                        style="margin: 10px 0px 0px -3px">TOTAL OK</div>
                     </div>
                     <div class="col-8">
                         <div class="tambah border shadow fw-bold text-center align-items-center" onclick="counterFunc()"> 
@@ -151,12 +152,12 @@
         });
 
         }
-            setInterval(totalCheck, 2000)
+            setInterval(totalCheck, 5000)
        
         setInterval(function(){
             console.log(hitung)
             // document.getElementById("hitung").innerHTML = hitung;
-        }, 2000)
+        }, 5000)
 
         // FUNGSI INI UNTUK INPUT KE DB
         function counterFunc(){
@@ -171,8 +172,10 @@
                     _token: token
                 },
                 success: function(){
-                // Simpan nilai terbaru ke dalam session
-                sessionStorage.setItem("hitung", hitung);
+                    console.log('Berhasil menambahkan counter 1 ');
+                },
+                error: function(){
+                    console.log('Tidak berhasil menambahkan counter 1 ');
                 }
             });
         }
@@ -189,8 +192,10 @@
                         _token: token
                     },
                     success: function(){
-                    // Simpan nilai terbaru ke dalam session
-                    sessionStorage.setItem("hitung", hitung);
+                        console.log('Berhasil meng-undo 1 ');
+                    },
+                    error: function(){
+                        console.log('Tidak berhasil meng-undo 1' );
                     }
                 });
         }
@@ -204,12 +209,16 @@
                 url: url,
                 type: 'POST',
                 data: {
-                    _token: token
+                    _token: token //pake token untuk keamanan
                 },
                 success: function(){
-                // Simpan nilai terbaru ke dalam session
-                sessionStorage.setItem("box", box);
-                sessionStorage.setItem("hitung", hitung + box);
+                    // Simpan nilai terbaru ke dalam session
+                        // sessionStorage.setItem("box", box);
+                        // sessionStorage.setItem("hitung", hitung + box); 
+                console.log('Berhasil menambahkan box');
+                }, 
+                error: function() {
+                    console.log('Error data saat menambahkan box');
                 }
             });
             console.log(box);
@@ -243,7 +252,7 @@
                 dataType: "json",
                 success: function(data) {
                     document.getElementById("totalReject").innerHTML = data[0];
-                    for (let i = 1; i <= {{ $jumlahReject }}; i++) {
+                    for (let i = 1; i <= {{ $jumlahReject }}; i++) {    
                         document.getElementById('jenisReject' + (i-1)).innerHTML = data[i];
                     }
                 },
