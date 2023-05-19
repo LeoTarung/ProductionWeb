@@ -184,7 +184,7 @@
     <script>
         $(function(){
         let ip_node = location.hostname;
-        let socket_port = '1553';
+        let socket_port = '5631';
         let socket = io(ip_node + ':' + socket_port);
         let lokasi = "Kiri"+'{{ $mesin }}';
         socket.on('connection');

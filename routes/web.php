@@ -39,6 +39,8 @@ Route::get('/lhp', function () {
         "title" => 'LHP Melting'
     ]);
 });
+
+Route::get('/test', [CastingController::class, 'test']);
 //====================== PARTIAL ======================//
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);
@@ -95,6 +97,8 @@ Route::post('/lhp-casting/simpan', [CastingController::class, 'prep_casting_simp
 Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])->name('LHPCasting'); //link sementara, nanti diganti ketika preparation sudah selesai
 Route::post('/lhp-casting/{id}/{dtName}/{minute}', [CastingController::class, 'saveDowntimeCasting'])->name('saveDowntime');
 Route::get('/casting/target/{id}', [CastingController::class, 'getTarget']);
+Route::post('/casting/setTarget/{id}', [CastingController::class, 'setTarget']);
+Route::post('/casting/updateTotalProd/{id}', [CastingController::class, 'updateTotalProduksi']);
 Route::get('/dtRjtcasting/{id_lhp}', [CastingController::class, 'totalReject'])->name('totalReject');
 Route::get('/dtDowntime/{id_lhp}', [CastingController::class, 'jsonDowntime'])->name('jsonDowntime');
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController::class, 'saveReject'])->name('saveReject');
@@ -104,7 +108,14 @@ Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController:
 //====================== LHP FINAL INSPECTION ================//
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
-Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
+Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection');
+// total reject
+Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
+// total check
+Route::get('/dtTotalCheck/api/{id_lhp}', [FinalInspectionController::class, 'apinadif']);
+Route::post('/dtTotalCheck/{id}/{hitung}', [FinalInspectionController::class, 'totalCheck']);
+//total ok
+Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'totalOk']);
 
 
 //====================== HC & GA ======================//
@@ -119,7 +130,6 @@ Route::get('/final', [MeltingTestController::class, 'final_inspection']);
 
 
 //====================== henkaten ======================//
-
 // man
 Route::get('/tampilan', [HenkatenController::class, 'tampilan']);
 Route::post('/submit_man', [HenkatenController::class, 'submit_man']);

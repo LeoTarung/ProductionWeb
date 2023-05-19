@@ -527,7 +527,7 @@
     <script>
         $(function() {
             let ip_node = location.hostname;
-            let socket_port = '1553';
+            let socket_port = '5631';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
             socket.on("levelMolten_settings", (data) => {
