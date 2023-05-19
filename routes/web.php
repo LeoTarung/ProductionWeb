@@ -12,7 +12,6 @@ use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
 use App\Http\Controllers\FinalInspectionController;
-use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,16 +23,8 @@ use App\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-<<<<<<< HEAD
-
-Route::get('/test/{id}', [TestController::class, 'index']);
-
-=======
 //====================== MODAL ======================//
->>>>>>> 766b2e985d9f1a93e375caa4ad00758bdfcafb11
-Route::get('/modal-sementara', function () {
-    return view('lhp.modal-casting-sementara');
-});
+
 Route::get('/modal-finalinspection', function () {
     return view('lhp.modal-final-inspection');
 });
@@ -47,10 +38,7 @@ Route::get('/lhp', function () {
     ]);
 });
 
-<<<<<<< HEAD
-=======
 Route::get('/test', [CastingController::class, 'test']);
->>>>>>> 766b2e985d9f1a93e375caa4ad00758bdfcafb11
 //====================== PARTIAL ======================//
 Route::get('/partial/instruksi', [UsableController::class, 'Intruksi']);
 Route::get('/partial/resume-melting/{mesin}/{id}', [UsableController::class, 'resume_melting']);
@@ -77,7 +65,7 @@ Route::get('/dtmccasting/{mc}', [ApiController::class, 'showmc']);
 //====================== SETTINGS ======================//
 Route::get('/settings', [SettingController::class, 'index'])->name('MainSettings');
 Route::get('/settings/mesincasting/{id}', [SettingController::class, 'showMolten'])->name('MCSettings'); // Mes in Casting
-Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; // 
+Route::put('/settings/mesincasting/{id}/simpan', [SettingController::class, 'UpdateMolten'])->name('mesincasting.update');; //
 
 
 //====================== AREA MELTING ======================//
@@ -125,7 +113,7 @@ Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController:
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
 
-Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
+Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection');
 
 // total reject
 Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
