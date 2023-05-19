@@ -3,13 +3,12 @@
     <div class="row row-cols-1 row-cols-md-2 g-2 m-2">
         <div class="col">
             @if ($id_striko1 == null)
-                <a class="buttonssssss btn btn-primary border-info" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop" onclick="testing(1)">
+                <a class="buttonssssss btn btn-primary border-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                    onclick="testing(1)">
                     <div class="big-font">STRIKO-1</div>
                 </a> <br>
             @else
-                <a class="buttonssssss btn btn-lg btn-primary border-info"
-                    href="/lhp-melting/Striko-1/{{ $id_striko1->id }}">
+                <a class="buttonssssss btn btn-lg btn-primary border-info" href="/lhp-melting/Striko-1/{{ $id_striko1->id }}">
                     <div class="big-font">STRIKO-1</div>
                 </a> <br>
             @endif
@@ -107,8 +106,8 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-floating ">
-                                    <input type="text" class="form-control border-dark"
-                                        id="mesin" name="mesin" readonly required>
+                                    <input type="text" class="form-control border-dark" id="mesin" name="mesin"
+                                        readonly required>
                                     <label for="mesin">M E S I N</label>
                                 </div>
                             </div>
@@ -151,7 +150,7 @@
                     method: "GET",
                     dataType: "json",
 
-                    url: "{{ url('/dtkyrw') }}" +"/"+ searchnrp,
+                    url: "{{ url('/dtkyrw') }}" + "/" + searchnrp,
 
                     success: function(data) {
                         document.getElementById("nama").value = data[0].name;

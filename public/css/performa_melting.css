@@ -17,7 +17,6 @@ html > body {
 }
 
 
-
 .section{
     font-size: 40px;
     font-weight: 600;
@@ -78,7 +77,7 @@ html > body {
 
 .identitas {
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     /* margin-right: 20px; */
     margin-bottom: 10px;
     height: 97vh;
@@ -181,41 +180,41 @@ html > body {
 
 #chartdiv_S1 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv2_S1 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 #chartdiv_S2 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv2_S2 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv_S3 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv2_S3 {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv_SA {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 #chartdiv2_SA {
     width: 100%;
-    height: 36vh;
+    height: 34.5vh;
 }
 
 .grafik .daily {
@@ -294,9 +293,16 @@ html > body {
     }
 
     .nav-item {
-        background-color: #55769c;
+        background-color: #ffffff;
         border-radius: 5px 5px 0px 0px;
         font-size: large;
+    }
+
+    .nav-pills {
+        margin: 0px -12px 0px -15px;
+        --bs-nav-pills-border-radius: 0.375rem;
+        --bs-nav-pills-link-active-color: #fff;
+        --bs-nav-pills-link-active-bg: #ffffff !important;
     }
 
     .active {
@@ -324,7 +330,6 @@ html > body {
         width: 80%;
         height: 100%;
     }
-
     
     .child .identitas {
         margin-top: 10px;
@@ -576,7 +581,7 @@ html > body {
         height: 55px;
         margin-top: 7px;
         margin-left: 10px;
-
+    }
 
     .section{
         font-size: 40px;
@@ -598,13 +603,20 @@ html > body {
     }
 
     .nav-tabs {
-        background-color: #ffffff;
+        background-color: #ffffff !important;
     }
 
     .nav-item {
-        background-color: #55769c;
+        background-color: #e9ecef;
         border-radius: 5px 5px 0px 0px;
         font-size: large;
+    }
+
+    .nav-pills {
+        margin: 0px -12px 0px -15px;
+        --bs-nav-pills-border-radius: 0.375rem;
+        --bs-nav-pills-link-active-color: #fff;
+        --bs-nav-pills-link-active-bg: #ffffff !important;
     }
 
     .active {
@@ -636,8 +648,8 @@ html > body {
 
     .identitas {
         margin-top: 10px;
-        margin-left: 20px;
-        /* margin-right: -20px; */
+        margin-left: 10px;
+        margin-right: -10px;
         margin-bottom: 0px;
         height: 100vh;
     }
@@ -666,15 +678,13 @@ html > body {
         font-size: 50px;
     }
 
-
     .atas .hd {
         font-size: 45px;
-
+    }
 
     .bawah h2 {
         font-size: 40px;
     }
-
 
     .bawah h3 {
         font-size: 40px;
@@ -689,63 +699,63 @@ html > body {
     .card .tc {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 60px;
-        margin-top: 30px;
+        font-size: 28px;
+        height: 50px;
+        margin-top: 28px;
         /* margin: 0px -50px 0px -10px ; */
-        padding-top: 5px;
-        padding-left: 5px;
+        /* padding-top: 5px; */
+        padding-left: 15px;
     }
 
     .card .ingot {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
+        font-size: 28px;
+        height: 50px;
         /* margin-left: -10px; */
         /* margin-right: -50px; */
-        padding-top: 5px;
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
     .card .eg {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
+        font-size: 28px;
+        height: 50px;
         /* margin: 0px -50px 0px -10px ; */
-        padding-top: 5px;
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
     .card .reject {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
+        font-size: 28px;
+        height: 50px;
         /* margin: 0px -50px 0px -10px ; */
-        padding-top: 5px;
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
     .card .tapping {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
+        font-size: 28px;
+        height: 50px;
         /* margin: 0px -50px 0px -10px ; */
-        padding-top: 5px;
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
     .card .dross {
         background-color: #095256;
         color: white;
-        font-size: 30px;
-        height: 55px;
+        font-size: 28px;
+        height: 50px;
         /* margin: 0px -50px 0px -10px ; */
         margin-bottom: 25px;
-        padding-top: 5px;
+        /* padding-top: 5px; */
         padding-left: 15px;
     }
 
@@ -754,72 +764,35 @@ html > body {
         height: 38.5vh;
     }
 
-   #chartdiv2 {
+    #chartdiv2 {
         width: 100%;
-        height: 34vh;
+        height: 38.5vh;
     }
 
     .grafik .daily {
         text-align: center;
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-right: 3px;
-        margin-bottom: 10px;
-
+        margin: 10px 15px 10px 10px;
         height: 100%;
     }
+    
     .grafik .monthly {
         text-align: center;
-
-        margin-top: 2px;
-        margin-left: 10px;
-        margin-right: 5px;
-        margin-bottom: 10px;
-
-        margin-top: 2px ;
-        margin-left: 0px;
-        margin-right: 20px;
-        margin-bottom:10px;
+        margin: 7px 15px 0px 10px;
         height: 100%;
     }
 
     .day {
-        background-color: white;
+        background-color: #e9ecef !important;
         color: black;
         font-size: 30px;
         font-weight: 500;
     }
     .month {
-        background-color: white;
+        background-color: #e9ecef !important;
         color: black;
         font-size: 30px;
         font-weight: 500;
     }
 }
 
-/*------------------ Produk ingot dross card  */
-/* .produk .card-header {
-    background-color: #1e206d;
-    color:white;
-    font-weight: 700;
-    font-size: 1.0em;
-}
 
-.card-title {
-   text-align: center;
-   font-size: 1.5em;
-}
-
-.wrapper-cards {
-    margin-top: 15px;
-    margin-bottom: 22px;
-}
-
-.produk {
-    width: 90%;
-    margin-top: 40px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 0px;
-    text-align: center;
-} */
