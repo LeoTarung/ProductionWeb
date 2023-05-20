@@ -49,6 +49,7 @@
             <div class="col-4 target">
                 <div class="text-center rounded-0">
                     <div class="penjelasan box">TARGET</div>
+                    <!-- <div id="aktual" class="angka"></div> -->
                     <div class="angka" id="target"></div>
                 </div>
             </div>
@@ -412,21 +413,21 @@
 
     <footer class="container-fluid d-flex align-self-center ">
         <marquee>
-            <p>REALTIME MONITORING</p>
+            <p>REALTIME MONITORING HIGH PRESSURE DIE CASTING</p>
         </marquee>
     </footer>
 
     <script>
         // hitung target
 
-        var target = 55000;
-        // var target = console.log("test")
+        // var target = 55000;
+        // // var target = console.log("test")
 
         const element = document.getElementById("target");
-        let i = 1;
-        setInterval(function() {
-            element.innerHTML = i++
-        }, target);
+        // let i = 1;
+        // setInterval(function() {
+        //     element.innerHTML = i++
+        // }, target);
         //  if ( ((2*60) <=  now && now <(2 * 60)))
         // henkaten
         @if ($prep == 1)
@@ -536,28 +537,30 @@
                 let for_mc = {{ $mcfordata }} - 1;
                 let aktual = data[for_mc].total_produksi;
                 document.getElementById("aktual").innerHTML = aktual;
+                element.innerHTML = aktual;
                 //Persentase
 
-                var ValPersen = (aktual / i * 100);
+                // var ValPersen = (aktual / i * 100);
 
-                pembulatan = ValPersen.toFixed(0);
+                // pembulatan = ValPersen.toFixed(0);
                 // var persen = 96;
 
                 let persen = document.getElementById("persen");
-                if (pembulatan >= 95) {
-                    persen.innerHTML = pembulatan;
-                    persen.style.marginTop = '-20px';
-                    persen.style.marginLeft = '-20px';
-                    persen.style.fontSize = '220px';
+                persen.innerHTML = 100;
+                // if (pembulatan >= 95) {
+                //     persen.innerHTML = pembulatan;
+                //     persen.style.marginTop = '-20px';
+                //     persen.style.marginLeft = '-20px';
+                //     persen.style.fontSize = '220px';
 
-                } else {
-                    persen.innerHTML = pembulatan;
-                    persen.style.fontSize = '250px';
-                    // persen.style.marginTop = '-40px';
-                    persen.style.textShadow = '0 10px 19px #000000';
-                    persen.style.animation = 'animate 2.0s linear infinite';
-                    persen.style.color = '#ff0000';
-                }
+                // } else {
+                //     persen.innerHTML = pembulatan;
+                //     persen.style.fontSize = '250px';
+                //     // persen.style.marginTop = '-40px';
+                //     persen.style.textShadow = '0 10px 19px #000000';
+                //     persen.style.animation = 'animate 2.0s linear infinite';
+                //     persen.style.color = '#ff0000';
+                // }
 
 
                 // console.log(data[for_mc].total_part);
