@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use App\Models\RejectNG;
 use LhpCastingHoursTable;
 use Illuminate\Support\FacadesDB;
+
 class UsableController extends Controller
 {
 
@@ -92,6 +93,40 @@ class UsableController extends Controller
         return view('lhp.resume-forklift', compact('sql1', 'mesin', 'id'));
     }
 
+    // ============================= // Pengubah Null menjai 0 dalam array  // ================================= //
+    public function convertNullToZero($array)
+    {
+        $array = array_map(function ($value) {
+            return $value === null ? 0 : $value;
+        }, $array);
+
+        return $array;
+    }
+
+    // ============================= // Pengecek Datatype string // ================================= //
+    function checkDataTypeInArray($array, $dataType)
+    {
+        foreach ($array as $key => $element) {
+            if (gettype($element) == $dataType) {
+                echo "Found a $dataType value: $element at index $key<br>";
+                return true;
+            }
+        }
+        echo "No $dataType values found in the array<br>";
+        return false;
+    }
+
+    // ============================= // Pengubah string menjadi integer  // ================================= //
+    function convertArrayStringToNumber($array)
+    {
+        foreach ($array as $key => $element) {
+            if (is_string($element) && is_numeric($element)) {
+                $array[$key] = $element + 0;
+            }
+        }
+        return $array;
+    }
+
     // ============================= //REJECT // ================================= //
     // =================== //REJECT CASTING // ============================ //
 
@@ -130,7 +165,6 @@ class UsableController extends Controller
         }
 
         return $reject;
-
     }
 
 
@@ -153,7 +187,7 @@ class UsableController extends Controller
         $reject = array_map(function ($value) {
             return str_replace(' ', '-', $value);
         }, $reject);
-   
+
         return $reject;
     }
 
@@ -171,7 +205,7 @@ class UsableController extends Controller
             }
         }
 
-      
+
 
         return $reject;
     }
@@ -189,7 +223,7 @@ class UsableController extends Controller
         return view('lhp.modal-casting-sementara', compact('idCasting', 'ng'));
     }
 
-    
+
 
 
     public function DowntimeCasting(UsableController $useable, $id)
@@ -221,11 +255,11 @@ class UsableController extends Controller
         $ng = RejectNG::where('jenis_reject', $rejectnew)
             ->where('posisi', $posisi)
             ->pluck('id');
-            // dd($ng);
+        // dd($ng);
         // dd(RejectNG::where('jenis_reject', $rejectnew)->get());
         $integerNG =  (int) $ng->first();
         $integerId =  intval($id);
-    
+
         $lhp = LhpFinalInspection::where('id', $integerId)->first();
         // $mc =  $lhp->id_mesincasting;
         // dd($integerNG);
@@ -243,6 +277,4 @@ class UsableController extends Controller
 
         return redirect("/lhp-final-inspection/$id")->with('behasilditambahkan', 'behasilditambahkan');
     }
-
-
 }
