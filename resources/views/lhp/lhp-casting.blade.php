@@ -1,22 +1,12 @@
 @extends('mainLHP')
 @section('content')
     {{-- -------------------------------- CSS ------------------------------ --}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/gokil.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/casting_css.css') }}">
     {{-- --------------------------------      ------------------------------ --}}
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-3 ">
-                {{-- <div class="card card-left1 ms-2 shadow-sm">
-                    <div class="row">
-                        <div class="col-9 mt-2 ps-4 fw-bold fs-4 "> {{ $idCasting->nama_part }} </div>
-                        <div class="col-3 d-flex align-items-center parent">
-                            <div class="child fw-bold fs-4 pt-2 text-center align-items-center">Dies
-                                {{ $idCasting->mesincasting->nomor_dies }}</div>
-
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="card card-left5 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
@@ -43,7 +33,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card card-left3 mt-3 ms-2 shadow-sm" onclick="getReject()">
                     <div class="row">
                         <div class="col-auto "></div>
@@ -62,14 +51,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="card card-left6 mt-3 ms-2 shadow-sm">
-                    <div class="row">
-                        <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">COVER L<br><span class="fs-2">3000
-                                part</span>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
             <div class="col-9 mb-2">
                 <div class="card upper mt-3 mb-1 shadow-sm">
@@ -81,7 +62,6 @@
                                     DIES :
                                     {{ $idCasting->mesincasting->nomor_dies }}</div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -111,12 +91,6 @@
                         <input class="radio" id="three" name="group" type="radio">
                         <input class="radio" id="four" name="group" type="radio">
                         <input class="radio" id="five" name="group" type="radio">
-
-                        {{-- <input class="radio-end" id="dtMaterial" name="group" type="text">
-                        <input class="radio-end" id="dtMesin" name="group" type="text">
-                        <input class="radio-end" id="dtDies" name="group" type="text">
-                        <input class="radio-end" id="dtProses" name="group" type="text">
-                        <input class="radio-end" id="dtTerencana" name="group" type="text"> --}}
                         <div class="tabs">
                             <label class="tab" id="one-tab" for="one">Material</label>
                             <label class="tab" id="two-tab" for="two">Mesin</label>
@@ -155,17 +129,13 @@
                                                     </div>
                                                 </a>
                                             </div>
-
                                         </div>
                                         @php
                                             $i++;
                                         @endphp
                                     @endforeach
-
                                 </div>
                             </div>
-
-
                             <div class="panel" id="two-panel">
                                 <div class="row row-card-i">
                                     @php
@@ -194,7 +164,6 @@
                                     @endforeach
                                 </div>
                             </div>
-
                             <div class="panel" id="three-panel">
                                 <div class="row row-card-i">
                                     @php
@@ -215,7 +184,6 @@
                                                     </div>
                                                 </a>
                                             </div>
-
                                         </div>
                                         @php
                                             $i++;
@@ -223,7 +191,6 @@
                                     @endforeach
                                 </div>
                             </div>
-
                             <div class="panel" id="four-panel">
                                 <div class="row row-card-i">
                                     @php
@@ -286,7 +253,6 @@
             </div>
             <meta name="csrf-token" content="{{ csrf_token() }}">
         </div>
-
         <div class="modal fade" id="ModalGambar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen">
@@ -304,12 +270,10 @@
                 </div>
             </div>
         </div>
-
         <div class="modal fade" id="popUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content" id="popUp-content">
-
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-12 text-center">
@@ -325,7 +289,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -460,9 +423,10 @@
                 }, 3000);
             });
 
+            // -------------- Socket IO -------------- // 
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '1553';
+                let socket_port = '5631';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
                 socket.on("levelMolten_settings", (data) => {
@@ -488,11 +452,22 @@
                         }
                     });
 
-                    // var test = setInterval(function() {
-                    //     console.log('test');
-                    // }, 60000);
+                    // //----------- Get Total Produksi -----------------//
+                    $.ajax({
+                        url: "/casting/updateTotalProd" + "/" + {{ $idCasting->id }},
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                        },
+                        success: function(response) {
+                            console.log(response); // handle the response from the server
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(error); // handle any errors that occur
+                        }
+                    });
 
-                   
+
                 })
             });
 
@@ -597,5 +572,116 @@
                     }
                 });
             }
+
+
+
+            let cycleTime = {{ $datamc->cycle_time }} * 1000;
+
+            const postTarget = setInterval(function() {
+                function stopTarget() {
+                    const now = new Date();
+                    const hour = now.getHours();
+                    const minute = now.getMinutes();
+
+                    // Define the time ranges when the interval should stop
+                    const ranges = [
+                        // Istirahat SHIFT 1
+                        {
+                            startHour: 4,
+                            startMinute: 30,
+                            endHour: 5,
+                            endMinute: 0
+                        },
+                        // P5M & 5R SHIFT 1
+                        {
+                            startHour: 06,
+                            startMinute: 55,
+                            endHour: 07,
+                            endMinute: 10
+                        },
+
+
+                        // Istirahat SHIFT 2
+                        {
+                            startHour: 11,
+                            startMinute: 40,
+                            endHour: 12,
+                            endMinute: 40
+                        },
+                        // P5M & 5R SHIFT 2
+                        {
+                            startHour: 15,
+                            startMinute: 45,
+                            endHour: 16,
+                            endMinute: 00
+                        },
+
+                        // Istirahat SHIFT 3
+                        {
+                            startHour: 18,
+                            startMinute: 0,
+                            endHour: 18,
+                            endMinute: 15
+                        },
+                        {
+                            startHour: 19,
+                            startMinute: 20,
+                            endHour: 20,
+                            endMinute: 00
+                        },
+                        // P5M & 5R SHIFT 3
+                        {
+                            startHour: 23,
+                            startMinute: 45,
+                            endHour: 00,
+                            endMinute: 00
+                        },
+                        // For testing
+                        // {
+                        //     startHour: 11,
+                        //     startMinute: 39,
+                        //     endHour: 11,
+                        //     endMinute: 39
+                        // },
+                    ];
+
+                    // Check if the current time is within any of the time ranges
+                    const shouldStop = ranges.some(({
+                        startHour,
+                        startMinute,
+                        endHour,
+                        endMinute
+                    }) => {
+                        return (hour === startHour && minute >= startMinute) || (hour > startHour && hour <
+                            endHour) || (
+                            hour === endHour && minute <= endMinute);
+                    });
+
+                    if (shouldStop) {
+                        console.log('Interval should stop...');
+                        // clearInterval(postTarget);
+                        return;
+                    }
+
+                    console.log('Performing some action...');
+                    $.ajax({
+                        url: "/casting/setTarget" + "/" + {{ $idCasting->id }},
+                        method: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                        },
+                        success: function(response) {
+                            console.log(response); // handle the response from the server
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(error); // handle any errors that occur
+                        }
+                    });
+                }
+
+                stopTarget();
+                console.log(cycleTime)
+
+            }, cycleTime);
         </script>
     @endsection

@@ -66,7 +66,7 @@
 }
 
 .font-ci2{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
     margin:0% 1px 0% 10px;
 
@@ -163,57 +163,7 @@
 }
 
 
- #popUp .modal-content{
-    /* position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 42%;
-    width: 30%;
-    padding: 20px 50px 50px 50px; */
-    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
-    background:rgb(143, 6, 6);
-    /* visibility: hidden;
-    opacity: 0;
-    transition: 0.5s;
-    border-radius: 20px 20px 20px 20px !important;
-    overflow : hidden; */
-}
- /* div.circle {
-    position: absolute;
-    top: 70%;
-    left: 42%;
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    background-color:rgb(143, 6, 6);
-    display: grid;
-    place-content: center;
-    animation: grow 1s infinite;
-    
-  }
 
-  div.circle > span {
-    color: #eee;
-    font-size: 50px;
-  }
-
-
-  @keyframes grow {
-    from {
-      box-shadow: 0px 0px 1em  rgb(129, 32, 32);
-    }
-    to {
-      box-shadow: 0px 0px 3em  rgb(129, 32, 32);
-    }
-  } */
-
-/* #popUp.active {
-    top: 50%;
-    visibility: visible;
-    opacity: 1;
-    transition: 0.5s;
-} */
 .warpper {
     display: flex;
     flex-direction: column;
