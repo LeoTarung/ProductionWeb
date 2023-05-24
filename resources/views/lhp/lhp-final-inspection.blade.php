@@ -224,18 +224,6 @@
             console.log(box);
         }
 
-
-        // // Ambil nilai counter terbaru dari session saat halaman di-refresh
-        //         $(document).ready(function(){
-        //         if(sessionStorage.getItem("hitung")){
-        //             hitung = sessionStorage.getItem("hitung");
-        //             document.getElementById("hitung").innerHTML = hitung;
-        //         }
-        // });
-
-        // setInterval(counterFunc, 1000);
-        // setInterval(resetFunc, 1000);
-
         let reject = document.getElementById('reject');     
 
         function getReject(id) {
@@ -254,6 +242,7 @@
                     document.getElementById("totalReject").innerHTML = data[0];
                     for (let i = 1; i <= {{ $jumlahReject }}; i++) {    
                         document.getElementById('jenisReject' + (i-1)).innerHTML = data[i];
+                        
                     }
                 },
                 error: function() {

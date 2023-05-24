@@ -109,9 +109,9 @@ class FinalInspectionController extends Controller
         $lhp->update([
         'total_check' => $hitung
         ]);
-        // $hitung = $lhp->selectRaw('COUNT(total_check) as hitung')->get();
+       
         return redirect("/lhp-final-inspection/$lhp->id")->with('berhasilditambahkan', 'berhasilditambahkan');
-        // return response()->json($hitung);
+
     }
 
     public function apinadif($id)
@@ -124,22 +124,22 @@ class FinalInspectionController extends Controller
     {
         $reject = LhpFinalInspectionRaw::where('id_lhp', $id_lhp);
         $total_reject = $reject->selectRaw('COUNT(id_ng) as total_reject')->get();
+        
         $data = array();
         $data[] = $total_reject[0]->total_reject;
         $rejectList = collect($usable->RejectFinalInspectionWithoutStrip());
 
         foreach ($rejectList as $key ) {
             $wadah[] = RejectNG::where('jenis_reject', $key)->pluck('id') ;
+            $wadahTest[] = RejectNG::where('jenis_reject', $key)->pluck('jenis_reject') ;
         }
-dd($rejectList);
 
-        // $floor = 1; // $ceiling = 72;
         for ($i = 1; $i <= $rejectList->count(); $i++) {
             $data[$i] =  LhpFinalInspectionRaw::where('id_lhp', $id_lhp)
                 ->whereBetween('id_ng', [$wadah[$i-1]->first(), $wadah[$i-1]->last()])
                 ->count();
         }
-        dd(count($data));
+        // dd($data);
         return response()->json($data);
     }
 
