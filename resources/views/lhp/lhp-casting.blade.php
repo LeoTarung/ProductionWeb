@@ -416,12 +416,12 @@
                 });
             }
 
-            $(document).ready(function() {
-                setInterval(function() {
-                    getTotalReject();
-                    getTotalDowntime();
-                }, 3000);
-            });
+            // $(document).ready(function() {
+            //     setInterval(function() {
+            //         getTotalReject();
+            //         getTotalDowntime();
+            //     }, 3000);
+            // });
 
             // -------------- Socket IO -------------- // 
             $(function() {
@@ -431,6 +431,8 @@
                 socket.on('connection');
                 socket.on("levelMolten_settings", (data) => {
                     //Define Urutan Mesin Casting
+                    getTotalReject();
+                    getTotalDowntime();
                     let for_mc = {{ $mcfordata }} - 1;
                     // console.log(data[for_mc].total_ng);
                     //Total Produksi
