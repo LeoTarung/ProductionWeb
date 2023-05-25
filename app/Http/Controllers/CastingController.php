@@ -672,6 +672,9 @@ class CastingController extends Controller
             ->get();
         // $oldIntime = $old->whereBetween('created_at', [$start_time, $end_time])->first();
         // dd($oldIntime);
+        LhpCasting::where('id', $id_lhp)->update([
+            'total_downtime' => $minute
+        ]);
 
         switch ($currentTime = date("H:i")) {
             case $currentTime >= "00:00" && $currentTime < "01:00":

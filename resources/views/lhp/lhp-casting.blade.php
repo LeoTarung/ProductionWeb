@@ -350,7 +350,6 @@
                     dtDies.hidden = true;
                     dtProses.hidden = false;
                     dtTerencana.hidden = true;
-                    //  console.log("test");
                 });
 
                 document.getElementById('five').addEventListener("click", () => {
@@ -359,7 +358,6 @@
                     dtDies.hidden = true;
                     dtProses.hidden = true;
                     dtTerencana.hidden = false;
-                    //  console.log("test");
                 });
 
             }
@@ -399,19 +397,15 @@
                         // Total Downtime Downtime
                         document.getElementById("totalDt").innerHTML = data[0] + data[1] + data[2] + data[3] + data[
                             4];
-
                         // Total downtime perKategori
                         for (let i = 1; i <= 5; i++) {
                             document.getElementById('dt' + i).innerHTML = 'Total ' +
                                 data[i - 1] * 60 + ' Detik';
-
                         }
-
                         // Perdowntime
                         for (let i = 1, j = 5; i <= {{ $countdt }}, j <= {{ $countdt }} + 5; i++, j++) {
                             document.getElementById('timer' + i).innerHTML = data[j];
                         }
-
                     }
                 });
             }
@@ -468,8 +462,6 @@
                             console.log(error); // handle any errors that occur
                         }
                     });
-
-
                 })
             });
 
@@ -477,7 +469,6 @@
 
             var Totaltime = 0;
             var minute = 0;
-
 
             function Modaldowntime(id, dt, urutan, kategori) {
                 urutan = parseInt(urutan, 10);
@@ -499,7 +490,6 @@
                     type: "GET",
                     dataType: "json",
                     success: function(data) {
-
                         minute = data[urutan + 4];
                         Totaltime = data[kategori - 1] * 60;
                         // console.log(Totaltime);
@@ -525,29 +515,22 @@
                                 }
                             });
                         };
-
-
                         var timer = setInterval(function() {
                             minute++;
                             document.getElementById('modalMinute').innerHTML =
                                 minute;
-                            // console.log(minute);
                         }, 60000);
-
                         var Totaltimer = setInterval(function() {
                             Totaltime++;
-                            // document.getElementById('modalMinute').innerHTML = formatTime(Math.floor(time / 60));
+
                             document.getElementById('totalModalMinute').innerHTML =
                                 'Downtime ' + UrutanKategori + ': ' + Totaltime +
                                 ' detik';
-                            // console.log('Minutes: ' + formatTime(Math.floor(Totaltime / 60)))
                         }, 1000);
-
                         var save = setInterval(function() {
                             saveDowntimeCasting();
                             // console.log(test);
                         }, 60000);
-
                         var popUp = document.getElementById('popUp');
 
                         function formatTime(time) {
@@ -556,18 +539,14 @@
                             // return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
                             return +Totalminutes + Totalseconds;
                         }
-
                         document.getElementById("titleDt").innerHTML = dt;
-                        // document.getElementById("popUp").style.display = "block";
                         document.getElementById("popUp-content").onclick = function() {
                             if (confirm('Apakah anda yakin ? ')) {
                                 clearInterval(Totaltimer);
                                 clearInterval(timer);
                                 clearInterval(save);
-                                // popUp.setAttribute("data-bs-dismiss", "modal");
                                 $("#popUp").modal("hide");
-                                // console.log(minute);
-                                // document.getElementById("popUp").style.display = "none";
+
                             }
 
                         };

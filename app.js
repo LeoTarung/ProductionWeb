@@ -14,11 +14,11 @@ const connection = mysql.createConnection({
     database: "production_app",
 });
 
-const connection2 = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    database: "trial",
-});
+// const connection2 = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     database: "trial",
+// });
 
 //==========[' DECLARE VARIABLE ']==========//
 var shift;
@@ -71,141 +71,141 @@ io.on("connection", (socket) => {
     });
 
     setInterval(function () {
-        connection.query(
-            "SELECT * FROM input_kv8000 WHERE area='MA'",
-            (err, HasilA) => {
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][1] + "'WHERE ID='4-95-69-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][6] + "'WHERE ID='4-95-69-2'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][11] + "'WHERE ID='4-95-69-3'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][46] + "'WHERE ID='4-91-68-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][51] + "'WHERE ID='4-91-68-2'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][56] + "'WHERE ID='4-91-68-3'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][61] + "'WHERE ID='4-92-68-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][66] + "'WHERE ID='4-92-68-2'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][71] + "'WHERE ID='4-92-68-3'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][76] + "'WHERE ID='4-93-68-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][81] + "'WHERE ID='4-93-68-2'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][86] + "'WHERE ID='4-93-68-3'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][61] + "'WHERE ID='4-89-26-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][66] + "'WHERE ID='4-94-70-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][71] + "'WHERE ID='4-94-70-2'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][91] + "'WHERE ID='4-96-125-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][96] + "'WHERE ID='4-97-96-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][101] + "'WHERE ID='4-98-95-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][101] + "'WHERE ID='4-98-97-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][106] + "'WHERE ID='4-99-122-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][106] + "'WHERE ID='4-99-90-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][116] + "'WHERE ID='4-90-86-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][121] + "'WHERE ID='1-10-22-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][131] + "'WHERE ID='1-11-20-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][136] + "'WHERE ID='1-12-108-1'",
-                    (err, HasilB) => {
-                    }
-                );
-                connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][141] + "'WHERE ID='1-13-94-1'",
-                    (err, HasilB) => {
-                    }
-                );
-            }
-        );
+        // connection.query(
+        //     "SELECT * FROM input_kv8000 WHERE area='MA'",
+        //     (err, HasilA) => {
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][1] + "'WHERE ID='4-95-69-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][6] + "'WHERE ID='4-95-69-2'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][11] + "'WHERE ID='4-95-69-3'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][46] + "'WHERE ID='4-91-68-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][51] + "'WHERE ID='4-91-68-2'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][56] + "'WHERE ID='4-91-68-3'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][61] + "'WHERE ID='4-92-68-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][66] + "'WHERE ID='4-92-68-2'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][71] + "'WHERE ID='4-92-68-3'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][76] + "'WHERE ID='4-93-68-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][81] + "'WHERE ID='4-93-68-2'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][86] + "'WHERE ID='4-93-68-3'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][61] + "'WHERE ID='4-89-26-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][66] + "'WHERE ID='4-94-70-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][71] + "'WHERE ID='4-94-70-2'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][91] + "'WHERE ID='4-96-125-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][96] + "'WHERE ID='4-97-96-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][101] + "'WHERE ID='4-98-95-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][101] + "'WHERE ID='4-98-97-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][106] + "'WHERE ID='4-99-122-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][106] + "'WHERE ID='4-99-90-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][116] + "'WHERE ID='4-90-86-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][121] + "'WHERE ID='1-10-22-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][131] + "'WHERE ID='1-11-20-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][136] + "'WHERE ID='1-12-108-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //         connection2.query(
+        //             "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][141] + "'WHERE ID='1-13-94-1'",
+        //             (err, HasilB) => {
+        //             }
+        //         );
+        //     }
+        // );
 
 
         //==========[' SELECT ALL FROM MESIN CASTING ']==========//
