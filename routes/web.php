@@ -114,12 +114,19 @@ Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_fin
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
 
 Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
-
-// total reject
-Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
 // total check
 Route::get('/dtTotalCheck/api/{id_lhp}', [FinalInspectionController::class, 'apinadif']);
 Route::post('/dtTotalCheck/{id}/{hitung}', [FinalInspectionController::class, 'totalCheck']);
+
+// undo box 
+Route::post('/undoBox/{id}/{box}', [FinalInspectionController::class, 'undoBox']);
+
+// undo reject
+Route::delete('/undoReject/{id_lhp}', [FinalInspectionController::class, 'undoReject']);
+// total reject
+Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
+
+
 //total ok
 Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'totalOk']);
 

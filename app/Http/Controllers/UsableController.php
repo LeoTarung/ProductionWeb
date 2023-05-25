@@ -227,8 +227,7 @@ class UsableController extends Controller
         $integerId =  intval($id);
     
         $lhp = LhpFinalInspection::where('id', $integerId)->first();
-        // $mc =  $lhp->id_mesincasting;
-        // dd($integerNG);
+        
         LhpFinalInspectionRaw::create([
             'id_lhp' => $integerId,
             'id_ng' => $integerNG,

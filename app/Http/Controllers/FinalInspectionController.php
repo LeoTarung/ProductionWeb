@@ -87,17 +87,10 @@ class FinalInspectionController extends Controller
         else {
             // do nothing
         }
-            // $box = DB::table('part')
-            // ->where('id', $lhp->part)
-            // ->value(DB::raw('IFNULL(std_packaging,0)'));
-        // dd($box);
-        // $id = 0;
+         
         $reject = collect($useable->RejectFinalInspectionWithStrip());
         $rejectforView = collect($useable->RejectFinalInspectionWithoutStrip());
-        // dd($rejectforView, $reject);
-
         $namaPart = $lhp->part->nama_part;
-
         $jumlahReject = $reject->count();
 
         return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id', 'lhp','namaPart', 'box','reject', 'rejectforView', 'jumlahReject'));
@@ -118,6 +111,55 @@ class FinalInspectionController extends Controller
     {
         $data = LhpFinalInspection::find($id);
         return $data;
+    }
+
+     // untuk undo box 
+     public function undoBox(UsableController $useable, $id, $box){
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $title = "LHP Final Inspection";
+        $mesin = "Final Inspection";
+
+        // for undo
+        $lhp= LhpFinalInspection::where('id', $id)->first();
+        $dataOld =  $lhp->total_check;
+        $lhp->update([
+        'total_check' => $dataOld - $box
+        ]);
+        // batas akhir
+
+        $nrp = $lhp->nrp;
+        $box = $lhp->part->std_packaging;
+        if ($box == null)
+            {
+                $box = 0;
+            }
+        else {
+            // do nothing
+        }
+        $reject = collect($useable->RejectFinalInspectionWithStrip());
+        $rejectforView = collect($useable->RejectFinalInspectionWithoutStrip());
+        $namaPart = $lhp->part->nama_part;
+        $jumlahReject = $reject->count();
+       
+        return view('lhp.lhp-final-inspection', compact('title','shift', 'mesin','nrp','id', 'lhp','dataOld','namaPart', 'box','reject', 'rejectforView', 'jumlahReject'));
+
+        // return redirect("/lhp-final-inspection/$lhp->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+
+    }
+
+    // untuk undo reject 
+    public function undoReject($id_lhp){
+        $undo = LhpFinalInspectionRaw::where('id_lhp', $id_lhp)->get();
+        // dd( $undo->last());
+        $undo->last()->delete();
+
+        $id = $id_lhp;
+        $lhp = LhpFinalInspection::where('id', $id)->first();
+
+        return redirect()->back();
+        // return redirect("/lhp-final-inspection/$lhp->id")->with('berhasilditambahkan', 'berhasilditambahkan');
+
     }
 
     public function totalReject(Usablecontroller $usable, $id_lhp)
@@ -155,5 +197,6 @@ class FinalInspectionController extends Controller
     }
     
 
+    
 }
 
