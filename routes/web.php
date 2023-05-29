@@ -113,7 +113,9 @@ Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController:
 //====================== AREA FINAL INSPECTION ================//
 //Dashboard
 Route::get('/production/finalInspection', [FinalInspectionController::class, 'Dashboard']);
-Route::get('/production/rejectionFinalinspection', [FinalInspectionController::class, 'rejectionDashboard']);
+Route::get('/production/rejectionFinalinspection', [FinalInspectionController::class, 'rejectionFinalinspection']);
+Route::get('/production/detailRejection', [FinalInspectionController::class, 'detailRejection']);
+
 
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
