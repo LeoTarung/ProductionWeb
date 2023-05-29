@@ -12,6 +12,7 @@ use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
 use App\Http\Controllers\FinalInspectionController;
+use Maatwebsite\Excel\Row;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,24 +110,23 @@ Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController:
 
 
 
-//====================== LHP FINAL INSPECTION ================//
+//====================== AREA FINAL INSPECTION ================//
+//Dashboard
+Route::get('/production/finalInspection', [FinalInspectionController::class, 'Dashboard']);
+Route::get('/production/rejectionFinalinspection', [FinalInspectionController::class, 'rejectionDashboard']);
+
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
-
 Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
 // total check
 Route::get('/dtTotalCheck/api/{id_lhp}', [FinalInspectionController::class, 'apinadif']);
 Route::post('/dtTotalCheck/{id}/{hitung}', [FinalInspectionController::class, 'totalCheck']);
-
 // undo box 
 Route::post('/undoBox/{id}/{box}', [FinalInspectionController::class, 'undoBox']);
-
 // undo reject
 Route::delete('/undoReject/{id_lhp}', [FinalInspectionController::class, 'undoReject']);
 // total reject
 Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
-
-
 //total ok
 Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'totalOk']);
 

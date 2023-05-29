@@ -14,6 +14,26 @@ use Illuminate\Support\Facades\DB;
 
 class FinalInspectionController extends Controller
 {
+    public function Dashboard(UsableController $useable)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $title = "Final Inspection Overview";
+        $nama_part = Part::get();
+
+
+        return view('menu.production.finalInspection.finalInspection', compact('title', 'shift', 'date', 'nama_part'));
+    }
+
+    public function rejectionDashboard(UsableController $useable)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $title = "Rejection Final Inspection Overview";
+
+        return view('menu.production.finalInspection.rejectionFinalinspection', compact('title', 'shift', 'date'));
+    }
+
     //
     public function Prep_final_inspection(UsableController $useable){
         $date = $useable->date();
