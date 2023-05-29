@@ -151,11 +151,21 @@ class FinalInspectionController extends Controller
     // untuk undo reject 
     public function undoReject($id_lhp){
         $undo = LhpFinalInspectionRaw::where('id_lhp', $id_lhp)->get();
+      
         // dd( $undo->last());
         $undo->last()->delete();
 
         $id = $id_lhp;
         $lhp = LhpFinalInspection::where('id', $id)->first();
+        $totalCheck = $lhp->total_check;
+        $totalOk = $lhp->total_ok;
+        $totalReject = $lhp->total_ng;
+        $lhp->update([
+            // 'total_check' =>  $totalCheck - 1,
+            'total_ok' =>  $totalOk + 1,
+            'total_ng' =>  $totalReject - 1,
+        ]);
+
 
         return redirect()->back();
         // return redirect("/lhp-final-inspection/$lhp->id")->with('berhasilditambahkan', 'berhasilditambahkan');

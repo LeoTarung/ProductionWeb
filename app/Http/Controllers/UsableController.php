@@ -227,7 +227,10 @@ class UsableController extends Controller
         $integerId =  intval($id);
     
         $lhp = LhpFinalInspection::where('id', $integerId)->first();
-        
+        $lhp->update([
+            'total_check' =>$lhp->total_check + 1,
+        ]);
+
         LhpFinalInspectionRaw::create([
             'id_lhp' => $integerId,
             'id_ng' => $integerNG,
