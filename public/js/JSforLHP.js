@@ -164,6 +164,7 @@ function ModalGambar(id,reject) {
 
 //==============================['FUNCTION MODAL GAMBAR PART DI FINAL INSPECTION']==============================//
 function ModalGambarFinal(id,reject) {
+    undo = 'reject';
     $.get(
         "/partial/modal-final-inspection"+ "/" + id + "/" + reject,
         {},
