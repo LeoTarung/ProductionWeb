@@ -10,6 +10,7 @@ use App\Models\Part;
 use App\Http\Requests\LhpFinalInspRequest;
 use App\Models\RejectNG;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 // use LhpFinalInspRaw;
 
 class FinalInspectionController extends Controller
@@ -20,27 +21,43 @@ class FinalInspectionController extends Controller
         $shift = $useable->Shift();
         $title = "Final Inspection Overview";
         $nama_part = Part::get();
+        
+        $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
+        $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
+        
+        $lhpToday = LhpFinalInspection::whereBetween('created_at', [$start_date, $end_date])->get();
+        $totalProduksi = 0;
+        $totalOk = 0;
+        $totalReject = 0;
+        // dd( $lhpToday);
+       foreach ( $lhpToday->all() as $key ) {
+        $totalProduksi =  $totalProduksi + $key->total_check;
+        $totalOk =  $totalOk + $key->total_ok;
+        $totalReject =  $totalReject + $key->total_ng;
+        // dd($key->part);
+       }
 
-        return view('menu.production.finalInspection.finalInspection', compact('title', 'shift', 'date', 'nama_part'));
+        return view('menu.production.finalInspection.finalInspection', compact('title', 'shift', 'date', 'nama_part','totalProduksi','totalOk','totalReject','lhpToday'));
     }
 
-    public function rejectionFinalinspection(UsableController $useable)
+    public function rejectionFins(UsableController $useable)
     {
         $date = $useable->date();
         $shift = $useable->Shift();
         $title = "Rejection Final Inspection Overview";
         $nama_part = Part::get();
 
-        return view('menu.production.finalInspection.rejectionFinalinspection', compact('title', 'shift', 'date', 'nama_part'));
+        return view('menu.production.finalInspection.rejectionFins', compact('title', 'shift', 'date', 'nama_part'));
     }
 
-    public function detailRejection(UsableController $useable)
+    public function rejectionDetail(UsableController $useable)
     {
         $date = $useable->date();
         $shift = $useable->Shift();
         $title = "Rejection Final Inspection Overview";
+        $nama_part = Part::get();
 
-        return view('menu.production.finalInspection.detailRejection', compact('title', 'shift', 'date'));
+        return view('menu.production.finalInspection.rejectionDetail', compact('title', 'shift', 'date', 'nama_part'));
     }
 
 

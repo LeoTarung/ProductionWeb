@@ -15,61 +15,11 @@
     </style>
 
 <div class="main-content d-flex flex-column">
-    
-     {{-- row total  --}}
-     <div class="row w-100">
-        <div class="col-4">
-            <div class="card " style=" border-radius: 10px 5px 5px 10px; border-left: 5px solid blue;">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2 ">
-                            <div class="fs-2 fw-2 text-primary">Total Produksi</div>
-                            <div class="fs-3 fw-1 text-dark">399</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fa-solid fa-chart-simple fa-2xl" style="color: #80abf4;"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-4">
-            <div class="card " style=" border-radius:105px 5px 5px105px;border-left: 5px solid green;">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2 ">
-                            <div class="fs-2 fw-2 text-success">Total OK</div>
-                            <div class="fs-3 fw-1 text-dark">382</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fa-regular fa-circle-check fa-2xl" style="color: #198754;"></i>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    {{-- row navbar final inspection --}}
+    @include('partial.navbarFins')
 
-        <div class="col-4">
-            <div class="card " style=" border-radius:105px 5px 5px105px;border-left: 5px solid red;">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2 ">
-                            <div class="fs-2 fw-2 text-danger">Total NG</div>
-                            <div class="fs-3 fw-1 text-dark"> 17
-                                <span class="fs-3 fw-1 text-danger">(4.26%)</span>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fa-sharp fa-regular fa-circle-xmark fa-2xl" style="color: red"></i>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    </div> 
-
+     @include('menu.production.finalInspection.allTotal')
     <div class="row w-100 d-flex flex-wrap">
         <div class="col-2">
             <div class="card d-flex">

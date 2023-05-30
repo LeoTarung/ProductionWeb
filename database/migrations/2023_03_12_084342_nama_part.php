@@ -14,7 +14,8 @@ class NamaPart extends Migration
     public function up()
     {
         Schema::create('db_namapart', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->id();
+            // $table->integer('id')->primary();
             $table->string('kode_part')->unique();
             $table->string('nama_part')->nullable()->default("");
             $table->string('material')->nullable();
