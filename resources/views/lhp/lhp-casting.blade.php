@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card card-left3 mt-3 ms-2 shadow-sm" onclick="getReject()">
+                <div class="card card-left3 mt-3 ms-2 shadow-sm" id="cardReject" onclick="getReject()">
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">REJECTION <br>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card card-left4 mt-3 ms-2 shadow-sm" onclick="getDowntime()">
+                <div class="card card-left4 mt-3 ms-2 shadow-sm" id="cardDT" onclick="getDowntime()">
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">DOWNTIME<br><span class="fs-2"
@@ -298,6 +298,10 @@
         @endphp
 
         <script>
+            let cardReject = document.getElementById('cardReject');
+            let cardDT = document.getElementById('cardDT');
+            // cdreject.style.backgroundColor = '#A555EC';
+
             let reject = document.getElementById('reject');
             let downtime = document.getElementById('downtime');
             downtime.hidden = true;
@@ -308,8 +312,16 @@
             let dtProses = document.getElementById('dt4');
             let dtTerencana = document.getElementById('dt5');
 
+
             function getDowntime(id) {
                 reject.hidden = true;
+
+                cardReject.style.backgroundColor = 'white';
+                cardReject.style.color = 'black';
+
+                cardDT.style.backgroundColor = '#ff6a00';
+                cardDT.style.color= 'white';
+
                 downtime.hidden = false;
                 dtMaterial.hidden = false;
                 dtMesin.hidden = true;
@@ -365,6 +377,14 @@
             function getReject(id) {
                 reject.hidden = false;
                 downtime.hidden = true;
+
+                cardReject.style.backgroundColor = '#b20606';
+                cardReject.style.color = 'white';
+
+                cardDT.style.backgroundColor = 'white';
+                cardDT.style.color= 'black';
+
+
             }
 
             let totalReject = 0;
@@ -410,13 +430,6 @@
                 });
             }
 
-            // $(document).ready(function() {
-            //     setInterval(function() {
-            //         getTotalReject();
-            //         getTotalDowntime();
-            //     }, 3000);
-            // });
-
             // -------------- Socket IO -------------- // 
             $(function() {
                 let ip_node = location.hostname;
@@ -428,15 +441,13 @@
                     getTotalReject();
                     getTotalDowntime();
                     let for_mc = {{ $mcfordata }} - 1;
-                    // console.log(data[for_mc].total_ng);
+
                     //Total Produksi
                     let totalProduksi = data[for_mc].total_produksi;
                     let totalOk = totalProduksi - totalReject;
-                    // let totalReject = data[for_mc].total_ng;
-                    // console.log(data[for_mc]);
                     document.getElementById("totalProduksi").innerHTML = totalProduksi;
                     document.getElementById("totalOk").innerHTML = totalOk;
-                    // console.log(data[for_mc].cycle_time);
+
 
                     //----------- Get target -----------------//
                     $.ajax({
@@ -541,7 +552,7 @@
                         }
                         document.getElementById("titleDt").innerHTML = dt;
                         document.getElementById("popUp-content").onclick = function() {
-                            if (confirm('Apakah anda yakin ? ')) {
+                            if (confirm('Apakah anda akan menghentikan waktu donwtime saat ini ? ')) {
                                 clearInterval(Totaltimer);
                                 clearInterval(timer);
                                 clearInterval(save);

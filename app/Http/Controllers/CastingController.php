@@ -325,12 +325,12 @@ class CastingController extends Controller
             $sumDtPlan += $waktu_dt[$i];
         }
 
-        $nrp1 = $idCasting->nrp1 . ' |';
-        $nrp2 = $idCasting->nrp2 . ' |';
-        $nrp3 = $idCasting->nrp3 . ' |';
-        $nrp4 = $idCasting->nrp4 . ' |';
-        $nrp5 = $idCasting->nrp5 . ' |';
-        $nrp6 = $idCasting->nrp6 . ' |';
+        $nrp1 = $idCasting->nrp1;
+        $nrp2 = $idCasting->nrp2;
+        $nrp3 = $idCasting->nrp3;
+        $nrp4 = $idCasting->nrp4;
+        $nrp5 = $idCasting->nrp5;
+        $nrp6 = $idCasting->nrp6;
 
         $nrp = $nrp1;
 

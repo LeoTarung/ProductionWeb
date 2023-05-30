@@ -152,7 +152,7 @@ function ModalGambar(id,reject) {
         "/partial/modal-casting"+ "/" + id + "/" + reject,
         {},
         function (data) {
-            // $("#ModalGambarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
+            $("#ModalGambarLabel").html("Jenis Reject: " + reject); //Untuk kasih judul di modal
             //  $("#page").load('/partial/modal-sementara'); //menampilkan view create di dalam id page
              $("#ModalGambar").modal("show"); //kalo ID pake "#" kalo class pake "."
              $('#ModalGambar .modal-body').load( '/partial/modal-casting' + '/' + id + "/" + reject);
