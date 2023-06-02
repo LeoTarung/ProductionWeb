@@ -622,7 +622,7 @@
             am5.color(0x095256), // total charging
             am5.color(0xFF0000), // loss
             am5.color(0x262A56), // ingot
-            am5.color(0xFF0000), //series 
+            am5.color(0x31FF4B), //series 
             ]);
 
             // Create axes
@@ -752,6 +752,7 @@
                     tooltip: am5.Tooltip.new(root, {
                         labelText: "Target: 30 %"
                     })
+                    
                 }));
 
                 series.strokes.template.setAll({ 
@@ -783,35 +784,6 @@
                     y: 25
                 }));
                 legend.data.setAll(chart.series.values);
-
-                // add ranges
-                // var seriesRangeDataItem = yAxis.makeDataItem({ value: 0, endValue: 0 });
-                // var seriesRange = series.createAxisRange(seriesRangeDataItem);
-                // seriesRange.fills.template.setAll({
-                //     visible: true,
-                //     opacity: 0.3
-                // });
-
-                // seriesRange.fills.template.set("fill", am5.color(0x000000));
-                // seriesRange.strokes.template.set("stroke", am5.color(0x000000));
-
-                // seriesRangeDataItem.get("grid").setAll({
-                //     strokeOpacity: 1,
-                //     visible: true,
-                //     stroke: am5.color(0x000000),
-                //     strokeDasharray: [2, 2]
-                // })
-
-                // seriesRangeDataItem.get("label").setAll({
-                //     location:0,
-                //     visible:true,
-                //     text:"",
-                //     inside:true,
-                //     centerX:0,
-                //     centerY:am5.p100,
-                //     fontWeight:"bold"
-                // })
-               
 
                 // Make stuff animate on load
                 // https://www.amcharts.com/docs/v5/concepts/animations/

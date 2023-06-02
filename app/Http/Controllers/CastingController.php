@@ -84,7 +84,7 @@ class CastingController extends Controller
             'persen' => 94,
             'preparation' => 1,
             'prep' => 4,
-            'running' => 0,
+            'running' => 1,
             'downtime' => 'INSTROCKER ERROR',
             // 'henkaten' => $hitung,
             'isi' => "MATERIAL",

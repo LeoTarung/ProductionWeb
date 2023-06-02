@@ -60,6 +60,15 @@ class FinalInspectionController extends Controller
         return view('menu.production.finalInspection.rejectionDetail', compact('title', 'shift', 'date', 'nama_part'));
     }
 
+    public function qualityCasting(UsableController $useable)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $title = "QC";
+
+        return view('menu.production.finalInspection.qualityCasting', compact('title', 'shift', 'date', ));
+    }
+
 
     //
     public function Prep_final_inspection(UsableController $useable){

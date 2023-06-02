@@ -1,0 +1,16 @@
+.gambar {
+    width: 100%;
+    max-width: 80rem;
+}
+
+.gambar img{
+    width: 100%;
+    height: auto;
+}
+
+.button1 {
+    width: 10px;
+    height: 10px;
+    background-color: brown;
+    margin: 500px 0px 0px 0px;
+}
