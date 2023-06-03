@@ -131,7 +131,6 @@ Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 
 //total ok
 Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'totalOk']);
 
-Route::get('/production/qualityCasting', [FinalInspectionController::class, 'qualityCasting']);
 
 
 //====================== HC & GA ======================//
