@@ -646,6 +646,7 @@
                 chargingAxisRenderer.grid.template.set("forceHidden", true);
                 var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
                     renderer: chargingAxisRenderer,
+                    numberFormat: "#' kg'",
                     tooltip: am5.Tooltip.new(root, {})
                 }));
 
@@ -778,12 +779,44 @@
                 xAxis.data.setAll(data);      
 
                 // add legend 
+                // var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
+                //     centerX: am5.p50,
+                //     x: am5.p50,
+                //     y: 25
+                // }));
+                // legend.data.setAll(chart.series.values);
+                
+            //     am5.color(0x095256), // total charging
+            // am5.color(0xFF0000), // loss
+            // am5.color(0x3C57E1), // ingot
+            // am5.color(0x31FF4B), //series
+            // ]);
+            
                 var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
+                    nameField: "name",
+                    fillField: "color",
+                    strokeField: "color",
                     centerX: am5.p50,
                     x: am5.p50,
                     y: 25
-                }));
-                legend.data.setAll(chart.series.values);
+                    }));
+
+                    legend.data.setAll([{
+                    name: "Total Charging (kg)",
+                    color: am5.color(0x095256)
+                    }, {
+                    name: "Loss (%)",
+                    color: am5.color(0xFF0000)
+                    }, {
+                    name: "Ingot (%)",
+                    color: am5.color(0x262A56)
+                    }, {
+                    name: "Target (%)",
+                    color: am5.color(0x31FF4B)
+                    }
+                ]);
+
+                // legend.data.setAll(chart.series.values);
 
                 // Make stuff animate on load
                 // https://www.amcharts.com/docs/v5/concepts/animations/
