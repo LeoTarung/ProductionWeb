@@ -66,7 +66,7 @@
 }
 
 .font-ci2{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
     margin:0% 1px 0% 10px;
 
@@ -118,6 +118,7 @@
     border-radius: 20px 20px 20px 20px!important;
     border-left: 10px solid var( --red)!important;
 }
+
 .card-left4{
     border-radius: 20px 20px 20px 20px !important;
     border-left: 10px solid var( --orange)!important;

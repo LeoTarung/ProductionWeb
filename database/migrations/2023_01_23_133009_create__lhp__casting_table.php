@@ -33,7 +33,7 @@ class CreateLhpCastingTable extends Migration
             $table->integer('total_produksi')->default('0');
             $table->integer('total_ok')->default('0');
             $table->integer('total_ng')->default('0');
-            $table->time('total_downtime')->default('0');
+            $table->integer('total_downtime')->default('0');
             // $table->integer('bercak_hitam')->default('0');
             // $table->integer('blister')->default('0');
             // $table->integer('bushing')->default('0');
@@ -148,7 +148,7 @@ class CreateLhpCastingTable extends Migration
             // $table->time('molten_habis')->default('0');
             // $table->time('molten_drop')->default('0');
             // $table->time('packaging_kosong')->default('0');
-            $table->string('updated_by')->nullable();
+            // $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

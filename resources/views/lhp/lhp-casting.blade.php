@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card card-left3 mt-3 ms-2 shadow-sm" onclick="getReject()">
+                <div class="card card-left3 mt-3 ms-2 shadow-sm" id="cardReject" onclick="getReject()">
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">REJECTION <br>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card card-left4 mt-3 ms-2 shadow-sm" onclick="getDowntime()">
+                <div class="card card-left4 mt-3 ms-2 shadow-sm" id="cardDT" onclick="getDowntime()">
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">DOWNTIME<br><span class="fs-2"
@@ -298,6 +298,10 @@
         @endphp
 
         <script>
+            let cardReject = document.getElementById('cardReject');
+            let cardDT = document.getElementById('cardDT');
+            // cdreject.style.backgroundColor = '#A555EC';
+
             let reject = document.getElementById('reject');
             let downtime = document.getElementById('downtime');
             downtime.hidden = true;
@@ -308,8 +312,16 @@
             let dtProses = document.getElementById('dt4');
             let dtTerencana = document.getElementById('dt5');
 
+
             function getDowntime(id) {
                 reject.hidden = true;
+
+                cardReject.style.backgroundColor = 'white';
+                cardReject.style.color = 'black';
+
+                cardDT.style.backgroundColor = '#ff6a00';
+                cardDT.style.color= 'white';
+
                 downtime.hidden = false;
                 dtMaterial.hidden = false;
                 dtMesin.hidden = true;
@@ -350,7 +362,6 @@
                     dtDies.hidden = true;
                     dtProses.hidden = false;
                     dtTerencana.hidden = true;
-                    //  console.log("test");
                 });
 
                 document.getElementById('five').addEventListener("click", () => {
@@ -359,7 +370,6 @@
                     dtDies.hidden = true;
                     dtProses.hidden = true;
                     dtTerencana.hidden = false;
-                    //  console.log("test");
                 });
 
             }
@@ -367,6 +377,14 @@
             function getReject(id) {
                 reject.hidden = false;
                 downtime.hidden = true;
+
+                cardReject.style.backgroundColor = '#b20606';
+                cardReject.style.color = 'white';
+
+                cardDT.style.backgroundColor = 'white';
+                cardDT.style.color= 'black';
+
+
             }
 
             let totalReject = 0;
@@ -399,29 +417,18 @@
                         // Total Downtime Downtime
                         document.getElementById("totalDt").innerHTML = data[0] + data[1] + data[2] + data[3] + data[
                             4];
-
                         // Total downtime perKategori
                         for (let i = 1; i <= 5; i++) {
                             document.getElementById('dt' + i).innerHTML = 'Total ' +
                                 data[i - 1] * 60 + ' Detik';
-
                         }
-
                         // Perdowntime
                         for (let i = 1, j = 5; i <= {{ $countdt }}, j <= {{ $countdt }} + 5; i++, j++) {
                             document.getElementById('timer' + i).innerHTML = data[j];
                         }
-
                     }
                 });
             }
-
-            $(document).ready(function() {
-                setInterval(function() {
-                    getTotalReject();
-                    getTotalDowntime();
-                }, 3000);
-            });
 
             // -------------- Socket IO -------------- // 
             $(function() {
@@ -431,16 +438,16 @@
                 socket.on('connection');
                 socket.on("levelMolten_settings", (data) => {
                     //Define Urutan Mesin Casting
+                    getTotalReject();
+                    getTotalDowntime();
                     let for_mc = {{ $mcfordata }} - 1;
-                    // console.log(data[for_mc].total_ng);
+
                     //Total Produksi
                     let totalProduksi = data[for_mc].total_produksi;
                     let totalOk = totalProduksi - totalReject;
-                    // let totalReject = data[for_mc].total_ng;
-                    // console.log(data[for_mc]);
                     document.getElementById("totalProduksi").innerHTML = totalProduksi;
                     document.getElementById("totalOk").innerHTML = totalOk;
-                    // console.log(data[for_mc].cycle_time);
+
 
                     //----------- Get target -----------------//
                     $.ajax({
@@ -466,8 +473,6 @@
                             console.log(error); // handle any errors that occur
                         }
                     });
-
-
                 })
             });
 
@@ -475,7 +480,6 @@
 
             var Totaltime = 0;
             var minute = 0;
-
 
             function Modaldowntime(id, dt, urutan, kategori) {
                 urutan = parseInt(urutan, 10);
@@ -497,7 +501,6 @@
                     type: "GET",
                     dataType: "json",
                     success: function(data) {
-
                         minute = data[urutan + 4];
                         Totaltime = data[kategori - 1] * 60;
                         // console.log(Totaltime);
@@ -523,29 +526,22 @@
                                 }
                             });
                         };
-
-
                         var timer = setInterval(function() {
                             minute++;
                             document.getElementById('modalMinute').innerHTML =
                                 minute;
-                            // console.log(minute);
                         }, 60000);
-
                         var Totaltimer = setInterval(function() {
                             Totaltime++;
-                            // document.getElementById('modalMinute').innerHTML = formatTime(Math.floor(time / 60));
+
                             document.getElementById('totalModalMinute').innerHTML =
                                 'Downtime ' + UrutanKategori + ': ' + Totaltime +
                                 ' detik';
-                            // console.log('Minutes: ' + formatTime(Math.floor(Totaltime / 60)))
                         }, 1000);
-
                         var save = setInterval(function() {
                             saveDowntimeCasting();
                             // console.log(test);
                         }, 60000);
-
                         var popUp = document.getElementById('popUp');
 
                         function formatTime(time) {
@@ -554,18 +550,14 @@
                             // return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
                             return +Totalminutes + Totalseconds;
                         }
-
                         document.getElementById("titleDt").innerHTML = dt;
-                        // document.getElementById("popUp").style.display = "block";
                         document.getElementById("popUp-content").onclick = function() {
-                            if (confirm('Apakah anda yakin ? ')) {
+                            if (confirm('Apakah anda akan menghentikan waktu donwtime saat ini ? ')) {
                                 clearInterval(Totaltimer);
                                 clearInterval(timer);
                                 clearInterval(save);
-                                // popUp.setAttribute("data-bs-dismiss", "modal");
                                 $("#popUp").modal("hide");
-                                // console.log(minute);
-                                // document.getElementById("popUp").style.display = "none";
+
                             }
 
                         };

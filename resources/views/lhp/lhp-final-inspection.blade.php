@@ -136,7 +136,12 @@
       {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> --}}
       <script src="/js/bootstrap.bundle.min.js"></script>
       <script>
+
+        let undo;
+        
         var hitung;
+
+       
         function totalCheck(){
         $.get("/dtTotalCheck/api/" + {{ $lhp->id }} , function(kucing) {
         
@@ -148,11 +153,9 @@
             hitung = kucing.total_check
 
             totalOk(total);
-
         });
-
         }
-            setInterval(totalCheck, 5000)
+        setInterval(totalCheck, 5000)
        
         setInterval(function(){
             console.log(hitung)
@@ -161,6 +164,7 @@
 
         // FUNGSI INI UNTUK INPUT KE DB
         function counterFunc(){
+            undo = 'one';
             hitung++;
             const id = {{ $lhp->id }};
             var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
@@ -181,7 +185,8 @@
         }
 
         function resetFunc(){
-            hitung--;
+            if (undo == 'one'){
+                hitung--;
                 const id = {{ $lhp->id }};
                 var url = "/dtTotalCheck"  + "/" + id + "/" + hitung  // replace with your desired URL
                 var token = $('meta[name="csrf-token"]').attr('content');
@@ -198,9 +203,47 @@
                         console.log('Tidak berhasil meng-undo 1' );
                     }
                 });
+            }  else if (undo == 'box') {
+                box = {{ $box }};
+                const id = {{ $lhp->id }};
+                var url = "/undoBox"  + "/" + id + "/" + box  // replace with your desired URL
+                var token = $('meta[name="csrf-token"]').attr('content');
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {
+                        _token: token
+                    },
+                    success: function(){
+                        console.log('Berhasil meng-undo box ');
+                    },
+                    error: function(){
+                        console.log('Tidak berhasil meng-undo box' );
+                    }
+                });
+            }  else if (undo == 'reject') {
+                const id = {{ $lhp->id }};
+                var url = "/undoReject"  + "/" + id   // replace with your desired URL
+                var token = $('meta[name="csrf-token"]').attr('content');
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    data: {
+                        _token: token
+                    },
+                    success: function(){
+                        console.log('Menghapus');
+                    },
+                    error: function(){
+                        console.log('Tidak berhasil Menghapus' );
+                    }
+                });
+            }
+            
         }
 
         function counterboxFunc(){
+            undo = 'box';
            let box = {{ $box }};
            const id = {{ $lhp->id }};
             var url = "/dtTotalCheck"  + "/" + id + "/" + (hitung + box)  // replace with your desired URL
@@ -224,18 +267,6 @@
             console.log(box);
         }
 
-
-        // // Ambil nilai counter terbaru dari session saat halaman di-refresh
-        //         $(document).ready(function(){
-        //         if(sessionStorage.getItem("hitung")){
-        //             hitung = sessionStorage.getItem("hitung");
-        //             document.getElementById("hitung").innerHTML = hitung;
-        //         }
-        // });
-
-        // setInterval(counterFunc, 1000);
-        // setInterval(resetFunc, 1000);
-
         let reject = document.getElementById('reject');     
 
         function getReject(id) {
@@ -254,6 +285,7 @@
                     document.getElementById("totalReject").innerHTML = data[0];
                     for (let i = 1; i <= {{ $jumlahReject }}; i++) {    
                         document.getElementById('jenisReject' + (i-1)).innerHTML = data[i];
+                        
                     }
                 },
                 error: function() {

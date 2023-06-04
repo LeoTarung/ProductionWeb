@@ -742,9 +742,9 @@ a .font-forklift10 {
     }
 
     .nrp {
-        width: 125%;
-        margin-left: -10px;
-        margin-right: 43px;
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     .card-material {
         margin-bottom: 49px;

@@ -33,41 +33,17 @@ class CastingController extends Controller
 
     public function tvCasting(UsableController $useable, $id)
     {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $mesin = MesinCasting::get()->all();
+        $title = "Andon Casting Overview";
 
-        //{{  Untuk Menyyeleksi Henkaten}}  //
-        // $mp = null;
-        // $met = null;
-        // $mc = null;
-        // $mat = null;
+        $line = "NM.FR.AH.CA047";
 
-        // $array = ['satu' => $mp ,
-        //             'dua' => $met ,
-        //             'tiga' => $mc ,
-        //             'empat' => $mat ,
-        // ];
-        // $filtered = collect(Arr::where($array, function ( $value, $key) {
-        //     return ($value != null);
-        // }));
-
-        // $hitung = $filtered->count();
-
-        // if($mp  != null) {
-        //     $array['satu' ]  = "Man Power";
-        // }
-        // elseif($met != null){
-        //     $array['dua']  = "Method";
-        // }
-        // elseif($mc  != null){
-        //     $array['tiga']  = "Machine";
-        // }
-        // elseif($mat  != null){
-        //     $array['empat']  = "Material";
-        // }
-        // else {
-
-        // }
-
-        // dd($array['dua']);
+        $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
+        $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
+        $part = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', '<=', $id)->get();
+        // dd($part);
 
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
@@ -82,7 +58,7 @@ class CastingController extends Controller
             // 'aktual2'=> 400///
             'target' => 0,
             'persen' => 96,
-            'preparation' => 1,
+            'preparation' => 0,
             'prep' => 4,
             'running' => 0,
             'downtime' => 'INSTROCKER ERROR',
@@ -325,12 +301,12 @@ class CastingController extends Controller
             $sumDtPlan += $waktu_dt[$i];
         }
 
-        $nrp1 = $idCasting->nrp1 . ' |';
-        $nrp2 = $idCasting->nrp2 . ' |';
-        $nrp3 = $idCasting->nrp3 . ' |';
-        $nrp4 = $idCasting->nrp4 . ' |';
-        $nrp5 = $idCasting->nrp5 . ' |';
-        $nrp6 = $idCasting->nrp6 . ' |';
+        $nrp1 = $idCasting->nrp1;
+        $nrp2 = $idCasting->nrp2;
+        $nrp3 = $idCasting->nrp3;
+        $nrp4 = $idCasting->nrp4;
+        $nrp5 = $idCasting->nrp5;
+        $nrp6 = $idCasting->nrp6;
 
         $nrp = $nrp1;
 
@@ -672,6 +648,9 @@ class CastingController extends Controller
             ->get();
         // $oldIntime = $old->whereBetween('created_at', [$start_time, $end_time])->first();
         // dd($oldIntime);
+        LhpCasting::where('id', $id_lhp)->update([
+            'total_downtime' => $minute
+        ]);
 
         switch ($currentTime = date("H:i")) {
             case $currentTime >= "00:00" && $currentTime < "01:00":
