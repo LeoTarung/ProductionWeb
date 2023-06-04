@@ -11,7 +11,7 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    database: "production_app",
+    database: "production-app",
 });
 
 const connection2 = mysql.createConnection({
@@ -105,32 +105,32 @@ io.on("connection", (socket) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][61] + "'WHERE ID='4-92-68-1'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][16] + "'WHERE ID='4-92-68-1'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][66] + "'WHERE ID='4-92-68-2'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][21] + "'WHERE ID='4-92-68-2'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][71] + "'WHERE ID='4-92-68-3'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][26] + "'WHERE ID='4-92-68-3'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][76] + "'WHERE ID='4-93-68-1'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][31] + "'WHERE ID='4-93-68-1'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][81] + "'WHERE ID='4-93-68-2'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][36] + "'WHERE ID='4-93-68-2'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][86] + "'WHERE ID='4-93-68-3'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][41] + "'WHERE ID='4-93-68-3'",
                     (err, HasilB) => {
                     }
                 );
@@ -350,95 +350,95 @@ io.on("connection", (socket) => {
         );
 
         //==========[' UPDATE AKTUAL PRODUCTION CASTING ']==========//
-        // connection.query(
-        //     "SELECT * FROM input_kv8000 WHERE area='CA'",
-        //     (err, HasilQueryA) => {
-        //         //==========[' UPDATE MC-47 ']==========//
-        //         //========[' UPDATE COUNTER MC-47 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET total_produksi=" +
-        //                 HasilQueryA[0][231] +
-        //                 " WHERE mc= 47"
-        //         ),
-        //             (err, Hasilupdate) => {};
+        connection.query(
+            "SELECT * FROM input_kv8000 WHERE area='CA'",
+            (err, HasilQueryA) => {
+                //==========[' UPDATE MC-47 ']==========//
+                //========[' UPDATE COUNTER MC-47 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET total_produksi=" +
+                        HasilQueryA[0][231] +
+                        " WHERE mc= 47"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //========[' UPDATE MOLTEN MC-47 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET aktual_molten=" +
-        //                 HasilQueryA[0][234] +
-        //                 " WHERE mc= 47"
-        //         ),
-        //             (err, Hasilupdate) => {};
+                //========[' UPDATE MOLTEN MC-47 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET aktual_molten=" +
+                        HasilQueryA[0][234] +
+                        " WHERE mc= 47"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //==========[' UPDATE MC-48 ']==========//
-        //         //========[' UPDATE COUNTER MC-48 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET total_produksi=" +
-        //                 HasilQueryA[0][236] +
-        //                 " WHERE mc= 48"
-        //         ),
-        //             (err, Hasilupdate) => {};
+                //==========[' UPDATE MC-48 ']==========//
+                //========[' UPDATE COUNTER MC-48 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET total_produksi=" +
+                        HasilQueryA[0][236] +
+                        " WHERE mc= 48"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //========[' UPDATE MOLTEN MC-48 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET aktual_molten=" +
-        //                 HasilQueryA[0][239] +
-        //                 " WHERE mc= 48"
-        //         ),
-        //             (err, Hasilupdate) => {};
+                //========[' UPDATE MOLTEN MC-48 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET aktual_molten=" +
+                        HasilQueryA[0][239] +
+                        " WHERE mc= 48"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //==========[' UPDATE MC-51 ']==========//
-        //         //========[' UPDATE COUNTER MC-51 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET total_produksi=" +
-        //                 HasilQueryA[0][251] +
-        //                 " WHERE mc= 51"
-        //         ),
-        //             (err, Hasilupdate) => {};
+                //==========[' UPDATE MC-51 ']==========//
+                //========[' UPDATE COUNTER MC-51 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET total_produksi=" +
+                        HasilQueryA[0][251] +
+                        " WHERE mc= 51"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //========[' UPDATE MOLTEN MC-51 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET aktual_molten=" +
-        //                 HasilQueryA[0][254] +
-        //                 " WHERE mc= 51"
-        //         ),
-        //             (err, Hasilupdate) => {};
+                //========[' UPDATE MOLTEN MC-51 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET aktual_molten=" +
+                        HasilQueryA[0][254] +
+                        " WHERE mc= 51"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //==========[' UPDATE MC-52 ']==========//
-        //         //========[' UPDATE COUNTER MC-52 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET total_produksi=" +
-        //                 HasilQueryA[0][256] +
-        //                 " WHERE mc= 52"
-        //         ),
-        //             (err, Hasilupdate) => {};
+                //==========[' UPDATE MC-52 ']==========//
+                //========[' UPDATE COUNTER MC-52 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET total_produksi=" +
+                        HasilQueryA[0][256] +
+                        " WHERE mc= 52"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //========[' UPDATE MOLTEN MC-52 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET aktual_molten=" +
-        //                 HasilQueryA[0][259] +
-        //                 " WHERE mc= 52"
-        //         ),
-        //             (err, Hasilupdate) => {};
+                //========[' UPDATE MOLTEN MC-52 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET aktual_molten=" +
+                        HasilQueryA[0][259] +
+                        " WHERE mc= 52"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //==========[' UPDATE MC-53 ']==========//
-        //         //========[' UPDATE COUNTER MC-53 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET total_produksi=" +
-        //                 HasilQueryA[0][261] +
-        //                 " WHERE mc= 53"
-        //         ),
-        //             (err, Hasilupdate) => {};
+                //==========[' UPDATE MC-53 ']==========//
+                //========[' UPDATE COUNTER MC-53 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET total_produksi=" +
+                        HasilQueryA[0][261] +
+                        " WHERE mc= 53"
+                ),
+                    (err, Hasilupdate) => {};
 
-        //         //========[' UPDATE MOLTEN MC-52 ']==========//
-        //         connection.query(
-        //             "UPDATE mesin_casting SET aktual_molten=" +
-        //                 HasilQueryA[0][264] +
-        //                 " WHERE mc= 53"
-        //         ),
-        //             (err, Hasilupdate) => {};
-        //     }
-        // );
+                //========[' UPDATE MOLTEN MC-52 ']==========//
+                connection.query(
+                    "UPDATE mesin_casting SET aktual_molten=" +
+                        HasilQueryA[0][264] +
+                        " WHERE mc= 53"
+                ),
+                    (err, Hasilupdate) => {};
+            }
+        );
     }, 3000);
 });
 
