@@ -12815,7 +12815,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 21
 
             ], [
-                'id' => 18222,
+                'id' => 1822,
                 'jenis_reject' => 'BELANG',
                 'casting' => false,
                 'final_inspection' => true,
@@ -15784,7 +15784,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 11
 
             ], [
-                'id' => 22444,
+                'id' => 2244,
                 'jenis_reject' => 'DIMENSI',
                 'casting' => false,
                 'final_inspection'=> true,
@@ -16290,7 +16290,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 11
 
             ], [
-                'id' => 23516,
+                'id' => 2316,
                 'jenis_reject' => 'DUST SPRAY',
                 'casting' => false,
                 'final_inspection' => true,
@@ -18314,7 +18314,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 11
 
             ], [
-                'id' =>  6504,
+                'id' =>  2604,
                 'jenis_reject' => 'KASAR',
                 'casting' => false,
                 'final_inspection'=> true,
@@ -21890,7 +21890,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 16
 
             ], [
-                'id' =>31313,
+                'id' =>3113,
                 'jenis_rejct' => 'NG JOINT TUBE',
                 'casting' => false,
                 'final_inspection' => true,
@@ -22902,7 +22902,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 16
 
             ], [
-                'id' =>32457,
+                'id' =>3257,
                 'jenis_rejct' => 'NG PLATE',
                 'casting' => false,
                 'final_inspection'=> true,
@@ -25469,7 +25469,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 21
 
             ], [
-                'id' => 13622,
+                'id' => 3622,
                 'jenis_reject' => 'NG WASHER',
                 'casting' => false,
                 'final_inspection' => true,
@@ -27424,7 +27424,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 11
 
             ], [
-                'id' =>  9800,
+                'id' => 3900,
                 'jenis_reject' => 'OVER PROSES',
                 'casting' => false,
                 'final_inspection' => true,
@@ -28437,7 +28437,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 11
 
             ], [
-                'id' => 24044,
+                'id' => 4044,
                 'jenis_reject' => 'PECAH',
                 'casting' => false,
                 'final_inspection'=> true,
@@ -28943,7 +28943,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 11
 
             ], [
-                'id' => 24116,
+                'id' => 4116,
                 'jenis_reject' => 'SERABUT',
                 'casting' => false,
                 'final_inspection' => true,
@@ -34544,7 +34544,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 16
 
             ], [
-                'id' =>34913,
+                'id' =>4913,
                 'jenis_rejct' => 'FERRO',
                 'casting' => false,
                 'final_inspection' => true,
@@ -35556,7 +35556,7 @@ class RejectSeeder extends Seeder
                 'posisi' => 16
 
             ], [
-                'id' =>35057,
+                'id' =>5057,
                 'jenis_rejct' => 'NG LOCTITE',
                 'casting' => false,
                 'final_inspection'=> true,

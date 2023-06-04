@@ -23,7 +23,7 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'nama_downtime' => 'TRIAL AFTER DANDORY',
+                'nama_downtime' => 'AFTER DANDORY',
                 'kategori' => 'terplanning',
                 'casting' => true,
             ],
@@ -491,7 +491,7 @@ class DowntimeSeeder extends Seeder
             ],
             [
                 'id' => 79,
-                'nama_downtime' => 'GANTI KASET SPRAY',
+                'nama_downtime' => 'GANTI KASET',
                 'kategori' => 'proses',
                 'casting' => true,
             ],
