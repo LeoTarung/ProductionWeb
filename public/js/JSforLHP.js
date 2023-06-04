@@ -70,6 +70,7 @@ switch (bulan) {
 }
 var tampilTanggal = tanggal + " " + bulan + " " + tahun;
 document.getElementById("date-1").innerHTML = tampilTanggal;
+document.getElementById("date-2").innerHTML = hari + ", " + tampilTanggal;
 
     function showTime() {
         var date = new Date();

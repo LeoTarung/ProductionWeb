@@ -1,18 +1,19 @@
 <?php
 
+use Maatwebsite\Excel\Row;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\HcgaController;
 use App\Http\Controllers\UsableController;
 use App\Http\Controllers\CastingController;
 use App\Http\Controllers\MeltingController;
+use App\Http\Controllers\QualityController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HenkatenController;
 use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
 use App\Http\Controllers\FinalInspectionController;
-use Maatwebsite\Excel\Row;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,7 +121,7 @@ Route::get('/production/rejectionDetail', [FinalInspectionController::class, 're
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
 
-Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection'); 
+Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp_final_inspection'])->name('LHPFinalInspection');
 
 // total check
 Route::get('/dtTotalCheck/api/{id_lhp}', [FinalInspectionController::class, 'apinadif']);
@@ -138,6 +139,14 @@ Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'total
 //====================== HC & GA ======================//
 Route::get('/hrd/karyawan', [HcgaController::class, 'karyawan']);
 Route::post('/hrd/karyawan/update', [HcgaController::class, 'update_karyawan']);
+
+//====================== Quality ======================//
+Route::get('/monitor', [QualityController::class, 'index']);
+Route::get('/partial/modalTable/{id}', [QualityController::class, 'modalTable']);
+Route::get('/QualityHistory', [QualityController::class, 'indexHistory']);
+Route::post('/updateStatus/{warna}/{no}', [QualityController::class, 'updateStatus']);
+Route::post('/defaultStatus', [QualityController::class, 'resetStatusToDefault']);
+Route::post('/inputProblem', [QualityController::class, 'inputProblem']);
 
 
 //====================== Only Testing ======================//

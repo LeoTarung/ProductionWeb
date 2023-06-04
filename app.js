@@ -208,6 +208,13 @@ io.on("connection", (socket) => {
         // );
 
 
+         //==========[' SELECT ALL FROM MESIN CASTING ']==========//
+         connection.query(
+            "SELECT * FROM status_quality",
+            (err, res) => {
+                socket.emit("status_quality", res);
+            }
+        );
         //==========[' SELECT ALL FROM MESIN CASTING ']==========//
         connection.query(
             "SELECT * FROM mesin_casting WHERE material='" + material1 + "'",

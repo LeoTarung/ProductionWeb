@@ -33,8 +33,18 @@ class CastingController extends Controller
 
     public function tvCasting(UsableController $useable, $id)
     {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $mesin = MesinCasting::get()->all();
+        $title = "Andon Casting Overview";
 
-      
+        $line = "NM.FR.AH.CA047";
+
+        $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
+        $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
+        $part = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', '<=', $id)->get();
+        // dd($part);
+
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
 
