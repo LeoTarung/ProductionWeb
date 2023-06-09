@@ -528,7 +528,7 @@
     <script>
         $(function() {
             let ip_node = location.hostname;
-            let socket_port = '5631';
+            let socket_port = '5322';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
             socket.on("levelMolten_settings", (data) => {
@@ -539,7 +539,9 @@
                 document.getElementById("aktual").innerHTML = aktual;
                 element.innerHTML = aktual;
                 //Persentase
-
+                // console.log(aktual);
+                // console.log('test');
+                // console.log(data[for_mc]).nama_part);
                 // var ValPersen = (aktual / i * 100);
 
                 // pembulatan = ValPersen.toFixed(0);
@@ -570,9 +572,9 @@
         });
     </script>
 
-    <script src="{{ asset('/js/Socketio454.js') }}"></script>
+    <script src="/js/Socketio454.js"></script>
     {{-- <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script> --}}
-    <script src="{{ asset('/js/moment.js') }}"></script>
+    <script src="/js/moment.js"></script>
     @include('sweetalert::alert')
     <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
 

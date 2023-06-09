@@ -126,7 +126,7 @@ Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp
 // total check
 Route::get('/dtTotalCheck/api/{id_lhp}', [FinalInspectionController::class, 'apinadif']);
 Route::post('/dtTotalCheck/{id}/{hitung}', [FinalInspectionController::class, 'totalCheck']);
-// undo box 
+// undo box
 Route::post('/undoBox/{id}/{box}', [FinalInspectionController::class, 'undoBox']);
 // undo reject
 Route::delete('/undoReject/{id_lhp}', [FinalInspectionController::class, 'undoReject']);
@@ -145,7 +145,7 @@ Route::get('/monitor', [QualityController::class, 'index']);
 Route::get('/partial/modalTable/{id}', [QualityController::class, 'modalTable']);
 Route::get('/QualityHistory', [QualityController::class, 'indexHistory']);
 Route::post('/updateStatus/{warna}/{no}', [QualityController::class, 'updateStatus']);
-Route::post('/defaultStatus', [QualityController::class, 'resetStatusToDefault']);
+Route::post('/defaultStatus/{shift}', [QualityController::class, 'resetStatusToDefault']);
 Route::post('/inputProblem', [QualityController::class, 'inputProblem']);
 
 

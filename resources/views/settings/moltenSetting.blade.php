@@ -94,7 +94,7 @@
     <script>
         $(function() {
             let ip_node = location.hostname;
-            let socket_port = '5631';
+            let socket_port = '5322';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
 
@@ -136,7 +136,7 @@
 
         });
 
-        ///////{ Untuk Memunculkan Edit Material  }//////// 
+        ///////{ Untuk Memunculkan Edit Material  }////////
 
         const btnEdit = document.getElementById('btnEditMtr');
         document.getElementById('editMtr').style.visibility =
@@ -162,7 +162,7 @@
             }
         }
 
-        ///////{ Untuk Memunculkan mc baru}//////// 
+        ///////{ Untuk Memunculkan mc baru}////////
 
         const btnCari = document.getElementById('btnCariMC');
 

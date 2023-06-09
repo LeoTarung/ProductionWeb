@@ -430,10 +430,10 @@
                 });
             }
 
-            // -------------- Socket IO -------------- // 
+            // -------------- Socket IO -------------- //
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '5631';
+                let socket_port = '5322';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
                 socket.on("levelMolten_settings", (data) => {

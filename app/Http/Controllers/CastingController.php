@@ -38,19 +38,19 @@ class CastingController extends Controller
         $mesin = MesinCasting::get()->all();
         $title = "Andon Casting Overview";
 
-        $line = "NM.FR.AH.CA047";
+        $line = "MC 0".$id;
 
         $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
-        $part = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', '<=', $id)->get();
+        $part = MesinCasting::where('mc',$id)->first();
         // dd($part);
 
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
 
         return view('menu.production.casting.tvCasting', [
-            'line' => "NM.FR.AH.CA047",
-            'part' => "COVER L SIDE K1ZG (SFG)",
+            'line' =>  $line,
+            'part' => $part->nama_part,
             'urgent' => 0,
             'aktual' => 409,
             // 'aktual' => $range_hitung->total_part,
@@ -616,9 +616,9 @@ class CastingController extends Controller
         $data = $usable->convertNullToZero($data);
 
         $data = $usable->convertArrayStringToNumber($data);
-        // {{ Notes }} // 
+        // {{ Notes }} //
         //-- Untuk baris 0 - 4 pada variabel data berisi : //
-        // [0] = Total downtime Material    // 
+        // [0] = Total downtime Material    //
         // [1] = Total downtime Mesin       //
         // [2] = Total downtime Proses      //
         // [3] = Total downtime Dies        //
@@ -1484,7 +1484,7 @@ class CastingController extends Controller
                         'tn_9' => 1
                     ]);
                 }
-                // dd($old->whereBetween('created_at', [$start_time, $end_time])->first()); 
+                // dd($old->whereBetween('created_at', [$start_time, $end_time])->first());
                 break;
             case $currentTime >= "10:00" && $currentTime < "11:00":
                 if ($old != null) {
