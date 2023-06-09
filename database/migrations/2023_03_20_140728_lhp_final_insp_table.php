@@ -15,13 +15,14 @@ class LhpFinalInspTable extends Migration
     {
         Schema::create('lhp_final_insp', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_part');
+            // $table->foreign('id_part')->references('id')->on('db_namapart')->onDelete('cascade');
             $table->integer('nrp')->default('0')->nullable();
             $table->date('tanggal')->nullable();
             $table->string('shift')->default('0');
             $table->string('gate')->default('0');
-            $table->integer('no_lhp')->default('0');
-            $table->integer('id_part')->default('0');
-            $table->integer('total_produksi')->default('0');
+            // $table->integer('no_lhp')->default('0');
+            // $table->integer('total_produksi')->default('0');
             $table->integer('total_check')->default('0');
             $table->integer('total_ok')->default('0');
             $table->integer('total_ng')->default('0');

@@ -17,7 +17,7 @@
         .img {
             width: 100%;
             height: auto;
-            border: 5px solid #000;
+            /* border: 5px solid #000; */
         }
 
         /* Button Ganjil ( kiri) */

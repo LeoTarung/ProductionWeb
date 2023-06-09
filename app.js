@@ -14,11 +14,11 @@ const connection = mysql.createConnection({
     database: "production-app",
 });
 
-const connection2 = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    database: "trial",
-});
+// const connection2 = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     database: "trial",
+// });
 
 //==========[' DECLARE VARIABLE ']==========//
 var shift;
@@ -105,32 +105,32 @@ io.on("connection", (socket) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][16] + "'WHERE ID='4-92-68-1'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][61] + "'WHERE ID='4-92-68-1'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][21] + "'WHERE ID='4-92-68-2'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][66] + "'WHERE ID='4-92-68-2'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][26] + "'WHERE ID='4-92-68-3'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][71] + "'WHERE ID='4-92-68-3'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][31] + "'WHERE ID='4-93-68-1'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][76] + "'WHERE ID='4-93-68-1'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][36] + "'WHERE ID='4-93-68-2'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][81] + "'WHERE ID='4-93-68-2'",
                     (err, HasilB) => {
                     }
                 );
                 connection2.query(
-                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][41] + "'WHERE ID='4-93-68-3'",
+                    "UPDATE input SET TOTAL_PRODUKSI='" + HasilA[0][86] + "'WHERE ID='4-93-68-3'",
                     (err, HasilB) => {
                     }
                 );
@@ -206,8 +206,6 @@ io.on("connection", (socket) => {
                 );
             }
         );
-
-
         //==========[' SELECT ALL FROM MESIN CASTING ']==========//
         connection.query(
             "SELECT * FROM mesin_casting WHERE material='" + material1 + "'",
