@@ -126,7 +126,7 @@ Route::get('/lhp-final-inspection/{id}', [FinalInspectionController::class, 'Lhp
 // total check
 Route::get('/dtTotalCheck/api/{id_lhp}', [FinalInspectionController::class, 'apinadif']);
 Route::post('/dtTotalCheck/{id}/{hitung}', [FinalInspectionController::class, 'totalCheck']);
-// undo box 
+// undo box
 Route::post('/undoBox/{id}/{box}', [FinalInspectionController::class, 'undoBox']);
 // undo reject
 Route::delete('/undoReject/{id_lhp}', [FinalInspectionController::class, 'undoReject']);

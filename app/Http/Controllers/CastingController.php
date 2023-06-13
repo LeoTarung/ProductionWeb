@@ -39,20 +39,22 @@ class CastingController extends Controller
         $mesin = MesinCasting::get()->all();
         $title = "Andon Casting Overview";
 
-        $line = "NM.FR.AH.CA047";
+        $line = "MC 0".$id;
 
         $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
+
         $lhp = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', $id)->where('shift', $shift)->first();
         // dd($lhp);
 
         $production = 0;
         $mecin = "MC 057";
-        $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
+        $namaPart =  MesinCasting::where('mc',$id)->first();
         $urgent = 0;
         $aktual = 0;
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
+
 
 
 
@@ -94,7 +96,7 @@ class CastingController extends Controller
             'kaline' => "NM.FR.AH091",
             'kapart' => "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
             'urgent' => 1,
-            'urgent2' => 0,
+            'urgent2' => 1,
             'aktual' => 4009,
             'aktual2' => 400,
             'mcfordata1' => $mcfordata1,
@@ -619,9 +621,9 @@ class CastingController extends Controller
         $data = $usable->convertNullToZero($data);
 
         $data = $usable->convertArrayStringToNumber($data);
-        // {{ Notes }} // 
+        // {{ Notes }} //
         //-- Untuk baris 0 - 4 pada variabel data berisi : //
-        // [0] = Total downtime Material    // 
+        // [0] = Total downtime Material    //
         // [1] = Total downtime Mesin       //
         // [2] = Total downtime Proses      //
         // [3] = Total downtime Dies        //
@@ -1488,7 +1490,7 @@ class CastingController extends Controller
                         'tn_9' => 1
                     ]);
                 }
-                // dd($old->whereBetween('created_at', [$start_time, $end_time])->first()); 
+                // dd($old->whereBetween('created_at', [$start_time, $end_time])->first());
                 break;
             case $currentTime >= "10:00" && $currentTime < "11:00":
                 if ($old != null) {

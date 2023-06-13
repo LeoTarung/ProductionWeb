@@ -949,21 +949,24 @@
     <script>
         $(function() {
             let ip_node = location.hostname;
-            let socket_port = '5631';
+            let socket_port = '5322';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
-            socket.on("lhp_casting", (data) => {
+
+            socket.on("lhp_Casting", (data) => {
 
                 //Jumlah Aktual Part
                 let for_mc = {{ $mcfordata }} - 1;
-                let aktual = data[0].total_produksi;
-                document.getElementById("aktual").innerHTML = aktual;
-                element.innerHTML = data[0].target;
+                // let aktual = data[for_mc].total_produksi;
+                // document.getElementById("aktual").innerHTML = aktual;
+                // element.innerHTML = aktual;
                 //Persentase
-                let target = data[0].target;
-                var ValPersen = ((aktual / target) * 100);
+                console.log(data);
+                // console.log('test');
+                // console.log(data[for_mc]).nama_part);
+                // var ValPersen = (aktual / i * 100);
 
-                pembulatan = ValPersen.toFixed(0);
+                // pembulatan = ValPersen.toFixed(0);
                 // var persen = 96;
 
                 let persen = document.getElementById("persen");
@@ -995,9 +998,9 @@
         });
     </script>
 
-    <script src="{{ asset('/js/Socketio454.js') }}"></script>
+    <script src="/js/Socketio454.js"></script>
     {{-- <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script> --}}
-    <script src="{{ asset('/js/moment.js') }}"></script>
+    <script src="/js/moment.js"></script>
     @include('sweetalert::alert')
     {{-- <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script> --}}
 
