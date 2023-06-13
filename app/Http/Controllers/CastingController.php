@@ -33,73 +33,35 @@ class CastingController extends Controller
 
     public function tvCasting(UsableController $useable, $id)
     {
-
-        //{{  Untuk Menyyeleksi Henkaten}}  //
-        // $mp = null;
-        // $met = null;
-        // $mc = null;
-        // $mat = null;
-
-        // $array = ['satu' => $mp ,
-        //             'dua' => $met ,
-        //             'tiga' => $mc ,
-        //             'empat' => $mat ,
-        // ];
-        // $filtered = collect(Arr::where($array, function ( $value, $key) {
-        //     return ($value != null);
-        // }));
-
-        // $hitung = $filtered->count();
-
-        // if($mp  != null) {
-        //     $array['satu' ]  = "Man Power";
-        // }
-        // elseif($met != null){
-        //     $array['dua']  = "Method";
-        // }
-        // elseif($mc  != null){
-        //     $array['tiga']  = "Machine";
-        // }
-        // elseif($mat  != null){
-        //     $array['empat']  = "Material";
-        // }
-        // else {
-
-        // }
-
-        // dd($array['dua']);
+        $production = 0;
+        $mecin = "MC 057";
+        $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
+        $urgent = 0;
+        $aktual = 0;
 
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
 
-        return view('menu.production.casting.tvCasting', [
-            'line' => "NM.FR.AH091",
-            'part' => "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
-            'urgent' => 0,
-            'aktual' => 4009,
-            // 'aktual' => $range_hitung->total_part,
-            'mcfordata' => $mcfordata,
-            // 'aktual2'=> 400///
-            'target' => 0,
-            'persen' => 94,
-            'preparation' => 1,
-            'prep' => 4,
-            'running' => 1,
-            'downtime' => 'INSTROCKER ERROR',
-            // 'henkaten' => $hitung,
-            'isi' => "MATERIAL",
-            'isi2a' => "MAN POWER",
-            'isi2b' => "METHOD",
-            'isi3a' => "MAN POWER",
-            'isi3b' => "METHOD",
-            'isi3c' => "MATERIAL",
-            'isi4a' => "MAN POWER",
-            'isi4b' => "METHOD",
-            'isi4c' => "MACHINE",
-            'isi4d' => "MATERIAL",
-            'shift' => 2,
+        $target = 0;
+        $persen = 90;
+        $henkaten = 0;
+        $henka = 4;
+        $downtime = 'INSTROCKER ERROR';
+        $isi = 'MATERIAL';
+        $isi2a = 'MAN POWER';
+        $isi2b = 'METHOD';
+        $isi3a = 'MAN POWER';
+        $isi3b = 'METHOD';           
+        $isi3c = 'MATERIAL';
+        $isi4a = 'MAN POWER';
+        $isi4b = 'METHOD';            
+        $isi4c = 'MACHINE';
+        $isi4d = 'MATERIAL';
+        $shift = 2;
 
-        ]);
+        return view('menu.production.casting.tvCasting', 
+        compact('production','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen',
+            'henkaten','henka','downtime','isi','isi2a','isi2b','isi3a','isi3b','isi3c','isi4a','isi4b','isi4c','isi4d','shift'));
     }
 
     public function tvCasting2(UsableController $useable, $id1, $id2)
