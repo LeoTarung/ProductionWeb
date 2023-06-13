@@ -43,8 +43,8 @@ class CastingController extends Controller
 
         $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
-        $part = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', '<=', $id)->get();
-        // dd($part);
+        $lhp = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', $id)->where('shift', $shift)->first();
+        // dd($lhp);
 
         $production = 0;
         $mecin = "MC 057";
@@ -53,6 +53,7 @@ class CastingController extends Controller
         $aktual = 0;
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
+
 
 
         $target = 0;
@@ -335,10 +336,12 @@ class CastingController extends Controller
     {
         $idlhp = LhpCasting::where('id', $id)->first();
         $target = $idlhp->target;
-        // dd($target);
-        $idlhp->update([
-            'target' => $target + 1
-        ]);
+        if ($idlhp->status_dt == 7) {
+        } else {
+            $idlhp->update([
+                'target' => $target + 1
+            ]);
+        }
     }
 
     public function updateTotalProduksi(Usablecontroller $usable, $id)
@@ -649,7 +652,8 @@ class CastingController extends Controller
         // $oldIntime = $old->whereBetween('created_at', [$start_time, $end_time])->first();
         // dd($oldIntime);
         LhpCasting::where('id', $id_lhp)->update([
-            'total_downtime' => $minute
+            'total_downtime' => $minute,
+            'status_dt' => $dt
         ]);
 
         switch ($currentTime = date("H:i")) {
@@ -1807,12 +1811,11 @@ class CastingController extends Controller
         return redirect("/lhp-casting/$mc/$id")->with('behasilditambahkan', 'behasilditambahkan');
     }
 
-    public function test(UsableController $usable)
+    public function resetStatusDowntime($id)
     {
-        // $reject = $usable->RejectFinalInspectionWithStrip();
-
-
-
-        return view('lhp.test');
+        $idlhp = LhpCasting::where('id', $id)->first();
+        $idlhp->where('id', $id)->update([
+            'status_dt' => 0
+        ]);
     }
 }

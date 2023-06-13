@@ -107,6 +107,7 @@ Route::post('/casting/setTarget/{id}', [CastingController::class, 'setTarget']);
 Route::post('/casting/updateTotalProd/{id}', [CastingController::class, 'updateTotalProduksi']);
 Route::get('/dtRjtcasting/{id_lhp}', [CastingController::class, 'totalReject'])->name('totalReject');
 Route::get('/dtDowntime/{id_lhp}', [CastingController::class, 'jsonDowntime'])->name('jsonDowntime');
+Route::post('/lhp-casting/reset/{id}', [CastingController::class, 'resetStatusDowntime']);
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController::class, 'saveReject'])->name('saveReject');
 
 
@@ -145,7 +146,7 @@ Route::get('/monitor', [QualityController::class, 'index']);
 Route::get('/partial/modalTable/{id}', [QualityController::class, 'modalTable']);
 Route::get('/QualityHistory', [QualityController::class, 'indexHistory']);
 Route::post('/updateStatus/{warna}/{no}', [QualityController::class, 'updateStatus']);
-Route::post('/defaultStatus', [QualityController::class, 'resetStatusToDefault']);
+Route::post('/defaultStatus/{shift}', [QualityController::class, 'resetStatusToDefault']);
 Route::post('/inputProblem', [QualityController::class, 'inputProblem']);
 
 

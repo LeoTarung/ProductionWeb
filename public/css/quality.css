@@ -639,7 +639,7 @@
   .bulet2 {
     width: 20px;
     height: 20px;
-    background-color: rgb(21,206,61);
+    background-color: #00ff00;
     color: rgb(22, 21, 21);
     /* position: absolute; */
     /* top: 85px; */
@@ -685,93 +685,26 @@
   }
   
   
-  
-  .ket1{
-    padding-left: 65px;
-    padding-top: 2px;
-    font-size: 20px;
+  .bulet6 {
+    width: 20px;
+    height: 20px;
+    background-color: #800080;
+    color: black;
     /* position: absolute; */
-    font-weight: 500;
-  }
-  
-  .ket2{
-    padding-left: 65px;
-    padding-top: 35px;
-    font-size: 20px;
-    /* position: absolute; */
-    font-weight: 500;
-  }
-  
-  .ket3{
-    padding-left: 65px;
-    padding-top: 71px;
-    font-size: 20px;
-    /* position: absolute; */
-    font-weight: 500;
-  }
-  
-  .ket4{
-    padding-left: 65px;
-    padding-top: 107px;
-    font-size: 20px;
-    font: weight 200px;
-    /* position: absolute; */
-    font-weight: 500;
-  }
-  
-  .ket5{
-    padding-left: 65px;
-    padding-top: 142px;
-    font-size: 20px;
-    font: 'calibri';
-    /* position: absolute; */
-    font-weight: 500;
+    /* top: 120px; */
+    border-radius: 25px ;
+    /* border: 1px solid black; */
+    /* left: 20px; */
   }
 
-  /* .tanggal {
-    position: absolute;
-    width: auto;
-    height: auto;
-    left: 15%;
-    top:0%;
-    text-align: left;
-  
+  .purple{
+    background-color: #800080;
+    color: aliceblue;
   }
-
-  .card-legend{
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    left: 5%;
-    top:7%;
-    text-align: left;
- }
- .table-legend{
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    left: 5%;
-    top:20%;
-    text-align: left;
- }
- .judul{
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    left: 15%;
-    top:7%;
-    text-align: left;
- }
-
- .btnHistory {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    left: 15%;
-    top:50%;
-    text-align: left;
- }
-  */
+  .purple:hover{
+    background-color: #3d063d;
+    color: aliceblue;
+  }
 
   .wrapper1 {
     position: relative;
