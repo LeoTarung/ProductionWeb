@@ -21,6 +21,10 @@
                 <button class="btn btn-light border border-dark-subtle" data-bs-dismiss="modal"
                     onclick="status(5)">TRIAL</button>
             </div>
+            <div class="col-auto">
+                <button class="btn purple border border-dark-subtle" data-bs-dismiss="modal"
+                    onclick="status(6)">OVERHAUL</button>
+            </div>
         </div>
         <table class="table table-bordered m-3">
             <thead>

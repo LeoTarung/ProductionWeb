@@ -13,10 +13,10 @@ class StatusQuality extends Migration
      */
     public function up()
     {
-
         Schema::create('status_quality', function (Blueprint $table) {
             $table->id();
             $table->string('warna');
+            $table->integer('shift');
             $table->timestamps();
         });
     }

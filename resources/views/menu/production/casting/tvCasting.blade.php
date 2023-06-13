@@ -531,42 +531,46 @@
             let socket_port = '5631';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
-            socket.on("levelMolten_settings", (data) => {
+            socket.on("lhp_casting", (data) => {
 
                 //Jumlah Aktual Part
                 let for_mc = {{ $mcfordata }} - 1;
-                let aktual = data[for_mc].total_produksi;
+                let aktual = data[0].total_produksi;
                 document.getElementById("aktual").innerHTML = aktual;
-                element.innerHTML = aktual;
+                element.innerHTML = data[0].target;
                 //Persentase
+                let target = data[0].target;
+                var ValPersen = ((aktual / target) * 100);
 
-                // var ValPersen = (aktual / i * 100);
-
-                // pembulatan = ValPersen.toFixed(0);
+                pembulatan = ValPersen.toFixed(0);
                 // var persen = 96;
 
                 let persen = document.getElementById("persen");
-                persen.innerHTML = 100;
-                // if (pembulatan >= 95) {
-                //     persen.innerHTML = pembulatan;
-                //     persen.style.marginTop = '-20px';
-                //     persen.style.marginLeft = '-20px';
-                //     persen.style.fontSize = '220px';
+                // persen.innerHTML = 100;
+                if (pembulatan >= 100) {
+                    persen.innerHTML = 100;
+                    persen.style.marginTop = '-20px';
+                    persen.style.marginLeft = '-20px';
+                    persen.style.fontSize = '220px';
+                    persen.style.color = '#ffffff';
 
-                // } else {
-                //     persen.innerHTML = pembulatan;
-                //     persen.style.fontSize = '250px';
-                //     // persen.style.marginTop = '-40px';
-                //     persen.style.textShadow = '0 10px 19px #000000';
-                //     persen.style.animation = 'animate 2.0s linear infinite';
-                //     persen.style.color = '#ff0000';
-                // }
+                } else if (pembulatan >= 95) {
+                    persen.innerHTML = pembulatan;
+                    persen.style.marginTop = '-20px';
+                    persen.style.marginLeft = '-20px';
+                    persen.style.fontSize = '220px';
+                    persen.style.color = '#ffffff';
 
-
-                // console.log(data[for_mc].total_part);
-
-
+                } else {
+                    persen.innerHTML = pembulatan;
+                    persen.style.fontSize = '250px';
+                    persen.style.marginTop = '-40px';
+                    persen.style.textShadow = '0 10px 19px #000000';
+                    persen.style.animation = 'animate 2.0s linear infinite';
+                    persen.style.color = '#ff0000';
+                }
             })
+            socket.emit("lhp_casting", {{ $lhp->id_mesincasting }});
         });
     </script>
 

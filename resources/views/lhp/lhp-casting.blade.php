@@ -320,7 +320,7 @@
                 cardReject.style.color = 'black';
 
                 cardDT.style.backgroundColor = '#ff6a00';
-                cardDT.style.color= 'white';
+                cardDT.style.color = 'white';
 
                 downtime.hidden = false;
                 dtMaterial.hidden = false;
@@ -382,7 +382,7 @@
                 cardReject.style.color = 'white';
 
                 cardDT.style.backgroundColor = 'white';
-                cardDT.style.color= 'black';
+                cardDT.style.color = 'black';
 
 
             }
@@ -526,6 +526,27 @@
                                 }
                             });
                         };
+
+                        function resetStatusDowntime() {
+                            var url = "/lhp-casting/reset" + "/" + id;
+                            // replace with your desired URL
+                            var token = $('meta[name="csrf-token"]').attr('content');
+                            $.ajax({
+                                url: url,
+                                type: 'POST',
+                                data: {
+                                    _token: token
+                                },
+                                success: function(response) {
+
+                                    console.log('DATA BERHASIL DITAMBAHKAN');
+
+                                },
+                                error: function(xhr) {
+                                    console.log('DATA GAGAL DITAMBAHKAN');
+                                }
+                            });
+                        };
                         var timer = setInterval(function() {
                             minute++;
                             document.getElementById('modalMinute').innerHTML =
@@ -557,6 +578,7 @@
                                 clearInterval(timer);
                                 clearInterval(save);
                                 $("#popUp").modal("hide");
+                                resetStatusDowntime()
 
                             }
 
