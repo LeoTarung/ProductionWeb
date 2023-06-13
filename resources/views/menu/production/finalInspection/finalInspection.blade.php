@@ -41,7 +41,7 @@
 
     <div class="row w-100 mt-1">
         <div class="card ">
-            <div class="card-header">Trend Rejection</div>
+            <div class="card-header">Detail Rejection</div>
             <div class="card-body my-2" id="chartdetail"></div>
         </div>
    </div>
