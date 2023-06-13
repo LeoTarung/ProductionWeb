@@ -22,7 +22,7 @@ html > body {
     font-weight: 600;
     text-align: center;
 }
-  
+
 #MyClockDisplay{
 
     margin-left: 300px;
@@ -272,9 +272,9 @@ html > body {
         font-size: 40px;
         font-weight: 600;
         text-align: center;
-        
+
     }
-      
+
     #MyClockDisplay{
         margin-left: 280px;
         width: 500px;
@@ -330,7 +330,7 @@ html > body {
         width: 80%;
         height: 100%;
     }
-    
+
     .child .identitas {
         margin-top: 10px;
         margin-left: 10px;
@@ -588,7 +588,7 @@ html > body {
         font-weight: 600;
         text-align: center;
     }
-      
+
     #MyClockDisplay{
         margin-left: 280px;
         width: 500px;
@@ -774,7 +774,7 @@ html > body {
         margin: 10px 15px 10px 10px;
         height: 100%;
     }
-    
+
     .grafik .monthly {
         text-align: center;
         margin: 7px 15px 0px 10px;
@@ -794,5 +794,4 @@ html > body {
         font-weight: 500;
     }
 }
-
 

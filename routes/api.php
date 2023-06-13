@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\Api\MesinCastingController;
+use App\Http\Controllers\Api\LhpMeltingApiController;
 
 
 /*
@@ -29,3 +30,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'MesinCasting'], function () {
     Route::apiResource('molten', MesinCastingController::class);
 });
+
+Route::get('/lhpChargingStriko1', [LhpMeltingApiController::class, 'striko1']);
+Route::get('/lhpChargingStriko2', [LhpMeltingApiController::class, 'striko2']);
+Route::get('/lhpChargingStriko3', [LhpMeltingApiController::class, 'striko3']);
+Route::get('/lhpChargingSwiftAsia', [LhpMeltingApiController::class, 'swiftAsia']);
