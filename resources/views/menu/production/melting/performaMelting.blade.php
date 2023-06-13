@@ -621,7 +621,7 @@
 
             am5.color(0x095256), // total charging
             am5.color(0xFF0000), // loss
-            am5.color(0x262A56), // ingot
+            am5.color(0x3C57E1), // ingot
             am5.color(0x31FF4B), //series 
             ]);
 
@@ -646,7 +646,7 @@
                 chargingAxisRenderer.grid.template.set("forceHidden", true);
                 var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
                     renderer: chargingAxisRenderer,
-                    numberFormat: "#' kg'",
+                    numberFormat: "#,###' KG'",
                     tooltip: am5.Tooltip.new(root, {})
                 }));
 
@@ -664,7 +664,7 @@
                 // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
                 
                 var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
-                    name: " Total charging",
+                    name: " Total charging (KG)",
                     xAxis: xAxis,
                     yAxis: chargingAxis,
                     valueYField: "charging",
@@ -680,7 +680,7 @@
 
             //loss
                 var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
-                    name: "Loss",
+                    name: "Loss (%)",
                     xAxis: xAxis,
                     yAxis: ingotAxis,
                     valueYField: "loss",
@@ -711,7 +711,7 @@
 
             //ingot
                 var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
-                    name: "Ingot",
+                    name: "Ingot (%)",
                     xAxis: xAxis,
                     yAxis: ingotAxis,
                     valueYField: "ingot",
@@ -745,7 +745,7 @@
 
             // TARGET
                 var series = chart.series.push(am5xy.LineSeries.new(root, {
-                    name: "Target",
+                    name: "Target (%) ",
                     xAxis: xAxis,
                     yAxis: ingotAxis,
                     valueYField: "series",
@@ -779,45 +779,13 @@
                 xAxis.data.setAll(data);      
 
                 // add legend 
-                // var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
-                //     centerX: am5.p50,
-                //     x: am5.p50,
-                //     y: 25
-                // }));
-                // legend.data.setAll(chart.series.values);
-                
-            //     am5.color(0x095256), // total charging
-            // am5.color(0xFF0000), // loss
-            // am5.color(0x3C57E1), // ingot
-            // am5.color(0x31FF4B), //series
-            // ]);
-            
                 var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
-                    nameField: "name",
-                    fillField: "color",
-                    strokeField: "color",
                     centerX: am5.p50,
                     x: am5.p50,
                     y: 25
-                    }));
-
-                    legend.data.setAll([{
-                    name: "Total Charging (kg)",
-                    color: am5.color(0x095256)
-                    }, {
-                    name: "Loss (%)",
-                    color: am5.color(0xFF0000)
-                    }, {
-                    name: "Ingot (%)",
-                    color: am5.color(0x262A56)
-                    }, {
-                    name: "Target (%)",
-                    color: am5.color(0x31FF4B)
-                    }
-                ]);
-
-                // legend.data.setAll(chart.series.values);
-
+                }));
+                legend.data.setAll(chart.series.values);
+                
                 // Make stuff animate on load
                 // https://www.amcharts.com/docs/v5/concepts/animations/
                 chargingSeries.appear(1000);
