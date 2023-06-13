@@ -531,15 +531,15 @@
             let socket_port = '5322';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
-            socket.on("levelMolten_settings", (data) => {
+            socket.on("lhp_Casting", (data) => {
 
                 //Jumlah Aktual Part
                 let for_mc = {{ $mcfordata }} - 1;
-                let aktual = data[for_mc].total_produksi;
-                document.getElementById("aktual").innerHTML = aktual;
-                element.innerHTML = aktual;
+                // let aktual = data[for_mc].total_produksi;
+                // document.getElementById("aktual").innerHTML = aktual;
+                // element.innerHTML = aktual;
                 //Persentase
-                // console.log(aktual);
+                console.log(data);
                 // console.log('test');
                 // console.log(data[for_mc]).nama_part);
                 // var ValPersen = (aktual / i * 100);

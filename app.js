@@ -70,6 +70,11 @@ io.on("connection", (socket) => {
         material1 = material;
     });
 
+    socket.on("lhp_casting", (id_lhp) => {
+        lhpCasting1 = id_lhp;
+        // console.log( lhpCasting1 );
+    });
+
     setInterval(function () {
         connection.query(
             "SELECT * FROM input_kv8000 WHERE area='MA'",
@@ -347,7 +352,15 @@ io.on("connection", (socket) => {
                 socket.emit("bulananSwift_Asia", res);
             }
         );
-
+         //==========[' SELECT ALL LHP CASTING WHERE ID MESIN = x ']==========//
+        connection.query(
+            "SELECT * FROM lhp_casting WHERE id_mesincasting='" + lhpCasting1 + "' AND tanggal='" + tanggal + "' AND shift='" +
+            shift + "'",
+            (err, res) => {
+                // console.log( lhpCasting1 );
+                socket.emit("lhp_casting", res, lhpCasting1);
+            }
+        );
         //==========[' UPDATE AKTUAL PRODUCTION CASTING ']==========//
         connection.query(
             "SELECT * FROM input_kv8000 WHERE area='CA'",

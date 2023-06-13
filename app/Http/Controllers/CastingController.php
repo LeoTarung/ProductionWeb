@@ -93,7 +93,7 @@ class CastingController extends Controller
             'kaline' => "NM.FR.AH091",
             'kapart' => "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
             'urgent' => 1,
-            'urgent2' => 0,
+            'urgent2' => 1,
             'aktual' => 4009,
             'aktual2' => 400,
             'mcfordata1' => $mcfordata1,

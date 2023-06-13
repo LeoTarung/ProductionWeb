@@ -12,7 +12,7 @@
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2"
                                 id="target">{{ $idCasting->target }}</span>
-                            <span> pieces</span>
+                            <span> pcs</span>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">TOTAL PRODUKSI <br>
                             <span class="fs-2" id="totalProduksi"></span>
-                            <span> pieces</span>
+                            <span> pcs</span>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">TOTAL OK<br><span class="fs-2" id="totalOk"></span>
-                            <span> pieces</span>
+                            <span> pcs</span>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">REJECTION <br>
-                            <span class="fs-2" id="totalReject"></span><span> pieces</span>
+                            <span class="fs-2" id="totalReject"></span><span> pcs</span>
                         </div>
                     </div>
                 </div>
@@ -320,7 +320,7 @@
                 cardReject.style.color = 'black';
 
                 cardDT.style.backgroundColor = '#ff6a00';
-                cardDT.style.color= 'white';
+                cardDT.style.color = 'white';
 
                 downtime.hidden = false;
                 dtMaterial.hidden = false;
@@ -382,7 +382,7 @@
                 cardReject.style.color = 'white';
 
                 cardDT.style.backgroundColor = 'white';
-                cardDT.style.color= 'black';
+                cardDT.style.color = 'black';
 
 
             }
