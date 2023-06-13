@@ -621,8 +621,10 @@
 
             am5.color(0x095256), // total charging
             am5.color(0xFF0000), // loss
-            am5.color(0x262A56), // ingot
-            am5.color(0xFF0000), //series
+
+            am5.color(0x3C57E1), // ingot
+            am5.color(0x31FF4B), //series 
+
             ]);
 
             // Create axes
@@ -646,6 +648,7 @@
                 chargingAxisRenderer.grid.template.set("forceHidden", true);
                 var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
                     renderer: chargingAxisRenderer,
+                    numberFormat: "#,###' KG'",
                     tooltip: am5.Tooltip.new(root, {})
                 }));
 
@@ -663,7 +666,7 @@
                 // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
 
                 var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
-                    name: " Total charging",
+                    name: " Total charging (KG)",
                     xAxis: xAxis,
                     yAxis: chargingAxis,
                     valueYField: "charging",
@@ -679,7 +682,7 @@
 
             //loss
                 var lossSeries = chart.series.push(am5xy.LineSeries.new(root, {
-                    name: "Loss",
+                    name: "Loss (%)",
                     xAxis: xAxis,
                     yAxis: ingotAxis,
                     valueYField: "loss",
@@ -710,7 +713,7 @@
 
             //ingot
                 var ingotSeries = chart.series.push(am5xy.LineSeries.new(root, {
-                    name: "Ingot",
+                    name: "Ingot (%)",
                     xAxis: xAxis,
                     yAxis: ingotAxis,
                     valueYField: "ingot",
@@ -744,7 +747,7 @@
 
             // TARGET
                 var series = chart.series.push(am5xy.LineSeries.new(root, {
-                    name: "Target",
+                    name: "Target (%) ",
                     xAxis: xAxis,
                     yAxis: ingotAxis,
                     valueYField: "series",
@@ -752,6 +755,7 @@
                     tooltip: am5.Tooltip.new(root, {
                         labelText: "Target: 30 %"
                     })
+                    
                 }));
 
                 series.strokes.template.setAll({
@@ -784,6 +788,7 @@
                 }));
                 legend.data.setAll(chart.series.values);
 
+
                 // add ranges
                 // var seriesRangeDataItem = yAxis.makeDataItem({ value: 0, endValue: 0 });
                 // var seriesRange = series.createAxisRange(seriesRangeDataItem);
@@ -811,6 +816,7 @@
                 //     centerY:am5.p100,
                 //     fontWeight:"bold"
                 // })
+
 
 
                 // Make stuff animate on load

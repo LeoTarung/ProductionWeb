@@ -117,7 +117,6 @@ Route::get('/production/finalInspection', [FinalInspectionController::class, 'Da
 Route::get('/production/rejectionFins', [FinalInspectionController::class, 'rejectionFins']);
 Route::get('/production/rejectionDetail', [FinalInspectionController::class, 'rejectionDetail']);
 
-
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
 
@@ -134,6 +133,7 @@ Route::delete('/undoReject/{id_lhp}', [FinalInspectionController::class, 'undoRe
 Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
 //total ok
 Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'totalOk']);
+
 
 
 //====================== HC & GA ======================//

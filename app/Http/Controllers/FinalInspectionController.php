@@ -60,7 +60,6 @@ class FinalInspectionController extends Controller
         return view('menu.production.finalInspection.rejectionDetail', compact('title', 'shift', 'date', 'nama_part'));
     }
 
-
     //
     public function Prep_final_inspection(UsableController $useable){
         $date = $useable->date();
