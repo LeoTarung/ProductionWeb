@@ -33,6 +33,7 @@ class CastingController extends Controller
 
     public function tvCasting(UsableController $useable, $id)
     {
+
         $date = $useable->date();
         $shift = $useable->Shift();
         $mesin = MesinCasting::get()->all();
@@ -42,40 +43,42 @@ class CastingController extends Controller
 
         $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
-        $part = MesinCasting::where('mc',$id)->first();
-        // dd($part);
 
+        $lhp = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', $id)->where('shift', $shift)->first();
+        // dd($lhp);
+
+        $production = 0;
+        $mecin = "MC 057";
+        $namaPart =  MesinCasting::where('mc',$id)->first();
+        $urgent = 0;
+        $aktual = 0;
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
 
-        return view('menu.production.casting.tvCasting', [
-            'line' =>  $line,
-            'part' => $part->nama_part,
-            'urgent' => 0,
-            'aktual' => 409,
-            // 'aktual' => $range_hitung->total_part,
-            'mcfordata' => $mcfordata,
-            // 'aktual2'=> 400///
-            'target' => 0,
-            'persen' => 96,
-            'preparation' => 0,
-            'prep' => 4,
-            'running' => 0,
-            'downtime' => 'INSTROCKER ERROR',
-            // 'henkaten' => $hitung,
-            'isi' => "MATERIAL",
-            'isi2a' => "MAN POWER",
-            'isi2b' => "METHOD",
-            'isi3a' => "MAN POWER",
-            'isi3b' => "METHOD",
-            'isi3c' => "MATERIAL",
-            'isi4a' => "MAN POWER",
-            'isi4b' => "METHOD",
-            'isi4c' => "MACHINE",
-            'isi4d' => "MATERIAL",
-            'shift' => 2,
 
-        ]);
+
+
+        $target = 0;
+        $persen = 90;
+        $henkaten = 0;
+        $henka = 4;
+        $downtime = 'INSTROCKER ERROR';
+        $isi = 'MATERIAL';
+        $isi2a = 'MAN POWER';
+        $isi2b = 'METHOD';
+        $isi3a = 'MAN POWER';
+        $isi3b = 'METHOD';           
+        $isi3c = 'MATERIAL';
+        $isi4a = 'MAN POWER';
+        $isi4b = 'METHOD';            
+        $isi4c = 'MACHINE';
+        $isi4d = 'MATERIAL';
+        $shift = 2;
+
+        return view('menu.production.casting.tvCasting', 
+        compact('production','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen',
+            'henkaten','henka','downtime','isi','isi2a','isi2b','isi3a','isi3b','isi3c','isi4a','isi4b','isi4c','isi4d','shift'));
+
     }
 
     public function tvCasting2(UsableController $useable, $id1, $id2)
@@ -335,10 +338,12 @@ class CastingController extends Controller
     {
         $idlhp = LhpCasting::where('id', $id)->first();
         $target = $idlhp->target;
-        // dd($target);
-        $idlhp->update([
-            'target' => $target + 1
-        ]);
+        if ($idlhp->status_dt == 7) {
+        } else {
+            $idlhp->update([
+                'target' => $target + 1
+            ]);
+        }
     }
 
     public function updateTotalProduksi(Usablecontroller $usable, $id)
@@ -649,7 +654,8 @@ class CastingController extends Controller
         // $oldIntime = $old->whereBetween('created_at', [$start_time, $end_time])->first();
         // dd($oldIntime);
         LhpCasting::where('id', $id_lhp)->update([
-            'total_downtime' => $minute
+            'total_downtime' => $minute,
+            'status_dt' => $dt
         ]);
 
         switch ($currentTime = date("H:i")) {
@@ -1807,12 +1813,11 @@ class CastingController extends Controller
         return redirect("/lhp-casting/$mc/$id")->with('behasilditambahkan', 'behasilditambahkan');
     }
 
-    public function test(UsableController $usable)
+    public function resetStatusDowntime($id)
     {
-        // $reject = $usable->RejectFinalInspectionWithStrip();
-
-
-
-        return view('lhp.test');
+        $idlhp = LhpCasting::where('id', $id)->first();
+        $idlhp->where('id', $id)->update([
+            'status_dt' => 0
+        ]);
     }
 }

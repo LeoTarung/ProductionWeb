@@ -684,6 +684,8 @@
     /* left: 20px; */
   }
 
+
+
   .bulet6 {
     width: 20px;
     height: 20px;
@@ -699,6 +701,7 @@
   .purple{
     background-color: #800080;
     color: aliceblue;
+
   }
   .purple:hover{
     background-color: #3d063d;
@@ -706,6 +709,7 @@
 
   }
    .wrapper1 {
+
     position: relative;
     height: 100px;
   }

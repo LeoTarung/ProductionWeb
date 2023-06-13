@@ -25,6 +25,7 @@ var shift;
 var tanggal;
 var forklift1;
 var material1;
+var lhpCasting1;
 
 //==========[' DECLARE SHIFT ']==========//
 function showTime() {
@@ -70,10 +71,16 @@ io.on("connection", (socket) => {
         material1 = material;
     });
 
+
+      //==========[' RUNNING ON LHP CASTING ']==========//
+
+
     socket.on("lhp_casting", (id_lhp) => {
         lhpCasting1 = id_lhp;
         // console.log( lhpCasting1 );
     });
+
+
 
     setInterval(function () {
         connection.query(
@@ -219,6 +226,7 @@ io.on("connection", (socket) => {
             }
         );
 
+
        //==========[' SELECT ALL status quality ']==========//
        connection.query(
         "SELECT * FROM status_quality",
@@ -226,6 +234,7 @@ io.on("connection", (socket) => {
             socket.emit("status_quality", res);
         }
     );
+
         //==========[' SELECT ALL  FROM MESIN CASTING ']==========//
         connection.query("SELECT * FROM mesin_casting", (err, res) => {
             socket.emit("levelMolten_settings", res);
@@ -352,6 +361,7 @@ io.on("connection", (socket) => {
                 socket.emit("bulananSwift_Asia", res);
             }
         );
+
          //==========[' SELECT ALL LHP CASTING WHERE ID MESIN = x ']==========//
         connection.query(
             "SELECT * FROM lhp_casting WHERE id_mesincasting='" + lhpCasting1 + "' AND tanggal='" + tanggal + "' AND shift='" +
@@ -361,6 +371,8 @@ io.on("connection", (socket) => {
                 socket.emit("lhp_casting", res, lhpCasting1);
             }
         );
+
+
         //==========[' UPDATE AKTUAL PRODUCTION CASTING ']==========//
         connection.query(
             "SELECT * FROM input_kv8000 WHERE area='CA'",

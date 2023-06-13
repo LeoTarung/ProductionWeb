@@ -107,6 +107,7 @@ Route::post('/casting/setTarget/{id}', [CastingController::class, 'setTarget']);
 Route::post('/casting/updateTotalProd/{id}', [CastingController::class, 'updateTotalProduksi']);
 Route::get('/dtRjtcasting/{id_lhp}', [CastingController::class, 'totalReject'])->name('totalReject');
 Route::get('/dtDowntime/{id_lhp}', [CastingController::class, 'jsonDowntime'])->name('jsonDowntime');
+Route::post('/lhp-casting/reset/{id}', [CastingController::class, 'resetStatusDowntime']);
 Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController::class, 'saveReject'])->name('saveReject');
 
 
@@ -116,7 +117,6 @@ Route::post('/partial/modal-casting/{id}/{reject}/{posisi}', [CastingController:
 Route::get('/production/finalInspection', [FinalInspectionController::class, 'Dashboard']);
 Route::get('/production/rejectionFins', [FinalInspectionController::class, 'rejectionFins']);
 Route::get('/production/rejectionDetail', [FinalInspectionController::class, 'rejectionDetail']);
-
 
 Route::get('/lhp-final-inspection', [FinalInspectionController::class, 'Prep_final_inspection'])->name('prepareFinalInspection');
 Route::post('/lhp-final-inspection/simpan', [FinalInspectionController::class, 'Prep_final_inspection_simpan']);
@@ -134,6 +134,7 @@ Route::delete('/undoReject/{id_lhp}', [FinalInspectionController::class, 'undoRe
 Route::get('/dtRjtfinalinspection/{id_lhp}', [FinalInspectionController::class, 'totalReject']);
 //total ok
 Route::post('/dtTotalOk/{id}/{total}', [FinalInspectionController::class, 'totalOk']);
+
 
 
 //====================== HC & GA ======================//
