@@ -357,9 +357,10 @@ io.on("connection", (socket) => {
             }
         );
 
-         //==========[' SELECT ALL LHP CASTING ']==========//
+         //==========[' SELECT ALL LHP CASTING WHERE ID MESIN = x ']==========//
         connection.query(
-            "SELECT * FROM lhp_casting WHERE id_mesincasting='" + lhpCasting1 + "'",
+            "SELECT * FROM lhp_casting WHERE id_mesincasting='" + lhpCasting1 + "' AND tanggal='" + tanggal + "' AND shift='" +
+            shift + "'",
             (err, res) => {
                 // console.log( lhpCasting1 );
                 socket.emit("lhp_casting", res, lhpCasting1);

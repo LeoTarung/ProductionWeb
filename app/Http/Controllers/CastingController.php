@@ -45,38 +45,74 @@ class CastingController extends Controller
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
         $lhp = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', $id)->where('shift', $shift)->first();
         // dd($lhp);
+        if ($lhp != null) {
+            $statusDowntime = $lhp->downtime()->first();
+            // dd($statusDowntime);
+            if ($statusDowntime == null) {
 
-        $production = 0;
-        $mecin = "MC 057";
+                $downtime = null;
+            } else {
+
+                $downtime = $statusDowntime->nama_downtime;
+            }
+        } else {
+            $downtime = null;
+        }
+        $mecin = "MC 0" . $id;
         $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
         $urgent = 0;
-        $aktual = 0;
+        // $aktual = 0;
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
 
 
 
-        $target = 0;
-        $persen = 90;
-        $henkaten = 0;
-        $henka = 4;
-        $downtime = 'INSTROCKER ERROR';
-        $isi = 'MATERIAL';
-        $isi2a = 'MAN POWER';
-        $isi2b = 'METHOD';
-        $isi3a = 'MAN POWER';
-        $isi3b = 'METHOD';           
-        $isi3c = 'MATERIAL';
-        $isi4a = 'MAN POWER';
-        $isi4b = 'METHOD';            
-        $isi4c = 'MACHINE';
-        $isi4d = 'MATERIAL';
+        // $target = 0;
+        // $persen = 90;
+        // $henkaten = 0;
+        // $henka = 4;
+
+        // $isi = 'MATERIAL';
+        // $isi2a = 'MAN POWER';
+        // $isi2b = 'METHOD';
+        // $isi3a = 'MAN POWER';
+        // $isi3b = 'METHOD';
+        // $isi3c = 'MATERIAL';
+        // $isi4a = 'MAN POWER';
+        // $isi4b = 'METHOD';
+        // $isi4c = 'MACHINE';
+        // $isi4d = 'MATERIAL';
         $shift = 2;
 
-        return view('menu.production.casting.tvCasting', 
-        compact('production','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen',
-            'henkaten','henka','downtime','isi','isi2a','isi2b','isi3a','isi3b','isi3c','isi4a','isi4b','isi4c','isi4d','shift'));
-
+        return view(
+            'menu.production.casting.tvCasting',
+            compact(
+                // 'production',
+                'mecin',
+                'namaPart',
+                'urgent',
+                // 'aktual',
+                'range_hitung',
+                'mcfordata',
+                // 'target',
+                // 'persen',
+                // 'henkaten',
+                // 'henka',
+                'downtime',
+                // 'isi',
+                // 'isi2a',
+                // 'isi2b',
+                // 'isi3a',
+                // 'isi3b',
+                // 'isi3c',
+                // 'isi4a',
+                // 'isi4b',
+                // 'isi4c',
+                // 'isi4d',
+                'shift',
+                'lhp'
+            )
+        );
     }
 
     public function tvCasting2(UsableController $useable, $id1, $id2)
