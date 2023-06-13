@@ -12,7 +12,7 @@
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2"
                                 id="target">{{ $idCasting->target }}</span>
-                            <span> pieces</span>
+                            <span> pcs</span>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">TOTAL PRODUKSI <br>
                             <span class="fs-2" id="totalProduksi"></span>
-                            <span> pieces</span>
+                            <span> pcs</span>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">TOTAL OK<br><span class="fs-2" id="totalOk"></span>
-                            <span> pieces</span>
+                            <span> pcs</span>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">REJECTION <br>
-                            <span class="fs-2" id="totalReject"></span><span> pieces</span>
+                            <span class="fs-2" id="totalReject"></span><span> pcs</span>
                         </div>
                     </div>
                 </div>
@@ -430,10 +430,10 @@
                 });
             }
 
-            // -------------- Socket IO -------------- // 
+            // -------------- Socket IO -------------- //
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '5631';
+                let socket_port = '5322';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
                 socket.on("levelMolten_settings", (data) => {

@@ -639,16 +639,19 @@
         run.hidden = false;
         $(function() {
             let ip_node = location.hostname;
-            let socket_port = '5631';
+            let socket_port = '5322';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
-            socket.on("lhp_casting", (data) => {
+
+            socket.on("lhp_Casting", (data) => {
+
 
                 if (data[0] == null) {
                     dt.hidden = true;
                     layoff.hidden = true;
                     run.hidden = true;
                     noPrep.hidden = false;
+
 
                 } else {
                     //===== [ Untuk refresh warna Produksi ] ====//
@@ -732,9 +735,9 @@
         });
     </script>
 
-    <script src="{{ asset('/js/Socketio454.js') }}"></script>
+    <script src="/js/Socketio454.js"></script>
     {{-- <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script> --}}
-    <script src="{{ asset('/js/moment.js') }}"></script>
+    <script src="/js/moment.js"></script>
     @include('sweetalert::alert')
     {{-- <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script> --}}
 

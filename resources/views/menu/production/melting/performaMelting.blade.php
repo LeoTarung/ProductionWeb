@@ -457,7 +457,7 @@
             //============[' SIDE BAR KIRI ']===========//
             $(function(){
                 let ip_node = location.hostname;
-                let socket_port = '5631';
+                let socket_port = '5322';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -827,7 +827,7 @@
 
                 $(function() {
                     let ip_node = location.hostname;
-                    let socket_port = '5631';
+                    let socket_port = '5322';
                     let socket = io(ip_node + ':' + socket_port);
                     socket.on('connection');
 
@@ -1048,7 +1048,7 @@
 
                 $(function() {
                     let ip_node = location.hostname;
-                    let socket_port = '5631';
+                    let socket_port = '5322';
                     let socket = io(ip_node + ':' + socket_port);
                     socket.on('connection');
 
@@ -1267,7 +1267,7 @@
 
                 $(function() {
                     let ip_node = location.hostname;
-                    let socket_port = '5631';
+                    let socket_port = '5322';
                     let socket = io(ip_node + ':' + socket_port);
                     socket.on('connection');
 
@@ -1485,7 +1485,7 @@
                 chart.appear(1000, 100);
                 $(function() {
                     let ip_node = location.hostname;
-                    let socket_port = '5631';
+                    let socket_port = '5322';
                     let socket = io(ip_node + ':' + socket_port);
                     socket.on('connection');
 
@@ -1704,7 +1704,7 @@
             chart.appear(1000, 100);
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '5631';
+                let socket_port = '5322';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -1921,7 +1921,7 @@
             chart.appear(1000, 100);
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '5631';
+                let socket_port = '5322';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -2140,7 +2140,7 @@
 
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '5631';
+                let socket_port = '5322';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
@@ -2357,7 +2357,7 @@
             chart.appear(1000, 100);
             $(function() {
                 let ip_node = location.hostname;
-                let socket_port = '5631';
+                let socket_port = '5322';
                 let socket = io(ip_node + ':' + socket_port);
                 socket.on('connection');
 
