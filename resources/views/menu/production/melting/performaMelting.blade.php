@@ -49,7 +49,7 @@
               <button class="nav-link" id="pills-swiftAsia-tab" data-bs-toggle="pill" data-bs-target="#pills-swiftAsia" type="button" role="tab" aria-controls="pills-swiftAsia" aria-selected="false">swif Asia</button>
             </li>
         </ul>
-        
+
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-striko1" role="tabpanel" aria-labelledby="pills-striko1-tab" tabindex="0">
                 <div class="row">
@@ -621,8 +621,10 @@
 
             am5.color(0x095256), // total charging
             am5.color(0xFF0000), // loss
+
             am5.color(0x3C57E1), // ingot
             am5.color(0x31FF4B), //series 
+
             ]);
 
             // Create axes
@@ -662,7 +664,7 @@
 
                 // Create series
                 // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-                
+
                 var chargingSeries = chart.series.push(am5xy.ColumnSeries.new(root, {
                     name: " Total charging (KG)",
                     xAxis: xAxis,
@@ -756,7 +758,7 @@
                     
                 }));
 
-                series.strokes.template.setAll({ 
+                series.strokes.template.setAll({
                     strokeDasharray: [8, 6], // untuk garis-garis
                     strokeWidth: 3 });
 
@@ -771,21 +773,52 @@
                     xAxis: xAxis,
                     yAxis: chargingAxis
                 }));
-                
+
                 chargingSeries.data.setAll(data);
                 lossSeries.data.setAll(data);
                 ingotSeries.data.setAll(data);
                 series.data.setAll(data);
-                xAxis.data.setAll(data);      
+                xAxis.data.setAll(data);
 
-                // add legend 
+                // add legend
                 var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
                     centerX: am5.p50,
                     x: am5.p50,
                     y: 25
                 }));
                 legend.data.setAll(chart.series.values);
-                
+
+
+                // add ranges
+                // var seriesRangeDataItem = yAxis.makeDataItem({ value: 0, endValue: 0 });
+                // var seriesRange = series.createAxisRange(seriesRangeDataItem);
+                // seriesRange.fills.template.setAll({
+                //     visible: true,
+                //     opacity: 0.3
+                // });
+
+                // seriesRange.fills.template.set("fill", am5.color(0x000000));
+                // seriesRange.strokes.template.set("stroke", am5.color(0x000000));
+
+                // seriesRangeDataItem.get("grid").setAll({
+                //     strokeOpacity: 1,
+                //     visible: true,
+                //     stroke: am5.color(0x000000),
+                //     strokeDasharray: [2, 2]
+                // })
+
+                // seriesRangeDataItem.get("label").setAll({
+                //     location:0,
+                //     visible:true,
+                //     text:"",
+                //     inside:true,
+                //     centerX:0,
+                //     centerY:am5.p100,
+                //     fontWeight:"bold"
+                // })
+
+
+
                 // Make stuff animate on load
                 // https://www.amcharts.com/docs/v5/concepts/animations/
                 chargingSeries.appear(1000);
@@ -872,7 +905,7 @@
                 var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
                     renderer: am5xy.AxisRendererY.new(root, {})
                 }));
-                
+
                 var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
                 chargingAxisRenderer.grid.template.set("forceHidden", true);
                 var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
@@ -982,7 +1015,7 @@
                     })
                 }));
 
-                series.strokes.template.setAll({ 
+                series.strokes.template.setAll({
                     strokeDasharray: [8, 5], // untuk garis-garis
                     strokeWidth: 2 });
 
@@ -999,7 +1032,7 @@
                 series.data.setAll(data);
                 xAxis.data.setAll(data);
 
-                // add legend 
+                // add legend
                 var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
                     centerX: am5.p50,
                     x: am5.p50,
@@ -1089,11 +1122,11 @@
                     }),
                     tooltip: am5.Tooltip.new(root, {})
                 }));
-                
+
                 var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
                     renderer: am5xy.AxisRendererY.new(root, {})
                 }));
-                
+
                 var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
                 chargingAxisRenderer.grid.template.set("forceHidden", true);
                 var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
@@ -1169,7 +1202,7 @@
                 ingotSeries.strokes.template.setAll({
                     strokeWidth: 3
                 });
-                
+
                 // Add circle bullet
                 // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Bullets
                 ingotSeries.bullets.push(function() {
@@ -1202,7 +1235,7 @@
                     })
                 }));
 
-                series.strokes.template.setAll({ 
+                series.strokes.template.setAll({
                     strokeDasharray: [8, 5], // untuk garis-garis
                     strokeWidth: 2 });
 
@@ -1218,7 +1251,7 @@
                 series.data.setAll(data);
                 xAxis.data.setAll(data);
 
-                // add legend 
+                // add legend
                 var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
                     centerX: am5.p50,
                     x: am5.p50,
@@ -1420,7 +1453,7 @@
                     })
                 }));
 
-                series.strokes.template.setAll({ 
+                series.strokes.template.setAll({
                     strokeDasharray: [8, 5], // untuk garis-garis
                     strokeWidth: 2 });
 
@@ -1437,7 +1470,7 @@
                 series.data.setAll(data);
                 xAxis.data.setAll(data);
 
-                  // add legend 
+                  // add legend
                   var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
                     centerX: am5.p50,
                     x: am5.p50,
@@ -1640,7 +1673,7 @@
                     })
                 }));
 
-                series.strokes.template.setAll({ 
+                series.strokes.template.setAll({
                     strokeDasharray: [8, 5], // untuk garis-garis
                     strokeWidth: 2 });
 
@@ -1656,7 +1689,7 @@
             series.data.setAll(data);
             xAxis.data.setAll(data);
 
-             // add legend 
+             // add legend
              var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
                     centerX: am5.p50,
                     x: am5.p50,
@@ -1856,7 +1889,7 @@
                     })
                 }));
 
-                series.strokes.template.setAll({ 
+                series.strokes.template.setAll({
                     strokeDasharray: [8, 5], // untuk garis-garis
                     strokeWidth: 2 });
 
@@ -1873,7 +1906,7 @@
             series.data.setAll(data);
             xAxis.data.setAll(data);
 
-               // add legend 
+               // add legend
                var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
                     centerX: am5.p50,
                     x: am5.p50,
@@ -2042,7 +2075,7 @@
             ingotSeries.strokes.template.setAll({
                 strokeWidth: 3
             });
-            
+
             // target
             var series = chart.series.push(am5xy.LineSeries.new(root, {
                     name: "Target",
@@ -2055,7 +2088,7 @@
                     })
                 }));
 
-                series.strokes.template.setAll({ 
+                series.strokes.template.setAll({
                     strokeDasharray: [8, 5], // untuk garis-garis
                     strokeWidth: 2 });
 
@@ -2091,7 +2124,7 @@
             series.data.setAll(data);
             xAxis.data.setAll(data);
 
-            // add legend 
+            // add legend
             var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
                     centerX: am5.p50,
                     x: am5.p50,
@@ -2181,11 +2214,11 @@
                 }),
                 tooltip: am5.Tooltip.new(root, {})
             }));
-            
+
             var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
                     renderer: am5xy.AxisRendererY.new(root, {})
                 }));
-                
+
             var chargingAxisRenderer = am5xy.AxisRendererY.new(root, {});
             chargingAxisRenderer.grid.template.set("forceHidden", true);
             var chargingAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
@@ -2293,7 +2326,7 @@
                     })
                 }));
 
-                series.strokes.template.setAll({ 
+                series.strokes.template.setAll({
                     strokeDasharray: [8, 5], // untuk garis-garis
                     strokeWidth: 2 });
 
@@ -2309,7 +2342,7 @@
             series.data.setAll(data);
             xAxis.data.setAll(data);
 
-            // add legend 
+            // add legend
             var legend = chart.bottomAxesContainer.children.push(am5.Legend.new(root, {
                     centerX: am5.p50,
                     x: am5.p50,

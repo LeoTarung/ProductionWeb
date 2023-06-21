@@ -197,24 +197,18 @@
             @elseif(Route::currentRouteName() == 'preparationCasting')
                 {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
                 <div class="nrp">
-                    <div class="font-white"> NRP : </div>
+                    <div class="font-white text-center"> NRP : </div>
                 </div>
                 <div class="nrp nrp-child border-bottom ">
-                    <div class="font-white fw-bold">{{ $nrp }}</div>
+                    <div class="font-white fw-bold text-center">Preparation</div>
                 </div>
-            @elseif (Route::currentRouteName() == 'preparationCasting')
-                {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
-                <div class="nrp border-bottom">
-                    <div class="font-white"> Preparation </div>
-                </div>
+
 
                 {{-- lhp casting  --}}
             @elseif (Route::currentRouteName() == 'LHPCasting')
                 {{-- <a href="{{ url('/lhp-casting') }}" class="navitems"> --}}
                 <div class="nrp border-bottom">
-                    <div class="font-white"> {{ $nrp1 }} {{ $nrp2 }} {{ $nrp3 }}
-                        {{ $nrp4 }} {{ $nrp5 }} {{ $nrp6 }} <br>
-                    </div>
+                    <div class="font-white"> {{ $nrp1 }}</div>
                 </div>
             @endif
 

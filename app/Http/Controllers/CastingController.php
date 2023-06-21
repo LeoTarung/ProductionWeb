@@ -67,15 +67,31 @@ class CastingController extends Controller
 
     public function tvCasting(UsableController $useable, $id)
     {
+
         $production = 2;
         $preparation = 1;
+
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $mesin = MesinCasting::get()->all();
+        $title = "Andon Casting Overview";
+
+        $line = "NM.FR.AH.CA047";
+
+        $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
+        $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
+        $part = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', '<=', $id)->get();
+        // dd($part);
+
+        $production = 0;
+
         $mecin = "MC 057";
         $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
         $urgent = 0;
         $aktual = 0;
-
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
+
 
         $target = 0;
         $persen = 90;
@@ -97,6 +113,7 @@ class CastingController extends Controller
         return view('menu.production.casting.tvCasting', 
         compact('production','preparation','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen',
             'henkaten','henka','downtime','isi','isi2a','isi2b','isi3a','isi3b','isi3c','isi4a','isi4b','isi4c','isi4d','shift'));
+
     }
 
     public function tvCasting2(UsableController $useable, $id1, $id2)
@@ -322,12 +339,12 @@ class CastingController extends Controller
             $sumDtPlan += $waktu_dt[$i];
         }
 
-        $nrp1 = $idCasting->nrp1 . ' |';
-        $nrp2 = $idCasting->nrp2 . ' |';
-        $nrp3 = $idCasting->nrp3 . ' |';
-        $nrp4 = $idCasting->nrp4 . ' |';
-        $nrp5 = $idCasting->nrp5 . ' |';
-        $nrp6 = $idCasting->nrp6 . ' |';
+        $nrp1 = $idCasting->nrp1;
+        $nrp2 = $idCasting->nrp2;
+        $nrp3 = $idCasting->nrp3;
+        $nrp4 = $idCasting->nrp4;
+        $nrp5 = $idCasting->nrp5;
+        $nrp6 = $idCasting->nrp6;
 
         $nrp = $nrp1;
 
@@ -669,6 +686,9 @@ class CastingController extends Controller
             ->get();
         // $oldIntime = $old->whereBetween('created_at', [$start_time, $end_time])->first();
         // dd($oldIntime);
+        LhpCasting::where('id', $id_lhp)->update([
+            'total_downtime' => $minute
+        ]);
 
         switch ($currentTime = date("H:i")) {
             case $currentTime >= "00:00" && $currentTime < "01:00":

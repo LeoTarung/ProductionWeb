@@ -84,9 +84,12 @@
             </div>
         </div>
         <div class="row w-100 " style="margin-top: 5rem;">
-            <a href="/production/melting/level-molten" class="d-flex justify-content-center"><button
-                    class="btn btn-primary w-50">Level
-                    Molten</button></a>
+            <div class="col-6">
+                <a href="/production/melting/level-molten"><button class="btn btn-primary w-50">Level Molten</button></a>
+            </div>
+            <div class="col-6">
+                <a href="/production/lot-ingot"><button class="btn btn-primary w-50">Daftar Lot Ingot</button></a>
+            </div>
         </div>
     </div>
 

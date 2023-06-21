@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TestModel extends Model
+class DatatableQualityModel extends Model
 {
     use HasFactory;
-
-    protected $table = "test";
+    protected $table = 'datatable_quality';
     protected $guarded = [];
 }
