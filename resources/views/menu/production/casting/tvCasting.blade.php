@@ -22,11 +22,19 @@
 @if($production == 1)
     <div class="container-fluid conflu">
         <div class="row mt-3">
-            <div class="col-9 mt-3 mb-3 nama">
-                <span class="mesin"> {{ $mecin }}</span>
-                <br>
-                <span class="part">{{ $namaPart }}</span>
-            </div>
+            @if($preparation != null)
+                <div class="col-9 mt-3 mb-3 nama">
+                    <span class="mesin"> BELUM PREPARATION!</span>
+                    <br>
+                    <span class="mesin">SEGERA LAKUKAN PREPARATION</span>
+                </div>
+            @else
+                <div class="col-9 mt-3 mb-3 nama">
+                    <span class="mesin"> {{ $mecin }}</span>
+                    <br>
+                    <span class="part">{{ $namaPart }}</span>
+                </div>
+            @endif
 
             {{-- perubahan urgent --}}
             @if ($urgent != null)
@@ -37,7 +45,6 @@
                 </div>
             @else
             @endif
-
         </div>
 
         <div class="row atas mt-4 mb-1">

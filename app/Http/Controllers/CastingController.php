@@ -31,9 +31,44 @@ class CastingController extends Controller
         return view('menu.production.casting.casting', compact('title', 'shift', 'date', 'mesin'));
     }
 
+    public function castingTV(UsableController $useable)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $mesin = MesinCasting::get()->all();
+        $title = "Casting Overview";
+        $produksi = 1;
+        $urgent = 0;
+        $runing = 0;
+        $downtime = "TROUBLE CNC";
+
+        return view('menu.production.casting.castingTV', compact('title', 'shift', 'date', 'mesin','produksi','urgent', 'runing', 'downtime'));
+   
+        // $production = 2;
+        // $preparation = 1;
+        // $mecin = "MC 057";
+        // $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
+        // $urgent = 0;
+        // $aktual = 0;
+
+        // $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
+        // $mcfordata = $range_hitung->count();
+
+        // $target = 0;
+        // $persen = 90;
+        // $henkaten = 0;
+        // $henka = 4;
+        // $downtime = 'INSTROCKER ERROR';
+
+
+        // return view('menu.production.casting.tvCasting', 
+        // compact('production','preparation','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen','shift'));
+    }
+
     public function tvCasting(UsableController $useable, $id)
     {
-        $production = 0;
+        $production = 2;
+        $preparation = 1;
         $mecin = "MC 057";
         $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
         $urgent = 0;
@@ -60,7 +95,7 @@ class CastingController extends Controller
         $shift = 2;
 
         return view('menu.production.casting.tvCasting', 
-        compact('production','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen',
+        compact('production','preparation','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen',
             'henkaten','henka','downtime','isi','isi2a','isi2b','isi3a','isi3b','isi3c','isi4a','isi4b','isi4c','isi4d','shift'));
     }
 

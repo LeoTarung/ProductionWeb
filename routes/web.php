@@ -95,6 +95,7 @@ Route::post('/forklift/{mesin}/{id}/simpan', [MeltingController::class, 'lhp_for
 
 //====================== AREA CASTING ======================//
 Route::get('/production/casting', [CastingController::class, 'Dashboard']);
+Route::get('/castingTV', [CastingController::class, 'castingTV']);
 Route::get('/tvCasting/{id}', [CastingController::class, 'tvCasting']);
 Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
 Route::get('/lhp-casting', [CastingController::class, 'prep_casting'])->name('preparationCasting');
