@@ -38,11 +38,15 @@ class CastingController extends Controller
         $mesin = MesinCasting::get()->all();
         $title = "Casting Overview";
         $produksi = 1;
+        $man = 0;
+        $machine = 1;
+        $method = 1;
+        $material = 0;
         $urgent = 0;
-        $runing = 0;
+        $runing = 1;
         $downtime = "TROUBLE CNC";
 
-        return view('menu.production.casting.castingTV', compact('title', 'shift', 'date', 'mesin','produksi','urgent', 'runing', 'downtime'));
+        return view('menu.production.casting.castingTV', compact('title', 'shift', 'date', 'mesin','produksi','man','machine','method','material','urgent', 'runing', 'downtime'));
    
         // $production = 2;
         // $preparation = 1;
@@ -68,8 +72,8 @@ class CastingController extends Controller
     public function tvCasting(UsableController $useable, $id)
     {
 
-        $production = 2;
-        $preparation = 1;
+        $production = 1;
+        $preparation = 0;
 
         $date = $useable->date();
         $shift = $useable->Shift();
@@ -83,8 +87,6 @@ class CastingController extends Controller
         $part = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', '<=', $id)->get();
         // dd($part);
 
-        $production = 0;
-
         $mecin = "MC 057";
         $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
         $urgent = 0;
@@ -95,7 +97,7 @@ class CastingController extends Controller
 
         $target = 0;
         $persen = 90;
-        $henkaten = 0;
+        $henkaten = 1;
         $henka = 4;
         $downtime = 'INSTROCKER ERROR';
         $isi = 'MATERIAL';
