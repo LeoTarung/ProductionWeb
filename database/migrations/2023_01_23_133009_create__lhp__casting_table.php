@@ -34,6 +34,8 @@ class CreateLhpCastingTable extends Migration
             $table->integer('total_ok')->default('0');
             $table->integer('total_ng')->default('0');
             $table->integer('total_downtime')->default('0');
+            $table->unsignedBigInteger('status_dt')->default('0');
+            // $table->foreign('status_dt')->references('id')->on('downtime')->onDelete('cascade');     
             // $table->integer('bercak_hitam')->default('0');
             // $table->integer('blister')->default('0');
             // $table->integer('bushing')->default('0');

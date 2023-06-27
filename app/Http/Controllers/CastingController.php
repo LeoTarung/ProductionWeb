@@ -80,42 +80,86 @@ class CastingController extends Controller
         $mesin = MesinCasting::get()->all();
         $title = "Andon Casting Overview";
 
-        $line = "NM.FR.AH.CA047";
+        $line = "MC 0".$id;
 
         $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
-        $part = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', '<=', $id)->get();
-        // dd($part);
 
-        $mecin = "MC 057";
-        $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
+
+
+        $lhp = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', $id)->where('shift', $shift)->first();
+        // dd($lhp);
+        if ($lhp != null) {
+            $statusDowntime = $lhp->downtime()->first();
+            // dd($statusDowntime);
+            if ($statusDowntime == null) {
+
+                $downtime = null;
+            } else {
+
+                $downtime = $statusDowntime->nama_downtime;
+            }
+        } else {
+            $downtime = null;
+        }
+        $mecin = "MC 0" . $id;
+        $namaPart =  MesinCasting::where('mc',$id)->first();
+
+
         $urgent = 0;
-        $aktual = 0;
+        // $aktual = 0;
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
 
 
-        $target = 0;
-        $persen = 90;
-        $henkaten = 1;
-        $henka = 4;
-        $downtime = 'INSTROCKER ERROR';
-        $isi = 'MATERIAL';
-        $isi2a = 'MAN POWER';
-        $isi2b = 'METHOD';
-        $isi3a = 'MAN POWER';
-        $isi3b = 'METHOD';           
-        $isi3c = 'MATERIAL';
-        $isi4a = 'MAN POWER';
-        $isi4b = 'METHOD';            
-        $isi4c = 'MACHINE';
-        $isi4d = 'MATERIAL';
+
+        // $target = 0;
+        // $persen = 90;
+        // $henkaten = 0;
+        // $henka = 4;
+
+
+        // $isi = 'MATERIAL';
+        // $isi2a = 'MAN POWER';
+        // $isi2b = 'METHOD';
+        // $isi3a = 'MAN POWER';
+        // $isi3b = 'METHOD';
+        // $isi3c = 'MATERIAL';
+        // $isi4a = 'MAN POWER';
+        // $isi4b = 'METHOD';
+        // $isi4c = 'MACHINE';
+        // $isi4d = 'MATERIAL';
         $shift = 2;
 
-        return view('menu.production.casting.tvCasting', 
-        compact('production','preparation','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen',
-            'henkaten','henka','downtime','isi','isi2a','isi2b','isi3a','isi3b','isi3c','isi4a','isi4b','isi4c','isi4d','shift'));
-
+        return view(
+            'menu.production.casting.tvCasting',
+            compact(
+                // 'production',
+                'mecin',
+                'namaPart',
+                'urgent',
+                // 'aktual',
+                'range_hitung',
+                'mcfordata',
+                // 'target',
+                // 'persen',
+                // 'henkaten',
+                // 'henka',
+                'downtime',
+                // 'isi',
+                // 'isi2a',
+                // 'isi2b',
+                // 'isi3a',
+                // 'isi3b',
+                // 'isi3c',
+                // 'isi4a',
+                // 'isi4b',
+                // 'isi4c',
+                // 'isi4d',
+                'shift',
+                'lhp'
+            )
+        );
     }
 
     public function tvCasting2(UsableController $useable, $id1, $id2)
@@ -133,7 +177,7 @@ class CastingController extends Controller
             'kaline' => "NM.FR.AH091",
             'kapart' => "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)",
             'urgent' => 1,
-            'urgent2' => 0,
+            'urgent2' => 1,
             'aktual' => 4009,
             'aktual2' => 400,
             'mcfordata1' => $mcfordata1,
@@ -375,10 +419,12 @@ class CastingController extends Controller
     {
         $idlhp = LhpCasting::where('id', $id)->first();
         $target = $idlhp->target;
-        // dd($target);
-        $idlhp->update([
-            'target' => $target + 1
-        ]);
+        if ($idlhp->status_dt == 7) {
+        } else {
+            $idlhp->update([
+                'target' => $target + 1
+            ]);
+        }
     }
 
     public function updateTotalProduksi(Usablecontroller $usable, $id)
@@ -656,9 +702,9 @@ class CastingController extends Controller
         $data = $usable->convertNullToZero($data);
 
         $data = $usable->convertArrayStringToNumber($data);
-        // {{ Notes }} // 
+        // {{ Notes }} //
         //-- Untuk baris 0 - 4 pada variabel data berisi : //
-        // [0] = Total downtime Material    // 
+        // [0] = Total downtime Material    //
         // [1] = Total downtime Mesin       //
         // [2] = Total downtime Proses      //
         // [3] = Total downtime Dies        //
@@ -689,7 +735,8 @@ class CastingController extends Controller
         // $oldIntime = $old->whereBetween('created_at', [$start_time, $end_time])->first();
         // dd($oldIntime);
         LhpCasting::where('id', $id_lhp)->update([
-            'total_downtime' => $minute
+            'total_downtime' => $minute,
+            'status_dt' => $dt
         ]);
 
         switch ($currentTime = date("H:i")) {
@@ -1524,7 +1571,7 @@ class CastingController extends Controller
                         'tn_9' => 1
                     ]);
                 }
-                // dd($old->whereBetween('created_at', [$start_time, $end_time])->first()); 
+                // dd($old->whereBetween('created_at', [$start_time, $end_time])->first());
                 break;
             case $currentTime >= "10:00" && $currentTime < "11:00":
                 if ($old != null) {
@@ -1847,12 +1894,11 @@ class CastingController extends Controller
         return redirect("/lhp-casting/$mc/$id")->with('behasilditambahkan', 'behasilditambahkan');
     }
 
-    public function test(UsableController $usable)
+    public function resetStatusDowntime($id)
     {
-        // $reject = $usable->RejectFinalInspectionWithStrip();
-
-
-
-        return view('lhp.test');
+        $idlhp = LhpCasting::where('id', $id)->first();
+        $idlhp->where('id', $id)->update([
+            'status_dt' => 0
+        ]);
     }
 }

@@ -32,6 +32,15 @@ class QualityController extends Controller
         return view('menu.production.quality.historyQuality', compact('title', 'data'));
     }
 
+    public function getWarna()
+    {
+        $title = "Quality";
+        $status =StatusQualityModel::all();
+
+        // dd(count($mesin));
+        return response()->json( $status);
+    }
+
     public function modalTable($id)
     {
         $noMesin = $id;
@@ -64,21 +73,28 @@ class QualityController extends Controller
             $noMesin->update([
                 'warna' => "white"
             ]);
+         } elseif ($warna == 6) {
+            $noMesin->update([
+                'warna' => "purple"
+            ]);
         }
-        return view('menu.production.quality.index', compact('title'));
+        return redirect()->back();
     }
 
-    public function resetStatusToDefault()
+    public function resetStatusToDefault($shift)
     {
-        $status = StatusQualityModel::all();
-        $title = "Quality";
-        foreach ($status as $key) {
+        $data = StatusQualityModel::whereNotIn('warna', ['red'])->where('shift', $shift)->get();
+        // $status = $data->get();
+        // dd($data);
+        foreach ($data as $key) {
             $key->update([
                 'warna' => 'yellow'
             ]);
         }
-        return view('menu.production.quality.index', compact('title'));
+        return redirect()->back();
     }
+
+
 
     public function inputProblem(Request $request)
     {

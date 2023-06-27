@@ -1,7 +1,6 @@
 @extends('main')
 @section('content')
     <link rel="stylesheet" type="text/css" href="css/quality.css">
-
     <style>
         .font-button {
             font-size: 100%;
@@ -39,7 +38,7 @@
         </div>
         <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-12  mb-5 mt-2" style=" position: relative;">
-                <img class="img shadow-lg border border-5 border-secondary-subtle" src="img/mapping.jpeg" alt="Image">
+                <img class="img shadow-lg border border-5 border-secondary-subtle" src="img/mapping.jpg" alt="Image">
                 @for ($x = 0; $x < 6; $x++)
                     <div id="lingkaran{{ $noMesin[$x] }}" class="lingkaran " onclick="ModalTable({{ $noMesin[$x] }})">
                         <div class="text-center ms-1 font-button">0{{ $noMesin[$x] }}</div>
@@ -96,6 +95,14 @@
                                     </td>
                                     <td>
                                         <div class="fs-7">Trial Eng</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="bulet6"></div>
+                                    </td>
+                                    <td>
+                                        <div class="fs-7">Overhaul</div>
                                     </td>
                                 </tr>
                             </table>
@@ -166,14 +173,11 @@
                                     <td><input type="radio" name="status" value="open" class="m-2">OPEN <input
                                             class="m-2" type="radio" name="status" value="close">CLOSE</td>
                                 </tr>
-
-
                             </table>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="submit" value="submit" name="submit" class="btn btn-success"
                                 data-bs-dismiss="modal">Save
                                 changes</button>
-
                         </form>
                     </div>
                 </div>
@@ -200,15 +204,13 @@
         }
 
         function ModalInput(id) {
-
             $("#ModalInput").modal("show"); //kalo ID pake "#" kalo class pake "."
             $("#ModalTable").modal("hide");
-
         }
 
         $(function() {
             let ip_node = location.hostname;
-            let socket_port = '5631';
+            let socket_port = '5322';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
             socket.on("status_quality", (data) => {
@@ -226,10 +228,13 @@
                             warna = 'yellow';
                             break;
                         case 'blue':
-                            warna = 'turquoise';
+                            warna = '#189fff';
                             break;
                         case 'white':
                             warna = 'white';
+                            break;
+                        case 'purple':
+                            warna = '#800080';
                             break;
                         default:
                             warna = 'yellow';
@@ -253,8 +258,8 @@
                 var formattedTime = hours + ':' + minutes;
 
                 // Check if the current time matches any of the specified times
-                if (formattedTime === '16:00' || formattedTime === '07:10' || formattedTime === '00:00') {
-                    var url = "/defaultStatus";
+                if (formattedTime === '16:00') {
+                    var url = "/defaultStatus/3/";
                     var token = $('meta[name="csrf-token"]').attr('content');
                     $.ajax({
                         url: url,
@@ -270,7 +275,39 @@
                         }
                     });
                     console.log('Function executed at ' + formattedTime);
-                }
+                } else if (formattedTime === '07:10') {
+                    var url = "/defaultStatus/2/";
+                    var token = $('meta[name="csrf-token"]').attr('content');
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: {
+                            _token: token
+                        },
+                        success: function(response) {
+                            console.log('success');
+                        },
+                        error: function(xhr) {
+                            console.log('gagal');
+                        }
+                    });
+                } else if (formattedTime === '00:00') {
+                    var url = "/defaultStatus/1/";
+                    var token = $('meta[name="csrf-token"]').attr('content');
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: {
+                            _token: token
+                        },
+                        success: function(response) {
+                            console.log('success');
+                        },
+                        error: function(xhr) {
+                            console.log('gagal');
+                        }
+                    });
+                } else {}
             }, 60000); // Check every minute (adjust as needed)
         }
 
