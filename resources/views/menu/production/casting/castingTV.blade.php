@@ -107,7 +107,7 @@
                         </div> --}}
             </div>
 
-            {{-- target, ok, reject --}}
+            {{-- target, ok, NG --}}
             <div class="col-4" style="padding: 90px 0px 0px 0px">
                 <div class="row text-light  ms-2">
                     <div class="col-7 fs-1 fw-semibold align-self-center" >TARGET</div>
@@ -120,7 +120,7 @@
                     <div class="col-1 fs-2 text-start align-self-center pt-2"> pcs</div>
                 </div>
                 <div class="row text-light ms-2"> 
-                    <div class="col-7 fs-1 fw-semibold align-self-center" >REJECTION</div>
+                    <div class="col-7 fs-1 fw-semibold align-self-center" >NG</div>
                     <div class="col-4 fs-1 align-self-center text-end fw-semibold"> 12345</div>
                     <div class="col-1 fs-2 text-start align-self-center pt-2"> pcs</div>
                 </div>
