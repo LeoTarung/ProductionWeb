@@ -539,11 +539,11 @@
                                 },
                                 success: function(response) {
 
-                                    console.log('DATA BERHASIL DITAMBAHKAN');
+                                    console.log('Status BERHASIL Diubah');
 
                                 },
                                 error: function(xhr) {
-                                    console.log('DATA GAGAL DITAMBAHKAN');
+                                    console.log('Status GAGAL Diubah');
                                 }
                             });
                         };
