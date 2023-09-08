@@ -126,8 +126,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    // 'gas_awal' => $gas->gas_akhir,
-                    // 'stok_molten' => $gas->stok_molten
+                    'gas_awal' => $gas->gas_akhir,
+                    'stok_molten' => $gas->stok_molten
                 ]);
             } else {
                 LhpMelting::create([
