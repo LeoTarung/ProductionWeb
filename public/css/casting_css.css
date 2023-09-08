@@ -1,0 +1,306 @@
+:root {
+    --red: hsl(0, 94%, 36%);
+    --green: hsl(125, 68%, 41%);
+    --orange: hsl(25, 100%, 50%);
+    --blue: hsl(212, 67%, 41%);
+    --varyDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: #2B3467;
+    --veryLightGray: hsl(0, 0%, 98%);
+    --weight1: 200;
+    --weight2: 400;
+    --weight3: 600;
+}
+
+.main-card {
+    margin: 10px 2px 5px 0px;
+    border-radius: 20px;
+    /* height: 82.5%; */
+    height: 415px !important;
+    overflow-y: scroll;
+}
+
+.row-card-i{
+    margin: 0px 2px 2px 0px;
+}
+.card-inside{
+    height: 70px;
+    width: 100%;
+    border-radius: 40px;
+    background-color: rgb(143, 6, 6);
+
+    -webkit-tap-highlight-color: transparent;
+    transition: width 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
+      height 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
+      box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
+      border-radius 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+
+
+.card-inside1 {
+    height: 90%;
+    width: 40%;
+    margin: 3.5px -10px 4px 3px;
+    border-radius:  40px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    padding: 0 0 0 0;
+}
+
+.card-inside2{
+    height: 74%;
+    width: 62%;
+    margin: 8.5px 9px 0px -10px;
+    padding: 0 0 0 -6px;
+    border-radius: 0px 40px 40px 0px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    align-self: center;
+    /* float: right; */
+}
+
+.font-ci1{
+    font-size: 27px;
+    font-weight: 700;
+    margin: 5px 0px 0px -7px ;
+}
+
+.font-ci2{
+    font-size: 15px;
+    font-weight: 700;
+    margin:0% 1px 0% 10px;
+
+    /* top: 50%;*/
+}
+
+.font-with-enter{
+    font-size: 15px;
+    font-weight: 700;
+    margin: 3px 1px 0px 10px ;
+}
+
+.card-left1{
+    /* height: 30%; */
+    border-radius: 20px 20px 20px 20px !important;
+    border-left: 10px solid var(--grayishBlue) !important;
+}
+.upper{
+    border-radius: 20px;
+}
+
+.parent{
+    height: 50px;
+ 
+    /* margin-left: -10px; */
+}
+
+.child {
+    height: 60px; 
+    width: 100% ;
+    margin-top: -5px;
+    background-color: #EB455F;
+    background: linear-gradient( 120deg, transparent 45px, #EB455F 0);
+    color: white;
+    /* box-shadow:5px var(--grayishBlue); */
+    /* padding: 8px 0 0 0px; */
+    
+    border-radius: 20px 15px 15px 20px;
+}
+.dies{
+    margin-left: 35%;
+}
+
+.card-left2{
+    border-radius: 20px 20px 20px 20px !important;
+    border-left: 10px solid var(--blue) !important;
+}
+.card-left3{
+    border-radius: 20px 20px 20px 20px!important;
+    border-left: 10px solid var( --red)!important;
+}
+
+.card-left4{
+    border-radius: 20px 20px 20px 20px !important;
+    border-left: 10px solid var( --orange)!important;
+}
+.card-left5{
+    border-radius: 20px 20px 20px 20px !important;
+    border-left: 10px solid var( --green) !important;
+}
+.card-left6{
+    border-radius: 20px 20px 20px 20px !important;
+    border-left: 10px solid var( --varyDarkBlue) !important;
+}
+
+/* .card-purple{
+    background-color: blueviolet;
+    height: 80px;
+    border-radius: 15px 0px 0px 15px;
+} */
+.card-green{
+    background-color: rgb(16, 230, 98);
+    height: 80px;
+    border-radius: 15px 0px 0px 15px;
+}
+.card-orange{
+    background-color: rgb(219, 92, 18);
+    height: 80px;
+    border-radius: 15px 0px 0px 15px;
+}
+.card-red{
+    background-color: rgb(219, 18, 18);
+    height: 80px;
+    border-radius: 15px 0px 0px 15px;
+}
+.card-yellow{
+    background-color: rgb(243, 247, 22);
+    height: 80px;
+    border-radius: 15px 0px 0px 15px;
+}
+.card-grey{
+    background-color: rgb(202, 202, 199);
+    height: 80px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+
+ #popUp .modal-content{
+    /* position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 42%;
+    width: 30%;
+    padding: 20px 50px 50px 50px; */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background:rgb(143, 6, 6);
+    /* visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 20px 20px 20px 20px !important;
+    overflow : hidden; */
+}
+ /* div.circle {
+    position: absolute;
+    top: 70%;
+    left: 42%;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color:rgb(143, 6, 6);
+    display: grid;
+    place-content: center;
+    animation: grow 1s infinite;
+    
+  }
+
+  div.circle > span {
+    color: #eee;
+    font-size: 50px;
+  }
+
+
+  @keyframes grow {
+    from {
+      box-shadow: 0px 0px 1em  rgb(129, 32, 32);
+    }
+    to {
+      box-shadow: 0px 0px 3em  rgb(129, 32, 32);
+    }
+  } */
+
+/* #popUp.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+} */
+.warpper {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7faff;
+
+    /* align-items: center; */
+}
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0px 0px;
+    background: var( --varyDarkBlue);
+    display: inline-block;
+    color: #fff;
+    border-radius: 3px 3px 0px 0px;
+    transition: all 0.1s ease;
+    /* box-shadow: 0px 4px 7px #00000069; */
+}
+
+.tab-time {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0px 0px;
+    background: var( --red);
+    display: inline-block;
+    color: #fff;
+    border-radius: 3px 3px 0px 0px;
+    transition: all 0.1s ease;
+    /* box-shadow: 0px 4px 7px #00000069; */
+}
+.panels {
+    background: #f7faff;
+    box-shadow: 0px 4px 7px #00000044;
+    /* min-height:200px; */
+    min-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    padding: 20px;
+    transition: all 0.1s ease;
+}
+.panel {
+    display: none;
+    animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.panel-title {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.radio {
+    display: none;
+}
+.radio-end {
+    display: none;
+    flex-direction: column-reverse;
+}
+
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel,
+#five:checked ~ .panels #five-panel {
+    display: block;
+    font-size: 15px;
+    transition: all 0.1s ease;
+}
+
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab,
+#five:checked ~ .tabs #five-tab {
+    background: #f7faff;
+    color: var( --varyDarkBlue);
+    border-top: 3px solid var( --varyDarkBlue);
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.1s ease;
+}
