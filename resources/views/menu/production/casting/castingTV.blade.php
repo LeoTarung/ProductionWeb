@@ -49,9 +49,9 @@
                                 <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px">MAN</p>
                             </div>
                         @else
-                            <div class="h-100 pt-4" style="background-color: rgb(117, 117, 117)">
-                                <i class="fa-solid fa-user-gear fa-2xl"  style="color: #ffffff; "></i> 
-                                <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px">MAN</p>
+                            <div class="h-100 pt-4" style="background-color: rgb(46, 46, 46)">
+                                <i class="fa-solid fa-user-gear fa-2xl"  style="color: rgb(117, 117, 117); "></i> 
+                                <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px; color: rgb(117, 117, 117);">MAN</p>
                             </div>
                         @endif    
                     </div>
@@ -62,10 +62,10 @@
                                 <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px">MACHINE</p>   
                             </div> 
                         @else
-                            <div class="h-100 pt-4" style="background-color: rgb(117, 117, 117)">
-                                <i class="fa-solid fa-screwdriver-wrench fa-2xl" style="color: #ffffff;"></i>    
-                                <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px">MACHINE</p>   
-                            </div>  
+                            <div class="h-100 pt-4" style="background-color: rgb(46, 46, 46)">
+                                <i class="fa-solid fa-user-gear fa-2xl"  style="color: rgb(117, 117, 117); "></i> 
+                                <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px; color: rgb(117, 117, 117);">MACHINE</p>
+                            </div>
                         @endif                   
                     </div>   
                     <div class="col mt-3">
@@ -75,10 +75,10 @@
                                 <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px">METHOD</p>
                             </div>
                         @else
-                            <div class="h-100 pt-4" style="background-color: rgb(117, 117, 117)">
-                                <i class="fa-solid fa-screwdriver-wrench fa-2xl" style="color: #ffffff;"></i>    
-                                <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px">METHOD</p>   
-                            </div>  
+                            <div class="h-100 pt-4" style="background-color: rgb(46, 46, 46)">
+                                <i class="fa-solid fa-user-gear fa-2xl"  style="color: rgb(117, 117, 117); "></i> 
+                                <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px; color: rgb(117, 117, 117);">METHOD</p>
+                            </div>
                         @endif           
                     </div>                        
                     <div class="col mt-3">
@@ -88,10 +88,10 @@
                                 <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px">MATERIAL</p>
                             </div>
                         @else
-                            <div class="h-100 pt-4" style="background-color: rgb(117, 117, 117)">
-                                <i class="fa-solid fa-screwdriver-wrench fa-2xl" style="color: #ffffff;"></i>    
-                                <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px">MATERIAL</p>   
-                            </div>  
+                            <div class="h-100 pt-4" style="background-color: rgb(46, 46, 46)">
+                                <i class="fa-solid fa-user-gear fa-2xl"  style="color: rgb(117, 117, 117); "></i> 
+                                <p class="fs-4 fw-semibold mt-2" style="padding: 10px 0px -10px 0px; color: rgb(117, 117, 117);">MATERIAL</p>
+                            </div>
                         @endif 
                     </div>      
                 </div>                       

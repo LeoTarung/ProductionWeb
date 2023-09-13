@@ -26,7 +26,7 @@ class FinalInspectionController extends Controller
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
         
         $lhpToday = LhpFinalInspection::whereBetween('created_at', [$start_date, $end_date])->get();
-        $totalProduksi = 0;
+        $totalProduksi = 100;
         $totalOk = 0;
         $totalReject = 0;
         // dd( $lhpToday);
