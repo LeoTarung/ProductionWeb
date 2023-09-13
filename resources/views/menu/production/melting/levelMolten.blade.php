@@ -2,7 +2,7 @@
 @section('content')
     <div class="main-content d-flex flex-column">
 
-        <div class="row w-100">
+        <div class="row w-100 mb-5  ">
             <div class="text-end fs-2 mt-3 mb-5 border-bottom">Level Molten</div>
             {{-- <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="mc()">
                 <div class="card-header text-center fw-bold"> MC-</div>
@@ -44,7 +44,8 @@
                     let pembagi1 = (jarak1 * 0.01); //hasilnya 20
                     let value1 = (data[i].aktual_molten - max1); //hasilnya 500
                     let level1 = (value1 / pembagi1);
-                    console.log(level1);
+                    console.log('Mesin' + data[i].mc + ':' + level1 + ' max: ' + data[i].max_level_molten +
+                        ' min: ' + data[i].min_level_molten + ' value: ' + data[i].aktual_molten);
                     let battery1 = document.getElementById('battery' + data[i].mc);
 
 

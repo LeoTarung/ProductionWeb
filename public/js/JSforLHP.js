@@ -70,7 +70,7 @@ switch (bulan) {
 }
 var tampilTanggal = tanggal + " " + bulan + " " + tahun;
 document.getElementById("date-1").innerHTML = tampilTanggal;
-document.getElementById("date-2").innerHTML = hari + ", " + tampilTanggal;
+// document.getElementById("date-2").innerHTML = hari + ", " + tampilTanggal;
 
     function showTime() {
         var date = new Date();
@@ -89,6 +89,7 @@ document.getElementById("date-2").innerHTML = hari + ", " + tampilTanggal;
 
         setTimeout(showTime, 1000);
     }
+    // console.log(time)
     showTime();
 
 //==============================['FUNCTION RESUME DI LHP']==============================//

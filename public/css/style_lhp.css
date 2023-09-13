@@ -798,6 +798,7 @@ a .font-forklift10 {
 
     #MyClockDisplay {
         width: 140px;
+        height: auto;
         font-size: 20px;
     }
 

@@ -80,7 +80,7 @@ class CastingController extends Controller
         $mesin = MesinCasting::get()->all();
         $title = "Andon Casting Overview";
 
-        $line = "MC 0".$id;
+        $line = "MC 0" . $id;
 
         $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
@@ -103,32 +103,14 @@ class CastingController extends Controller
             $downtime = null;
         }
         $mecin = "MC 0" . $id;
-        $namaPart =  MesinCasting::where('mc',$id)->first();
+        $part =  MesinCasting::where('mc', $id)->first();
+        $namaPart =  $part->nama_part;
 
 
         $urgent = 0;
         // $aktual = 0;
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
-
-
-
-        // $target = 0;
-        // $persen = 90;
-        // $henkaten = 0;
-        // $henka = 4;
-
-
-        // $isi = 'MATERIAL';
-        // $isi2a = 'MAN POWER';
-        // $isi2b = 'METHOD';
-        // $isi3a = 'MAN POWER';
-        // $isi3b = 'METHOD';
-        // $isi3c = 'MATERIAL';
-        // $isi4a = 'MAN POWER';
-        // $isi4b = 'METHOD';
-        // $isi4c = 'MACHINE';
-        // $isi4d = 'MATERIAL';
         $shift = 2;
 
         return view(
@@ -141,21 +123,8 @@ class CastingController extends Controller
                 // 'aktual',
                 'range_hitung',
                 'mcfordata',
-                // 'target',
-                // 'persen',
-                // 'henkaten',
-                // 'henka',
-                'downtime',
-                // 'isi',
-                // 'isi2a',
-                // 'isi2b',
-                // 'isi3a',
-                // 'isi3b',
-                // 'isi3c',
-                // 'isi4a',
-                // 'isi4b',
-                // 'isi4c',
-                // 'isi4d',
+                'id',
+
                 'shift',
                 'lhp'
             )
@@ -220,7 +189,19 @@ class CastingController extends Controller
             'shift' => 3
         ]);
     }
+    public function getLHP(UsableController $useable, $mc)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $data = LhpCasting::where('tanggal', $date)->where('shift', $shift)->where('id_mesincasting', $mc)->get();
+        return response()->json($data);
+    }
 
+    public function getDowntime()
+    {
+        $data = Downtime::where('casting', 1)->get();
+        return response()->json($data);
+    }
 
     //==============================[' LHP CASTING ']==============================//
 

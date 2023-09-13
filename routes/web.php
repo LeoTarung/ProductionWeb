@@ -101,6 +101,8 @@ Route::get('/production/casting', [CastingController::class, 'Dashboard']);
 Route::get('/castingTV', [CastingController::class, 'castingTV']);
 Route::get('/tvCasting/{id}', [CastingController::class, 'tvCasting']);
 Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
+Route::get('/getLHP/{mc}', [CastingController::class, 'getLHP']);
+Route::get('/getDowntime/', [CastingController::class, 'getDowntime']);
 Route::get('/lhp-casting', [CastingController::class, 'prep_casting'])->name('preparationCasting');
 Route::post('/lhp-casting/simpan', [CastingController::class, 'prep_casting_simpan']);
 Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])->name('LHPCasting'); //link sementara, nanti diganti ketika preparation sudah selesai

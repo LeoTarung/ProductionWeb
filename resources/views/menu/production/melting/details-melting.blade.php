@@ -21,7 +21,8 @@
                                 class="inpt-date border border-3 rounded">
                             <button type="submit" class=" ms-1 btn btn-primary">filter</button>
                         </form>
-                        <a href="/production/melting/{{$mesin}}/{{$mulai}}/{{$selesai}}" class="btn btn-sm btn-warning float-end mt-3">DOWNLOAD</a>
+                        <a href="/production/melting/{{ $mesin }}/{{ $mulai }}/{{ $selesai }}"
+                            class="btn btn-sm btn-warning float-end mt-3">DOWNLOAD</a>
                     </div>
                 </div>
                 <div class="outer-wrapper-dtl-mlt border border-secondary border-top mt-2">
@@ -204,25 +205,48 @@
                     dataType: "json",
                     url: "{{ url('/dthourlymltng/') }}" + "/" + id,
                     success: function(data) {
-                        var wrapper = document.getElementById("tbody");
-                        var myHTML = '';
-                        for (var i = 0; i < data.length; i++) {
-                            myHTML +=
-                                '<tr>' +
-                                '<td>' + (i + 1) + '</td>' +
-                                '<td>' + data[i].jam + '</td>' +
-                                '<td>' + data[i].ingot + '</td>' +
-                                '<td>' + data[i].exgate + '</td>' +
-                                '<td>' + data[i].reject_parts + '</td>' +
-                                '<td>' + data[i].alm_treat + '</td>' +
-                                '<td>' + data[i].fluxing + '</td>' +
-                                '<td>' + data[i].tapping + '</td>' +
-                                '<td>' + data[i].dross + '</td>' +
-                                '<td>' + '<a class="btn btn-warning" onClick="editdetails(' + data[i].id +
-                                ')">edit</a>' + '</td>' +
-                                '</tr>';
+                        // console.log(data[0]);
+                        if (data[0] == "NULLAH") {
+                            var wrapper = document.getElementById("tbody");
+                            var myHTML = '';
+                            for (var i = 0; i < data.length; i++) {
+                                myHTML +=
+                                    '<tr>' +
+                                    '<td>' + (i) + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '<td>' + 'Tidak Ada Data' + '</td>' +
+                                    '</tr>';
+                            }
+                            wrapper.innerHTML = myHTML
+                        } else {
+                            var wrapper = document.getElementById("tbody");
+                            var myHTML = '';
+                            for (var i = 0; i < data.length; i++) {
+                                myHTML +=
+                                    '<tr>' +
+                                    '<td>' + (i + 1) + '</td>' +
+                                    '<td>' + data[i].jam + '</td>' +
+                                    '<td>' + data[i].ingot + '</td>' +
+                                    '<td>' + data[i].exgate + '</td>' +
+                                    '<td>' + data[i].reject_parts + '</td>' +
+                                    '<td>' + data[i].alm_treat + '</td>' +
+                                    '<td>' + data[i].fluxing + '</td>' +
+                                    '<td>' + data[i].tapping + '</td>' +
+                                    '<td>' + data[i].dross + '</td>' +
+                                    '<td>' + '<a class="btn btn-warning" onClick="editdetails(' + data[i].id +
+                                    ')">edit</a>' + '</td>' +
+                                    '</tr>';
+                            }
+                            wrapper.innerHTML = myHTML
                         }
-                        wrapper.innerHTML = myHTML
+
                     }
                 });
             } catch (e) {
