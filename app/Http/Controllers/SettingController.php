@@ -42,10 +42,10 @@ class SettingController extends Controller
         // } else {
         //     $editmc = ["NULLAH"];
         // }
-
+        // dd($molten);
         $utama = $molten->material;
         $id = $molten->mc;
-        $range_hitung = MesinCasting::where('mc', '<=',$id)->get();
+        $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
         return  view('settings.moltenSetting', compact('shift', 'date', 'mesin', 'title', 'id', 'nrp', 'forklift', 'molten', 'mcfordata'));
         // return $editmc;
@@ -58,8 +58,8 @@ class SettingController extends Controller
         // $id = $mc->mc;
         MesinCasting::where('mc', $id)->update([
             'material' => $request->material,
-            'min_level_molten' => $request->max_level_molten,
-            'max_level_molten' => $request->min_level_molten
+            'min_level_molten' => $request->min_level_molten,
+            'max_level_molten' => $request->max_level_molten
         ]);
         // dd($mc);
         return redirect("/settings/mesincasting/$id")->with('behasilditambahkan', 'behasilditambahkan');

@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/tvCasting.css" media="all"> 
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap-5.1.3-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}"> --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <script src=/css/bootstrap-5.1.3-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css></script>
 
     <title>NM | TV CASTING</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/tvCasting.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css"> --}}
+    <link rel="stylesheet" type="text/css" href="/js/datatable/datatables.min.css" />
+    {{-- //============[ JS IN HERE ]============// --}}
+    <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/363jquery.min.js"></script>
+    {{-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script> --}}
+    <script type="text/javascript" src="/js/datatable/datatables.min.js"></script>
 
 </head>
 
@@ -42,25 +46,26 @@
                 <div class="row kkatas mt-4 mb-1">
                         <div class="col-4 kkaktual">
                             <div class="text-center rounded-0">
-                                <div class="kkpenjelasan box" id="aktual">AKTUAL</div>
-                                <div class="kkangka"></div>
+                                <div class="kkpenjelasan box" >AKTUAL</div>
+                                <div class="kkangka" id="aktual1"></div>
                             </div>
                         </div>
                         <div class="col-4 kktarget">
                             <div class="text-center rounded-0">
                                 <div class="kkpenjelasan box">TARGET</div>
-                                {{-- <div class="kkangka" id="target1"></div>x --}}
-                                @foreach ($input as $item)
-                                    <div class="kkangka" id="target1">{{ $item->cycle_time }}</div>
-                                @endforeach
-
+                                <div class="kkangka" id="target1"></div>
+                                    {{-- <div class="kkangka" id="target1"></div> --}}
                             </div>
                         </div>
     
                         <div class="col-4 text-center kkparent ">
                             <div class="parallelogram boxperform kkchild">
                                 <h1 class="kkpperform"> PERFORMANCE   </h1>
-                                @if ($persen >= 95)
+                                <h1 style="font-size: 30px; margin-top: -80px">
+                                    <span class="kkpersen1" id="persen1"></span>
+                                    <span class="kksymbol">%</span>
+                                </h1>
+                                {{-- @if ($persen >= 95)
                                     <h1 style="font-size: 30px; margin-top: 40px">
                                     <span class="kkpersen1" id="persen"></span>
                                     <span class="kksymbol">%</span>
@@ -71,31 +76,20 @@
                                         <span class="kksymbol">%</span>
                                     </h1>
                                 @endif
-    
+     --}}
                             </div>
                         </div>
-    
-                        {{-- <div class="col-1"></div> --}}
-                
-                        {{-- <div class="row mt-4 mb-3"> 
-                            <div class="col-12 d-flex justify-content-center">
-                                <div class="rounded-0 henkaten">
-                                    HENKATEN MAN POWER
-                                </div>
-                            </div>
-                        </div> --}}  
                 </div>
                 
                 @if($running != null) 
-                    <div class="row mt-5 mb-2"> 
+                    <div class="row mt-5 mb-3"> 
                         <div class="kkdowntime shadow mt-3 "> DOWNTIME - {{$downtime}}</div>
                     </div>
                 @else 
-                    <div class="row mt-5 mb-2"> 
+                    <div class="row mt-5 mb-3"> 
                         <div class="kkrunning  mt-3 "> RUNNING </div>
                     </div>
                 @endif
-    
                 
                 {{-- jika henkaten ada --}}
                 @if($preparation != null) 
@@ -138,13 +132,13 @@
                         </div>
     
                     @elseif($prep == 4)
-                        <div class="col-4 mt-3 d-flex ">
+                        <div class="col-4 mt-4 mb-2 d-flex ">
                                     
                             <div class="col-2 kkhenkaten4">
                                 <p class="kkhenka4"> HENKATEN</p>
                             </div>
                         
-                            <div class="row">
+                            <div class="row kkprep4">
                                 <div class="col-10 kkmanpower4 ">{{ $isi4a }}</div>
                                 <div class="col-10 kkmethod4 ">{{ $isi4b }}</div>
                                 <div class="col-10 kkmachine4 ">{{ $isi4c }}</div>
@@ -157,10 +151,10 @@
     
                     <div class="col-8 mb-2">
                         <div class="row mt-4 mb-1"> 
-                            <div class="col-3 mt-2 pt-2 text-center m-auto kkavaila"> AVA</div>
-                            <div class="col-9 mt-1">
+                            <div class="col-3 mt-3 pt-2 text-center m-auto kkavaila"> AVA</div>
+                            <div class="col-9 mt-3">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +163,7 @@
                             <div class="col-3 text-center m-auto kkqurate"> QUA </div>
                             <div class="col-9">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
                             </div>
                         </div>
@@ -278,6 +272,7 @@
                 </div>
                 @endif
             </div>
+            
         @elseif($id1 != 1)
         <div class="col-6 kkcomingsoon border">
             <div class="row mt-3">
@@ -295,6 +290,7 @@
             </div>
         </div>
         @endif
+
     {{-- kanan --}}
         @if($id2 == 2)
             <div class="col-6 kkki">
@@ -321,7 +317,7 @@
                         <div class="col-4 kkaktual">
                             <div class="text-center rounded-0">
                                 <div class="kkpenjelasan box">AKTUAL</div>
-                                <div class="kkangka">{{ $aktual2 }}</div>
+                                <div class="kkangka" id="aktual2"></div>
                             </div>
                         </div>
                         <div class="col-4 kktarget">
@@ -334,9 +330,13 @@
                         <div class="col-4 text-center kkparent ">
                             <div class="parallelogram boxperform kkchild">
                                 <h1 class="kkpperform"> PERFORMANCE   </h1>
-                                @if ($persen2 >= 95)
+                                <h1 style="font-size: 30px; margin-top: -80px">
+                                    <span class="kkpersen2" id="persen2"></span>
+                                    <span class="kksymbol">%</span>
+                                </h1>
+                                {{-- @if ($persen2 >= 95)
                                     <h1 style="font-size: 30px; margin-top: -40px">
-                                    <span class="kkpersen1" id="target"></span>
+                                    <span class="kkpersen1" id="persen2"></span>
                                     <span class="kksymbol">%</span>
                                     </h1>
                                 @else
@@ -344,28 +344,20 @@
                                         <span class="kkpersen2"></span>
                                         <span class="kksymbol">%</span>
                                     </h1>
-                                @endif
+                                @endif --}}
     
                             </div>
                         </div>
     
-                        {{-- <div class="col-1"></div> --}}
-                
-                        {{-- <div class="row mt-4 mb-3"> 
-                            <div class="col-12 d-flex justify-content-center">
-                                <div class="rounded-0 henkaten">
-                                    HENKATEN MAN POWER
-                                </div>
-                            </div>
-                        </div> --}}  
+            
                 </div>
                 
                 @if($running2 != null) 
-                    <div class="row mt-5 mb-2"> 
+                    <div class="row mt-5 mb-3"> 
                         <div class="kkdowntime shadow mt-3 "> DOWNTIME - {{$downtime2}}</div>
                     </div>
                 @else 
-                    <div class="row mt-5 mb-2"> 
+                    <div class="row mt-5 mb-3"> 
                         <div class="kkrunning  mt-3 "> RUNNING </div>
                     </div>
                 @endif
@@ -400,11 +392,11 @@
                     @elseif($prep2 == 3)
                         <div class="col-4 mt-4 d-flex ">
                                 
-                            <div class="col-2 kkhenkaten3" >
+                            <div class="col-2 kkhenkaten3 " >
                                 <p class="kkhenka3">HENKATEN</p>
                             </div>
                         
-                            <div class="row kkprep3">
+                            <div class="row kkprep3 ">
                                 <div id="henkaten7a" class="col-10 kkmanpower3 ">{{ $isi7a }}</div>
                                 <div id="henkaten7b" class="col-10 kkmethod3 ">{{ $isi7b }}</div>
                                 <div id="henkaten7c" class="col-10 mb-4 kkmachine3 ">{{ $isi7c }}</div>
@@ -412,13 +404,13 @@
                         </div>
     
                     @elseif($prep2 == 4)
-                        <div class="col-4 mt-3 d-flex ">
+                        <div class="col-4 mt-4 mb-2 d-flex ">
                                     
                             <div class="col-2 kkhenkaten4">
                                 <p class="kkhenka4"> HENKATEN</p>
                             </div>
                         
-                            <div class="row">
+                            <div class="row kkprep4">
                                 <div class="col-10 kkmanpower4 ">{{ $isi8a }}</div>
                                 <div class="col-10 kkmethod4 ">{{ $isi8b }}</div>
                                 <div class="col-10 kkmachine4 ">{{ $isi8c }}</div>
@@ -431,10 +423,10 @@
     
                     <div class="col-8 mb-2">
                         <div class="row mt-4 mb-1"> 
-                            <div class="col-3 mt-2 pt-2 text-center m-auto kkavaila"> AVA</div>
-                            <div class="col-9 mt-1">
+                            <div class="col-3 mt-3 pt-2 text-center m-auto kkavaila"> AVA</div>
+                            <div class="col-9 mt-3">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
                             </div>
                         </div>
@@ -443,7 +435,7 @@
                             <div class="col-3 text-center m-auto kkqurate"> QUA </div>
                             <div class="col-9">
                                 <div class="progress rounded-3 border border-3" style="height: 50px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
                             </div>
                         </div>
@@ -574,7 +566,7 @@
                             <div class="col-3 text-center m-auto availa"> AVAILABILITY </div>
                             <div class="col-9">
                                 <div class="progress rounded-3 border border-3" style="height: 60px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
                             </div>
                         </div>
@@ -583,7 +575,7 @@
                             <div class="col-3 text-center m-auto qurate"> QUALITY RATE </div>
                             <div class="col-9">
                                 <div class="progress rounded-3 border border-3" style="height: 60px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60</div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100</div>
                                 </div>
                             </div>
                         </div>
@@ -714,7 +706,7 @@
         
     </div>
 
-    <footer class="container-fluid d-flex align-self-center kkfooter ">
+    <footer class="container-fluid d-flex align-self-center mt-1 mb-1 pt-2 kkfooter ">
     <marquee >
         <p>REALTIME MONITORING</p>
         </marquee> 
@@ -723,22 +715,14 @@
     <script>
     // kiri
     
-    
-        var target1 = 5000;
+        var target1 = 55000;
         // var target = console.log("test")
 
         const element = document.getElementById("target1");
              let i = 1  ; 
         setInterval(function() {element.innerHTML = i++}, target1);
-        //  if ( ((2*60) <=  now && now <(2 * 60)))
-
-        var aktual = 2;
-
-        var persen = (aktual / i * 100);
-        // var persen = 96;
-
-        document.getElementById("persen").innerHTML = persen;	
-
+        
+        // document.getElementById("persen").innerHTML = persen;	
 
         @if($prep == 1)
             let henkaten1 = document.getElementById('henkaten1');
@@ -839,7 +823,7 @@
 
     // kanan
         
-        var target2 = 5000;
+        var target2 = 55000;
         // var target = console.log("test")
 
         const element2 = document.getElementById("target2");
@@ -941,13 +925,89 @@
                 } else if (warna7c == "MATERIAL" ) { 
                     henkaten7c.style.backgroundColor = '#03C988';
                 } 
-
-
-
         @endif    
-
-
     </script>
+
+    <script>
+        $(function() {
+            let ip_node = location.hostname;
+            let socket_port = '5322';
+            let socket = io(ip_node + ':' + socket_port);
+            socket.on('connection');
+            socket.on("levelMolten_settings", (data) => {
+
+                //Jumlah Aktual Part
+                let for_mc1 = {{ $mcfordata1 }} - 1;
+                let aktual1 = data[for_mc1].total_part;
+                // let aktualid1 = document.getElementById('aktual1');
+                // console.log(aktualid1);
+
+                document.getElementById("aktual1").innerHTML = aktual1;
+                //Persentase
+
+                var ValPersen1 = (aktual1 / i * 100);
+                
+                pembulatan1 = ValPersen1.toFixed(0);
+                // var persen = 96;
+            
+                let persen1 = document.getElementById("persen1");
+                if (pembulatan1 >= 95) {
+                    persen1.innerHTML = pembulatan1;
+                    persen1.style.marginTop = '-20px';
+                    persen1.style.marginLeft = '-20px';
+                    persen1.style.fontSize = '220px';
+
+                } else {
+                    persen1.innerHTML = pembulatan1;
+                    persen1.style.fontSize = '250px';
+                    // persen1.style.marginTop = '-40px';
+                    persen1.style.textShadow = '0 10px 19px #000000';
+                    persen1.style.animation = 'animate 2.0s linear infinite';
+                    persen1.style.color = '#ff0000';
+                }
+                
+
+                // console.log(data[for_mc].total_part);
+
+                //Jumlah Aktual Part
+                let for_mc2 = {{ $mcfordata2 }} - 1;
+                let aktual2 = data[for_mc2].total_part;
+                document.getElementById("aktual2").innerHTML = aktual2;
+                //Persentase
+
+                var ValPersen2 = (aktual2 / i * 100);
+                
+                pembulatan2 = ValPersen2.toFixed(0);
+                // var persen = 96;
+            
+                let persen2 = document.getElementById("persen2");
+                if (pembulatan2 >= 95) {
+                    persen2.innerHTML = pembulatan2;
+                    persen2.style.marginTop = '-20px';
+                    persen2.style.marginLeft = '-20px';
+                    persen2.style.fontSize = '220px';
+
+                } else {
+                    persen2.innerHTML = pembulatan2;
+                    persen2.style.fontSize = '250px';
+                    // persen2.style.marginTop = '-40px';
+                    persen2.style.textShadow = '0 10px 19px #000000';
+                    persen2.style.animation = 'animate 2.0s linear infinite';
+                    persen2.style.color = '#ff0000';
+                }
+                
+
+
+            })
+        });
+    </script>
+
+    <script src="{{ asset('/js/Socketio454.js') }}"></script>
+    {{-- <script src="{{ asset('/js/JSforPRODUCTION.js') }}"></script> --}}
+    <script src="{{ asset('/js/moment.js') }}"></script>
+    @include('sweetalert::alert')
+    <script src="/css/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

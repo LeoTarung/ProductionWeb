@@ -70,25 +70,26 @@ switch (bulan) {
 }
 var tampilTanggal = tanggal + " " + bulan + " " + tahun;
 document.getElementById("date-1").innerHTML = tampilTanggal;
+document.getElementById("date-2").innerHTML = hari + ", " + tampilTanggal;
 
-function showTime() {
-    var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
-    var session = "WIB";
+    function showTime() {
+        var date = new Date();
+        var h = date.getHours(); // 0 - 23
+        var m = date.getMinutes(); // 0 - 59
+        var s = date.getSeconds(); // 0 - 59
+        var session = "WIB";
 
-    h = h < 10 ? "0" + h : h;
-    m = m < 10 ? "0" + m : m;
-    s = s < 10 ? "0" + s : s;
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
 
-    var time = h + ":" + m + ":" + s + " ";
-    document.getElementById("MyClockDisplay").innerText = time;
-    document.getElementById("MyClockDisplay").textContent = time;
+        var time = h + ":" + m + ":" + s + " ";
+        document.getElementById("MyClockDisplay").innerText = time;
+        document.getElementById("MyClockDisplay").textContent = time;
 
-    setTimeout(showTime, 1000);
-}
-showTime();
+        setTimeout(showTime, 1000);
+    }
+    showTime();
 
 //==============================['FUNCTION RESUME DI LHP']==============================//
 
@@ -104,7 +105,7 @@ function ModalResume(mesin, id) {
         }
     );
 }
-//==============================['FUNCTION INSTRUKSI DI LHP']==============================//
+//==============================['FUNCTION INSTRUKSI DI LHP MELTING']==============================//
 function ModalInstruksi(mesin) {
     // console.log("asdasd");
     $.get("/partial/instruksi", {}, function (data, status) {
@@ -114,7 +115,7 @@ function ModalInstruksi(mesin) {
     });
 }
 
-//==============================['FUNCTION RESUME DI LHP']==============================//
+//==============================['FUNCTION RESUME DI LHP SUPPLY']==============================//
 
 function ModalSupply(mesin, id) {
     // console.log('asad');
@@ -125,37 +126,57 @@ function ModalSupply(mesin, id) {
             $("#ModalNavbarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
              $("#page").html(data); //menampilkan view create di dalam id page
              $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
-             console.log('test');
+             console.log(mesin);
         }
     );
 }
 
-//==============================['FUNCTION PADA PAGE SETTINGS']==============================//
-// function editmesin(id){
-//     $("#setupclose").click();
-//     $("#staticBackdropLabel1").html('EDIT MACHINE' + id); //Untuk kasih judul di modal
-//     $("#staticBackdrop1").modal('show'); //kalo ID pake "#" kalo class pake "." 
-//     $.ajax({
-//             method: "GET",  
-//             dataType: "json",
-//             url: "settings/mesincasting" + "/" + id,
-//             success: function(data) {
-//               console.log(data);
-             
-              
-//             }
-//         });
+//==============================['FUNCTION RESUME DI LHP CASTING']==============================//
 
-    //  console.log('asad');
-    //  $.get(
-    //     "/settings/mesincasting" + "/" + id,
-    //     {},
-    //     function (data, status) {
-    //         // $("#setupclose").click();
-    //         $("#staticBackdropLabel1").html('EDIT MACHINE ' + id); //Untuk kasih judul di modal
-    //         $("#page").html(data); 
-    //         $("#staticBackdrop1").modal("show");
-    //         console.log("test")
-    //     }
-    // );
-// }
+function ModalCasting(mesin, id) {
+    // console.log('asad');
+    $.get(
+        "/partial/resume-casting" + "/" + mesin + "/" + id,
+        {},
+        function (data, status) {
+            $("#ModalNavbarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
+             $("#page").html(data); //menampilkan view create di dalam id page
+             $("#ModalNavbar").modal("show"); //kalo ID pake "#" kalo class pake "."
+             console.log(mesin);
+        }
+    );
+}
+
+//==============================['FUNCTION MODAL GAMBAR PART DI CASTING']==============================//
+function ModalGambar(id,reject) {
+    $.get(
+        "/partial/modal-casting"+ "/" + id + "/" + reject,
+        {},
+        function (data) {
+            $("#ModalGambarLabel").html("Jenis Reject: " + reject); //Untuk kasih judul di modal
+            //  $("#page").load('/partial/modal-sementara'); //menampilkan view create di dalam id page
+             $("#ModalGambar").modal("show"); //kalo ID pake "#" kalo class pake "."
+             $('#ModalGambar .modal-body').load( '/partial/modal-casting' + '/' + id + "/" + reject);
+             console.log(reject);
+             console.log(id);
+        }
+    );
+}
+
+//==============================['FUNCTION MODAL GAMBAR PART DI FINAL INSPECTION']==============================//
+function ModalGambarFinal(id,reject) {
+    undo = 'reject';
+    $.get(
+        "/partial/modal-final-inspection"+ "/" + id + "/" + reject,
+        {},
+        function (data) {
+            // $("#ModalGambarLabel").html("Resume Input " + mesin); //Untuk kasih judul di modal
+            //  $("#page").load('/partial/modal-sementara'); //menampilkan view create di dalam id page
+             $("#ModalGambarFinal").modal("show"); //kalo ID pake "#" kalo class pake "."
+             $('#ModalGambarFinal .modal-body').load( '/partial/modal-final-inspection' + '/' + id + "/" + reject);
+             console.log(reject);
+             console.log(id);
+        }
+    );
+}
+

@@ -25,12 +25,14 @@
     </a>
 </div>
 <div class="col">
-    <div class="card card-gambar-utama rounded">
-        <div class="d-flex justify-content-center">
-            <img class="imgProduction mt-2 rounded" src="{{ url('/img/machining.jpg') }}" alt=""
-                srcset="">
+    <a href="http://10.14.20.212:3333/">
+        <div class="card card-gambar-utama rounded">
+            <div class="d-flex justify-content-center">
+                <img class="imgProduction mt-2 rounded" src="{{ url('/img/machining.jpg') }}" alt=""
+                    srcset="">
+            </div>
         </div>
-    </div>
+    </a>
 </div>
 <div class="col">
     <div class="card  card-gambar-utama rounded">

@@ -59,13 +59,13 @@
                         <div class="row mt-3">
                             <div class="col-2">MIN MOLTEN</div>
                             <div class="col-9"><input type="text" class="form-control" id="min_molten"
-                                    name="min_level_molten" value="{{ $molten->max_level_molten }}">
+                                    name="min_level_molten" value="{{ $molten->min_level_molten }}">
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-2">MAX MOLTEN</div>
                             <div class="col-9"><input type="text" class="form-control" id="max_molten"
-                                    name="max_level_molten" value="{{ $molten->min_level_molten }}">
+                                    name="max_level_molten" value="{{ $molten->max_level_molten }}">
                             </div>
                         </div>
                         <div class="row border-top mt-5 ">
@@ -94,20 +94,21 @@
     <script>
         $(function() {
             let ip_node = location.hostname;
-            let socket_port = '1553';
+            let socket_port = '5322';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
 
             socket.on("levelMolten_settings", (data) => {
 
 
-                let for_mc = {{ $molten->mc }} - 1;
+                let for_mc = {{ $mcfordata }} - 1;
                 let max1 = data[for_mc].max_level_molten;
                 let min1 = data[for_mc].min_level_molten;
                 let jarak1 = min1 - max1 //hasilnya 2000
                 let pembagi1 = (jarak1 * 0.01); //hasilnya 20
                 let value1 = (data[for_mc].aktual_molten - max1); //hasilnya 500
                 let level1 = (value1 / pembagi1);
+
 
                 let battery1 = document.getElementById('battery' + {{ $molten->mc }});
                 let batteryLiquid1 = document.getElementById('battery__liquid' +
@@ -135,7 +136,7 @@
 
         });
 
-        ///////{ Untuk Memunculkan Edit Material  }//////// 
+        ///////{ Untuk Memunculkan Edit Material  }////////
 
         const btnEdit = document.getElementById('btnEditMtr');
         document.getElementById('editMtr').style.visibility =
@@ -161,7 +162,7 @@
             }
         }
 
-        ///////{ Untuk Memunculkan mc baru}//////// 
+        ///////{ Untuk Memunculkan mc baru}////////
 
         const btnCari = document.getElementById('btnCariMC');
 

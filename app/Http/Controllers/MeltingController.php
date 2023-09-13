@@ -14,8 +14,7 @@ use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\LHPMelting_Export;
 use App\Http\Controllers\UsableController;
-
-
+use App\Models\LotIngot;
 
 class MeltingController extends Controller
 {
@@ -53,13 +52,12 @@ class MeltingController extends Controller
         ));
     }
 
-    public function Dashboard_tv(UsableController $useable, $mesin)
+    public function Dashboard_tv(UsableController $useable)
     {
-        // $sql = LHPMelting::where('mesin', '=', $mesin);
         $shift = $useable->Shift();
         $date = $useable->date();
 
-        return view('menu.production.melting.performaMelting', compact('shift', 'date', 'mesin'));
+        return view('menu.production.melting.performaMelting', compact('shift', 'date'));
     }
 
     public function testing(UsableController $useable)
@@ -91,8 +89,9 @@ class MeltingController extends Controller
         $id_striko3 = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', 'Striko-3'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_Swift_Asia = LhpMelting::where([['tanggal', '=', $date], ['mesin', '=', 'Swift_Asia'], ['shift', '=', $shift]])->first();
         $nrp = 0;
+        $id = 0;
         $mesin = "MELTING";
-        return view('lhp.prepare-melting', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia'));
+        return view('lhp.prepare-melting', compact('title', 'nrp', 'mesin', 'lhp', 'shift', 'id_striko1', 'id_striko2', 'id_striko3', 'id_Swift_Asia', 'id'));
     }
 
     public function prep_melting_simpan(UsableController $useable, Request $request)
@@ -113,7 +112,7 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    'gas_awal' => $gas->gas_akhir,
+                    // 'gas_awal' => $gas->gas_akhir,
                     'stok_molten' => $gas->stok_molten
                 ]);
             } else if ($request->mesin != "") {
@@ -127,8 +126,8 @@ class MeltingController extends Controller
                     'jam_kerja' => $jam_kerja,
                     'mesin' => $request->mesin,
                     'material' => $request->material,
-                    'gas_awal' => $gas->gas_akhir,
-                    'stok_molten' => $gas->stok_molten
+                    // 'gas_awal' => $gas->gas_akhir,
+                    // 'stok_molten' => $gas->stok_molten
                 ]);
             } else {
                 LhpMelting::create([
@@ -224,7 +223,7 @@ class MeltingController extends Controller
             } else if ($jenis == 'dross') {
                 $stok_molten = $ntah->stok_molten - $value;
             } else {
-                $stok_molten = $ntah->stok_molten + $value; // H - ( N + Q ) 
+                $stok_molten = $ntah->stok_molten + $value; // H - ( N + Q )
             }
 
 
@@ -250,7 +249,7 @@ class MeltingController extends Controller
 
             $gas_consum = $ntah->gas_akhir - $ntah->gas_awal;
 
-            $melting_rate = $total_charging_rs / $ntah->jam_kerja; // H / X1 
+            $melting_rate = $total_charging_rs / $ntah->jam_kerja; // H / X1
             LhpMelting::where([['id', '=', $id]])->update([
                 'total_return_rs' =>  $total_return_rs,
                 'total_charging_rs' =>  $total_charging_rs,
@@ -296,26 +295,26 @@ class MeltingController extends Controller
             //JUMLAHKAN SEMUA COLOUMS DI TABEL
             $update = LhpMeltingRAW::where('id_lhp', '=', $rawr[0]->id_lhp)
                 ->selectRaw(
-                    "id_lhp, 
-                    SUM(ingot) as ingots, 
-                    SUM(exgate) as exgates, 
-                    SUM(reject_parts) as reject_partss, 
-                    SUM(alm_treat) as alm_treats, 
-                    SUM(basemetal) as basemetals, 
-                    SUM(oil_scrap) as oil_scraps, 
-                    SUM(fluxing) as fluxings, 
-                    SUM(tapping) as tappings, 
-                    SUM(dross) as drosss, 
-                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap) as total_return_rs, 
-                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) as total_charging_rs, 
-                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot + fluxing) as total_charging, 
-                    IFNULL(SUM(fluxing) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as persen_fluxing, 
-                    IFNULL(SUM(ingot) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as persen_ingot, 
-                    IFNULL(SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as persen_rs, 
-                    IFNULL(SUM(dross) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot + fluxing) * 100, 100) as persen_losdros_material, 
-                    IFNULL(SUM(alm_treat) / SUM(dross) * 100, 100) as persen_alm_treat, 
-                    IFNULL(SUM(tapping) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as machine_performance, 
-                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) / 18250 * 100 as machine_utilization, 
+                    "id_lhp,
+                    SUM(ingot) as ingots,
+                    SUM(exgate) as exgates,
+                    SUM(reject_parts) as reject_partss,
+                    SUM(alm_treat) as alm_treats,
+                    SUM(basemetal) as basemetals,
+                    SUM(oil_scrap) as oil_scraps,
+                    SUM(fluxing) as fluxings,
+                    SUM(tapping) as tappings,
+                    SUM(dross) as drosss,
+                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap) as total_return_rs,
+                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) as total_charging_rs,
+                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot + fluxing) as total_charging,
+                    IFNULL(SUM(fluxing) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as persen_fluxing,
+                    IFNULL(SUM(ingot) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as persen_ingot,
+                    IFNULL(SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as persen_rs,
+                    IFNULL(SUM(dross) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot + fluxing) * 100, 100) as persen_losdros_material,
+                    IFNULL(SUM(alm_treat) / SUM(dross) * 100, 100) as persen_alm_treat,
+                    IFNULL(SUM(tapping) / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) * 100, 100) as machine_performance,
+                    SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot) / 18250 * 100 as machine_utilization,
                     IFNULL(gas_akhir / SUM(exgate + reject_parts + alm_treat + basemetal + oil_scrap + ingot + fluxing) * 100, 100) as gas_consum"
                 )
                 ->get();
@@ -349,7 +348,7 @@ class MeltingController extends Controller
             // GET LHP LAGI
             $nih = LhpMelting::find($rawr[0]->id_lhp);
             // HITUNG MELTING RATE
-            $melting_rate =  $nih->total_charging_rs / $nih->jam_kerja; // H / X1 
+            $melting_rate =  $nih->total_charging_rs / $nih->jam_kerja; // H / X1
             // UPDATE LAGI
             LhpMelting::where([['id', '=', $rawr[0]->id_lhp]])->update(['melting_rate' => $melting_rate]);
             return redirect("/production/melting/" . $mesin)->with('behasiledit', 'behasiledit');
@@ -369,7 +368,7 @@ class MeltingController extends Controller
 
     public function prep_forklift(UsableController $useable)
     {
-        # code... 
+        # code...
         $shift = $useable->Shift();
         $date = $useable->date();
         $title = "PRE FORKLIFT";
@@ -384,6 +383,7 @@ class MeltingController extends Controller
         $id_forklift10 = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-10'], ['shift', '=', $shift]])->orderBy('id', 'DESC')->first();
         $id_forkliftblank = LhpSupply::where([['tanggal', '=', $date], ['forklift', '=', 'Forklift-6'], ['shift', '=', $shift]])->first();
         $nrp = 0;
+
         // dd($id_forklift1->nrp);
         $mesin = "FORKLIFT";
         $forklift = "FORKLIFT";
@@ -524,5 +524,18 @@ class MeltingController extends Controller
         } else {
             return redirect('lhp.lhp-forklift')->with('preulang', 'preulang');
         }
+    }
+
+    public function ingot_index()
+    {
+        $title = "LOT INGOT";
+        $data = LotIngot::orderBy('id', 'DESC')->get();
+        return view('menu.production.melting.lotingot', compact('title', 'data'));
+    }
+
+    public function ingot_simpan()
+    {
+
+        return redirect("/production/lot-ingot");
     }
 }

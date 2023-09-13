@@ -1,7 +1,9 @@
 @extends('main')
 @section('content')
     <div class="main-content d-flex flex-column">
+
         <div class="row w-100">
+            <div class="text-end fs-2 mt-3 mb-5 border-bottom">Level Molten</div>
             {{-- <div class="col-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="mc()">
                 <div class="card-header text-center fw-bold"> MC-</div>
                 <section id="battery" class="battery mb-3 d-flex justify-content-start" onclick="nama()">
@@ -30,7 +32,7 @@
     <script>
         $(function() {
             let ip_node = location.hostname;
-            let socket_port = '1553';
+            let socket_port = '5322';
             let socket = io(ip_node + ':' + socket_port);
             socket.on('connection');
 

@@ -42,6 +42,18 @@ body{
     width: 100%;
     transition: margin-left 0.4s ease-out;
 }
+
+/* #main.active{
+    filter: blur(5px);
+} */
+
+/* body.blurred { */
+    /* filter: blur(5px); */
+    /* filter: brightness(50%) blur(2.5px);
+    pointer-events: none;
+  } */
+
+
 #main .main-content {
     padding: 0rem 1.5rem;
     min-height: 100vh;
@@ -294,6 +306,160 @@ li a {
     /* height: 50px; */
 }
 
+/* Navbar Media Query Final Inspection */
+@media only screen and (max-width: 800in) {
+    /* Navbar */
+nav{
+    margin: auto;
+    justify-content: center;
+    height: 70px;
+    width: 100%;
+    position: static;
+    /* background-color: #000080; */
+    background: #000080;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #5151c2, #000080);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #5151c2, #000080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  ul {
+    
+    list-style-type: none;
+    /* margin-left: 330px; */
+    max-width: 100%;
+    display: flex;
+    /* background-color: #2194e3; */
+  }
+  
+  /* li {
+      float: left;
+  } */
+  li a {
+      display: inline-block;
+      color: #ffffff;
+      text-align: center;
+      padding: 4px 15px;
+      text-decoration: none;
+  }
+  
+  /* li a:hover {
+    background-color: rgb(81, 219, 178);
+  } */
+  .navbarimg{
+    margin-top: 6px;
+    /* margin-left: -60px; */
+    height: 57px;
+    /* width: 250px; */
+  }
+  .rectangle-logo{
+    /* position: absolute; */
+    /* width: 275px; */
+   
+    /* left:20.53px;
+    top: 13.80px; */
+    background: #FFFFFF;
+    background: -webkit-linear-gradient(to bottom, #ffffff, #ebebf3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom,#ffffff,  #ebebf3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px;
+    margin: 4px -20px 0px -25px;
+  }
+  
+  .shift{
+    /* margin-top: 30px; */
+    margin: 0px -10px 0px 0px;
+    width:150px;
+    font-size:x-large;
+    font-weight: 500;
+    letter-spacing: 6;
+    color: #FFFFFF;
+    /* border-bottom: 5px; */
+  }
+  
+  #MyClockDisplay{
+    width: 250px;
+      font-family: Kameron;
+      font-size: 30px;
+      font-weight: 700;
+      /* line-height: 43px; */
+      letter-spacing: 0.1em;
+      text-align: center;
+      /* margin-left: 550px; */
+  }
+  
+  .time {
+      background: #44b1b8;
+      background: -webkit-linear-gradient(
+          to bottom,
+          #44b1b8,
+          #2c8d94
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+          to bottom,
+          #44b1b8,
+          #2c8d94
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      border-radius: 0px 0px 5px 5px;
+      outline: 5px;
+  }
+  
+  .time1 {
+      background-color: #44b1b8;
+  }
+  
+  .rectangle_cloclk1 {
+      position: absolute;
+      width: 225px;
+      height: 40px;
+      /* left:20.53px;
+    top: 13.80px; */
+      background: #249299;
+      border-radius: 0px 10px 10px 0px;
+      margin: 0px 0px 0px 0px;
+  }
+  
+  .nrp {
+      /* width: calc(100%-50px); */
+      width: 150px;
+      margin: 0px 10px 0px 10px;
+  }
+  
+  .mesin {
+      text-align: center;
+      width: auto;
+      /* height: px; */
+      margin-right: 0;
+      font-size: 28px;
+  }
+  
+  .information {
+      margin-top: 9px;
+  }
+  
+  .information i {
+      color: white;
+  }
+  
+  .choose_machine {
+      letter-spacing: 4px;
+      margin-top: -5px;
+  }
+  
+  .machine {
+      background: #7fb7bb;
+      background: -webkit-linear-gradient(
+          to bottom,
+          #44b1b8,
+          #2c8d94
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+          to bottom,
+          #44b1b8,
+          #2c8d94
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      border-radius: 0px 0px 5px 5px;
+      outline: 5px;
+      height: 100%;
+  }
+}
+
 /* Footer */
 
 footer {
@@ -309,17 +475,17 @@ footer {
 
   /* Preparation Melting */
   .buttonssssss {
-  height: 250px;
-  width: 100%;
-}
+    height: 250px;
+    width: 100%;
+    }
 
 a .big-font{
-  width: 99.8%;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: "-";
   letter-spacing: 0.15em;
-  font-size: 70px;
+  font-size: 65px;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 230px;
@@ -576,9 +742,9 @@ a .font-forklift10 {
     }
 
     .nrp {
-        width: 125%;
-        margin-left: -10px;
-        margin-right: 43px;
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     .card-material {
         margin-bottom: 49px;
@@ -730,9 +896,39 @@ a .font-forklift10 {
     margin: 0 !important;
 }
 
-/* SETTINGS */
 
-/* Catatan CSS
-1. TAMBAHKAN NAV KHUSUS TABLET DAN LAPTOP LARGE (complete)
-2. TAMBAHKAN FOOTER KHUSUS TABLET
-*/
+
+
+/* Backgorund Part Casting */
+.bg-part{
+    /* background-image: url("/img/parts/Pipe Air Inlet ML288384.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+    /* background-size: cover; */
+    width: 100%;
+    height: auto;
+}
+
+img {
+	display: block;
+	margin: auto;
+}
+
+area {
+	display: block;
+	outline: none;
+}
+
+area:hover {
+	cursor: pointer;
+    color: #11101d;
+}
+
+area:active {
+	background-color: #ccc;
+}
+
+
+
+/* SETTINGS */

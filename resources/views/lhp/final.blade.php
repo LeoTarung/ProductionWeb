@@ -9,8 +9,20 @@
             <div class="col-3 mt-2">
                 <div class="card card-left1 ms-2 shadow-sm">
                     <div class="row">
+                        {{-- <div class="col-auto "></div>
+                        <div class="col-11 text-center mt-2 fw-bold">COVER L K1ZG <br><span class="fs-2">3000 part</span>
+                        </div> --}}
+                        <div class="col-9 mt-2 ps-4 fw-bold fs-4 "> PIPE SUB-ASSY  </div>
+                        <div class="col-3 d-flex align-items-center parent">
+                            <div class="child fw-bold fs-4 pt-2 text-center align-items-center">999</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-left5 mt-3 ms-2 shadow-sm">
+                    <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">COVER   L K1ZG <br><span class="fs-2">3000 part</span>
+                        <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2">3000
+                                part</span>
                         </div>
                     </div>
                 </div>
@@ -32,28 +44,20 @@
                 </div>
                 <div class="card card-left4 mt-3 ms-2 shadow-sm">
                     <div class="row">
-                        <div class="col-auto"></div>
-                        <div class="col-11 text-center mt-2 fw-bold">DOWNTIME <br><span class="fs-2">3000
-                                part</span>
-                        </div>
-                    </div>`
-                </div>
-                <div class="card card-left5 mt-3 ms-2 shadow-sm">
-                    <div class="row">
                         <div class="col-auto "></div>
-                        <div class="col-11 text-center mt-2 fw-bold">TARGET<br><span class="fs-2">3000
+                        <div class="col-11 text-center mt-2 fw-bold">DOWNTIME<br><span class="fs-2">3000
                                 part</span>
                         </div>
                     </div>
                 </div>
-                <div class="card card-left6 mt-3 ms-2 shadow-sm">
+                {{-- <div class="card card-left6 mt-3 ms-2 shadow-sm">
                     <div class="row">
                         <div class="col-auto "></div>
                         <div class="col-11 text-center mt-2 fw-bold">COVER L<br><span class="fs-2">3000
                                 part</span>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="col-9 mb-2">
                 <div class="card main-card ">
@@ -94,7 +98,7 @@
                                     <div class="font-ci1">0</div>
                                 </div>
                                 <div class="card-inside2 float-end">
-                                    <div class="font-with-enter">CACAT CASTING</div>
+                                    <div class="font-with-enter">CACAT <br> CASTING</div>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +140,7 @@
                                     <div class="font-ci1">0</div>
                                 </div>
                                 <div class="card-inside2 float-end">
-                                    <div class="font-with-enter">EJECTOR PATAH</div>
+                                    <div class="font-with-enter">EJECTOR <br> PATAH</div>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +172,7 @@
                                     <div class="font-ci1">0</div>
                                 </div>
                                 <div class="card-inside2 float-end">
-                                    <div class="font-ci2 mt-2">GELOMBANG</div>
+                                    <div class="font-ci2 ">GELOMBANG</div>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +256,7 @@
                                     <div class="font-ci1">0</div>
                                 </div>
                                 <div class="card-inside2 float-end">
-                                    <div class="font-ci2 mt-2">KULIT JERUK</div>
+                                    <div class="font-ci2">KULIT JERUK</div>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +266,7 @@
                                     <div class="font-ci1">0</div>
                                 </div>
                                 <div class="card-inside2 float-end">
-                                    <div class="font-ci2 mt-2">MELENGKUNG</div>
+                                    <div class="font-ci2 ">MELENGKUNG</div>
                                 </div>
                             </div>
                         </div>
@@ -294,7 +298,7 @@
                                     <div class="font-ci1">0</div>
                                 </div>
                                 <div class="card-inside2 float-end">
-                                    <div class="font-ci2 mt-2">PARTINGLINE</div>
+                                    <div class="font-ci2 ">PARTINGLINE</div>
                                 </div>
                             </div>
                         </div>
