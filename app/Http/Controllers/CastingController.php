@@ -31,8 +31,49 @@ class CastingController extends Controller
         return view('menu.production.casting.casting', compact('title', 'shift', 'date', 'mesin'));
     }
 
+    public function castingTV(UsableController $useable)
+    {
+        $date = $useable->date();
+        $shift = $useable->Shift();
+        $mesin = MesinCasting::get()->all();
+        $title = "Casting Overview";
+        $produksi = 1;
+        $man = 0;
+        $machine = 1;
+        $method = 1;
+        $material = 0;
+        $urgent = 0;
+        $runing = 1;
+        $downtime = "TROUBLE CNC";
+
+        return view('menu.production.casting.castingTV', compact('title', 'shift', 'date', 'mesin','produksi','man','machine','method','material','urgent', 'runing', 'downtime'));
+   
+        // $production = 2;
+        // $preparation = 1;
+        // $mecin = "MC 057";
+        // $namaPart = "PIPE SUB-ASSY WATER BY-PASS 60U020 (FG)";
+        // $urgent = 0;
+        // $aktual = 0;
+
+        // $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
+        // $mcfordata = $range_hitung->count();
+
+        // $target = 0;
+        // $persen = 90;
+        // $henkaten = 0;
+        // $henka = 4;
+        // $downtime = 'INSTROCKER ERROR';
+
+
+        // return view('menu.production.casting.tvCasting', 
+        // compact('production','preparation','mecin','namaPart','urgent','aktual','range_hitung','mcfordata','target','persen','shift'));
+    }
+
     public function tvCasting(UsableController $useable, $id)
     {
+
+        $production = 1;
+        $preparation = 0;
 
         $date = $useable->date();
         $shift = $useable->Shift();
@@ -43,6 +84,8 @@ class CastingController extends Controller
 
         $start_date = Carbon::createFromFormat('Y-m-d', $date)->startOfDay();
         $end_date = Carbon::createFromFormat('Y-m-d', $date)->endOfDay();
+
+
 
         $lhp = LhpCasting::whereBetween('created_at', [$start_date, $end_date])->where('id_mesincasting', $id)->where('shift', $shift)->first();
         // dd($lhp);
@@ -63,11 +106,11 @@ class CastingController extends Controller
         $part =  MesinCasting::where('mc', $id)->first();
         $namaPart =  $part->nama_part;
 
+
         $urgent = 0;
         // $aktual = 0;
         $range_hitung = MesinCasting::where('mc', '<=', $id)->get();
         $mcfordata = $range_hitung->count();
-
         $shift = 2;
 
         return view(

@@ -68,9 +68,11 @@ class FinalInspectionController extends Controller
         $mesin = "Final Inspection";
         $nrp = 0;
         $id = 0;
-        $nama_part = Part::get();
+        // $nama_part = Part::get();
+        // $nama_part = Part::where('material', 'like', '_______F%' )->get();
+        $nama_part = Part::where('nama_part', 'like', '%(FG)%' )->get();
 
-
+        // dd($nama_part);
         return view('lhp.prep-final-inspection', compact('title','shift', 'mesin','nrp','id','nama_part'));
     }
 
