@@ -1,0 +1,68 @@
+#form {
+    background-color: hsl(0, 0%, 100%);
+    color: rgb(0, 0, 0);
+    text-align:center;
+    font-weight: bolder;
+}
+
+.dasar {
+    background-color: #a2a4a8;
+    height: 93vh;
+    color: black;
+    font-weight: 00;
+    padding-left: 10px;
+
+}
+
+.chart1{
+    background-color: rgb(255, 190, 10);
+    width: 85%;
+    height: 45%;
+}
+
+.chart2{
+    background-color: red;
+    width: 85%;
+    height: 45%;
+    color: azure;
+}
+
+.chart3{
+    background-color: rgb(127, 10, 179);
+    width: 85%;
+    height: 45%;
+    color: aliceblue;
+}
+
+.chart4{
+    background-color: black;
+    width: 85%;
+    height: 45%;
+    color: aliceblue;
+}
+
+.chart5{
+    background-color: white;
+    width: 85%;
+    height: 45%;
+}
+
+.chart6{
+    background-color: rgb(250, 251, 12);
+    width: 85%;
+    height: 45%;
+}
+
+.chart7{
+    background-color: rgb(13, 130, 252);
+    width: 85%;
+    height: 45%;
+    
+}
+
+.chart8{
+    background-color: rgb(13, 176, 53);
+    width: 85%;
+    height: 45%;
+}
+

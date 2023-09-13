@@ -42,6 +42,7 @@ class ApiController extends Controller
         } else {
             $exhourly = ["NULLAH"];
         }
+        
         return $exhourly;
     }
 

@@ -13,6 +13,8 @@ use App\Http\Controllers\HenkatenController;
 use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
+use App\Http\Controllers\HenkatenController;
+use App\Http\Controllers\IngotController;
 use App\Http\Controllers\FinalInspectionController;
 
 /*
@@ -99,6 +101,8 @@ Route::get('/production/casting', [CastingController::class, 'Dashboard']);
 Route::get('/castingTV', [CastingController::class, 'castingTV']);
 Route::get('/tvCasting/{id}', [CastingController::class, 'tvCasting']);
 Route::get('/tvCasting2/{id1}/{id2}', [CastingController::class, 'tvCasting2']);
+Route::get('/getLHP/{mc}', [CastingController::class, 'getLHP']);
+Route::get('/getDowntime/', [CastingController::class, 'getDowntime']);
 Route::get('/lhp-casting', [CastingController::class, 'prep_casting'])->name('preparationCasting');
 Route::post('/lhp-casting/simpan', [CastingController::class, 'prep_casting_simpan']);
 Route::get('/lhp-casting/{mc}/{id}', [CastingController::class, 'lhp_casting'])->name('LHPCasting'); //link sementara, nanti diganti ketika preparation sudah selesai
@@ -157,7 +161,7 @@ Route::get('/table', [MeltingTestController::class, 'table']);
 Route::get('/final', [MeltingTestController::class, 'final_inspection']);
 
 
-//====================== henkaten ======================//
+//====================== Henkaten ======================//
 // man
 Route::get('/tampilan', [HenkatenController::class, 'tampilan']);
 Route::post('/submit_man', [HenkatenController::class, 'submit_man']);
@@ -187,3 +191,9 @@ Route::post('/update/{No}', [HenkatenController::class, 'update']);
 Route::get('/material_delete/{No}', [HenkatenController::class, 'material_delete']);
 
 Route::get('/include', [HenkatenController::class, 'include']);
+
+//====================== Stock Ingot ======================//
+Route::get('/InputIngot',[IngotController::class, 'InputIngot']);
+Route::get('/LihatIngot',[IngotController::class, 'LihatIngot']);
+Route::get('/PenimbangIngot',[IngotController::class, 'PenimbangIngot']);
+Route::get('/IsiOtomatis',[IngotController::class, 'IsiOtomatis']);
