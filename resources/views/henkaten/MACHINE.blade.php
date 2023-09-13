@@ -24,7 +24,6 @@
             </div>
           </div>
         </div>
-
         
         <div class="col-6 pt-5">
           <div class="card">
@@ -69,8 +68,6 @@
             </div>
           </div>
           
-
-
           <div class="card">
             <div class="container overflow">
               <div class="row gx-2">
@@ -91,8 +88,6 @@
               </div>
             </div>
           </div>
-          
-          
 
           <div class="card">
             <div class="container overflow">
@@ -115,9 +110,6 @@
             </div>
           </div>
           
-          
-
-
           <div class="card">
             <div class="container overflow">
               <div class="row gx-2">
@@ -160,7 +152,6 @@
             </div>
           </div>
           
-
           <div class="col ps-5 ms-5">
             <button type="submit" class="btn btn-primary btn-lg ms-5 mt-5">SUBMIT</button>
             <button type="button" class="btn btn-warning btn-lg ms-3 mt-5" data-bs-target="#review" data-bs-toggle="modal">LIHAT TABEL</button>

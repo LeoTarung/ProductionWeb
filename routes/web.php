@@ -13,6 +13,8 @@ use App\Http\Controllers\HenkatenController;
 use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\MeltingTestController;
+use App\Http\Controllers\HenkatenController;
+use App\Http\Controllers\IngotController;
 use App\Http\Controllers\FinalInspectionController;
 
 /*
@@ -157,7 +159,7 @@ Route::get('/table', [MeltingTestController::class, 'table']);
 Route::get('/final', [MeltingTestController::class, 'final_inspection']);
 
 
-//====================== henkaten ======================//
+//====================== Henkaten ======================//
 // man
 Route::get('/tampilan', [HenkatenController::class, 'tampilan']);
 Route::post('/submit_man', [HenkatenController::class, 'submit_man']);
@@ -187,3 +189,9 @@ Route::post('/update/{No}', [HenkatenController::class, 'update']);
 Route::get('/material_delete/{No}', [HenkatenController::class, 'material_delete']);
 
 Route::get('/include', [HenkatenController::class, 'include']);
+
+//====================== Stock Ingot ======================//
+Route::get('/InputIngot',[IngotController::class, 'InputIngot']);
+Route::get('/LihatIngot',[IngotController::class, 'LihatIngot']);
+Route::get('/PenimbangIngot',[IngotController::class, 'PenimbangIngot']);
+Route::get('/IsiOtomatis',[IngotController::class, 'IsiOtomatis']);
